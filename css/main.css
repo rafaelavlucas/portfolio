@@ -146,6 +146,7 @@ p {
     justify-content: center;
     flex-direction: column;
     z-index: 0;
+
     -webkit-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
 }
@@ -175,7 +176,6 @@ p {
 .section-slider {
     width: 100%;
     max-width: 1440px;
-    margin: 0 5%;
     padding: 5% 0;
     -webkit-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out; //z-index: -2;
