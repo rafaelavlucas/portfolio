@@ -140,7 +140,11 @@ p {
 /*  // Main Contents \\  */
 
 .main-content {
-    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     z-index: 0;
     -webkit-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
@@ -169,63 +173,16 @@ p {
 .section,
 .section-works,
 .section-slider {
-    width: 60%;
-    margin: 0 20%;
-    padding: 100px 0;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 5%;
+    padding: 5% 0;
     -webkit-transition: all .3s ease-in-out;
-    transition: all .3s ease-in-out;
-    z-index: -2;
+    transition: all .3s ease-in-out; //z-index: -2;
 }
 
 
-@media (max-width: 1439px) {
-    .section,
-    .section-works,
-    .section-slider {
-        width: 70%;
-        margin: 0 15%;
-    }
-}
 
-
-@media (max-width: 1023px) {
-    .section,
-    .section-works,
-    .section-slider {
-        width: 80%;
-        margin: 0 10%;
-    }
-}
-
-@media (max-width: 800px) {
-    .section {
-        width: 90%;
-        margin: 0 5%;
-        padding: 60px 0;
-    }
-}
-
-@media (max-width: 640px) {
-    .section {
-        padding: 50px 0;
-    }
-}
-
-
-.section-works {
-    padding: 100px 0 30px 0;
-    -webkit-transition: all .3s ease-in-out;
-    transition: all .3s ease-in-out;
-}
-
-
-@media (max-width: 800px) {
-    .section-works {
-        width: calc(100% - 20%);
-        margin: 0 10%;
-        padding: 70px 0 30px 0;
-    }
-}
 
 
 /* /---------------------/ */
@@ -2778,8 +2735,8 @@ h2:hover::after {
 /*  // On Going Works \\  */
 
 .slider-slick {
-    top: 50%;
     width: 100%;
+    max-width: 1280px;
     margin: 0 auto;
     text-align: center;
     -webkit-transition: all .3s ease;
