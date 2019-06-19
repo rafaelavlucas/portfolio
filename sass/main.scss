@@ -845,321 +845,245 @@ button {
 
 /* --------------------------*/
 
-#nav {
-    background-color: white;
-    padding: 20 0;
-    margin: 0;
-    width: 100%;
-    height: 50px;
-    position: fixed;
-    top: -100px;
-    z-index: 3;
-    -webkit-transition: all .6s ease;
-    transition: all .6s ease;
-    box-shadow: 0px -10px 20px black;
-
-    @include sm {
-        padding: 10 0;
+.main-nav {
+    /*  // Icon Menu \\  */
+    #iconmenu {
+        float: left;
+        padding: 0;
+        width: 40px;
         height: 40px;
-    }
-
-    &.navshow {
-        top: 0;
-        z-index: 3;
-    }
-}
-
-
-/* /---------------------/ */
-
-/*  // Icon Menu \\  */
-
-#iconmenu {
-    float: left;
-    padding: 0;
-    width: 40px;
-    height: 40px;
-    margin: 25px;
-    position: fixed;
-    z-index: 4;
-    border-radius: 50px;
-    -webkit-transition: all .4s ease;
-    transition: all .4s ease;
-    cursor: pointer;
-    @include sm {
-        margin: 10px;
-    }
-
-    &.iconopen,
-    &.iconclose {
-        position: relative;
-        span {
-            display: flex;
-            width: 20px;
-            height: 2px;
-            position: absolute;
-            left: calc(50% - 10px);
-            top: 50%;
-            border-radius: 20px;
-            transition: all .4s ease;
-            background-color: $m-01;
-        }
-    }
-
-    /*  // Icon Open \\  */
-    &.iconopen {
-        background-color: #f9f9f9;
-        background-size: 25px 25px;
-        background-repeat: no-repeat;
-        background-position: center;
-
+        margin: 25px;
+        position: fixed;
         z-index: 4;
-
-        span {
-            &:nth-child(1) {
-                top: calc(35% - 1px);
-            }
-
-            &:nth-child(2) {
-                top: calc(50% - 1px);
-            }
-
-            &:nth-child(3) {
-                top: calc(65% - 1px);
-            }
-        }
-    }
-
-    /*  // Icon Open \\  */
-    &.iconclose {
-        background-color: white;
+        border-radius: 50px;
+        -webkit-transition: all .4s ease;
         transition: all .4s ease;
-        transform: rotate(0deg);
-        z-index: 5;
+        cursor: pointer;
+        @include sm {
+            margin: 10px;
+        }
 
-        span {
-            background-color: #ccc;
-
-            &:nth-child(1) {
-                transform: rotate(45deg);
-                top: calc(50% - 1px);
-            }
-
-            &:nth-child(2) {
-                transform: rotate(0deg);
-                top: calc(50% - 1px);
-                width: 0px;
-                left: 50%;
-                opacity: 0;
-                transition: all .3s ease;
-            }
-
-            &:nth-child(3) {
-                transform: rotate(-45deg);
-                top: calc(50% - 1px);
+        &.iconopen,
+        &.iconclose {
+            position: relative;
+            span {
+                display: flex;
+                width: 20px;
+                height: 2px;
+                position: absolute;
+                left: calc(50% - 10px);
+                top: 50%;
+                border-radius: 20px;
+                transition: all .4s ease;
+                background-color: $m-01;
             }
         }
-    }
 
-    &:hover {
-
+        /*  // Icon Open \\  */
         &.iconopen {
+            background-color: #f9f9f9;
+            background-size: 25px 25px;
+            background-repeat: no-repeat;
+            background-position: center;
+
+            z-index: 4;
+
             span {
-                opacity: 1; //background-color: #848484;
-                -webkit-transition: all .3s ease;
-                transition: all .3s ease;
+                &:nth-child(1) {
+                    top: calc(35% - 1px);
+                }
+
+                &:nth-child(2) {
+                    top: calc(50% - 1px);
+                }
+
+                &:nth-child(3) {
+                    top: calc(65% - 1px);
+                }
+            }
+        }
+
+        /*  // Icon Open \\  */
+        &.iconclose {
+            background-color: white;
+            transition: all .4s ease;
+            transform: rotate(0deg);
+            z-index: 5;
+
+            span {
+                background-color: #ccc;
 
                 &:nth-child(1) {
+                    transform: rotate(45deg);
                     top: calc(50% - 1px);
                 }
 
                 &:nth-child(2) {
-                    transform: rotate(90deg);
+                    transform: rotate(0deg);
+                    top: calc(50% - 1px);
+                    width: 0px;
+                    left: 50%;
+                    opacity: 0;
+                    transition: all .3s ease;
                 }
 
                 &:nth-child(3) {
+                    transform: rotate(-45deg);
                     top: calc(50% - 1px);
                 }
-
             }
         }
 
-        &.iconclose {
-            background-color: white;
-            span {
-                opacity: 1;
-                background-color: #848484;
+        &:hover {
+
+            &.iconopen {
+                @include sm {
+                    background-color: #f9f9f9;
+                }
+                span {
+                    opacity: 1;
+                    transition: all .3s ease;
+
+                    &:nth-child(1) {
+                        top: calc(50% - 1px);
+                        @include sm {
+                            top: calc(35% - 1px);
+                        }
+                    }
+
+                    &:nth-child(2) {
+                        transform: rotate(90deg);
+                        @include sm {
+                            transform: rotate(0deg);
+                        }
+                    }
+
+                    &:nth-child(3) {
+                        top: calc(50% - 1px);
+                        @include sm {
+                            top: calc(65% - 1px);
+                        }
+                    }
+
+                    @include sm {
+                        background-color: $m-01;
+                    }
+                }
+            }
+
+            &.iconclose {
+                background-color: white;
+                span {
+                    opacity: 1;
+                    background-color: #848484;
+
+                    @include sm {
+                        background-color: #ccc;
+                    }
+                }
             }
         }
     }
-}
+
+    #nav {
+        background-color: white;
+        padding: 20 0;
+        margin: 0;
+        width: 100%;
+        height: 50px;
+        position: fixed;
+        top: -100px;
+        z-index: 3;
+        transition: all .6s ease;
+        box-shadow: 0px -10px 20px black;
+
+        @include sm {
+            padding: 10 0;
+            height: 40px;
+        }
+
+        &.navshow {
+            top: 0;
+            z-index: 3;
+        }
+
+        /*  // Menu List \\  */
+        .menu {
+            margin: 0;
+            text-align: center;
+            padding: 0;
+            li {
+                color: #848484;
+                display: inline-block;
+                list-style: none;
+                width: 10%;
+                margin: 0 10;
+                padding: 15px 0;
+                letter-spacing: 4px;
+                transition: all 0.4s ease;
+                position: relative;
+                font-family: 'Source Code Pro', monospace;
+                font-weight: 400;
+                font-size: 14px;
+
+                @include sm {
+                    font-size: 13px;
+                    margin: 0 5;
+                    width: 20%;
+                    padding: 8px 0;
+                    letter-spacing: 2px;
+                }
+
+                &:after {
+                    content: '';
+                    width: 0%;
+                    height: 2px;
+                    border-radius: 20px;
+                    background-color: $m-01;
+                    position: absolute;
+                    margin: 0 auto;
+                    bottom: 0;
+                    left: 50%;
+                    transition: all 0.4s ease;
 
 
+                }
 
+                &:hover {
+                    color: $m-01;
 
+                    @include sm {
+                        letter-spacing: 2px;
+                        color: #848484;
+                    }
 
+                    &:after {
+                        width: 30px;
+                        left: calc(50% - 15px);
+                        @include sm {
+                            width: 0px;
+                        }
+                    }
+                }
 
-/*  // Icon - No Hover on Mobile \\  */
+                &.current {
+                    color: $m-01;
+                    text-align: center;
+                    &:after {
+                        width: 30px;
+                        left: calc(50% - 15px);
+                        background-color: $m-01;
+                        @include sm {
+                            width: 20px;
+                            left: calc(50% - 10px)
+                        }
 
-@media (max-width: 800px) {
-    .iconclose:hover span {
-        background-color: #ccc;
+                    }
+                }
+            }
+        }
     }
-}
 
-
-@media (max-width: 800px) {
-    #iconmenu.iconopen:hover {
-        background-color: #f9f9f9;
-    }
-}
-
-
-@media (max-width: 800px) {
-    .iconopen:hover span {
-        background-color: $m-01;
-    }
-}
-
-@media (max-width: 800px) {
-    .iconopen:hover span:nth-child(1) {
-        top: calc(35% - 1px);
-    }
-}
-
-
-@media (max-width: 800px) {
-    .iconopen:hover span:nth-child(2) {
-        transform: rotate(0deg);
-    }
-}
-
-
-@media (max-width: 800px) {
-    .iconopen:hover span:nth-child(3) {
-        top: calc(65% - 1px);
-    }
-}
-
-
-/* /---------------------/ */
-
-/*  // Menu List \\  */
-
-ul {
-    margin: 0;
-    text-align: center;
-    padding: 0;
-
-}
-
-.menu li {
-    color: #848484;
-    display: inline-block;
-    float: left;
-    list-style: none;
-    float: none;
-    width: 10%;
-    margin: 0 10;
-    padding: 15px 0;
-    letter-spacing: 4px;
-    transition: all 0.4s ease;
-    -webkit-transition: all .4s ease;
-    position: relative;
-    font-family: 'Source Code Pro', monospace;
-    font-weight: 400;
-    font-size: 14px;
-}
-
-
-@media (max-width: 800px) {
-    .menu li {
-        font-size: 13px;
-        margin: 0 5;
-        width: 20%;
-        padding: 8px 0;
-        letter-spacing: 2px;
-    }
-}
-
-
-.menu li:hover {
-    color: $m-01;
-    text-align: center;
-}
-
-
-.menu li:after {
-    content: '';
-    width: 0%;
-    height: 2px;
-    border-radius: 20px;
-    background-color: $m-01;
-    position: absolute;
-    margin: 0 auto;
-    bottom: 0;
-    left: 50%;
-    transition: all 0.4s ease;
-    -webkit-transition: all .4s ease;
-}
-
-
-.menu li:hover::after {
-    content: '';
-    width: 30px;
-    left: calc(50% - 15px);
-    margin: 0 auto;
-}
-
-
-.menu .current {
-    color: $m-01;
-    text-align: center;
-}
-
-
-.menu .current:after {
-    content: '';
-    width: 30px;
-    left: calc(50% - 15px);
-    height: 2px;
-    border-radius: 20px;
-    background-color: $m-01;
-    position: absolute;
-    margin: 0 auto;
-    bottom: 0;
-    transition: all 0.9s ease;
-    -webkit-transition: all .9s ease;
-
-}
-
-/*  // Menu - No Hover on Mobile \\  */
-
-@media (max-width: 800px) {
-    .menu li:hover {
-        letter-spacing: 2px;
-    }
-}
-
-@media (max-width: 800px) {
-    .menu .current:after {
-        width: 20px;
-        left: calc(50% - 10px)
-    }
-}
-
-@media (max-width: 800px) {
-    .menu .current:hover::after {
-        width: 20px;
-        left: calc(50% - 10px)
-    }
-}
-
-
-@media (max-width: 800px) {
-    .menu li:hover::after {
-        width: 0%;
-    }
 }
 
 
@@ -3008,11 +2932,6 @@ h2:hover::after {
     left: 10px;
 
 }
-
-
-
-
-
 
 .slick-prev.slick-disabled:before,
 .slick-next.slick-disabled:before {

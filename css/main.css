@@ -825,38 +825,12 @@ button:hover:before {
 /* ------- NAVIGATION ------ */
 /* --------------------------*/
 /* line 848, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
-#nav {
-  background-color: white;
-  padding: 20 0;
-  margin: 0;
-  width: 100%;
-  height: 50px;
-  position: fixed;
-  top: -100px;
-  z-index: 3;
-  -webkit-transition: all .6s ease;
-  transition: all .6s ease;
-  box-shadow: 0px -10px 20px black;
+.main-nav {
+  /*  // Icon Menu \\  */
 }
 
-@media (max-width: 800px) {
-  /* line 848, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
-  #nav {
-    padding: 10 0;
-    height: 40px;
-  }
-}
-
-/* line 866, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
-#nav.navshow {
-  top: 0;
-  z-index: 3;
-}
-
-/* /---------------------/ */
-/*  // Icon Menu \\  */
-/* line 877, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
-#iconmenu {
+/* line 850, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+.main-nav #iconmenu {
   float: left;
   padding: 0;
   width: 40px;
@@ -873,19 +847,19 @@ button:hover:before {
 }
 
 @media (max-width: 800px) {
-  /* line 877, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
-  #iconmenu {
+  /* line 850, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  .main-nav #iconmenu {
     margin: 10px;
   }
 }
 
-/* line 893, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
-#iconmenu.iconopen, #iconmenu.iconclose {
+/* line 866, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+.main-nav #iconmenu.iconopen, .main-nav #iconmenu.iconclose {
   position: relative;
 }
 
-/* line 896, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
-#iconmenu.iconopen span, #iconmenu.iconclose span {
+/* line 869, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+.main-nav #iconmenu.iconopen span, .main-nav #iconmenu.iconclose span {
   display: flex;
   width: 20px;
   height: 2px;
@@ -897,8 +871,8 @@ button:hover:before {
   background-color: #698fb7;
 }
 
-/* line 910, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
-#iconmenu.iconopen {
+/* line 883, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+.main-nav #iconmenu.iconopen {
   background-color: #f9f9f9;
   background-size: 25px 25px;
   background-repeat: no-repeat;
@@ -906,42 +880,42 @@ button:hover:before {
   z-index: 4;
 }
 
-/* line 919, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
-#iconmenu.iconopen span:nth-child(1) {
+/* line 892, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+.main-nav #iconmenu.iconopen span:nth-child(1) {
   top: calc(35% - 1px);
 }
 
-/* line 923, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
-#iconmenu.iconopen span:nth-child(2) {
+/* line 896, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+.main-nav #iconmenu.iconopen span:nth-child(2) {
   top: calc(50% - 1px);
 }
 
-/* line 927, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
-#iconmenu.iconopen span:nth-child(3) {
+/* line 900, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+.main-nav #iconmenu.iconopen span:nth-child(3) {
   top: calc(65% - 1px);
 }
 
-/* line 934, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
-#iconmenu.iconclose {
+/* line 907, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+.main-nav #iconmenu.iconclose {
   background-color: white;
   transition: all .4s ease;
   transform: rotate(0deg);
   z-index: 5;
 }
 
-/* line 940, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
-#iconmenu.iconclose span {
+/* line 913, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+.main-nav #iconmenu.iconclose span {
   background-color: #ccc;
 }
 
-/* line 943, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
-#iconmenu.iconclose span:nth-child(1) {
+/* line 916, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+.main-nav #iconmenu.iconclose span:nth-child(1) {
   transform: rotate(45deg);
   top: calc(50% - 1px);
 }
 
-/* line 948, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
-#iconmenu.iconclose span:nth-child(2) {
+/* line 921, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+.main-nav #iconmenu.iconclose span:nth-child(2) {
   transform: rotate(0deg);
   top: calc(50% - 1px);
   width: 0px;
@@ -950,110 +924,132 @@ button:hover:before {
   transition: all .3s ease;
 }
 
-/* line 957, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
-#iconmenu.iconclose span:nth-child(3) {
+/* line 930, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+.main-nav #iconmenu.iconclose span:nth-child(3) {
   transform: rotate(-45deg);
   top: calc(50% - 1px);
 }
 
-/* line 967, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
-#iconmenu:hover.iconopen span {
-  opacity: 1;
-  -webkit-transition: all .3s ease;
-  transition: all .3s ease;
-}
-
-/* line 972, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
-#iconmenu:hover.iconopen span:nth-child(1) {
-  top: calc(50% - 1px);
-}
-
-/* line 976, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
-#iconmenu:hover.iconopen span:nth-child(2) {
-  transform: rotate(90deg);
-}
-
-/* line 980, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
-#iconmenu:hover.iconopen span:nth-child(3) {
-  top: calc(50% - 1px);
-}
-
-/* line 987, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
-#iconmenu:hover.iconclose {
-  background-color: white;
-}
-
-/* line 989, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
-#iconmenu:hover.iconclose span {
-  opacity: 1;
-  background-color: #848484;
-}
-
-/*  // Icon - No Hover on Mobile \\  */
 @media (max-width: 800px) {
-  /* line 1005, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
-  .iconclose:hover span {
-    background-color: #ccc;
-  }
-}
-
-@media (max-width: 800px) {
-  /* line 1012, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
-  #iconmenu.iconopen:hover {
+  /* line 939, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  .main-nav #iconmenu:hover.iconopen {
     background-color: #f9f9f9;
   }
 }
 
-@media (max-width: 800px) {
-  /* line 1019, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
-  .iconopen:hover span {
-    background-color: #698fb7;
-  }
+/* line 943, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+.main-nav #iconmenu:hover.iconopen span {
+  opacity: 1;
+  transition: all .3s ease;
+}
+
+/* line 947, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+.main-nav #iconmenu:hover.iconopen span:nth-child(1) {
+  top: calc(50% - 1px);
 }
 
 @media (max-width: 800px) {
-  /* line 1025, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
-  .iconopen:hover span:nth-child(1) {
+  /* line 947, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  .main-nav #iconmenu:hover.iconopen span:nth-child(1) {
     top: calc(35% - 1px);
   }
 }
 
+/* line 954, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+.main-nav #iconmenu:hover.iconopen span:nth-child(2) {
+  transform: rotate(90deg);
+}
+
 @media (max-width: 800px) {
-  /* line 1032, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
-  .iconopen:hover span:nth-child(2) {
+  /* line 954, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  .main-nav #iconmenu:hover.iconopen span:nth-child(2) {
     transform: rotate(0deg);
   }
 }
 
+/* line 961, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+.main-nav #iconmenu:hover.iconopen span:nth-child(3) {
+  top: calc(50% - 1px);
+}
+
 @media (max-width: 800px) {
-  /* line 1039, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
-  .iconopen:hover span:nth-child(3) {
+  /* line 961, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  .main-nav #iconmenu:hover.iconopen span:nth-child(3) {
     top: calc(65% - 1px);
   }
 }
 
-/* /---------------------/ */
-/*  // Menu List \\  */
-/* line 1049, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
-ul {
+@media (max-width: 800px) {
+  /* line 943, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  .main-nav #iconmenu:hover.iconopen span {
+    background-color: #698fb7;
+  }
+}
+
+/* line 974, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+.main-nav #iconmenu:hover.iconclose {
+  background-color: white;
+}
+
+/* line 976, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+.main-nav #iconmenu:hover.iconclose span {
+  opacity: 1;
+  background-color: #848484;
+}
+
+@media (max-width: 800px) {
+  /* line 976, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  .main-nav #iconmenu:hover.iconclose span {
+    background-color: #ccc;
+  }
+}
+
+/* line 988, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+.main-nav #nav {
+  background-color: white;
+  padding: 20 0;
+  margin: 0;
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  top: -100px;
+  z-index: 3;
+  transition: all .6s ease;
+  box-shadow: 0px -10px 20px black;
+  /*  // Menu List \\  */
+}
+
+@media (max-width: 800px) {
+  /* line 988, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  .main-nav #nav {
+    padding: 10 0;
+    height: 40px;
+  }
+}
+
+/* line 1005, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+.main-nav #nav.navshow {
+  top: 0;
+  z-index: 3;
+}
+
+/* line 1011, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+.main-nav #nav .menu {
   margin: 0;
   text-align: center;
   padding: 0;
 }
 
-/* line 1056, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
-.menu li {
+/* line 1015, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+.main-nav #nav .menu li {
   color: #848484;
   display: inline-block;
-  float: left;
   list-style: none;
-  float: none;
   width: 10%;
   margin: 0 10;
   padding: 15px 0;
   letter-spacing: 4px;
   transition: all 0.4s ease;
-  -webkit-transition: all .4s ease;
   position: relative;
   font-family: 'Source Code Pro', monospace;
   font-weight: 400;
@@ -1061,8 +1057,8 @@ ul {
 }
 
 @media (max-width: 800px) {
-  /* line 1076, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
-  .menu li {
+  /* line 1015, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  .main-nav #nav .menu li {
     font-size: 13px;
     margin: 0 5;
     width: 20%;
@@ -1071,14 +1067,8 @@ ul {
   }
 }
 
-/* line 1086, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
-.menu li:hover {
-  color: #698fb7;
-  text-align: center;
-}
-
-/* line 1092, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
-.menu li:after {
+/* line 1037, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+.main-nav #nav .menu li:after {
   content: '';
   width: 0%;
   height: 2px;
@@ -1089,66 +1079,52 @@ ul {
   bottom: 0;
   left: 50%;
   transition: all 0.4s ease;
-  -webkit-transition: all .4s ease;
 }
 
-/* line 1107, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
-.menu li:hover::after {
-  content: '';
+/* line 1052, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+.main-nav #nav .menu li:hover {
+  color: #698fb7;
+}
+
+@media (max-width: 800px) {
+  /* line 1052, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  .main-nav #nav .menu li:hover {
+    letter-spacing: 2px;
+    color: #848484;
+  }
+}
+
+/* line 1060, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+.main-nav #nav .menu li:hover:after {
   width: 30px;
   left: calc(50% - 15px);
-  margin: 0 auto;
 }
 
-/* line 1115, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
-.menu .current {
+@media (max-width: 800px) {
+  /* line 1060, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  .main-nav #nav .menu li:hover:after {
+    width: 0px;
+  }
+}
+
+/* line 1069, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+.main-nav #nav .menu li.current {
   color: #698fb7;
   text-align: center;
 }
 
-/* line 1121, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
-.menu .current:after {
-  content: '';
+/* line 1072, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+.main-nav #nav .menu li.current:after {
   width: 30px;
   left: calc(50% - 15px);
-  height: 2px;
-  border-radius: 20px;
   background-color: #698fb7;
-  position: absolute;
-  margin: 0 auto;
-  bottom: 0;
-  transition: all 0.9s ease;
-  -webkit-transition: all .9s ease;
-}
-
-/*  // Menu - No Hover on Mobile \\  */
-@media (max-width: 800px) {
-  /* line 1139, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
-  .menu li:hover {
-    letter-spacing: 2px;
-  }
 }
 
 @media (max-width: 800px) {
-  /* line 1145, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
-  .menu .current:after {
+  /* line 1072, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  .main-nav #nav .menu li.current:after {
     width: 20px;
     left: calc(50% - 10px);
-  }
-}
-
-@media (max-width: 800px) {
-  /* line 1152, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
-  .menu .current:hover::after {
-    width: 20px;
-    left: calc(50% - 10px);
-  }
-}
-
-@media (max-width: 800px) {
-  /* line 1160, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
-  .menu li:hover::after {
-    width: 0%;
   }
 }
 
@@ -1156,7 +1132,7 @@ ul {
 /* -------- CONTENT -------- */
 /* --------------------------*/
 /*  // Main Title \\  */
-/* line 1175, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1099, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 h2 {
   font-size: 35px;
   color: #848484;
@@ -1172,13 +1148,13 @@ h2 {
   transition: all .5s ease;
 }
 
-/* line 1191, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1115, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 h2.white {
   color: #fff;
 }
 
 @media (max-width: 800px) {
-  /* line 1197, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 1121, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   h2 {
     font-size: 25px;
     line-height: 35px;
@@ -1186,7 +1162,7 @@ h2.white {
 }
 
 /*  // Main Title Line \\  */
-/* line 1206, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1130, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 h2:after {
   background-color: #698fb7;
   width: 80px;
@@ -1201,13 +1177,13 @@ h2:after {
   transition: all .5s ease;
 }
 
-/* line 1221, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1145, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 h2:hover::after {
   width: 100px;
 }
 
 @media (max-width: 800px) {
-  /* line 1227, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 1151, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   h2:after,
   h2:hover::after {
     width: 50px;
@@ -1218,14 +1194,14 @@ h2:hover::after {
 /* ----- IMAGES WORKS ------ */
 /* --------------------------*/
 /*  // Image Grid \\  */
-/* line 1243, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1167, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .image-container {
   display: grid;
   grid-template-columns: 50% 50%;
 }
 
 @media (max-width: 800px) {
-  /* line 1250, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 1174, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .image-container {
     grid-template-columns: 100%;
   }
@@ -1233,7 +1209,7 @@ h2:hover::after {
 
 /*  // IE CODE \\  */
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  /* line 1259, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 1183, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .image-container {
     display: flex;
     flex-direction: column;
@@ -1242,7 +1218,7 @@ h2:hover::after {
 
 /* /---------------------/ */
 /*  // Images \\  */
-/* line 1273, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1197, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .image {
   position: relative;
   width: calc(100% - 20px);
@@ -1259,7 +1235,7 @@ h2:hover::after {
 }
 
 @media (max-width: 800px) {
-  /* line 1290, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 1214, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .image {
     width: 100%;
     padding-bottom: 100%;
@@ -1267,13 +1243,13 @@ h2:hover::after {
 }
 
 /*  // Image Big Horiontal \\  */
-/* line 1300, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1224, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .image.big {
   padding-bottom: 50%;
 }
 
 @media (max-width: 800px) {
-  /* line 1306, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 1230, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .image.big {
     width: 100%;
     padding-bottom: 100%;
@@ -1281,12 +1257,12 @@ h2:hover::after {
 }
 
 /*  // Image Effects \\  */
-/* line 1315, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1239, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .image:hover {
   cursor: pointer;
 }
 
-/* line 1320, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1244, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .image:before {
   content: '';
   opacity: 0.1;
@@ -1298,7 +1274,7 @@ h2:hover::after {
   position: absolute;
 }
 
-/* line 1335, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1259, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .image:hover::before {
   width: 100%;
   height: 100%;
@@ -1306,7 +1282,7 @@ h2:hover::after {
   background-color: transparent;
 }
 
-/* line 1347, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1271, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .image:after {
   position: absolute;
   content: '';
@@ -1322,7 +1298,7 @@ h2:hover::after {
   z-index: 1;
 }
 
-/* line 1366, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1290, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .image:hover::after {
   content: '';
   opacity: 0.9;
@@ -1338,7 +1314,7 @@ h2:hover::after {
 
 /* Images - No hover on mobile */
 @media (max-width: 800px) {
-  /* line 1386, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 1310, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .image:hover::after {
     display: none;
     opacity: 0;
@@ -1346,7 +1322,7 @@ h2:hover::after {
 }
 
 @media (max-width: 800px) {
-  /* line 1393, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 1317, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .image:hover::before {
     opacity: 0.1;
     background-color: #000;
@@ -1355,13 +1331,13 @@ h2:hover::after {
 
 /* /---------------------/ */
 /*  // On Going Works \\  */
-/* line 1405, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1329, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .image.ongoing {
   padding-bottom: 40%;
   background-color: white;
 }
 
-/* line 1411, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1335, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .image.ongoing:before {
   position: absolute;
   width: 100%;
@@ -1377,7 +1353,7 @@ h2:hover::after {
   z-index: 1;
 }
 
-/* line 1430, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1354, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .image.ongoing:after {
   position: absolute;
   content: '';
@@ -1392,7 +1368,7 @@ h2:hover::after {
   top: 30px;
 }
 
-/* line 1448, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1372, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .image.ongoing:hover::after {
   opacity: 0.9;
   color: white;
@@ -1404,7 +1380,7 @@ h2:hover::after {
   top: 0px;
 }
 
-/* line 1463, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1387, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .image.ongoing span {
   color: white;
   font-family: 'Source Code Pro', monospace;
@@ -1422,13 +1398,13 @@ h2:hover::after {
   -webkit-transition: all .4s ease-in-out;
 }
 
-/* line 1481, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1405, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .image.ongoing:hover span {
   opacity: 0;
   top: 35%;
 }
 
-/* line 1487, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1411, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .image.ongoing span:before {
   content: '';
   width: 220px;
@@ -1443,14 +1419,14 @@ h2:hover::after {
   -webkit-transition: all .6s ease-in-out;
 }
 
-/* line 1502, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1426, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .image.ongoing:hover span:before {
   width: 0;
 }
 
 /* On going works - No hover on mobile */
 @media (max-width: 800px) {
-  /* line 1510, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 1434, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .image.ongoing:hover::after {
     display: none;
     opacity: 0;
@@ -1458,7 +1434,7 @@ h2:hover::after {
 }
 
 @media (max-width: 800px) {
-  /* line 1518, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 1442, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .image.ongoing:hover span {
     width: 100%;
     top: 45%;
@@ -1467,7 +1443,7 @@ h2:hover::after {
 }
 
 @media (max-width: 800px) {
-  /* line 1527, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 1451, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .image.ongoing span:hover {
     width: 100%;
     top: 45%;
@@ -1475,7 +1451,7 @@ h2:hover::after {
 }
 
 @media (max-width: 800px) {
-  /* line 1535, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 1459, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .image.ongoing:hover span:before {
     width: 220px;
     opacity: 1;
@@ -1487,7 +1463,7 @@ h2:hover::after {
 /* ----- OVERLAY WORKS ----- */
 /* --------------------------*/
 /*  // Image Overlay Text \\  */
-/* line 1552, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1476, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .overlay-title {
   width: calc(100% - 40px);
   padding: 0 20px;
@@ -1505,13 +1481,13 @@ h2:hover::after {
 }
 
 @media (max-width: 1023px) {
-  /* line 1570, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 1494, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .overlay-title {
     font-size: 16px;
   }
 }
 
-/* line 1576, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1500, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .image:hover .overlay-title {
   display: block;
   opacity: 1;
@@ -1524,13 +1500,13 @@ h2:hover::after {
 }
 
 @media (max-width: 800px) {
-  /* line 1589, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 1513, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .image:hover .overlay-title {
     display: none;
   }
 }
 
-/* line 1595, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1519, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .overlay-text {
   width: calc(100% - 40px);
   padding: 0 20px;
@@ -1547,12 +1523,12 @@ h2:hover::after {
   font-weight: 300;
 }
 
-/* line 1612, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1536, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .overlay-text span {
   opacity: 0.4;
 }
 
-/* line 1618, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1542, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .image:hover .overlay-text {
   display: block;
   opacity: 0.7;
@@ -1565,7 +1541,7 @@ h2:hover::after {
 }
 
 @media (max-width: 800px) {
-  /* line 1631, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 1555, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .image:hover .overlay-text {
     display: none;
   }
@@ -1575,7 +1551,7 @@ h2:hover::after {
 /* ----- ICON SECTION ------ */
 /* --------------------------*/
 /*  // Icon Section \\  */
-/* line 1646, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1570, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .row-icons {
   display: grid;
   grid-template-columns: 16% 16% 16% 16% 16% 16%;
@@ -1590,20 +1566,20 @@ h2:hover::after {
 }
 
 @media (max-width: 1023px) {
-  /* line 1646, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 1570, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .row-icons {
     grid-template-columns: 33% 33% 33%;
   }
 }
 
 @media (max-width: 800px) {
-  /* line 1646, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 1570, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .row-icons {
     grid-template-columns: 50% 50%;
   }
 }
 
-/* line 1660, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1584, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .row-icons .icon-section {
   width: 120px;
   text-align: center;
@@ -1613,7 +1589,7 @@ h2:hover::after {
   /*  // Content Icons \\  */
 }
 
-/* line 1667, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1591, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .row-icons .icon-section:before {
   background-color: white;
   position: absolute;
@@ -1625,13 +1601,13 @@ h2:hover::after {
 }
 
 @media (max-width: 800px) {
-  /* line 1667, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 1591, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .row-icons .icon-section:before {
     background-color: #698fb7;
   }
 }
 
-/* line 1680, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1604, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .row-icons .icon-section:after {
   background-color: #698fb7;
   position: absolute;
@@ -1641,7 +1617,7 @@ h2:hover::after {
   z-index: 2;
 }
 
-/* line 1690, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1614, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .row-icons .icon-section p {
   font-size: 12px;
   line-height: 20px;
@@ -1651,13 +1627,13 @@ h2:hover::after {
   font-weight: 400;
 }
 
-/* line 1701, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1625, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .row-icons .icon-section:hover p {
   color: #698fb7;
 }
 
 @media (max-width: 800px) {
-  /* line 1708, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 1632, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .row-icons .icon-section .icon-section p,
   .row-icons .icon-section .icon-section:hover p {
     font-size: 11px;
@@ -1667,7 +1643,7 @@ h2:hover::after {
   }
 }
 
-/* line 1720, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1644, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .row-icons .icon-section:nth-child(1):before {
   width: 13px;
   height: 12px;
@@ -1675,7 +1651,7 @@ h2:hover::after {
   left: 37px;
 }
 
-/* line 1727, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1651, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .row-icons .icon-section:nth-child(1):after {
   width: 0px;
   height: 12px;
@@ -1683,12 +1659,12 @@ h2:hover::after {
   left: 37px;
 }
 
-/* line 1735, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1659, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .row-icons .icon-section:nth-child(1):hover:after {
   width: 13px;
 }
 
-/* line 1744, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1668, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .row-icons .icon-section:nth-child(2):before {
   width: 52px;
   height: 9px;
@@ -1696,7 +1672,7 @@ h2:hover::after {
   left: 25px;
 }
 
-/* line 1750, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1674, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .row-icons .icon-section:nth-child(2):after {
   width: 0px;
   height: 9px;
@@ -1704,12 +1680,12 @@ h2:hover::after {
   left: 25px;
 }
 
-/* line 1757, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1681, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .row-icons .icon-section:nth-child(2):hover:after {
   width: 52px;
 }
 
-/* line 1765, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1689, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .row-icons .icon-section:nth-child(3):before {
   width: 17px;
   height: 27px;
@@ -1717,7 +1693,7 @@ h2:hover::after {
   left: 66px;
 }
 
-/* line 1772, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1696, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .row-icons .icon-section:nth-child(3):after {
   width: 17px;
   height: 0px;
@@ -1725,12 +1701,12 @@ h2:hover::after {
   left: 66px;
 }
 
-/* line 1780, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1704, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .row-icons .icon-section:nth-child(3):hover:after {
   height: 27px;
 }
 
-/* line 1788, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1712, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .row-icons .icon-section:nth-child(4):before {
   width: 17px;
   height: 17px;
@@ -1739,7 +1715,7 @@ h2:hover::after {
   z-index: -2;
 }
 
-/* line 1796, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1720, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .row-icons .icon-section:nth-child(4):after {
   width: 17px;
   height: 0px;
@@ -1748,12 +1724,12 @@ h2:hover::after {
   z-index: -1;
 }
 
-/* line 1805, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1729, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .row-icons .icon-section:nth-child(4):hover:after {
   height: 17px;
 }
 
-/* line 1813, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1737, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .row-icons .icon-section:nth-child(5):before {
   width: 21px;
   height: 19px;
@@ -1761,7 +1737,7 @@ h2:hover::after {
   left: 22px;
 }
 
-/* line 1820, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1744, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .row-icons .icon-section:nth-child(5):after {
   width: 0px;
   height: 19px;
@@ -1769,12 +1745,12 @@ h2:hover::after {
   left: 22px;
 }
 
-/* line 1829, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1753, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .row-icons .icon-section:nth-child(5):hover:after {
   width: 21px;
 }
 
-/* line 1837, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1761, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .row-icons .icon-section:nth-child(6):before {
   width: 12px;
   height: 12px;
@@ -1783,7 +1759,7 @@ h2:hover::after {
   border-radius: 50px;
 }
 
-/* line 1845, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1769, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .row-icons .icon-section:nth-child(6):after {
   width: 0px;
   height: 0px;
@@ -1792,7 +1768,7 @@ h2:hover::after {
   border-radius: 50px;
 }
 
-/* line 1854, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1778, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .row-icons .icon-section:nth-child(6):hover:after {
   width: 12px;
   height: 12px;
@@ -1804,7 +1780,7 @@ h2:hover::after {
 /* ---- SOCIAL SECTION ----- */
 /* --------------------------*/
 /*  // Contacts \\  */
-/* line 1873, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1797, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .contacts {
   display: flex;
   justify-content: space-around;
@@ -1814,7 +1790,7 @@ h2:hover::after {
   /* social item*/
 }
 
-/* line 1881, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1805, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .contacts .social {
   background-color: #4a4a4a;
   padding: 100 0;
@@ -1831,7 +1807,7 @@ h2:hover::after {
   /*  // Background Icons \\  */
 }
 
-/* line 1895, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1819, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .contacts .social .social-title {
   color: #ccc;
   letter-spacing: 10px;
@@ -1847,7 +1823,7 @@ h2:hover::after {
 }
 
 @media (max-width: 800px) {
-  /* line 1895, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 1819, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .contacts .social .social-title {
     top: 70%;
     opacity: 1;
@@ -1857,7 +1833,7 @@ h2:hover::after {
   }
 }
 
-/* line 1917, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1841, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .contacts .social .social-link {
   font-family: 'Source Code Pro', monospace;
   font-weight: 400;
@@ -1871,13 +1847,13 @@ h2:hover::after {
 }
 
 @media (max-width: 800px) {
-  /* line 1917, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 1841, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .contacts .social .social-link {
     display: none;
   }
 }
 
-/* line 1933, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1857, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .contacts .social span {
   width: 60px;
   height: 60px;
@@ -1891,7 +1867,7 @@ h2:hover::after {
 }
 
 @media (max-width: 800px) {
-  /* line 1933, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 1857, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .contacts .social span {
     width: 40px;
     height: 40px;
@@ -1900,27 +1876,27 @@ h2:hover::after {
   }
 }
 
-/* line 1954, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1878, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .contacts .social:nth-child(1) span {
   background-image: url("../images/icons/icons_mail.svg");
 }
 
-/* line 1958, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1882, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .contacts .social:nth-child(2) {
   background-color: #525252;
 }
 
-/* line 1960, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1884, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .contacts .social:nth-child(2) span {
   background-image: url("../images/icons/icons_behance.svg");
 }
 
-/* line 1965, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1889, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .contacts .social:nth-child(3) span {
   background-image: url("../images/icons/icons_linkedin.svg");
 }
 
-/* line 1970, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1894, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .contacts .social:before {
   content: '';
   position: absolute;
@@ -1933,7 +1909,7 @@ h2:hover::after {
   color: #ccc;
 }
 
-/* line 1981, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1905, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .contacts .social:after {
   content: '';
   width: 0%;
@@ -1946,44 +1922,44 @@ h2:hover::after {
 }
 
 @media (max-width: 800px) {
-  /* line 1881, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 1805, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .contacts .social {
     padding: 50 0;
   }
 }
 
-/* line 1996, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1920, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .contacts .social:hover {
   color: #698fb7;
   letter-spacing: 6px;
   text-align: center;
 }
 
-/* line 2000, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1924, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .contacts .social:hover:before {
   width: 100%;
 }
 
 @media (max-width: 800px) {
-  /* line 2000, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 1924, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .contacts .social:hover:before {
     width: 0;
   }
 }
 
-/* line 2006, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1930, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .contacts .social:hover:after {
   width: 100%;
 }
 
 @media (max-width: 800px) {
-  /* line 2006, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 1930, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .contacts .social:hover:after {
     width: 0;
   }
 }
 
-/* line 2012, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1936, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .contacts .social:hover .social-title {
   opacity: 1;
   top: 40%;
@@ -1991,7 +1967,7 @@ h2:hover::after {
 }
 
 @media (max-width: 800px) {
-  /* line 2012, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 1936, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .contacts .social:hover .social-title {
     top: 70%;
     opacity: 1;
@@ -2001,7 +1977,7 @@ h2:hover::after {
   }
 }
 
-/* line 2025, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1949, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .contacts .social:hover .social-link {
   opacity: 0.2;
   letter-spacing: 1;
@@ -2009,13 +1985,13 @@ h2:hover::after {
 }
 
 @media (max-width: 800px) {
-  /* line 2025, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 1949, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .contacts .social:hover .social-link {
     display: none;
   }
 }
 
-/* line 2034, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1958, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .contacts .social:hover span {
   width: 50%;
   height: 50%;
@@ -2023,7 +1999,7 @@ h2:hover::after {
 }
 
 @media (max-width: 800px) {
-  /* line 2034, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 1958, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .contacts .social:hover span {
     width: 40px;
     height: 40px;
@@ -2037,7 +2013,7 @@ h2:hover::after {
 /* ----- PAGE SECTION ------ */
 /* --------------------------*/
 /*  // Header Page \\  */
-/* line 2059, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1983, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .page-header {
   height: 200px;
   background-color: #f0f0f0;
@@ -2045,19 +2021,19 @@ h2:hover::after {
 }
 
 @media (max-width: 640px) {
-  /* line 2067, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 1991, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .page-header {
     height: 150px;
   }
 }
 
-/* line 2074, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 1998, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .page-header.works {
   height: 90px;
 }
 
 /*  // Page Title \\  */
-/* line 2080, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 2004, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .page-title {
   font-size: 80px;
   font-family: 'Open Sans', sans-serif;
@@ -2072,7 +2048,7 @@ h2:hover::after {
 }
 
 @media (max-width: 640px) {
-  /* line 2095, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 2019, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .page-title {
     font-size: 50px;
     margin-top: 100px;
@@ -2083,7 +2059,7 @@ h2:hover::after {
 /* --------- about --------- */
 /* --------------------------*/
 /*  // Bio \\  */
-/* line 2111, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 2035, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .bio-content {
   max-width: 1024px;
   display: grid;
@@ -2092,7 +2068,7 @@ h2:hover::after {
 }
 
 @media (max-width: 800px) {
-  /* line 2120, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 2044, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .bio-content {
     grid-template-columns: 100%;
   }
@@ -2100,7 +2076,7 @@ h2:hover::after {
 
 /*  // IE CODE \\  */
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  /* line 2130, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 2054, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .bio-content {
     display: flex;
     justify-content: space-around;
@@ -2109,7 +2085,7 @@ h2:hover::after {
 
 /*  // IE CODE \\  */
 @media all and (-ms-high-contrast: none) and (max-width: 800px), (-ms-high-contrast: active) and (max-width: 800px) {
-  /* line 2142, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 2066, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .bio-content {
     display: flex;
     justify-content: space-around;
@@ -2117,7 +2093,7 @@ h2:hover::after {
   }
 }
 
-/* line 2151, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 2075, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .bio-content .bio {
   font-size: 15px;
   position: relative;
@@ -2127,20 +2103,20 @@ h2:hover::after {
 }
 
 @media (max-width: 800px) {
-  /* line 2160, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 2084, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .bio-content .bio {
     margin-left: 0px;
   }
 }
 
 @media (max-width: 640px) {
-  /* line 2167, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 2091, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .bio {
     font-size: 13px;
   }
 }
 
-/* line 2173, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 2097, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .bio h2 {
   font-size: 35px;
   color: #848484;
@@ -2157,7 +2133,7 @@ h2:hover::after {
 }
 
 @media (max-width: 800px) {
-  /* line 2190, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 2114, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .bio h2 {
     margin: 0px 0px 40px 0px;
     font-size: 25px;
@@ -2165,7 +2141,7 @@ h2:hover::after {
   }
 }
 
-/* line 2199, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 2123, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .bio h2:after {
   background-color: #698fb7;
   width: 80px;
@@ -2181,26 +2157,26 @@ h2:hover::after {
 }
 
 @media (max-width: 800px) {
-  /* line 2215, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 2139, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .bio h2:after {
     width: 50px;
   }
 }
 
-/* line 2221, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 2145, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .bio h2:hover::after {
   width: 100px;
 }
 
 @media (max-width: 800px) {
-  /* line 2227, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 2151, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .bio h2:hover::after {
     width: 50px;
   }
 }
 
 /*  // Image Bio \\  */
-/* line 2235, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 2159, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .image-about {
   width: 100%;
   height: 500px;
@@ -2215,21 +2191,21 @@ h2:hover::after {
 }
 
 @media (max-width: 1439px) {
-  /* line 2250, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 2174, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .image-about {
     height: 480px;
   }
 }
 
 @media (max-width: 1023px) {
-  /* line 2257, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 2181, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .image-about {
     height: 380px;
   }
 }
 
 @media (max-width: 800px) {
-  /* line 2264, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 2188, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .image-about {
     height: 250px;
     margin-bottom: 40px;
@@ -2237,7 +2213,7 @@ h2:hover::after {
 }
 
 /*  // Skills Tab Section \\  */
-/* line 2272, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 2196, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .tab {
   overflow: hidden;
   display: grid;
@@ -2249,7 +2225,7 @@ h2:hover::after {
 }
 
 @media (max-width: 800px) {
-  /* line 2284, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 2208, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .tab {
     margin-bottom: 50px;
   }
@@ -2257,14 +2233,14 @@ h2:hover::after {
 
 /*  // IE CODE \\  */
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  /* line 2293, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 2217, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .tab {
     display: flex;
     justify-content: space-around;
   }
 }
 
-/* line 2300, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 2224, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .tab span {
   font-weight: 300;
   letter-spacing: 6px;
@@ -2284,7 +2260,7 @@ h2:hover::after {
 }
 
 @media (max-width: 800px) {
-  /* line 2320, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 2244, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .tab span {
     font-size: 15px;
     letter-spacing: 4px;
@@ -2292,14 +2268,14 @@ h2:hover::after {
   }
 }
 
-/* line 2328, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 2252, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .tab span:hover {
   text-align: center;
   margin: 0 auto;
   opacity: 1;
 }
 
-/* line 2335, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 2259, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .tab span:after {
   content: '';
   width: 0%;
@@ -2313,7 +2289,7 @@ h2:hover::after {
   -webkit-transition: all .6s ease;
 }
 
-/* line 2349, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 2273, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .tab span:hover::after {
   content: '';
   width: 40px;
@@ -2322,12 +2298,12 @@ h2:hover::after {
   opacity: 1;
 }
 
-/* line 2358, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 2282, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .tab span.active {
   opacity: 1;
 }
 
-/* line 2363, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 2287, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .tab span.active:after {
   content: '';
   width: 40px;
@@ -2344,7 +2320,7 @@ h2:hover::after {
 }
 
 /*  // Tab Content \\  */
-/* line 2380, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 2304, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .tabcontent {
   margin: 0 auto;
   display: none;
@@ -2354,7 +2330,7 @@ h2:hover::after {
   -webkit-transition: all .9s ease;
 }
 
-/* line 2392, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 2316, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .skills-section {
   display: grid;
   grid-template-columns: 16% 16% 16% 16% 16% 16%;
@@ -2363,14 +2339,14 @@ h2:hover::after {
 }
 
 @media (max-width: 1439px) {
-  /* line 2401, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 2325, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .skills-section {
     grid-template-columns: 33% 33% 33%;
   }
 }
 
 @media (max-width: 640px) {
-  /* line 2409, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 2333, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .skills-section {
     grid-template-columns: 100%;
   }
@@ -2378,14 +2354,14 @@ h2:hover::after {
 
 /*  // IE CODE \\  */
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  /* line 2418, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 2342, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .skills-section {
     display: flex;
     justify-content: space-around;
   }
 }
 
-/* line 2425, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 2349, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .skills-section p {
   font-size: 14px;
   text-align: center;
@@ -2404,19 +2380,19 @@ h2:hover::after {
 }
 
 @media (max-width: 640px) {
-  /* line 2444, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 2368, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .skills-section p {
     width: 100%;
   }
 }
 
-/* line 2450, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 2374, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 #Skills {
   display: block;
 }
 
 /*  // Timeline \\  */
-/* line 2457, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 2381, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .timeline-section {
   margin: 0 auto;
   text-align: center;
@@ -2428,13 +2404,13 @@ h2:hover::after {
   column-gap: 60px;
 }
 
-/* line 2469, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 2393, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .timeline-section:last-child {
   margin-bottom: 0;
 }
 
 @media (max-width: 800px) {
-  /* line 2476, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 2400, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .timeline-section {
     grid-template-columns: 100%;
     padding: 0 10;
@@ -2444,7 +2420,7 @@ h2:hover::after {
 }
 
 @media (max-width: 640px) {
-  /* line 2485, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 2409, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .timeline-section {
     margin: 0;
     margin-bottom: 60px;
@@ -2453,14 +2429,14 @@ h2:hover::after {
 
 /*  // IE CODE \\  */
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  /* line 2495, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 2419, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .timeline-section {
     display: flex;
     justify-content: space-around;
   }
 }
 
-/* line 2501, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 2425, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .timeline {
   margin-bottom: 50px;
   text-align: left;
@@ -2469,13 +2445,13 @@ h2:hover::after {
 }
 
 @media (max-width: 800px) {
-  /* line 2511, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 2435, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .timeline:last-child {
     margin-bottom: 0px;
   }
 }
 
-/* line 2519, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 2443, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .timeline:after {
   background-color: #f6f6f6;
   position: absolute;
@@ -2488,7 +2464,7 @@ h2:hover::after {
   display: block;
 }
 
-/* line 2533, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 2457, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .timeline label {
   color: #698fb7;
   font-size: 14px;
@@ -2502,14 +2478,14 @@ h2:hover::after {
 }
 
 @media (max-width: 800px) {
-  /* line 2547, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 2471, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .timeline label {
     padding: 0 0 10 0;
     font-size: 14px;
   }
 }
 
-/* line 2555, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 2479, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .timeline label:after {
   position: absolute;
   content: '';
@@ -2523,7 +2499,7 @@ h2:hover::after {
   -webkit-transition: all .4s ease;
 }
 
-/* line 2569, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 2493, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .timeline p {
   font-size: 14px;
   padding: 0 15 15 0;
@@ -2531,14 +2507,14 @@ h2:hover::after {
 }
 
 @media (max-width: 800px) {
-  /* line 2577, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 2501, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .timeline p {
     padding: 0 15 10 0;
     font-size: 13px;
   }
 }
 
-/* line 2585, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 2509, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .timeline p strong {
   letter-spacing: 1px;
   font-weight: 600;
@@ -2546,7 +2522,7 @@ h2:hover::after {
   z-index: 1;
 }
 
-/* line 2594, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 2518, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .timeline p em {
   color: #ccc;
   text-decoration: none;
@@ -2556,7 +2532,7 @@ h2:hover::after {
 /* ------- WORKS PAGE ------ */
 /* --------------------------*/
 /*  // Work Title \\  */
-/* line 2608, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 2532, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .second-title {
   font-size: 20px;
   color: #848484;
@@ -2573,7 +2549,7 @@ h2:hover::after {
 }
 
 @media (max-width: 640px) {
-  /* line 2625, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 2549, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .second-title {
     font-size: 15px;
     line-height: 25px;
@@ -2581,7 +2557,7 @@ h2:hover::after {
 }
 
 /*  // Work title Line \\  */
-/* line 2634, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 2558, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .second-title:after {
   background-color: #698fb7;
   width: 80px;
@@ -2595,26 +2571,26 @@ h2:hover::after {
 }
 
 @media (max-width: 640px) {
-  /* line 2648, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 2572, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .second-title:after {
     width: 50px;
   }
 }
 
-/* line 2654, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 2578, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .second-title:hover::after {
   width: 100px;
 }
 
 @media (max-width: 640px) {
-  /* line 2660, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 2584, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .second-title:hover::after {
     width: 70px;
   }
 }
 
 /*  // Works Description \\  */
-/* line 2668, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 2592, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .legenda {
   color: #666;
   font-size: 14px;
@@ -2624,24 +2600,24 @@ h2:hover::after {
 }
 
 @media (max-width: 640px) {
-  /* line 2678, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 2602, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .legenda {
     margin-bottom: 30px;
   }
 }
 
-/* line 2684, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 2608, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .legenda b {
   color: #ccc;
   font-weight: 400;
 }
 
-/* line 2690, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 2614, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .legenda span {
   color: #698fb7;
 }
 
-/* line 2695, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 2619, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .description {
   margin-bottom: 50px;
   margin-left: 80px;
@@ -2650,7 +2626,7 @@ h2:hover::after {
 }
 
 @media (max-width: 640px) {
-  /* line 2704, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 2628, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .description {
     margin-left: 30px;
     margin-bottom: 20px;
@@ -2662,14 +2638,14 @@ h2:hover::after {
 /* ----- SLICK MY CODE ----- */
 /* --------------------------*/
 /*  // Section Slider \\  */
-/* line 2721, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 2645, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .section-slider {
   margin: 0 auto;
   padding: 0 0 80 0;
 }
 
 @media (max-width: 800px) {
-  /* line 2728, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 2652, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .section-slider {
     width: 100%;
     padding: 0 0 30 0;
@@ -2677,7 +2653,7 @@ h2:hover::after {
 }
 
 @media (max-width: 640px) {
-  /* line 2736, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 2660, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .section-slider {
     width: 100%;
     padding: 0 0 10 0;
@@ -2685,7 +2661,7 @@ h2:hover::after {
 }
 
 /*  // On Going Works \\  */
-/* line 2745, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 2669, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .slider-slick {
   width: 100%;
   max-width: 1280px;
@@ -2696,7 +2672,7 @@ h2:hover::after {
 }
 
 @media (max-width: 800px) {
-  /* line 2756, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 2680, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .slider-slick {
     width: calc(100% - 40px);
     left: 0;
@@ -2706,7 +2682,7 @@ h2:hover::after {
 }
 
 /*  // Main Image Slider \\  */
-/* line 2766, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 2690, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .image-main {
   margin: 0 auto;
   width: calc(100% - 20px) !important;
@@ -2716,20 +2692,20 @@ h2:hover::after {
 }
 
 @media (max-width: 800px) {
-  /* line 2776, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 2700, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .image-main {
     width: 100% !important;
   }
 }
 
 @media (max-width: 640px) {
-  /* line 2783, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 2707, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .image-main {
     width: calc(100% - 10px) !important;
   }
 }
 
-/* line 2789, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 2713, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .slider-slick,
 .image-main {
   max-height: 400px;
@@ -2739,7 +2715,7 @@ h2:hover::after {
 }
 
 @media (max-width: 800px) {
-  /* line 2799, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 2723, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .slider-slick,
   .image-main {
     max-height: 300px;
@@ -2747,7 +2723,7 @@ h2:hover::after {
 }
 
 @media (max-width: 640px) {
-  /* line 2807, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 2731, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .slider-slick,
   .image-main {
     max-height: 250px;
@@ -2755,7 +2731,7 @@ h2:hover::after {
 }
 
 @media (max-width: 400px) {
-  /* line 2814, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 2738, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .slider-slick,
   .image-main {
     padding-bottom: 70%;
@@ -2763,7 +2739,7 @@ h2:hover::after {
   }
 }
 
-/* line 2822, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 2746, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .image-main-vertical {
   width: calc(100% - 20px);
   background-size: contain;
@@ -2771,7 +2747,7 @@ h2:hover::after {
   background-position: center;
 }
 
-/* line 2830, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 2754, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .slider-slick-vertical,
 .image-main-vertical {
   height: 900px;
@@ -2780,7 +2756,7 @@ h2:hover::after {
 }
 
 @media (max-width: 800px) {
-  /* line 2839, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 2763, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .slider-slick-vertical,
   .image-main-vertical {
     height: 700px;
@@ -2788,7 +2764,7 @@ h2:hover::after {
 }
 
 @media (max-width: 640px) {
-  /* line 2847, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 2771, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .slider-slick-vertical,
   .image-main-vertical {
     height: 540px;
@@ -2796,14 +2772,14 @@ h2:hover::after {
 }
 
 @media (max-width: 400px) {
-  /* line 2855, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 2779, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .slider-slick-vertical,
   .image-main-vertical {
     height: 500px;
   }
 }
 
-/* line 2862, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 2786, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .video-main {
   height: 700px;
   margin: 0 auto;
@@ -2812,7 +2788,7 @@ h2:hover::after {
 }
 
 @media (max-width: 1919px) {
-  /* line 2871, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 2795, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .video-main {
     margin: 0 auto;
     height: 600px;
@@ -2821,7 +2797,7 @@ h2:hover::after {
 }
 
 @media (max-width: 1023px) {
-  /* line 2880, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 2804, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .video-main {
     margin: 0 auto;
     height: 500px;
@@ -2830,7 +2806,7 @@ h2:hover::after {
 }
 
 @media (max-width: 800px) {
-  /* line 2889, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 2813, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .video-main {
     margin: 0 auto;
     width: calc(100% - 60px);
@@ -2840,7 +2816,7 @@ h2:hover::after {
 }
 
 @media (max-width: 640px) {
-  /* line 2899, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 2823, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .video-main {
     width: calc(100% - 50px);
     height: 350px;
@@ -2849,7 +2825,7 @@ h2:hover::after {
 }
 
 @media (max-width: 400px) {
-  /* line 2908, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 2832, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .video-main {
     width: calc(100% - 50px);
     height: 200px;
@@ -2861,7 +2837,7 @@ h2:hover::after {
 /* ------- SLICK CODE ------ */
 /* --------------------------*/
 /*  // Arrows \\  */
-/* line 2929, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 2853, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .slick-prev:after,
 .slick-next:after {
   display: none;
@@ -2869,7 +2845,7 @@ h2:hover::after {
 }
 
 @media (max-width: 1023px) {
-  /* line 2937, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 2861, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .slick-prev,
   .slick-next {
     display: none;
@@ -2877,7 +2853,7 @@ h2:hover::after {
 }
 
 /*  // Prev \\  */
-/* line 2946, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 2870, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .slick-prev,
 .slick-next {
   width: 30px;
@@ -2891,7 +2867,7 @@ h2:hover::after {
   padding: 0px\;;
 }
 
-/* line 2960, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 2884, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .slick-prev:before,
 .slick-next:before {
   width: 30px;
@@ -2904,17 +2880,17 @@ h2:hover::after {
   background-color: transparent;
 }
 
-/* line 2972, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 2896, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .slick-prev:before {
   background-image: url(../images/icons/icon_left_c.png);
 }
 
-/* line 2977, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 2901, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .slick-next:before {
   background-image: url(../images/icons/icon_right_c.png);
 }
 
-/* line 2982, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 2906, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .slick-prev.slick-disabled:before,
 .slick-prev.slick-disabled:hover:before,
 .slick-next.slick-disabled:hover:before,
@@ -2924,19 +2900,19 @@ h2:hover::after {
 }
 
 /*  // Hovers Prev \\  */
-/* line 2996, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 2920, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .slick-prev:hover:before {
   left: -10px;
 }
 
 /*  // Next \\  */
 /*  // Hovers Next \\  */
-/* line 3007, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 2931, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .slick-next:hover:before {
   left: 10px;
 }
 
-/* line 3017, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 2936, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .slick-prev.slick-disabled:before,
 .slick-next.slick-disabled:before {
   opacity: 1;
@@ -2944,33 +2920,33 @@ h2:hover::after {
 }
 
 /*  // Counter Slider \\  */
-/* line 3028, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 2947, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .slide-count-wrap {
   text-align: center;
   margin-top: 30px;
   margin-bottom: 00px;
 }
 
-/* line 3035, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 2954, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .slide-count-wrap .current {
   color: #698fb7;
   font-size: 20px;
 }
 
-/* line 3041, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 2960, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .slide-count-wrap .total {
   color: #ccc;
   font-size: 12px;
 }
 
-/* line 3047, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+/* line 2966, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .slide-count-wrap b {
   color: #ccc;
   font-weight: 100;
 }
 
 @media (max-width: 800px) {
-  /* line 3054, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
+  /* line 2973, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
   .slide-count-wrap {
     text-align: center;
     margin-top: 0px;
