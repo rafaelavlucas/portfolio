@@ -307,11 +307,16 @@ body {
     margin: 0;
     padding: 0;
     font-size: 15px;
-    -webkit-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
 }
 
-/* /---------------------/ */
+#wrapper {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    transition: all .3s ease-in-out;
+}
 
 /* // Selected Elements \\  */
 
@@ -324,20 +329,6 @@ body {
     background-color: $m-01;
     color: #ffffff;
 }
-
-/* /---------------------/ */
-
-/* /---------------------/ */
-
-#wrapper {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    position: relative;
-    transition: all .3s ease-in-out;
-}
-
-/* /---------------------/ */
 
 /* // Footer \\  */
 
@@ -373,9 +364,6 @@ body {
     }
 }
 
-
-/* /-------------------/ */
-
 /*  // Main Contents \\  */
 
 .content {
@@ -404,9 +392,6 @@ body {
     }
 }
 
-
-/* /-------------------/ */
-
 /*  // Main Sections \\  */
 
 .section,
@@ -422,8 +407,6 @@ body {
         padding: 50px 0;
     }
 }
-
-/* /---------------------/ */
 
 /*  // Components \\  */
 
@@ -706,11 +689,11 @@ p {
 }
 
 
-/* --------------------------*/
+/* ---------------------------*/
 
-/* --------- HEADER -------- */
+/* --------- MODULES -------- */
 
-/* --------------------------*/
+/* ---------------------------*/
 
 .header {
     width: 100%;
@@ -1710,8 +1693,6 @@ p {
 
 /* --------------------------*/
 
-/*  // Bio \\  */
-
 .bio-content {
     max-width: 1024px;
     display: grid;
@@ -1800,8 +1781,6 @@ p {
         }
     }
 }
-
-/*  // Skills Tab Section \\  */
 
 .tab-navigation {
 
@@ -1901,9 +1880,6 @@ p {
     }
 }
 
-
-/*  // Timeline \\  */
-
 .timeline-section {
     margin: 0 auto;
     text-align: center;
@@ -1994,116 +1970,80 @@ p {
 }
 
 
-
 /* --------------------------*/
 
 /* ------- WORKS PAGE ------ */
 
 /* --------------------------*/
 
-/*  // Work Title \\  */
+.section-works {
 
-.second-title {
-    font-size: 20px;
-    color: #848484;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 100;
-    letter-spacing: 5px;
-    text-align: left;
-    margin: 0;
-    margin-bottom: 20px;
-    z-index: 2;
-    text-transform: uppercase;
-    -webkit-transition: all .5s ease;
-    transition: all .5s ease;
-}
-
-
-@media (max-width: 640px) {
     .second-title {
-        font-size: 15px;
-        line-height: 25px;
-    }
-}
-
-
-/*  // Work title Line \\  */
-
-.second-title:after {
-    background-color: $m-01;
-    width: 80px;
-    content: '';
-    height: 2px;
-    border-radius: 20px;
-    display: block;
-    margin-top: 20px;
-    -webkit-transition: all .5s ease;
-    transition: all .5s ease;
-}
-
-
-@media (max-width: 640px) {
-    .second-title:after {
-        width: 50px;
-    }
-}
-
-
-.second-title:hover::after {
-    width: 100px;
-}
-
-
-@media (max-width: 640px) {
-    .second-title:hover::after {
-        width: 70px;
-    }
-}
-
-
-/*  // Works Description \\  */
-
-.legenda {
-    color: #666;
-    font-size: 14px;
-    margin-bottom: 50px;
-    font-family: 'Source Code Pro', monospace;
-    font-weight: 400;
-}
-
-
-@media (max-width: 640px) {
-    .legenda {
-        margin-bottom: 30px;
-    }
-}
-
-
-.legenda b {
-    color: #ccc;
-    font-weight: 400;
-}
-
-
-.legenda span {
-    color: $m-01;
-}
-
-
-.description {
-    margin-bottom: 50px;
-    margin-left: 80px;
-    font-size: 15px;
-    max-width: 800px;
-}
-
-
-@media (max-width: 640px) {
-    .description {
-        margin-left: 30px;
+        font-size: 20px;
+        color: #848484;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 100;
+        letter-spacing: 5px;
+        text-align: left;
+        margin: 0;
         margin-bottom: 20px;
-        font-size: 13px;
+        z-index: 2;
+        text-transform: uppercase;
+        transition: all .5s ease;
+
+        @include sm {
+            font-size: 15px;
+            line-height: 25px;
+        }
+
+        &:after {
+            background-color: $m-01;
+            width: 80px;
+            content: '';
+            height: 2px;
+            border-radius: 20px;
+            display: block;
+            margin-top: 20px;
+            transition: all .5s ease;
+
+            @include sm {
+                width: 50px;
+            }
+        }
     }
+
+    .legenda {
+        color: #666;
+        font-size: 14px;
+        margin-bottom: 50px;
+        font-family: 'Source Code Pro', monospace;
+        font-weight: 400;
+
+        @include sm {
+            margin-bottom: 30px;
+        }
+
+        b {
+            color: #ccc;
+            font-weight: 400;
+        }
+        span {
+            color: $m-01;
+        }
+    }
+
+    .description {
+        margin-bottom: 50px;
+        margin-left: 80px;
+        font-size: 15px;
+        max-width: 800px;
+        @include sm {
+            margin-left: 30px;
+            margin-bottom: 20px;
+            font-size: 13px;
+        }
+    }
+
 }
 
 
