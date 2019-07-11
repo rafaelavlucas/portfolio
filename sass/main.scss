@@ -78,6 +78,7 @@ body {
     padding: 0;
     position: relative;
     transition: all .3s ease-in-out;
+
 }
 
 /* // Selected Elements \\  */
@@ -92,83 +93,6 @@ body {
     color: #ffffff;
 }
 
-/* // Footer \\  */
-
-.footer {
-    background-color: #313131;
-    padding: 50px 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-
-    @include sm {
-        padding: 20px 0;
-    }
-
-    p {
-        display: inline;
-        font-size: 12px;
-        letter-spacing: 1.1;
-        font-family: 'Source Code Pro', monospace;
-        font-weight: 400;
-        text-align: center;
-
-        span {
-            color: $m-01;
-        }
-    }
-
-    a {
-        color: $neu-05;
-        font-size: 12px;
-        letter-spacing: 1.6;
-        font-weight: 400;
-    }
-}
-
-/*  // Main Contents \\  */
-
-.content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    z-index: 0;
-    margin: 0 5%;
-    transition: all .3s ease-in-out;
-}
-
-.content-full {
-    padding: 0 5%;
-
-    &.blue {
-        background-color: $m-01;
-    }
-
-    &.gray {
-        background-color: $neu-02
-    }
-
-    &.dark {
-        background-color: $neu-07;
-    }
-}
-
-/*  // Main Sections \\  */
-
-.section,
-.section-works,
-.section-slider {
-    width: 100%;
-    max-width: 1280px;
-    padding: 100px 0;
-    transition: all .3s ease-in-out;
-    margin: auto;
-
-    @include sm {
-        padding: 50px 0;
-    }
-}
 
 /*  // Components \\  */
 
@@ -217,7 +141,6 @@ button {
     }
     &:hover {
         color: $m-01;
-        text-align: center;
         z-index: 1;
 
         @include sm {
@@ -239,6 +162,9 @@ button {
                 display: none;
             }
         }
+    }
+    &:focus {
+        outline: 0;
     }
 
 }
@@ -450,10 +376,9 @@ p {
     }
 }
 
-
 /* ---------------------------*/
 
-/* --------- MODULES -------- */
+/* --------- GENERAL -------- */
 
 /* ---------------------------*/
 
@@ -667,6 +592,78 @@ p {
     }
 
 }
+
+.footer {
+    background-color: #383838;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    @include sm {
+        height: 100px;
+    }
+
+    p {
+        font-size: 12px;
+        letter-spacing: 1.1;
+        font-family: 'Source Code Pro', monospace;
+        font-weight: 400;
+        text-align: center;
+        color: $neu-02;
+
+        &:first-child {
+            color: $neu-04;
+        }
+    }
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: calc(100% - 10%);
+    margin: 0 auto;
+    transition: all .3s ease-in-out;
+}
+
+.content-full {
+    padding: 0 5%;
+
+    &.blue {
+        background-color: $m-01;
+    }
+
+    &.gray {
+        background-color: $neu-02
+    }
+
+    &.dark {
+        background-color: $neu-07;
+    }
+}
+
+.section,
+.section-works {
+    width: 100%;
+    max-width: 1280px;
+    padding: 100px 0;
+    transition: all .3s ease-in-out;
+    margin: auto;
+
+    @include sm {
+        padding: 50px 0;
+    }
+}
+
+
+/* ---------------------------*/
+
+/* --------- MODULES -------- */
+
+/* ---------------------------*/
 
 .header {
     width: 100%;
@@ -1391,12 +1388,17 @@ p {
     height: 200px;
     background-color: $neu-02;
     text-align: center;
+
+
     @include sm {
         height: 150px;
     }
 
     &.works {
         height: 90px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .page-title {
@@ -1415,13 +1417,6 @@ p {
         }
     }
 }
-
-
-/* --------------------------*/
-
-/* --------- about --------- */
-
-/* --------------------------*/
 
 .bio-content {
     max-width: 1024px;
@@ -1699,17 +1694,12 @@ p {
     }
 }
 
-
-/* --------------------------*/
-
-/* ------- WORKS PAGE ------ */
-
-/* --------------------------*/
-
 .works-page {
+    max-width: 800px;
 
     .section-works {
         padding-bottom: 0;
+
         .second-title {
             font-size: 20px;
             color: $neu-04;
@@ -1776,35 +1766,41 @@ p {
     }
 
     .works-images {
-        width: 100%;
-        margin: 0 auto;
+        max-width: 800px;
         transition: all .3s ease;
         display: flex;
         align-items: center;
         flex-direction: column;
 
 
+
         .image-main {
-            max-width: 800px;
-            margin: 40px 0;
-            @include sm {
-                width: 100% !important;
-            }
-        }
-
-        iframe {
-            margin: 0 auto;
             width: 100%;
-            max-width: 1280px;
-            height: 720px;
-            max-height: 720px;
-            #player {
-                width: 1280px;
-                height: 720px;
+            margin: 40px 0;
+            transition: all .3s ease;
+            &:first-child {
+                margin: 0;
             }
-
+            @include sm {
+                width: 100%;
+                margin: 10px 0;
+            }
         }
 
+        .video-responsive {
+            overflow: hidden;
+            padding-bottom: 56.25%;
+            position: relative;
+            height: 0;
+            width: 100%;
+            iframe {
+                left: 0;
+                top: 0;
+                height: 100%;
+                width: 100%;
+                position: absolute;
+            }
+        }
     }
 
 

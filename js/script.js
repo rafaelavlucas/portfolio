@@ -24,3 +24,11 @@ window.onload = function (e) {
     };
 
 }
+
+
+
+//------ Script footer year
+
+var today = new Date();
+var year = today.getFullYear();
+document.querySelector('.year').innerHTML = year;
