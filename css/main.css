@@ -166,7 +166,7 @@ p {
 /* line 193, /Users/rafaelalucas/Documents/_TRABALHOS/PORTFOLIO/website/sass/main.scss */
 .links {
   color: #698fb7;
-  transition: all .8s ease-in-out;
+  transition: all 0.2s ease;
   position: relative;
   font-family: 'Source Code Pro', monospace;
   font-weight: 300;
