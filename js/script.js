@@ -23,12 +23,10 @@ window.onload = function (e) {
         }
     };
 
+
+
+    //------ Script footer year
+
+    document.getElementById("year").innerHTML = new Date().getFullYear();
+
 }
-
-
-
-//------ Script footer year
-
-var today = new Date();
-var year = today.getFullYear();
-document.querySelector('.year').innerHTML = year;

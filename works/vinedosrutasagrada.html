@@ -14,7 +14,8 @@
 
 
     <!-- script files -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous">
 
 
     </script>
@@ -42,8 +43,6 @@
             <span></span>
         </div>
         <!-- end icon open menu -->
-
-
 
         <!--  menu -->
 
@@ -83,29 +82,37 @@
 
             <!-- Work experience -->
 
-            <div class="section-works" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="50" data-aos-delay="100">
+            <div class="section-works" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="50"
+                data-aos-delay="100">
 
                 <h1 class="second-title">Viñedos Ruta Sagrada Branding</h1>
                 <p class="legenda">2016 <span>/</span> <b>Branding</b> <span>/</span> <b>Proposal</b></p>
 
-                <p class="description">Branding proposal for a new winery based in Chile. Includes a logo proposal and two labels.</p>
+                <p class="description">Branding proposal for a new winery based in Chile. Includes a logo proposal and
+                    two labels.</p>
 
             </div>
 
-            <div class="section-slider" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="50" data-aos-delay="100">
+            <div class="section-slider" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="50"
+                data-aos-delay="100">
 
                 <!-- slider -->
                 <div class="slider-slick">
 
-                    <div class="image-main" style="background-image: url(../images/works/vinedosrutasagrada/vinedos_00.png)"></div>
+                    <div class="image-main"
+                        style="background-image: url(../images/works/vinedosrutasagrada/vinedos_00.png)"></div>
 
-                    <div class="image-main" style="background-image: url(../images/works/vinedosrutasagrada/vinedos_01.jpg)"></div>
+                    <div class="image-main"
+                        style="background-image: url(../images/works/vinedosrutasagrada/vinedos_01.jpg)"></div>
 
-                    <div class="image-main" style="background-image: url(../images/works/vinedosrutasagrada/vinedos_02.jpg)"></div>
+                    <div class="image-main"
+                        style="background-image: url(../images/works/vinedosrutasagrada/vinedos_02.jpg)"></div>
 
-                    <div class="image-main" style="background-image: url(../images/works/vinedosrutasagrada/vinedos_03.jpg)"></div>
+                    <div class="image-main"
+                        style="background-image: url(../images/works/vinedosrutasagrada/vinedos_03.jpg)"></div>
 
-                    <div class="image-main" style="background-image: url(../images/works/vinedosrutasagrada/vinedos_04.jpg)"></div>
+                    <div class="image-main"
+                        style="background-image: url(../images/works/vinedosrutasagrada/vinedos_04.jpg)"></div>
 
 
 
@@ -161,68 +168,21 @@
 
 
         <!-- Footer -->
-
         <div class="footer">
-
-            <center>
-
-                <p>
-                    <a href="http://www.rafaelalucas.com">design and code by:</a><br> Rafaela Lucas <span>/</span>
-                </p>
-                <p class="year"></p>
-
-            </center>
-
+            <p>design and code by:</p>
+            <p>Rafaela Lucas / <span id="year"></span></p>
         </div>
+        <!-- end Footer -->
 
         <!-- end Wrapper -->
     </div>
 
 
-    <script>
-        //------ Script slider      
 
-        var $gallery = $('.slider-slick');
-        var slideCount = null;
-
-        $(document).ready(function() {
-            $gallery.slick({
-                speed: 800,
-                fade: false,
-                swipe: true,
-                swipeToSlide: true,
-                touchThreshold: 10,
-                infinite: false,
-
-            });
-        });
-
-        $gallery.on('init', function(event, slick) {
-            slideCount = slick.slideCount;
-            setSlideCount();
-            setCurrentSlideNumber(slick.currentSlide);
-        });
-
-        $gallery.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
-            setCurrentSlideNumber(nextSlide);
-        });
-
-        function setSlideCount() {
-            var $el = $('.slide-count-wrap').find('.total');
-            $el.text(slideCount);
-        }
-
-        function setCurrentSlideNumber(currentSlide) {
-            var $el = $('.slide-count-wrap').find('.current');
-            $el.text(currentSlide + 1);
-        }
-
-    </script>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init();
-
     </script>
 </body>
 

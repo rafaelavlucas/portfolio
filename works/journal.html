@@ -1,4 +1,5 @@
 <html>
+
 <head>
 
     <meta charset="UTF-8">
@@ -13,7 +14,8 @@
 
 
     <!-- script files -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous">
     </script>
 
     <script src="../js/slick.js" type="text/javascript"></script>
@@ -31,34 +33,21 @@
     <div id="wrapper">
 
         <!-- Navigation -->
-
-        <!-- icon open menu -->
-        <div id="iconmenu" class="iconopen">
-            <span></span>
-            <span></span>
-            <span></span>
+        <div class="main-nav">
+            <div class="iconmenu">
+                <div class="iconopen">
+                    <span></span>
+                </div>
+            </div>
+            <div class="nav">
+                <div class="menu">
+                    <a class="menu-item" href="../index.html">home</a>
+                    <a class="menu-item" href="../works.html">works</a>
+                    <a class="menu-item" href="../about.html">about</a>
+                </div>
+            </div>
         </div>
-        <!-- end icon open menu -->
-
-
-
-        <!--  menu -->
-
-        <div id="nav">
-
-            <ul class="menu">
-                <a href="../index.html">
-                    <li>home</li>
-                </a>
-                <a href="../works.html">
-                    <li>works</li>
-                </a>
-                <a href="../about.html">
-                    <li>about</li>
-                </a>
-            </ul>
-
-        </div>
+        <!-- end Navigation -->
 
 
         <!-- Header -->
@@ -80,16 +69,20 @@
 
             <!-- Work experience -->
 
-            <div class="section-works" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="50" data-aos-delay="100">
+            <div class="section-works" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="50"
+                data-aos-delay="100">
 
                 <h1 class="second-title">Journal</h1>
-                <p class="legenda">2014 <span>/</span> <b>Editorial Design</b> <span>/</span> <b>Master's Degree Work</b></p>
+                <p class="legenda">2014 <span>/</span> <b>Editorial Design</b> <span>/</span> <b>Master's Degree
+                        Work</b></p>
 
-                <p class="description">A collection of the works I did during the first year of my Master’s degree in Graphic Design and Editorial Projects. The entire book was sewn and bound by me.</p>
+                <p class="description">A collection of the works I did during the first year of my Master’s degree in
+                    Graphic Design and Editorial Projects. The entire book was sewn and bound by me.</p>
 
             </div>
 
-            <div class="section-slider" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="50" data-aos-delay="100">
+            <div class="section-slider" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="50"
+                data-aos-delay="100">
 
                 <!-- slider -->
                 <div class="slider-slick">
@@ -115,15 +108,20 @@
                     <div class="image-main" style="background-image: url(../images/works/journal/journal_09.jpg)"></div>
 
 
-                    <div class="image-main" style="background-image: url(../images/works/journal/journal_010.jpg)"></div>
+                    <div class="image-main" style="background-image: url(../images/works/journal/journal_010.jpg)">
+                    </div>
 
-                    <div class="image-main" style="background-image: url(../images/works/journal/journal_011.jpg)"></div>
+                    <div class="image-main" style="background-image: url(../images/works/journal/journal_011.jpg)">
+                    </div>
 
-                    <div class="image-main" style="background-image: url(../images/works/journal/journal_012.jpg)"></div>
+                    <div class="image-main" style="background-image: url(../images/works/journal/journal_012.jpg)">
+                    </div>
 
-                    <div class="image-main" style="background-image: url(../images/works/journal/journal_013.jpg)"></div>
+                    <div class="image-main" style="background-image: url(../images/works/journal/journal_013.jpg)">
+                    </div>
 
-                    <div class="image-main" style="background-image: url(../images/works/journal/journal_014.jpg)"></div>
+                    <div class="image-main" style="background-image: url(../images/works/journal/journal_014.jpg)">
+                    </div>
 
 
 
@@ -176,66 +174,22 @@
 
 
         <!-- Footer -->
-
         <div class="footer">
-
-            <center>
-
-                <p>
-                    <a href="http://www.rafaelalucas.com">design and code by:</a><br> Rafaela Lucas <span>/</span>
-                </p>
-                <p class="year"></p>
-
-            </center>
-
+            <p>design and code by:</p>
+            <p>Rafaela Lucas / <span id="year"></span></p>
         </div>
+        <!-- end Footer -->
 
         <!-- end Wrapper -->
     </div>
 
 
-    <script>
-        //------ Script slider      
 
-        var $gallery = $('.slider-slick');
-        var slideCount = null;
-
-        $(document).ready(function() {
-            $gallery.slick({
-                speed: 800,
-                fade: false,
-                swipe: true,
-                swipeToSlide: true,
-                touchThreshold: 10,
-                infinite: false,
-
-            });
-        });
-
-        $gallery.on('init', function(event, slick) {
-            slideCount = slick.slideCount;
-            setSlideCount();
-            setCurrentSlideNumber(slick.currentSlide);
-        });
-
-        $gallery.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
-            setCurrentSlideNumber(nextSlide);
-        });
-
-        function setSlideCount() {
-            var $el = $('.slide-count-wrap').find('.total');
-            $el.text(slideCount);
-        }
-
-        function setCurrentSlideNumber(currentSlide) {
-            var $el = $('.slide-count-wrap').find('.current');
-            $el.text(currentSlide + 1);
-        }
-    </script>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init();
     </script>
 </body>
+
 </html>

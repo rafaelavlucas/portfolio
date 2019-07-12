@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <!-- script files -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous">
 
 
     </script>
@@ -33,34 +34,21 @@
     <div id="wrapper">
 
         <!-- Navigation -->
-
-        <!-- icon open menu -->
-        <div id="iconmenu" class="iconopen">
-            <span></span>
-            <span></span>
-            <span></span>
+        <div class="main-nav">
+            <div class="iconmenu">
+                <div class="iconopen">
+                    <span></span>
+                </div>
+            </div>
+            <div class="nav">
+                <div class="menu">
+                    <a class="menu-item" href="../index.html">home</a>
+                    <a class="menu-item" href="../works.html">works</a>
+                    <a class="menu-item" href="../about.html">about</a>
+                </div>
+            </div>
         </div>
-        <!-- end icon open menu -->
-
-
-
-        <!--  menu -->
-
-        <div id="nav">
-
-            <ul class="menu">
-                <a href="../index.html">
-                    <li>home</li>
-                </a>
-                <a href="../works.html">
-                    <li>works</li>
-                </a>
-                <a href="../about.html">
-                    <li>about</li>
-                </a>
-            </ul>
-
-        </div>
+        <!-- end Navigation -->
 
 
         <!-- Header -->
@@ -86,31 +74,43 @@
 
                 <h1 class="second-title">All The Buildings That I Can See From My Bedroom Window</h1>
 
-                <p class="legenda">2014 <span>/</span> <b>Illustration</b> <span>/</span> <b>Master’s degree work</b></p>
+                <p class="legenda">2014 <span>/</span> <b>Illustration</b> <span>/</span> <b>Master’s degree work</b>
+                </p>
 
                 <p class="description">
-                    Creation of illustrations based on the style of another artist. I chose James Gulliver Hancock and my work was inspired by his project “All The Buildings In New York”. I drew all the buildings that I saw from my bedroom window, in Porto. The drawings were made with black pen on paper, scanned and coloured on Illustrator.</p>
+                    Creation of illustrations based on the style of another artist. I chose James Gulliver Hancock and
+                    my work was inspired by his project “All The Buildings In New York”. I drew all the buildings that I
+                    saw from my bedroom window, in Porto. The drawings were made with black pen on paper, scanned and
+                    coloured on Illustrator.</p>
 
             </div>
 
-            <div class="section-slider" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="50" data-aos-delay="100">
+            <div class="section-slider" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="50"
+                data-aos-delay="100">
 
                 <!-- slider -->
                 <div class="slider-slick">
 
-                    <div class="image-main" style="background-image: url(../images/works/allthebuildings/allthebuildings_00.jpg)"></div>
+                    <div class="image-main"
+                        style="background-image: url(../images/works/allthebuildings/allthebuildings_00.jpg)"></div>
 
-                    <div class="image-main" style="background-image: url(../images/works/allthebuildings/allthebuildings_01.jpg)"></div>
+                    <div class="image-main"
+                        style="background-image: url(../images/works/allthebuildings/allthebuildings_01.jpg)"></div>
 
-                    <div class="image-main" style="background-image: url(../images/works/allthebuildings/allthebuildings_02.jpg)"></div>
+                    <div class="image-main"
+                        style="background-image: url(../images/works/allthebuildings/allthebuildings_02.jpg)"></div>
 
-                    <div class="image-main" style="background-image: url(../images/works/allthebuildings/allthebuildings_03.jpg)"></div>
+                    <div class="image-main"
+                        style="background-image: url(../images/works/allthebuildings/allthebuildings_03.jpg)"></div>
 
-                    <div class="image-main" style="background-image: url(../images/works/allthebuildings/allthebuildings_04.jpg)"></div>
+                    <div class="image-main"
+                        style="background-image: url(../images/works/allthebuildings/allthebuildings_04.jpg)"></div>
 
-                    <div class="image-main" style="background-image: url(../images/works/allthebuildings/allthebuildings_05.jpg)"></div>
+                    <div class="image-main"
+                        style="background-image: url(../images/works/allthebuildings/allthebuildings_05.jpg)"></div>
 
-                    <div class="image-main" style="background-image: url(../images/works/allthebuildings/allthebuildings_06.jpg)"></div>
+                    <div class="image-main"
+                        style="background-image: url(../images/works/allthebuildings/allthebuildings_06.jpg)"></div>
 
 
 
@@ -163,66 +163,20 @@
 
         <!-- Footer -->
         <div class="footer">
-
-            <center>
-
-                <p>
-                    <a href="http://www.rafaelalucas.com">design and code by:</a><br> Rafaela Lucas <span>/</span>
-                </p>
-                <p class="year"></p>
-
-            </center>
-
+            <p>design and code by:</p>
+            <p>Rafaela Lucas / <span id="year"></span></p>
         </div>
+        <!-- end Footer -->
 
         <!-- end Wrapper -->
     </div>
 
 
-    <script>
-        //------ Script slider      
 
-        var $gallery = $('.slider-slick');
-        var slideCount = null;
-
-        $(document).ready(function() {
-            $gallery.slick({
-                speed: 800,
-                fade: false,
-                swipe: true,
-                swipeToSlide: true,
-                touchThreshold: 10,
-                infinite: false,
-
-            });
-        });
-
-        $gallery.on('init', function(event, slick) {
-            slideCount = slick.slideCount;
-            setSlideCount();
-            setCurrentSlideNumber(slick.currentSlide);
-        });
-
-        $gallery.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
-            setCurrentSlideNumber(nextSlide);
-        });
-
-        function setSlideCount() {
-            var $el = $('.slide-count-wrap').find('.total');
-            $el.text(slideCount);
-        }
-
-        function setCurrentSlideNumber(currentSlide) {
-            var $el = $('.slide-count-wrap').find('.current');
-            $el.text(currentSlide + 1);
-        }
-
-    </script>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init();
-
     </script>
 </body>
 
