@@ -842,6 +842,7 @@ p {
     .image-container {
         display: grid;
         grid-template-columns: 50% 50%;
+        grid-gap: 20px;
 
         @include sm {
             grid-template-columns: 100%;
@@ -857,18 +858,17 @@ p {
     }
 
     .image {
-        position: relative;
-        width: calc(100% - 20px);
-        padding-bottom: calc(100% - 20px);
-        margin-bottom: 10px;
-        margin-top: 10px;
-        background-size: cover;
-        background-position: 50%;
+
         transition: all .5s ease;
         cursor: pointer;
         display: flex;
         justify-content: center;
-        align-items: center;
+        overflow: hidden;
+        max-width: 100%;
+        max-height: 100%;
+        padding-bottom: 100%;
+        position: relative;
+
 
         &.big {
             padding-bottom: 50%;
@@ -878,6 +878,19 @@ p {
                 padding-bottom: 100%;
             }
         }
+
+        .img {
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background-size: cover;
+            background-position: center center;
+            transition: all 1s ease;
+        }
+
 
         @include sm {
             width: 100%;
@@ -892,9 +905,9 @@ p {
             width: 100%;
             height: 100%;
             position: absolute;
-            top: 0;
-            left: 0;
             transition: all .4s ease;
+            z-index: 1;
+
         }
 
         /* filtro azul */
@@ -908,7 +921,7 @@ p {
             height: 90%;
             z-index: 1;
             top: 5%;
-            border-radius: 30px;
+            border-radius: 20px;
         }
 
         .overlay-title {
@@ -958,7 +971,14 @@ p {
             }
         }
 
+
         &:hover {
+
+
+            .img {
+                width: 110%;
+                height: 110%;
+            }
 
             /* filtro cinza */
             &:before {
@@ -993,6 +1013,7 @@ p {
                 top: 55%;
                 transition: all .4s 0.2s ease;
             }
+
         }
 
 
