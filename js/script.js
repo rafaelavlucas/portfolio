@@ -54,4 +54,47 @@ window.onload = function (e) {
     /* end Back to top */
 
 
+    /* Filters */
+
+    var btnFilter = document.querySelectorAll(".filter"),
+        btnFilterAll = document.querySelector(".btn-all"),
+        work = document.querySelectorAll(".work");
+
+
+    btnFilter.forEach(function (el) {
+        el.addEventListener("click", filterImages);
+    });
+
+    btnFilterAll.addEventListener("click", showAll);
+
+    function showAll() {
+
+        work.forEach(function (el) {
+            el.classList.add("active");
+        });
+    }
+
+    function filterImages(el) {
+        var btnTarget = el.currentTarget;
+        var filterWork = btnTarget.dataset.filter;
+        var filters = document.querySelectorAll("#" + filterWork);
+
+        work.forEach(function (el) {
+            el.classList.remove("active");
+        });
+
+        btnFilter.forEach(function (el) {
+            el.classList.remove("active-btn");
+        });
+
+        filters.forEach(function (el) {
+            el.classList.add("active");
+        });
+
+        btnTarget.classList.add("active-btn");
+    }
+
+
+
+
 }
