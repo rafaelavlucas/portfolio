@@ -70,7 +70,7 @@ window.onload = function (e) {
     function showAll() {
 
         work.forEach(function (el) {
-            el.classList.add("active");
+            el.classList.add("show");
         });
     }
 
@@ -80,7 +80,7 @@ window.onload = function (e) {
         var filters = document.querySelectorAll("#" + filterWork);
 
         work.forEach(function (el) {
-            el.classList.remove("active");
+            el.classList.remove("show");
         });
 
         btnFilter.forEach(function (el) {
@@ -88,7 +88,7 @@ window.onload = function (e) {
         });
 
         filters.forEach(function (el) {
-            el.classList.add("active");
+            el.classList.add("show");
         });
 
         btnTarget.classList.add("active-btn");
