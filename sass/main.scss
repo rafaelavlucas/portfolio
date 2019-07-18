@@ -70,6 +70,7 @@ body {
     padding: 0;
     font-size: 15px;
     transition: all .3s ease-in-out;
+    -webkit-tap-highlight-color: transparent;
 }
 
 #wrapper {
@@ -80,6 +81,7 @@ body {
     transition: all .3s ease-in-out;
 
 }
+
 
 /* // Selected Elements \\  */
 
@@ -839,21 +841,22 @@ p {
 
 .works-container {
 
-    .btn {
+    .btn-filter {
         display: none;
 
         @include sm {
             display: block;
+            margin-bottom: 40px;
         }
     }
 
     .filters-container {
 
-
         .filters {
             display: flex;
             justify-content: space-around;
             margin-bottom: 40px;
+
 
             .filter {
                 letter-spacing: 1px;
@@ -863,8 +866,11 @@ p {
                 &.active-btn {
                     background-color: $m-01;
                     color: white;
-                }
 
+                    &:hover {
+                        color: white;
+                    }
+                }
 
                 &:before {
                     content: '';
@@ -899,7 +905,12 @@ p {
 
             @include sm {
                 display: none;
+                margin-bottom: 0px;
             }
+        }
+
+        @include sm {
+            transform: translateX(120%);
         }
 
         &.mobile {
@@ -907,23 +918,27 @@ p {
                 width: 100%;
                 height: 100vh;
                 background-color: white;
-                position: absolute;
+                position: fixed;
                 z-index: 4;
                 top: 0;
-                left: 0;
-                overflow: hidden;
+                right: 0;
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                transition: all 1s ease-in-out;
+                transform: translateX(120%);
+
 
                 .close-filters {
-
                     position: absolute;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    top: 40px;
-                    right: 40px;
+                    top: 30px;
+                    right: 30px;
+                    width: 40px;
+                    height: 40px;
+                    cursor: pointer;
 
                     span {
                         position: absolute;
@@ -931,7 +946,7 @@ p {
                         height: 2px;
                         border-radius: 20px;
                         transition: all 0.3s ease;
-                        background-color: $m-01;
+                        background-color: $neu-03;
                         display: flex;
                         align-items: center;
                         justify-content: center;
@@ -962,7 +977,27 @@ p {
                 .filters {
                     flex-direction: column;
                     display: flex;
+                    width: 100%;
+                    height: 500px;
+                    background-color: white;
+                    top: 0;
+                    transition: all 1s 0.8s ease;
+                    transform: translateX(100px);
+                    opacity: 0;
+
+                    &.anime-tags {
+                        opacity: 1;
+                        transform: translateX(0px);
+                    }
+
                 }
+
+            }
+        }
+
+        &.anime-filters {
+            @include sm {
+                transform: translateX(0%);
             }
         }
     }
@@ -984,10 +1019,10 @@ p {
         }
 
         .work {
-            display: none;
+            display: block;
 
-            &.show {
-                display: flex;
+            &.hide {
+                display: none;
 
             }
 
@@ -1116,10 +1151,14 @@ p {
 
         &:hover {
 
-
             .img {
                 width: 110%;
                 height: 110%;
+
+                @include sm {
+                    width: 100%;
+                    height: 100%;
+                }
             }
 
             /* filtro cinza */

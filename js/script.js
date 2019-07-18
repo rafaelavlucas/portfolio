@@ -56,44 +56,75 @@ window.onload = function (e) {
 
     /* Filters */
 
-    var btnFilter = document.querySelectorAll(".filter"),
-        btnFilterAll = document.querySelector(".btn-all"),
+    var tagFilter = document.querySelectorAll(".filter"),
+        tagFilterAll = document.querySelector(".btn-all"),
         work = document.querySelectorAll(".work");
 
 
-    btnFilter.forEach(function (el) {
+    tagFilter.forEach(function (el) {
         el.addEventListener("click", filterImages);
     });
 
-    btnFilterAll.addEventListener("click", showAll);
+    tagFilterAll.addEventListener("click", All);
 
-    function showAll() {
+
+    function All() {
 
         work.forEach(function (el) {
-            el.classList.add("show");
+            el.classList.remove("hide");
         });
     }
 
     function filterImages(el) {
-        var btnTarget = el.currentTarget;
-        var filterWork = btnTarget.dataset.filter;
-        var filters = document.querySelectorAll("#" + filterWork);
+        var btnTarget = el.currentTarget,
+            filterWork = btnTarget.dataset.filter,
+            filters = document.querySelectorAll("#" + filterWork);
 
         work.forEach(function (el) {
-            el.classList.remove("show");
+            el.classList.add("hide");
+            closeFiltersMobile();
         });
 
-        btnFilter.forEach(function (el) {
+        tagFilter.forEach(function (el) {
             el.classList.remove("active-btn");
+
         });
 
         filters.forEach(function (el) {
-            el.classList.add("show");
+            el.classList.remove("hide");
+            closeFiltersMobile();
         });
 
         btnTarget.classList.add("active-btn");
     }
 
+    /* Open Filters mobile */
+    var filtersContainer = document.querySelector(".filters-container"),
+        filtersContent = document.querySelector(".filters-container .filters"),
+        btnFilter = document.querySelector(".btn-filter"),
+        closeFilters = document.querySelector(".close-filters");
+
+    btnFilter.addEventListener("click", openFiltersMobile);
+    closeFilters.addEventListener("click", closeFiltersMobile);
+
+    function openFiltersMobile() {
+        filtersContainer.classList.add('mobile');
+
+
+        setTimeout(function () {
+            filtersContainer.classList.add('anime-filters');
+            filtersContent.classList.add('anime-tags');
+        }, 200);
+    }
+
+    function closeFiltersMobile() {
+        filtersContainer.classList.remove('anime-filters');
+        filtersContent.classList.remove('anime-tags');
+
+        setTimeout(function () {
+            filtersContainer.classList.remove('mobile');
+        }, 1000);
+    }
 
 
 
