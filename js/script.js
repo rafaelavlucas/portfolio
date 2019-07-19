@@ -63,22 +63,26 @@ window.onload = function (e) {
 
     tagFilter.forEach(function (el) {
         el.addEventListener("click", filterImages);
+
     });
 
     tagFilterAll.addEventListener("click", All);
 
 
-    function All() {
 
+
+    function All() {
         work.forEach(function (el) {
             el.classList.remove("hide");
+
         });
     }
 
     function filterImages(el) {
         var btnTarget = el.currentTarget,
             filterWork = btnTarget.dataset.filter,
-            filters = document.querySelectorAll("#" + filterWork);
+            filters = document.querySelectorAll("#" + filterWork),
+            workCount = document.querySelectorAll(".work-count");
 
         work.forEach(function (el) {
             el.classList.add("hide");
@@ -87,7 +91,6 @@ window.onload = function (e) {
 
         tagFilter.forEach(function (el) {
             el.classList.remove("active-btn");
-
         });
 
         filters.forEach(function (el) {
@@ -96,7 +99,28 @@ window.onload = function (e) {
         });
 
         btnTarget.classList.add("active-btn");
+
+        //workCount.forEach(function (el) {
+        //  el.innerText = `${filterWork.length}`;
+        // });
+
+        var label = document.querySelector(".label");
+
+
+        if (filterWork != "all") {
+            label.style.display = "block";
+            label.innerText = `[${filterWork}]`;
+        } else {
+            label.style.display = "none";
+        }
+
     }
+
+
+
+
+
+
 
     /* Open Filters mobile */
     var filtersContainer = document.querySelector(".filters-container"),
@@ -110,11 +134,10 @@ window.onload = function (e) {
     function openFiltersMobile() {
         filtersContainer.classList.add('mobile');
 
-
         setTimeout(function () {
             filtersContainer.classList.add('anime-filters');
             filtersContent.classList.add('anime-tags');
-        }, 200);
+        }, 10);
     }
 
     function closeFiltersMobile() {
@@ -123,9 +146,8 @@ window.onload = function (e) {
 
         setTimeout(function () {
             filtersContainer.classList.remove('mobile');
-        }, 1000);
+        }, 500);
     }
-
 
 
 }

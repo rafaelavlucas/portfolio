@@ -52,6 +52,9 @@ $neu-05: #525252;
 $neu-06: #4a4a4a;
 $neu-07: #383838;
 
+$font2: 'Source Code Pro',
+monospace;
+
 
 
 /* --------------------------*/
@@ -841,14 +844,37 @@ p {
 
 .works-container {
 
+
+
     .btn-filter {
         display: none;
 
         @include sm {
-            display: block;
-            margin-bottom: 40px;
+            display: flex;
+            margin-bottom: 30px;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+
+        .label {
+            display: none;
+
+            @include sm {
+                display: none;
+                width: 100%;
+                text-align: center;
+                font-family: $font2;
+                font-weight: 400;
+                color: $m-01;
+                margin-left: 20px;
+                font-size: 12px;
+                letter-spacing: 1px;
+            }
         }
     }
+
+
 
     .filters-container {
 
@@ -907,6 +933,8 @@ p {
                 display: none;
                 margin-bottom: 0px;
             }
+
+
         }
 
         @include sm {
@@ -925,7 +953,7 @@ p {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                transition: all 1s ease-in-out;
+                transition: all 0.5s ease-in-out;
                 transform: translateX(120%);
 
 
@@ -981,7 +1009,7 @@ p {
                     height: 500px;
                     background-color: white;
                     top: 0;
-                    transition: all 1s 0.8s ease;
+                    transition: all 0.8s 0.5s ease;
                     transform: translateX(100px);
                     opacity: 0;
 
@@ -1003,26 +1031,70 @@ p {
     }
 
     .image-container {
-        display: grid;
-        grid-template-columns: 50% 50%;
-        grid-gap: 20px;
+        //display: grid;
+        //grid-template-columns: 50% 50%;
+        //grid-gap: 20px;
+        display: flex;
+        justify-content: space-between;
+        //background-color: #313131;
+        flex-wrap: wrap;
+
+        //position: relative;
 
         @include sm {
             grid-template-columns: 100%;
         }
 
-        /*  // IE CODE \\  */
-        @media all and (-ms-high-contrast: none),
-        (-ms-high-contrast: active) {
-            display: flex;
-            flex-direction: column;
-        }
 
         .work {
             display: block;
+            width: calc(50% - 20px);
+            margin: 10px;
+
+            @include sm {
+                width: 100%;
+            }
 
             &.hide {
-                display: none;
+                animation: hide 6s ease;
+                animation-fill-mode: forwards;
+                margin: 0px 10px;
+                z-index: -1;
+
+                @keyframes hide {
+
+                    50% {
+                        height: 0;
+                        position: absolute;
+                        opacity: 0;
+                        display: none;
+                    }
+
+                    60% {
+                        position: absolute;
+                        height: 0;
+                        display: none;
+                    }
+
+
+                    100% {
+
+                        opacity: 0;
+                        position: absolute;
+                        height: 0;
+                        display: none;
+                    }
+
+
+                }
+
+                .image {
+                    height: 0;
+                    padding-bottom: 0%;
+
+                    .img {}
+                }
+
 
             }
 
@@ -1037,11 +1109,8 @@ p {
         display: flex;
         justify-content: center;
         overflow: hidden;
-        width: 100%;
-        height: 100%;
         padding-bottom: 100%;
         position: relative;
-
 
         &.big {
             padding-bottom: 50%;
@@ -1057,12 +1126,11 @@ p {
             display: flex;
             justify-content: center;
             position: absolute;
-            width: 100%;
-            height: 100%;
-            position: absolute;
             background-size: cover;
             background-position: center center;
             transition: all 1s ease;
+            width: 100%;
+            height: 100%;
         }
 
 
