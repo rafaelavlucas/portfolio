@@ -54,6 +54,8 @@ window.onload = function (e) {
     /* end Back to top */
 
 
+
+
     /* Filters */
 
     var tagFilter = document.querySelectorAll(".filter"),
@@ -68,9 +70,6 @@ window.onload = function (e) {
 
     tagFilterAll.addEventListener("click", All);
 
-
-
-
     function All() {
         work.forEach(function (el) {
             el.classList.remove("hide");
@@ -81,8 +80,7 @@ window.onload = function (e) {
     function filterImages(el) {
         var btnTarget = el.currentTarget,
             filterWork = btnTarget.dataset.filter,
-            filters = document.querySelectorAll("#" + filterWork),
-            workCount = document.querySelectorAll(".work-count");
+            filters = document.querySelectorAll("#" + filterWork);
 
         work.forEach(function (el) {
             el.classList.add("hide");
@@ -116,12 +114,6 @@ window.onload = function (e) {
 
     }
 
-
-
-
-
-
-
     /* Open Filters mobile */
     var filtersContainer = document.querySelector(".filters-container"),
         filtersContent = document.querySelector(".filters-container .filters"),
@@ -148,6 +140,30 @@ window.onload = function (e) {
             filtersContainer.classList.remove('mobile');
         }, 500);
     }
+
+
+    /* Category count */
+    var workCount = document.querySelectorAll(".work-count");
+
+    /* 
+    1 - graphic
+    2 - ui
+    3 - packaing
+    4 - editorial
+    5 - illustration
+    */
+
+    for (var i = 0; i < workCount.length; i++) {
+        workCount[i].innerText = document.querySelectorAll(`.work[data-id="${i}"]`).length
+    }
+
+    workCount[0].innerText = `${work.length}`;
+
+
+
+    /* Sticky Go Back */
+
+
 
 
 }

@@ -45,6 +45,7 @@ $m-01: #698fb7;
 /*neutrals*/
 
 $neu-01: #f9f9f9;
+$neu-01a: #f6f6f6;
 $neu-02: #f0f0f0;
 $neu-03: #ccc;
 $neu-04: #848484;
@@ -52,7 +53,10 @@ $neu-05: #525252;
 $neu-06: #4a4a4a;
 $neu-07: #383838;
 
-$font2: 'Source Code Pro',
+
+$font-01:'Open Sans',
+sans-serif;
+$font-02: 'Source Code Pro',
 monospace;
 
 
@@ -67,7 +71,7 @@ monospace;
 
 body {
     font-family: sans-serif;
-    font-family: 'Open Sans', sans-serif;
+    font-family: $font-01;
     font-weight: 200;
     margin: 0;
     padding: 0;
@@ -107,13 +111,13 @@ button {
     padding: 15 15 15 18;
     text-align: center;
     letter-spacing: 5px;
-    background-color: #f6f6f6;
+    background-color: $neu-01a;
     transition: all .6s ease;
     font-size: 12px;
     cursor: pointer;
     position: relative;
     z-index: 1;
-    font-family: 'Source Code Pro', monospace;
+    font-family: $font-02;
     font-weight: 500;
     border: 0;
     margin: 0 auto;
@@ -197,7 +201,7 @@ p {
 .links {
     color: $m-01;
     position: relative;
-    font-family: 'Source Code Pro', monospace;
+    font-family: $font-02;
     font-weight: 300;
     display: inline-flex;
     justify-content: center;
@@ -230,7 +234,7 @@ p {
 .main-title {
     font-size: 35px;
     color: $neu-04;
-    font-family: 'Open Sans', sans-serif;
+    font-family: $font-01;
     font-weight: 100;
     letter-spacing: 10px;
     text-align: center;
@@ -297,7 +301,7 @@ p {
 
         p {
             font-size: 12px;
-            font-family: 'Source Code Pro', monospace;
+            font-family: $font-02;
             font-weight: 400;
             letter-spacing: 2px;
             margin-bottom: 50px;
@@ -319,16 +323,28 @@ p {
             border-radius: 20px;
             transition: all 0.4s ease-in-out;
             background-color: $m-01;
+
+            @include sm {
+                width: 15px;
+            }
         }
 
         span:nth-child(1) {
             transform: rotate(45deg);
             margin-left: 6px;
+
+            @include sm {
+                margin-left: 5px;
+            }
         }
 
         span:nth-child(2) {
             transform: rotate(-45deg);
             margin-left: -7px;
+
+            @include sm {
+                margin-left: -5px;
+            }
         }
     }
 
@@ -360,8 +376,8 @@ p {
                 @include sm {
                     left: calc(50% - 10px);
                     transform: rotate(45deg);
-                    width: 20px;
-                    margin-left: 6px;
+                    width: 15px;
+                    margin-left: 5px;
                 }
             }
 
@@ -372,8 +388,8 @@ p {
                 @include sm {
                     right: calc(50% - 10px);
                     transform: rotate(-45deg);
-                    width: 20px;
-                    margin-left: -7px;
+                    width: 15px;
+                    margin-left: -5px;
 
                 }
             }
@@ -443,6 +459,7 @@ p {
         position: fixed;
         z-index: 4;
         cursor: pointer;
+        right: 0;
 
         @include sm {
             margin: 10px;
@@ -587,14 +604,14 @@ p {
             .menu-item {
                 color: $neu-04;
                 list-style: none;
-                width: 20%;
+                width: 30%;
                 min-width: 60px;
                 max-width: 250px;
                 letter-spacing: 4px;
                 height: 50px;
                 transition: all 0.4s ease;
                 position: relative;
-                font-family: 'Source Code Pro', monospace;
+                font-family: $font-02;
                 font-weight: 400;
                 font-size: 14px;
                 display: flex;
@@ -602,7 +619,8 @@ p {
                 justify-content: center;
 
                 @include sm {
-                    min-width: 60px;
+                    width: 25%;
+                    min-width: 80px;
                     font-size: 13px;
                     letter-spacing: 2px;
                     height: 30px;
@@ -662,6 +680,7 @@ p {
     align-items: center;
     flex-direction: column;
 
+
     @include sm {
         height: 100px;
     }
@@ -669,7 +688,7 @@ p {
     p {
         font-size: 12px;
         letter-spacing: 1.1;
-        font-family: 'Source Code Pro', monospace;
+        font-family: $font-02;
         font-weight: 400;
         text-align: center;
         color: $neu-02;
@@ -808,7 +827,7 @@ p {
 
         p {
             color: white;
-            font-family: 'Source Code Pro', monospace;
+            font-family: $font-02;
             font-weight: 400;
             letter-spacing: 8;
             font-size: 14px;
@@ -845,7 +864,6 @@ p {
 .works-container {
 
 
-
     .btn-filter {
         display: none;
 
@@ -854,7 +872,6 @@ p {
             margin-bottom: 30px;
             justify-content: space-between;
             align-items: center;
-
         }
 
         .label {
@@ -864,7 +881,7 @@ p {
                 display: none;
                 width: 100%;
                 text-align: center;
-                font-family: $font2;
+                font-family: $font-02;
                 font-weight: 400;
                 color: $m-01;
                 margin-left: 20px;
@@ -881,13 +898,17 @@ p {
         .filters {
             display: flex;
             justify-content: space-around;
-            margin-bottom: 40px;
+            margin-bottom: 60px;
 
 
             .filter {
                 letter-spacing: 1px;
                 padding: 8px 10px;
                 border-radius: 2px;
+                color: $m-01;
+                display: flex;
+                align-items: center;
+                margin-top: 0;
 
                 &.active-btn {
                     background-color: $m-01;
@@ -910,12 +931,58 @@ p {
                     border-radius: 2px;
                 }
 
-                &:hover {
+                span {
+                    background-color: white;
+                    position: absolute;
+                    border-radius: 3px;
+                    top: 45px;
+                    width: 25px;
+                    height: 25px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.5);
                     color: $m-01;
-                    color: white;
+                    transition: all 0.5s ease;
+                    opacity: 0;
+                    transform: translateY(10px);
 
                     @include sm {
-                        color: $neu-04;
+                        //position: initial;
+
+                        opacity: 1;
+                        border: 1px solid $neu-02;
+                        right: -40px;
+                        transform: translateX(0);
+                        top: initial;
+                        box-shadow: none;
+                    }
+
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        width: 8px;
+                        height: 8px;
+                        background-color: inherit;
+                        top: -3px;
+                        transform: rotate(45deg);
+
+                        @include sm {
+                            left: -4px;
+                            top: initial;
+                            border-left: 1px solid $neu-02;
+                            border-bottom: 1px solid $neu-02;
+
+                        }
+                    }
+                }
+
+
+                &:hover {
+                    color: $m-01;
+
+                    @include sm {
+                        color: $m-01;
                     }
 
                     &:before {
@@ -925,7 +992,21 @@ p {
                             display: none;
                         }
                     }
+
+                    span {
+                        opacity: 1;
+                        transition: all 0.5s 0.2s ease;
+                        transform: translateY(0px);
+                        box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+
+                        @include sm {
+                            box-shadow: none;
+                        }
+                    }
                 }
+
+
+
 
             }
 
@@ -1100,6 +1181,13 @@ p {
 
         }
 
+        &.home {
+
+            .work {
+                width: calc(33% - 20px);
+            }
+        }
+
     }
 
     .image {
@@ -1108,6 +1196,7 @@ p {
         cursor: pointer;
         display: flex;
         justify-content: center;
+        align-items: center;
         overflow: hidden;
         padding-bottom: 100%;
         position: relative;
@@ -1121,16 +1210,17 @@ p {
             }
         }
 
-
         .img {
             display: flex;
             justify-content: center;
+            align-items: center;
             position: absolute;
             background-size: cover;
             background-position: center center;
             transition: all 1s ease;
             width: 100%;
             height: 100%;
+            top: 0;
         }
 
 
@@ -1139,8 +1229,6 @@ p {
             width: 100%;
             padding-bottom: 100%;
         }
-
-
 
         /* filtro cinza */
         &:before {
@@ -1152,6 +1240,7 @@ p {
             position: absolute;
             transition: all .4s ease;
             z-index: 1;
+            top: 0;
 
         }
 
@@ -1170,20 +1259,24 @@ p {
         }
 
         .overlay-title {
-            width: 100%;
-            padding: 0 40px;
             box-sizing: border-box;
-            font-size: 18px;
+            font-size: 14px;
             line-height: 20px;
             position: absolute;
             font-weight: 500;
-            top: 42%;
             opacity: 0;
             z-index: 2;
-            text-align: center;
-            cursor: pointer;
             transition: all .4s ease;
             color: white;
+            top: calc(50% - 70px);
+            transform: translateY(50%);
+            text-align: center;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 0 20px;
+            height: 40px;
+            display: flex;
+            align-items: flex-end;
 
             @include sm {
                 display: none;
@@ -1191,21 +1284,23 @@ p {
         }
 
         .overlay-text {
-            width: 100%;
-            padding: 0 40px;
             box-sizing: border-box;
-            font-size: 14px;
-            line-height: 20px;
+            font-size: 12px;
+            line-height: 18px;
             position: absolute;
-            top: 60%;
             opacity: 0;
             z-index: 2;
-            text-align: center;
-            font-family: 'Source Code Pro', monospace;
+            font-family: $font-02;
             font-weight: 300;
             transition: all .6s ease;
-            margin-top: 10px;
             color: white;
+            bottom: calc(50% - 70px);
+            transform: translateY(50%);
+            text-align: center;
+            padding: 0 20px;
+            height: 40px;
+            display: flex;
+            align-items: flex-start;
 
             @include sm {
                 display: none;
@@ -1253,14 +1348,14 @@ p {
 
             .overlay-title {
                 opacity: 1;
-                top: 48%;
                 transition: all .4s 0.2s ease;
+                top: calc(50% - 50px);
             }
 
             .overlay-text {
                 opacity: 0.7;
-                top: 55%;
                 transition: all .4s 0.2s ease;
+                bottom: calc(50% - 50px);
             }
 
 
@@ -1325,7 +1420,7 @@ p {
                 line-height: 20px;
                 margin: 15 0 0 0;
                 letter-spacing: 0px;
-                font-family: 'Source Code Pro', monospace;
+                font-family: $font-02;
                 font-weight: 400;
 
                 @include sm {
@@ -1524,7 +1619,7 @@ p {
             transition: all 0.9s ease;
             transform: translateY(-30px);
             opacity: 0;
-            font-family: 'Source Code Pro', monospace;
+            font-family: $font-02;
             font-weight: 400;
 
             @include sm {
@@ -1537,7 +1632,7 @@ p {
         }
 
         .social-link {
-            font-family: 'Source Code Pro', monospace;
+            font-family: $font-02;
             font-weight: 400;
             font-size: 12px;
             opacity: 0;
@@ -1670,7 +1765,7 @@ p {
 
     .page-title {
         font-size: 80px;
-        font-family: 'Open Sans', sans-serif;
+        font-family: $font-01;
         font-weight: 100;
         text-transform: uppercase;
         margin-top: 120px;
@@ -1712,7 +1807,7 @@ p {
         h2 {
             font-size: 35px;
             color: $neu-04;
-            font-family: 'Open Sans', sans-serif;
+            font-family: $font-01;
             font-weight: 100;
             letter-spacing: 10px;
             z-index: 2;
@@ -1834,7 +1929,7 @@ p {
             text-align: center;
             color: #fff;
             transition: all 0.5s ease;
-            font-family: 'Source Code Pro', monospace;
+            font-family: $font-02;
             font-weight: 300;
             letter-spacing: 0;
             list-style: none;
@@ -1893,7 +1988,7 @@ p {
             }
 
             &:after {
-                background-color: #f6f6f6;
+                background-color: $neu-01a;
                 position: absolute;
                 height: calc(100% - 25px);
                 width: 90%;
@@ -1907,7 +2002,7 @@ p {
             label {
                 color: $m-01;
                 font-size: 14px;
-                font-family: 'Source Code Pro', monospace;
+                font-family: $font-02;
                 font-weight: 400;
                 display: block;
                 z-index: 2;
@@ -1943,12 +2038,16 @@ p {
     max-width: 800px;
 
     .section-works {
-        padding-bottom: 0;
+        padding: 140px 0 0 0;
+
+        @include sm {
+            padding: 80px 0 0 0;
+        }
 
         .second-title {
             font-size: 20px;
             color: $neu-04;
-            font-family: 'Open Sans', sans-serif;
+            font-family: $font-01;
             font-weight: 100;
             letter-spacing: 5px;
             text-align: left;
@@ -1983,7 +2082,7 @@ p {
             color: $neu-04;
             font-size: 14px;
             margin-bottom: 50px;
-            font-family: 'Source Code Pro', monospace;
+            font-family: $font-02;
             font-weight: 400;
 
             @include sm {
@@ -2001,13 +2100,53 @@ p {
         }
 
         .description {
-            margin-left: 80px;
+            margin-left: 60px;
             font-size: 15px;
-            max-width: 800px;
+            max-width: 600px;
+
 
             @include sm {
                 margin-left: 30px;
                 font-size: 13px;
+            }
+
+            p {
+                margin-bottom: 20px;
+            }
+
+            button {
+                margin: 0;
+            }
+
+            a {
+                display: inline-flex;
+            }
+        }
+
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            color: $neu-04;
+            margin-left: 60px;
+            margin-top: 10px;
+
+            li {
+                line-height: 28px;
+                position: relative;
+                left: 25px;
+                font-family: $font-02;
+
+                &:before {
+                    position: absolute;
+                    content: '';
+                    width: 15px;
+                    height: 2px;
+                    background-color: $m-01;
+                    left: -25px;
+                    bottom: 8px;
+                }
             }
         }
     }
@@ -2062,13 +2201,32 @@ p {
     background-color: $neu-02;
     height: 90px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-
+    padding: 0 5%;
 
     @include sm {
         height: 60px;
     }
+
+    &.fixed {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: red;
+    }
+
+    #scrollme {
+        margin: 0;
+        height: 35px;
+        transform: translateX(30px);
+
+        @include sm {
+            transform: translateX(0px);
+            width: 30px;
+        }
+    }
+
 
 }
 

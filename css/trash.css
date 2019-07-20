@@ -40,7 +40,7 @@
 .main-title {
     font-size: 50px;
     color: #848484;
-    font-family: 'Open Sans', sans-serif;
+    font-family: $font-01;
     font-weight: 100;
     letter-spacing: 10px;
     text-align: center;
@@ -61,7 +61,7 @@
 .main-title-right {
     font-size: 50px;
     color: #848484;
-    font-family: 'Open Sans', sans-serif;
+    font-family: $font-01;
     font-weight: 100;
     letter-spacing: 10px;
     text-align: center;
