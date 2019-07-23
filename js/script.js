@@ -1,5 +1,26 @@
 window.onload = function (e) {
 
+
+    /* Sticky Go Back */
+    var goBack = document.querySelector('.go-back');
+    // calcular a altura do ecrã
+    window.onscroll = function () {
+
+
+        if (window.pageYOffset >= 190) {
+            goBack.classList.remove('bottom');
+            goBack.classList.add('fixed');
+
+        } else {
+            goBack.classList.remove('fixed');
+            goBack.classList.add('bottom');
+        }
+
+
+    }
+
+
+
     /* Open Menu bar */
 
     var iconMenu = document.querySelector('.iconmenu'),
@@ -21,6 +42,8 @@ window.onload = function (e) {
         } else {
             navBar.classList.add('navshow');
         }
+
+
     };
     /* end Open Menu bar */
 
@@ -54,23 +77,20 @@ window.onload = function (e) {
     /* end Back to top */
 
 
-
-
     /* Filters */
 
     var tagFilter = document.querySelectorAll(".filter"),
-        tagFilterAll = document.querySelector(".btn-all"),
+        tagFilterAll = document.querySelector(".filter.btn-all"),
         work = document.querySelectorAll(".work");
 
 
     tagFilter.forEach(function (el) {
         el.addEventListener("click", filterImages);
-
     });
 
-    tagFilterAll.addEventListener("click", All);
+    tagFilterAll.addEventListener("click", filterAll);
 
-    function All() {
+    function filterAll() {
         work.forEach(function (el) {
             el.classList.remove("hide");
 
@@ -98,12 +118,9 @@ window.onload = function (e) {
 
         btnTarget.classList.add("active-btn");
 
-        //workCount.forEach(function (el) {
-        //  el.innerText = `${filterWork.length}`;
-        // });
+
 
         var label = document.querySelector(".label");
-
 
         if (filterWork != "all") {
             label.style.display = "block";
@@ -158,12 +175,6 @@ window.onload = function (e) {
     }
 
     workCount[0].innerText = `${work.length}`;
-
-
-
-    /* Sticky Go Back */
-
-
 
 
 }

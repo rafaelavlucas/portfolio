@@ -209,7 +209,7 @@ p {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  height: 80px;
+  padding: 0 0 20px 0;
 }
 
 .main-title.white {
@@ -219,7 +219,6 @@ p {
 @media (max-width: 799px) {
   .main-title {
     font-size: 25px;
-    height: 60px;
     margin-bottom: 40px;
   }
 }
@@ -723,6 +722,9 @@ p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 100%;
+  z-index: 3;
+  position: absolute;
 }
 
 @media (max-width: 799px) {
@@ -975,6 +977,10 @@ p {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+  }
+  .works-container .btn-filter.fixed2 {
+    position: fixed;
+    margin: 0 auto;
   }
 }
 
@@ -2229,6 +2235,7 @@ p {
       -ms-flex-align: start;
           align-items: flex-start;
   height: 50px;
+  margin-top: 0;
 }
 
 .dual-block .block h3:after {
@@ -2544,7 +2551,7 @@ p {
 .go-back {
   height: 200px;
   background-color: #f0f0f0;
-  height: 90px;
+  height: 60px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2555,19 +2562,31 @@ p {
       -ms-flex-align: center;
           align-items: center;
   padding: 0 5%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+  bottom: -70px;
+  -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 799px) {
   .go-back {
-    height: 60px;
+    height: 50px;
   }
 }
 
 .go-back.fixed {
   position: fixed;
-  top: 0;
+  bottom: 0;
   width: 100%;
-  background-color: red;
+}
+
+.go-back.bottom {
+  width: 100%;
+  position: fixed;
+  bottom: -70px;
 }
 
 .go-back #scrollme {

@@ -246,7 +246,7 @@ p {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    height: 80px;
+    padding: 0 0 20px 0;
 
     &.white {
         color: #fff;
@@ -254,7 +254,6 @@ p {
 
     @include sm {
         font-size: 25px;
-        height: 60px;
         margin-bottom: 40px;
     }
 
@@ -678,6 +677,10 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    z-index: 3;
+    position: absolute;
+
 
 
     @include sm {
@@ -880,6 +883,7 @@ p {
             margin-bottom: 30px;
             justify-content: space-between;
             align-items: center;
+
         }
 
         .label {
@@ -897,6 +901,8 @@ p {
                 letter-spacing: 1px;
             }
         }
+
+
     }
 
 
@@ -1969,6 +1975,7 @@ p {
             justify-content: center;
             align-items: flex-start;
             height: 50px;
+            margin-top: 0;
 
             &:after {
                 background-color: white;
@@ -2257,21 +2264,31 @@ p {
 .go-back {
     height: 200px;
     background-color: $neu-02;
-    height: 90px;
+    height: 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 5%;
+    box-sizing: border-box;
+    transition: all 0.6s ease;
+    bottom: -70px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
 
     @include sm {
-        height: 60px;
+        height: 50px;
     }
 
     &.fixed {
         position: fixed;
-        top: 0;
+        bottom: 0;
         width: 100%;
-        background-color: red;
+
+    }
+
+    &.bottom {
+        width: 100%;
+        position: fixed;
+        bottom: -70px;
     }
 
     #scrollme {
