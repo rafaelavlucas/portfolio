@@ -10,7 +10,6 @@
 /* ----- MAIN ELEMENTS ----- */
 /* --------------------------*/
 /* // General Elements \\  */
-/* line 72, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 body {
   font-family: sans-serif;
   font-family: "Open Sans", sans-serif;
@@ -18,34 +17,32 @@ body {
   margin: 0;
   padding: 0;
   font-size: 15px;
+  -webkit-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
   -webkit-tap-highlight-color: transparent;
 }
 
-/* line 83, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 #wrapper {
   width: 100%;
   margin: 0;
   padding: 0;
   position: relative;
+  -webkit-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
 }
 
 /* // Selected Elements \\  */
-/* line 95, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 ::-moz-selection {
   background-color: #698fb7;
   color: #ffffff;
 }
 
-/* line 100, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 ::selection {
   background-color: #698fb7;
   color: #ffffff;
 }
 
 /*  // Components \\  */
-/* line 108, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 button {
   color: #848484;
   display: inline-block;
@@ -53,6 +50,7 @@ button {
   text-align: center;
   letter-spacing: 5px;
   background-color: #f6f6f6;
+  -webkit-transition: all .6s ease;
   transition: all .6s ease;
   font-size: 12px;
   cursor: pointer;
@@ -63,11 +61,14 @@ button {
   border: 0;
   margin: 0 auto;
   margin-top: 40;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-/* line 128, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 button:after {
   content: '';
   width: 0%;
@@ -76,10 +77,10 @@ button:after {
   border-radius: 20px;
   position: absolute;
   bottom: 0;
+  -webkit-transition: all 0.7s ease;
   transition: all 0.7s ease;
 }
 
-/* line 140, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 button:before {
   content: '';
   position: absolute;
@@ -88,58 +89,50 @@ button:before {
   height: 100%;
   z-index: -1;
   top: 0;
+  -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
 
-/* line 151, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 button:hover {
   color: #698fb7;
 }
 
 @media (max-width: 799px) {
-  /* line 151, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   button:hover {
     color: #848484;
   }
 }
 
-/* line 158, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 button:hover:after {
   width: 30%;
 }
 
 @media (max-width: 799px) {
-  /* line 158, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   button:hover:after {
     display: none;
   }
 }
 
-/* line 166, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 button:hover:before {
   width: 100%;
 }
 
 @media (max-width: 799px) {
-  /* line 166, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   button:hover:before {
     display: none;
   }
 }
 
-/* line 175, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 button:focus {
   outline: 0;
 }
 
-/* line 181, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 a {
   text-decoration: none;
   color: inherit;
   cursor: pointer;
 }
 
-/* line 187, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 p {
   color: #848484;
   font-size: 16px;
@@ -147,27 +140,29 @@ p {
   margin: 0;
   line-height: 1.8;
   letter-spacing: 0.7;
+  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
 @media (max-width: 799px) {
-  /* line 187, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   p {
     font-size: 14px;
   }
 }
 
-/* line 201, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .links {
   color: #698fb7;
   position: relative;
   font-family: "Source Code Pro", monospace;
   font-weight: 300;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-/* line 209, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .links:after {
   content: '';
   width: 0%;
@@ -176,24 +171,22 @@ p {
   background-color: #698fb7;
   position: absolute;
   bottom: -2px;
+  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
 @media (max-width: 799px) {
-  /* line 209, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .links:after {
     width: 0;
     text-decoration: underline;
   }
 }
 
-/* line 226, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .links:hover:after {
   width: 100%;
 }
 
 /*  // Texts \\  */
-/* line 234, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .main-title {
   font-size: 35px;
   color: #848484;
@@ -204,28 +197,32 @@ p {
   margin: 0;
   margin-bottom: 60px;
   text-transform: uppercase;
+  -webkit-transition: all .5s ease;
   transition: all .5s ease;
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   padding: 0 0 20px 0;
 }
 
-/* line 251, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .main-title.white {
   color: #fff;
 }
 
 @media (max-width: 799px) {
-  /* line 234, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .main-title {
     font-size: 25px;
     margin-bottom: 40px;
   }
 }
 
-/* line 260, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .main-title:after {
   background-color: #698fb7;
   width: 80px;
@@ -233,18 +230,17 @@ p {
   height: 2px;
   border-radius: 20px;
   position: absolute;
+  -webkit-transition: all .5s ease;
   transition: all .5s ease;
   bottom: 0px;
 }
 
 @media (max-width: 799px) {
-  /* line 260, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .main-title:after {
     width: 50px;
   }
 }
 
-/* line 276, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .main-text {
   max-width: 800px;
   text-align: center;
@@ -252,18 +248,15 @@ p {
 }
 
 @media (max-width: 799px) {
-  /* line 276, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .main-text {
     padding: 0 10px;
   }
 }
 
-/* line 285, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .main-text.left {
   text-align: left;
 }
 
-/* line 291, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 #scrollme {
   margin: 0 auto;
   height: 50px;
@@ -271,13 +264,11 @@ p {
   width: 120px;
 }
 
-/* line 297, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 #scrollme .backtop {
   position: relative;
   color: #698fb7;
 }
 
-/* line 301, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 #scrollme .backtop p {
   font-size: 12px;
   font-family: "Source Code Pro", monospace;
@@ -285,6 +276,7 @@ p {
   letter-spacing: 2px;
   margin-bottom: 50px;
   opacity: 0;
+  -webkit-transition: all 0.6s ease;
   transition: all 0.6s ease;
   padding-top: 10px;
   color: #698fb7;
@@ -293,7 +285,6 @@ p {
   cursor: pointer;
 }
 
-/* line 316, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 #scrollme .backtop span {
   width: 20px;
   height: 2px;
@@ -301,44 +292,41 @@ p {
   top: 20px;
   left: calc(50% - 10px);
   border-radius: 20px;
+  -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
   background-color: #698fb7;
 }
 
 @media (max-width: 799px) {
-  /* line 316, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   #scrollme .backtop span {
     width: 15px;
   }
 }
 
-/* line 331, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 #scrollme .backtop span:nth-child(1) {
-  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
   margin-left: 6px;
 }
 
 @media (max-width: 799px) {
-  /* line 331, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   #scrollme .backtop span:nth-child(1) {
     margin-left: 5px;
   }
 }
 
-/* line 340, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 #scrollme .backtop span:nth-child(2) {
-  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
   margin-left: -7px;
 }
 
 @media (max-width: 799px) {
-  /* line 340, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   #scrollme .backtop span:nth-child(2) {
     margin-left: -5px;
   }
 }
 
-/* line 352, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 #scrollme:hover .backtop p {
   opacity: 1;
   padding-top: 0px;
@@ -346,52 +334,49 @@ p {
 }
 
 @media (max-width: 799px) {
-  /* line 352, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   #scrollme:hover .backtop p {
     display: none;
   }
 }
 
-/* line 362, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 #scrollme:hover .backtop span {
   top: 22px;
   width: 20px;
 }
 
 @media (max-width: 799px) {
-  /* line 362, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   #scrollme:hover .backtop span {
     top: 20px;
   }
 }
 
-/* line 371, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 #scrollme:hover .backtop span:nth-child(1) {
   left: calc(50% - 5px);
-  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
 @media (max-width: 799px) {
-  /* line 371, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   #scrollme:hover .backtop span:nth-child(1) {
     left: calc(50% - 10px);
-    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
     width: 15px;
     margin-left: 5px;
   }
 }
 
-/* line 383, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 #scrollme:hover .backtop span:nth-child(2) {
   right: calc(50% - 5px);
-  transform: rotate(-180deg);
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
 }
 
 @media (max-width: 799px) {
-  /* line 383, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   #scrollme:hover .backtop span:nth-child(2) {
     right: calc(50% - 10px);
-    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
     width: 15px;
     margin-left: -5px;
   }
@@ -400,49 +385,53 @@ p {
 /* ---------------------------*/
 /* ------- CONTAINERS ------- */
 /* ---------------------------*/
-/* line 406, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: calc(100% - 10%);
   margin: 0 auto;
+  -webkit-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
 }
 
-/* line 416, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .content-full {
   padding: 0 5%;
 }
 
-/* line 419, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .content-full.blue {
   background-color: #698fb7;
 }
 
-/* line 423, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .content-full.gray {
   background-color: #f0f0f0;
 }
 
-/* line 427, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .content-full.dark {
   background-color: #383838;
 }
 
-/* line 432, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .section,
 .section-works {
   width: 100%;
   max-width: 1280px;
   padding: 80px 0;
+  -webkit-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
   margin: auto;
 }
 
 @media (max-width: 799px) {
-  /* line 432, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .section,
   .section-works {
     padding: 50px 0;
@@ -452,8 +441,7 @@ p {
 /* ---------------------------*/
 /* --------- MODULES -------- */
 /* ---------------------------*/
-/* line 454, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-.main-nav .iconmenu {
+nav .iconmenu {
   width: 40px;
   height: 40px;
   margin: 25px;
@@ -464,39 +452,48 @@ p {
 }
 
 @media (max-width: 799px) {
-  /* line 454, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-  .main-nav .iconmenu {
+  nav .iconmenu {
     margin: 10px;
   }
 }
 
-/* line 467, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-.main-nav .iconmenu .iconopen {
+nav .iconmenu .iconopen {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 100%;
   height: 100%;
   background-color: #f9f9f9;
   border-radius: 100%;
 }
 
-/* line 477, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-.main-nav .iconmenu .iconopen span {
+nav .iconmenu .iconopen span {
   position: absolute;
   width: 20px;
   height: 2px;
   border-radius: 20px;
+  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   background-color: #698fb7;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-/* line 488, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-.main-nav .iconmenu .iconopen span:before, .main-nav .iconmenu .iconopen span:after {
+nav .iconmenu .iconopen span:before, nav .iconmenu .iconopen span:after {
   position: absolute;
   content: '';
   width: 20px;
@@ -504,130 +501,134 @@ p {
   background-color: inherit;
 }
 
-/* line 498, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-.main-nav .iconmenu .iconopen span:before {
+nav .iconmenu .iconopen span:before {
+  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  transform: translateY(-6px);
+  -webkit-transform: translateY(-6px);
+          transform: translateY(-6px);
 }
 
-/* line 503, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-.main-nav .iconmenu .iconopen span:after {
+nav .iconmenu .iconopen span:after {
+  -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
-  transform: translateY(6px);
+  -webkit-transform: translateY(6px);
+          transform: translateY(6px);
 }
 
-/* line 509, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-.main-nav .iconmenu .iconopen.close {
+nav .iconmenu .iconopen.close {
+  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   background-color: transparent;
 }
 
-/* line 513, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-.main-nav .iconmenu .iconopen.close span {
+nav .iconmenu .iconopen.close span {
   background-color: #ccc;
   width: 0px;
 }
 
-/* line 517, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-.main-nav .iconmenu .iconopen.close span:before {
+nav .iconmenu .iconopen.close span:before {
   width: 20px;
-  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
-/* line 522, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-.main-nav .iconmenu .iconopen.close span:after {
+nav .iconmenu .iconopen.close span:after {
   width: 20px;
-  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 
-/* line 533, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-.main-nav .iconmenu:hover .iconopen span:before {
+nav .iconmenu:hover .iconopen span:before {
   width: 16px;
 }
 
 @media (max-width: 799px) {
-  /* line 533, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-  .main-nav .iconmenu:hover .iconopen span:before {
+  nav .iconmenu:hover .iconopen span:before {
     width: 20px;
   }
 }
 
-/* line 541, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-.main-nav .iconmenu:hover .iconopen span:after {
+nav .iconmenu:hover .iconopen span:after {
   width: 16px;
 }
 
 @media (max-width: 799px) {
-  /* line 541, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-  .main-nav .iconmenu:hover .iconopen span:after {
+  nav .iconmenu:hover .iconopen span:after {
     width: 20px;
   }
 }
 
-/* line 551, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-.main-nav .iconmenu:hover .iconopen.close span {
+nav .iconmenu:hover .iconopen.close span {
   background-color: #848484;
 }
 
 @media (max-width: 799px) {
-  /* line 551, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-  .main-nav .iconmenu:hover .iconopen.close span {
+  nav .iconmenu:hover .iconopen.close span {
     background-color: #ccc;
   }
 }
 
-/* line 558, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-.main-nav .iconmenu:hover .iconopen.close span:before {
+nav .iconmenu:hover .iconopen.close span:before {
   width: 20px;
 }
 
-/* line 562, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-.main-nav .iconmenu:hover .iconopen.close span:after {
+nav .iconmenu:hover .iconopen.close span:after {
   width: 20px;
 }
 
-/* line 571, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-.main-nav .nav {
+nav .nav {
   background-color: white;
   margin: 0;
   width: 100%;
   height: 90px;
   position: fixed;
   top: -95px;
+  -webkit-transition: all .5s ease-in;
   transition: all .5s ease-in;
-  box-shadow: 0px -10px 20px black;
+  -webkit-box-shadow: 0px -10px 20px black;
+          box-shadow: 0px -10px 20px black;
   z-index: 3;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   /*  // Menu List \\  */
 }
 
 @media (max-width: 799px) {
-  /* line 571, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-  .main-nav .nav {
+  nav .nav {
     top: -65px;
     height: 60px;
   }
 }
 
-/* line 590, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-.main-nav .nav.navshow {
+nav .nav.navshow {
+  -webkit-transition: all .5s ease-out;
   transition: all .5s ease-out;
   top: 0;
 }
 
-/* line 596, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-.main-nav .nav .menu {
+nav .nav .menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   width: 100%;
 }
 
-/* line 603, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-.main-nav .nav .menu .menu-item {
+nav .nav .menu .menu-item {
   color: #848484;
   list-style: none;
   width: 30%;
@@ -635,19 +636,25 @@ p {
   max-width: 250px;
   letter-spacing: 4px;
   height: 50px;
+  -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
   position: relative;
   font-family: "Source Code Pro", monospace;
   font-weight: 400;
   font-size: 14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 @media (max-width: 799px) {
-  /* line 603, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-  .main-nav .nav .menu .menu-item {
+  nav .nav .menu .menu-item {
     width: 25%;
     min-width: 80px;
     font-size: 13px;
@@ -656,8 +663,7 @@ p {
   }
 }
 
-/* line 628, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-.main-nav .nav .menu .menu-item:after {
+nav .nav .menu .menu-item:after {
   content: '';
   width: 0%;
   height: 2px;
@@ -665,76 +671,75 @@ p {
   background-color: #698fb7;
   position: absolute;
   bottom: 0;
+  -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
 
-/* line 639, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-.main-nav .nav .menu .menu-item:hover {
+nav .nav .menu .menu-item:hover {
   color: #698fb7;
 }
 
 @media (max-width: 799px) {
-  /* line 639, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-  .main-nav .nav .menu .menu-item:hover {
+  nav .nav .menu .menu-item:hover {
     letter-spacing: 2px;
     color: #848484;
   }
 }
 
-/* line 647, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-.main-nav .nav .menu .menu-item:hover:after {
+nav .nav .menu .menu-item:hover:after {
   width: 35px;
 }
 
 @media (max-width: 799px) {
-  /* line 647, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-  .main-nav .nav .menu .menu-item:hover:after {
+  nav .nav .menu .menu-item:hover:after {
     width: 0px;
   }
 }
 
-/* line 656, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-.main-nav .nav .menu .menu-item.current {
+nav .nav .menu .menu-item.current {
   color: #698fb7;
 }
 
-/* line 659, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-.main-nav .nav .menu .menu-item.current:after {
+nav .nav .menu .menu-item.current:after {
   width: 30px;
 }
 
 @media (max-width: 799px) {
-  /* line 659, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-  .main-nav .nav .menu .menu-item.current:after {
+  nav .nav .menu .menu-item.current:after {
     width: 20px;
   }
 }
 
-/* line 674, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-.footer {
+footer {
   background-color: #313131;
   height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 @media (max-width: 799px) {
-  /* line 674, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-  .footer {
+  footer {
     height: 100px;
   }
 }
 
 @media (max-width: 511px) {
-  /* line 674, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-  .footer {
-    flex-direction: column;
+  footer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 
-/* line 691, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-.footer p {
+footer p {
   font-size: 12px;
   letter-spacing: 1.1;
   font-family: "Source Code Pro", monospace;
@@ -743,57 +748,32 @@ p {
   color: #f0f0f0;
 }
 
-/* line 699, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-.footer p:first-child {
+footer p:first-child {
   color: #848484;
   margin-right: 10px;
 }
 
 @media (max-width: 511px) {
-  /* line 699, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-  .footer p:first-child {
+  footer p:first-child {
     margin: 0;
   }
 }
 
-/* line 710, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-.header {
-  width: 100%;
-  margin: 0 auto;
-  height: 650px;
-  transition: all 0.6s ease-in-out;
-  background-color: #ccc;
+header {
   position: relative;
+  height: 650px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-@media (max-width: 1279px) {
-  /* line 710, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-  .header {
-    height: 600px;
-  }
-}
-
-@media (max-width: 1023px) {
-  /* line 710, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-  .header {
-    height: 500px;
-  }
-}
-
-@media (max-width: 799px) {
-  /* line 710, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-  .header {
-    height: 360px;
-    background-size: 250px, cover;
-    background-position: center 50px;
-  }
-}
-
-/* line 735, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-.header:before {
+header:before {
   background-color: #698fb7;
   content: '';
   position: absolute;
@@ -804,45 +784,90 @@ p {
   z-index: 0;
 }
 
-/* line 746, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-.header span {
-  position: absolute;
+header .header-images {
+  width: 100%;
+  margin: 0 auto;
+  height: 100%;
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+  background-color: #ccc;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+@media (max-width: 1279px) {
+  header .header-images {
+    height: 600px;
+  }
+}
+
+@media (max-width: 1023px) {
+  header .header-images {
+    height: 500px;
+  }
+}
+
+@media (max-width: 799px) {
+  header .header-images {
+    height: 360px;
+    background-size: 250px, cover;
+    background-position: center 50px;
+  }
+}
+
+header .header-images span {
+  position: relative;
   top: 0;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  width: 25%;
-  height: 100%;
+  width: 100%;
+  height: 0%;
   opacity: 0.5;
-  transition: width 0.6s ease;
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
   z-index: 1;
   -webkit-filter: grayscale(100%);
+  top: 0;
   /* Safari 6.0 - 9.0 */
   filter: grayscale(100%);
+  -webkit-animation: header 1.6s ease-in-out;
+          animation: header 1.6s ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
-/* line 761, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-.header span:nth-child(1) {
-  left: 0;
+header .header-images span:nth-child(2) {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
 }
 
-/* line 765, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-.header span:nth-child(2) {
-  left: 25%;
+header .header-images span:nth-child(3) {
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
 }
 
-/* line 769, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-.header span:nth-child(3) {
-  right: 25%;
+header .header-images span:nth-child(4) {
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
 }
 
-/* line 773, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-.header span:nth-child(4) {
-  right: 0%;
+@-webkit-keyframes header {
+  100% {
+    height: 100%;
+  }
 }
 
-/* line 777, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-.header span:after {
+@keyframes header {
+  100% {
+    height: 100%;
+  }
+}
+
+header .header-images span:after {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -850,12 +875,12 @@ p {
   left: 0;
   top: 0;
   background-color: rgba(52, 52, 52, 0.85);
+  -webkit-transition: all 0.4s ease-in;
   transition: all 0.4s ease-in;
 }
 
-/* line 788, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-.header span:hover {
-  width: 40%;
+header .header-images span:hover {
+  width: 200%;
   opacity: 1;
   -webkit-filter: grayscale(0%);
   filter: grayscale(0%);
@@ -863,8 +888,7 @@ p {
 }
 
 @media (max-width: 799px) {
-  /* line 788, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-  .header span:hover {
+  header .header-images span:hover {
     width: 25%;
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
@@ -872,32 +896,37 @@ p {
   }
 }
 
-/* line 802, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-.header span:hover:after {
+header .header-images span:hover:after {
   background-color: rgba(52, 52, 52, 0.5);
 }
 
 @media (max-width: 799px) {
-  /* line 802, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-  .header span:hover:after {
+  header .header-images span:hover:after {
     background-color: rgba(52, 52, 52, 0.85);
   }
 }
 
-/* line 813, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-.header .header-content {
+header .header-content {
   width: 100%;
-  z-index: 2;
-  position: relative;
-  transition: all .6s ease-in-out;
+  position: absolute;
+  -webkit-transition: all .8s ease;
+  transition: all .8s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-/* line 823, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-.header .header-content h1 {
+header .header-content h1 {
   font-size: 50px;
   color: white;
   font-weight: 100;
@@ -907,14 +936,12 @@ p {
 }
 
 @media (max-width: 799px) {
-  /* line 823, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-  .header .header-content h1 {
+  header .header-content h1 {
     font-size: 35px;
   }
 }
 
-/* line 836, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-.header .header-content p {
+header .header-content p {
   color: white;
   font-family: "Source Code Pro", monospace;
   font-weight: 400;
@@ -922,57 +949,65 @@ p {
   font-size: 14px;
   text-align: center;
   z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
 }
 
-/* line 849, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-.header .header-content p:before {
+header .header-content p:before {
   content: '';
   width: 160px;
   height: 6px;
   position: absolute;
   background-color: #698fb7;
   z-index: -1;
-  transform: translateX(-4px);
+  -webkit-transform: translateX(-4px);
+          transform: translateX(-4px);
 }
 
-/* line 862, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-.header:hover .header-content {
-  opacity: 0.2;
+header:hover .header-content {
+  opacity: 0;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
 
 @media (max-width: 799px) {
-  /* line 862, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-  .header:hover .header-content {
+  header:hover .header-content {
     opacity: 1;
   }
 }
 
-/* line 875, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .works-container .btn-filter {
   display: none;
 }
 
 @media (max-width: 799px) {
-  /* line 875, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .works-container .btn-filter {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin-bottom: 30px;
-    justify-content: space-between;
-    align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 
-/* line 886, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .works-container .btn-filter .label {
   display: none;
 }
 
 @media (max-width: 799px) {
-  /* line 886, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .works-container .btn-filter .label {
     display: none;
     width: 100%;
@@ -986,36 +1021,38 @@ p {
   }
 }
 
-/* line 909, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .works-container .filters-container .filters {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   margin-bottom: 60px;
 }
 
-/* line 915, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .works-container .filters-container .filters .filter {
   letter-spacing: 1px;
   padding: 8px 10px;
   border-radius: 2px;
   color: #698fb7;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-top: 0;
 }
 
-/* line 924, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .works-container .filters-container .filters .filter.active-btn {
   background-color: #698fb7;
   color: white;
 }
 
-/* line 928, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .works-container .filters-container .filters .filter.active-btn:hover {
   color: white;
 }
 
-/* line 933, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .works-container .filters-container .filters .filter:before {
   content: '';
   position: absolute;
@@ -1024,11 +1061,11 @@ p {
   height: 100%;
   z-index: -1;
   top: 0;
+  -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   border-radius: 2px;
 }
 
-/* line 945, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .works-container .filters-container .filters .filter span {
   background-color: white;
   position: absolute;
@@ -1036,29 +1073,38 @@ p {
   top: 45px;
   width: 25px;
   height: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.5);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.5);
   color: #698fb7;
+  -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   opacity: 0;
-  transform: translateY(10px);
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
 }
 
 @media (max-width: 799px) {
-  /* line 945, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .works-container .filters-container .filters .filter span {
     opacity: 1;
     border: 1px solid #f0f0f0;
     right: -40px;
-    transform: translateX(0);
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
     top: initial;
-    box-shadow: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
   }
 }
 
-/* line 972, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .works-container .filters-container .filters .filter span:before {
   content: '';
   position: absolute;
@@ -1066,11 +1112,11 @@ p {
   height: 8px;
   background-color: inherit;
   top: -3px;
-  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
 @media (max-width: 799px) {
-  /* line 972, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .works-container .filters-container .filters .filter span:before {
     left: -4px;
     top: initial;
@@ -1079,47 +1125,44 @@ p {
   }
 }
 
-/* line 992, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .works-container .filters-container .filters .filter:hover {
   color: #698fb7;
 }
 
 @media (max-width: 799px) {
-  /* line 992, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .works-container .filters-container .filters .filter:hover {
     color: #698fb7;
   }
 }
 
-/* line 999, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .works-container .filters-container .filters .filter:hover:before {
   width: 100%;
 }
 
 @media (max-width: 799px) {
-  /* line 999, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .works-container .filters-container .filters .filter:hover:before {
     display: none;
   }
 }
 
-/* line 1007, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .works-container .filters-container .filters .filter:hover span {
   opacity: 1;
+  -webkit-transition: all 0.5s 0.2s ease;
   transition: all 0.5s 0.2s ease;
-  transform: translateY(0px);
-  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+  -webkit-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 799px) {
-  /* line 1007, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .works-container .filters-container .filters .filter:hover span {
-    box-shadow: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
   }
 }
 
 @media (max-width: 799px) {
-  /* line 909, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .works-container .filters-container .filters {
     display: none;
     margin-bottom: 0px;
@@ -1127,14 +1170,13 @@ p {
 }
 
 @media (max-width: 799px) {
-  /* line 907, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .works-container .filters-container {
-    transform: translateX(120%);
+    -webkit-transform: translateX(120%);
+            transform: translateX(120%);
   }
 }
 
 @media (max-width: 799px) {
-  /* line 1036, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .works-container .filters-container.mobile {
     width: 100%;
     height: 100vh;
@@ -1143,37 +1185,55 @@ p {
     z-index: 4;
     top: 0;
     right: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
-    transform: translateX(120%);
+    -webkit-transform: translateX(120%);
+            transform: translateX(120%);
   }
-  /* line 1052, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .works-container .filters-container.mobile .close-filters {
     position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     top: 30px;
     right: 30px;
     width: 40px;
     height: 40px;
     cursor: pointer;
   }
-  /* line 1063, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .works-container .filters-container.mobile .close-filters span {
     position: absolute;
     width: 0px;
     height: 2px;
     border-radius: 20px;
+    -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
     background-color: #ccc;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
-  /* line 1074, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .works-container .filters-container.mobile .close-filters span:before, .works-container .filters-container.mobile .close-filters span:after {
     position: absolute;
     content: '';
@@ -1181,56 +1241,65 @@ p {
     height: 100%;
     background-color: inherit;
   }
-  /* line 1084, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .works-container .filters-container.mobile .close-filters span:before {
-    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
   }
-  /* line 1089, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .works-container .filters-container.mobile .close-filters span:after {
     width: 20px;
-    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
   }
-  /* line 1097, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .works-container .filters-container.mobile .filters {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     width: 100%;
     height: 500px;
     background-color: white;
     top: 0;
+    -webkit-transition: all 0.8s 0.5s ease;
     transition: all 0.8s 0.5s ease;
-    transform: translateX(100px);
+    -webkit-transform: translateX(100px);
+            transform: translateX(100px);
     opacity: 0;
   }
-  /* line 1108, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .works-container .filters-container.mobile .filters.anime-tags {
     opacity: 1;
-    transform: translateX(0px);
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
   }
 }
 
 @media (max-width: 799px) {
-  /* line 1118, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .works-container .filters-container.anime-filters {
-    transform: translateX(0%);
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
   }
 }
 
-/* line 1125, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .works-container .image-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 @media (max-width: 799px) {
-  /* line 1125, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .works-container .image-container {
-    grid-template-columns: 100%;
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
   }
 }
 
-/* line 1141, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .works-container .image-container .work {
   display: block;
   width: calc(50% - 20px);
@@ -1238,18 +1307,38 @@ p {
 }
 
 @media (max-width: 799px) {
-  /* line 1141, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .works-container .image-container .work {
     width: 100%;
   }
 }
 
-/* line 1150, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .works-container .image-container .work.hide {
-  animation: hide 6s ease;
-  animation-fill-mode: forwards;
+  -webkit-animation: hide 6s ease;
+          animation: hide 6s ease;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
   margin: 0px 10px;
   z-index: -1;
+}
+
+@-webkit-keyframes hide {
+  50% {
+    height: 0;
+    position: absolute;
+    opacity: 0;
+    display: none;
+  }
+  60% {
+    position: absolute;
+    height: 0;
+    display: none;
+  }
+  100% {
+    opacity: 0;
+    position: absolute;
+    height: 0;
+    display: none;
+  }
 }
 
 @keyframes hide {
@@ -1272,24 +1361,28 @@ p {
   }
 }
 
-/* line 1183, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .works-container .image-container .work.hide .image {
   height: 0;
   padding-bottom: 0%;
 }
 
-/* line 1197, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .works-container .image-container.home .work {
   width: calc(33% - 20px);
 }
 
-/* line 1204, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .works-container .image {
+  -webkit-transition: all .5s ease;
   transition: all .5s ease;
   cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   overflow: hidden;
   padding-bottom: 100%;
   position: relative;
@@ -1297,27 +1390,31 @@ p {
   /* filtro azul */
 }
 
-/* line 1215, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .works-container .image.big {
   padding-bottom: 50%;
 }
 
 @media (max-width: 799px) {
-  /* line 1215, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .works-container .image.big {
     width: 100%;
     padding-bottom: 100%;
   }
 }
 
-/* line 1224, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .works-container .image .img {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: absolute;
   background-size: cover;
   background-position: center center;
+  -webkit-transition: all 1s ease;
   transition: all 1s ease;
   width: 100%;
   height: 100%;
@@ -1325,14 +1422,12 @@ p {
 }
 
 @media (max-width: 799px) {
-  /* line 1204, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .works-container .image {
     width: 100%;
     padding-bottom: 100%;
   }
 }
 
-/* line 1245, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .works-container .image:before {
   content: '';
   opacity: 0.1;
@@ -1340,17 +1435,18 @@ p {
   width: 100%;
   height: 100%;
   position: absolute;
+  -webkit-transition: all .4s ease;
   transition: all .4s ease;
   z-index: 1;
   top: 0;
 }
 
-/* line 1259, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .works-container .image:after {
   position: absolute;
   content: '';
   opacity: 0;
   background-color: #698fb7;
+  -webkit-transition: all .4s ease;
   transition: all .4s ease;
   width: 90%;
   height: 90%;
@@ -1359,38 +1455,43 @@ p {
   border-radius: 20px;
 }
 
-/* line 1272, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .works-container .image .overlay-title {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   font-size: 14px;
   line-height: 20px;
   position: absolute;
   font-weight: 500;
   opacity: 0;
   z-index: 2;
+  -webkit-transition: all .4s ease;
   transition: all .4s ease;
   color: white;
   top: calc(50% - 70px);
-  transform: translateY(50%);
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
   text-align: center;
   letter-spacing: 1px;
   text-transform: uppercase;
   padding: 0 20px;
   height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 
 @media (max-width: 799px) {
-  /* line 1272, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .works-container .image .overlay-title {
     display: none;
   }
 }
 
-/* line 1297, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .works-container .image .overlay-text {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   font-size: 12px;
   line-height: 18px;
   position: absolute;
@@ -1398,62 +1499,60 @@ p {
   z-index: 2;
   font-family: "Source Code Pro", monospace;
   font-weight: 300;
+  -webkit-transition: all .6s ease;
   transition: all .6s ease;
   color: white;
   bottom: calc(50% - 70px);
-  transform: translateY(50%);
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
   text-align: center;
   padding: 0 20px;
   height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 @media (max-width: 799px) {
-  /* line 1297, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .works-container .image .overlay-text {
     display: none;
   }
 }
 
-/* line 1320, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .works-container .image .overlay-text span {
   opacity: 0.4;
 }
 
-/* line 1326, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .works-container .image:hover {
   /* filtro cinza */
   /* filtro azul */
 }
 
-/* line 1328, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .works-container .image:hover .img {
   width: 110%;
   height: 110%;
 }
 
 @media (max-width: 799px) {
-  /* line 1328, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .works-container .image:hover .img {
     width: 100%;
     height: 100%;
   }
 }
 
-/* line 1339, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .works-container .image:hover:before {
   opacity: 0.5;
 }
 
 @media (max-width: 799px) {
-  /* line 1339, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .works-container .image:hover:before {
     opacity: 0.1;
   }
 }
 
-/* line 1348, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .works-container .image:hover:after {
   opacity: 0.9;
   width: 100%;
@@ -1463,49 +1562,48 @@ p {
 }
 
 @media (max-width: 799px) {
-  /* line 1348, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .works-container .image:hover:after {
     display: none;
   }
 }
 
-/* line 1360, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .works-container .image:hover .overlay-title {
   opacity: 1;
+  -webkit-transition: all .4s 0.2s ease;
   transition: all .4s 0.2s ease;
   top: calc(50% - 50px);
 }
 
-/* line 1366, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .works-container .image:hover .overlay-text {
   opacity: 0.7;
+  -webkit-transition: all .4s 0.2s ease;
   transition: all .4s 0.2s ease;
   bottom: calc(50% - 50px);
 }
 
-/* line 1385, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .info-icons .row-icons {
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 16% 16% 16% 16% 16% 16%;
+  -ms-grid-columns: 16% 16% 16% 16% 16% 16%;
+      grid-template-columns: 16% 16% 16% 16% 16% 16%;
   -webkit-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
 }
 
 @media (max-width: 1023px) {
-  /* line 1385, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .info-icons .row-icons {
-    grid-template-columns: 33% 33% 33%;
+    -ms-grid-columns: 33% 33% 33%;
+        grid-template-columns: 33% 33% 33%;
   }
 }
 
 @media (max-width: 799px) {
-  /* line 1385, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .info-icons .row-icons {
-    grid-template-columns: 50% 50%;
+    -ms-grid-columns: 50% 50%;
+        grid-template-columns: 50% 50%;
   }
 }
 
-/* line 1400, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .info-icons .row-icons .icon-section {
   width: 120px;
   text-align: center;
@@ -1514,7 +1612,6 @@ p {
   z-index: 1;
 }
 
-/* line 1407, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .info-icons .row-icons .icon-section:before {
   background-color: white;
   position: absolute;
@@ -1524,23 +1621,21 @@ p {
 }
 
 @media (max-width: 799px) {
-  /* line 1407, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .info-icons .row-icons .icon-section:before {
     background-color: #698fb7;
   }
 }
 
-/* line 1419, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .info-icons .row-icons .icon-section:after {
   background-color: #698fb7;
   position: absolute;
   content: '';
+  -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
   border-radius: 1px;
   z-index: 2;
 }
 
-/* line 1428, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .info-icons .row-icons .icon-section p {
   font-size: 12px;
   line-height: 20px;
@@ -1551,7 +1646,6 @@ p {
 }
 
 @media (max-width: 799px) {
-  /* line 1428, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .info-icons .row-icons .icon-section p {
     font-size: 11px;
     line-height: 18px;
@@ -1560,13 +1654,11 @@ p {
   }
 }
 
-/* line 1445, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .info-icons .row-icons .icon-section:hover p {
   color: #698fb7;
 }
 
 @media (max-width: 799px) {
-  /* line 1445, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .info-icons .row-icons .icon-section:hover p {
     font-size: 11px;
     line-height: 18px;
@@ -1575,7 +1667,6 @@ p {
   }
 }
 
-/* line 1458, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .info-icons .row-icons .icon-section:nth-child(1):before {
   width: 13px;
   height: 12px;
@@ -1583,7 +1674,6 @@ p {
   left: 37px;
 }
 
-/* line 1465, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .info-icons .row-icons .icon-section:nth-child(1):after {
   width: 0px;
   height: 12px;
@@ -1591,12 +1681,10 @@ p {
   left: 37px;
 }
 
-/* line 1473, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .info-icons .row-icons .icon-section:nth-child(1):hover:after {
   width: 13px;
 }
 
-/* line 1481, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .info-icons .row-icons .icon-section:nth-child(2):before {
   width: 52px;
   height: 9px;
@@ -1604,7 +1692,6 @@ p {
   left: 25px;
 }
 
-/* line 1488, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .info-icons .row-icons .icon-section:nth-child(2):after {
   width: 0px;
   height: 9px;
@@ -1612,12 +1699,10 @@ p {
   left: 25px;
 }
 
-/* line 1496, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .info-icons .row-icons .icon-section:nth-child(2):hover:after {
   width: 52px;
 }
 
-/* line 1503, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .info-icons .row-icons .icon-section:nth-child(3):before {
   width: 17px;
   height: 27px;
@@ -1625,7 +1710,6 @@ p {
   left: 66px;
 }
 
-/* line 1510, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .info-icons .row-icons .icon-section:nth-child(3):after {
   width: 17px;
   height: 0px;
@@ -1633,12 +1717,10 @@ p {
   left: 66px;
 }
 
-/* line 1518, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .info-icons .row-icons .icon-section:nth-child(3):hover:after {
   height: 27px;
 }
 
-/* line 1525, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .info-icons .row-icons .icon-section:nth-child(4):before {
   width: 17px;
   height: 17px;
@@ -1647,7 +1729,6 @@ p {
   z-index: -2;
 }
 
-/* line 1533, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .info-icons .row-icons .icon-section:nth-child(4):after {
   width: 17px;
   height: 0px;
@@ -1656,12 +1737,10 @@ p {
   z-index: -1;
 }
 
-/* line 1542, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .info-icons .row-icons .icon-section:nth-child(4):hover:after {
   height: 17px;
 }
 
-/* line 1549, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .info-icons .row-icons .icon-section:nth-child(5):before {
   width: 21px;
   height: 19px;
@@ -1669,7 +1748,6 @@ p {
   left: 22px;
 }
 
-/* line 1556, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .info-icons .row-icons .icon-section:nth-child(5):after {
   width: 0px;
   height: 19px;
@@ -1677,12 +1755,10 @@ p {
   left: 22px;
 }
 
-/* line 1565, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .info-icons .row-icons .icon-section:nth-child(5):hover:after {
   width: 21px;
 }
 
-/* line 1572, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .info-icons .row-icons .icon-section:nth-child(6):before {
   width: 12px;
   height: 12px;
@@ -1691,7 +1767,6 @@ p {
   border-radius: 50px;
 }
 
-/* line 1580, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .info-icons .row-icons .icon-section:nth-child(6):after {
   width: 0px;
   height: 0px;
@@ -1700,7 +1775,6 @@ p {
   border-radius: 50px;
 }
 
-/* line 1589, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .info-icons .row-icons .icon-section:nth-child(6):hover:after {
   width: 12px;
   height: 12px;
@@ -1708,74 +1782,80 @@ p {
   left: 62px;
 }
 
-/* line 1605, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .contacts p {
   margin-bottom: 40px;
   text-align: center;
 }
 
 @media (max-width: 799px) {
-  /* line 1605, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .contacts p {
     margin-bottom: 30px;
   }
 }
 
-/* line 1615, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .contacts .social-items {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-transition: all 0.8s ease;
   transition: all 0.8s ease;
   /* social item*/
 }
 
-/* line 1621, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .contacts .social-items .social {
   background-color: #4a4a4a;
   padding: 100 0;
   z-index: 2;
   width: 100%;
   position: relative;
+  -webkit-transition: all 0.6s ease;
   transition: all 0.6s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   /*  // Social Texts \\  */
   /*  // Icon Social \\  */
 }
 
 @media (max-width: 799px) {
-  /* line 1621, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .contacts .social-items .social {
     padding: 50 0;
   }
 }
 
 @media (max-width: 511px) {
-  /* line 1621, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .contacts .social-items .social {
     padding: 30 0;
   }
 }
 
-/* line 1642, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .contacts .social-items .social .social-title {
   color: #ccc;
   letter-spacing: 10px;
   font-size: 14px;
   position: absolute;
   letter-spacing: 4px;
+  -webkit-transition: all 0.6s ease;
   transition: all 0.6s ease;
-  transform: translateY(-30px);
+  -webkit-transform: translateY(-30px);
+          transform: translateY(-30px);
   opacity: 0;
   font-family: "Source Code Pro", monospace;
   font-weight: 400;
 }
 
 @media (max-width: 799px) {
-  /* line 1642, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .contacts .social-items .social .social-title {
-    transform: translateY(30px);
+    -webkit-transform: translateY(30px);
+            transform: translateY(30px);
     opacity: 1;
     letter-spacing: 2;
     font-size: 11px;
@@ -1784,23 +1864,21 @@ p {
 }
 
 @media (max-width: 511px) {
-  /* line 1642, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .contacts .social-items .social .social-title {
     display: none;
   }
 }
 
-/* line 1668, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .contacts .social-items .social img {
   position: absolute;
   width: 40px;
   height: 40px;
   opacity: 1;
+  -webkit-transition: all 0.6s ease;
   transition: all 0.6s ease;
 }
 
 @media (max-width: 799px) {
-  /* line 1668, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .contacts .social-items .social img {
     top: 20%;
     width: 30px;
@@ -1809,7 +1887,6 @@ p {
 }
 
 @media (max-width: 511px) {
-  /* line 1668, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .contacts .social-items .social img {
     width: 20px;
     height: 20px;
@@ -1817,12 +1894,10 @@ p {
   }
 }
 
-/* line 1689, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .contacts .social-items .social:nth-child(even) {
   background-color: #525252;
 }
 
-/* line 1693, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .contacts .social-items .social:before {
   content: '';
   position: absolute;
@@ -1831,20 +1906,37 @@ p {
   height: 100%;
   z-index: -1;
   top: 0;
+  -webkit-transition: all 0.7s ease;
   transition: all 0.7s ease;
   color: #ccc;
 }
 
-/* line 1705, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .contacts .social-items .social:after {
   content: '';
   height: 2px;
   border-radius: 20px;
   background-color: #698fb7;
   position: absolute;
-  animation: lineout 0.6s ease;
+  -webkit-animation: lineout 0.6s ease;
+          animation: lineout 0.6s ease;
   animation-direction: reverse;
-  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes lineout {
+  0% {
+    width: 40px;
+    bottom: 60px;
+  }
+  50% {
+    width: 40px;
+    bottom: 0px;
+  }
+  100% {
+    width: 100%;
+    bottom: 0;
+  }
 }
 
 @keyframes lineout {
@@ -1863,34 +1955,46 @@ p {
 }
 
 @media (max-width: 799px) {
-  /* line 1705, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .contacts .social-items .social:after {
     display: none;
   }
 }
 
-/* line 1742, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .contacts .social-items .social:hover {
   color: #698fb7;
   letter-spacing: 6px;
 }
 
-/* line 1746, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .contacts .social-items .social:hover:before {
   width: 100%;
 }
 
 @media (max-width: 799px) {
-  /* line 1746, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .contacts .social-items .social:hover:before {
     display: none;
   }
 }
 
-/* line 1754, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .contacts .social-items .social:hover:after {
-  animation: line 0.8s ease;
-  animation-fill-mode: forwards;
+  -webkit-animation: line 0.8s ease;
+          animation: line 0.8s ease;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes line {
+  0% {
+    width: 40px;
+    bottom: 60px;
+  }
+  30% {
+    width: 40px;
+    bottom: 0px;
+  }
+  100% {
+    width: 100%;
+    bottom: 0;
+  }
 }
 
 @keyframes line {
@@ -1909,24 +2013,24 @@ p {
 }
 
 @media (max-width: 799px) {
-  /* line 1754, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .contacts .social-items .social:hover:after {
     display: none;
   }
 }
 
-/* line 1780, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .contacts .social-items .social:hover .social-title {
   opacity: 1;
-  transform: none;
+  -webkit-transform: none;
+          transform: none;
   letter-spacing: 6px;
+  -webkit-transition: all 0.6s 0.3s ease;
   transition: all 0.6s 0.3s ease;
 }
 
 @media (max-width: 799px) {
-  /* line 1780, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .contacts .social-items .social:hover .social-title {
-    transform: translateY(30px);
+    -webkit-transform: translateY(30px);
+            transform: translateY(30px);
     opacity: 1;
     letter-spacing: 2;
     font-size: 11px;
@@ -1934,7 +2038,6 @@ p {
   }
 }
 
-/* line 1797, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .contacts .social-items .social:hover img {
   width: 100px;
   height: 100px;
@@ -1942,7 +2045,6 @@ p {
 }
 
 @media (max-width: 799px) {
-  /* line 1797, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .contacts .social-items .social:hover img {
     width: 30px;
     height: 30px;
@@ -1950,7 +2052,6 @@ p {
   }
 }
 
-/* line 1818, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .page-header {
   height: 200px;
   background-color: #f0f0f0;
@@ -1958,13 +2059,11 @@ p {
 }
 
 @media (max-width: 799px) {
-  /* line 1818, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .page-header {
     height: 150px;
   }
 }
 
-/* line 1827, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .page-header .page-title {
   font-size: 80px;
   font-family: "Open Sans", sans-serif;
@@ -1978,29 +2077,31 @@ p {
 }
 
 @media (max-width: 799px) {
-  /* line 1827, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .page-header .page-title {
     font-size: 50px;
     margin-top: 100px;
   }
 }
 
-/* line 1845, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .bio-content {
   max-width: 1024px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  grid-template-columns: 40% 50%;
+  -ms-grid-columns: 40% 50%;
+      grid-template-columns: 40% 50%;
   margin: 0 auto;
 }
 
 @media (max-width: 799px) {
-  /* line 1845, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .bio-content {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 
-/* line 1856, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .bio-content .bio {
   font-size: 15px;
   position: relative;
@@ -2010,14 +2111,12 @@ p {
 }
 
 @media (max-width: 799px) {
-  /* line 1856, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .bio-content .bio {
     margin-left: 0px;
     font-size: 13px;
   }
 }
 
-/* line 1868, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .bio-content .bio h2 {
   font-size: 35px;
   color: #848484;
@@ -2034,7 +2133,6 @@ p {
 }
 
 @media (max-width: 799px) {
-  /* line 1868, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .bio-content .bio h2 {
     margin: 0px 0px 40px 0px;
     font-size: 25px;
@@ -2042,7 +2140,6 @@ p {
   }
 }
 
-/* line 1888, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .bio-content .bio h2:after {
   background-color: #698fb7;
   width: 80px;
@@ -2051,22 +2148,22 @@ p {
   border-radius: 20px;
   display: block;
   margin-top: 20px;
+  -webkit-transition: all .5s ease;
   transition: all .5s ease;
   left: 0;
 }
 
 @media (max-width: 799px) {
-  /* line 1888, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .bio-content .bio h2:after {
     width: 50px;
   }
 }
 
-/* line 1908, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .bio-content .image-about {
   width: 70%;
   height: 500px;
   z-index: 2;
+  -webkit-transition: all .6s ease-in-out;
   transition: all .6s ease-in-out;
   opacity: 0.2;
   background-image: url("../images/bio2.png");
@@ -2076,7 +2173,6 @@ p {
 }
 
 @media (max-width: 799px) {
-  /* line 1908, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .bio-content .image-about {
     width: 100%;
     height: 250px;
@@ -2084,52 +2180,62 @@ p {
   }
 }
 
-/* line 1927, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .dual-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
-  flex-flow: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-flow: wrap;
+      flex-flow: wrap;
   width: calc(100% - 10%);
 }
 
 @media (max-width: 799px) {
-  /* line 1927, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .dual-block {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 
-/* line 1939, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .dual-block .block {
   width: calc(50% - 20px);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
   background-color: #698fb7;
   padding: 40px 5%;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 @media (max-width: 799px) {
-  /* line 1939, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .dual-block .block {
     width: 100%;
     margin: 10px 0;
   }
-  /* line 1952, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .dual-block .block:first-child {
     margin-top: 0;
   }
 }
 
 @media (max-width: 799px) {
-  /* line 1939, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .dual-block .block {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 
-/* line 1963, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .dual-block .block h3 {
   font-weight: 300;
   letter-spacing: 6px;
@@ -2138,14 +2244,19 @@ p {
   color: white;
   text-align: center;
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   height: 50px;
   margin-top: 0;
 }
 
-/* line 1977, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .dual-block .block h3:after {
   background-color: white;
   width: 40px;
@@ -2153,15 +2264,16 @@ p {
   height: 2px;
   border-radius: 20px;
   position: absolute;
+  -webkit-transition: all .5s ease;
   transition: all .5s ease;
   bottom: 0px;
 }
 
-/* line 1989, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .dual-block .block ul {
   font-size: 14px;
   text-align: center;
   color: #fff;
+  -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   font-family: "Source Code Pro", monospace;
   font-weight: 300;
@@ -2171,44 +2283,49 @@ p {
   margin: 0;
 }
 
-/* line 2001, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .dual-block .block ul li {
   margin: 10px 0;
 }
 
-/* line 2010, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .timeline-content {
   padding-left: 5%;
   padding-right: 5%;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-/* line 2016, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .timeline-content .timeline-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  flex-flow: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-flow: wrap;
+      flex-flow: wrap;
   max-width: 800px;
   margin: auto;
   margin-bottom: 90px;
 }
 
-/* line 2025, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .timeline-content .timeline-section:last-child {
   margin-bottom: 0;
 }
 
 @media (max-width: 799px) {
-  /* line 2016, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .timeline-content .timeline-section {
-    flex-direction: column;
-    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     padding: 0;
     margin-bottom: 60px;
   }
 }
 
-/* line 2037, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .timeline-content .timeline-section .timeline-item {
   width: calc(50% - 20px);
   margin-bottom: 50px;
@@ -2218,7 +2335,6 @@ p {
 }
 
 @media (max-width: 799px) {
-  /* line 2037, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .timeline-content .timeline-section .timeline-item {
     max-width: 480px;
     width: 100%;
@@ -2227,7 +2343,6 @@ p {
   }
 }
 
-/* line 2052, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .timeline-content .timeline-section .timeline-item:after {
   background-color: #f6f6f6;
   position: absolute;
@@ -2240,7 +2355,6 @@ p {
   display: block;
 }
 
-/* line 2064, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .timeline-content .timeline-section .timeline-item label {
   color: #698fb7;
   font-size: 14px;
@@ -2252,49 +2366,41 @@ p {
 }
 
 @media (max-width: 799px) {
-  /* line 2064, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .timeline-content .timeline-section .timeline-item label {
     padding: 0 0 10 0;
     font-size: 14px;
   }
 }
 
-/* line 2080, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .timeline-content .timeline-section .timeline-item p {
   font-size: 14px;
   padding: 0 15 15 0;
 }
 
-/* line 2084, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .timeline-content .timeline-section .timeline-item p strong {
   letter-spacing: 1px;
   font-weight: 600;
 }
 
-/* line 2090, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .timeline-content .timeline-section .timeline-item p em {
   color: #ccc;
   text-decoration: none;
 }
 
-/* line 2099, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .works-page {
   max-width: 800px;
 }
 
-/* line 2102, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .works-page .section-works {
   padding: 140px 0 0 0;
 }
 
 @media (max-width: 799px) {
-  /* line 2102, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .works-page .section-works {
     padding: 80px 0 0 0;
   }
 }
 
-/* line 2109, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .works-page .section-works .second-title {
   font-size: 20px;
   color: #848484;
@@ -2306,18 +2412,17 @@ p {
   margin-bottom: 20px;
   z-index: 2;
   text-transform: uppercase;
+  -webkit-transition: all .5s ease;
   transition: all .5s ease;
 }
 
 @media (max-width: 799px) {
-  /* line 2109, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .works-page .section-works .second-title {
     font-size: 15px;
     line-height: 25px;
   }
 }
 
-/* line 2127, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .works-page .section-works .second-title:after {
   background-color: #698fb7;
   width: 80px;
@@ -2326,17 +2431,16 @@ p {
   border-radius: 20px;
   display: block;
   margin-top: 20px;
+  -webkit-transition: all .5s ease;
   transition: all .5s ease;
 }
 
 @media (max-width: 799px) {
-  /* line 2127, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .works-page .section-works .second-title:after {
     width: 50px;
   }
 }
 
-/* line 2143, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .works-page .section-works .legenda {
   color: #848484;
   font-size: 14px;
@@ -2346,24 +2450,20 @@ p {
 }
 
 @media (max-width: 799px) {
-  /* line 2143, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .works-page .section-works .legenda {
     margin-bottom: 30px;
   }
 }
 
-/* line 2154, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .works-page .section-works .legenda b {
   color: #ccc;
   font-weight: 400;
 }
 
-/* line 2159, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .works-page .section-works .legenda span {
   color: #698fb7;
 }
 
-/* line 2164, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .works-page .section-works .description {
   margin-left: 60px;
   font-size: 15px;
@@ -2371,29 +2471,26 @@ p {
 }
 
 @media (max-width: 799px) {
-  /* line 2164, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .works-page .section-works .description {
     margin-left: 30px;
     font-size: 13px;
   }
 }
 
-/* line 2175, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .works-page .section-works .description p {
   margin-bottom: 20px;
 }
 
-/* line 2179, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .works-page .section-works .description button {
   margin: 0;
 }
 
-/* line 2183, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .works-page .section-works .description a {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
 }
 
-/* line 2189, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .works-page .section-works ul {
   margin: 0;
   padding: 0;
@@ -2403,7 +2500,6 @@ p {
   margin-top: 10px;
 }
 
-/* line 2197, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .works-page .section-works ul li {
   line-height: 28px;
   position: relative;
@@ -2411,7 +2507,6 @@ p {
   font-family: "Source Code Pro", monospace;
 }
 
-/* line 2203, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .works-page .section-works ul li:before {
   position: absolute;
   content: '';
@@ -2422,36 +2517,40 @@ p {
   bottom: 8px;
 }
 
-/* line 2216, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .works-page .works-images {
   max-width: 800px;
+  -webkit-transition: all .3s ease;
   transition: all .3s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-/* line 2225, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .works-page .works-images .image-main {
   width: 100%;
   margin: 40px 0;
+  -webkit-transition: all .3s ease;
   transition: all .3s ease;
 }
 
-/* line 2230, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .works-page .works-images .image-main:first-child {
   margin-top: 0;
 }
 
 @media (max-width: 799px) {
-  /* line 2225, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .works-page .works-images .image-main {
     width: 100%;
     margin: 10px 0;
   }
 }
 
-/* line 2240, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .works-page .works-images .video-responsive {
   overflow: hidden;
   padding-bottom: 56.25%;
@@ -2460,7 +2559,6 @@ p {
   width: 100%;
 }
 
-/* line 2247, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .works-page .works-images .video-responsive iframe {
   left: 0;
   top: 0;
@@ -2469,60 +2567,57 @@ p {
   position: absolute;
 }
 
-/* line 2261, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .go-back {
-  height: 200px;
-  background-color: #f0f0f0;
   height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 5%;
-  box-sizing: border-box;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: all 0.6s ease;
   transition: all 0.6s ease;
   bottom: -70px;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+  width: 100%;
+  left: 0;
+  background-color: #f0f0f0;
 }
 
 @media (max-width: 799px) {
-  /* line 2261, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .go-back {
     height: 50px;
   }
 }
 
-/* line 2278, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .go-back.fixed {
   position: fixed;
   bottom: 0;
   width: 100%;
+  padding: 0 5%;
 }
 
-/* line 2285, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
-.go-back.bottom {
-  width: 100%;
-  position: fixed;
-  bottom: -70px;
-}
-
-/* line 2291, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .go-back #scrollme {
   margin: 0;
   height: 35px;
-  transform: translateX(30px);
+  -webkit-transform: translateX(30px);
+          transform: translateX(30px);
 }
 
 @media (max-width: 799px) {
-  /* line 2291, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
   .go-back #scrollme {
-    transform: translateX(0px);
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
     width: 30px;
   }
 }
 
-/* line 2305, /Users/rafaela.lucas/Documents/02_Personal/portfolio/sass/main.scss */
 .anime-modules {
-  transform: translateY(0px);
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
 }
-
-/*# sourceMappingURL=../css/main.map */
+/*# sourceMappingURL=main.css.map */
