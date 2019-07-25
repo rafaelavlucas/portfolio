@@ -17,8 +17,8 @@ window.onload = function (e) {
 
         } else {
             goBack.classList.remove('fixed');
-
         }
+
 
         if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
             goBack.classList.remove('fixed');
@@ -68,8 +68,8 @@ window.onload = function (e) {
     function runScroll() {
         scrollTo(document.body, 0, 600);
     }
-    var scrollme;
-    scrollme = document.querySelector("#scrollme");
+    var scrollme = document.querySelector("#scrollme");
+
     scrollme.addEventListener("click", runScroll, false);
 
     function scrollTo(element, to, duration) {

@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800");
 @import url("https://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400,500,600,700,900");
+@import url("https://fonts.googleapis.com/css?family=Barlow:300,400,500,600,700&display=swap");
 /**************************************/
 /*** Screen Sizes Mixins ***/
 /**************************************/
@@ -12,7 +13,7 @@
 /* // General Elements \\  */
 body {
   font-family: sans-serif;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Barlow", sans-serif;
   font-weight: 200;
   margin: 0;
   padding: 0;
@@ -190,7 +191,7 @@ p {
 .main-title {
   font-size: 35px;
   color: #848484;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Barlow", sans-serif;
   font-weight: 100;
   letter-spacing: 10px;
   text-align: center;
@@ -274,18 +275,21 @@ p {
   font-family: "Source Code Pro", monospace;
   font-weight: 400;
   letter-spacing: 2px;
-  margin-bottom: 50px;
-  opacity: 0;
   -webkit-transition: all 0.6s ease;
   transition: all 0.6s ease;
-  padding-top: 10px;
   color: #698fb7;
   text-align: center;
   margin: 0 auto;
   cursor: pointer;
+  position: relative;
+  opacity: 0;
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
 }
 
-#scrollme .backtop span {
+#scrollme .backtop .arrow-top:before, #scrollme .backtop .arrow-top:after {
+  content: '';
+  position: absolute;
   width: 20px;
   height: 2px;
   position: absolute;
@@ -295,42 +299,44 @@ p {
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
   background-color: #698fb7;
+  opacity: 1;
 }
 
 @media (max-width: 799px) {
-  #scrollme .backtop span {
+  #scrollme .backtop .arrow-top:before, #scrollme .backtop .arrow-top:after {
     width: 15px;
   }
 }
 
-#scrollme .backtop span:nth-child(1) {
+#scrollme .backtop .arrow-top:before {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
   margin-left: 6px;
 }
 
 @media (max-width: 799px) {
-  #scrollme .backtop span:nth-child(1) {
+  #scrollme .backtop .arrow-top:before {
     margin-left: 5px;
   }
 }
 
-#scrollme .backtop span:nth-child(2) {
+#scrollme .backtop .arrow-top:after {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
   margin-left: -7px;
 }
 
 @media (max-width: 799px) {
-  #scrollme .backtop span:nth-child(2) {
+  #scrollme .backtop .arrow-top:after {
     margin-left: -5px;
   }
 }
 
 #scrollme:hover .backtop p {
   opacity: 1;
-  padding-top: 0px;
-  font-size: 11px;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+  font-size: 12px;
 }
 
 @media (max-width: 799px) {
@@ -339,25 +345,25 @@ p {
   }
 }
 
-#scrollme:hover .backtop span {
+#scrollme:hover .backtop .arrow-top:before, #scrollme:hover .backtop .arrow-top:after {
   top: 22px;
   width: 20px;
 }
 
 @media (max-width: 799px) {
-  #scrollme:hover .backtop span {
+  #scrollme:hover .backtop .arrow-top:before, #scrollme:hover .backtop .arrow-top:after {
     top: 20px;
   }
 }
 
-#scrollme:hover .backtop span:nth-child(1) {
+#scrollme:hover .backtop .arrow-top:before {
   left: calc(50% - 5px);
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
 }
 
 @media (max-width: 799px) {
-  #scrollme:hover .backtop span:nth-child(1) {
+  #scrollme:hover .backtop .arrow-top:before {
     left: calc(50% - 10px);
     -webkit-transform: rotate(45deg);
             transform: rotate(45deg);
@@ -366,14 +372,14 @@ p {
   }
 }
 
-#scrollme:hover .backtop span:nth-child(2) {
+#scrollme:hover .backtop .arrow-top:after {
   right: calc(50% - 5px);
   -webkit-transform: rotate(-180deg);
           transform: rotate(-180deg);
 }
 
 @media (max-width: 799px) {
-  #scrollme:hover .backtop span:nth-child(2) {
+  #scrollme:hover .backtop .arrow-top:after {
     right: calc(50% - 10px);
     -webkit-transform: rotate(-45deg);
             transform: rotate(-45deg);
@@ -933,6 +939,7 @@ header .header-content h1 {
   letter-spacing: 2px;
   -webkit-transition: all .6s ease-in-out;
   transition: all .6s ease-in-out;
+  z-index: 1;
 }
 
 @media (max-width: 799px) {
@@ -948,7 +955,7 @@ header .header-content p {
   letter-spacing: 8;
   font-size: 14px;
   text-align: center;
-  z-index: 2;
+  z-index: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1126,7 +1133,7 @@ header:hover .header-content {
 }
 
 .works-container .filters-container .filters .filter:hover {
-  color: #698fb7;
+  color: white;
 }
 
 @media (max-width: 799px) {
@@ -1458,7 +1465,7 @@ header:hover .header-content {
 .works-container .image .overlay-title {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 20px;
   position: absolute;
   font-weight: 500;
@@ -1471,7 +1478,7 @@ header:hover .header-content {
   -webkit-transform: translateY(50%);
           transform: translateY(50%);
   text-align: center;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   text-transform: uppercase;
   padding: 0 20px;
   height: 40px;
@@ -2066,7 +2073,7 @@ header:hover .header-content {
 
 .page-header .page-title {
   font-size: 80px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Barlow", sans-serif;
   font-weight: 100;
   text-transform: uppercase;
   margin-top: 120px;
@@ -2120,7 +2127,7 @@ header:hover .header-content {
 .bio-content .bio h2 {
   font-size: 35px;
   color: #848484;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Barlow", sans-serif;
   font-weight: 100;
   letter-spacing: 10px;
   z-index: 2;
@@ -2186,6 +2193,9 @@ header:hover .header-content {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -ms-flex-flow: wrap;
       flex-flow: wrap;
   width: calc(100% - 10%);
@@ -2209,12 +2219,12 @@ header:hover .header-content {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-transition: all .3s ease-in-out;
-  transition: all .3s ease-in-out;
   background-color: #698fb7;
   padding: 40px 5%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
 }
 
 @media (max-width: 799px) {
@@ -2224,15 +2234,6 @@ header:hover .header-content {
   }
   .dual-block .block:first-child {
     margin-top: 0;
-  }
-}
-
-@media (max-width: 799px) {
-  .dual-block .block {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
   }
 }
 
@@ -2285,6 +2286,12 @@ header:hover .header-content {
 
 .dual-block .block ul li {
   margin: 10px 0;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.dual-block .block:hover {
+  background-color: #4d75a0;
 }
 
 .timeline-content {
@@ -2330,8 +2337,10 @@ header:hover .header-content {
   width: calc(50% - 20px);
   margin-bottom: 50px;
   text-align: left;
-  padding: 0;
+  padding: 10px 0 0 10px;
   position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 @media (max-width: 799px) {
@@ -2352,7 +2361,8 @@ header:hover .header-content {
   right: 0;
   bottom: 0;
   z-index: -1;
-  display: block;
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
 }
 
 .timeline-content .timeline-section .timeline-item label {
@@ -2387,6 +2397,11 @@ header:hover .header-content {
   text-decoration: none;
 }
 
+.timeline-content .timeline-section .timeline-item:hover:after {
+  height: 100%;
+  width: 100%;
+}
+
 .works-page {
   max-width: 800px;
 }
@@ -2404,7 +2419,7 @@ header:hover .header-content {
 .works-page .section-works .second-title {
   font-size: 20px;
   color: #848484;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Barlow", sans-serif;
   font-weight: 100;
   letter-spacing: 5px;
   text-align: left;
@@ -2599,6 +2614,8 @@ header:hover .header-content {
   bottom: 0;
   width: 100%;
   padding: 0 5%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .go-back #scrollme {

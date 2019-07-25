@@ -2,6 +2,8 @@
 
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400,500,600,700,900');
 
+@import url('https://fonts.googleapis.com/css?family=Barlow:300,400,500,600,700&display=swap');
+
 /**************************************/
 
 /*** Screen Sizes Mixins ***/
@@ -54,8 +56,10 @@ $neu-06: #4a4a4a;
 $neu-07: #383838;
 
 
-$font-01:'Open Sans',
+$font-01: 'Barlow',
 sans-serif;
+//$font-01:'Open Sans',sans-serif;
+
 $font-02: 'Source Code Pro',
 monospace;
 
@@ -303,95 +307,110 @@ p {
             font-family: $font-02;
             font-weight: 400;
             letter-spacing: 2px;
-            margin-bottom: 50px;
-            opacity: 0;
             transition: all 0.6s ease;
-            padding-top: 10px;
             color: $m-01;
             text-align: center;
             margin: 0 auto;
             cursor: pointer;
+            position: relative;
+            opacity: 0;
+            transform: translateY(10px);
         }
 
-        span {
-            width: 20px;
-            height: 2px;
-            position: absolute;
-            top: 20px;
-            left: calc(50% - 10px);
-            border-radius: 20px;
-            transition: all 0.4s ease-in-out;
-            background-color: $m-01;
+        .arrow-top {
 
-            @include sm {
-                width: 15px;
+            &:before,
+            &:after {
+                content: '';
+                position: absolute;
+                width: 20px;
+                height: 2px;
+                position: absolute;
+                top: 20px;
+                left: calc(50% - 10px);
+                border-radius: 20px;
+                transition: all 0.4s ease-in-out;
+                background-color: $m-01;
+                opacity: 1;
+
+                @include sm {
+                    width: 15px;
+                }
+            }
+
+
+            &:before {
+                transform: rotate(45deg);
+                margin-left: 6px;
+
+                @include sm {
+                    margin-left: 5px;
+                }
+            }
+
+            &:after {
+                transform: rotate(-45deg);
+                margin-left: -7px;
+
+                @include sm {
+                    margin-left: -5px;
+                }
             }
         }
 
-        span:nth-child(1) {
-            transform: rotate(45deg);
-            margin-left: 6px;
-
-            @include sm {
-                margin-left: 5px;
-            }
-        }
-
-        span:nth-child(2) {
-            transform: rotate(-45deg);
-            margin-left: -7px;
-
-            @include sm {
-                margin-left: -5px;
-            }
-        }
     }
 
     &:hover {
         .backtop {
             p {
                 opacity: 1;
-                padding-top: 0px;
-                font-size: 11px;
+                transform: translateY(0px);
+                font-size: 12px;
 
                 @include sm {
                     display: none;
                 }
             }
 
-            span {
-                top: 22px;
-                width: 20px;
+            .arrow-top {
 
-                @include sm {
-                    top: 20px;
+                &:before,
+                &:after {
+                    top: 22px;
+                    width: 20px;
+
+                    @include sm {
+                        top: 20px;
+                    }
+                }
+
+                &:before {
+                    left: calc(50% - 5px);
+                    transform: rotate(180deg);
+
+                    @include sm {
+                        left: calc(50% - 10px);
+                        transform: rotate(45deg);
+                        width: 15px;
+                        margin-left: 5px;
+                    }
+                }
+
+                &:after {
+                    right: calc(50% - 5px);
+                    transform: rotate(-180deg);
+
+                    @include sm {
+                        right: calc(50% - 10px);
+                        transform: rotate(-45deg);
+                        width: 15px;
+                        margin-left: -5px;
+
+                    }
                 }
             }
 
-            span:nth-child(1) {
-                left: calc(50% - 5px);
-                transform: rotate(180deg);
 
-                @include sm {
-                    left: calc(50% - 10px);
-                    transform: rotate(45deg);
-                    width: 15px;
-                    margin-left: 5px;
-                }
-            }
-
-            span:nth-child(2) {
-                right: calc(50% - 5px);
-                transform: rotate(-180deg);
-
-                @include sm {
-                    right: calc(50% - 10px);
-                    transform: rotate(-45deg);
-                    width: 15px;
-                    margin-left: -5px;
-
-                }
-            }
         }
     }
 }
@@ -654,6 +673,7 @@ nav {
                 }
 
                 &.current {
+
                     color: $m-01;
 
                     &:after {
@@ -841,6 +861,7 @@ header {
             letter-spacing: 2px;
             -webkit-transition: all .6s ease-in-out;
             transition: all .6s ease-in-out;
+            z-index: 1;
 
             @include sm {
                 font-size: 35px;
@@ -854,7 +875,7 @@ header {
             letter-spacing: 8;
             font-size: 14px;
             text-align: center;
-            z-index: 2;
+            z-index: 1;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -916,8 +937,6 @@ header {
 
 
     }
-
-
 
     .filters-container {
 
@@ -1005,7 +1024,7 @@ header {
 
 
                 &:hover {
-                    color: $m-01;
+                    color: white;
 
                     @include sm {
                         color: $m-01;
@@ -1286,7 +1305,7 @@ header {
 
         .overlay-title {
             box-sizing: border-box;
-            font-size: 14px;
+            font-size: 16px;
             line-height: 20px;
             position: absolute;
             font-weight: 500;
@@ -1297,7 +1316,7 @@ header {
             top: calc(50% - 70px);
             transform: translateY(50%);
             text-align: center;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
             text-transform: uppercase;
             padding: 0 20px;
             height: 40px;
@@ -1942,6 +1961,7 @@ header {
 .dual-block {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     flex-flow: wrap;
     width: calc(100% - 10%);
 
@@ -1955,10 +1975,11 @@ header {
         width: calc(50% - 20px);
         display: flex;
         flex-direction: column;
-        transition: all .3s ease-in-out;
         background-color: $m-01;
         padding: 40px 5%;
         box-sizing: border-box;
+        transition: all 0.6s ease;
+
 
         @include sm {
             width: 100%;
@@ -1967,12 +1988,6 @@ header {
             &:first-child {
                 margin-top: 0;
             }
-        }
-
-
-
-        @include sm {
-            flex-direction: column;
         }
 
         h3 {
@@ -2015,7 +2030,12 @@ header {
 
             li {
                 margin: 10px 0;
+                transition: all 0.5s ease;
             }
+        }
+
+        &:hover {
+            background-color: darken($m-01, 10%);
         }
     }
 
@@ -2053,8 +2073,9 @@ header {
             width: calc(50% - 20px);
             margin-bottom: 50px;
             text-align: left;
-            padding: 0;
+            padding: 10px 0 0 10px;
             position: relative;
+            box-sizing: border-box;
 
             @include sm {
 
@@ -2073,7 +2094,7 @@ header {
                 right: 0;
                 bottom: 0;
                 z-index: -1;
-                display: block;
+                transition: all 0.6s ease;
             }
 
             label {
@@ -2105,6 +2126,13 @@ header {
                 em {
                     color: $neu-03;
                     text-decoration: none;
+                }
+            }
+
+            &:hover {
+                &:after {
+                    height: 100%;
+                    width: 100%;
                 }
             }
         }
@@ -2294,6 +2322,7 @@ header {
         bottom: 0;
         width: 100%;
         padding: 0 5%;
+        box-sizing: border-box;
 
     }
 
