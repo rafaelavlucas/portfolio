@@ -168,7 +168,7 @@ button {
         }
 
         &:before {
-            width: 100%;
+            width: 102%;
 
             @include sm {
                 display: none;
@@ -206,9 +206,10 @@ p {
     color: $m-01;
     position: relative;
     font-family: $font-02;
-    font-weight: 300;
+    font-weight: 400;
     display: inline-flex;
     justify-content: center;
+    font-size: 15px;
 
     &:after {
         content: '';
@@ -217,8 +218,9 @@ p {
         border-radius: 20px;
         background-color: $m-01;
         position: absolute;
-        bottom: -2px;
-        transition: all 0.3s ease;
+        right: 0;
+        bottom: 0px;
+        transition: all 0.5s ease;
 
         @include sm {
             width: 0;
@@ -229,6 +231,7 @@ p {
     &:hover {
         &:after {
             width: 100%;
+            left: 0;
         }
     }
 }
@@ -785,7 +788,7 @@ header {
             top: 0;
             /* Safari 6.0 - 9.0 */
             filter: grayscale(100%);
-            animation: header 1.6s ease-in-out;
+            animation: header 1s ease-in-out;
             animation-fill-mode: forwards;
 
             &:nth-child(2) {
@@ -906,7 +909,6 @@ header {
 }
 
 .works-container {
-
 
     .btn-filter {
         display: none;
@@ -1272,7 +1274,7 @@ header {
 
         @include sm {
             width: 100%;
-            padding-bottom: 100%;
+            padding-bottom: 50%;
         }
 
         /* filtro cinza */
@@ -1336,7 +1338,7 @@ header {
             opacity: 0;
             z-index: 2;
             font-family: $font-02;
-            font-weight: 300;
+            font-weight: 400;
             transition: all .6s ease;
             color: white;
             bottom: calc(50% - 70px);
@@ -2088,13 +2090,13 @@ header {
             &:after {
                 background-color: $neu-01a;
                 position: absolute;
-                height: calc(100% - 25px);
+                height: calc(100% - 32px);
                 width: 90%;
                 content: '';
                 right: 0;
                 bottom: 0;
                 z-index: -1;
-                transition: all 0.6s ease;
+                transition: all 0.4s ease;
             }
 
             label {
@@ -2312,6 +2314,7 @@ header {
     width: 100%;
     left: 0;
     background-color: $neu-02;
+    padding: 0 5%;
 
     @include sm {
         height: 50px;
@@ -2320,12 +2323,10 @@ header {
     &.fixed {
         position: fixed;
         bottom: 0;
-        width: 100%;
-        padding: 0 5%;
-        box-sizing: border-box;
+        box-shadow: 0px 10px 20px black;
+        transition: all 0.6s ease;
 
     }
-
 
     #scrollme {
         margin: 0;
@@ -2337,8 +2338,6 @@ header {
             width: 30px;
         }
     }
-
-
 }
 
 .anime-modules {
