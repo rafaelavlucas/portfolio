@@ -443,7 +443,7 @@ p {
 @media (max-width: 799px) {
   .section,
   .section-works {
-    padding: 50px 0;
+    padding: 40px 0;
   }
 }
 
@@ -782,6 +782,26 @@ header {
           align-items: center;
 }
 
+@media (max-width: 1279px) {
+  header {
+    height: 600px;
+  }
+}
+
+@media (max-width: 1023px) {
+  header {
+    height: 500px;
+  }
+}
+
+@media (max-width: 799px) {
+  header {
+    height: 360px;
+    background-size: 250px, cover;
+    background-position: center 50px;
+  }
+}
+
 header:before {
   background-color: #698fb7;
   content: '';
@@ -807,21 +827,8 @@ header .header-images {
       justify-content: space-around;
 }
 
-@media (max-width: 1279px) {
-  header .header-images {
-    height: 600px;
-  }
-}
-
-@media (max-width: 1023px) {
-  header .header-images {
-    height: 500px;
-  }
-}
-
 @media (max-width: 799px) {
   header .header-images {
-    height: 360px;
     background-size: 250px, cover;
     background-position: center 50px;
   }
@@ -2062,6 +2069,14 @@ header:hover .header-content {
   }
 }
 
+@media (max-width: 511px) {
+  .contacts .social-items .social:hover img {
+    width: 20px;
+    height: 20px;
+    top: initial;
+  }
+}
+
 .page-header {
   height: 200px;
   background-color: #f0f0f0;
@@ -2346,6 +2361,10 @@ header:hover .header-content {
           box-sizing: border-box;
 }
 
+.timeline-content .timeline-section .timeline-item:last-child {
+  margin-bottom: 0px;
+}
+
 @media (max-width: 799px) {
   .timeline-content .timeline-section .timeline-item {
     max-width: 480px;
@@ -2616,8 +2635,8 @@ header:hover .header-content {
 .go-back.fixed {
   position: fixed;
   bottom: 0;
-  -webkit-box-shadow: 0px 15px 20px black;
-          box-shadow: 0px 15px 20px black;
+  -webkit-box-shadow: 0px 10px 20px black;
+          box-shadow: 0px 10px 20px black;
   -webkit-transition: all 0.6s ease;
   transition: all 0.6s ease;
 }

@@ -460,7 +460,7 @@ p {
     margin: auto;
 
     @include sm {
-        padding: 50px 0;
+        padding: 40px 0;
     }
 }
 
@@ -737,6 +737,20 @@ header {
     justify-content: center;
     align-items: center;
 
+    @include lg {
+        height: 600px;
+    }
+
+    @include md {
+        height: 500px;
+    }
+
+    @include sm {
+        height: 360px;
+        background-size: 250px, cover;
+        background-position: center 50px;
+    }
+
     &:before {
         background-color: $m-01;
         content: '';
@@ -758,20 +772,11 @@ header {
         display: flex;
         justify-content: space-around;
 
-        @include lg {
-            height: 600px;
-        }
-
-        @include md {
-            height: 500px;
-        }
 
         @include sm {
-            height: 360px;
             background-size: 250px, cover;
             background-position: center 50px;
         }
-
 
         span {
             position: relative;
@@ -1829,18 +1834,22 @@ header {
                 }
 
 
-
                 img {
                     width: 100px;
                     height: 100px;
                     opacity: 0.03;
 
                     @include sm {
-
                         width: 30px;
                         height: 30px;
                         opacity: 1;
 
+                    }
+
+                    @include xs {
+                        width: 20px;
+                        height: 20px;
+                        top: initial;
                     }
                 }
 
@@ -2078,6 +2087,10 @@ header {
             padding: 10px 0 0 10px;
             position: relative;
             box-sizing: border-box;
+
+            &:last-child {
+                margin-bottom: 0px;
+            }
 
             @include sm {
 
