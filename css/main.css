@@ -190,6 +190,12 @@ p {
   left: 0;
 }
 
+@media (max-width: 799px) {
+  .links:hover:after {
+    display: none;
+  }
+}
+
 /*  // Texts \\  */
 .main-title {
   font-size: 35px;
@@ -2347,7 +2353,7 @@ header:hover .header-content {
         -ms-flex-pack: center;
             justify-content: center;
     padding: 0;
-    margin-bottom: 60px;
+    margin-bottom: 70px;
   }
 }
 
