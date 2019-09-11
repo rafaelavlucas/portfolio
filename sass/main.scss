@@ -1430,17 +1430,17 @@ header {
 
     .row-icons {
         display: grid;
-        grid-template-columns: 16% 16% 16% 16% 16% 16%;
+        grid-template-columns: repeat(6, 1fr);
         -webkit-transition: all .3s ease-in-out;
         transition: all .3s ease-in-out;
 
         @include md {
-            grid-template-columns: 33% 33% 33%;
+            grid-template-columns: repeat(3, 1fr);
 
         }
 
         @include sm {
-            grid-template-columns: 50% 50%;
+            grid-template-columns: repeat(2, 1fr);
         }
 
         .icon-section {
