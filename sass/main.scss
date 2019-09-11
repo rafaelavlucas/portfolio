@@ -1432,7 +1432,7 @@ header {
         grid-template-columns: repeat(6, 1fr);
         -webkit-transition: all .3s ease-in-out;
         transition: all .3s ease-in-out;
-        align-items: center;
+        justify-items: center;
 
         @include md {
             grid-template-columns: repeat(3, 1fr);
