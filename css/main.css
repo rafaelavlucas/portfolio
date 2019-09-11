@@ -1607,30 +1607,32 @@ header:hover .header-content {
 .info-icons .row-icons {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 16% 16% 16% 16% 16% 16%;
-      grid-template-columns: 16% 16% 16% 16% 16% 16%;
+  -ms-grid-columns: (1fr)[6];
+      grid-template-columns: repeat(6, 1fr);
   -webkit-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 @media (max-width: 1023px) {
   .info-icons .row-icons {
-    -ms-grid-columns: 33% 33% 33%;
-        grid-template-columns: 33% 33% 33%;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (max-width: 799px) {
   .info-icons .row-icons {
-    -ms-grid-columns: 50% 50%;
-        grid-template-columns: 50% 50%;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
   }
 }
 
 .info-icons .row-icons .icon-section {
   width: 120px;
   text-align: center;
-  margin: 0 auto;
   position: relative;
   z-index: 1;
 }
