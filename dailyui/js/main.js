@@ -7,7 +7,7 @@ window.onload = function (e) {
         for (let i = 1; i <= dailyUi; i++) {
 
             var template = `
-            <a href="../${i}" target="_blank">
+            <a href="dailyui/${i}" target="_blank">
                 
                     <div class="item">
                         <img src="assets/img-${i}.jpeg">
