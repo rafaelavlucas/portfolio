@@ -1,3 +1,65 @@
+@import url('https://fonts.googleapis.com/css?family=Barlow:100,200,300,400,500,600,700,800,900&display=swap');
+
+$font: 'Barlow',
+sans-serif;
+
+$m-01: #C9C9D2;
+$m-02: #A7A7B3;
+$m-03: #7C7D81;
+$m-04: #B78273;
+$m-05: #D5A289;
+
+$g-01: linear-gradient(45deg, $m-01, $m-02);
+$g-02: linear-gradient(45deg, $m-02, $m-03);
+$g-03: linear-gradient(45deg, $m-03, $m-04);
+$g-04: linear-gradient(45deg, $m-05, $m-05);
+$g-05: linear-gradient(45deg, $m-05, $m-04);
+
+
+$neu-01: #f5f5f5;
+$neu-02: #200e0e;
+$neu-03: #d2d2d2;
+$neu-04: #b7b7b7;
+$neu-05: #9c9c9c;
+$neu-06: #404145;
+$neu-07: #1c1c1e;
+
+@mixin xl {
+    @media screen and (max-width: 1440px) {
+        @content;
+    }
+}
+
+@mixin lg {
+    @media screen and (max-width: 1240px) {
+        @content;
+    }
+}
+
+@mixin md {
+    @media screen and (max-width: 1023px) {
+        @content;
+    }
+}
+
+@mixin sm {
+    @media screen and (max-width: 799px) {
+        @content;
+    }
+}
+
+@mixin xs {
+    @media screen and (max-width: 639px) {
+        @content;
+    }
+}
+
+@mixin xxs {
+    @media screen and (max-width: 380px) {
+        @content;
+    }
+}
+
 #dailyui-items {
     max-width: 1440px;
     padding: 0 5%;
@@ -5,6 +67,12 @@
     display: grid;
     grid-gap: 40px;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    font-family: $font;
+
+    @include sm {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+    }
 
     a {
         background-color: white;
@@ -13,7 +81,7 @@
         justify-content: center;
         align-items: center;
         border-radius: 8px;
-        box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 0.5);
+        box-shadow: 0px 5px 20px -5px $m-01;
         transition: all 0.4s ease;
 
         .item {
@@ -33,10 +101,10 @@
             &:before {
                 position: absolute;
                 content: '';
-                width: calc(100% - 10px);
+                width: calc(100% - 20px);
                 height: 0%;
-                bottom: 5px;
-                background-color: black;
+                bottom: 10px;
+                background: $g-02;
                 opacity: 0;
                 z-index: 1;
                 transition: all 0.4s ease;
@@ -51,21 +119,44 @@
                 transition: all 0.6s ease, transform 4s ease;
 
             }
+
+            article {
+                position: absolute;
+                z-index: 2;
+                color: white;
+                bottom: 0;
+                left: 40px;
+                transition: all 0.4s ease;
+                opacity: 0;
+
+                .name {}
+
+                .desc {}
+            }
+
         }
 
         &:hover {
-            box-shadow: 0px 0px 20px -10px rgba(0, 0, 0, 0.5);
+            box-shadow: 0px 0px 20px -10px $m-03;
             transform: translateY(5px);
 
+
             .item {
+
+                article {
+                    bottom: 20px;
+                    opacity: 1;
+                }
+
                 img {
+                    -webkit-filter: grayscale(100%);
                     filter: grayscale(100%);
                     transform: scale(1.2);
                 }
 
                 &:before {
-                    height: 50%;
-                    opacity: 0.8;
+                    height: 120px;
+                    opacity: 0.9;
                 }
             }
         }
