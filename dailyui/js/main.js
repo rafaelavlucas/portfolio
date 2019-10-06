@@ -9,19 +9,19 @@ window.onload = function (e) {
     const items = [{
             url: `${nu++}`,
             name: `${nm++}`,
-            image: `assets/img-${im++}.jpeg`,
+            image: `assets/dailyui-${im++}.png`,
             desc: "Sign Up"
         },
         {
             url: `${nu++}`,
             name: `${nm++}`,
-            image: `assets/img-${im++}.jpeg`,
+            image: `assets/dailyui-${im++}.png`,
             desc: "Credit Card Checkout"
         },
         {
             url: `${nu++}`,
             name: `${nm++}`,
-            image: `assets/img-${im++}.jpeg`,
+            image: `assets/dailyui-${im++}.png`,
             desc: "Landing Page"
         },
         {
