@@ -103,6 +103,9 @@ i:focus {
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
   border-radius: 4px;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  overflow: hidden;
 }
 
 #dailyui-items a .item img {
@@ -160,6 +163,6 @@ i:focus {
 
 #dailyui-items a:hover .item:before {
   height: 90px;
-  opacity: 0.9;
+  opacity: 0.85;
 }
 /*# sourceMappingURL=main.css.map */
