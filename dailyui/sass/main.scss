@@ -233,6 +233,7 @@ header {
     padding: 0 5%;
     margin: 0 auto;
     display: grid;
+    margin-bottom: 100px;
     grid-gap: 40px;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     font-family: $font;

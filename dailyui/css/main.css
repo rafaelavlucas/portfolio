@@ -199,6 +199,7 @@ header article p {
   margin: 0 auto;
   display: -ms-grid;
   display: grid;
+  margin-bottom: 100px;
   grid-gap: 40px;
   -ms-grid-columns: (minmax(350px, 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));

@@ -7,7 +7,7 @@ window.onload = function (e) {
 
     window.onscroll = function () {
 
-        if (window.pageYOffset >= 70) {
+        if (window.pageYOffset >= 40) {
             menuNav.classList.add('sticky');
 
         } else {
