@@ -18,6 +18,38 @@ body {
   overflow-x: hidden;
 }
 
+.logo {
+  position: fixed;
+  z-index: 5;
+  bottom: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 100%;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+
+.logo img {
+  position: absolute;
+  width: 55%;
+  height: 55%;
+  -webkit-transform: translateY(-1px);
+          transform: translateY(-1px);
+  opacity: 0.8;
+}
+
 .btn {
   height: 50px;
   padding: 0 30px;
@@ -213,12 +245,12 @@ body {
 .modal.open .wrapper .title {
   position: absolute;
   text-align: center;
-  width: 90%;
+  width: 50%;
   height: 200px;
   z-index: 2;
   top: 50%;
-  -webkit-transform: translate(138px, -50%) rotate(-90deg);
-          transform: translate(138px, -50%) rotate(-90deg);
+  -webkit-transform: translate(395px, -50%) rotate(-90deg);
+          transform: translate(395px, -50%) rotate(-90deg);
   -ms-grid-column: 1;
       grid-column-start: 1;
   grid-column-end: 3;
