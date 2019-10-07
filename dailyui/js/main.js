@@ -11,11 +11,11 @@ window.onload = function (e) {
             menuNav.classList.add('sticky');
 
         } else {
-            menuNav.classList.add('no-sticky');
+            menuNav.classList.add('sticky-out');
 
             setTimeout(function () {
                 menuNav.classList.remove('sticky');
-                menuNav.classList.remove('no-sticky');
+                menuNav.classList.remove('sticky-out');
             }, 200);
         }
     }
