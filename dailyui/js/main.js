@@ -7,7 +7,7 @@ window.onload = function (e) {
 
     window.onscroll = function () {
 
-        if (window.pageYOffset >= 40) {
+        if (window.pageYOffset >= 100) {
             menuNav.classList.add('sticky');
 
         } else {
@@ -31,19 +31,19 @@ window.onload = function (e) {
 
     const items = [{
             url: `${nu++}`,
-            name: `${nm++}`,
+            name: `00${nm++}`,
             image: `${folder}/dailyui-${im++}.png`,
             desc: "Sign Up"
         },
         {
             url: `${nu++}`,
-            name: `${nm++}`,
+            name: `00${nm++}`,
             image: `${folder}/dailyui-${im++}.png`,
             desc: "Credit Card Checkout"
         },
         {
             url: `${nu++}`,
-            name: `${nm++}`,
+            name: `00${nm++}`,
             image: `${folder}/dailyui-${im++}.png`,
             desc: "Landing Page"
         },

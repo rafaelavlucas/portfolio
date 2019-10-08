@@ -312,6 +312,10 @@ body {
                         }
                     }
                 }
+
+                @include xs {
+                    left: 0;
+                }
             }
 
             .btn-close {
