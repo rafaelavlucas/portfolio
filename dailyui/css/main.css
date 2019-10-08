@@ -129,6 +129,12 @@ nav .navigation .content .back img {
   transition: all 0.4s ease;
 }
 
+@media screen and (max-width: 799px) {
+  nav .navigation .content .back img {
+    width: 24px;
+  }
+}
+
 nav .navigation .content .back .text {
   color: #8a91a5;
 }
@@ -153,6 +159,13 @@ nav .navigation .content .social .icon-social {
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
   cursor: pointer;
+}
+
+@media screen and (max-width: 799px) {
+  nav .navigation .content .social .icon-social {
+    width: 24px;
+    margin: 0 10px;
+  }
 }
 
 nav .navigation .content .social .icon-social:hover {
@@ -212,6 +225,12 @@ header article {
   text-align: center;
   z-index: -1;
   overflow: hidden;
+}
+
+@media screen and (max-width: 799px) {
+  header article {
+    margin-top: 60px;
+  }
 }
 
 header article h1 {
@@ -415,7 +434,7 @@ header article p {
 }
 
 #dailyui-items a:hover .item .image:before {
-  opacity: 0.2;
+  opacity: 0.1;
 }
 
 #dailyui-items a:hover .item:before {
