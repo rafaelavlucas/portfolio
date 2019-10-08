@@ -151,6 +151,10 @@ nav {
             justify-content: space-between;
             height: 70px;
 
+            @include sm {
+                height: 50px;
+            }
+
             .back {
                 display: flex;
                 align-items: center;
@@ -186,6 +190,7 @@ nav {
                     transition: all 0.4s ease;
                     cursor: pointer;
 
+
                     @include sm {
                         width: 24px;
                         margin: 0 10px;
@@ -195,11 +200,13 @@ nav {
                         transform: translateY(-5px);
                     }
 
-                    &:last-child {
-                        img {
-                            margin-right: 0;
-                        }
-                    }
+
+                }
+
+                &:last-child {
+
+                    margin-right: 0;
+
                 }
             }
 

@@ -113,6 +113,12 @@ nav .navigation .content {
   height: 70px;
 }
 
+@media screen and (max-width: 799px) {
+  nav .navigation .content {
+    height: 50px;
+  }
+}
+
 nav .navigation .content .back {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -173,7 +179,7 @@ nav .navigation .content .social .icon-social:hover {
           transform: translateY(-5px);
 }
 
-nav .navigation .content .social .icon-social:last-child img {
+nav .navigation .content .social:last-child {
   margin-right: 0;
 }
 
