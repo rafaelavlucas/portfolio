@@ -185,6 +185,7 @@ body {
 
 .modal {
     display: none;
+    overflow-x: hidden;
 
     &.open {
         width: 100%;
