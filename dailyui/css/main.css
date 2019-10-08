@@ -20,7 +20,7 @@ body {
 
 .logo {
   position: fixed;
-  z-index: 5;
+  z-index: 6;
   bottom: 10px;
   right: 10px;
   width: 40px;
@@ -164,12 +164,19 @@ body {
   padding: 0;
 }
 
+@media screen and (max-width: 799px) {
+  .daily .daily-title {
+    font-size: 40px;
+  }
+}
+
 .daily .sign {
   position: initial;
 }
 
 .modal {
   display: none;
+  overflow-x: hidden;
 }
 
 .modal.open {
@@ -248,8 +255,9 @@ body {
   height: 200px;
   z-index: 2;
   top: 50%;
-  -webkit-transform: translate(395px, -50%) rotate(-90deg);
-          transform: translate(395px, -50%) rotate(-90deg);
+  left: calc(50% - -75px);
+  -webkit-transform: translate(-50%, -50%) rotate(-90deg);
+          transform: translate(-50%, -50%) rotate(-90deg);
   -ms-grid-column: 1;
       grid-column-start: 1;
   grid-column-end: 3;
@@ -299,8 +307,7 @@ body {
 
 @media screen and (max-width: 1023px) {
   .modal.open .wrapper .title {
-    -webkit-transform: translate(116px, -50%) rotate(-90deg);
-            transform: translate(116px, -50%) rotate(-90deg);
+    left: calc(50% - -70px);
   }
   .modal.open .wrapper .title h1 {
     font-size: 80px;
@@ -332,6 +339,7 @@ body {
             animation: titlemob 1s 0.3s ease both;
     -ms-grid-row: 1;
         grid-row-start: 1;
+    left: 5%;
     grid-row-end: 2;
   }
   .modal.open .wrapper .title h1 {
