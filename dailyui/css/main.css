@@ -135,13 +135,14 @@ nav .navigation .content .back:before {
   height: 32px;
   content: '';
   background-color: transparent;
-  -webkit-box-shadow: inset 0px 0px 0px 1px white;
-          box-shadow: inset 0px 0px 0px 1px white;
+  -webkit-box-shadow: inset 0px 0px 0px 0px white;
+          box-shadow: inset 0px 0px 0px 0px white;
   z-index: -1;
   border-radius: 50px;
-  -webkit-transition: all 0.4s 0.2s ease, width 0.4s ease;
-  transition: all 0.4s 0.2s ease, width 0.4s ease;
+  -webkit-transition: all 0.4s 0.25s ease, width 0.4s ease;
+  transition: all 0.4s 0.25s ease, width 0.4s ease;
   left: -3px;
+  opacity: 1;
 }
 
 @media screen and (max-width: 799px) {
@@ -175,8 +176,8 @@ nav .navigation .content .back:hover:before {
   opacity: 1;
   -webkit-box-shadow: inset 0px 0px 0px 18px white;
           box-shadow: inset 0px 0px 0px 18px white;
-  -webkit-transition: all 0.4s ease, width 0.4s 0.2s ease;
-  transition: all 0.4s ease, width 0.4s 0.2s ease;
+  -webkit-transition: all 0.4s ease, width 0.4s 0.25s ease;
+  transition: all 0.4s ease, width 0.4s 0.25s ease;
 }
 
 nav .navigation .content .social {
@@ -430,7 +431,7 @@ header article p {
 
 @media screen and (max-width: 799px) {
   #dailyui-items a .item:before {
-    height: 35px;
+    height: 32px;
     opacity: 0.8;
   }
 }
@@ -582,7 +583,7 @@ header article p {
 }
 
 #dailyui-items a:hover .item .image:before {
-  opacity: 0.1;
+  opacity: 0.05;
 }
 
 #dailyui-items a:hover .item:before {
@@ -592,7 +593,7 @@ header article p {
 
 @media screen and (max-width: 799px) {
   #dailyui-items a:hover .item:before {
-    height: 35px;
+    height: 32px;
   }
 }
 /*# sourceMappingURL=main.css.map */
