@@ -21,92 +21,48 @@ window.onload = function (e) {
     }
 
 
+    // Add Works
 
     var nu = 1,
         nm = 1,
         im = 1,
-        folder = "img";
-
+        folder = "img",
+        total = 97;
 
 
     const items = [{
             url: `${nu++}`,
-            name: `00${nm++}`,
+            name: `${nm++}`,
             image: `${folder}/dailyui-${im++}.png`,
             desc: "Sign Up"
         },
         {
             url: `${nu++}`,
-            name: `00${nm++}`,
+            name: `${nm++}`,
             image: `${folder}/dailyui-${im++}.png`,
             desc: "Credit Card Checkout"
         },
         {
             url: `${nu++}`,
-            name: `00${nm++}`,
+            name: `${nm++}`,
             image: `${folder}/dailyui-${im++}.png`,
             desc: "Landing Page"
-        },
-        {
-            url: `${nu++}`,
-            name: `${nm++}`,
-            image: `${folder}/placeholder.jpg`,
-            desc: "teste"
-        },
-        {
-            url: `${nu++}`,
-            name: `${nm++}`,
-            image: `${folder}/placeholder.jpg`,
-            desc: "teste"
-        },
-        {
-            url: `${nu++}`,
-            name: `${nm++}`,
-            image: `${folder}/placeholder.jpg`,
-            desc: "teste"
-        },
-        {
-            url: `${nu++}`,
-            name: `${nm++}`,
-            image: `${folder}/placeholder.jpg`,
-            desc: "teste"
-        },
-        {
-            url: `${nu++}`,
-            name: `${nm++}`,
-            image: `${folder}/placeholder.jpg`,
-            desc: "teste"
-        },
-        {
-            url: `${nu++}`,
-            name: `${nm++}`,
-            image: `${folder}/placeholder.jpg`,
-            desc: "teste"
-        },
-        {
-            url: `${nu++}`,
-            name: `${nm++}`,
-            image: `${folder}/placeholder.jpg`,
-            desc: "teste"
-        },
-        {
-            url: `${nu++}`,
-            name: `${nm++}`,
-            image: `${folder}/placeholder.jpg`,
-            desc: "teste"
-        },
-        {
-            url: `${nu++}`,
-            name: `${nm++}`,
-            image: `${folder}/placeholder.jpg`,
-            desc: "teste"
-        },
+        }
+
     ];
 
-    function addItems() {
-        var itemContainer = document.getElementById("dailyui-items");
+    const itemEmpty = [{
+        name: `${nm}`,
+        image: `${folder}/placeholder.jpg`,
+        desc: "Coming soon"
+    }];
 
-        for (let i = 0; i => items.length; i++) {
+    const itemContainer = document.getElementById("dailyui-items");
+
+
+    function addItems() {
+
+        for (let i = 0; i < items.length; i++) {
             var name = items[i].name,
                 img = items[i].image,
                 desc = items[i].desc,
@@ -128,8 +84,32 @@ window.onload = function (e) {
         }
     }
 
+    function addEmpty(total) {
+
+        for (let i = 0; i < total; i++) {
+            var name2 = itemEmpty[0].name++,
+                img2 = itemEmpty[0].image,
+                desc2 = itemEmpty[0].desc;
+
+            var template = `
+            <div class="empty">
+                <div class="item">
+                    <article>
+                        <h3 class="name">${name2}</h3>
+                        <p class="desc">${desc2}</p>
+                    </article>
+                    <div class="image"> 
+                        <img src="${img2}">
+                    </div>
+                    </div>
+                 </div>`;
+            itemContainer.insertAdjacentHTML('beforeend', template);
+        }
+    }
+
     addItems()
 
+    addEmpty(total);
 
-
+    console.log(total)
 }

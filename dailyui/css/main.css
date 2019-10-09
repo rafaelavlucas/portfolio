@@ -54,6 +54,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Barlow", sans-serif;
+  background: #f5f5f5;
 }
 
 nav .navigation {
@@ -376,7 +377,8 @@ header article p {
   }
 }
 
-#dailyui-items a {
+#dailyui-items a,
+#dailyui-items .empty {
   background-color: white;
   padding: 6px;
   display: -webkit-box;
@@ -395,7 +397,8 @@ header article p {
   transition: all 0.4s ease;
 }
 
-#dailyui-items a .item {
+#dailyui-items a .item,
+#dailyui-items .empty .item {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 100%;
@@ -412,7 +415,8 @@ header article p {
           justify-content: center;
 }
 
-#dailyui-items a .item:before {
+#dailyui-items a .item:before,
+#dailyui-items .empty .item:before {
   position: absolute;
   content: '';
   width: calc(100% - 20px);
@@ -430,13 +434,15 @@ header article p {
 }
 
 @media screen and (max-width: 799px) {
-  #dailyui-items a .item:before {
+  #dailyui-items a .item:before,
+  #dailyui-items .empty .item:before {
     height: 32px;
     opacity: 0.8;
   }
 }
 
-#dailyui-items a .item .image {
+#dailyui-items a .item .image,
+#dailyui-items .empty .item .image {
   left: 0;
   top: 0;
   position: absolute;
@@ -444,7 +450,8 @@ header article p {
   height: 100%;
 }
 
-#dailyui-items a .item .image img {
+#dailyui-items a .item .image img,
+#dailyui-items .empty .item .image img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -455,7 +462,8 @@ header article p {
   transition: all 0.6s ease, transform 1s ease, -webkit-transform 1s ease;
 }
 
-#dailyui-items a .item .image:before {
+#dailyui-items a .item .image:before,
+#dailyui-items .empty .item .image:before {
   position: absolute;
   content: '';
   width: 100%;
@@ -467,7 +475,8 @@ header article p {
   opacity: 0.05;
 }
 
-#dailyui-items a .item article {
+#dailyui-items a .item article,
+#dailyui-items .empty .item article {
   position: absolute;
   z-index: 2;
   bottom: 30px;
@@ -477,7 +486,8 @@ header article p {
   overflow: hidden;
 }
 
-#dailyui-items a .item article .name {
+#dailyui-items a .item article .name,
+#dailyui-items .empty .item article .name {
   opacity: 0;
   font-size: 20px;
   font-weight: 800;
@@ -489,7 +499,8 @@ header article p {
   color: white;
 }
 
-#dailyui-items a .item article .desc {
+#dailyui-items a .item article .desc,
+#dailyui-items .empty .item article .desc {
   opacity: 0;
   font-size: 16px;
   -webkit-transition: all 0.4s ease;
@@ -501,7 +512,8 @@ header article p {
 }
 
 @media screen and (max-width: 799px) {
-  #dailyui-items a .item article {
+  #dailyui-items a .item article,
+  #dailyui-items .empty .item article {
     opacity: 1;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -514,7 +526,8 @@ header article p {
             align-items: center;
     left: 5px;
   }
-  #dailyui-items a .item article .name {
+  #dailyui-items a .item article .name,
+  #dailyui-items .empty .item article .name {
     opacity: 1;
     -webkit-transform: translateX(0px);
             transform: translateX(0px);
@@ -523,7 +536,8 @@ header article p {
     margin-right: 10px;
     margin-bottom: 0px;
   }
-  #dailyui-items a .item article .desc {
+  #dailyui-items a .item article .desc,
+  #dailyui-items .empty .item article .desc {
     opacity: 1;
     -webkit-transform: translateX(0px);
             transform: translateX(0px);
@@ -531,7 +545,8 @@ header article p {
   }
 }
 
-#dailyui-items a:hover {
+#dailyui-items a:hover,
+#dailyui-items .empty:hover {
   -webkit-box-shadow: 0px 10px 30px -10px rgba(138, 145, 165, 0.4);
           box-shadow: 0px 10px 30px -10px rgba(138, 145, 165, 0.4);
   -webkit-transform: scale(1.02);
@@ -539,17 +554,20 @@ header article p {
 }
 
 @media screen and (max-width: 799px) {
-  #dailyui-items a:hover {
+  #dailyui-items a:hover,
+  #dailyui-items .empty:hover {
     -webkit-transform: scale(1);
             transform: scale(1);
   }
 }
 
-#dailyui-items a:hover .item article {
+#dailyui-items a:hover .item article,
+#dailyui-items .empty:hover .item article {
   opacity: 1;
 }
 
-#dailyui-items a:hover .item article .name {
+#dailyui-items a:hover .item article .name,
+#dailyui-items .empty:hover .item article .name {
   opacity: 1;
   -webkit-transition: all 0.4s 0.2s cubic-bezier(0.25, 0.1, 0.24, 1.34);
   transition: all 0.4s 0.2s cubic-bezier(0.25, 0.1, 0.24, 1.34);
@@ -557,7 +575,8 @@ header article p {
           transform: translateX(0px);
 }
 
-#dailyui-items a:hover .item article .desc {
+#dailyui-items a:hover .item article .desc,
+#dailyui-items .empty:hover .item article .desc {
   opacity: 1;
   -webkit-transition: all 0.4s 0.4s cubic-bezier(0.25, 0.1, 0.24, 1.34);
   transition: all 0.4s 0.4s cubic-bezier(0.25, 0.1, 0.24, 1.34);
@@ -566,7 +585,8 @@ header article p {
   letter-spacing: 0.5px;
 }
 
-#dailyui-items a:hover .item .image img {
+#dailyui-items a:hover .item .image img,
+#dailyui-items .empty:hover .item .image img {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
   -webkit-transition: all 0.6s ease, -webkit-transform 4s ease;
@@ -576,23 +596,27 @@ header article p {
 }
 
 @media screen and (max-width: 799px) {
-  #dailyui-items a:hover .item .image img {
+  #dailyui-items a:hover .item .image img,
+  #dailyui-items .empty:hover .item .image img {
     -webkit-transform: scale(1);
             transform: scale(1);
   }
 }
 
-#dailyui-items a:hover .item .image:before {
+#dailyui-items a:hover .item .image:before,
+#dailyui-items .empty:hover .item .image:before {
   opacity: 0.05;
 }
 
-#dailyui-items a:hover .item:before {
+#dailyui-items a:hover .item:before,
+#dailyui-items .empty:hover .item:before {
   height: 90px;
   opacity: 0.85;
 }
 
 @media screen and (max-width: 799px) {
-  #dailyui-items a:hover .item:before {
+  #dailyui-items a:hover .item:before,
+  #dailyui-items .empty:hover .item:before {
     height: 32px;
   }
 }
