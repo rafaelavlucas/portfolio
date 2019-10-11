@@ -9,10 +9,13 @@ window.addEventListener("load", event => {
 
         if (toggle.classList.contains('off')) {
             toggle.classList.remove('off');
-            calculator.setAttribute('data-theme', 'light')
+            calculator.setAttribute('data-theme', 'light');
+            calculator.classList.remove('flip');
         } else {
             toggle.classList.add('off');
             calculator.setAttribute('data-theme', 'dark')
+            calculator.classList.add('flip');
+
         }
     }
 
