@@ -221,7 +221,7 @@ body {
             grid-template-rows: 100px 1fr;
             padding: 10px;
             border-radius: 5px;
-            transition: all 0.8s ease;
+            transition: all 0.4s ease;
             transform: rotate3d(0, 0, 0, 0deg);
 
             .screen {
@@ -276,8 +276,12 @@ body {
                 }
             }
 
-            &.flip {
-                transform: rotate3d(0, 10, 0, 180deg);
+            &.flip-in {
+                transform: rotate3d(0, 10, 0, 90deg);
+            }
+
+            &.flip-out {
+                transform: rotate3d(0, 10, 0, 0deg);
             }
         }
     }

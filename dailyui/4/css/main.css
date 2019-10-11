@@ -193,8 +193,8 @@ body {
       grid-template-rows: 100px 1fr;
   padding: 10px;
   border-radius: 5px;
-  -webkit-transition: all 0.8s ease;
-  transition: all 0.8s ease;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
   -webkit-transform: rotate3d(0, 0, 0, 0deg);
           transform: rotate3d(0, 0, 0, 0deg);
 }
@@ -264,8 +264,13 @@ body {
   background-color: #72C0B0;
 }
 
-.wrapper .container .calculator.flip {
-  -webkit-transform: rotate3d(0, 10, 0, 180deg);
-          transform: rotate3d(0, 10, 0, 180deg);
+.wrapper .container .calculator.flip-in {
+  -webkit-transform: rotate3d(0, 10, 0, 90deg);
+          transform: rotate3d(0, 10, 0, 90deg);
+}
+
+.wrapper .container .calculator.flip-out {
+  -webkit-transform: rotate3d(0, 10, 0, 0deg);
+          transform: rotate3d(0, 10, 0, 0deg);
 }
 /*# sourceMappingURL=main.css.map */

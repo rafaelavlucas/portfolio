@@ -9,12 +9,22 @@ window.addEventListener("load", event => {
 
         if (toggle.classList.contains('off')) {
             toggle.classList.remove('off');
-            calculator.setAttribute('data-theme', 'light');
-            calculator.classList.remove('flip');
+
+            calculator.classList.remove('flip-out');
+            setTimeout(() => {
+                calculator.classList.remove('flip-in');
+                calculator.setAttribute('data-theme', 'light')
+            }, 500);
+
         } else {
             toggle.classList.add('off');
-            calculator.setAttribute('data-theme', 'dark')
-            calculator.classList.add('flip');
+            calculator.classList.add('flip-in');
+            setTimeout(() => {
+                calculator.classList.remove('flip-in');
+                calculator.classList.add('flip-out');
+                calculator.setAttribute('data-theme', 'dark')
+            }, 500);
+
 
         }
     }
