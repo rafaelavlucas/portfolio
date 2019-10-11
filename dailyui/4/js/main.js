@@ -56,7 +56,7 @@ window.addEventListener("load", event => {
     function getNumbers(e) {
         var currentKey = e.currentTarget;
 
-        input.value = currentKey.innerHTML;
+        input.value += currentKey.innerHTML;
 
     }
 
