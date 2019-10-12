@@ -33,20 +33,26 @@ window.onload = function (e) {
     const items = [{
             url: `${nu++}`,
             name: `${nm++}`,
-            image: `${folder}/dailyui-${im++}.png`,
+            image: `${folder}/dailyui-${im++}.jpg`,
             desc: "Sign Up"
         },
         {
             url: `${nu++}`,
             name: `${nm++}`,
-            image: `${folder}/dailyui-${im++}.png`,
+            image: `${folder}/dailyui-${im++}.jpg`,
             desc: "Credit Card Checkout"
         },
         {
             url: `${nu++}`,
             name: `${nm++}`,
-            image: `${folder}/dailyui-${im++}.png`,
+            image: `${folder}/dailyui-${im++}.jpg`,
             desc: "Landing Page"
+        },
+                {
+            url: `${nu++}`,
+            name: `${nm++}`,
+            image: `${folder}/dailyui-${im++}.jpg`,
+            desc: "Calculator"
         }
 
     ];

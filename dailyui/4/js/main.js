@@ -34,8 +34,6 @@ window.addEventListener("load", event => {
             setTimeout(() => {
                 calculator.classList.remove('flip-out');
             }, 300);
-
-
         }
     }
 
@@ -68,31 +66,17 @@ window.addEventListener("load", event => {
     back.addEventListener('click', deleteLast);
     total.addEventListener('click', getTotal);
 
-
-
     // Functions
 
     // To Add Numbers in the Screen
     function getNumbers(e) {
         var currentNumber = e.currentTarget;
         input.innerHTML += currentNumber.innerHTML;
+        var num = parseInt(currentNumber.innerHTML);
 
-        var num = parseInt(currentNumber);
+        result += num;
 
-    }
-
-
-    // Delete All Numbers
-    function deleteAll() {
-        input.innerHTML = "";
-        secondInput.innerHTML = "";
-        addAction.innerHTML = "";
-        addAction.classList.remove('active-action');
-    }
-
-    // Delete Last Number
-    function deleteLast() {
-        input.innerHTML = input.innerHTML.slice(0, -1);
+        console.log(result);
     }
 
 
@@ -110,8 +94,27 @@ window.addEventListener("load", event => {
         input.innerHTML = "";
     }
 
+
+    // Get Total Result
     function getTotal() {
 
     }
+
+
+    // Delete All Numbers
+    function deleteAll() {
+        input.innerHTML = "";
+        secondInput.innerHTML = "";
+        addAction.innerHTML = "";
+        addAction.classList.remove('active-action');
+        result = "";
+    }
+
+    // Delete Last Number
+    function deleteLast() {
+        input.innerHTML = input.innerHTML.slice(0, -1);
+
+    }
+
 
 });

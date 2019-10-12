@@ -31,10 +31,13 @@ $neu-05: #403E3E;
     --del-bg: #CED2D8;
 
     --numbers-color: #4B8F8E;
-    --actions-color: #306064;
-    --del-color: #306064;
+    --numbers-hover: #306064;
+    --actions-color: #606060;
+    --del-color: #606060;
 
     --hover-keys: #72C0B0;
+
+    --arrow-back: url("../assets/arrow-light.svg");
 }
 
 [data-theme="dark"] {
@@ -46,10 +49,13 @@ $neu-05: #403E3E;
     --del-bg: #474747;
 
     --numbers-color: #72C0B0;
+    --numbers-hover: #E5E4EA;
     --actions-color: #B9D7D5;
     --del-color: #CED2D8;
 
     --hover-keys: #222222;
+
+    --arrow-back: url("../assets/arrow-dark.svg");
 }
 
 
@@ -226,6 +232,10 @@ body {
             position: relative;
             transition: all 0.2s ease;
 
+            &:hover {
+                box-shadow: 0px 10px 20px -20px rgba($m-01, 0.8), 0px 0px 0px 0px rgba($m-01, 0.2);
+            }
+
 
             .screen {
                 background: var(--screen-bg);
@@ -317,6 +327,7 @@ body {
                     color: var(--numbers-color);
                     position: relative;
                     cursor: pointer;
+                    font-size: 18px;
 
 
                     &:before {
@@ -335,6 +346,14 @@ body {
                         background-image: $g-01;
                         color: white;
                         border-radius: 0 0 3px 0;
+
+                        &:before {
+                            background: $m-01;
+                        }
+
+                        &:hover {
+                            color: white;
+                        }
                     }
 
                     /* delete key */
@@ -343,12 +362,19 @@ body {
                         background: var(--del-bg);
                         color: var(--del-color);
                         border-radius: 3px 0 0 0;
+                        font-size: 14px;
+                        letter-spacing: 1.5px;
+                        font-weight: 500;
                     }
 
                     /* back key */
                     &.back {
                         background: var(--del-bg);
-                        color: var(--del-color);
+                        background-image: var(--arrow-back);
+                        background-size: 21px;
+                        background-repeat: no-repeat;
+                        background-position: center;
+
                     }
 
                     /* + - x / */
@@ -369,7 +395,7 @@ body {
 
 
                     &:hover {
-                        color: white;
+                        color: var(--numbers-hover);
 
                         &:before {
                             opacity: 0.3;
