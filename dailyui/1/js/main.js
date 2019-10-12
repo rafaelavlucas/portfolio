@@ -27,10 +27,13 @@ window.addEventListener("load", event => {
     // To Open Modal
     function openModal() {
         modal.classList.add("open");
+        daily.style.display = "none";
     }
     // To Close Modal
     function closeModal() {
         modal.classList.add("close");
+        daily.style.display = "flex";
+
 
         setTimeout(function () {
 
