@@ -27,7 +27,7 @@ window.onload = function (e) {
         nm = 1,
         im = 1,
         folder = "img",
-        total = 97;
+        total = 96;
 
 
     const items = [{
@@ -48,7 +48,7 @@ window.onload = function (e) {
             image: `${folder}/dailyui-${im++}.jpg`,
             desc: "Landing Page"
         },
-                {
+        {
             url: `${nu++}`,
             name: `${nm++}`,
             image: `${folder}/dailyui-${im++}.jpg`,
