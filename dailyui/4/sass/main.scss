@@ -246,7 +246,7 @@ body {
                     color: var(--numbers-color);
                     padding: 5px 15px;
                     box-sizing: border-box;
-                    overflow-x: scroll;
+                    overflow: hidden;
                     display: flex;
                     justify-content: flex-end;
                     align-items: flex-end;
