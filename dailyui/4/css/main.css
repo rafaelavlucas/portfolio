@@ -257,7 +257,8 @@ body {
 
 .wrapper .container .calculator .screen .second-input {
   font-size: 20px;
-  top: 0;
+  top: 5px;
+  height: 35%;
 }
 
 .wrapper .container .calculator .screen .get-action {

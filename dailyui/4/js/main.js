@@ -52,7 +52,8 @@ window.addEventListener("load", event => {
         back = document.querySelector('.back'),
         action = document.querySelectorAll('.action'),
         addAction = document.querySelector('.get-action'),
-        total = document.querySelector('.total');
+        total = document.querySelector('.total'),
+        result = "";
 
     // Events
     number.forEach(function (el) {
@@ -75,7 +76,11 @@ window.addEventListener("load", event => {
     function getNumbers(e) {
         var currentNumber = e.currentTarget;
         input.innerHTML += currentNumber.innerHTML;
+
+        var num = parseInt('currentNumber');
+        console.log(num)
     }
+
 
     // Delete All Numbers
     function deleteAll() {
@@ -83,13 +88,11 @@ window.addEventListener("load", event => {
         secondInput.innerHTML = "";
         addAction.innerHTML = "";
         addAction.classList.remove('active-action');
-
     }
 
     // Delete Last Number
     function deleteLast() {
         input.innerHTML = input.innerHTML.slice(0, -1);
-
     }
 
 
@@ -105,12 +108,9 @@ window.addEventListener("load", event => {
 
         secondInput.innerHTML += input.innerHTML + addAction.innerHTML;
         input.innerHTML = "";
-
-
     }
 
     function getTotal() {
-
 
     }
 
