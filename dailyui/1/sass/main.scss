@@ -186,6 +186,7 @@ body {
 .modal {
     display: none;
     overflow-x: hidden;
+    visibility: hidden;
 
     &.open {
         width: 100%;
@@ -196,6 +197,7 @@ body {
         z-index: 2;
         background-color: rgba(255, 255, 255, 0);
         animation: wrapper 0.6s ease both;
+        visibility: visible;
 
         @keyframes wrapper {
             100% {
