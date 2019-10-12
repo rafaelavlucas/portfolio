@@ -77,8 +77,8 @@ window.addEventListener("load", event => {
         var currentNumber = e.currentTarget;
         input.innerHTML += currentNumber.innerHTML;
 
-        var num = parseInt('currentNumber');
-        console.log(num)
+        var num = parseInt(currentNumber);
+
     }
 
 

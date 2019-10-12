@@ -253,7 +253,6 @@ body {
                     bottom: 0;
                     position: absolute;
 
-
                     &:before {
                         position: absolute;
                         content: '';
@@ -262,10 +261,7 @@ body {
                         background: var(--screen-fade);
                         left: 0;
                         top: 0;
-
                     }
-
-
                 }
 
                 .second-input {
