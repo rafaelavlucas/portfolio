@@ -52,7 +52,7 @@ window.onload = function (e) {
             url: `${nu++}`,
             name: `${nm++}`,
             image: `${folder}/dailyui-${im++}.jpg`,
-            desc: "Calculator"
+            desc: "Calculator [in proggress...]"
         }
 
     ];
