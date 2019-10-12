@@ -32,7 +32,7 @@ window.addEventListener("load", event => {
     // To Close Modal
     function closeModal() {
         modal.classList.add("close");
-        daily.style.display = "flex";
+
 
 
         setTimeout(function () {
@@ -40,6 +40,9 @@ window.addEventListener("load", event => {
             modal.classList.remove("open");
             modal.classList.remove("close");
         }, 1500);
+        setTimeout(function () {
+            daily.style.display = "flex";
+        }, 400);
     }
 
     // To anime input
