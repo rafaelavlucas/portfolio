@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Barlow+Condensed:300,400,500,600,700,800,900|Barlow:300,400,500,600,700,800,900&display=swap");
 :root {
   --screen-bg: linear-gradient(90deg, #E5E4EA, #CED2D8);
-  --screen-fade: linear-gradient(90deg, #E5E4EA 30%, rgba(#E5E4EA, 0) 60%);
+  --screen-fade: linear-gradient(90deg, #E5E4EA 30%, rgba(228, 227, 233, 0) 60%);
   --calc-bg: #fff;
   --numbers-bg: #E5E4EA;
   --actions-bg: #B9D7D5;
@@ -16,7 +16,7 @@
 
 [data-theme="dark"] {
   --screen-bg: linear-gradient(90deg, #474747, #403E3E);
-  --screen-fade: linear-gradient(90deg, #474747 30%, rgba(#474747, 0) 60%);
+  --screen-fade: linear-gradient(90deg, #474747 30%, rgba(71, 71, 71, 0) 60%);
   --calc-bg: #606060;
   --numbers-bg: #505050;
   --actions-bg: #403E3E;
