@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Barlow+Condensed:300,400,500,600,700,800,900|Barlow:300,400,500,600,700,800,900&display=swap");
 :root {
-  --screen-bg: linear-gradient(45deg, #E5E4EA, #CED2D8);
+  --screen-bg: linear-gradient(90deg, #E5E4EA, #CED2D8);
+  --screen-fade: linear-gradient(90deg, #E5E4EA 30%, transparent 60%);
   --calc-bg: #fff;
   --numbers-bg: #E5E4EA;
   --actions-bg: #B9D7D5;
@@ -12,7 +13,8 @@
 }
 
 [data-theme="dark"] {
-  --screen-bg: linear-gradient(45deg, #474747, #403E3E);
+  --screen-bg: linear-gradient(90deg, #474747, #403E3E);
+  --screen-fade: linear-gradient(90deg, #474747 30%, transparent 60%);
   --calc-bg: #606060;
   --numbers-bg: #505050;
   --actions-bg: #403E3E;
@@ -206,72 +208,98 @@ body {
   transition: all 0.2s ease;
 }
 
-.wrapper .container .calculator:before {
-  position: absolute;
-  content: '';
-  width: 100%;
-  height: 100%;
-  z-index: -2;
-  -webkit-transform: translate(10px, 10px);
-          transform: translate(10px, 10px);
-}
-
 .wrapper .container .calculator .screen {
   background: var(--screen-bg);
   border-radius: 3px;
   margin-bottom: 10px;
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
+  position: relative;
 }
 
-.wrapper .container .calculator .screen input {
-  width: 100%;
-  height: 100%;
+.wrapper .container .calculator .screen .input,
+.wrapper .container .calculator .screen .second-input {
+  width: 280px;
+  height: 50%;
   background-color: transparent;
   border: 0;
   text-align: right;
   font-family: "Barlow", sans-serif;
-  font-size: 60px;
+  font-size: 40px;
   color: var(--numbers-color);
   padding: 5px 15px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  overflow-x: scroll;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  bottom: 0;
+  position: absolute;
 }
 
-.wrapper .container .calculator .screen input::-webkit-input-placeholder {
+.wrapper .container .calculator .screen .input:before,
+.wrapper .container .calculator .screen .second-input:before {
+  position: absolute;
+  content: '';
+  width: 40%;
+  height: 100%;
+  background: var(--screen-fade);
+  left: 0;
+  top: 0;
+}
+
+.wrapper .container .calculator .screen .second-input {
+  font-size: 20px;
+  top: 0;
+}
+
+.wrapper .container .calculator .screen .get-action {
+  width: 40px;
+  height: 40px;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  display: none;
   color: var(--numbers-color);
-  opacity: 0.5;
+  font-size: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
 }
 
-.wrapper .container .calculator .screen input:-ms-input-placeholder {
-  color: var(--numbers-color);
-  opacity: 0.5;
+.wrapper .container .calculator .screen .get-action.active-action {
+  display: block;
+  -webkit-animation: getAction 0.6s ease both;
+          animation: getAction 0.6s ease both;
 }
 
-.wrapper .container .calculator .screen input::-ms-input-placeholder {
-  color: var(--numbers-color);
-  opacity: 0.5;
+@-webkit-keyframes getAction {
+  0% {
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
 }
 
-.wrapper .container .calculator .screen input::placeholder {
-  color: var(--numbers-color);
-  opacity: 0.5;
-}
-
-.wrapper .container .calculator .screen input:focus::-webkit-input-placeholder {
-  opacity: 0;
-}
-
-.wrapper .container .calculator .screen input:focus:-ms-input-placeholder {
-  opacity: 0;
-}
-
-.wrapper .container .calculator .screen input:focus::-ms-input-placeholder {
-  opacity: 0;
-}
-
-.wrapper .container .calculator .screen input:focus::placeholder {
-  opacity: 0;
+@keyframes getAction {
+  0% {
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
 }
 
 .wrapper .container .calculator .keyboard {

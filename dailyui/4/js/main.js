@@ -1,6 +1,6 @@
 window.addEventListener("load", event => {
 
-    // flip Calcuclator
+    // Flip Calcuclator Effects
     var toggle = document.querySelector('.toggle'),
         calculator = document.querySelector('.calculator');
 
@@ -39,24 +39,78 @@ window.addEventListener("load", event => {
         }
     }
 
+    ///////////////////
+    // Calculator Functions
+    ///////////////////
 
-    // get numbers
+    // Get Numbers
 
-    var input = document.querySelector('input'),
-        key = document.querySelectorAll('.key'),
-        currentKey = key.target;
+    var input = document.querySelector('.input'),
+        secondInput = document.querySelector('.second-input'),
+        number = document.querySelectorAll('.number'),
+        del = document.querySelector('.del'),
+        back = document.querySelector('.back'),
+        action = document.querySelectorAll('.action'),
+        addAction = document.querySelector('.get-action'),
+        total = document.querySelector('.total');
 
-
-    key.forEach(function (el) {
+    // Events
+    number.forEach(function (el) {
         el.addEventListener('click', getNumbers);
     })
 
-    console.log(key.innerText)
+    action.forEach(function (el) {
+        el.addEventListener('click', getAction);
+    })
 
+    del.addEventListener('click', deleteAll);
+    back.addEventListener('click', deleteLast);
+    total.addEventListener('click', getTotal);
+
+
+
+    // Functions
+
+    // To Add Numbers in the Screen
     function getNumbers(e) {
-        var currentKey = e.currentTarget;
+        var currentNumber = e.currentTarget;
+        input.innerHTML += currentNumber.innerHTML;
+    }
 
-        input.value += currentKey.innerHTML;
+    // Delete All Numbers
+    function deleteAll() {
+        input.innerHTML = "";
+        secondInput.innerHTML = "";
+        addAction.innerHTML = "";
+        addAction.classList.remove('active-action');
+
+    }
+
+    // Delete Last Number
+    function deleteLast() {
+        input.innerHTML = input.innerHTML.slice(0, -1);
+
+    }
+
+
+    function getAction(e) {
+        var currentAction = e.currentTarget;
+        addAction.innerHTML = currentAction.innerHTML;
+
+        addAction.classList.add('active-action');
+
+        setTimeout(() => {
+            addAction.classList.remove('active-action');
+        }, 200);
+
+        secondInput.innerHTML += input.innerHTML + addAction.innerHTML;
+        input.innerHTML = "";
+
+
+    }
+
+    function getTotal() {
+
 
     }
 

@@ -22,7 +22,8 @@ $neu-05: #403E3E;
 
 :root {
 
-    --screen-bg: linear-gradient(45deg, #E5E4EA, #CED2D8);
+    --screen-bg: linear-gradient(90deg, #E5E4EA, #CED2D8);
+    --screen-fade: linear-gradient(90deg, #E5E4EA 30%, transparent 60%);
 
     --calc-bg: #fff;
     --numbers-bg: #E5E4EA;
@@ -37,8 +38,8 @@ $neu-05: #403E3E;
 }
 
 [data-theme="dark"] {
-    --screen-bg: linear-gradient(45deg, #474747, #403E3E);
-
+    --screen-bg: linear-gradient(90deg, #474747, #403E3E);
+    --screen-fade: linear-gradient(90deg, #474747 30%, transparent 60%);
     --calc-bg: #606060;
     --numbers-bg: #505050;
     --actions-bg: #403E3E;
@@ -226,43 +227,78 @@ body {
             transition: all 0.2s ease;
 
 
-            &:before {
-                position: absolute;
-                content: '';
-                width: 100%;
-                height: 100%;
-                //background: $m-01;
-                z-index: -2;
-                transform: translate(10px, 10px);
-
-            }
-
             .screen {
                 background: var(--screen-bg);
                 border-radius: 3px;
                 margin-bottom: 10px;
                 transition: all 0.2s ease;
+                position: relative;
 
-                input {
-                    width: 100%;
-                    height: 100%;
+                .input,
+                .second-input {
+                    width: 280px;
+                    height: 50%;
                     background-color: transparent;
                     border: 0;
                     text-align: right;
                     font-family: $font-01;
-                    font-size: 60px;
+                    font-size: 40px;
                     color: var(--numbers-color);
                     padding: 5px 15px;
                     box-sizing: border-box;
+                    overflow-x: scroll;
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: flex-end;
+                    bottom: 0;
+                    position: absolute;
 
-                    &::placeholder {
-                        color: var(--numbers-color);
-                        opacity: 0.5;
+
+                    &:before {
+                        position: absolute;
+                        content: '';
+                        width: 40%;
+                        height: 100%;
+                        background: var(--screen-fade);
+                        left: 0;
+                        top: 0;
+
                     }
 
-                    &:focus {
-                        &::placeholder {
-                            opacity: 0;
+
+                }
+
+                .second-input {
+                    font-size: 20px;
+                    top: 0;
+                    //background-color: yellow;
+                }
+
+                .get-action {
+                    width: 40px;
+                    height: 40px;
+                    //background-color: red;
+                    z-index: 1;
+                    bottom: 0;
+                    left: 0;
+                    position: absolute;
+                    display: none;
+                    color: var(--numbers-color);
+                    font-size: 20px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+
+
+                    &.active-action {
+                        display: block;
+                        animation: getAction 0.6s ease both;
+
+                        @keyframes getAction {
+                            0% {
+                                transform: translateY(20px);
+                            }
                         }
                     }
                 }
