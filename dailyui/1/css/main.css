@@ -178,6 +178,7 @@ body {
   display: none;
   overflow-x: hidden;
   visibility: hidden;
+  z-index: -1;
 }
 
 .modal.open {

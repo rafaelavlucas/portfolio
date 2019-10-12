@@ -187,6 +187,7 @@ body {
     display: none;
     overflow-x: hidden;
     visibility: hidden;
+    z-index: -1;
 
     &.open {
         width: 100%;
