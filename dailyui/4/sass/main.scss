@@ -23,7 +23,7 @@ $neu-05: #403E3E;
 :root {
 
     --screen-bg: linear-gradient(90deg, #E5E4EA, #CED2D8);
-    --screen-fade: linear-gradient(90deg, #E5E4EA 30%, rgba(255, 255, 255, 0) 60%);
+    --screen-fade: linear-gradient(90deg, #E5E4EA 30%, rgba(#E5E4EA, 0) 60%);
 
     --calc-bg: #fff;
     --numbers-bg: #E5E4EA;
@@ -42,7 +42,7 @@ $neu-05: #403E3E;
 
 [data-theme="dark"] {
     --screen-bg: linear-gradient(90deg, #474747, #403E3E);
-    --screen-fade: linear-gradient(90deg, #474747 30%, rgba(255, 255, 255, 0) 60%);
+    --screen-fade: linear-gradient(90deg, #474747 30%, rgba(#474747, 0) 60%);
     --calc-bg: #606060;
     --numbers-bg: #505050;
     --actions-bg: #403E3E;
