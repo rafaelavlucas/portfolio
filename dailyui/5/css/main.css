@@ -1,0 +1,264 @@
+@import url("https://fonts.googleapis.com/css?family=Barlow+Condensed:300,400,500,600,700,800,900|Barlow:300,400,500,600,700,800,900&display=swap");
+:root {
+  --action-color: #fff;
+  --icon-bg: linear-gradient(210deg, #306064 -7%, rgba(48, 96, 100, 0) 82%), linear-gradient(45deg, #72C0B0 0%, rgba(114, 192, 176, 0) 100%), #4B8F8E;
+  --inner-shadow: #306064;
+  --box-shadow: #306064;
+}
+
+[data-theme="dark"] {
+  --action-color: #72C0B0;
+  --icon-bg: linear-gradient(210deg, #242424 -7%, rgba(36, 36, 36, 0) 82%), linear-gradient(45deg, #606060 0%, rgba(96, 96, 96, 0) 100%), #7A7A7A;
+  --inner-shadow: #464545;
+  --box-shadow: #403E3E;
+}
+
+[data-theme="light"] {
+  --action-color: #fff;
+  --icon-bg: linear-gradient(210deg, #CED2D8 -7%, rgba(96, 96, 96, 0) 82%), linear-gradient(45deg, #E5E4EA 0%, rgba(229, 228, 234, 0) 100%), #FFFFFF;
+  --inner-shadow: #BCBFC4;
+  --box-shadow: #A9A9A9;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li,
+button,
+a,
+i,
+input {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: 0;
+  -webkit-tap-highlight-color: transparent;
+  text-decoration: none;
+  color: inherit;
+}
+
+h1:focus,
+h2:focus,
+h3:focus,
+h4:focus,
+h5:focus,
+h6:focus,
+p:focus,
+ul:focus,
+li:focus,
+button:focus,
+a:focus,
+i:focus,
+input:focus {
+  outline: 0;
+}
+
+div {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: auto;
+  font-family: "Barlow", sans-serif;
+  background: white;
+}
+
+.logo {
+  position: fixed;
+  z-index: 5;
+  bottom: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 100%;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+
+.logo img {
+  width: 55%;
+  height: 55%;
+  -webkit-transform: translateY(-1px);
+          transform: translateY(-1px);
+  opacity: 0.8;
+}
+
+.wrapper .container {
+  padding: 40px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+}
+
+@media screen and (max-width: 511px) {
+  .wrapper .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.wrapper .container .icon-app {
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.wrapper .container .icon-app .icon {
+  background: var(--icon-bg);
+  width: 180px;
+  height: 180px;
+  border-radius: 30px;
+  margin: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: inset -20px 30px 84px var(--inner-shadow);
+          box-shadow: inset -20px 30px 84px var(--inner-shadow);
+  position: relative;
+}
+
+.wrapper .container .icon-app .icon:before {
+  position: absolute;
+  content: '';
+  width: 80%;
+  height: 20%;
+  border-radius: inherit;
+  bottom: 0;
+  background-color: transparent;
+  -webkit-box-shadow: 0px 0px 60px var(--box-shadow);
+          box-shadow: 0px 0px 60px var(--box-shadow);
+  z-index: -1;
+}
+
+.wrapper .container .icon-app .icon .actions {
+  width: 120px;
+  height: 120px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  grid-gap: 24px;
+}
+
+.wrapper .container .icon-app .icon .actions span {
+  display: block;
+  background: var(--action-color);
+  width: 80%;
+  height: 6px;
+  border-radius: 6px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  position: relative;
+}
+
+.wrapper .container .icon-app .icon .actions span:before, .wrapper .container .icon-app .icon .actions span:after {
+  background: inherit;
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 6px;
+  border-radius: inherit;
+}
+
+.wrapper .container .icon-app .icon .actions .multiply {
+  width: 100%;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transform-origin: 50%;
+          transform-origin: 50%;
+}
+
+.wrapper .container .icon-app .icon .actions .multiply:before {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.wrapper .container .icon-app .icon .actions .multiply:after {
+  display: none;
+}
+
+.wrapper .container .icon-app .icon .actions .divide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wrapper .container .icon-app .icon .actions .divide:before, .wrapper .container .icon-app .icon .actions .divide:after {
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+}
+
+.wrapper .container .icon-app .icon .actions .divide:before {
+  -webkit-transform: translateY(-16px);
+          transform: translateY(-16px);
+}
+
+.wrapper .container .icon-app .icon .actions .divide:after {
+  -webkit-transform: translateY(16px);
+          transform: translateY(16px);
+}
+
+.wrapper .container .icon-app .icon .actions .minus:before, .wrapper .container .icon-app .icon .actions .minus:after {
+  display: none;
+}
+
+.wrapper .container .icon-app .icon .actions .plus:before {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.wrapper .container .icon-app .icon .actions .plus:after {
+  display: none;
+}
+
+.wrapper .container .icon-app:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+/*# sourceMappingURL=main.css.map */
