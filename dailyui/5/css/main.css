@@ -4,6 +4,7 @@
   --icon-bg: linear-gradient(210deg, #306064 -7%, rgba(48, 96, 100, 0) 82%), linear-gradient(45deg, #72C0B0 0%, rgba(114, 192, 176, 0) 100%), #4B8F8E;
   --inner-shadow: #306064;
   --box-shadow: #306064;
+  --shadow-icon: rgba(0, 0, 0, 0.5);
 }
 
 [data-theme="dark"] {
@@ -11,6 +12,7 @@
   --icon-bg: linear-gradient(210deg, #242424 -7%, rgba(36, 36, 36, 0) 82%), linear-gradient(45deg, #606060 0%, rgba(96, 96, 96, 0) 100%), #7A7A7A;
   --inner-shadow: #464545;
   --box-shadow: #403E3E;
+  --shadow-icon: rgba(0, 0, 0, 0.8);
 }
 
 [data-theme="light"] {
@@ -18,6 +20,7 @@
   --icon-bg: linear-gradient(210deg, #CED2D8 -7%, rgba(96, 96, 96, 0) 82%), linear-gradient(45deg, #E5E4EA 0%, rgba(229, 228, 234, 0) 100%), #FFFFFF;
   --inner-shadow: #BCBFC4;
   --box-shadow: #A9A9A9;
+  --shadow-icon: rgba(0, 0, 0, 0.2);
 }
 
 h1,
@@ -115,8 +118,8 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-transform: scale(0.5);
-          transform: scale(0.5);
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
 }
 
 @media screen and (max-width: 511px) {
@@ -151,6 +154,7 @@ body {
   -webkit-box-shadow: inset -20px 30px 84px var(--inner-shadow);
           box-shadow: inset -20px 30px 84px var(--inner-shadow);
   position: relative;
+  cursor: pointer;
 }
 
 .wrapper .container .icon-app .icon:before {
@@ -159,11 +163,13 @@ body {
   width: 80%;
   height: 20%;
   border-radius: inherit;
-  bottom: 0;
+  bottom: 5px;
   background-color: transparent;
-  -webkit-box-shadow: 0px 0px 60px var(--box-shadow);
-          box-shadow: 0px 0px 60px var(--box-shadow);
+  -webkit-box-shadow: 0px 0px 40px var(--box-shadow);
+          box-shadow: 0px 0px 40px var(--box-shadow);
   z-index: -1;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .wrapper .container .icon-app .icon .actions {
@@ -174,6 +180,8 @@ body {
   -ms-grid-columns: (1fr)[2];
       grid-template-columns: repeat(2, 1fr);
   grid-gap: 24px;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .wrapper .container .icon-app .icon .actions span {
@@ -188,6 +196,10 @@ body {
   -ms-grid-column-align: center;
       justify-self: center;
   position: relative;
+  -webkit-box-shadow: 0px 2px 2px var(--shadow-icon);
+          box-shadow: 0px 2px 2px var(--shadow-icon);
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .wrapper .container .icon-app .icon .actions span:before, .wrapper .container .icon-app .icon .actions span:after {
@@ -197,6 +209,10 @@ body {
   width: 100%;
   height: 6px;
   border-radius: inherit;
+  -webkit-box-shadow: 3px 0px 2px -1px var(--shadow-icon);
+          box-shadow: 3px 0px 2px -1px var(--shadow-icon);
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .wrapper .container .icon-app .icon .actions .multiply {
@@ -232,6 +248,8 @@ body {
   width: 8px;
   height: 8px;
   border-radius: 100%;
+  -webkit-box-shadow: -3px 0px 2px -1px rgba(0, 0, 0, 0.2);
+          box-shadow: -3px 0px 2px -1px rgba(0, 0, 0, 0.2);
 }
 
 .wrapper .container .icon-app .icon .actions .divide:before {
@@ -260,5 +278,32 @@ body {
 .wrapper .container .icon-app:hover {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
+}
+
+.wrapper .container .icon-app:hover .icon:before {
+  height: 50%;
+  -webkit-box-shadow: 0px 0px 80px var(--box-shadow);
+          box-shadow: 0px 0px 80px var(--box-shadow);
+  opacity: 0.8;
+}
+
+.wrapper .container .icon-app:hover .icon .actions {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.wrapper .container .icon-app:hover .icon .actions span {
+  -webkit-box-shadow: 0px 8px 6px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 8px 6px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper .container .icon-app:hover .icon .actions span:before, .wrapper .container .icon-app:hover .icon .actions span:after {
+  -webkit-box-shadow: 8px 0px 6px 0px rgba(0, 0, 0, 0.1);
+          box-shadow: 8px 0px 6px 0px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper .container .icon-app:hover .icon .actions .divide:before, .wrapper .container .icon-app:hover .icon .actions .divide:after {
+  -webkit-box-shadow: -8px 0px 6px 0px rgba(0, 0, 0, 0.1);
+          box-shadow: -8px 0px 6px 0px rgba(0, 0, 0, 0.1);
 }
 /*# sourceMappingURL=main.css.map */

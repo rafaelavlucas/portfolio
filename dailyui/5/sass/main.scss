@@ -21,11 +21,11 @@ $neu-05: #403E3E;
 
 
 :root {
-
     --action-color: #fff;
     --icon-bg: linear-gradient(210deg, #306064 -7%, rgba(48, 96, 100, 0) 82%), linear-gradient(45deg, #72C0B0 0%, rgba(114, 192, 176, 0) 100%), #4B8F8E;
     --inner-shadow: #306064;
     --box-shadow: #306064;
+    --shadow-icon: rgba(0, 0, 0, 0.5);
 
 
 }
@@ -36,6 +36,7 @@ $neu-05: #403E3E;
     --icon-bg: linear-gradient(210deg, #242424 -7%, rgba(36, 36, 36, 0) 82%), linear-gradient(45deg, #606060 0%, rgba(96, 96, 96, 0) 100%), #7A7A7A;
     --inner-shadow: #464545;
     --box-shadow: #403E3E;
+    --shadow-icon: rgba(0, 0, 0, 0.8);
 }
 
 [data-theme="light"] {
@@ -44,6 +45,7 @@ $neu-05: #403E3E;
     --icon-bg: linear-gradient(210deg, #CED2D8 -7%, rgba(96, 96, 96, 0) 82%), linear-gradient(45deg, #E5E4EA 0%, rgba(229, 228, 234, 0) 100%), #FFFFFF;
     --inner-shadow: #BCBFC4;
     --box-shadow: #A9A9A9;
+    --shadow-icon: rgba(0, 0, 0, 0.2);
 }
 
 
@@ -144,7 +146,7 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-        transform: scale(0.5);
+        transform: scale(0.8);
 
         @include xs {
             flex-direction: column;
@@ -164,6 +166,8 @@ body {
                 align-items: center;
                 box-shadow: inset -20px 30px 84px var(--inner-shadow);
                 position: relative;
+                cursor: pointer;
+
 
 
                 &:before {
@@ -172,10 +176,11 @@ body {
                     width: 80%;
                     height: 20%;
                     border-radius: inherit;
-                    bottom: 0;
+                    bottom: 5px;
                     background-color: transparent;
-                    box-shadow: 0px 0px 60px var(--box-shadow);
+                    box-shadow: 0px 0px 40px var(--box-shadow);
                     z-index: -1;
+                    transition: all 0.2s ease;
                 }
 
 
@@ -185,6 +190,7 @@ body {
                     display: grid;
                     grid-template-columns: repeat(2, 1fr);
                     grid-gap: 24px;
+                    transition: all 0.2s ease;
 
                     span {
                         display: block;
@@ -195,6 +201,9 @@ body {
                         align-self: center;
                         justify-self: center;
                         position: relative;
+                        box-shadow: 0px 2px 2px var(--shadow-icon);
+                        transition: all 0.2s ease;
+
 
                         &:before,
                         &:after {
@@ -204,6 +213,8 @@ body {
                             width: 100%;
                             height: 6px;
                             border-radius: inherit;
+                            box-shadow: 3px 0px 2px -1px var(--shadow-icon);
+                            transition: all 0.2s ease;
                         }
                     }
 
@@ -231,6 +242,7 @@ body {
                             width: 8px;
                             height: 8px;
                             border-radius: 100%;
+                            box-shadow: -3px 0px 2px -1px rgba(0, 0, 0, 0.2);
                         }
 
                         &:before {
@@ -240,6 +252,7 @@ body {
                         &:after {
                             transform: translateY(16px);
                         }
+
                     }
 
                     .minus {
@@ -266,7 +279,34 @@ body {
             &:hover {
                 transform: scale(1.2);
 
-                .icon {}
+                .icon {
+                    &:before {
+                        height: 50%;
+                        box-shadow: 0px 0px 80px var(--box-shadow);
+                        opacity: 0.8;
+                    }
+
+                    .actions {
+                        transform: scale(1.05);
+
+                        span {
+                            box-shadow: 0px 8px 6px rgba(0, 0, 0, 0.1);
+
+                            &:before,
+                            &:after {
+                                box-shadow: 8px 0px 6px 0px rgba(0, 0, 0, 0.1);
+                            }
+                        }
+
+                        .divide {
+
+                            &:before,
+                            &:after {
+                                box-shadow: -8px 0px 6px 0px rgba(0, 0, 0, 0.1);
+                            }
+                        }
+                    }
+                }
             }
         }
 
