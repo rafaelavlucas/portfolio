@@ -18,6 +18,8 @@ $neu-03: #606060;
 $neu-04: #505050;
 $neu-05: #403E3E;
 
+$transition: all 0.4s cubic-bezier(0.7, 0.29, 0.68, 1.43);
+
 
 
 :root {
@@ -26,6 +28,7 @@ $neu-05: #403E3E;
     --inner-shadow: #306064;
     --box-shadow: #306064;
     --shadow-icon: rgba(0, 0, 0, 0.5);
+    --shadow-icon-h: rgba(0, 0, 0, 0.18);
 
 
 }
@@ -36,7 +39,8 @@ $neu-05: #403E3E;
     --icon-bg: linear-gradient(210deg, #242424 -7%, rgba(36, 36, 36, 0) 82%), linear-gradient(45deg, #606060 0%, rgba(96, 96, 96, 0) 100%), #7A7A7A;
     --inner-shadow: #464545;
     --box-shadow: #403E3E;
-    --shadow-icon: rgba(0, 0, 0, 0.8);
+    --shadow-icon: rgba(0, 0, 0, 0.7);
+    --shadow-icon-h: rgba(0, 0, 0, 0.3);
 }
 
 [data-theme="light"] {
@@ -46,6 +50,7 @@ $neu-05: #403E3E;
     --inner-shadow: #BCBFC4;
     --box-shadow: #A9A9A9;
     --shadow-icon: rgba(0, 0, 0, 0.2);
+    --shadow-icon-h: rgba(0, 0, 0, 0.1);
 }
 
 
@@ -146,14 +151,14 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-        transform: scale(0.8);
+        transform: scale(0.5);
 
         @include xs {
             flex-direction: column;
         }
 
         .icon-app {
-            transition: all 0.2s ease;
+            transition: $transition;
 
             .icon {
                 background: var(--icon-bg);
@@ -169,7 +174,6 @@ body {
                 cursor: pointer;
 
 
-
                 &:before {
                     position: absolute;
                     content: '';
@@ -180,7 +184,7 @@ body {
                     background-color: transparent;
                     box-shadow: 0px 0px 40px var(--box-shadow);
                     z-index: -1;
-                    transition: all 0.2s ease;
+                    transition: $transition;
                 }
 
 
@@ -190,7 +194,7 @@ body {
                     display: grid;
                     grid-template-columns: repeat(2, 1fr);
                     grid-gap: 24px;
-                    transition: all 0.2s ease;
+                    transition: $transition;
 
                     span {
                         display: block;
@@ -202,7 +206,7 @@ body {
                         justify-self: center;
                         position: relative;
                         box-shadow: 0px 2px 2px var(--shadow-icon);
-                        transition: all 0.2s ease;
+                        transition: $transition;
 
 
                         &:before,
@@ -214,7 +218,7 @@ body {
                             height: 6px;
                             border-radius: inherit;
                             box-shadow: 3px 0px 2px -1px var(--shadow-icon);
-                            transition: all 0.2s ease;
+                            transition: $transition;
                         }
                     }
 
@@ -290,11 +294,11 @@ body {
                         transform: scale(1.05);
 
                         span {
-                            box-shadow: 0px 8px 6px rgba(0, 0, 0, 0.1);
+                            box-shadow: 0px 8px 6px var(--shadow-icon-h);
 
                             &:before,
                             &:after {
-                                box-shadow: 8px 0px 6px 0px rgba(0, 0, 0, 0.1);
+                                box-shadow: 8px 0px 6px 0px var(--shadow-icon-h);
                             }
                         }
 
@@ -302,7 +306,7 @@ body {
 
                             &:before,
                             &:after {
-                                box-shadow: -8px 0px 6px 0px rgba(0, 0, 0, 0.1);
+                                box-shadow: -8px 0px 6px 0px var(--shadow-icon-h);
                             }
                         }
                     }

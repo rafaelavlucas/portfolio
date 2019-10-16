@@ -27,7 +27,7 @@ window.onload = function (e) {
         nm = 1,
         im = 1,
         folder = "img",
-        total = 96;
+        total = 95;
 
 
     const items = [{
@@ -53,7 +53,13 @@ window.onload = function (e) {
             name: `${nm++}`,
             image: `${folder}/dailyui-${im++}.jpg`,
             desc: "Calculator [in progress...]"
-        }
+        },
+                {
+            url: `${nu++}`,
+            name: `${nm++}`,
+            image: `${folder}/dailyui-${im++}.jpg`,
+            desc: "App Icon"
+        },
 
     ];
 
