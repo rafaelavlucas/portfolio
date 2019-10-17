@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
-
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400,500,600,700,900');
 
 @import url('https://fonts.googleapis.com/css?family=Barlow:300,400,500,600,700&display=swap');
@@ -58,7 +56,6 @@ $neu-07: #383838;
 
 $font-01: 'Barlow',
 sans-serif;
-//$font-01:'Open Sans',sans-serif;
 
 $font-02: 'Source Code Pro',
 monospace;
@@ -90,12 +87,9 @@ body {
     padding: 0;
     position: relative;
     transition: all .3s ease-in-out;
-
 }
 
-
 /* // Selected Elements \\  */
-
 ::-moz-selection {
     background-color: $m-01;
     color: #ffffff;
@@ -108,7 +102,6 @@ body {
 
 
 /*  // Components \\  */
-
 button {
     color: $neu-04;
     display: inline-block;
@@ -138,7 +131,6 @@ button {
         position: absolute;
         bottom: 0;
         transition: all 0.7s ease;
-
     }
 
     &:before {
@@ -179,7 +171,6 @@ button {
     &:focus {
         outline: 0;
     }
-
 }
 
 a {
@@ -237,8 +228,6 @@ p {
                 display: none;
             }
         }
-
-
     }
 }
 
@@ -366,7 +355,6 @@ p {
                 }
             }
         }
-
     }
 
     &:hover {
@@ -418,8 +406,6 @@ p {
                     }
                 }
             }
-
-
         }
     }
 }
@@ -520,7 +506,6 @@ nav {
                     width: 20px;
                     height: 100%;
                     background-color: inherit;
-
                 }
 
                 &:before {
@@ -697,7 +682,6 @@ nav {
             }
         }
     }
-
 }
 
 footer {
@@ -706,8 +690,6 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-
-
 
     @include sm {
         height: 100px;
@@ -850,7 +832,6 @@ header {
                     @include sm {
                         background-color: rgba(52, 52, 52, 0.85);
                     }
-
                 }
             }
         }
@@ -944,8 +925,6 @@ header {
                 letter-spacing: 1px;
             }
         }
-
-
     }
 
     .filters-container {
@@ -1032,7 +1011,6 @@ header {
                     }
                 }
 
-
                 &:hover {
                     color: white;
 
@@ -1059,18 +1037,12 @@ header {
                         }
                     }
                 }
-
-
-
-
             }
 
             @include sm {
                 display: none;
                 margin-bottom: 0px;
             }
-
-
         }
 
         @include sm {
@@ -1091,7 +1063,6 @@ header {
                 align-items: center;
                 transition: all 0.5s ease-in-out;
                 transform: translateX(120%);
-
 
                 .close-filters {
                     position: absolute;
@@ -1122,7 +1093,6 @@ header {
                             width: 20px;
                             height: 100%;
                             background-color: inherit;
-
                         }
 
                         &:before {
@@ -1135,7 +1105,6 @@ header {
                             transform: rotate(-45deg);
                         }
                     }
-
                 }
 
                 .filters {
@@ -1153,9 +1122,7 @@ header {
                         opacity: 1;
                         transform: translateX(0px);
                     }
-
                 }
-
             }
         }
 
@@ -1174,7 +1141,6 @@ header {
         @include sm {
             grid-template-columns: 100%;
         }
-
 
         .work {
             display: block;
@@ -1206,7 +1172,6 @@ header {
                         display: none;
                     }
 
-
                     100% {
 
                         opacity: 0;
@@ -1214,8 +1179,6 @@ header {
                         height: 0;
                         display: none;
                     }
-
-
                 }
 
                 .image {
@@ -1224,15 +1187,12 @@ header {
 
                     .img {}
                 }
-
-
             }
 
             &.full {
                 width: 100%;
                 padding-bottom: 0%;
             }
-
         }
     }
 
@@ -1258,7 +1218,6 @@ header {
             height: 100%;
             top: 0;
         }
-
 
         @include sm {
             width: 100%;
@@ -1346,7 +1305,6 @@ header {
             }
         }
 
-
         &:hover {
 
             .img {
@@ -1392,20 +1350,12 @@ header {
                 transition: all .4s 0.2s ease;
                 bottom: calc(50% - 50px);
             }
-
-
         }
 
         &.big {
             padding-bottom: 50%;
         }
-
-
-
     }
-
-
-
 }
 
 .info-icons {
@@ -1419,7 +1369,6 @@ header {
 
         @include md {
             grid-template-columns: repeat(3, 1fr);
-
         }
 
         @include sm {
@@ -1502,7 +1451,6 @@ header {
                         width: 13px;
                     }
                 }
-
             }
 
             &:nth-child(2) {
@@ -1588,7 +1536,6 @@ header {
                     left: 22px;
                 }
 
-
                 &:hover {
                     &:after {
                         width: 21px;
@@ -1623,9 +1570,6 @@ header {
                 }
             }
         }
-
-
-
     }
 }
 
@@ -1637,7 +1581,6 @@ header {
         @include sm {
             margin-bottom: 30px;
         }
-
     }
 
     .social-items {
@@ -1656,7 +1599,6 @@ header {
             display: flex;
             align-items: center;
             justify-content: center;
-
 
             @include sm {
                 padding: 50 0;
@@ -1711,7 +1653,6 @@ header {
                     height: 20px;
                     top: initial;
                 }
-
             }
 
             &:nth-child(even) {
@@ -1732,12 +1673,10 @@ header {
 
             &:after {
                 content: '';
-
                 height: 2px;
                 border-radius: 20px;
                 background-color: $m-01;
                 position: absolute;
-
                 animation: lineout 0.6s ease;
                 animation-direction: reverse;
                 animation-fill-mode: forwards;
@@ -1762,10 +1701,7 @@ header {
                 @include sm {
                     display: none;
                 }
-
             }
-
-
 
             &:hover {
                 color: $m-01;
@@ -1820,7 +1756,6 @@ header {
                     }
                 }
 
-
                 img {
                     width: 100px;
                     height: 100px;
@@ -1830,7 +1765,6 @@ header {
                         width: 30px;
                         height: 30px;
                         opacity: 1;
-
                     }
 
                     @include xs {
@@ -1839,9 +1773,6 @@ header {
                         top: initial;
                     }
                 }
-
-
-
             }
         }
     }
@@ -1883,7 +1814,6 @@ header {
     @include sm {
         flex-direction: column;
     }
-
 
     .bio {
         font-size: 15px;
@@ -1933,8 +1863,6 @@ header {
                 }
             }
         }
-
-
     }
 
     .image-about {
@@ -1967,7 +1895,6 @@ header {
         flex-direction: column;
     }
 
-
     .block {
         width: calc(50% - 20px);
         display: flex;
@@ -1976,7 +1903,6 @@ header {
         padding: 40px 5%;
         box-sizing: border-box;
         transition: all 0.6s ease;
-
 
         @include sm {
             width: 100%;
@@ -2037,8 +1963,6 @@ header {
             box-shadow: 0px 30px 45px -20px $neu-04;
         }
     }
-
-
 }
 
 .timeline-content {
@@ -2055,7 +1979,6 @@ header {
         margin: auto;
         margin-bottom: 90px;
 
-
         &:last-child {
             margin-bottom: 0;
         }
@@ -2067,7 +1990,6 @@ header {
             margin-bottom: 70px;
         }
 
-
         .timeline-item {
             width: calc(50% - 20px);
             margin-top: 50px;
@@ -2078,15 +2000,12 @@ header {
             box-shadow: 0;
             transition: all 0.4s 0.2s ease;
 
-
-
             &:nth-child(1),
             &:nth-child(2) {
                 margin-top: 0px;
             }
 
             @include sm {
-
                 max-width: 480px;
                 width: 100%;
                 margin: auto;
@@ -2118,7 +2037,6 @@ header {
                     padding: 0 0 10 0;
                     font-size: 14px;
                 }
-
             }
 
             p {
@@ -2128,7 +2046,6 @@ header {
                 strong {
                     letter-spacing: 1px;
                     font-weight: 600;
-
                 }
 
                 em {
@@ -2138,8 +2055,6 @@ header {
             }
 
             &:hover {
-
-
                 &:after {
                     height: 100%;
                     width: 100%;
@@ -2274,8 +2189,6 @@ header {
         align-items: center;
         flex-direction: column;
 
-
-
         .image-main {
             width: 100%;
             margin: 40px 0;
@@ -2314,9 +2227,6 @@ header {
             }
         }
     }
-
-
-
 }
 
 .go-back {
