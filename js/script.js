@@ -9,14 +9,20 @@ window.onload = function (e) {
 
 
     function fixedGoBack() {
-        var body = document.querySelector('body')
+        var body = document.querySelector('body');
+
         window.addEventListener('scroll', fixedGoBack)
         if (window.pageYOffset >= 190) {
 
             goBack.classList.add('fixed');
 
         } else {
-            goBack.classList.remove('fixed');
+            goBack.classList.add('not-fixed');
+
+            setTimeout(() => {
+                goBack.classList.remove('fixed');
+                goBack.classList.remove('not-fixed');
+            }, 200);
         }
 
 
@@ -26,7 +32,7 @@ window.onload = function (e) {
         } else {
             window.addEventListener('scroll', fixedGoBack)
         }
-        console.log(document.querySelector('body').scrollHeight - document.querySelector('body').scrollTop, document.querySelector('body').clientHeight + 270)
+        console.log(document.querySelector('body').scrollHeight - body.scrollTop, body.clientHeight + 270)
     }
 
 

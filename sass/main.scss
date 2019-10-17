@@ -1965,7 +1965,6 @@ header {
 
     @include sm {
         flex-direction: column;
-
     }
 
 
@@ -2033,7 +2032,9 @@ header {
         }
 
         &:hover {
+            transform: translateY(-10px);
             background-color: darken($m-01, 10%);
+            box-shadow: 0px 30px 45px -20px $neu-04;
         }
     }
 
@@ -2069,14 +2070,19 @@ header {
 
         .timeline-item {
             width: calc(50% - 20px);
-            margin-bottom: 50px;
+            margin-top: 50px;
             text-align: left;
             padding: 10px 0 0 10px;
             position: relative;
             box-sizing: border-box;
+            box-shadow: 0;
+            transition: all 0.4s 0.2s ease;
 
-            &:last-child {
-                margin-bottom: 0px;
+
+
+            &:nth-child(1),
+            &:nth-child(2) {
+                margin-top: 0px;
             }
 
             @include sm {
@@ -2132,9 +2138,12 @@ header {
             }
 
             &:hover {
+
+
                 &:after {
                     height: 100%;
                     width: 100%;
+                    box-shadow: 0px 25px 45px -30px $neu-03;
                 }
             }
         }
@@ -2325,7 +2334,11 @@ header {
         bottom: 0;
         box-shadow: 0px 10px 20px black;
         transition: all 0.6s ease;
+    }
 
+    &.not-fixed {
+        bottom: -70px;
+        position: fixed;
     }
 
     #scrollme {
