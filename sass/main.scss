@@ -1168,15 +1168,9 @@ header {
     }
 
     .image-container {
-        //display: grid;
-        //grid-template-columns: 50% 50%;
-        //grid-gap: 20px;
         display: flex;
         justify-content: space-between;
-        //background-color: #313131;
         flex-wrap: wrap;
-
-        //position: relative;
 
         @include sm {
             grid-template-columns: 100%;
@@ -1235,19 +1229,15 @@ header {
 
             }
 
-        }
-
-        &.home {
-
-            .work {
-                width: calc(33% - 20px);
+            &.full {
+                width: 100%;
+                padding-bottom: 0%;
             }
-        }
 
+        }
     }
 
     .image {
-
         transition: all .5s ease;
         cursor: pointer;
         display: flex;
@@ -1256,15 +1246,6 @@ header {
         overflow: hidden;
         padding-bottom: 100%;
         position: relative;
-
-        &.big {
-            padding-bottom: 50%;
-
-            @include sm {
-                width: 100%;
-                padding-bottom: 100%;
-            }
-        }
 
         .img {
             display: flex;
@@ -1278,7 +1259,6 @@ header {
             height: 100%;
             top: 0;
         }
-
 
 
         @include sm {
@@ -1415,6 +1395,10 @@ header {
             }
 
 
+        }
+
+        &.big {
+            padding-bottom: 50%;
         }
 
 
