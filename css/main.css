@@ -946,6 +946,7 @@ header .header-content {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  z-index: 1;
 }
 
 header .header-content h1 {
@@ -955,7 +956,6 @@ header .header-content h1 {
   letter-spacing: 2px;
   -webkit-transition: all .6s ease-in-out;
   transition: all .6s ease-in-out;
-  z-index: 1;
 }
 
 @media (max-width: 799px) {
@@ -971,7 +971,6 @@ header .header-content p {
   letter-spacing: 8;
   font-size: 14px;
   text-align: center;
-  z-index: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

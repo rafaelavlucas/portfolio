@@ -777,7 +777,6 @@ header {
         display: flex;
         justify-content: space-around;
 
-
         @include sm {
             background-size: 250px, cover;
             background-position: center 50px;
@@ -865,6 +864,7 @@ header {
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        z-index: 1;
 
         h1 {
             font-size: 50px;
@@ -873,7 +873,7 @@ header {
             letter-spacing: 2px;
             -webkit-transition: all .6s ease-in-out;
             transition: all .6s ease-in-out;
-            z-index: 1;
+
 
             @include sm {
                 font-size: 35px;
@@ -887,7 +887,6 @@ header {
             letter-spacing: 8;
             font-size: 14px;
             text-align: center;
-            z-index: 1;
             display: flex;
             justify-content: center;
             align-items: center;
