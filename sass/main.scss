@@ -1260,9 +1260,9 @@ header {
             font-weight: 500;
             opacity: 0;
             z-index: 2;
-            transition: all .4s ease;
+            transition: all .2s ease;
             color: white;
-            top: calc(50% - 70px);
+            top: calc(50% - 80px);
             transform: translateY(50%);
             text-align: center;
             letter-spacing: 2px;
@@ -1286,9 +1286,9 @@ header {
             z-index: 2;
             font-family: $font-02;
             font-weight: 400;
-            transition: all .6s ease;
+            transition: all .2s ease;
             color: white;
-            bottom: calc(50% - 70px);
+            bottom: calc(50% - 80px);
             transform: translateY(50%);
             text-align: center;
             padding: 0 20px;
@@ -1341,13 +1341,13 @@ header {
 
             .overlay-title {
                 opacity: 1;
-                transition: all .4s 0.2s ease;
+                transition: all .3s 0.2s ease;
                 top: calc(50% - 50px);
             }
 
             .overlay-text {
                 opacity: 0.7;
-                transition: all .4s 0.2s ease;
+                transition: all .3s 0.4s ease;
                 bottom: calc(50% - 50px);
             }
         }

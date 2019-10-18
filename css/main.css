@@ -1475,10 +1475,10 @@ header:hover .header-content {
   font-weight: 500;
   opacity: 0;
   z-index: 2;
-  -webkit-transition: all .4s ease;
-  transition: all .4s ease;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
   color: white;
-  top: calc(50% - 70px);
+  top: calc(50% - 80px);
   -webkit-transform: translateY(50%);
           transform: translateY(50%);
   text-align: center;
@@ -1510,10 +1510,10 @@ header:hover .header-content {
   z-index: 2;
   font-family: "Source Code Pro", monospace;
   font-weight: 400;
-  -webkit-transition: all .6s ease;
-  transition: all .6s ease;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
   color: white;
-  bottom: calc(50% - 70px);
+  bottom: calc(50% - 80px);
   -webkit-transform: translateY(50%);
           transform: translateY(50%);
   text-align: center;
@@ -1580,15 +1580,15 @@ header:hover .header-content {
 
 .works-container .image:hover .overlay-title {
   opacity: 1;
-  -webkit-transition: all .4s 0.2s ease;
-  transition: all .4s 0.2s ease;
+  -webkit-transition: all .3s 0.2s ease;
+  transition: all .3s 0.2s ease;
   top: calc(50% - 50px);
 }
 
 .works-container .image:hover .overlay-text {
   opacity: 0.7;
-  -webkit-transition: all .4s 0.2s ease;
-  transition: all .4s 0.2s ease;
+  -webkit-transition: all .3s 0.4s ease;
+  transition: all .3s 0.4s ease;
   bottom: calc(50% - 50px);
 }
 
