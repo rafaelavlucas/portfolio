@@ -5,7 +5,7 @@ window.addEventListener("load", event => {
     /* The Team */
     var team = [{
             name: "Teste 1",
-            role: "ui designer",
+            role: "UI Designer",
             desc: "bigger text here",
             photo: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80",
             website: "website",
@@ -47,10 +47,10 @@ window.addEventListener("load", event => {
 
     /* Social Icons */
     var icons = [{
-        iWebsite: "/assets/facebook.svg",
-        iEmail: "assets/instagram.svg",
-        iLinkedin: "assets/twitter.svg",
-        iDribbble: "assets/youtube.svg",
+        iWebsite: "/assets/link.svg",
+        iEmail: "assets/email.svg",
+        iLinkedin: "assets/linkedin.svg",
+        iDribbble: "assets/dribbble.svg",
     }];
 
     var iWebsite = icons[0].iWebsite,
@@ -112,6 +112,7 @@ window.addEventListener("load", event => {
         speed: 800,
         slidesPerView: 3,
         spaceBetween: 40,
+        threshold: 10,
 
 
         // If we need pagination
@@ -124,10 +125,38 @@ window.addEventListener("load", event => {
         navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev"
+        },
+        breakpoints: {
+            1120: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+            },
+            800: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+            },
         }
     });
 
+    /* Show More */
 
+    var btnShow = document.querySelectorAll('.more');
+
+
+    btnShow.forEach(function (el) {
+        el.addEventListener('click', showMore);
+    });
+
+    function showMore(event) {
+        var card = event.target.closest(".swiper-slide");
+
+        if (card.classList.contains('show-more')) {
+            card.classList.remove('show-more');
+        } else {
+            card.classList.add('show-more')
+        }
+
+    }
 
 
     /* end */

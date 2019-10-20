@@ -5,16 +5,15 @@ sans-serif;
 $font-02: "Barlow Condensed",
 sans-serif;
 
-$m-01: #306064;
-$m-02: #4B8F8E;
-$m-03: #72C0B0;
-$m-04: #B9D7D5;
+$m-01: #D45B7A;
+$m-02: #FDA576;
 
-$g-01: linear-gradient(45deg, $m-02, $m-03);
-$g-02: linear-gradient(120deg, $m-01, $m-03);
+
+$g-01: linear-gradient(140deg, $m-01, $m-02);
+
 $neu-01: #EAEAEA;
 $neu-02: #EDEEF4;
-$neu-03: #606060;
+$neu-03: #6F7073;
 $neu-04: #505050;
 $neu-05: #403E3E;
 
@@ -121,7 +120,7 @@ body {
 
         &:before {
             width: 100%;
-            height: 392px;
+            height: 380px;
             background-color: $neu-01;
             content: '';
             position: absolute;
@@ -136,12 +135,28 @@ body {
             .title {
                 text-align: center;
                 margin-bottom: 80px;
-                color: #6F7073;
+                color: $neu-03;
                 font-size: 44px;
+                line-height: normal;
                 text-transform: uppercase;
                 font-weight: bold;
                 letter-spacing: 1.3px;
-                ;
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                height: 100px;
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    width: 80px;
+                    height: 10px;
+                    background: $neu-03;
+                    border-radius: 50px;
+                    bottom: 0;
+                    opacity: 0.2;
+                }
             }
 
             .team-cards {
@@ -149,10 +164,12 @@ body {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                padding-bottom: 60px;
+                //padding-bottom: 60px;
 
                 .swiper-container {
                     max-width: 920px;
+                    height: 380px;
+                    padding: 0 20px;
 
                     /* Card */
                     .swiper-slide {
@@ -165,12 +182,24 @@ body {
                         flex-direction: column;
                         border-radius: 4px;
                         position: relative;
-
                         box-shadow: inset 0px 0px 0px 1px $neu-02;
+                        position: relative;
+                        transition: all 0.4s ease;
+
+                        &:before {
+                            content: '';
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            box-shadow: 0px 20px 40px -20px #EAEAEA;
+                            top: 0px;
+                            z-index: -1;
+                            transition: all 0.4s ease;
+                        }
 
 
                         .bg {
-                            background-color: orange;
+                            background: $g-01;
                             position: absolute;
                             width: 100%;
                             height: 100px;
@@ -196,6 +225,9 @@ body {
                             z-index: 1;
                             position: absolute;
                             top: 40px;
+                            border: 3px solid #FFFFFF;
+
+                            box-shadow: 0px 4px 10px rgba($neu-03, 0.2);
 
                             img {
                                 object-fit: cover;
@@ -223,7 +255,7 @@ body {
                                 font-size: 14px;
                                 font-weight: bold;
                                 color: #CBCBCB;
-                                letter-spacing: 1px;
+                                letter-spacing: 0.5px;
                                 margin-top: 5px;
                             }
 
@@ -237,7 +269,7 @@ body {
                             display: flex;
                             justify-content: center;
                             align-items: center;
-                            background-color: $neu-01;
+                            background-color: rgba($neu-01, 0.5);
                             width: 100%;
                             position: absolute;
                             bottom: 0;
@@ -252,12 +284,40 @@ body {
                             .icon {
                                 width: 24px;
                                 height: 24px;
+                                opacity: 0.3;
+                                transition: all 0.4s ease;
+
+                                &:hover {
+                                    opacity: 0.6;
+
+                                }
 
                                 img {
                                     width: 100%;
                                     height: 100%;
                                 }
 
+                            }
+                        }
+
+                        &:hover {
+                            // transform: translateY(-10px);
+
+                            &:before {
+                                // box-shadow: 0px 10px 10px -10px #EAEAEA;
+                            }
+                        }
+
+                        &.show-more {
+                            .social {
+                                display: none;
+
+                            }
+
+                            .text {
+                                .desc {
+                                    display: block;
+                                }
                             }
                         }
 
@@ -269,19 +329,48 @@ body {
                 }
 
                 .navigation {
-                    width: 1060px;
-                    height: 40px;
+                    width: 1098px;
+                    height: 28px;
                     position: absolute;
                     margin: 0 auto;
-                    top: 80px;
+                    top: 86px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
 
                     .swiper-button-prev,
                     .swiper-button-next {
-                        background-image: none;
-                        box-shadow: inset 3px 3px 0px black;
-                        width: 20px;
-                        height: 20px;
+                        width: 28px;
+                        height: 28px;
+                        background-position: center;
+                        transition: all 0.4s ease;
+                        top: 0;
+                        margin-top: 0;
+
+
+                        &:focus {
+                            outline: none;
+                        }
                     }
+
+                    .swiper-button-prev {
+                        background-image: url("../assets/arrow-prev.svg");
+                        background-position-x: 5px;
+
+                        &:hover {
+                            transform: translateX(-5px);
+                        }
+                    }
+
+                    .swiper-button-next {
+                        background-image: url("../assets/arrow-next.svg");
+                        background-position-x: -5px;
+
+                        &:hover {
+                            transform: translateX(5px);
+                        }
+                    }
+
                 }
             }
         }
