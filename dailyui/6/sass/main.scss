@@ -1,0 +1,289 @@
+@import url("https://fonts.googleapis.com/css?family=Barlow+Condensed:300,400,500,600,700,800,900|Barlow:300,400,500,600,700,800,900&display=swap");
+
+$font-01: "Barlow",
+sans-serif;
+$font-02: "Barlow Condensed",
+sans-serif;
+
+$m-01: #306064;
+$m-02: #4B8F8E;
+$m-03: #72C0B0;
+$m-04: #B9D7D5;
+
+$g-01: linear-gradient(45deg, $m-02, $m-03);
+$g-02: linear-gradient(120deg, $m-01, $m-03);
+$neu-01: #EAEAEA;
+$neu-02: #EDEEF4;
+$neu-03: #606060;
+$neu-04: #505050;
+$neu-05: #403E3E;
+
+$transition: all 0.4s cubic-bezier(0.7, 0.29, 0.68, 1.43);
+
+
+
+
+@mixin lg {
+    @media screen and (max-width: 1240px) {
+        @content;
+    }
+}
+
+@mixin md {
+    @media screen and (max-width: 1023px) {
+        @content;
+    }
+}
+
+@mixin sm {
+    @media screen and (max-width: 799px) {
+        @content;
+    }
+}
+
+@mixin xs {
+    @media screen and (max-width: 511px) {
+        @content;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li,
+button,
+a,
+i,
+input,
+figure,
+img {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: 0;
+    -webkit-tap-highlight-color: transparent;
+    text-decoration: none;
+    color: inherit;
+
+    &:focus {
+        outline: 0;
+    }
+}
+
+div {
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: auto;
+    font-family: $font-01;
+    background: white;
+    //background-color: #CBCBCB;
+
+}
+
+.logo {
+    position: fixed;
+    z-index: 5;
+    bottom: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 100%;
+    backdrop-filter: blur(5px);
+
+    img {
+
+        width: 55%;
+        height: 55%;
+        transform: translateY(-1px);
+        opacity: 0.8;
+    }
+}
+
+.wrapper {
+
+
+    .module-team {
+        position: relative;
+
+        &:before {
+            width: 100%;
+            height: 392px;
+            background-color: $neu-01;
+            content: '';
+            position: absolute;
+            z-index: -1;
+        }
+
+        .team {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 100px 5%;
+
+            .title {
+                text-align: center;
+                margin-bottom: 80px;
+                color: #6F7073;
+                font-size: 44px;
+                text-transform: uppercase;
+                font-weight: bold;
+                letter-spacing: 1.3px;
+                ;
+            }
+
+            .team-cards {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding-bottom: 60px;
+
+                .swiper-container {
+                    max-width: 920px;
+
+                    /* Card */
+                    .swiper-slide {
+                        background-color: white;
+                        width: 280px !important;
+                        height: 320px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                        border-radius: 4px;
+                        position: relative;
+
+                        box-shadow: inset 0px 0px 0px 1px $neu-02;
+
+
+                        .bg {
+                            background-color: orange;
+                            position: absolute;
+                            width: 100%;
+                            height: 100px;
+                            top: 0;
+                            border-radius: 4px 4px 0px 0px;
+                        }
+
+                        .more {
+                            width: 24px;
+                            height: 24px;
+                            background-color: black;
+                            position: absolute;
+                            z-index: 2;
+                            right: 20px;
+                            top: 20px;
+                        }
+
+                        .photo {
+                            width: 120px;
+                            height: 120px;
+                            border-radius: 100%;
+                            overflow: hidden;
+                            z-index: 1;
+                            position: absolute;
+                            top: 40px;
+
+                            img {
+                                object-fit: cover;
+                                width: 100%;
+                                height: 100%;
+                            }
+
+                        }
+
+                        .text {
+                            z-index: 1;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            flex-direction: column;
+                            position: absolute;
+                            top: 190px;
+
+                            .name {
+                                font-size: 20px;
+                                color: #6F7073;
+                            }
+
+                            .role {
+                                font-size: 14px;
+                                font-weight: bold;
+                                color: #CBCBCB;
+                                letter-spacing: 1px;
+                                margin-top: 5px;
+                            }
+
+                            .desc {
+                                display: none;
+                            }
+                        }
+
+                        .social {
+                            z-index: 1;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            background-color: $neu-01;
+                            width: 100%;
+                            position: absolute;
+                            bottom: 0;
+                            height: 50px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-around;
+                            padding: 0 20px;
+                            box-sizing: border-box;
+                            border-radius: 0px 0px 4px 4px;
+
+                            .icon {
+                                width: 24px;
+                                height: 24px;
+
+                                img {
+                                    width: 100%;
+                                    height: 100%;
+                                }
+
+                            }
+                        }
+
+                    }
+                }
+
+                .swiper-pagination {
+                    bottom: 0;
+                }
+
+                .navigation {
+                    width: 1060px;
+                    height: 40px;
+                    position: absolute;
+                    margin: 0 auto;
+                    top: 80px;
+
+                    .swiper-button-prev,
+                    .swiper-button-next {
+                        background-image: none;
+                        box-shadow: inset 3px 3px 0px black;
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+            }
+        }
+    }
+}

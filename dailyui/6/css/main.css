@@ -1,0 +1,286 @@
+@import url("https://fonts.googleapis.com/css?family=Barlow+Condensed:300,400,500,600,700,800,900|Barlow:300,400,500,600,700,800,900&display=swap");
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li,
+button,
+a,
+i,
+input,
+figure,
+img {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: 0;
+  -webkit-tap-highlight-color: transparent;
+  text-decoration: none;
+  color: inherit;
+}
+
+h1:focus,
+h2:focus,
+h3:focus,
+h4:focus,
+h5:focus,
+h6:focus,
+p:focus,
+ul:focus,
+li:focus,
+button:focus,
+a:focus,
+i:focus,
+input:focus,
+figure:focus,
+img:focus {
+  outline: 0;
+}
+
+div {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: auto;
+  font-family: "Barlow", sans-serif;
+  background: white;
+}
+
+.logo {
+  position: fixed;
+  z-index: 5;
+  bottom: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 100%;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+
+.logo img {
+  width: 55%;
+  height: 55%;
+  -webkit-transform: translateY(-1px);
+          transform: translateY(-1px);
+  opacity: 0.8;
+}
+
+.wrapper .module-team {
+  position: relative;
+}
+
+.wrapper .module-team:before {
+  width: 100%;
+  height: 392px;
+  background-color: #EAEAEA;
+  content: '';
+  position: absolute;
+  z-index: -1;
+}
+
+.wrapper .module-team .team {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 100px 5%;
+}
+
+.wrapper .module-team .team .title {
+  text-align: center;
+  margin-bottom: 80px;
+  color: #6F7073;
+  font-size: 44px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1.3px;
+}
+
+.wrapper .module-team .team .team-cards {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 60px;
+}
+
+.wrapper .module-team .team .team-cards .swiper-container {
+  max-width: 920px;
+  /* Card */
+}
+
+.wrapper .module-team .team .team-cards .swiper-container .swiper-slide {
+  background-color: white;
+  width: 280px !important;
+  height: 320px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 4px;
+  position: relative;
+  -webkit-box-shadow: inset 0px 0px 0px 1px #EDEEF4;
+          box-shadow: inset 0px 0px 0px 1px #EDEEF4;
+}
+
+.wrapper .module-team .team .team-cards .swiper-container .swiper-slide .bg {
+  background-color: orange;
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  top: 0;
+  border-radius: 4px 4px 0px 0px;
+}
+
+.wrapper .module-team .team .team-cards .swiper-container .swiper-slide .more {
+  width: 24px;
+  height: 24px;
+  background-color: black;
+  position: absolute;
+  z-index: 2;
+  right: 20px;
+  top: 20px;
+}
+
+.wrapper .module-team .team .team-cards .swiper-container .swiper-slide .photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 100%;
+  overflow: hidden;
+  z-index: 1;
+  position: absolute;
+  top: 40px;
+}
+
+.wrapper .module-team .team .team-cards .swiper-container .swiper-slide .photo img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper .module-team .team .team-cards .swiper-container .swiper-slide .text {
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  top: 190px;
+}
+
+.wrapper .module-team .team .team-cards .swiper-container .swiper-slide .text .name {
+  font-size: 20px;
+  color: #6F7073;
+}
+
+.wrapper .module-team .team .team-cards .swiper-container .swiper-slide .text .role {
+  font-size: 14px;
+  font-weight: bold;
+  color: #CBCBCB;
+  letter-spacing: 1px;
+  margin-top: 5px;
+}
+
+.wrapper .module-team .team .team-cards .swiper-container .swiper-slide .text .desc {
+  display: none;
+}
+
+.wrapper .module-team .team .team-cards .swiper-container .swiper-slide .social {
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #EAEAEA;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 0 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 0px 0px 4px 4px;
+}
+
+.wrapper .module-team .team .team-cards .swiper-container .swiper-slide .social .icon {
+  width: 24px;
+  height: 24px;
+}
+
+.wrapper .module-team .team .team-cards .swiper-container .swiper-slide .social .icon img {
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper .module-team .team .team-cards .swiper-pagination {
+  bottom: 0;
+}
+
+.wrapper .module-team .team .team-cards .navigation {
+  width: 1060px;
+  height: 40px;
+  position: absolute;
+  margin: 0 auto;
+  top: 80px;
+}
+
+.wrapper .module-team .team .team-cards .navigation .swiper-button-prev,
+.wrapper .module-team .team .team-cards .navigation .swiper-button-next {
+  background-image: none;
+  -webkit-box-shadow: inset 3px 3px 0px black;
+          box-shadow: inset 3px 3px 0px black;
+  width: 20px;
+  height: 20px;
+}
+/*# sourceMappingURL=main.css.map */
