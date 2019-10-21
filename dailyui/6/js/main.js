@@ -54,7 +54,7 @@ window.addEventListener("load", event => {
             dribbble: "dribbble",
         },
         {
-            name: "Sara Carroll,
+            name: "Sara Carroll",
             role: "Head of UI Design",
             desc: "bigger text here",
             photo: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80",
