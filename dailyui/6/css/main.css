@@ -179,8 +179,9 @@ body {
 
 .wrapper .module-team .team .team-cards .swiper-container {
   max-width: 920px;
-  height: 380px;
+  height: 360px;
   padding: 0 20px;
+  cursor: default;
   /* Card */
 }
 
@@ -193,6 +194,7 @@ body {
 @media screen and (max-width: 799px) {
   .wrapper .module-team .team .team-cards .swiper-container {
     max-width: 280px;
+    height: 370px;
     padding: 0 20px;
     overflow: visible;
   }
@@ -299,6 +301,14 @@ body {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
   background-color: rgba(255, 255, 255, 0.2);
+}
+
+@media screen and (max-width: 799px) {
+  .wrapper .module-team .team .team-cards .swiper-container .swiper-slide .card .more:hover {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    background-color: transparent;
+  }
 }
 
 .wrapper .module-team .team .team-cards .swiper-container .swiper-slide .card .photo {
@@ -437,6 +447,12 @@ body {
           transform: rotate(45deg);
 }
 
+@media screen and (max-width: 799px) {
+  .wrapper .module-team .team .team-cards .swiper-container .swiper-slide .card .social .pointer {
+    display: none;
+  }
+}
+
 .wrapper .module-team .team .team-cards .swiper-container .swiper-slide .card .social .icons {
   width: 100%;
   display: -webkit-box;
@@ -459,6 +475,12 @@ body {
 
 .wrapper .module-team .team .team-cards .swiper-container .swiper-slide .card .social .icons .icon:hover {
   opacity: 0.6;
+}
+
+@media screen and (max-width: 799px) {
+  .wrapper .module-team .team .team-cards .swiper-container .swiper-slide .card .social .icons .icon:hover {
+    opacity: 0.3;
+  }
 }
 
 .wrapper .module-team .team .team-cards .swiper-container .swiper-slide .card .social .icons .icon img {
@@ -520,6 +542,13 @@ body {
 .wrapper .module-team .team .team-cards .swiper-container .swiper-slide.show-more .card .more:hover {
   -webkit-transform: rotate(45deg) scale(1.1);
           transform: rotate(45deg) scale(1.1);
+}
+
+@media screen and (max-width: 799px) {
+  .wrapper .module-team .team .team-cards .swiper-container .swiper-slide.show-more .card .more:hover {
+    -webkit-transform: rotate(45deg) scale(1);
+            transform: rotate(45deg) scale(1);
+  }
 }
 
 .wrapper .module-team .team .team-cards .swiper-container .swiper-slide.show-more .card .social {
@@ -607,10 +636,18 @@ body {
 .wrapper .module-team .team .team-cards .swiper-pagination .swiper-pagination-bullet {
   background-color: #6F7073;
   margin: 0 5px;
+  border-radius: 5px;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.wrapper .module-team .team .team-cards .swiper-pagination .swiper-pagination-bullet:focus {
+  outline: 0;
 }
 
 .wrapper .module-team .team .team-cards .swiper-pagination .swiper-pagination-bullet-active {
   background: linear-gradient(140deg, #D45B7A, #FDA576);
+  width: 16px;
 }
 
 .wrapper .module-team .team .team-cards .navigation {
