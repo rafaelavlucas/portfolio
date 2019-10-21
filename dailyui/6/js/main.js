@@ -67,7 +67,7 @@ window.addEventListener("load", event => {
 
     /* Social Icons */
     var icons = [{
-        iWebsite: "/assets/link.svg",
+        iWebsite: "assets/link.svg",
         iEmail: "assets/email.svg",
         iLinkedin: "assets/linkedin.svg",
         iDribbble: "assets/dribbble.svg",
