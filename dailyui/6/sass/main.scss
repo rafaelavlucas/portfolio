@@ -23,7 +23,7 @@ $transition: all 0.4s cubic-bezier(0.7, 0.29, 0.68, 1.43);
 
 
 @mixin lg {
-    @media screen and (max-width: 1160px) {
+    @media screen and (max-width: 1180px) {
         @content;
     }
 }
@@ -244,8 +244,8 @@ body {
                             }
 
                             .more {
-                                width: 16px;
-                                height: 16px;
+                                width: 24px;
+                                height: 24px;
                                 position: absolute;
                                 z-index: 2;
                                 right: 20px;
@@ -256,19 +256,26 @@ body {
                                 cursor: pointer;
                                 transform: rotate(0deg);
                                 transition: all 0.4s ease;
+                                border-radius: 100%;
 
                                 &:before,
                                 &:after {
-                                    width: 100%;
+                                    width: 16px;
                                     height: 2px;
                                     background-color: white;
                                     content: '';
                                     position: absolute;
                                     border-radius: 4px;
+                                    transition: all 0.4s ease;
                                 }
 
                                 &:after {
                                     transform: rotate(90deg);
+                                }
+
+                                &:hover {
+                                    transform: scale(1.1);
+                                    background-color: rgba(white, 0.2);
                                 }
                             }
 
@@ -282,7 +289,8 @@ body {
                                 top: 40px;
                                 border: 3px solid #FFFFFF;
                                 transition: all 0.4s ease;
-                                box-shadow: 0px 4px 10px rgba($neu-03, 0.2);
+                                box-shadow: 0px 4px 10px rgba($neu-03, 0.3);
+
 
                                 &:before,
                                 &:after {
@@ -291,10 +299,11 @@ body {
                                     border-radius: 4px;
                                     content: '';
                                     position: absolute;
-                                    transition: all 0.1s ease;
+                                    transition: all 0.4s ease;
                                     opacity: 0;
                                     left: 0;
                                     top: 0;
+
                                 }
 
                                 &:before {
@@ -308,9 +317,9 @@ body {
                                 }
 
                                 img {
-                                    object-fit: cover;
                                     width: 100%;
                                     height: 100%;
+                                    object-fit: cover;
                                 }
                             }
 
@@ -322,29 +331,30 @@ body {
                                 flex-direction: column;
                                 position: absolute;
                                 transform: translateY(50px);
-                                transition: all 0.4s ease;
+                                transition: all 0.3s ease;
 
                                 .name {
                                     font-size: 20px;
                                     color: #6F7073;
+                                    font-weight: 300;
                                 }
 
                                 .role {
                                     font-size: 14px;
-                                    font-weight: bold;
+                                    font-weight: 600;
                                     color: #CBCBCB;
-                                    letter-spacing: 0.5px;
+                                    letter-spacing: 0.8px;
                                     margin-top: 5px;
                                 }
 
                                 .desc {
                                     color: white;
                                     display: none;
-
+                                    margin-top: 20px;
+                                    font-size: 14px;
+                                    letter-spacing: 0.6px;
                                 }
                             }
-
-
 
                             .social {
                                 z-index: 1;
@@ -419,10 +429,32 @@ body {
                         }
 
                         &:hover {
-                            // transform: translateY(-10px);
+                            transform: translateY(3px);
 
                             &:before {
-                                // box-shadow: 0px 10px 10px -10px #EAEAEA;
+                                box-shadow: 0px 10px 10px -10px #EAEAEA;
+                            }
+
+                            @include sm {
+                                transform: translateY(0px);
+
+                                &:before {
+                                    box-shadow: 0px 20px 40px -20px #EAEAEA;
+                                }
+                            }
+
+                            .card {
+
+                                .photo {
+
+                                    transform: translateY(-5px);
+                                    box-shadow: 0px 6px 20px rgba($neu-03, 0.3);
+
+                                    @include sm {
+                                        transform: translateY(0px);
+                                        box-shadow: 0px 4px 10px rgba($neu-03, 0.3);
+                                    }
+                                }
                             }
                         }
 
@@ -431,17 +463,21 @@ body {
                                 overflow: hidden;
 
                                 .more {
-                                    transform: rotate(45deg);
+                                    transform: rotate(45deg) scale(1);
+
+                                    &:hover {
+                                        transform: rotate(45deg) scale(1.1);
+                                    }
                                 }
 
                                 .social {
                                     transform: translateY(55px);
-
                                 }
 
                                 .text {
                                     color: white;
                                     transform: translateY(0px);
+                                    transition: all 0.6s ease;
 
                                     .name,
                                     .role {
@@ -456,10 +492,12 @@ body {
                                 .photo {
                                     width: 100%;
                                     height: 100%;
-                                    top: 0;
-                                    border: 0;
+                                    top: 0px;
+                                    border: solid 0px transparent;
                                     border-radius: 4px;
-                                    box-shadow: 0;
+                                    box-shadow: 0px 4px 10px rgba($neu-03, 0);
+                                    transform: translateY(0px);
+                                    transition: all 0.4s ease;
 
                                     &:before {
                                         height: 100%;
@@ -469,10 +507,15 @@ body {
                                     &:after {
                                         height: 100%;
                                         opacity: 0.8;
+                                        border-radius: 4px;
                                     }
 
                                     img {
                                         filter: grayscale(100%);
+                                    }
+
+                                    &:hover {
+                                        transform: translateY(0px);
                                     }
                                 }
 
@@ -494,10 +537,8 @@ body {
                             }
 
                         }
-
                     }
                 }
-
 
                 .swiper-pagination {
                     bottom: 0;
@@ -505,6 +546,15 @@ body {
 
                     @include sm {
                         display: block;
+                    }
+
+                    .swiper-pagination-bullet {
+                        background-color: $neu-03;
+                        margin: 0 5px;
+                    }
+
+                    .swiper-pagination-bullet-active {
+                        background: $g-01;
                     }
                 }
 
@@ -521,7 +571,7 @@ body {
                     align-items: center;
 
                     @include lg {
-                        width: 768px;
+                        width: 750px;
                     }
 
                     .swiper-button-prev,
@@ -545,18 +595,20 @@ body {
                     .swiper-button-prev {
                         background-image: url("../assets/arrow-prev.svg");
                         background-position-x: 5px;
+                        transform: translateX(5px);
 
                         &:hover {
-                            transform: translateX(-5px);
+                            transform: translateX(0px);
                         }
                     }
 
                     .swiper-button-next {
                         background-image: url("../assets/arrow-next.svg");
                         background-position-x: -5px;
+                        transform: translateX(-5px);
 
                         &:hover {
-                            transform: translateX(5px);
+                            transform: translateX(0px);
                         }
                     }
 

@@ -137,7 +137,7 @@ window.addEventListener("load", event => {
         speed: 800,
         slidesPerView: 3,
         spaceBetween: 40,
-        threshold: 10,
+        threshold: 5,
 
 
         // If we need pagination
@@ -152,7 +152,7 @@ window.addEventListener("load", event => {
             prevEl: ".swiper-button-prev"
         },
         breakpoints: {
-            1160: {
+            1180: {
                 slidesPerView: 2,
                 spaceBetween: 40,
                 centeredSlides: false,
@@ -161,7 +161,7 @@ window.addEventListener("load", event => {
                 slidesPerView: 1,
                 spaceBetween: 20,
                 centeredSlides: true,
-                loop: false,
+                loop: true,
             },
         }
     });
