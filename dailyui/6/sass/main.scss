@@ -23,7 +23,7 @@ $transition: all 0.4s cubic-bezier(0.7, 0.29, 0.68, 1.43);
 
 
 @mixin lg {
-    @media screen and (max-width: 1240px) {
+    @media screen and (max-width: 1160px) {
         @content;
     }
 }
@@ -125,12 +125,20 @@ body {
             content: '';
             position: absolute;
             z-index: -1;
+
+            @include sm {
+                height: 250px;
+            }
         }
 
         .team {
             max-width: 1440px;
             margin: 0 auto;
             padding: 100px 5%;
+
+            @include sm {
+                padding: 50px 0%;
+            }
 
             .title {
                 text-align: center;
@@ -156,6 +164,18 @@ body {
                     border-radius: 50px;
                     bottom: 0;
                     opacity: 0.2;
+
+                    @include sm {
+                        width: 60px;
+                        height: 5px;
+                    }
+                }
+
+                @include sm {
+                    font-size: 32px;
+                    height: 60px;
+                    margin-bottom: 40px;
+
                 }
             }
 
@@ -164,24 +184,28 @@ body {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                //padding-bottom: 60px;
 
                 .swiper-container {
                     max-width: 920px;
                     height: 380px;
                     padding: 0 20px;
 
+                    @include lg {
+                        max-width: 600px;
+                    }
+
+                    @include sm {
+                        max-width: 280px;
+                        padding: 0 20px;
+                        overflow: visible;
+                    }
+
                     /* Card */
                     .swiper-slide {
                         background-color: white;
                         width: 280px !important;
                         height: 320px;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        flex-direction: column;
                         border-radius: 4px;
-                        position: relative;
                         box-shadow: inset 0px 0px 0px 1px $neu-02;
                         position: relative;
                         transition: all 0.4s ease;
@@ -197,106 +221,199 @@ body {
                             transition: all 0.4s ease;
                         }
 
-
-                        .bg {
-                            background: $g-01;
-                            position: absolute;
+                        .card {
                             width: 100%;
-                            height: 100px;
-                            top: 0;
-                            border-radius: 4px 4px 0px 0px;
-                        }
-
-                        .more {
-                            width: 24px;
-                            height: 24px;
-                            background-color: black;
-                            position: absolute;
-                            z-index: 2;
-                            right: 20px;
-                            top: 20px;
-                        }
-
-                        .photo {
-                            width: 120px;
-                            height: 120px;
-                            border-radius: 100%;
+                            height: 100%;
                             overflow: hidden;
-                            z-index: 1;
-                            position: absolute;
-                            top: 40px;
-                            border: 3px solid #FFFFFF;
-
-                            box-shadow: 0px 4px 10px rgba($neu-03, 0.2);
-
-                            img {
-                                object-fit: cover;
-                                width: 100%;
-                                height: 100%;
-                            }
-
-                        }
-
-                        .text {
-                            z-index: 1;
                             display: flex;
                             justify-content: center;
                             align-items: center;
                             flex-direction: column;
-                            position: absolute;
-                            top: 190px;
+                            position: relative;
 
-                            .name {
-                                font-size: 20px;
-                                color: #6F7073;
+                            .bg {
+                                position: absolute;
+                                width: 100%;
+                                height: 100px;
+                                top: 0;
+                                border-radius: 4px 4px 0px 0px;
+                                transition: all 0.4s ease;
+                                background: $g-01;
+                                z-index: 1;
                             }
 
-                            .role {
-                                font-size: 14px;
-                                font-weight: bold;
-                                color: #CBCBCB;
-                                letter-spacing: 0.5px;
-                                margin-top: 5px;
-                            }
-
-                            .desc {
-                                display: none;
-                            }
-                        }
-
-                        .social {
-                            z-index: 1;
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            background-color: rgba($neu-01, 0.5);
-                            width: 100%;
-                            position: absolute;
-                            bottom: 0;
-                            height: 50px;
-                            display: flex;
-                            align-items: center;
-                            justify-content: space-around;
-                            padding: 0 20px;
-                            box-sizing: border-box;
-                            border-radius: 0px 0px 4px 4px;
-
-                            .icon {
-                                width: 24px;
-                                height: 24px;
-                                opacity: 0.3;
+                            .more {
+                                width: 16px;
+                                height: 16px;
+                                position: absolute;
+                                z-index: 2;
+                                right: 20px;
+                                top: 20px;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                cursor: pointer;
+                                transform: rotate(0deg);
                                 transition: all 0.4s ease;
 
-                                &:hover {
-                                    opacity: 0.6;
+                                &:before,
+                                &:after {
+                                    width: 100%;
+                                    height: 2px;
+                                    background-color: white;
+                                    content: '';
+                                    position: absolute;
+                                    border-radius: 4px;
+                                }
 
+                                &:after {
+                                    transform: rotate(90deg);
+                                }
+                            }
+
+                            .photo {
+                                width: 120px;
+                                height: 120px;
+                                border-radius: 100%;
+                                overflow: hidden;
+                                z-index: 1;
+                                position: absolute;
+                                top: 40px;
+                                border: 3px solid #FFFFFF;
+                                transition: all 0.4s ease;
+                                box-shadow: 0px 4px 10px rgba($neu-03, 0.2);
+
+                                &:before,
+                                &:after {
+                                    width: 100%;
+                                    height: 100px;
+                                    border-radius: 4px;
+                                    content: '';
+                                    position: absolute;
+                                    transition: all 0.1s ease;
+                                    opacity: 0;
+                                    left: 0;
+                                    top: 0;
+                                }
+
+                                &:before {
+                                    background: $neu-05;
+                                    z-index: 1;
+                                }
+
+                                &:after {
+                                    background: $g-01;
+                                    z-index: 2;
                                 }
 
                                 img {
+                                    object-fit: cover;
                                     width: 100%;
                                     height: 100%;
                                 }
+                            }
 
+                            .text {
+                                z-index: 3;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                flex-direction: column;
+                                position: absolute;
+                                transform: translateY(50px);
+                                transition: all 0.4s ease;
+
+                                .name {
+                                    font-size: 20px;
+                                    color: #6F7073;
+                                }
+
+                                .role {
+                                    font-size: 14px;
+                                    font-weight: bold;
+                                    color: #CBCBCB;
+                                    letter-spacing: 0.5px;
+                                    margin-top: 5px;
+                                }
+
+                                .desc {
+                                    color: white;
+                                    display: none;
+
+                                }
+                            }
+
+
+
+                            .social {
+                                z-index: 1;
+                                display: flex;
+                                align-items: center;
+                                background-color: rgba($neu-01, 0.5);
+                                box-shadow: inset 0px 11px 13px -20px $neu-03;
+                                width: 100%;
+                                position: absolute;
+                                bottom: 0;
+                                height: 50px;
+                                padding: 0 20px;
+                                box-sizing: border-box;
+                                border-radius: 0px 0px 4px 4px;
+                                transition: all 0.4s ease;
+
+                                .pointer {
+                                    display: block;
+                                    width: 10px;
+                                    height: 10px;
+                                    z-index: 2;
+                                    bottom: 50px;
+                                    position: absolute;
+                                    transform: translateX(25px);
+                                    transition: all 0.4s ease;
+                                    opacity: 0;
+
+
+                                    &:before {
+                                        content: '';
+                                        width: 100%;
+                                        height: 100%;
+                                        position: absolute;
+                                        background-color: white;
+                                        transform: rotate(45deg);
+                                    }
+
+                                }
+
+                                .icons {
+                                    width: 100%;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: space-around;
+
+                                    .icon {
+                                        width: 25%;
+                                        height: 24px;
+                                        opacity: 0.3;
+                                        transition: all 0.4s ease;
+
+                                        &:hover {
+                                            opacity: 0.6;
+
+                                        }
+
+                                        img {
+                                            width: 100%;
+                                            height: 100%;
+                                        }
+
+                                    }
+                                }
+
+                                &:hover {
+                                    .pointer {
+                                        opacity: 1;
+                                        bottom: 45px;
+                                    }
+                                }
                             }
                         }
 
@@ -309,23 +426,85 @@ body {
                         }
 
                         &.show-more {
-                            .social {
-                                display: none;
+                            .card {
+                                overflow: hidden;
 
-                            }
+                                .more {
+                                    transform: rotate(45deg);
+                                }
 
-                            .text {
-                                .desc {
-                                    display: block;
+                                .social {
+                                    transform: translateY(55px);
+
+                                }
+
+                                .text {
+                                    color: white;
+                                    transform: translateY(0px);
+
+                                    .name,
+                                    .role {
+                                        color: white;
+                                    }
+
+                                    .desc {
+                                        display: block;
+                                    }
+                                }
+
+                                .photo {
+                                    width: 100%;
+                                    height: 100%;
+                                    top: 0;
+                                    border: 0;
+                                    border-radius: 4px;
+                                    box-shadow: 0;
+
+                                    &:before {
+                                        height: 100%;
+                                        opacity: 0.5;
+                                    }
+
+                                    &:after {
+                                        height: 100%;
+                                        opacity: 0.8;
+                                    }
+
+                                    img {
+                                        filter: grayscale(100%);
+                                    }
+                                }
+
+                                .bg {
+                                    width: 100%;
+                                    height: 100%;
+                                    //z-index: 2;
+                                    border-radius: 4px;
+
+                                    &:before {
+                                        opacity: 0.5;
+                                    }
+
+                                    &:after {
+                                        opacity: 0.8;
+                                    }
+
                                 }
                             }
+
                         }
 
                     }
                 }
 
+
                 .swiper-pagination {
                     bottom: 0;
+                    display: none;
+
+                    @include sm {
+                        display: block;
+                    }
                 }
 
                 .navigation {
@@ -333,10 +512,16 @@ body {
                     height: 28px;
                     position: absolute;
                     margin: 0 auto;
+                    padding: 0 5%;
+                    box-sizing: border-box;
                     top: 86px;
                     display: flex;
                     justify-content: center;
                     align-items: center;
+
+                    @include lg {
+                        width: 768px;
+                    }
 
                     .swiper-button-prev,
                     .swiper-button-next {
@@ -347,9 +532,12 @@ body {
                         top: 0;
                         margin-top: 0;
 
-
                         &:focus {
                             outline: none;
+                        }
+
+                        @include sm {
+                            display: none;
                         }
                     }
 
