@@ -6,62 +6,62 @@ window.addEventListener("load", event => {
     var team = [{
             name: "Alice Stone",
             role: "UI Designer",
-            desc: "bigger text here",
+            desc: "Far far away, behind the world mountains, far from the countries Vokalia and Consonantia, theres live the blind texts.",
             photo: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=compress&cs=tinysrgb&dpr=2&h=300&w=300",
-            website: "website",
-            email: "email",
-            linkedin: "linkedin",
-            dribbble: "dribbble",
+            website: "https://rafaelalucas.com",
+            email: "mailto:rafaelavlucas@gmail.com",
+            linkedin: "https://www.linkedin.com/in/rafaelalucas/",
+            dribbble: "https://dribbble.com/rafaelalucas",
         },
         {
             name: "Adam Turner",
             role: "Project Manager",
-            desc: "bigger text here",
+            desc: "Far far away, behind the world mountains, far from the countries Vokalia and Consonantia, theres live the blind texts.",
             photo: "https://images.unsplash.com/photo-1522609925277-66fea332c575?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9?auto=compress&cs=tinysrgb&dpr=2&h=300&w=300",
-            website: "website",
-            email: "email",
-            linkedin: "linkedin",
-            dribbble: "dribbble",
+            website: "https://rafaelalucas.com",
+            email: "mailto:rafaelavlucas@gmail.com",
+            linkedin: "https://www.linkedin.com/in/rafaelalucas/",
+            dribbble: "https://dribbble.com/rafaelalucas",
         },
         {
             name: "Nancy Hughes",
             role: "UX Specialist",
-            desc: "bigger text here",
+            desc: "Far far away, behind the world mountains, far from the countries Vokalia and Consonantia, theres live the blind texts.",
             photo: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=300&w=300",
-            website: "website",
-            email: "email",
-            linkedin: "linkedin",
-            dribbble: "dribbble",
+            website: "https://rafaelalucas.com",
+            email: "mailto:rafaelavlucas@gmail.com",
+            linkedin: "https://www.linkedin.com/in/rafaelalucas/",
+            dribbble: "https://dribbble.com/rafaelalucas",
         },
         {
             name: "Jonathan Campbell",
             role: "Front-End Developer",
-            desc: "bigger text here",
+            desc: "Far far away, behind the world mountains, far from the countries Vokalia and Consonantia, theres live the blind texts.",
             photo: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=300&w=300",
-            website: "website",
-            email: "email",
-            linkedin: "linkedin",
-            dribbble: "dribbble",
+            website: "https://rafaelalucas.com",
+            email: "mailto:rafaelavlucas@gmail.com",
+            linkedin: "https://www.linkedin.com/in/rafaelalucas/",
+            dribbble: "https://dribbble.com/rafaelalucas",
         },
         {
             name: "Jack Keller",
             role: "Back-End Developer",
-            desc: "bigger text here",
+            desc: "Far far away, behind the world mountains, far from the countries Vokalia and Consonantia, theres live the blind texts.",
             photo: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=300&w=300",
-            website: "website",
-            email: "email",
-            linkedin: "linkedin",
-            dribbble: "dribbble",
+            website: "https://rafaelalucas.com",
+            email: "mailto:rafaelavlucas@gmail.com",
+            linkedin: "https://www.linkedin.com/in/rafaelalucas/",
+            dribbble: "https://dribbble.com/rafaelalucas",
         },
         {
             name: "Sara Carroll",
             role: "Head of UI Design",
-            desc: "bigger text here",
+            desc: "Far far away, behind the world mountains, far from the countries Vokalia and Consonantia, theres live the blind texts.",
             photo: "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9?auto=compress&cs=tinysrgb&dpr=2&h=300&w=300",
-            website: "website",
-            email: "email",
-            linkedin: "linkedin",
-            dribbble: "dribbble",
+            website: "https://rafaelalucas.com",
+            email: "mailto:rafaelavlucas@gmail.com",
+            linkedin: "https://www.linkedin.com/in/rafaelalucas/",
+            dribbble: "https://dribbble.com/rafaelalucas",
         },
     ];
 
@@ -109,10 +109,10 @@ window.addEventListener("load", event => {
                         <div class="social">
                         <span class="pointer"></span>
                         <div class="icons">
-                            <a class="icon" href="${website}" data-index="0"><img src="${iWebsite}"></a>
-                            <a class="icon" href="${email}" data-index="1"><img src="${iEmail}"></a>
-                            <a class="icon" href="${linkedin}" data-index="2"><img src="${iLinkedin}"></a>
-                            <a class="icon" href="${dribbble}" data-index="3"><img src="${iDribbble}"></a>
+                            <a class="icon" href="${website}" target="_blank" data-index="0"><img src="${iWebsite}"></a>
+                            <a class="icon" href="${email}" target="_blank" data-index="1"><img src="${iEmail}"></a>
+                            <a class="icon" href="${linkedin}" target="_blank" data-index="2"><img src="${iLinkedin}"></a>
+                            <a class="icon" href="${dribbble}" target="_blank" data-index="3"><img src="${iDribbble}"></a>
                             </div>
                             </div>
                     </div>
