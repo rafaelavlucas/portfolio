@@ -1,32 +1,20 @@
 window.onload = function (e) {
 
+    var works = [{
+            Title: "Title",
+            Year: "2019",
+            Category: "UI Design",
+            Type: "Personal Project",
+        }],
+        worksContainer = document.querySelector('.image-container'),
+        template = `<a id="ui-design" class="work full" href="/dailyui">
+    <div class="image big">
+        <div class="img" style="background-image: url(images/works/dailyui/dailyui_00.jpg)"></div>
+        <p class=" overlay-title">Daily UI Challenge</p>
+        <p class="overlay-text">On going / UI Design, Front-End Development</p>
+    </div>
+</a>`
 
-    /* Sticky Go Back */
-    var goBack = document.querySelector('.go-back');
-
-    window.addEventListener('scroll', fixedGoBack)
-    // calcular a altura do ecrã
-
-
-    function fixedGoBack() {
-        var body = document.querySelector('body')
-        window.addEventListener('scroll', fixedGoBack)
-        if (window.pageYOffset >= 190) {
-
-            goBack.classList.add('fixed');
-
-        } else {
-            goBack.classList.remove('fixed');
-        }
-
-
-        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-            goBack.classList.remove('fixed');
-            window.removeEventListener('scroll', fixedGoBack)
-        } else {
-            window.addEventListener('scroll', fixedGoBack)
-        }
-        console.log(document.querySelector('body').scrollHeight - document.querySelector('body').scrollTop, document.querySelector('body').clientHeight + 270)
-    }
+    worksContainer.insertAdjacentHTML('beforeend', template);
 
 }
