@@ -1191,7 +1191,10 @@ header {
 
             &.full {
                 width: 100%;
-                padding-bottom: 0%;
+
+                .image {
+                    padding-bottom: 50%;
+                }
             }
         }
     }
