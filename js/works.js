@@ -219,6 +219,17 @@ var works = [{
         featured: true,
     },
     {
+        categoryId: 4,
+        categoryName: "editorial",
+        title: "Tell Me about It: Stories of Songwriters",
+        year: "2014",
+        category: "Editorial Design",
+        thumb: "images/works/tellmeaboutit/tellmeaboutit_01.jpg",
+        url: "works/tellmeaboutit.html",
+        fullClass: false,
+        featured: true,
+    },
+    {
         categoryId: 5,
         categoryName: "illustration",
         title: "Happy Songs about Sad Things",
