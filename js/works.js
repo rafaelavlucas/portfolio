@@ -1,5 +1,6 @@
 var works = [{
         categoryId: 2,
+        categoryName: "ui-design",
         title: "Daily UI Challenge",
         year: "On going",
         category: "UI Design, Front-End Development",
@@ -10,6 +11,7 @@ var works = [{
     },
     {
         categoryId: 2,
+        categoryName: "ui-design",
         title: "Quinta da Valeira Website",
         year: "2019",
         category: "UI Design, Front-End Development",
@@ -20,6 +22,7 @@ var works = [{
     },
     {
         categoryId: 2,
+        categoryName: "ui-design",
         title: "Weather App",
         year: "2019",
         category: "UI Design",
@@ -30,6 +33,7 @@ var works = [{
     },
     {
         categoryId: 3,
+        categoryName: "packaging",
         title: "Quinta da Valeira",
         year: "2018",
         category: "Label Design & Branding",
@@ -40,6 +44,7 @@ var works = [{
     },
     {
         categoryId: 3,
+        categoryName: "packaging",
         title: "Quevedo Advent Calendar 2017 / 2018",
         year: "2017-2018",
         category: "Packaging, Graphic Design & Illustration",
@@ -50,6 +55,7 @@ var works = [{
     },
     {
         categoryId: 3,
+        categoryName: "packaging",
         title: "Quevedo Vintage",
         year: "2017",
         category: "Label Design",
@@ -60,6 +66,7 @@ var works = [{
     },
     {
         categoryId: 1,
+        categoryName: "graphic",
         title: "10",
         year: "2017",
         category: "Graphic Composition",
@@ -70,6 +77,7 @@ var works = [{
     },
     {
         categoryId: 1,
+        categoryName: "graphic",
         title: "Closer",
         year: "2017",
         category: "Type Poster",
@@ -80,6 +88,7 @@ var works = [{
     },
     {
         categoryId: 1,
+        categoryName: "graphic",
         title: "Finca Leyenda Plata - Logo Proposal",
         year: "2016",
         category: "Logo Design",
@@ -90,6 +99,7 @@ var works = [{
     },
     {
         categoryId: 1,
+        categoryName: "graphic",
         title: "Viñedos Ruta Sagrada - Logo Proposal",
         year: "2016",
         category: "Logo Design",
@@ -100,6 +110,7 @@ var works = [{
     },
     {
         categoryId: 3,
+        categoryName: "packaging",
         title: "Quevedo Douro Wines rebrand - Q Grande Reserva",
         year: "2016",
         category: "Label Design",
@@ -110,6 +121,7 @@ var works = [{
     },
     {
         categoryId: 3,
+        categoryName: "packaging",
         title: "Quevedo Douro Wines rebrand",
         year: "2016",
         category: "Label Design",
@@ -120,6 +132,7 @@ var works = [{
     },
     {
         categoryId: 5,
+        categoryName: "illustration",
         title: "Darwin Vineyards Chalk Illustrations",
         year: "2016",
         category: "Illustration",
@@ -128,7 +141,105 @@ var works = [{
         fullClass: false,
         featured: true,
     },
-
+    {
+        categoryId: 5,
+        categoryName: "illustration",
+        title: "Prowein 2017 Poster",
+        year: "2016",
+        category: "Illustration",
+        thumb: "images/works/prowein2017/prowein2017_03.jpg",
+        url: "works/prowein2017.html",
+        fullClass: false,
+        featured: true,
+    },
+    {
+        categoryId: 3,
+        categoryName: "packaging",
+        title: "Quinta da Trovisca rebrand",
+        year: "2016",
+        category: "Label Design",
+        thumb: "images/works/trovisca/trovisca_03.jpg",
+        url: "works/trovisca.html",
+        fullClass: false,
+        featured: true,
+    },
+    {
+        categoryId: 5,
+        categoryName: "illustration",
+        title: "Darwin Vineyards’ Christmas bottle",
+        year: "2015",
+        category: "Illustration",
+        thumb: "images/works/bottleillustration/bottleillustration_01.jpg",
+        url: "works/bottleillustration.html",
+        fullClass: false,
+        featured: true,
+    },
+    {
+        categoryId: 4,
+        categoryName: "editorial",
+        title: "Internship report",
+        year: "2015",
+        category: "Editorial Design",
+        thumb: "images/works/tese/tese_02.jpg",
+        url: "works/tese.html",
+        fullClass: false,
+        featured: true,
+    },
+    {
+        categoryId: 1,
+        categoryName: "graphic",
+        title: "Colönia Font",
+        year: "2015",
+        category: "Type Design",
+        thumb: "images/works/coloniafont/colonia_font_07.jpg",
+        url: "works/coloniafont.html",
+        fullClass: false,
+        featured: true,
+    },
+    {
+        categoryId: 4,
+        categoryName: "editorial",
+        title: "Uma Avenida, Três Vidas",
+        year: "2014",
+        category: "Editorial Design",
+        thumb: "images/works/umaavenida/umaavenida_02.jpg",
+        url: "works/umaavenida.html",
+        fullClass: false,
+        featured: true,
+    },
+    {
+        categoryId: 4,
+        categoryName: "editorial",
+        title: "Versus: Tim Burton and Woody Allen",
+        year: "2014",
+        category: "Editorial Design",
+        thumb: "images/works/timvswoody/covers.jpg",
+        url: "works/tellmeaboutit.html",
+        fullClass: false,
+        featured: true,
+    },
+    {
+        categoryId: 5,
+        categoryName: "illustration",
+        title: "Happy Songs about Sad Things",
+        year: "2013",
+        category: "Illustration",
+        thumb: "images/works/happysongs/happysongs_01.jpg",
+        url: "works/happysongs.html",
+        fullClass: false,
+        featured: true,
+    },
+    {
+        categoryId: 1,
+        categoryName: "graphic",
+        title: "1# Type",
+        year: "2013",
+        category: "Type Design",
+        thumb: "images/works/type/type_06.jpg",
+        url: "works/type.html",
+        fullClass: false,
+        featured: true,
+    }
 ];
 
 /* 
@@ -150,10 +261,12 @@ for (let i = 0; i < works.length; i++) {
         thumb,
         url,
         fullClass,
-        featured
+        featured,
+        categoryName,
     } = works[i];
 
-    var template = `<a data-id="${categoryId}" class="work ${fullClass ? "full" : ""}" href="${url}">
+
+    var template = `<a id ="${categoryName}" data-id="${categoryId}" class="work ${fullClass ? "full" : ""}" href="${url}">
     <div class="image">
         <div class="img" style="background-image: url(${thumb})"></div>
         <p class=" overlay-title">${title}</p>
