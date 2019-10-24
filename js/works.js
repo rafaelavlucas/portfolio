@@ -260,7 +260,8 @@ var works = [{
 4 - editorial
 5 - illustration
 */
-var worksContainer = document.querySelector('.image-container');
+var worksContainer = document.querySelector('.container-works'),
+    worksContainerHome = document.querySelector('.container-home');
 
 
 for (let i = 0; i < works.length; i++) {
@@ -283,8 +284,14 @@ for (let i = 0; i < works.length; i++) {
         <p class=" overlay-title">${title}</p>
         <p class="overlay-text">${year} / ${category}</p>
     </div>
-</a>`
+</a>`;
 
-    worksContainer.insertAdjacentHTML('beforeend', template);
+    if (worksContainer) {
+        worksContainer.insertAdjacentHTML('beforeend', template);
+    } else if (worksContainerHome && featured) {
+
+        worksContainerHome.insertAdjacentHTML('beforeend', template);
+    }
+
 
 }
