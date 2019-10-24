@@ -40,7 +40,7 @@ var works = [{
         thumb: "images/works/valeira/valeira_09.jpg",
         url: "works/valeira.html",
         fullClass: false,
-        featured: true,
+        featured: false,
     },
     {
         categoryId: 3,
@@ -84,7 +84,7 @@ var works = [{
         thumb: "images/works/closerposter/closer_04.jpg",
         url: "works/closerposter.html",
         fullClass: false,
-        featured: true,
+        featured: false,
     },
     {
         categoryId: 1,
@@ -95,7 +95,7 @@ var works = [{
         thumb: "images/works/fincaleyendaplata/finca_01.jpg",
         url: "works/fincaleyendaplata.html",
         fullClass: false,
-        featured: true,
+        featured: false,
     },
     {
         categoryId: 1,
@@ -106,7 +106,7 @@ var works = [{
         thumb: "images/works/vinedosrutasagrada/vinedos_00.png",
         url: "works/vinedosrutasagrada.html",
         fullClass: false,
-        featured: true,
+        featured: false,
     },
     {
         categoryId: 3,
@@ -139,7 +139,7 @@ var works = [{
         thumb: "images/works/chalkillustrations/chalkillustration_01.jpg",
         url: "works/chalkillustrations.html",
         fullClass: false,
-        featured: true,
+        featured: false,
     },
     {
         categoryId: 5,
@@ -172,7 +172,7 @@ var works = [{
         thumb: "images/works/bottleillustration/bottleillustration_01.jpg",
         url: "works/bottleillustration.html",
         fullClass: false,
-        featured: true,
+        featured: false,
     },
     {
         categoryId: 4,
@@ -183,7 +183,7 @@ var works = [{
         thumb: "images/works/tese/tese_02.jpg",
         url: "works/tese.html",
         fullClass: false,
-        featured: true,
+        featured: false,
     },
     {
         categoryId: 1,
@@ -205,7 +205,7 @@ var works = [{
         thumb: "images/works/umaavenida/umaavenida_02.jpg",
         url: "works/umaavenida.html",
         fullClass: false,
-        featured: true,
+        featured: false,
     },
     {
         categoryId: 4,
@@ -238,7 +238,7 @@ var works = [{
         thumb: "images/works/happysongs/happysongs_01.jpg",
         url: "works/happysongs.html",
         fullClass: false,
-        featured: true,
+        featured: false,
     },
     {
         categoryId: 1,
@@ -249,7 +249,7 @@ var works = [{
         thumb: "images/works/type/type_06.jpg",
         url: "works/type.html",
         fullClass: false,
-        featured: true,
+        featured: false,
     }
 ];
 
