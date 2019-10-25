@@ -60,7 +60,7 @@ var works = [{
         year: "2017",
         category: "Label Design",
         thumb: "images/works/quevedovintage/quevedo_vintage_01.jpg",
-        url: "works/quevedoadvent2018.html",
+        url: "works/quevedovintage.html",
         fullClass: false,
         featured: true,
     },
