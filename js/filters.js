@@ -1,6 +1,3 @@
-window.onload = function (e) {
-
-
     /* Filters */
 
     var tagFilter = document.querySelectorAll(".filter"),
@@ -99,6 +96,3 @@ window.onload = function (e) {
     }
 
     workCount[0].innerText = `${work.length}`;
-
-
-}

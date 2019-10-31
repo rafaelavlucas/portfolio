@@ -221,10 +221,6 @@ p {
   padding: 0 0 20px 0;
 }
 
-.main-title.white {
-  color: #fff;
-}
-
 @media (max-width: 799px) {
   .main-title {
     font-size: 25px;
@@ -433,6 +429,10 @@ p {
 
 .content-full.dark {
   background-color: #383838;
+}
+
+.content-full.dark .main-title {
+  color: white;
 }
 
 .section,

@@ -180,7 +180,7 @@ body {
     opacity: 0;
 
     &.open {
-        display: block;
+        display: grid;
         opacity: 1;
         background: $m-02;
         transition: all 0.4s 0.2s ease;
@@ -192,15 +192,12 @@ body {
         .wrapper {
             max-width: 1320px;
             margin: 0 auto;
-            height: 100%;
-            box-sizing: border-box;
             position: relative;
             display: grid;
             grid-template-columns: repeat(12, 1fr);
             justify-content: center;
             align-items: center;
             padding: 40px 60px;
-            box-sizing: border-box;
             animation: modal-in 1.6s ease both;
 
             @include sm {

@@ -250,10 +250,6 @@ p {
     align-items: flex-start;
     padding: 0 0 20px 0;
 
-    &.white {
-        color: #fff;
-    }
-
     @include sm {
         font-size: 25px;
         margin-bottom: 40px;
@@ -440,6 +436,10 @@ p {
 
     &.dark {
         background-color: $neu-07;
+
+        .main-title {
+            color: white;
+        }
     }
 }
 

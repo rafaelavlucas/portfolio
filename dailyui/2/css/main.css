@@ -165,7 +165,8 @@ body {
 }
 
 .modal.open {
-  display: block;
+  display: -ms-grid;
+  display: grid;
   opacity: 1;
   background: #a01222;
   -webkit-transition: all 0.4s 0.2s ease;
@@ -181,9 +182,6 @@ body {
 .modal.open .wrapper {
   max-width: 1320px;
   margin: 0 auto;
-  height: 100%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   position: relative;
   display: -ms-grid;
   display: grid;
@@ -196,7 +194,6 @@ body {
       -ms-flex-align: center;
           align-items: center;
   padding: 40px 60px;
-  box-sizing: border-box;
   -webkit-animation: modal-in 1.6s ease both;
           animation: modal-in 1.6s ease both;
 }
