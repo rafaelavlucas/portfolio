@@ -109,10 +109,10 @@ window.addEventListener("load", event => {
                         <div class="social">
                         <span class="pointer"></span>
                         <div class="icons">
-                            <a class="icon" href="${website}" target="_blank" data-index="0"><img src="${iWebsite}"></a>
-                            <a class="icon" href="${email}" target="_blank" data-index="1"><img src="${iEmail}"></a>
-                            <a class="icon" href="${linkedin}" target="_blank" data-index="2"><img src="${iLinkedin}"></a>
-                            <a class="icon" href="${dribbble}" target="_blank" data-index="3"><img src="${iDribbble}"></a>
+                            <a class="icon" href="${website}" target="_blank"  rel="noopener" data-index="0"><img src="${iWebsite}"></a>
+                            <a class="icon" href="${email}" target="_blank"  rel="noopener" data-index="1"><img src="${iEmail}"></a>
+                            <a class="icon" href="${linkedin}" target="_blank"  rel="noopener" data-index="2"><img src="${iLinkedin}"></a>
+                            <a class="icon" href="${dribbble}" target="_blank"  rel="noopener" data-index="3"><img src="${iDribbble}"></a>
                             </div>
                             </div>
                     </div>

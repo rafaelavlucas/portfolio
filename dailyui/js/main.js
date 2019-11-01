@@ -87,7 +87,7 @@ window.onload = function (e) {
                 url = items[i].url;
 
             var template = `
-            <a href="${url}" target="_blank">
+            <a href="${url}" target="_blank"  rel="noopener">
                 <div class="item">
                     <article>
                         <h3 class="name">${name}</h3>

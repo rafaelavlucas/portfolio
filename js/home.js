@@ -80,7 +80,7 @@ for (let i = 0; i < social.length; i++) {
 
 
     var templateSocial = `
-        <a class="social" href="${url}" target="_blank">
+        <a class="social" href="${url}" target="_blank"  rel="noopener">
             <img src="${img}" alt="${title}">
             <p class="social-title">${title}</p>
         </a>`;
