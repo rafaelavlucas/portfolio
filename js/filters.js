@@ -2,7 +2,8 @@
 
     var tagFilter = document.querySelectorAll(".filter"),
         tagFilterAll = document.querySelector(".filter.btn-all"),
-        work = document.querySelectorAll(".work");
+        work = document.querySelectorAll(".work"),
+        ze = document.querySelector('.image-container');
 
 
     tagFilter.forEach(function (el) {
@@ -22,6 +23,7 @@
         var btnTarget = el.currentTarget,
             filterWork = btnTarget.dataset.filter,
             filters = document.querySelectorAll("#" + filterWork);
+
 
         work.forEach(function (el) {
             el.classList.add("hide");

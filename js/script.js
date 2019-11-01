@@ -2,11 +2,11 @@ window.onload = function (e) {
 
 
     /* Sticky Go Back */
-    var goBack = document.querySelector('.go-back');
 
-    window.addEventListener('scroll', fixedGoBack)
-    // calcular a altura do ecrã
+    var goBack = document.querySelector('.go-back'),
+        workDetail = document.querySelector('.work-detail');
 
+    window.addEventListener('scroll', fixedGoBack);
 
     function fixedGoBack() {
         var body = document.querySelector('body');
@@ -14,26 +14,27 @@ window.onload = function (e) {
         window.addEventListener('scroll', fixedGoBack)
         if (window.pageYOffset >= 190) {
 
-            goBack.classList.add('fixed');
+            goBack ? goBack.classList.add('fixed') : "";
 
         } else {
-            goBack.classList.add('not-fixed');
+            goBack ? goBack.classList.add('not-fixed') : "";
 
             setTimeout(() => {
-                goBack.classList.remove('fixed');
-                goBack.classList.remove('not-fixed');
+                goBack ? goBack.classList.remove('fixed') : "";
+                goBack ? goBack.classList.remove('not-fixed') : "";
             }, 200);
         }
 
 
         if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-            goBack.classList.remove('fixed');
+            goBack ? goBack.classList.remove('fixed') : "";
             window.removeEventListener('scroll', fixedGoBack)
         } else {
             window.addEventListener('scroll', fixedGoBack)
         }
-
     }
+
+
 
 
     /* Open Menu bar */

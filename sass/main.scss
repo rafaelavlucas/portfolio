@@ -1157,8 +1157,6 @@ header {
                 margin: 0px 10px;
                 z-index: -1;
 
-
-
                 .image {
                     height: 0;
                     padding-bottom: 0%;
@@ -1209,6 +1207,7 @@ header {
                 }
             }
         }
+
     }
 
     .image {
@@ -2054,19 +2053,34 @@ header {
                 }
             }
 
-            p {
+            article {
                 font-size: 14px;
                 padding: 0 15 15 0;
 
-                strong {
+                p {
+                    font-size: 14px;
+
+
+                    span {
+                        font-weight: 300;
+                    }
+                }
+
+                .title {
                     letter-spacing: 1px;
                     font-weight: 600;
                 }
 
-                em {
-                    color: $neu-03;
-                    text-decoration: none;
+                .description {
+                    font-weight: 300;
                 }
+
+                .extra {
+                    color: $neu-04;
+                    opacity: 0.5;
+                }
+
+
             }
 
             &:hover {

@@ -2427,19 +2427,31 @@ header:hover .header-content {
   }
 }
 
-.timeline-content .timeline-section .timeline-item p {
+.timeline-content .timeline-section .timeline-item article {
   font-size: 14px;
   padding: 0 15 15 0;
 }
 
-.timeline-content .timeline-section .timeline-item p strong {
+.timeline-content .timeline-section .timeline-item article p {
+  font-size: 14px;
+}
+
+.timeline-content .timeline-section .timeline-item article p span {
+  font-weight: 300;
+}
+
+.timeline-content .timeline-section .timeline-item article .title {
   letter-spacing: 1px;
   font-weight: 600;
 }
 
-.timeline-content .timeline-section .timeline-item p em {
-  color: #ccc;
-  text-decoration: none;
+.timeline-content .timeline-section .timeline-item article .description {
+  font-weight: 300;
+}
+
+.timeline-content .timeline-section .timeline-item article .extra {
+  color: #848484;
+  opacity: 0.5;
 }
 
 .timeline-content .timeline-section .timeline-item:hover:after {
