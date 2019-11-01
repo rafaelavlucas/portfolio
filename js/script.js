@@ -34,6 +34,10 @@ window.onload = function (e) {
         }
     }
 
+    if (workDetail) {
+        fixedGoBack();
+    }
+
 
 
 
