@@ -875,11 +875,11 @@ header {
             }
         }
 
-        p {
+        .desc {
             color: white;
             font-family: $font-02;
             font-weight: 400;
-            letter-spacing: 8;
+            letter-spacing: 8px;
             font-size: 14px;
             text-align: center;
             display: flex;
