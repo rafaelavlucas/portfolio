@@ -1,9 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400,500,600,700,900');
-
 @import url('https://fonts.googleapis.com/css?family=Barlow:300,400,500,600,700&display=swap');
 
-
-/**************************************/
 
 /*** Screen Sizes Mixins ***/
 
@@ -35,16 +32,11 @@
     }
 }
 
-/**************************************/
-
 /*** Colours Variables ***/
-
 /*main*/
-
 $m-01: #698fb7;
 
 /*neutrals*/
-
 $neu-01: #f9f9f9;
 $neu-01a: #f6f6f6;
 $neu-02: #f0f0f0;
@@ -54,20 +46,13 @@ $neu-05: #525252;
 $neu-06: #4a4a4a;
 $neu-07: #383838;
 
-
 $font-01: 'Barlow',
 sans-serif;
 
 $font-02: 'Source Code Pro',
 monospace;
 
-
-
-/* --------------------------*/
-
 /* ----- MAIN ELEMENTS ----- */
-
-/* --------------------------*/
 
 /* // General Elements \\  */
 
@@ -411,12 +396,7 @@ p {
     }
 }
 
-/* ---------------------------*/
-
 /* ------- CONTAINERS ------- */
-
-/* ---------------------------*/
-
 
 .content {
     display: flex;
@@ -469,12 +449,7 @@ p {
     }
 }
 
-
-/* ---------------------------*/
-
 /* --------- MODULES -------- */
-
-/* ---------------------------*/
 
 nav {
 
@@ -996,8 +971,6 @@ header {
                     transform: translateY(10px);
 
                     @include sm {
-                        //position: initial;
-
                         opacity: 1;
                         border: 1px solid $neu-02;
                         right: -40px;

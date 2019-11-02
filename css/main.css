@@ -1,14 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400,500,600,700,900");
 @import url("https://fonts.googleapis.com/css?family=Barlow:300,400,500,600,700&display=swap");
-/**************************************/
 /*** Screen Sizes Mixins ***/
-/**************************************/
 /*** Colours Variables ***/
 /*main*/
 /*neutrals*/
-/* --------------------------*/
 /* ----- MAIN ELEMENTS ----- */
-/* --------------------------*/
 /* // General Elements \\  */
 body {
   font-family: sans-serif;
@@ -399,9 +395,7 @@ p {
   }
 }
 
-/* ---------------------------*/
 /* ------- CONTAINERS ------- */
-/* ---------------------------*/
 .content {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -467,9 +461,7 @@ p {
   }
 }
 
-/* ---------------------------*/
 /* --------- MODULES -------- */
-/* ---------------------------*/
 nav .iconmenu {
   width: 40px;
   height: 40px;
