@@ -246,20 +246,27 @@ p {
   }
 }
 
-.main-text {
+.main-text,
+.cta-text {
   max-width: 800px;
   text-align: center;
   margin: 0 auto;
 }
 
 @media (max-width: 799px) {
-  .main-text {
+  .main-text,
+  .cta-text {
     padding: 0 10px;
   }
 }
 
-.main-text.left {
+.main-text.left,
+.cta-text.left {
   text-align: left;
+}
+
+.cta-text {
+  margin-top: 40px;
 }
 
 #scrollme {

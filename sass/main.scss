@@ -271,7 +271,8 @@ p {
     }
 }
 
-.main-text {
+.main-text,
+.cta-text {
     max-width: 800px;
     text-align: center;
     margin: 0 auto;
@@ -285,6 +286,9 @@ p {
     }
 }
 
+.cta-text {
+    margin-top: 40px;
+}
 
 #scrollme {
     margin: 0 auto;

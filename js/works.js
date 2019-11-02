@@ -260,8 +260,8 @@ var works = [{
 4 - editorial
 5 - illustration
 */
-var worksContainer = document.querySelector('.container-works'),
-    worksContainerHome = document.querySelector('.container-home');
+var worksPage = document.querySelector('.works-main'),
+    worksHome = document.querySelector('.works-home');
 
 
 for (let i = 0; i < works.length; i++) {
@@ -286,11 +286,11 @@ for (let i = 0; i < works.length; i++) {
     </div>
 </a>`;
 
-    if (worksContainer) {
-        worksContainer.insertAdjacentHTML('beforeend', template);
-    } else if (worksContainerHome && featured) {
+    if (worksPage) {
+        worksPage.insertAdjacentHTML('beforeend', template);
+    } else if (worksHome && featured) {
 
-        worksContainerHome.insertAdjacentHTML('beforeend', template);
+        worksHome.insertAdjacentHTML('beforeend', template);
     }
 
 
