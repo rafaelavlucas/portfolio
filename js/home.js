@@ -37,7 +37,7 @@ for (let i = 0; i < skills.length; i++) {
 
     var templateSkills = `
     <div class="icon-section">
-        <img src="${img}">
+        <img src="${img}" alt="${title}">
         <p>${title}</p>
     </div>`;
 
