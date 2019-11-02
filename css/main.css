@@ -446,6 +446,10 @@ p {
   color: #ccc;
 }
 
+.content-full.dark .links {
+  color: white;
+}
+
 .section,
 .section-works {
   width: 100%;
@@ -774,8 +778,9 @@ footer p {
 }
 
 footer p:first-child {
-  color: #848484;
+  color: white;
   margin-right: 10px;
+  opacity: 0.5;
 }
 
 @media (max-width: 511px) {

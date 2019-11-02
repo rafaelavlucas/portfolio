@@ -449,6 +449,10 @@ p {
         .main-text {
             color: $neu-03;
         }
+
+        .links {
+            color: white;
+        }
     }
 }
 
@@ -717,8 +721,9 @@ footer {
         color: $neu-02;
 
         &:first-child {
-            color: $neu-04;
+            color: white;
             margin-right: 10px;
+            opacity: 0.5;
 
             @include xs {
                 margin: 0;
