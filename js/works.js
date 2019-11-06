@@ -214,7 +214,7 @@ var works = [{
         year: "2014",
         category: "Editorial Design",
         thumb: "images/works/timvswoody/covers.jpg",
-        url: "works/tellmeaboutit.html",
+        url: "works/timvswoody.html",
         fullClass: false,
         featured: true,
     },
