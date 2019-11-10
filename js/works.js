@@ -12,6 +12,17 @@ var works = [{
     {
         categoryId: 2,
         categoryName: "ui-design",
+        title: "Landing Page Layout Proposal",
+        year: "2019",
+        category: "UI Design",
+        url: "works/landingpage.html",
+        thumb: "images/works/landingpage/landingpage_01.jpg",
+        fullClass: false,
+        featured: true,
+    },
+    {
+        categoryId: 2,
+        categoryName: "ui-design",
         title: "Quinta da Valeira Website",
         year: "2019",
         category: "UI Design, Front-End Development",
@@ -117,7 +128,7 @@ var works = [{
         thumb: "images/works/quevedogreserve/quevedogreserve_04.jpg",
         url: "works/quevedogreserve.html",
         fullClass: false,
-        featured: true,
+        featured: false,
     },
     {
         categoryId: 3,

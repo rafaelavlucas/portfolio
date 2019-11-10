@@ -39,8 +39,6 @@ window.onload = function (e) {
     }
 
 
-
-
     /* Open Menu bar */
 
     var iconMenu = document.querySelector('.iconmenu'),
@@ -75,29 +73,63 @@ window.onload = function (e) {
 
 
     /* Back to top */
+    var toTop = document.getElementById("scrollme");
 
-    function runScroll() {
-        scrollTo(document.body, 0, 600);
+    toTop.addEventListener("click", function () {
+        scrollToTop(600);
+    });
+
+    function scrollToTop(scrollDuration) {
+        var scrollStep = -window.scrollY / (scrollDuration / 15),
+            scrollInterval = setInterval(function () {
+                if (window.scrollY != 0) {
+                    window.scrollBy(0, scrollStep);
+                } else clearInterval(scrollInterval);
+            }, 15);
     }
-    var scrollme = document.querySelector("#scrollme");
-
-    scrollme.addEventListener("click", runScroll, false);
-
-    function scrollTo(element, to, duration) {
-        if (duration <= 0) return;
-        var difference = to - element.scrollTop;
-        var perTick = difference / duration * 10;
-
-        setTimeout(function () {
-            element.scrollTop = element.scrollTop + perTick;
-            if (element.scrollTop == to) return;
-            scrollTo(element, to, duration - 10);
-        }, 10);
-    };
     /* end Back to top */
 
 
+    ///////// Animate Modules //////////
+    var module = document.querySelectorAll('.content');
 
+    function anime(element, animation) {
+        $(element).each(function (i, el) {
+            var el = $(el);
+            if (el.is(':visible')) {
+                el.addClass(animation);
+            }
+        });
+    }
+
+    var isInViewport = function (elem) {
+        var bounding = elem.getBoundingClientRect();
+
+        if (bounding.top >= 0 && bounding.top + 50 <= (window.innerHeight || document.documentElement.clientHeight) && bounding.left >= 0 && bounding.right <= (window.innerWidth || document.documentElement.clientWidth)) {
+            return true;
+        }
+    };
+
+    function isModuleVisibleAnimation(el) {
+
+        if (isInViewport(el)) {
+            anime(el, 'anime');
+            anime($(el).find('.section'), 'anime');
+        }
+    }
+
+    $(module).each(function (i, el) {
+        isModuleVisibleAnimation(el);
+    })
+
+    $(window).scroll(function (event) {
+
+        if (window.innerWidth >= 799) {
+            $(module).each(function (i, el) {
+                isModuleVisibleAnimation(el);
+            })
+        }
+    });
 
 
 }

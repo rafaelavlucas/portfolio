@@ -12,7 +12,7 @@
     }
 }
 
-// 768
+// 800
 @mixin sm {
     @media (max-width: 799px) {
         @content;
@@ -407,48 +407,65 @@ p {
     flex-direction: column;
     width: calc(100% - 10%);
     margin: 0 auto;
-    transition: all .3s ease-in-out;
+    transition: all 2s cubic-bezier(0.61, 0.01, 0.09, 1.01);
+    opacity: 0;
+    transform: translateY(100px);
+
+    &.full {
+        padding: 0 5%;
+
+        &.blue {
+            background-color: $m-01;
+        }
+
+        &.gray {
+            background-color: $neu-02
+        }
+
+        &.dark {
+            background-color: $neu-07;
+
+            .main-title {
+                color: white;
+            }
+
+            .main-text {
+                color: $neu-03;
+            }
+
+            .links {
+                color: white;
+            }
+        }
+    }
+
+    @include sm {
+        opacity: 1;
+        transform: translate(0);
+    }
 }
 
-.content-full {
-    padding: 0 5%;
 
-    &.blue {
-        background-color: $m-01;
-    }
 
-    &.gray {
-        background-color: $neu-02
-    }
-
-    &.dark {
-        background-color: $neu-07;
-
-        .main-title {
-            color: white;
-        }
-
-        .main-text {
-            color: $neu-03;
-        }
-
-        .links {
-            color: white;
-        }
-    }
-}
-
-.section,
-.section-works {
+.section {
     width: 100%;
     max-width: 1280px;
     padding: 80px 0;
-    transition: all .3s ease-in-out;
+    transition: all 2s cubic-bezier(0.61, 0.01, 0.09, 1.01);
     margin: auto;
+    opacity: 0;
+    transform: translateY(100px);
 
     @include sm {
         padding: 40px 0;
+        opacity: 1;
+        transform: translate(0);
     }
+}
+
+.anime {
+    opacity: 1;
+    transform: translateY(0px);
 }
 
 /* --------- MODULES -------- */
@@ -837,6 +854,19 @@ header {
         align-items: center;
         flex-direction: column;
         z-index: 1;
+        animation: headerText 0.6s 1.2s ease backwards;
+
+        @keyframes headerText {
+            0% {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
         h1 {
             font-size: 50px;
@@ -872,6 +902,17 @@ header {
                 background-color: $m-01;
                 z-index: -1;
                 transform: translateX(-4px);
+                animation: linePortfolio 0.6s 1.4s ease backwards;
+
+                @keyframes linePortfolio {
+                    0% {
+                        width: 0;
+                    }
+
+                    100% {
+                        width: 160px;
+                    }
+                }
             }
         }
     }
@@ -2200,8 +2241,6 @@ header {
     }
 
     .works-images {
-        max-width: 800px;
-        transition: all .3s ease;
         display: flex;
         align-items: center;
         flex-direction: column;
