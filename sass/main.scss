@@ -445,8 +445,6 @@ p {
     }
 }
 
-
-
 .section {
     width: 100%;
     max-width: 1280px;
@@ -461,11 +459,6 @@ p {
         opacity: 1;
         transform: translate(0);
     }
-}
-
-.anime {
-    opacity: 1;
-    transform: translateY(0px);
 }
 
 /* --------- MODULES -------- */
@@ -1176,6 +1169,7 @@ header {
             display: block;
             width: calc(50% - 20px);
             margin: 10px;
+            transform: translateY(100px);
 
             @include sm {
                 width: 100%;
@@ -2326,6 +2320,7 @@ header {
     }
 }
 
-.anime-modules {
+.anime {
+    opacity: 1;
     transform: translateY(0px);
 }

@@ -92,6 +92,7 @@ window.onload = function (e) {
 
     ///////// Animate Modules //////////
     var module = document.querySelectorAll('.content');
+    var workImg = document.querySelectorAll('.work');
 
     function anime(element, animation) {
         $(element).each(function (i, el) {
@@ -115,7 +116,11 @@ window.onload = function (e) {
         if (isInViewport(el)) {
             anime(el, 'anime');
             anime($(el).find('.section'), 'anime');
+            anime($(el).find('.image-container .work'), 'anime');
         }
+
+
+
     }
 
     $(module).each(function (i, el) {
