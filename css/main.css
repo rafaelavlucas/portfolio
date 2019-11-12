@@ -1414,6 +1414,7 @@ header:hover .header-content {
     -webkit-transform: translateY(0px);
             transform: translateY(0px);
     opacity: 1;
+    margin: 10px 0px;
   }
 }
 
