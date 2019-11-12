@@ -1169,7 +1169,7 @@ header {
             display: block;
             width: calc(50% - 20px);
             margin: 10px;
-            transform: translateY(100px);
+            //transform: translateY(100px);
 
             @include sm {
                 width: 100%;
