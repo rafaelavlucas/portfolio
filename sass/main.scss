@@ -289,6 +289,7 @@ p {
 
     @include sm {
         padding: 0 10px;
+        box-sizing: border-box;
     }
 
     &.left {
@@ -427,12 +428,11 @@ p {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: calc(100% - 10%);
+    width: 100%;
     margin: 0 auto;
     transition: all 2s cubic-bezier(0.61, 0.01, 0.09, 1.01);
 
     &.full {
-        padding: 0 5%;
 
         &.blue {
             background-color: $m-01;
@@ -463,12 +463,13 @@ p {
 .section {
     width: 100%;
     max-width: 1280px;
-    padding: 80px 0;
+    box-sizing: border-box;
+    padding: 80px 5%;
     transition: all 2s cubic-bezier(0.61, 0.01, 0.09, 1.01);
     margin: auto;
 
     @include sm {
-        padding: 40px 0;
+        padding: 40px 5%;
     }
 
     @include animationBeforeState;
@@ -1931,106 +1932,130 @@ header {
     }
 }
 
-.bio-content {
-    max-width: 1024px;
-    display: flex;
-    grid-template-columns: 40% 50%;
-    margin: 0 auto;
+.about-me {
+    .bio-content {
+        max-width: 1024px;
+        display: flex;
+        margin: 0 auto;
 
-    @include sm {
-        flex-direction: column;
-    }
-
-    .bio {
-        @include animationBeforeState;
-        transition-delay: 0.4s;
-        font-size: 15px;
-        position: relative;
-        z-index: 2;
-        text-align: left;
-        margin-left: 60px;
 
         @include sm {
-            margin-left: 0px;
-            font-size: 13px;
+            max-width: 600px;
+            flex-direction: column;
         }
 
-        h2 {
-            font-size: 35px;
-            color: $neu-04;
-            font-family: $font-01;
-            font-weight: 100;
-            letter-spacing: 10px;
+        .bio {
+            @include animationBeforeState;
+            transition-delay: 0.4s;
+            font-size: 15px;
+            position: relative;
             z-index: 2;
-            text-transform: uppercase;
-            -webkit-transition: all .5s ease;
-            transition: all .5s ease;
-            max-width: 500px;
             text-align: left;
-            margin: 20px 0px 50px -100px;
+            margin-left: 60px;
+
 
             @include sm {
-                margin: 0px 0px 40px 0px;
-                font-size: 25px;
-                line-height: 35px;
+                margin-left: 0px;
+                font-size: 13px;
+                padding: 0;
             }
 
-            &:after {
-                background-color: $m-01;
-                width: 80px;
-                content: '';
-                height: 2px;
-                border-radius: 20px;
-                display: block;
-                margin-top: 20px;
+            h2 {
+                font-size: 35px;
+                color: $neu-04;
+                font-family: $font-01;
+                font-weight: 100;
+                letter-spacing: 10px;
+                z-index: 2;
+                text-transform: uppercase;
+                -webkit-transition: all .5s ease;
                 transition: all .5s ease;
-                left: 0;
+                max-width: 500px;
+                text-align: left;
+                margin: 20px 0px 50px -100px;
 
                 @include sm {
-                    width: 50px;
+                    margin: 0px 0px 40px 0px;
+                    font-size: 25px;
+                    line-height: 35px;
+                }
+
+                &:after {
+                    background-color: $m-01;
+                    width: 80px;
+                    content: '';
+                    height: 2px;
+                    border-radius: 20px;
+                    display: block;
+                    margin-top: 20px;
+                    transition: all .5s ease;
+                    left: 0;
+
+                    @include sm {
+                        width: 50px;
+                    }
                 }
             }
         }
-    }
-
-    .image-about {
-        @include animationBeforeState;
-        transition-delay: 0.2s;
-        width: 70%;
-        height: 500px;
-        z-index: 2;
-        opacity: 0.2;
-        background-image: url("../images/bio2.png");
-        background-size: cover;
-        -webkit-filter: grayscale(100%);
-        filter: grayscale(100%);
-
-        @include sm {
-            width: 100%;
-            height: 250px;
-            margin-bottom: 40px;
-            opacity: 0.2;
-        }
-    }
-
-    &.anime {
-        .bio {
-            @include animationAfterState;
-        }
 
         .image-about {
-            @include animationAfterState;
+            @include animationBeforeState;
+            transition-delay: 0.2s;
+            width: 70%;
+            height: 500px;
+            z-index: 2;
             opacity: 0.2;
+            background-image: url("../images/bio2.png");
+            background-size: cover;
+            -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+
+            @include sm {
+                width: 100%;
+                height: 250px;
+                margin-bottom: 40px;
+                opacity: 0.2;
+            }
+        }
+
+        &.anime {
+            .bio {
+                @include animationAfterState;
+            }
+
+            .image-about {
+                @include animationAfterState;
+                opacity: 0.2;
+            }
+        }
+    }
+
+    .second-text {
+        @include animationBeforeState();
+        text-align: left;
+        max-width: 700px;
+        margin: 0 auto;
+        padding-top: 80px;
+        transition-delay: .6s;
+
+        @include sm {
+            max-width: 600px;
+            padding-top: 20px;
+        }
+
+        &.anime {
+            @include animationAfterState();
         }
     }
 }
+
 
 .dual-block {
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-flow: wrap;
-    width: calc(100% - 10%);
+    width: 100%;
 
     @include sm {
         flex-direction: column;
@@ -2114,8 +2139,6 @@ header {
 }
 
 .timeline-content {
-    padding-left: 5%;
-    padding-right: 5%;
     box-sizing: border-box;
 
 
