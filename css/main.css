@@ -2446,6 +2446,7 @@ header:hover .header-content {
     width: 100%;
     height: 250px;
     margin-bottom: 40px;
+    opacity: 0.2;
   }
 }
 
