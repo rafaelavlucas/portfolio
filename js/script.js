@@ -91,9 +91,11 @@ window.onload = function (e) {
 
 
     ///////// Animate Modules //////////
-    var module = document.querySelectorAll('.content');
-    var workImg = document.querySelectorAll('.work');
-    var section = document.querySelectorAll('.section');
+    var module = document.querySelectorAll('.content'),
+        workImg = document.querySelectorAll('.work'),
+        section = document.querySelectorAll('.section');
+
+
     const anime = (element, animation) => {
         if (element.offsetParent != null) {
             element.classList.add(animation)
@@ -114,7 +116,7 @@ window.onload = function (e) {
             anime(element, animation);
         }
     };
-
+    // for viewport
     const animeContainers = (container, animation) => {
 
         container.forEach(item => {
@@ -126,10 +128,7 @@ window.onload = function (e) {
             }
         })
     }
-
-    animeContainers(module, "anime");
-    animeContainers(workImg, "animeWork");
-    animeContainers(section, "anime");
+    // for scroll
 
     window.addEventListener('scroll', () => {
         if (window.innerWidth >= 799) {
@@ -138,6 +137,10 @@ window.onload = function (e) {
             animeContainers(section, "anime");
         }
     })
+    // to load the animations
+    animeContainers(module, "anime");
+    animeContainers(workImg, "animeWork");
+    animeContainers(section, "anime");
 
 
 }
