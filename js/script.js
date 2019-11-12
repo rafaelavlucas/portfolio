@@ -113,7 +113,9 @@ window.onload = function (e) {
     };
     const isModuleVisbibleAnimation = (element, animation) => {
         if (isInViewport(element)) {
-            anime(element, animation);
+            if (window.innerWidth >= 799) {
+                anime(element, animation);
+            }
         }
     };
     // for viewport

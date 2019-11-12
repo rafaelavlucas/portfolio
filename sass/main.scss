@@ -1181,6 +1181,8 @@ header {
 
             @include sm {
                 width: 100%;
+                transform: translateY(0px);
+                opacity: 1;
             }
 
             &.hide {

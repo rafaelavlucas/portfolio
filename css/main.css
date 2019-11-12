@@ -1411,6 +1411,9 @@ header:hover .header-content {
 @media (max-width: 799px) {
   .works-container .image-container .work {
     width: 100%;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    opacity: 1;
   }
 }
 
