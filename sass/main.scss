@@ -66,6 +66,10 @@ body {
     font-size: 15px;
     transition: all .3s ease-in-out;
     -webkit-tap-highlight-color: transparent;
+
+    &.no-scroll {
+        overflow: hidden;
+    }
 }
 
 #wrapper {
@@ -922,6 +926,212 @@ header {
     }
 }
 
+
+
+.filters-container {
+
+    .filters {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 60px;
+
+
+        .filter {
+            letter-spacing: 1px;
+            padding: 8px 10px;
+            border-radius: 2px;
+            color: $m-01;
+            display: flex;
+            align-items: center;
+            margin-top: 0;
+
+            &.active-btn {
+                background-color: $m-01;
+                color: white;
+
+                &:hover {
+                    color: white;
+                }
+            }
+
+            &:before {
+                content: '';
+                position: absolute;
+                background-color: $m-01;
+                width: 0%;
+                height: 100%;
+                z-index: -1;
+                top: 0;
+                transition: all 0.5s ease;
+                border-radius: 2px;
+            }
+
+            span {
+                background-color: white;
+                position: absolute;
+                border-radius: 3px;
+                top: 45px;
+                width: 25px;
+                height: 25px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.5);
+                color: $m-01;
+                transition: all 0.5s ease;
+                opacity: 0;
+                transform: translateY(10px);
+
+                @include sm {
+                    opacity: 1;
+                    border: 1px solid $neu-02;
+                    right: -40px;
+                    transform: translateX(0);
+                    top: initial;
+                    box-shadow: none;
+                }
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    width: 8px;
+                    height: 8px;
+                    background-color: inherit;
+                    top: -3px;
+                    transform: rotate(45deg);
+
+                    @include sm {
+                        left: -4px;
+                        top: initial;
+                        border-left: 1px solid $neu-02;
+                        border-bottom: 1px solid $neu-02;
+
+                    }
+                }
+            }
+
+            &:hover {
+                color: white;
+
+                @include sm {
+                    color: $m-01;
+                }
+
+                &:before {
+                    width: 100%;
+
+                    @include sm {
+                        display: none;
+                    }
+                }
+
+                span {
+                    opacity: 1;
+                    transition: all 0.5s 0.2s ease;
+                    transform: translateY(0px);
+                    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+
+                    @include sm {
+                        box-shadow: none;
+                    }
+                }
+            }
+        }
+
+        @include sm {
+            display: none;
+            margin-bottom: 0px;
+        }
+    }
+
+    @include sm {
+        transform: translateX(120%);
+    }
+
+    &.mobile {
+        @include sm {
+            width: 100%;
+            height: 100vh;
+            background-color: white;
+            position: fixed;
+            z-index: 6;
+            top: 0px;
+            left: 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.5s ease-in-out;
+            transform: translateX(120%);
+
+            .close-filters {
+                position: absolute;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                top: 30px;
+                right: 30px;
+                width: 40px;
+                height: 40px;
+                cursor: pointer;
+
+                span {
+                    position: absolute;
+                    width: 0px;
+                    height: 2px;
+                    border-radius: 20px;
+                    transition: all 0.3s ease;
+                    background-color: $neu-03;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    &:before,
+                    &:after {
+                        position: absolute;
+                        content: '';
+                        width: 20px;
+                        height: 100%;
+                        background-color: inherit;
+                    }
+
+                    &:before {
+
+                        transform: rotate(45deg);
+                    }
+
+                    &:after {
+                        width: 20px;
+                        transform: rotate(-45deg);
+                    }
+                }
+            }
+
+            .filters {
+                flex-direction: column;
+                display: flex;
+                width: 100%;
+                height: 500px;
+                background-color: white;
+                top: 0;
+                transition: all 0.8s 0.5s ease;
+                transform: translateX(100px);
+                opacity: 0;
+
+                &.anime-tags {
+                    opacity: 1;
+                    transform: translateX(0px);
+                }
+            }
+        }
+    }
+
+    &.anime-filters {
+        @include sm {
+            transform: translateX(0%);
+        }
+    }
+}
+
 .works-container {
 
     .btn-filter {
@@ -952,210 +1162,6 @@ header {
         }
     }
 
-    .filters-container {
-
-        .filters {
-            display: flex;
-            justify-content: space-around;
-            margin-bottom: 60px;
-
-
-            .filter {
-                letter-spacing: 1px;
-                padding: 8px 10px;
-                border-radius: 2px;
-                color: $m-01;
-                display: flex;
-                align-items: center;
-                margin-top: 0;
-
-                &.active-btn {
-                    background-color: $m-01;
-                    color: white;
-
-                    &:hover {
-                        color: white;
-                    }
-                }
-
-                &:before {
-                    content: '';
-                    position: absolute;
-                    background-color: $m-01;
-                    width: 0%;
-                    height: 100%;
-                    z-index: -1;
-                    top: 0;
-                    transition: all 0.5s ease;
-                    border-radius: 2px;
-                }
-
-                span {
-                    background-color: white;
-                    position: absolute;
-                    border-radius: 3px;
-                    top: 45px;
-                    width: 25px;
-                    height: 25px;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.5);
-                    color: $m-01;
-                    transition: all 0.5s ease;
-                    opacity: 0;
-                    transform: translateY(10px);
-
-                    @include sm {
-                        opacity: 1;
-                        border: 1px solid $neu-02;
-                        right: -40px;
-                        transform: translateX(0);
-                        top: initial;
-                        box-shadow: none;
-                    }
-
-                    &:before {
-                        content: '';
-                        position: absolute;
-                        width: 8px;
-                        height: 8px;
-                        background-color: inherit;
-                        top: -3px;
-                        transform: rotate(45deg);
-
-                        @include sm {
-                            left: -4px;
-                            top: initial;
-                            border-left: 1px solid $neu-02;
-                            border-bottom: 1px solid $neu-02;
-
-                        }
-                    }
-                }
-
-                &:hover {
-                    color: white;
-
-                    @include sm {
-                        color: $m-01;
-                    }
-
-                    &:before {
-                        width: 100%;
-
-                        @include sm {
-                            display: none;
-                        }
-                    }
-
-                    span {
-                        opacity: 1;
-                        transition: all 0.5s 0.2s ease;
-                        transform: translateY(0px);
-                        box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
-
-                        @include sm {
-                            box-shadow: none;
-                        }
-                    }
-                }
-            }
-
-            @include sm {
-                display: none;
-                margin-bottom: 0px;
-            }
-        }
-
-        @include sm {
-            transform: translateX(120%);
-        }
-
-        &.mobile {
-            @include sm {
-                width: 100%;
-                height: 100vh;
-                background-color: white;
-                position: fixed;
-                z-index: 4;
-                top: 0;
-                right: 0;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                transition: all 0.5s ease-in-out;
-                transform: translateX(120%);
-
-                .close-filters {
-                    position: absolute;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    top: 30px;
-                    right: 30px;
-                    width: 40px;
-                    height: 40px;
-                    cursor: pointer;
-
-                    span {
-                        position: absolute;
-                        width: 0px;
-                        height: 2px;
-                        border-radius: 20px;
-                        transition: all 0.3s ease;
-                        background-color: $neu-03;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-
-                        &:before,
-                        &:after {
-                            position: absolute;
-                            content: '';
-                            width: 20px;
-                            height: 100%;
-                            background-color: inherit;
-                        }
-
-                        &:before {
-
-                            transform: rotate(45deg);
-                        }
-
-                        &:after {
-                            width: 20px;
-                            transform: rotate(-45deg);
-                        }
-                    }
-                }
-
-                .filters {
-                    flex-direction: column;
-                    display: flex;
-                    width: 100%;
-                    height: 500px;
-                    background-color: white;
-                    top: 0;
-                    transition: all 0.8s 0.5s ease;
-                    transform: translateX(100px);
-                    opacity: 0;
-
-                    &.anime-tags {
-                        opacity: 1;
-                        transform: translateX(0px);
-                    }
-                }
-            }
-        }
-
-        &.anime-filters {
-            @include sm {
-                transform: translateX(0%);
-            }
-        }
-    }
-
     .image-container {
         display: flex;
         justify-content: space-between;
@@ -1169,7 +1175,9 @@ header {
             display: block;
             width: calc(50% - 20px);
             margin: 10px;
-            //transform: translateY(100px);
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 1s ease;
 
             @include sm {
                 width: 100%;
@@ -1229,6 +1237,11 @@ header {
                     height: 0;
                     display: none;
                 }
+            }
+
+            &.animeWork {
+                opacity: 1;
+                transform: translateY(0px);
             }
         }
 
@@ -1999,6 +2012,12 @@ header {
             transform: translateY(-10px);
             background-color: darken($m-01, 10%);
             box-shadow: 0px 30px 45px -20px $neu-04;
+
+            @include sm {
+                transform: translateY(0px);
+                background-color: $m-01;
+                box-shadow: none;
+            }
         }
     }
 }
@@ -2111,6 +2130,12 @@ header {
                     height: 100%;
                     width: 100%;
                     box-shadow: 0px 25px 45px -30px $neu-03;
+
+                    @include sm {
+                        height: calc(100% - 32px);
+                        width: 90%;
+                        box-shadow: none;
+                    }
                 }
             }
         }

@@ -5,7 +5,6 @@
         work = document.querySelectorAll(".work"),
         ze = document.querySelector('.image-container');
 
-
     tagFilter.forEach(function (el) {
         el.addEventListener("click", filterImages);
     });
@@ -58,13 +57,15 @@
     var filtersContainer = document.querySelector(".filters-container"),
         filtersContent = document.querySelector(".filters-container .filters"),
         btnFilter = document.querySelector(".btn-filter"),
-        closeFilters = document.querySelector(".close-filters");
+        closeFilters = document.querySelector(".close-filters"),
+        body = document.querySelector("body");
 
     btnFilter.addEventListener("click", openFiltersMobile);
     closeFilters.addEventListener("click", closeFiltersMobile);
 
     function openFiltersMobile() {
         filtersContainer.classList.add('mobile');
+        body.classList.add('no-scroll');
 
         setTimeout(function () {
             filtersContainer.classList.add('anime-filters');
@@ -78,6 +79,7 @@
 
         setTimeout(function () {
             filtersContainer.classList.remove('mobile');
+            body.classList.remove('no-scroll');
         }, 500);
     }
 

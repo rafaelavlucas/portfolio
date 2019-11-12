@@ -93,48 +93,51 @@ window.onload = function (e) {
     ///////// Animate Modules //////////
     var module = document.querySelectorAll('.content');
     var workImg = document.querySelectorAll('.work');
-
-    function anime(element, animation) {
-        $(element).each(function (i, el) {
-            var el = $(el);
-            if (el.is(':visible')) {
-                el.addClass(animation);
-            }
-        });
+    var section = document.querySelectorAll('.section');
+    const anime = (element, animation) => {
+        if (element.offsetParent != null) {
+            element.classList.add(animation)
+        }
     }
 
-    var isInViewport = function (elem) {
-        var bounding = elem.getBoundingClientRect();
-
-        if (bounding.top >= 0 && bounding.top + 50 <= (window.innerHeight || document.documentElement.clientHeight) && bounding.left >= 0 && bounding.right <= (window.innerWidth || document.documentElement.clientWidth)) {
-            return true;
+    const isInViewport = (element) => {
+        var bounding = element.getBoundingClientRect();
+        return (
+            bounding.bottom >= 0 &&
+            bounding.right >= 0 &&
+            bounding.top <= document.documentElement.clientHeight &&
+            bounding.left <= document.documentElement.clientWidth
+        )
+    };
+    const isModuleVisbibleAnimation = (element, animation) => {
+        if (isInViewport(element)) {
+            anime(element, animation);
         }
     };
 
-    function isModuleVisibleAnimation(el) {
+    const animeContainers = (container, animation) => {
 
-        if (isInViewport(el)) {
-            anime(el, 'anime');
-            anime($(el).find('.section'), 'anime');
-            anime($(el).find('.image-container .work'), 'anime');
-        }
-
-
-
+        container.forEach(item => {
+            isModuleVisbibleAnimation(item, animation);
+            if (item.children) {
+                [...item.children].forEach(element => {
+                    isModuleVisbibleAnimation(element, animation);
+                })
+            }
+        })
     }
 
-    $(module).each(function (i, el) {
-        isModuleVisibleAnimation(el);
-    })
+    animeContainers(module, "anime");
+    animeContainers(workImg, "animeWork");
+    animeContainers(section, "anime");
 
-    $(window).scroll(function (event) {
-
+    window.addEventListener('scroll', () => {
         if (window.innerWidth >= 799) {
-            $(module).each(function (i, el) {
-                isModuleVisibleAnimation(el);
-            })
+            animeContainers(module, "anime");
+            animeContainers(workImg, "animeWork");
+            animeContainers(section, "anime");
         }
-    });
+    })
 
 
 }
