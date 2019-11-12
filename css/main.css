@@ -1739,6 +1739,17 @@ header:hover .header-content {
   text-align: center;
   position: relative;
   z-index: 1;
+  -webkit-transform: translateY(50px);
+          transform: translateY(50px);
+  opacity: 0;
+}
+
+@media (max-width: 799px) {
+  .info-icons .row-icons .icon-section {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    opacity: 1;
+  }
 }
 
 .info-icons .row-icons .icon-section:before {
@@ -1911,6 +1922,44 @@ header:hover .header-content {
   left: 62px;
 }
 
+.info-icons .row-icons.anime .icon-section {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  opacity: 1;
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+}
+
+.info-icons .row-icons.anime .icon-section:nth-child(1) {
+  -webkit-transition-delay: 0.4s;
+          transition-delay: 0.4s;
+}
+
+.info-icons .row-icons.anime .icon-section:nth-child(2) {
+  -webkit-transition-delay: 0.6s;
+          transition-delay: 0.6s;
+}
+
+.info-icons .row-icons.anime .icon-section:nth-child(3) {
+  -webkit-transition-delay: 0.8s;
+          transition-delay: 0.8s;
+}
+
+.info-icons .row-icons.anime .icon-section:nth-child(4) {
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
+}
+
+.info-icons .row-icons.anime .icon-section:nth-child(5) {
+  -webkit-transition-delay: 1.2s;
+          transition-delay: 1.2s;
+}
+
+.info-icons .row-icons.anime .icon-section:nth-child(6) {
+  -webkit-transition-delay: 1.4s;
+          transition-delay: 1.4s;
+}
+
 .contacts p {
   margin-bottom: 40px;
   text-align: center;
@@ -1928,8 +1977,8 @@ header:hover .header-content {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  -webkit-transition: all 0.8s ease;
-  transition: all 0.8s ease;
+  -webkit-transition: all 0.8s 0.4s ease;
+  transition: all 0.8s 0.4s ease;
   /* social item*/
 }
 
@@ -1950,6 +1999,9 @@ header:hover .header-content {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-transform: translateY(50px);
+          transform: translateY(50px);
+  opacity: 0;
   /*  // Social Texts \\  */
   /*  // Icon Social \\  */
 }
@@ -1957,6 +2009,9 @@ header:hover .header-content {
 @media (max-width: 799px) {
   .contacts .social-items .social {
     padding: 50px 0px;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    opacity: 1;
   }
 }
 
@@ -2187,6 +2242,34 @@ header:hover .header-content {
     height: 20px;
     top: initial;
   }
+}
+
+.contacts .social-items.anime .social {
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+  opacity: 1;
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+}
+
+.contacts .social-items.anime .social:nth-child(1) {
+  -webkit-transition-delay: 0.4s;
+          transition-delay: 0.4s;
+}
+
+.contacts .social-items.anime .social:nth-child(2) {
+  -webkit-transition-delay: 0.6s;
+          transition-delay: 0.6s;
+}
+
+.contacts .social-items.anime .social:nth-child(3) {
+  -webkit-transition-delay: 0.8s;
+          transition-delay: 0.8s;
+}
+
+.contacts .social-items.anime .social:nth-child(4) {
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
 }
 
 .page-header {
