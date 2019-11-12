@@ -113,7 +113,7 @@ window.onload = function (e) {
     };
     const isModuleVisbibleAnimation = (element, animation) => {
         if (isInViewport(element)) {
-            if (window.innerWidth >= 799) {
+            if (window.innerWidth >= 800) {
                 anime(element, animation);
             }
         }
@@ -133,7 +133,7 @@ window.onload = function (e) {
     // for scroll
 
     window.addEventListener('scroll', () => {
-        if (window.innerWidth >= 799) {
+        if (window.innerWidth >= 800) {
             animeContainers(module, "anime");
             animeContainers(workImg, "animeWork");
             animeContainers(section, "anime");
