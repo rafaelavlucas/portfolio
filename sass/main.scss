@@ -33,6 +33,24 @@
     }
 }
 
+
+@mixin animationBeforeState {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 1.2s cubic-bezier(0.54, 0.17, 0.12, 1);
+
+    @include sm {
+        opacity: 1;
+        transform: translate(0);
+    }
+
+}
+
+@mixin animationAfterState {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
 /*** Colours Variables ***/
 /*main*/
 $m-01: #698fb7;
@@ -412,8 +430,6 @@ p {
     width: calc(100% - 10%);
     margin: 0 auto;
     transition: all 2s cubic-bezier(0.61, 0.01, 0.09, 1.01);
-    opacity: 0;
-    transform: translateY(100px);
 
     &.full {
         padding: 0 5%;
@@ -442,11 +458,6 @@ p {
             }
         }
     }
-
-    @include sm {
-        opacity: 1;
-        transform: translate(0);
-    }
 }
 
 .section {
@@ -455,13 +466,15 @@ p {
     padding: 80px 0;
     transition: all 2s cubic-bezier(0.61, 0.01, 0.09, 1.01);
     margin: auto;
-    opacity: 0;
-    transform: translateY(100px);
 
     @include sm {
         padding: 40px 0;
-        opacity: 1;
-        transform: translate(0);
+    }
+
+    @include animationBeforeState;
+
+    &:nth-of-type(2) {
+        transition-delay: 0.4s;
     }
 }
 
@@ -926,8 +939,6 @@ header {
     }
 }
 
-
-
 .filters-container {
 
     .filters {
@@ -1175,17 +1186,22 @@ header {
         }
 
         .work {
+            @include animationBeforeState;
             display: block;
             width: calc(50% - 20px);
             margin: 10px;
-            transform: translateY(100px);
-            opacity: 0;
-            transition: all 1s ease;
+
+            &.animeWork {
+                @include animationAfterState;
+
+                &:nth-of-type(odd) {
+                    transition-delay: 0.4s;
+                }
+            }
+
 
             @include sm {
                 width: 100%;
-                transform: translateY(0px);
-                opacity: 1;
                 margin: 10px 0px;
             }
 
@@ -1244,17 +1260,10 @@ header {
                     display: none;
                 }
             }
-
-            &.animeWork {
-                opacity: 1;
-                transform: translateY(0px);
-            }
         }
-
     }
 
     .image {
-        transition: all .5s ease;
         cursor: pointer;
         display: flex;
         justify-content: center;
@@ -1420,8 +1429,6 @@ header {
     .row-icons {
         display: grid;
         grid-template-columns: repeat(6, 1fr);
-        -webkit-transition: all .3s ease-in-out;
-        transition: all .3s ease-in-out;
         justify-items: center;
 
         @include md {
@@ -1433,12 +1440,11 @@ header {
         }
 
         .icon-section {
+            @include animationBeforeState;
             width: 120px;
             text-align: center;
             position: relative;
             z-index: 1;
-            transform: translateY(50px);
-            opacity: 0;
 
             @include sm {
                 transform: translateY(0px);
@@ -1637,9 +1643,7 @@ header {
 
         &.anime {
             .icon-section {
-                transform: translateY(0);
-                opacity: 1;
-                transition: all 0.6s ease;
+                @include animationAfterState;
 
                 &:nth-child(1) {
                     transition-delay: 0.4s;
@@ -1687,17 +1691,15 @@ header {
 
         /* social item*/
         .social {
+            @include animationBeforeState();
             background-color: $neu-06;
             padding: 100px 0;
             z-index: 2;
             width: 100%;
             position: relative;
-            transition: all 0.6s ease;
             display: flex;
             align-items: center;
             justify-content: center;
-            transform: translateY(50px);
-            opacity: 0;
 
             @include sm {
                 padding: 50px 0px;
@@ -1879,9 +1881,7 @@ header {
 
         &.anime {
             .social {
-                transform: translateY(0px);
-                opacity: 1;
-                transition: all 0.6s ease;
+                @include animationAfterState();
 
                 &:nth-child(1) {
                     transition-delay: 0.4s;
@@ -1942,6 +1942,8 @@ header {
     }
 
     .bio {
+        @include animationBeforeState;
+        transition-delay: 0.4s;
         font-size: 15px;
         position: relative;
         z-index: 2;
@@ -1992,10 +1994,11 @@ header {
     }
 
     .image-about {
+        @include animationBeforeState;
+        transition-delay: 0.2s;
         width: 70%;
         height: 500px;
         z-index: 2;
-        transition: all .6s ease-in-out;
         opacity: 0.2;
         background-image: url("../images/bio2.png");
         background-size: cover;
@@ -2006,6 +2009,17 @@ header {
             width: 100%;
             height: 250px;
             margin-bottom: 40px;
+        }
+    }
+
+    &.anime {
+        .bio {
+            @include animationAfterState;
+        }
+
+        .image-about {
+            @include animationAfterState;
+            opacity: 0.2;
         }
     }
 }
@@ -2123,6 +2137,7 @@ header {
         }
 
         .timeline-item {
+            @include animationBeforeState;
             width: calc(50% - 20px);
             margin-top: 50px;
             text-align: left;
@@ -2130,7 +2145,7 @@ header {
             position: relative;
             box-sizing: border-box;
             box-shadow: 0;
-            transition: all 0.4s 0.2s ease;
+
 
             &:nth-child(1),
             &:nth-child(2) {
@@ -2213,7 +2228,19 @@ header {
                     }
                 }
             }
+
+            &.animeTimeline {
+                @include animationAfterState;
+
+                &:nth-of-type(even) {
+                    transition-delay: 0.4s;
+                }
+            }
+
+
         }
+
+
     }
 }
 
@@ -2340,9 +2367,9 @@ header {
         flex-direction: column;
 
         .image-main {
+            @include animationBeforeState;
             width: 100%;
             margin: 40px 0;
-            transition: all .3s ease;
 
             &:first-child {
                 margin-top: 0;
@@ -2351,6 +2378,10 @@ header {
             @include sm {
                 width: 100%;
                 margin: 10px 0;
+            }
+
+            &.anime {
+                @include animationAfterState;
             }
         }
 
@@ -2421,6 +2452,5 @@ header {
 }
 
 .anime {
-    opacity: 1;
-    transform: translateY(0px);
+    @include animationAfterState;
 }

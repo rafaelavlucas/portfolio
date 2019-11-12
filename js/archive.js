@@ -4,6 +4,7 @@ var works = [{
         category: "Graphic Design & Packaging",
         url: "archive/quevedodecanter.html",
         thumb: "images/works/quevedodecanter/quevedodecanter_01.jpg",
+        fullClass: true,
     },
     {
         title: "Portobay Animated Icons",
@@ -11,6 +12,7 @@ var works = [{
         category: "Motion Graphics",
         url: "archive/portobayicons.html",
         thumb: "images/works/portobayicons/portobayicons.gif",
+        fullClass: false,
     },
     {
         title: "Circles Animation",
@@ -18,6 +20,7 @@ var works = [{
         category: "Motion Graphics",
         url: "archive/circlesanimation.html",
         thumb: "images/works/circlesanimation/circlesanimation.gif",
+        fullClass: false,
     },
     {
         title: "Solero Video Case",
@@ -25,6 +28,7 @@ var works = [{
         category: "Graphic Design & Illustration",
         url: "archive/solero.html",
         thumb: "images/works/solero/solero_03.jpg",
+        fullClass: false,
     },
     {
         title: "Quevedo T-Shirt 2017",
@@ -32,6 +36,7 @@ var works = [{
         category: "Illustration",
         url: "archive/quevedotshirt2017.html",
         thumb: "images/works/quevedotshirt2017/quevedotshirt2017_05.jpg",
+        fullClass: false,
     },
     {
         title: "Quevedo Business Cards",
@@ -39,6 +44,7 @@ var works = [{
         category: "Brand Identity",
         url: "archive/quevedocards.html",
         thumb: "images/works/quevedocards/quevedocards_05.jpg",
+        fullClass: false,
     },
     {
         title: "Prowein 2016 Poster",
@@ -46,6 +52,7 @@ var works = [{
         category: "Graphic Design",
         url: "archive/prowein2016.html",
         thumb: "images/works/prowein2016/prowein2016_01.jpg",
+        fullClass: false,
     },
     {
         title: "Fauna’s New Year postcard",
@@ -53,6 +60,7 @@ var works = [{
         category: "Arts & Crafts",
         url: "archive/faunapostcard.html",
         thumb: "images/works/faunapostcard/fauna_02.jpg",
+        fullClass: false,
     },
     {
         title: "Darwin Vineyards' Thank you Card",
@@ -60,6 +68,7 @@ var works = [{
         category: "Illustration",
         url: "archive/thankyoucard.html",
         thumb: "images/works/thankyoucard/thankyou_01.jpg",
+        fullClass: false,
     },
     {
         title: "Journal",
@@ -67,6 +76,7 @@ var works = [{
         category: "Editorial Design",
         url: "archive/journal.html",
         thumb: "images/works/journal/journal_01.jpg",
+        fullClass: false,
     },
     {
         title: "Crossline Type",
@@ -74,6 +84,7 @@ var works = [{
         category: "Type Design",
         url: "archive/crosslinefont.html",
         thumb: "images/works/crosslinefont/crosslinefont_02.jpg",
+        fullClass: false,
     },
     {
         title: "All The Buildings That I Can See From My Bedroom Window",
@@ -81,6 +92,7 @@ var works = [{
         category: "Illustration",
         url: "archive/allthebuildings.html",
         thumb: "images/works/allthebuildings/allthebuildings_00.jpg",
+        fullClass: false,
     },
     {
         title: "Twist Magazine",
@@ -88,6 +100,7 @@ var works = [{
         category: "Editorial Design",
         url: "archive/twistmagazine.html",
         thumb: "images/works/twistmagazine/twistmag_02.jpg",
+        fullClass: false,
     },
     {
         title: "Mouro",
@@ -95,6 +108,7 @@ var works = [{
         category: "Branding & Packaging",
         url: "archive/mouro.html",
         thumb: "images/works/mouro/mouro_11.jpg",
+        fullClass: false,
     },
     {
         title: "Better Off",
@@ -102,6 +116,7 @@ var works = [{
         category: "Illustration",
         url: "archive/betteroff.html",
         thumb: "images/works/betteroff/betteroff_01.jpg",
+        fullClass: false,
     },
 
 ];
@@ -116,10 +131,11 @@ for (let i = 0; i < works.length; i++) {
         category,
         thumb,
         url,
+        fullClass
     } = works[i];
 
 
-    var template = `<a class="work" href="${url}">
+    var template = `<a class="work ${fullClass ? "full" : ""}" href="${url}">
     <div class="image">
         <div class="img" style="background-image: url(${thumb})"></div>
         <p class=" overlay-title">${title}</p>

@@ -91,9 +91,9 @@ window.onload = function (e) {
 
 
     ///////// Animate Modules //////////
-    var module = document.querySelectorAll('.content'),
+    var module = document.querySelectorAll('.section'),
         workImg = document.querySelectorAll('.work'),
-        section = document.querySelectorAll('.section');
+        timelineItem = document.querySelectorAll('.timeline-item');
 
 
     const anime = (element, animation) => {
@@ -136,13 +136,12 @@ window.onload = function (e) {
         if (window.innerWidth >= 800) {
             animeContainers(module, "anime");
             animeContainers(workImg, "animeWork");
-            animeContainers(section, "anime");
+            animeContainers(timelineItem, "animeTimeline");
         }
     })
     // to load the animations
     animeContainers(module, "anime");
     animeContainers(workImg, "animeWork");
-    animeContainers(section, "anime");
-
+    animeContainers(timelineItem, "animeTimeline");
 
 }

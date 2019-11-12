@@ -259,7 +259,7 @@ var works = [{
         category: "Type Design",
         thumb: "images/works/type/type_06.jpg",
         url: "works/type.html",
-        fullClass: false,
+        fullClass: true,
         featured: false,
     }
 ];
