@@ -1,0 +1,241 @@
+@import url("https://fonts.googleapis.com/css?family=Barlow+Condensed:300,400,500,600,700,800,900|Barlow:300,400,500,600,700,800,900&display=swap");
+
+$font-01: "Barlow",
+sans-serif;
+$font-02: "Barlow Condensed",
+sans-serif;
+
+
+$neu-01: #454660;
+$neu-02: #343549;
+$neu-03: #292A3A;
+
+
+
+:root {
+    --m-01: #8866E9;
+    --m-02: #5E38CC;
+    --m-03: #B1B2D6;
+    --g-01: linear-gradient(95deg, var(--m-01), var(--m-02));
+}
+
+[data-theme="green"] {
+    --m-01: #77E9E2;
+    --m-02: #1BD9CD;
+    --m-03: #AFE3E0;
+    --g-01: linear-gradient(95deg, var(--m-01), var(--m-02));
+}
+
+[data-theme="blue"] {
+    --m-01: #4EC4F6;
+    --m-02: #0495D2;
+    --m-03: #B6D7E4;
+    --g-01: linear-gradient(95deg, var(--m-01), var(--m-02));
+}
+
+[data-theme="pink"] {
+    --m-01: #D251A6;
+    --m-02: #BB1B85;
+    --m-03: #DAB7CE;
+    --g-01: linear-gradient(95deg, var(--m-01), var(--m-02));
+}
+
+[data-theme="orange"] {
+    --m-01: #FF906D;
+    --m-02: #E55426;
+    --m-03: #FCC2AF;
+    --g-01: linear-gradient(95deg, var(--m-01), var(--m-02));
+}
+
+
+@mixin lg {
+    @media screen and (max-width: 1240px) {
+        @content;
+    }
+}
+
+@mixin md {
+    @media screen and (max-width: 1023px) {
+        @content;
+    }
+}
+
+@mixin sm {
+    @media screen and (max-width: 799px) {
+        @content;
+    }
+}
+
+@mixin xs {
+    @media screen and (max-width: 511px) {
+        @content;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li,
+button,
+a,
+i,
+input,
+body {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: 0;
+    -webkit-tap-highlight-color: transparent;
+    text-decoration: none;
+    color: inherit;
+
+    &:focus {
+        outline: 0;
+    }
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    height: auto;
+    font-family: $font-01;
+    background: $neu-03;
+
+
+}
+
+.logo {
+    position: fixed;
+    z-index: 5;
+    bottom: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 100%;
+    backdrop-filter: blur(5px);
+
+    img {
+
+        width: 55%;
+        height: 55%;
+        transform: translateY(-1px);
+        opacity: 0.8;
+    }
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 40px;
+    box-sizing: border-box;
+
+    @include sm {
+        padding: 0;
+    }
+
+    .container {
+        max-width: 860px;
+        width: 100%;
+        height: 500px;
+        margin: 0 auto;
+
+        @include sm {
+            height: 100%;
+        }
+
+        .settings_modal {
+            display: flex;
+            background: $neu-02;
+            height: 100%;
+            width: 100%;
+
+            .left {
+                background: $neu-01;
+                width: 100%;
+                max-width: 220px;
+                height: 100%;
+                transition: all 0.6s ease;
+
+                @include sm {
+                    max-width: 60px;
+                    position: absolute;
+                }
+
+                .icon {
+                    width: 40px;
+                    height: 40px;
+                    background-color: white;
+                    display: none;
+                    position: absolute;
+                    right: 10px;
+                    top: 10px;
+
+                    @include sm {
+                        display: block;
+                    }
+                }
+
+                .settings_options {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    height: 100%;
+
+                    @include sm {
+                        display: none;
+
+                    }
+
+                    .side_link {
+                        width: calc(100% - 40px);
+                        height: 40px;
+                        display: flex;
+                        align-items: center;
+                        background-color: rgba($neu-03, 0.5);
+                    }
+                }
+
+                &.show {
+                    display: block;
+                    max-width: 90%;
+                    transition: all 0.6s ease;
+
+                    .icon {}
+
+                    .settings_options {
+                        display: flex;
+                    }
+                }
+
+            }
+
+            .right {
+                background: red;
+                width: 100%;
+                height: 100%;
+                //grid-column: 2/3;
+            }
+
+            p {
+                width: 100%;
+                transition: all 0.6s ease;
+                ;
+            }
+        }
+    }
+}
