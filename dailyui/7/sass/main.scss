@@ -231,6 +231,7 @@ body {
                     justify-content: center;
                     align-items: center;
                     z-index: 2;
+                    transition: all 0.4s ease;
 
 
                     span {
@@ -419,12 +420,20 @@ body {
                 .general {
                     margin-bottom: 50px;
 
+                    @include sm {
+                        margin-bottom: 50px;
+                    }
+
                     .toggle_options {
                         .option {
                             display: flex;
                             align-items: center;
                             margin-bottom: 10px;
                             height: 30px;
+
+                            @include sm {
+                                margin-bottom: 20px;
+                            }
 
                             &:last-child {
                                 margin-bottom: 0px;
@@ -484,6 +493,10 @@ body {
 
                             &:last-child {
                                 margin-bottom: 0;
+                            }
+
+                            @include sm {
+                                margin-bottom: 40px;
                             }
 
                             .text {
@@ -593,6 +606,14 @@ body {
                                     transition: all 0.2s ease;
                                     box-shadow: inset 0px 0px 0px 1px rgba(white, 0.5), 3px 5px 20px rgba(0, 0, 0, 0.15);
                                     cursor: pointer;
+
+                                    @include sm {
+                                        margin-right: 20px;
+                                    }
+
+                                    &:last-child {
+                                        margin-right: 0;
+                                    }
 
                                     &.c_purple {
                                         background: $purple;

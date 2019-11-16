@@ -223,6 +223,8 @@ body {
       -ms-flex-align: center;
           align-items: center;
   z-index: 2;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
 
 .wrapper .container .settings_modal .left .icon span {
@@ -429,6 +431,12 @@ body {
   margin-bottom: 50px;
 }
 
+@media screen and (max-width: 799px) {
+  .wrapper .container .settings_modal .right .general {
+    margin-bottom: 50px;
+  }
+}
+
 .wrapper .container .settings_modal .right .general .toggle_options .option {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -438,6 +446,12 @@ body {
           align-items: center;
   margin-bottom: 10px;
   height: 30px;
+}
+
+@media screen and (max-width: 799px) {
+  .wrapper .container .settings_modal .right .general .toggle_options .option {
+    margin-bottom: 20px;
+  }
 }
 
 .wrapper .container .settings_modal .right .general .toggle_options .option:last-child {
@@ -497,6 +511,12 @@ body {
 
 .wrapper .container .settings_modal .right .appearance .appearance_options .option:last-child {
   margin-bottom: 0;
+}
+
+@media screen and (max-width: 799px) {
+  .wrapper .container .settings_modal .right .appearance .appearance_options .option {
+    margin-bottom: 40px;
+  }
 }
 
 .wrapper .container .settings_modal .right .appearance .appearance_options .option .text {
@@ -635,6 +655,16 @@ body {
   -webkit-box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 0.5), 3px 5px 20px rgba(0, 0, 0, 0.15);
           box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 0.5), 3px 5px 20px rgba(0, 0, 0, 0.15);
   cursor: pointer;
+}
+
+@media screen and (max-width: 799px) {
+  .wrapper .container .settings_modal .right .appearance .appearance_options .option .themes .color {
+    margin-right: 20px;
+  }
+}
+
+.wrapper .container .settings_modal .right .appearance .appearance_options .option .themes .color:last-child {
+  margin-right: 0;
 }
 
 .wrapper .container .settings_modal .right .appearance .appearance_options .option .themes .color.c_purple {
