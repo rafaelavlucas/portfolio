@@ -10,13 +10,14 @@ $neu-01: #454660;
 $neu-02: #343549;
 $neu-03: #292A3A;
 $purple: #8866E9;
-$green: #1BD9CD;
-$blue: #4EC4F6;
+$green: #04b9ae;
+$blue: #00a1e5;
 $pink: #D251A6;
 $orange: #FF906D;
 
 
-
+$cubic: cubic-bezier(0.77, 0.14, 0.58, 1.49);
+$cubic2: cubic-bezier(0.18, 0.89, 0.32, 1.15);
 
 :root {
     --m-01: #8866E9;
@@ -42,15 +43,15 @@ $orange: #FF906D;
 }
 
 [data-theme="green"] {
-    --m-01: #77E9E2;
-    --m-02: #1BD9CD;
-    --m-03: #AFE3E0;
+    --m-01: #04b9ae;
+    --m-02: #027b77;
+    --m-03: #a3cac7;
     --g-01: linear-gradient(95deg, var(--m-01), var(--m-02));
 }
 
 [data-theme="blue"] {
-    --m-01: #4EC4F6;
-    --m-02: #0495D2;
+    --m-01: #00a1e5;
+    --m-02: #006bbb;
     --m-03: #B6D7E4;
     --g-01: linear-gradient(95deg, var(--m-01), var(--m-02));
 }
@@ -63,9 +64,9 @@ $orange: #FF906D;
 }
 
 [data-theme="orange"] {
-    --m-01: #FF906D;
+    --m-01: #ff7b52;
     --m-02: #E55426;
-    --m-03: #FCC2AF;
+    --m-03: #e2c5bb;
     --g-01: linear-gradient(95deg, var(--m-01), var(--m-02));
 }
 
@@ -134,8 +135,7 @@ body {
     height: auto;
     font-family: $font-01;
     background: $neu-03;
-
-
+    overflow-x: hidden;
 }
 
 .logo {
@@ -184,10 +184,11 @@ body {
         margin-bottom: 40px;
         transition: all 0.4s ease;
 
+
         @include sm {
             height: 100%;
             margin-top: 0px;
-            margin-bottom: 00px;
+            margin-bottom: 0px;
         }
 
         .settings_modal {
@@ -211,12 +212,23 @@ body {
                 border-radius: 6px 0px 0px 6px;
                 z-index: 2;
 
-
                 @include sm {
                     max-width: 50px;
                     position: absolute;
                     border-radius: 0px;
                     height: 100%;
+
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        background: $neu-03;
+                        width: 0;
+                        height: 100%;
+                        left: 100%;
+                        border-radius: 3px 0px 0px 3px;
+                        transition: all 0.6s ease;
+                        opacity: 0.8;
+                    }
                 }
 
                 .icon {
@@ -296,8 +308,6 @@ body {
 
                         span {
                             z-index: 1;
-
-
                         }
 
                         &:before {
@@ -355,7 +365,14 @@ body {
                 &.show {
                     display: flex;
                     max-width: 220px;
-                    transition: all 0.6s ease;
+                    transition: all 0.8s $cubic;
+
+                    &:before {
+                        transition: all 0.6s ease;
+                        width: calc(100vw - 220px);
+                        // left: 220px;
+
+                    }
 
                     .icon {
                         right: 10px;
@@ -378,6 +395,7 @@ body {
 
 
                         .side_link {
+                            transition: all 0.4s $cubic2;
                             transform: translateX(0%);
                             opacity: 1;
 
@@ -430,6 +448,7 @@ body {
                             align-items: center;
                             margin-bottom: 10px;
                             height: 30px;
+                            position: relative;
 
                             @include sm {
                                 margin-bottom: 20px;
@@ -446,9 +465,9 @@ body {
                                 box-shadow: inset 0px 0px 0px 1px rgba(white, 0.3), 3px 5px 20px rgba(0, 0, 0, 0.2);
                                 border-radius: 30px;
                                 transition: all 0.2s ease;
-                                position: relative;
+                                position: absolute;
                                 cursor: pointer;
-                                margin-right: 20px;
+
 
                                 &:before {
                                     position: absolute;
@@ -478,7 +497,7 @@ body {
                             }
 
                             p {
-                                width: 80%;
+                                padding-left: 60px
                             }
                         }
                     }
@@ -512,7 +531,7 @@ body {
                                 .letter {
                                     font-weight: 600;
                                     color: white;
-                                    margin-left: 20px;
+                                    margin-right: 20px;
                                     cursor: pointer;
                                     padding: 5px;
                                     display: flex;
@@ -524,7 +543,7 @@ body {
                                     }
 
                                     @include xs {
-                                        margin-left: 10px;
+                                        margin-right: 10px;
                                     }
 
 
@@ -597,48 +616,59 @@ body {
                                 height: 24px;
                                 align-items: center;
 
-                                .color {
-                                    width: 20px;
-                                    height: 20px;
+                                .color_circle {
+                                    width: 24px;
+                                    height: 24px;
                                     display: flex;
-                                    margin-right: 15px;
-                                    border-radius: 100%;
-                                    transition: all 0.2s ease;
-                                    box-shadow: inset 0px 0px 0px 1px rgba(white, 0.5), 3px 5px 20px rgba(0, 0, 0, 0.15);
-                                    cursor: pointer;
+                                    justify-content: center;
+                                    align-items: center;
+                                    margin-right: 20px;
+
 
                                     @include sm {
                                         margin-right: 20px;
                                     }
 
-                                    &:last-child {
-                                        margin-right: 0;
-                                    }
+                                    .color {
+                                        width: 20px;
+                                        height: 20px;
+                                        display: block;
+                                        border-radius: 100%;
+                                        transition: all 0.2s ease;
+                                        box-shadow: inset 0px 0px 0px 1px rgba(white, 0.5), 3px 5px 20px rgba(0, 0, 0, 0.15);
+                                        cursor: pointer;
 
-                                    &.c_purple {
-                                        background: $purple;
-                                    }
 
-                                    &.c_green {
-                                        background: $green;
-                                    }
 
-                                    &.c_blue {
-                                        background: $blue;
-                                    }
+                                        &:last-child {
+                                            margin-right: 0;
+                                        }
 
-                                    &.c_pink {
-                                        background: $pink;
-                                    }
+                                        &.c_purple {
+                                            background: $purple;
+                                        }
 
-                                    &.c_orange {
-                                        background: $orange;
-                                    }
+                                        &.c_green {
+                                            background: $green;
+                                        }
 
-                                    &.active_color {
-                                        width: 24px;
-                                        height: 24px;
-                                        box-shadow: inset 0px 0px 0px 2px white;
+                                        &.c_blue {
+                                            background: $blue;
+                                        }
+
+                                        &.c_pink {
+                                            background: $pink;
+                                        }
+
+                                        &.c_orange {
+                                            background: $orange;
+                                        }
+
+                                        &.active_color {
+                                            width: 24px;
+                                            height: 24px;
+                                            box-shadow: inset 0px 0px 0px 2px white;
+                                        }
                                     }
                                 }
                             }

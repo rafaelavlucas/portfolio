@@ -22,15 +22,15 @@
 }
 
 [data-theme="green"] {
-  --m-01: #77E9E2;
-  --m-02: #1BD9CD;
-  --m-03: #AFE3E0;
+  --m-01: #04b9ae;
+  --m-02: #027b77;
+  --m-03: #a3cac7;
   --g-01: linear-gradient(95deg, var(--m-01), var(--m-02));
 }
 
 [data-theme="blue"] {
-  --m-01: #4EC4F6;
-  --m-02: #0495D2;
+  --m-01: #00a1e5;
+  --m-02: #006bbb;
   --m-03: #B6D7E4;
   --g-01: linear-gradient(95deg, var(--m-01), var(--m-02));
 }
@@ -43,9 +43,9 @@
 }
 
 [data-theme="orange"] {
-  --m-01: #FF906D;
+  --m-01: #ff7b52;
   --m-02: #E55426;
-  --m-03: #FCC2AF;
+  --m-03: #e2c5bb;
   --g-01: linear-gradient(95deg, var(--m-01), var(--m-02));
 }
 
@@ -95,6 +95,7 @@ body {
   height: auto;
   font-family: "Barlow", sans-serif;
   background: #292A3A;
+  overflow-x: hidden;
 }
 
 .logo {
@@ -166,7 +167,7 @@ body {
   .wrapper .container {
     height: 100%;
     margin-top: 0px;
-    margin-bottom: 00px;
+    margin-bottom: 0px;
   }
 }
 
@@ -204,6 +205,18 @@ body {
     position: absolute;
     border-radius: 0px;
     height: 100%;
+  }
+  .wrapper .container .settings_modal .left:before {
+    content: '';
+    position: absolute;
+    background: #292A3A;
+    width: 0;
+    height: 100%;
+    left: 100%;
+    border-radius: 3px 0px 0px 3px;
+    -webkit-transition: all 0.6s ease;
+    transition: all 0.6s ease;
+    opacity: 0.8;
   }
 }
 
@@ -361,8 +374,14 @@ body {
   display: -ms-flexbox;
   display: flex;
   max-width: 220px;
+  -webkit-transition: all 0.8s cubic-bezier(0.77, 0.14, 0.58, 1.49);
+  transition: all 0.8s cubic-bezier(0.77, 0.14, 0.58, 1.49);
+}
+
+.wrapper .container .settings_modal .left.show:before {
   -webkit-transition: all 0.6s ease;
   transition: all 0.6s ease;
+  width: calc(100vw - 220px);
 }
 
 .wrapper .container .settings_modal .left.show .icon {
@@ -388,6 +407,8 @@ body {
 }
 
 .wrapper .container .settings_modal .left.show .links_container .side_link {
+  -webkit-transition: all 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.15);
+  transition: all 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.15);
   -webkit-transform: translateX(0%);
           transform: translateX(0%);
   opacity: 1;
@@ -446,6 +467,7 @@ body {
           align-items: center;
   margin-bottom: 10px;
   height: 30px;
+  position: relative;
 }
 
 @media screen and (max-width: 799px) {
@@ -467,9 +489,8 @@ body {
   border-radius: 30px;
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
-  position: relative;
+  position: absolute;
   cursor: pointer;
-  margin-right: 20px;
 }
 
 .wrapper .container .settings_modal .right .general .toggle_options .option .toggle:before {
@@ -499,7 +520,7 @@ body {
 }
 
 .wrapper .container .settings_modal .right .general .toggle_options .option p {
-  width: 80%;
+  padding-left: 60px;
 }
 
 .wrapper .container .settings_modal .right .appearance .appearance_options .option {
@@ -537,7 +558,7 @@ body {
 .wrapper .container .settings_modal .right .appearance .appearance_options .option .font_size .letter {
   font-weight: 600;
   color: white;
-  margin-left: 20px;
+  margin-right: 20px;
   cursor: pointer;
   padding: 5px;
   display: -webkit-box;
@@ -557,7 +578,7 @@ body {
 
 @media screen and (max-width: 511px) {
   .wrapper .container .settings_modal .right .appearance .appearance_options .option .font_size .letter {
-    margin-left: 10px;
+    margin-right: 10px;
   }
 }
 
@@ -642,13 +663,31 @@ body {
           align-items: center;
 }
 
-.wrapper .container .settings_modal .right .appearance .appearance_options .option .themes .color {
-  width: 20px;
-  height: 20px;
+.wrapper .container .settings_modal .right .appearance .appearance_options .option .themes .color_circle {
+  width: 24px;
+  height: 24px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-right: 15px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 20px;
+}
+
+@media screen and (max-width: 799px) {
+  .wrapper .container .settings_modal .right .appearance .appearance_options .option .themes .color_circle {
+    margin-right: 20px;
+  }
+}
+
+.wrapper .container .settings_modal .right .appearance .appearance_options .option .themes .color_circle .color {
+  width: 20px;
+  height: 20px;
+  display: block;
   border-radius: 100%;
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
@@ -657,37 +696,31 @@ body {
   cursor: pointer;
 }
 
-@media screen and (max-width: 799px) {
-  .wrapper .container .settings_modal .right .appearance .appearance_options .option .themes .color {
-    margin-right: 20px;
-  }
-}
-
-.wrapper .container .settings_modal .right .appearance .appearance_options .option .themes .color:last-child {
+.wrapper .container .settings_modal .right .appearance .appearance_options .option .themes .color_circle .color:last-child {
   margin-right: 0;
 }
 
-.wrapper .container .settings_modal .right .appearance .appearance_options .option .themes .color.c_purple {
+.wrapper .container .settings_modal .right .appearance .appearance_options .option .themes .color_circle .color.c_purple {
   background: #8866E9;
 }
 
-.wrapper .container .settings_modal .right .appearance .appearance_options .option .themes .color.c_green {
-  background: #1BD9CD;
+.wrapper .container .settings_modal .right .appearance .appearance_options .option .themes .color_circle .color.c_green {
+  background: #04b9ae;
 }
 
-.wrapper .container .settings_modal .right .appearance .appearance_options .option .themes .color.c_blue {
-  background: #4EC4F6;
+.wrapper .container .settings_modal .right .appearance .appearance_options .option .themes .color_circle .color.c_blue {
+  background: #00a1e5;
 }
 
-.wrapper .container .settings_modal .right .appearance .appearance_options .option .themes .color.c_pink {
+.wrapper .container .settings_modal .right .appearance .appearance_options .option .themes .color_circle .color.c_pink {
   background: #D251A6;
 }
 
-.wrapper .container .settings_modal .right .appearance .appearance_options .option .themes .color.c_orange {
+.wrapper .container .settings_modal .right .appearance .appearance_options .option .themes .color_circle .color.c_orange {
   background: #FF906D;
 }
 
-.wrapper .container .settings_modal .right .appearance .appearance_options .option .themes .color.active_color {
+.wrapper .container .settings_modal .right .appearance .appearance_options .option .themes .color_circle .color.active_color {
   width: 24px;
   height: 24px;
   -webkit-box-shadow: inset 0px 0px 0px 2px white;
