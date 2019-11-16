@@ -16,7 +16,7 @@ $pink: #D251A6;
 $orange: #FF906D;
 
 
-$cubic: cubic-bezier(0.77, 0.14, 0.58, 1.49);
+$cubic: cubic-bezier(0.4, 0.35, 0, 1.53);
 $cubic2: cubic-bezier(0.18, 0.89, 0.32, 1.15);
 
 :root {
@@ -96,7 +96,7 @@ $cubic2: cubic-bezier(0.18, 0.89, 0.32, 1.15);
 }
 
 @mixin xxs {
-    @media screen and (max-width: 511px) {
+    @media screen and (max-width: 340px) {
         @content;
     }
 }
@@ -518,9 +518,17 @@ body {
                                 margin-bottom: 40px;
                             }
 
+                            @include xxs {
+                                flex-direction: column;
+                            }
+
                             .text {
                                 margin-right: 20px;
                                 transition: all 0.3s ease;
+
+                                @include xxs {
+                                    margin-bottom: 20px;
+                                }
                             }
 
                             .font_size {
@@ -616,6 +624,7 @@ body {
                                 height: 24px;
                                 align-items: center;
 
+
                                 .color_circle {
                                     width: 24px;
                                     height: 24px;
@@ -627,6 +636,10 @@ body {
 
                                     @include sm {
                                         margin-right: 20px;
+                                    }
+
+                                    @include xxs {
+                                        margin-right: 15px;
                                     }
 
                                     .color {
