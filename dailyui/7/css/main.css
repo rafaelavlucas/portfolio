@@ -329,8 +329,8 @@ body {
   height: 100%;
   left: 0;
   border-radius: 3px 0px 0px 3px;
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
+  -webkit-transition: all 0.4s cubic-bezier(0.98, 0.04, 0.25, 1);
+  transition: all 0.4s cubic-bezier(0.98, 0.04, 0.25, 1);
 }
 
 .wrapper .container .settings_modal .left .links_container .side_link:hover {
