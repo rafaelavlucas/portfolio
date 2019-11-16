@@ -9,6 +9,12 @@ sans-serif;
 $neu-01: #454660;
 $neu-02: #343549;
 $neu-03: #292A3A;
+$purple: #8866E9;
+$green: #1BD9CD;
+$blue: #4EC4F6;
+$pink: #D251A6;
+$orange: #FF906D;
+
 
 
 
@@ -17,6 +23,22 @@ $neu-03: #292A3A;
     --m-02: #5E38CC;
     --m-03: #B1B2D6;
     --g-01: linear-gradient(95deg, var(--m-01), var(--m-02));
+    --l: 18px;
+    --m: 14px;
+    --s: 14px;
+}
+
+[data-size="large"] {
+    --l: 20px;
+    --m: 16px;
+    --s: 16px;
+}
+
+
+[data-size="small"] {
+    --l: 16px;
+    --m: 12px;
+    --s: 10px;
 }
 
 [data-theme="green"] {
@@ -67,6 +89,12 @@ $neu-03: #292A3A;
 }
 
 @mixin xs {
+    @media screen and (max-width: 511px) {
+        @content;
+    }
+}
+
+@mixin xxs {
     @media screen and (max-width: 511px) {
         @content;
     }
@@ -140,7 +168,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    padding: 40px;
+    padding: 0 40px;
     box-sizing: border-box;
 
     @include sm {
@@ -150,11 +178,16 @@ body {
     .container {
         max-width: 860px;
         width: 100%;
-        height: 500px;
+        min-height: 500px;
         margin: 0 auto;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        transition: all 0.4s ease;
 
         @include sm {
             height: 100%;
+            margin-top: 0px;
+            margin-bottom: 00px;
         }
 
         .settings_modal {
@@ -162,79 +195,470 @@ body {
             background: $neu-02;
             height: 100%;
             width: 100%;
+            border-radius: 6px;
 
+            @include sm {
+                border-radius: 0px;
+            }
+
+            // Left column with Links
             .left {
                 background: $neu-01;
                 width: 100%;
                 max-width: 220px;
-                height: 100%;
-                transition: all 0.6s ease;
+                transition: all 0.6s 0.2s ease;
+                box-shadow: 10px 0px 34px rgba(0, 0, 0, 0.21);
+                border-radius: 6px 0px 0px 6px;
+                z-index: 2;
+
 
                 @include sm {
-                    max-width: 60px;
+                    max-width: 50px;
                     position: absolute;
+                    border-radius: 0px;
+                    height: 100%;
                 }
 
                 .icon {
                     width: 40px;
                     height: 40px;
-                    background-color: white;
                     display: none;
                     position: absolute;
-                    right: 10px;
+                    right: 5px;
                     top: 10px;
+                    cursor: pointer;
+                    display: none;
+                    justify-content: center;
+                    align-items: center;
+                    z-index: 2;
+
+
+                    span {
+                        position: absolute;
+                        background-color: var(--m-03);
+                        width: 24px;
+                        height: 2px;
+                        border-radius: 4px;
+                        transition: all 0.4s ease;
+
+
+                        &:nth-child(1) {
+                            transform: translateY(-8px);
+                        }
+
+                        &:nth-child(3) {
+                            transform: translateY(8px);
+                        }
+                    }
 
                     @include sm {
-                        display: block;
+                        display: flex;
                     }
                 }
 
-                .settings_options {
+                // Side Links Container
+                .links_container {
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     flex-direction: column;
+                    width: 100%;
                     height: 100%;
 
                     @include sm {
-                        display: none;
 
+                        //display: none;
                     }
 
+                    // The links 
+
                     .side_link {
-                        width: calc(100% - 40px);
+                        width: calc(220px - 40px);
                         height: 40px;
                         display: flex;
                         align-items: center;
                         background-color: rgba($neu-03, 0.5);
+                        font-family: $font-01;
+                        text-transform: uppercase;
+                        font-weight: 500;
+                        font-size: var(--m);
+                        letter-spacing: 0.09em;
+                        padding: 0 20px;
+                        box-sizing: border-box;
+                        color: var(--m-03);
+                        position: relative;
+                        margin: 10px 0;
+                        border-radius: 3px;
+                        cursor: pointer;
+                        transition: all 0.4s 0s ease;
+
+
+                        span {
+                            z-index: 1;
+
+
+                        }
+
+                        &:before {
+                            content: '';
+                            position: absolute;
+                            background: var(--g-01);
+                            width: 3px;
+                            height: 100%;
+                            left: 0;
+                            border-radius: 3px 0px 0px 3px;
+                            transition: all 0.4s ease;
+                        }
+
+                        &:hover {
+                            color: white;
+
+                            &:before {
+                                width: 100%;
+                                border-radius: 3px;
+                            }
+
+                            @include sm {
+                                color: var(--m-03);
+
+                                &:before {
+                                    width: 3px;
+                                    border-radius: 3px 0px 0px 3px;
+                                }
+                            }
+                        }
+
+                        //The Active link
+                        &.active {
+                            color: white;
+                            width: 210px;
+                            left: 15px;
+                            box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.1);
+
+                            &:before {
+                                width: 100%;
+                                border-radius: 3px;
+                            }
+                        }
+
+                        @include sm {
+                            transform: translateX(-100%);
+                            opacity: 0;
+
+                        }
                     }
                 }
+
+                //To Show the Left Container in mobile
 
                 &.show {
-                    display: block;
-                    max-width: 90%;
+                    display: flex;
+                    max-width: 220px;
                     transition: all 0.6s ease;
 
-                    .icon {}
+                    .icon {
+                        right: 10px;
 
-                    .settings_options {
+                        span {
+                            &:nth-child(1) {
+                                width: 13px;
+                                transform: translate(-8px, -4px) rotate(-45deg);
+                            }
+
+                            &:nth-child(3) {
+                                width: 13px;
+                                transform: translate(-8px, 4px) rotate(45deg);
+                            }
+                        }
+                    }
+
+                    .links_container {
                         display: flex;
+
+
+                        .side_link {
+                            transform: translateX(0%);
+                            opacity: 1;
+
+
+                            &:nth-child(1) {
+                                transition-delay: 0.4s;
+                            }
+
+                            &:nth-child(2) {
+                                transition-delay: 0.6s;
+                            }
+
+                            &:nth-child(3) {
+                                transition-delay: 0.8s;
+                            }
+
+                            &:nth-child(4) {
+                                transition-delay: 1s;
+                            }
+                        }
+
                     }
                 }
 
             }
 
+            // The Right Side
+
             .right {
-                background: red;
+                //background: red;
                 width: 100%;
                 height: 100%;
-                //grid-column: 2/3;
-            }
+                padding: 50px 10%;
+                box-sizing: border-box;
 
-            p {
-                width: 100%;
-                transition: all 0.6s ease;
-                ;
+                @include sm {
+                    padding: 50px 20px 50px 20%;
+                }
+
+                .general {
+                    margin-bottom: 50px;
+
+                    .toggle_options {
+                        .option {
+                            display: flex;
+                            align-items: center;
+                            margin-bottom: 10px;
+                            height: 30px;
+
+                            &:last-child {
+                                margin-bottom: 0px;
+                            }
+
+                            .toggle {
+                                width: 40px;
+                                height: 20px;
+                                background: var(--m-03);
+                                box-shadow: inset 0px 0px 0px 1px rgba(white, 0.3), 3px 5px 20px rgba(0, 0, 0, 0.2);
+                                border-radius: 30px;
+                                transition: all 0.2s ease;
+                                position: relative;
+                                cursor: pointer;
+                                margin-right: 20px;
+
+                                &:before {
+                                    position: absolute;
+                                    content: '';
+                                    width: 16px;
+                                    height: 16px;
+                                    background: white;
+                                    border-radius: 100%;
+                                    top: 2px;
+                                    left: 2px;
+                                    transition: all 0.4s cubic-bezier(0.99, 0.01, 0.29, 1.24);
+                                    transform: translateX(0px);
+                                    box-shadow: 1px 1px 7px rgba($neu-02, 0.4), inset 3px 2px 5px rgba($neu-01, 0.3), ;
+
+                                }
+
+                                &.off {
+                                    background: var(--m-01);
+
+                                    &:before {
+                                        transform: translateX(20px);
+
+                                    }
+                                }
+
+
+                            }
+
+                            p {
+                                width: 80%;
+                            }
+                        }
+                    }
+                }
+
+                .appearance {
+                    .appearance_options {
+
+                        .option {
+                            display: flex;
+                            margin-bottom: 30px;
+
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
+
+                            .text {
+                                margin-right: 20px;
+                                transition: all 0.3s ease;
+                            }
+
+                            .font_size {
+                                display: flex;
+                                align-items: center;
+
+
+                                .letter {
+                                    font-weight: 600;
+                                    color: white;
+                                    margin-left: 20px;
+                                    cursor: pointer;
+                                    padding: 5px;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+
+                                    &:last-child {
+                                        margin-bottom: 0;
+                                    }
+
+                                    @include xs {
+                                        margin-left: 10px;
+                                    }
+
+
+                                    &.size_s {
+                                        font-size: 14px;
+                                        width: 20px;
+                                        height: 20px;
+                                    }
+
+                                    &.size_m {
+                                        font-size: 18px;
+                                        width: 25px;
+                                        height: 25px;
+                                    }
+
+                                    &.size_l {
+                                        font-size: 22px;
+                                        width: 30px;
+                                        height: 30px;
+                                    }
+
+                                    &.select {
+                                        position: relative;
+
+
+                                        span {
+                                            z-index: 1;
+                                        }
+
+
+                                        &:before {
+                                            content: '';
+                                            position: absolute;
+                                            background-color: $neu-01;
+                                            width: 100%;
+                                            height: 100%;
+                                            border-radius: 100%;
+                                            box-shadow: inset 0px 0px 0px 1px rgba(white, 0.2);
+                                            transition: all 0.3s ease;
+                                            animation: select 0.3s ease both;
+
+                                            @keyframes select {
+                                                0% {
+                                                    width: 100%;
+                                                    height: 100%;
+                                                }
+
+                                                50% {
+                                                    width: calc(100% + 5px);
+                                                    height: calc(100% + 5px);
+                                                }
+
+                                                100% {
+                                                    width: 100%;
+                                                    height: 100%;
+                                                }
+                                            }
+
+
+                                        }
+
+
+                                    }
+
+                                }
+                            }
+
+                            .themes {
+                                display: flex;
+                                height: 24px;
+                                align-items: center;
+
+                                .color {
+                                    width: 20px;
+                                    height: 20px;
+                                    display: flex;
+                                    margin-right: 15px;
+                                    border-radius: 100%;
+                                    transition: all 0.2s ease;
+                                    box-shadow: inset 0px 0px 0px 1px rgba(white, 0.5), 3px 5px 20px rgba(0, 0, 0, 0.15);
+                                    cursor: pointer;
+
+                                    &.c_purple {
+                                        background: $purple;
+                                    }
+
+                                    &.c_green {
+                                        background: $green;
+                                    }
+
+                                    &.c_blue {
+                                        background: $blue;
+                                    }
+
+                                    &.c_pink {
+                                        background: $pink;
+                                    }
+
+                                    &.c_orange {
+                                        background: $orange;
+                                    }
+
+                                    &.active_color {
+                                        width: 24px;
+                                        height: 24px;
+                                        box-shadow: inset 0px 0px 0px 2px white;
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+                }
+
+                .title {
+                    color: white;
+                    font-size: var(--l);
+                    font-weight: 500;
+                    letter-spacing: 0.04em;
+                    text-transform: uppercase;
+                    position: relative;
+                    height: 40px;
+                    margin-bottom: 30px;
+                    transition: all 0.3s ease;
+
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        background: var(--m-01);
+                        width: 30px;
+                        height: 2px;
+                        left: 0;
+                        bottom: 0;
+                        border-radius: 3px 0px 0px 3px;
+                        transition: all 0.4s ease;
+                    }
+                }
+
+                p {
+                    font-size: var(--m);
+                    line-height: auto;
+                    display: flex;
+                    align-items: center;
+                    letter-spacing: 0.04em;
+                    color: var(--m-03);
+                    transition: all 0.3s ease;
+                }
             }
         }
     }
