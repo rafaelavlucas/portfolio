@@ -89,7 +89,7 @@ body {
     height: auto;
     font-family: $font-01;
     background: $bg-01;
-    overflow-x: hidden;
+
 }
 
 .logo {
@@ -124,6 +124,8 @@ body {
     height: 100vh;
     padding: 0 40px;
     box-sizing: border-box;
+    overflow-x: hidden;
+
 
     @include sm {
         padding: 0;
@@ -144,6 +146,7 @@ body {
             width: 100vw;
             height: 100vh;
             vertical-align: middle;
+
 
         }
 
