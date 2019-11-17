@@ -1,0 +1,196 @@
+@import url("https://fonts.googleapis.com/css?family=Barlow+Condensed:300,400,500,600,700,800,900|Barlow:300,400,500,600,700,800,900&display=swap");
+
+$font-01: "Barlow",
+sans-serif;
+$font-02: "Barlow Condensed",
+sans-serif;
+
+
+$neu-01: #454660;
+$neu-02: #343549;
+$neu-03: #292A3A;
+$purple: #8866E9;
+$green: #04b9ae;
+$blue: #00a1e5;
+$pink: #D251A6;
+$orange: #FF906D;
+
+
+$cubic: cubic-bezier(0.4, 0.35, 0, 1.53);
+$cubic2: cubic-bezier(0.18, 0.89, 0.32, 1.15);
+
+
+
+@mixin lg {
+    @media screen and (max-width: 1240px) {
+        @content;
+    }
+}
+
+@mixin md {
+    @media screen and (max-width: 1023px) {
+        @content;
+    }
+}
+
+@mixin sm {
+    @media screen and (max-width: 799px) {
+        @content;
+    }
+}
+
+@mixin xs {
+    @media screen and (max-width: 511px) {
+        @content;
+    }
+}
+
+@mixin xxs {
+    @media screen and (max-width: 340px) {
+        @content;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li,
+button,
+a,
+i,
+input,
+body {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: 0;
+    -webkit-tap-highlight-color: transparent;
+    text-decoration: none;
+    color: inherit;
+
+    &:focus {
+        outline: 0;
+    }
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    height: auto;
+    font-family: $font-01;
+    background: $neu-03;
+    overflow-x: hidden;
+}
+
+.logo {
+    position: fixed;
+    z-index: 5;
+    bottom: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 100%;
+    backdrop-filter: blur(5px);
+
+    img {
+
+        width: 55%;
+        height: 55%;
+        transform: translateY(-1px);
+        opacity: 0.8;
+    }
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 0 40px;
+    box-sizing: border-box;
+
+    @include sm {
+        padding: 0;
+    }
+
+    .container {
+        margin: 0 auto;
+        transition: all 0.4s ease;
+        width: 400px;
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        border-radius: 100%;
+
+        .scene {
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            vertical-align: middle;
+
+        }
+
+        .one {
+            top: 10% !important;
+            left: 10% !important;
+
+            //transform: translate(-50%, -50%);
+
+            width: 80%;
+            height: 80%;
+            background-color: $neu-02;
+            vertical-align: middle;
+
+            .teste {
+                width: 200px;
+                height: 200px;
+                background-color: #04b9ae;
+            }
+        }
+
+        .two {
+            width: 60%;
+            height: 60%;
+            background-color: $neu-01;
+            top: 20% !important;
+            left: 20% !important;
+        }
+
+        .p404 {
+            width: 60%;
+            height: 60%;
+            font-size: 200px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            color: white;
+            display: flex !important;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 20% !important;
+            left: 20% !important;
+
+        }
+    }
+}
+
+
+
+
+img {
+    //width: 300px;
+}
