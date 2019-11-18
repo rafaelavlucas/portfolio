@@ -150,8 +150,6 @@ nav {
                 position: relative;
                 transition: all 0.3s 0.2s ease;
 
-
-
                 &:last-child {
                     margin-right: 0;
                 }
@@ -438,28 +436,24 @@ nav {
             align-items: center;
             position: absolute;
             z-index: 2;
-            animation: anime404 0.8s cubic-bezier(0.3, 0.8, 1, 1.05) both;
-            animation-delay: 1s;
+            animation: anime404 0.6s cubic-bezier(0.3, 0.8, 1, 1.05) both;
+            animation-delay: 1.2s;
 
             @include sm {
                 font-size: 100px;
             }
 
-
-
             @keyframes anime404 {
                 0% {
                     opacity: 0;
-                    transform: scale(20) skew(20deg, 20deg);
+                    transform: scale(10) skew(20deg, 20deg);
                 }
-
-
             }
 
             &:nth-of-type(2) {
                 color: $bg-02;
                 z-index: 1;
-                animation-delay: 0.8s;
+                animation-delay: 1s;
                 filter: blur(10px);
                 opacity: 0.8;
             }
