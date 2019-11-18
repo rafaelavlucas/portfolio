@@ -78,6 +78,111 @@ body {
   opacity: 0.8;
 }
 
+nav .menu {
+  width: 100%;
+  height: 80px;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 5%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  z-index: 3;
+}
+
+nav .menu .website_name {
+  color: #695681;
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: 1px;
+  background: white;
+  padding: 4px 8px;
+  border-radius: 2px;
+  opacity: 0.5;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+nav .menu .website_name:hover {
+  opacity: 1;
+}
+
+nav .menu .menu_links {
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  opacity: 0.5;
+}
+
+nav .menu .menu_links:hover {
+  opacity: 1;
+}
+
+@media screen and (max-width: 799px) {
+  nav .menu .menu_links {
+    display: none;
+  }
+}
+
+nav .menu .menu_links .link {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-right: 50px;
+  letter-spacing: 2px;
+  position: relative;
+  -webkit-transition: all 0.3s 0.2s ease;
+  transition: all 0.3s 0.2s ease;
+}
+
+nav .menu .menu_links .link:last-child {
+  margin-right: 0;
+}
+
+nav .menu .menu_links .link:before {
+  content: '';
+  position: absolute;
+  width: 0px;
+  height: 4px;
+  background: -webkit-gradient(linear, left top, right top, from(#FFEDC0), to(#FF9D87));
+  background: linear-gradient(90deg, #FFEDC0 0%, #FF9D87 100%);
+  bottom: -10px;
+  border-radius: 4px;
+  -webkit-transition: all 0.4s cubic-bezier(0.82, 0.02, 0.13, 1.26);
+  transition: all 0.4s cubic-bezier(0.82, 0.02, 0.13, 1.26);
+  left: 100%;
+}
+
+nav .menu .menu_links .link:hover {
+  opacity: 1;
+  color: #FB8A8A;
+}
+
+nav .menu .menu_links .link:hover:before {
+  width: 40px;
+  left: 0;
+}
+
+nav .menu .menu_icon {
+  background: blue;
+  width: 40px;
+  height: 40px;
+  display: none;
+}
+
+@media screen and (max-width: 799px) {
+  nav .menu .menu_icon {
+    display: block;
+  }
+}
+
 .wrapper {
   display: -ms-grid;
   display: grid;
@@ -261,7 +366,7 @@ body {
   width: 60%;
   height: 40%;
   min-width: 400px;
-  min-height: 400px;
+  min-height: 500px;
   position: absolute;
   margin: 40px 0;
   -webkit-animation: text 0.6s 1.8s ease backwards;
