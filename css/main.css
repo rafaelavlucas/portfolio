@@ -1514,35 +1514,6 @@ header:hover .header-content {
   }
 }
 
-.works-container .image-container .hide-works {
-  -webkit-animation: hideWorks 4s ease both;
-          animation: hideWorks 4s ease both;
-}
-
-@-webkit-keyframes hideWorks {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes hideWorks {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 .works-container .image {
   cursor: pointer;
   display: -webkit-box;
@@ -2809,12 +2780,12 @@ header:hover .header-content {
 }
 
 .works-page .section-works {
-  padding: 140px 0 0 0;
+  padding: 140px 5% 0 5%;
 }
 
 @media (max-width: 799px) {
   .works-page .section-works {
-    padding: 80px 0 0 0;
+    padding: 80px 20px 0 20px;
   }
 }
 
