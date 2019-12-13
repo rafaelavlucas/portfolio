@@ -3,7 +3,7 @@
     var tagFilter = document.querySelectorAll(".filter"),
         tagFilterAll = document.querySelector(".filter.btn-all"),
         work = document.querySelectorAll(".work"),
-        ze = document.querySelector('.image-container');
+        imgContainer = document.querySelector('.image-container');
 
     tagFilter.forEach(function (el) {
         el.addEventListener("click", filterImages);
@@ -13,9 +13,9 @@
 
     function filterAll() {
         work.forEach(function (el) {
-            el.classList.remove("hide");
-
+            el.style.display = "block";
         });
+
     }
 
     function filterImages(el) {
@@ -25,7 +25,7 @@
 
 
         work.forEach(function (el) {
-            el.classList.add("hide");
+            el.style.display = "none";
             closeFiltersMobile();
         });
 
@@ -34,7 +34,7 @@
         });
 
         filters.forEach(function (el) {
-            el.classList.remove("hide");
+            el.style.display = "block";
             closeFiltersMobile();
         });
 

@@ -1442,12 +1442,13 @@ header:hover .header-content {
 }
 
 .works-container .image-container .work.hide {
-  -webkit-animation: hide 6s ease;
-          animation: hide 6s ease;
+  -webkit-animation: hide 1s ease;
+          animation: hide 1s ease;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
   margin: 0px 10px;
   z-index: -1;
+  opacity: 1;
 }
 
 .works-container .image-container .work.hide .image {
@@ -1464,10 +1465,6 @@ header:hover .header-content {
 }
 
 .works-container .image-container .work.full.hide {
-  -webkit-animation: hide 6s ease;
-          animation: hide 6s ease;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
   margin: 0px 10px;
   z-index: -1;
 }
@@ -1514,6 +1511,35 @@ header:hover .header-content {
     position: absolute;
     height: 0;
     display: none;
+  }
+}
+
+.works-container .image-container .hide-works {
+  -webkit-animation: hideWorks 4s ease both;
+          animation: hideWorks 4s ease both;
+}
+
+@-webkit-keyframes hideWorks {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes hideWorks {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 

@@ -12,6 +12,17 @@ var works = [{
     {
         categoryId: 2,
         categoryName: "ui-design",
+        title: "Scooter App Proposal",
+        year: "2019",
+        category: "UI Design",
+        url: "works/scooterapp.html",
+        thumb: "images/works/scooterapp/scooterapp_01.jpg",
+        fullClass: false,
+        featured: true,
+    },
+    {
+        categoryId: 2,
+        categoryName: "ui-design",
         title: "Landing Page Layout Proposal",
         year: "2019",
         category: "UI Design",
@@ -62,7 +73,7 @@ var works = [{
         thumb: "images/works/quevedoadvent2018/quevedo_advent2018_03.jpg",
         url: "works/quevedoadvent2018.html",
         fullClass: false,
-        featured: true,
+        featured: false,
     },
     {
         categoryId: 3,
@@ -259,7 +270,7 @@ var works = [{
         category: "Type Design",
         thumb: "images/works/type/type_06.jpg",
         url: "works/type.html",
-        fullClass: true,
+        fullClass: false,
         featured: false,
     }
 ];
