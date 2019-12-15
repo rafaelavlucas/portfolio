@@ -2854,14 +2854,13 @@ header:hover .header-content {
 
 .works-page .section-works .description {
   margin-left: 60px;
-  font-size: 15px;
+  font-size: 16px;
   max-width: 600px;
 }
 
 @media (max-width: 799px) {
   .works-page .section-works .description {
     margin-left: 30px;
-    font-size: 13px;
   }
 }
 
@@ -2902,7 +2901,7 @@ header:hover .header-content {
   height: 2px;
   background-color: #698fb7;
   left: -25px;
-  bottom: 8px;
+  top: 18px;
 }
 
 .works-page .works-images {

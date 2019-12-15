@@ -2334,13 +2334,12 @@ header {
 
         .description {
             margin-left: 60px;
-            font-size: 15px;
+            font-size: 16px;
             max-width: 600px;
 
 
             @include sm {
                 margin-left: 30px;
-                font-size: 13px;
             }
 
             p {
@@ -2378,7 +2377,7 @@ header {
                     height: 2px;
                     background-color: $m-01;
                     left: -25px;
-                    bottom: 8px;
+                    top: 18px;
                 }
             }
         }
