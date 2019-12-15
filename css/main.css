@@ -2878,7 +2878,7 @@ header:hover .header-content {
   display: inline-flex;
 }
 
-.works-page .section-works ul {
+.works-page .section-works .description-list {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -2887,14 +2887,14 @@ header:hover .header-content {
   margin-top: 10px;
 }
 
-.works-page .section-works ul li {
+.works-page .section-works .description-list li {
   line-height: 28px;
   position: relative;
   left: 25px;
   font-family: "Source Code Pro", monospace;
 }
 
-.works-page .section-works ul li:before {
+.works-page .section-works .description-list li:before {
   position: absolute;
   content: '';
   width: 15px;
