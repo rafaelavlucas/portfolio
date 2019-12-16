@@ -27,6 +27,9 @@ window.addEventListener("load", event => {
     arrowNext.addEventListener("click", nextPhoto);
     arrowPrev.addEventListener("click", prevPhoto);
 
+    imageActive.addEventListener("touchstart", startTouch);
+    imageActive.addEventListener("touchmove", moveTouch);
+
     function nextPhoto() {
         const nextId = ~~imageNext.dataset.id + 1,
             nextPicture = images.find(element => element.id == nextId),
@@ -117,6 +120,32 @@ window.addEventListener("load", event => {
 
     imageNext.src = images[1].image;
     imageNext.dataset.id = images[1].id;
+
+    // Mobile Slider
+
+    function startTouch(e) {
+        this.initialX = e.touches[0].clientX;
+        this.initialY = e.touches[0].clientY;
+    }
+
+    function moveTouch(e) {
+        if (this.initialX === null) return;
+        if (this.initialY === null) return;
+
+        let currentX = e.touches[0].clientX,
+            currentY = e.touches[0].clientY,
+            diffX = this.initialX - currentX,
+            diffY = this.initialY - currentY;
+
+        if (Math.abs(diffX) > Math.abs(diffY)) {
+            (diffX > 0) ? nextPhoto(): prevPhoto();
+        }
+
+        this.initialX = null;
+        this.initialY = null;
+
+        e.preventDefault();
+    }
 
 
 
