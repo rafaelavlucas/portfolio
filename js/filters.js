@@ -51,6 +51,9 @@
             label.style.display = "none";
         }
 
+        // Call animation of click when Filter
+        animeContainers(workImg, "animeWork");
+
     }
 
     /* Open Filters mobile */
@@ -100,3 +103,44 @@
     }
 
     workCount[0].innerText = `${work.length}`;
+
+
+
+    // Animate Works
+
+    var workImg = document.querySelectorAll('.work');
+
+    const anime = (element, animation) => {
+        if (element.offsetParent != null) {
+            element.classList.add(animation)
+        }
+    }
+
+    const isInViewport = (element) => {
+        var bounding = element.getBoundingClientRect();
+        return (
+            bounding.bottom >= 0 &&
+            bounding.right >= 0 &&
+            bounding.top <= document.documentElement.clientHeight &&
+            bounding.left <= document.documentElement.clientWidth
+        )
+    };
+    const isModuleVisbibleAnimation = (element, animation) => {
+        if (isInViewport(element)) {
+            if (window.innerWidth >= 800) {
+                anime(element, animation);
+            }
+        }
+    };
+    // for viewport
+    const animeContainers = (container, animation) => {
+
+        container.forEach(item => {
+            isModuleVisbibleAnimation(item, animation);
+            if (item.children) {
+                [...item.children].forEach(element => {
+                    isModuleVisbibleAnimation(element, animation);
+                })
+            }
+        })
+    }

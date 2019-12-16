@@ -130,8 +130,8 @@ window.onload = function (e) {
             }
         })
     }
-    // for scroll
 
+    // for scroll
     window.addEventListener('scroll', () => {
         if (window.innerWidth >= 800) {
             animeContainers(module, "anime");
