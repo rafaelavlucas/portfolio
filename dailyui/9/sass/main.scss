@@ -1,0 +1,359 @@
+@import url("https://fonts.googleapis.com/css?family=Barlow+Condensed:300,400,500,600,700,800,900|Barlow:300,400,500,600,700,800,900&display=swap");
+
+$font-01: "Barlow",
+sans-serif;
+$font-02: "Barlow Condensed",
+sans-serif;
+
+$m-01: #E8E8F0;
+$m-02: #FFEDC0;
+
+@mixin sm {
+    @media screen and (max-width: 799px) {
+        @content;
+    }
+}
+
+@mixin height {
+    @media screen and (max-height:660px) {
+        @content;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li,
+button,
+a,
+i,
+input,
+body {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: 0;
+    -webkit-tap-highlight-color: transparent;
+    text-decoration: none;
+    color: inherit;
+
+    &:focus {
+        outline: 0;
+    }
+}
+
+
+
+.logo {
+    position: fixed;
+    z-index: 5;
+    bottom: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 100%;
+    backdrop-filter: blur(5px);
+
+    img {
+
+        width: 55%;
+        height: 55%;
+        transform: translateY(-1px);
+        opacity: 0.8;
+    }
+}
+
+
+.wrapper {
+    display: grid;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    color: white;
+    font-family: $font-01;
+    user-select: none;
+
+
+    .content {
+        width: 375px;
+        height: 760px;
+        border-radius: 8px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+
+        .icon {
+            width: 24px;
+            height: 24px;
+            //background-color: yellow;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            background-size: contain;
+            background-repeat: no-repeat;
+
+            &.play {
+                background-image: url('../assets/play.svg');
+            }
+
+            &.shuffle {
+                background-image: url('../assets/shuffle.svg');
+                opacity: 0.5;
+            }
+
+            &.next {
+                background-image: url('../assets/next.svg');
+            }
+
+            &.prev {
+                background-image: url('../assets/prev.svg');
+            }
+
+            &.repeat {
+                background-image: url('../assets/repeat.svg');
+                opacity: 0.5;
+            }
+
+            &.bottomExpand {
+                background-image: url('../assets/arrow-down.svg');
+            }
+
+            &.topExpand {
+                background-image: url('../assets/arrow-down.svg');
+            }
+
+            &.menuHamburguer {
+                background-image: url('../assets/menu.svg');
+            }
+        }
+
+        .topContent {
+            width: 100%;
+            min-height: 60px;
+            background-color: rgba($m-01, 0.5);
+
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            align-items: center;
+            padding: 18px 20px 0px 20px;
+            box-sizing: border-box;
+            backdrop-filter: blur(5px);
+            transition: all 0.4s 0.2s ease;
+
+            .menuBar {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .musicGroups {
+                background-color: white;
+                width: 100%;
+                height: 100%;
+                margin-top: 10px;
+                opacity: 0;
+                transform: translateX(100px);
+                transition: all 0.4s ease;
+
+            }
+
+            &.expand {
+                min-height: 190px;
+                padding: 18px 20px;
+                transition: all 0.4s ease;
+
+                .musicGroups {
+                    opacity: 1;
+                    transform: translateX(0px);
+                    transition: all 0.4s 0.2s ease;
+                }
+            }
+        }
+
+        .middleContent {
+            width: 100%;
+            //max-height: 600px;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .albumCover {
+                width: 280px;
+                height: 280px;
+                overflow: hidden;
+                box-shadow: 0px 16px 40px rgba(0, 0, 0, 0.25);
+                border-radius: 8px;
+                position: relative;
+
+
+                &:before {
+                    position: absolute;
+                    content: '';
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(145deg, rgba(white, 0.8) -20%, transparent 50%);
+                }
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    z-index: -1;
+                }
+            }
+
+            .artistName,
+            .songName {
+                text-align: center;
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 20px;
+                text-align: center;
+                letter-spacing: 0.04em;
+            }
+
+            .artistName {
+                text-transform: uppercase;
+                margin: 20px 0 10px 0;
+            }
+        }
+
+        .bottomContent {
+            width: 100%;
+            min-height: 100px;
+            max-height: 100px;
+            background-color: rgba($m-01, 0.5);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: column;
+            backdrop-filter: blur(5px);
+            transition: all 0.4s ease;
+            padding: 5px 0 20px 0;
+            box-sizing: border-box;
+
+            .bottomExpand {
+                transform: rotate(-180deg);
+                opacity: 0.5;
+            }
+
+            .player {
+                width: 290px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                transition: all 0.2s ease;
+                // height: 120px;
+
+                .btnPlay {
+                    background-color: rgba(white, 0.2);
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    transition: all 0.2s ease;
+
+
+                }
+            }
+
+            &.expand {
+
+                min-height: 200px;
+                max-height: 200px;
+                padding: 10px 0 20px 0;
+
+                .bottomExpand {
+                    transform: rotate(0deg);
+                    opacity: 1;
+                }
+
+                .player {
+                    width: 316px;
+                }
+
+                .btnPlay {
+                    width: 60px;
+                    height: 60px;
+
+                    .play {
+                        width: 32px;
+                        height: 32px;
+                        background-size: contain;
+                    }
+                }
+            }
+        }
+
+        .albumBg {
+            background-color: gray;
+            position: absolute;
+            width: 100%;
+            max-height: 760px;
+            height: 100%;
+            top: 0;
+            z-index: -1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+
+            &:before,
+            &:after {
+                position: absolute;
+                content: '';
+                width: 100%;
+                height: 100%;
+                top: 0;
+                background: linear-gradient(180deg, rgba(black, 0.5) -40%, transparent 50%);
+                z-index: 1;
+            }
+
+            &:after {
+                top: initial;
+                bottom: 0;
+                background: linear-gradient(0deg, rgba(black, 0.5) -60%, transparent 50%);
+            }
+
+
+
+            .imageBg {
+                width: 110%;
+                height: 110%;
+                filter: blur(20px);
+                object-fit: cover;
+
+            }
+        }
+    }
+
+
+}
+
+.swiper-slide {
+    width: 280px;
+
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    all: unset;
+}
