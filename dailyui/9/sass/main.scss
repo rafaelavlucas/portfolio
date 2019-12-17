@@ -9,16 +9,11 @@ $m-01: #E8E8F0;
 $m-02: #FFEDC0;
 
 @mixin sm {
-    @media screen and (max-width: 799px) {
+    @media screen and (max-width: 640px) {
         @content;
     }
 }
 
-@mixin height {
-    @media screen and (max-height:660px) {
-        @content;
-    }
-}
 
 h1,
 h2,

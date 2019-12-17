@@ -32,14 +32,9 @@ window.addEventListener("load", event => {
     <p class="artistName">${el.artistName}</p>
     <p class="songName">${el.songName}</p></div>`;
         swipperWrapper.insertAdjacentHTML('beforeend', template);
-
     })
 
-
-
     //Swiper
-
-
     var mySwiper = new Swiper(".swiper-container", {
         // Optional parameters
         direction: "horizontal",
@@ -64,8 +59,7 @@ window.addEventListener("load", event => {
     });
 
 
-    //BG
-
+    // Album BG
     const imageBg = document.querySelector('.imageBg'),
         next = document.querySelector('.swiper-button-next'),
         prev = document.querySelector('.swiper-button-prev');
@@ -109,5 +103,34 @@ window.addEventListener("load", event => {
         }
     }
 
+
+    // Music Groups
+    const musicGroups = document.querySelector('.musicGroups'),
+
+        groups = [{
+                title: 'teste',
+                img: 'https://rafaelalucas91.github.io/assets/images/img-18.jpeg'
+            },
+            {
+                title: 'teste',
+                img: 'https://rafaelalucas91.github.io/assets/images/img-18.jpeg'
+            },
+            {
+                title: 'teste',
+                img: 'https://rafaelalucas91.github.io/assets/images/img-18.jpeg'
+            },
+            {
+                title: 'teste',
+                img: 'https://rafaelalucas91.github.io/assets/images/img-18.jpeg'
+            },
+        ];
+
+
+    const template2 = `<div class="group">
+    <img src="${img}">
+    <p>${title}</p>
+    </div>`;
+
+    musicGroups.insertAdjacentHTML('beforeend', template2);
 
 });
