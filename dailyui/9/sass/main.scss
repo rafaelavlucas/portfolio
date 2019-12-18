@@ -429,6 +429,12 @@ body {
                 align-items: center;
                 transition: all 0.2s ease;
 
+                @include sm {
+                    min-width: 290px;
+                    box-sizing: border-box;
+                    width: 80%;
+                }
+
                 .btnPlay {
                     background-color: rgba(white, 0.2);
                     width: 40px;
@@ -453,7 +459,6 @@ body {
             }
 
             &.expand {
-
                 min-height: 200px;
                 max-height: 200px;
                 padding: 10px 0 20px 0;
@@ -465,18 +470,29 @@ body {
 
                 .player {
                     width: 316px;
-                }
 
-                .btnPlay {
-                    width: 60px;
-                    height: 60px;
+                    .btnPlay {
+                        width: 60px;
+                        height: 60px;
 
-                    .play {
-                        width: 32px;
-                        height: 32px;
-                        background-size: contain;
+                        .icon {
+                            &:before {
+                                width: 32px;
+                                height: 32px;
+                            }
+
+                            &:active {
+                                &:before {
+                                    width: 38px;
+                                    height: 38px;
+                                }
+                            }
+                        }
+
                     }
                 }
+
+
             }
         }
 

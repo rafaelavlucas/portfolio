@@ -509,6 +509,15 @@ body:focus {
   transition: all 0.2s ease;
 }
 
+@media screen and (max-width: 640px) {
+  .wrapper .content .bottomContent .player {
+    min-width: 290px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 80%;
+  }
+}
+
 .wrapper .content .bottomContent .player .btnPlay {
   background-color: rgba(255, 255, 255, 0.2);
   width: 40px;
@@ -551,15 +560,19 @@ body:focus {
   width: 316px;
 }
 
-.wrapper .content .bottomContent.expand .btnPlay {
+.wrapper .content .bottomContent.expand .player .btnPlay {
   width: 60px;
   height: 60px;
 }
 
-.wrapper .content .bottomContent.expand .btnPlay .play {
+.wrapper .content .bottomContent.expand .player .btnPlay .icon:before {
   width: 32px;
   height: 32px;
-  background-size: contain;
+}
+
+.wrapper .content .bottomContent.expand .player .btnPlay .icon:active:before {
+  width: 38px;
+  height: 38px;
 }
 
 .wrapper .content .albumBg {
