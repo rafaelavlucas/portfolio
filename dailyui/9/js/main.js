@@ -12,7 +12,7 @@ window.addEventListener("load", event => {
     let counter = 0;
     const songs = [{
             id: 0,
-            img: 'overs/feist.jpg',
+            img: 'covers/feist.jpg',
             artistName: 'Feist',
             songName: 'The Bad in Each Other',
             song: 'songs/song1.mp3'
