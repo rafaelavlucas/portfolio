@@ -1,5 +1,42 @@
 window.addEventListener("load", event => {
 
+    //Expand Top & Bottom
+
+    var iconTopExpand = document.querySelector('.icon.topExpand'),
+        iconBottomExpand = document.querySelector('.icon.bottomExpand'),
+        topContent = document.querySelector('.topContent'),
+        bottomContent = document.querySelector('.bottomContent');
+
+
+
+    iconTopExpand.addEventListener("click", expandTop);
+    iconBottomExpand.addEventListener("click", expandBottom);
+
+
+    function expandTop() {
+        if (topContent.classList.contains('expand')) {
+            topContent.classList.remove('expand');
+        } else {
+            topContent.classList.add('expand');
+
+            //Swiper Music Goups
+            var mySwiper2 = new Swiper(".swiper-container.slider-two", {
+                // Optional parameters
+                direction: 'horizontal',
+                slidesPerView: 'auto',
+                draggable: true
+            });
+        }
+    }
+
+    function expandBottom() {
+        if (bottomContent.classList.contains('expand')) {
+            bottomContent.classList.remove('expand');
+        } else {
+            bottomContent.classList.add('expand');
+        }
+    }
+
     // Songs 
     let counter = 0;
     const songs = [{
@@ -23,8 +60,7 @@ window.addEventListener("load", event => {
         },
     ];
 
-
-    var swipperWrapper = document.querySelector('.swiper-wrapper');
+    var swipperWrapper = document.querySelector('.swiper-wrapper.slider-one');
     songs.forEach(function (el) {
         let template = `
         <div class="swiper-slide">
@@ -34,8 +70,8 @@ window.addEventListener("load", event => {
         swipperWrapper.insertAdjacentHTML('beforeend', template);
     })
 
-    //Swiper
-    var mySwiper = new Swiper(".swiper-container", {
+    //Swiper Albums
+    var mySwiper = new Swiper(".swiper-container.slider-one", {
         // Optional parameters
         direction: "horizontal",
         loop: true,
@@ -68,47 +104,17 @@ window.addEventListener("load", event => {
     prev.addEventListener("click", changeBg);
 
     function changeBg() {
-        imageBg.src = document.querySelector('.swiper-slide-active img').src;
+        imageBg.src = document.querySelector('.slider-one .swiper-slide-active img').src;
     }
 
     changeBg();
 
 
-    //Expand Top & Bottom
-
-    var iconTopExpand = document.querySelector('.icon.topExpand'),
-        iconBottomExpand = document.querySelector('.icon.bottomExpand'),
-        topContent = document.querySelector('.topContent'),
-        bottomContent = document.querySelector('.bottomContent');
-
-
-
-    iconTopExpand.addEventListener("click", expandTop);
-    iconBottomExpand.addEventListener("click", expandBottom);
-
-
-    function expandTop() {
-        if (topContent.classList.contains('expand')) {
-            topContent.classList.remove('expand');
-        } else {
-            topContent.classList.add('expand');
-        }
-    }
-
-    function expandBottom() {
-        if (bottomContent.classList.contains('expand')) {
-            bottomContent.classList.remove('expand');
-        } else {
-            bottomContent.classList.add('expand');
-        }
-    }
-
-
     // Music Groups
-    const musicGroups = document.querySelector('.musicGroups'),
+    const musicGroups = document.querySelector('.swiper-wrapper.slider-two'),
 
         groups = [{
-                title: 'teste',
+                title: "teste",
                 img: 'https://rafaelalucas91.github.io/assets/images/img-18.jpeg'
             },
             {
@@ -122,15 +128,26 @@ window.addEventListener("load", event => {
             {
                 title: 'teste',
                 img: 'https://rafaelalucas91.github.io/assets/images/img-18.jpeg'
-            },
+            }
         ];
 
+    for (let i = 0; i < groups.length; i++) {
+        const {
+            title,
+            img,
+        } = groups[i];
 
-    const template2 = `<div class="group">
-    <img src="${img}">
-    <p>${title}</p>
-    </div>`;
 
-    musicGroups.insertAdjacentHTML('beforeend', template2);
+        var template2 =
+            `<div class="swiper-slide group">
+            <img src="${img}">
+            <p class="titleGroup">${title}</p>
+        </div>`;
+
+        musicGroups.insertAdjacentHTML('beforeend', template2);
+    }
+
+
+
 
 });

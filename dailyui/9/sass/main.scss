@@ -108,29 +108,63 @@ body {
             //background-color: yellow;
             cursor: pointer;
             transition: all 0.2s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             background-size: contain;
             background-repeat: no-repeat;
 
-            &.play {
-                background-image: url('../assets/play.svg');
+
+            &:before {
+                position: absolute;
+                content: '';
+                width: 24px;
+                height: 24px;
+                z-index: 1;
+                background-size: contain;
+                background-repeat: no-repeat;
+
+            }
+
+            &:active {
+                &:before {
+                    width: 28px;
+                    height: 28px;
+                }
             }
 
             &.shuffle {
-                background-image: url('../assets/shuffle.svg');
-                opacity: 0.5;
-            }
-
-            &.next {
-                background-image: url('../assets/next.svg');
+                &:before {
+                    background-image: url('../assets/shuffle.svg');
+                    opacity: 0.5;
+                }
             }
 
             &.prev {
-                background-image: url('../assets/prev.svg');
+                &:before {
+                    background-image: url('../assets/prev.svg');
+                }
             }
 
+            &.play {
+                &:before {
+                    background-image: url('../assets/play.svg');
+                }
+            }
+
+            &.next {
+                &:before {
+                    background-image: url('../assets/next.svg');
+                }
+            }
+
+
             &.repeat {
-                background-image: url('../assets/repeat.svg');
-                opacity: 0.5;
+                &:before {
+                    background-image: url('../assets/repeat.svg');
+
+                    opacity: 0.5;
+                }
             }
 
             &.bottomExpand {
@@ -148,14 +182,13 @@ body {
 
         .topContent {
             width: 100%;
-            min-height: 60px;
+            max-height: 60px;
             background-color: rgba($m-01, 0.5);
-
             display: flex;
             justify-content: space-between;
             flex-direction: column;
             align-items: center;
-            padding: 18px 20px 0px 20px;
+            padding: 20px 0;
             box-sizing: border-box;
             backdrop-filter: blur(5px);
             transition: all 0.4s 0.2s ease;
@@ -165,28 +198,63 @@ body {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+                padding: 0 20px;
+                box-sizing: border-box;
             }
 
             .musicGroups {
-                background-color: white;
                 width: 100%;
-                height: 100%;
-                margin-top: 10px;
+                height: 100px;
+                margin-top: 25px;
                 opacity: 0;
                 transform: translateX(100px);
                 transition: all 0.4s ease;
+                visibility: hidden;
 
+                .swiper-slide {
+                    width: 150px;
+                    height: 100px;
+                    margin-right: 20px;
+
+                    &:first-child {
+                        margin-left: 20px;
+                    }
+                }
+
+                .group {
+                    position: relative;
+                    border-radius: 4px;
+                    overflow: hidden;
+
+
+                    .titleGroup {
+                        position: absolute;
+                        top: 0;
+                    }
+
+
+                    img {
+                        width: 100%;
+                        object-fit: cover;
+                    }
+                }
             }
 
             &.expand {
-                min-height: 190px;
-                padding: 18px 20px;
+                max-height: 190px;
                 transition: all 0.4s ease;
+
+                .topExpand {
+                    transform: rotate(180deg);
+                }
 
                 .musicGroups {
                     opacity: 1;
                     transform: translateX(0px);
                     transition: all 0.4s 0.2s ease;
+                    height: 100%;
+                    visibility: visible;
+
                 }
             }
         }
@@ -198,6 +266,10 @@ body {
             display: flex;
             justify-content: center;
             align-items: center;
+
+            .swiper-slide {
+                width: 280px;
+            }
 
             .albumCover {
                 width: 280px;
@@ -343,8 +415,6 @@ body {
                 background: linear-gradient(0deg, rgba(black, 0.5) -60%, transparent 50%);
             }
 
-
-
             .imageBg {
                 width: 110%;
                 height: 110%;
@@ -358,10 +428,7 @@ body {
 
 }
 
-.swiper-slide {
-    width: 280px;
 
-}
 
 .swiper-button-prev,
 .swiper-button-next {

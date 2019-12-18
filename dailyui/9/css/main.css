@@ -130,28 +130,52 @@ body:focus {
   cursor: pointer;
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-size: contain;
   background-repeat: no-repeat;
 }
 
-.wrapper .content .icon.play {
-  background-image: url("../assets/play.svg");
+.wrapper .content .icon:before {
+  position: absolute;
+  content: '';
+  width: 24px;
+  height: 24px;
+  z-index: 1;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
-.wrapper .content .icon.shuffle {
+.wrapper .content .icon:active:before {
+  width: 28px;
+  height: 28px;
+}
+
+.wrapper .content .icon.shuffle:before {
   background-image: url("../assets/shuffle.svg");
   opacity: 0.5;
 }
 
-.wrapper .content .icon.next {
-  background-image: url("../assets/next.svg");
-}
-
-.wrapper .content .icon.prev {
+.wrapper .content .icon.prev:before {
   background-image: url("../assets/prev.svg");
 }
 
-.wrapper .content .icon.repeat {
+.wrapper .content .icon.play:before {
+  background-image: url("../assets/play.svg");
+}
+
+.wrapper .content .icon.next:before {
+  background-image: url("../assets/next.svg");
+}
+
+.wrapper .content .icon.repeat:before {
   background-image: url("../assets/repeat.svg");
   opacity: 0.5;
 }
@@ -170,7 +194,7 @@ body:focus {
 
 .wrapper .content .topContent {
   width: 100%;
-  min-height: 60px;
+  max-height: 60px;
   background-color: rgba(232, 232, 240, 0.5);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -185,7 +209,7 @@ body:focus {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 18px 20px 0px 20px;
+  padding: 20px 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   -webkit-backdrop-filter: blur(5px);
@@ -205,25 +229,59 @@ body:focus {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 0 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .wrapper .content .topContent .musicGroups {
-  background-color: white;
   width: 100%;
-  height: 100%;
-  margin-top: 10px;
+  height: 100px;
+  margin-top: 25px;
   opacity: 0;
   -webkit-transform: translateX(100px);
           transform: translateX(100px);
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
+  visibility: hidden;
+}
+
+.wrapper .content .topContent .musicGroups .swiper-slide {
+  width: 150px;
+  height: 100px;
+  margin-right: 20px;
+}
+
+.wrapper .content .topContent .musicGroups .swiper-slide:first-child {
+  margin-left: 20px;
+}
+
+.wrapper .content .topContent .musicGroups .group {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.wrapper .content .topContent .musicGroups .group .titleGroup {
+  position: absolute;
+  top: 0;
+}
+
+.wrapper .content .topContent .musicGroups .group img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .wrapper .content .topContent.expand {
-  min-height: 190px;
-  padding: 18px 20px;
+  max-height: 190px;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
+}
+
+.wrapper .content .topContent.expand .topExpand {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
 .wrapper .content .topContent.expand .musicGroups {
@@ -232,6 +290,8 @@ body:focus {
           transform: translateX(0px);
   -webkit-transition: all 0.4s 0.2s ease;
   transition: all 0.4s 0.2s ease;
+  height: 100%;
+  visibility: visible;
 }
 
 .wrapper .content .middleContent {
@@ -246,6 +306,10 @@ body:focus {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.wrapper .content .middleContent .swiper-slide {
+  width: 280px;
 }
 
 .wrapper .content .middleContent .albumCover {
@@ -433,10 +497,6 @@ body:focus {
           filter: blur(20px);
   -o-object-fit: cover;
      object-fit: cover;
-}
-
-.swiper-slide {
-  width: 280px;
 }
 
 .swiper-button-prev,
