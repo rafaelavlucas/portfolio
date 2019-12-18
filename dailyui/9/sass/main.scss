@@ -346,6 +346,7 @@ body {
                 border-radius: 8px;
                 position: relative;
                 transition: all 0.4s ease;
+                z-index: -1;
 
                 &:before {
                     position: absolute;
@@ -371,6 +372,7 @@ body {
                 line-height: 20px;
                 text-align: center;
                 letter-spacing: 0.04em;
+                z-index: 2;
             }
 
             .artistName {
