@@ -70,6 +70,12 @@ body:focus {
   opacity: 0.8;
 }
 
+@media screen and (max-width: 640px) {
+  .logo {
+    display: none;
+  }
+}
+
 .wrapper {
   display: -ms-grid;
   display: grid;
@@ -171,6 +177,10 @@ body:focus {
   background-image: url("../assets/play.svg");
 }
 
+.wrapper .content .icon.play.pause:before {
+  background-image: url("../assets/pause.svg");
+}
+
 .wrapper .content .icon.next:before {
   background-image: url("../assets/next.svg");
 }
@@ -190,6 +200,14 @@ body:focus {
 
 .wrapper .content .icon.menuHamburguer {
   background-image: url("../assets/menu.svg");
+}
+
+.wrapper .content .icon.plus {
+  background-image: url("../assets/plus.svg");
+}
+
+.wrapper .content .icon.heart {
+  background-image: url("../assets/heart.svg");
 }
 
 .wrapper .content .topContent {
@@ -262,15 +280,60 @@ body:focus {
   overflow: hidden;
 }
 
-.wrapper .content .topContent .musicGroups .group .titleGroup {
+.wrapper .content .topContent .musicGroups .group:before {
   position: absolute;
-  top: 0;
+  content: '';
+  width: 100%;
+  height: 30px;
+  background-color: rgba(232, 232, 240, 0.5);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  bottom: 0;
+  z-index: 1;
 }
 
-.wrapper .content .topContent .musicGroups .group img {
+.wrapper .content .topContent .musicGroups .group figure {
+  margin: 0;
+}
+
+.wrapper .content .topContent .musicGroups .group figure img {
   width: 100%;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.wrapper .content .topContent .musicGroups .group figure:before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left bottom, left top, from(black), to(transparent));
+  background: linear-gradient(0deg, black, transparent);
+  bottom: 0;
+  opacity: 0.5;
+}
+
+.wrapper .content .topContent .musicGroups .group .titleGroup {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 1;
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
 }
 
 .wrapper .content .topContent.expand {
@@ -306,10 +369,20 @@ body:focus {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
 }
 
-.wrapper .content .middleContent .swiper-slide {
-  width: 280px;
+.wrapper .content .middleContent .albumContent.small {
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  width: 200px;
+}
+
+.wrapper .content .middleContent .albumContent.small .albumCover {
+  width: 200px;
+  height: 200px;
+  -webkit-transition: all 0s ease;
+  transition: all 0s ease;
 }
 
 .wrapper .content .middleContent .albumCover {
@@ -320,6 +393,8 @@ body:focus {
           box-shadow: 0px 16px 40px rgba(0, 0, 0, 0.25);
   border-radius: 8px;
   position: relative;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
 
 .wrapper .content .middleContent .albumCover:before {
@@ -351,6 +426,39 @@ body:focus {
 .wrapper .content .middleContent .artistName {
   text-transform: uppercase;
   margin: 20px 0 10px 0;
+}
+
+.wrapper .content .middleContent .settings {
+  width: 100%;
+  height: 40px;
+  position: absolute;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px 20px 0 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.wrapper .content .middleContent .swiper-slide {
+  width: 280px;
+  margin-top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .wrapper .content .bottomContent {
@@ -497,6 +605,53 @@ body:focus {
           filter: blur(20px);
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.wrapper .content .albumBg .imageBg.animeBg {
+  -webkit-animation: animeBg 0.6s ease-in both;
+          animation: animeBg 0.6s ease-in both;
+}
+
+@-webkit-keyframes animeBg {
+  0% {
+    width: 120%;
+    height: 110%;
+    -webkit-filter: blur(20px);
+            filter: blur(20px);
+  }
+  50% {
+    width: 160%;
+    height: 150%;
+    -webkit-filter: blur(60px);
+            filter: blur(60px);
+  }
+  100% {
+    width: 120%;
+    height: 110%;
+    -webkit-filter: blur(20px);
+            filter: blur(20px);
+  }
+}
+
+@keyframes animeBg {
+  0% {
+    width: 120%;
+    height: 110%;
+    -webkit-filter: blur(20px);
+            filter: blur(20px);
+  }
+  50% {
+    width: 160%;
+    height: 150%;
+    -webkit-filter: blur(60px);
+            filter: blur(60px);
+  }
+  100% {
+    width: 120%;
+    height: 110%;
+    -webkit-filter: blur(20px);
+            filter: blur(20px);
+  }
 }
 
 .swiper-button-prev,
