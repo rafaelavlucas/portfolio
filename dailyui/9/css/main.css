@@ -204,8 +204,36 @@ body:focus {
   background-image: url("../assets/plus.svg");
 }
 
-.wrapper .content .icon.heart {
+.wrapper .content .icon.heart:before {
   background-image: url("../assets/heart.svg");
+}
+
+.wrapper .content .icon.heart.fave:before {
+  -webkit-animation: fave 0.3s ease;
+          animation: fave 0.3s ease;
+  background-image: url("../assets/fave.svg");
+}
+
+@-webkit-keyframes fave {
+  50% {
+    width: 40px;
+    height: 40px;
+  }
+  100% {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@keyframes fave {
+  50% {
+    width: 40px;
+    height: 40px;
+  }
+  100% {
+    width: 24px;
+    height: 24px;
+  }
 }
 
 .wrapper .content .topContent {
@@ -260,6 +288,13 @@ body:focus {
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
   visibility: hidden;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+.wrapper .content .topContent .musicGroups:active {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
 }
 
 .wrapper .content .topContent .musicGroups .swiper-slide {
@@ -276,6 +311,7 @@ body:focus {
   position: relative;
   border-radius: 4px;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .wrapper .content .topContent .musicGroups .group:before {
@@ -447,11 +483,15 @@ body:focus {
   padding: 20px 20px 0 20px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  position: fixed;
+}
+
+.wrapper .content .middleContent .swiper-container {
+  height: 100%;
 }
 
 .wrapper .content .middleContent .swiper-slide {
   width: 280px;
-  margin-top: 40px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

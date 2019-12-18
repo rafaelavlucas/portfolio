@@ -119,6 +119,10 @@ window.addEventListener("load", event => {
     songs.forEach(function (el) {
         let template = `
         <div class="swiper-slide">
+        <div class="settings">
+                    <div class="icon plus"></div>
+                    <div class="icon heart"></div>
+                </div>
         <audio src="${el.song}"></audio>
         <div class="albumContent">
         <div class="albumCover"><img src="${el.img}"></div>
@@ -187,7 +191,7 @@ window.addEventListener("load", event => {
 
         groups = [{
                 title: "Songs",
-                img: 'https://rafaelalucas91.github.io/assets/images/img-19.jpeg'
+                img: 'covers/img02.jpg'
             },
             {
                 title: 'Artists',
@@ -219,6 +223,24 @@ window.addEventListener("load", event => {
         </div>`;
 
         musicGroups.insertAdjacentHTML('beforeend', template2);
+    }
+
+
+    //add favourites
+
+    const heart = document.querySelectorAll('.heart');
+
+
+    heart.forEach(function (el) {
+        el.addEventListener("click", addFave)
+    })
+
+    function addFave(e) {
+        if (e.currentTarget.classList.contains('fave')) {
+            e.currentTarget.classList.remove('fave');
+        } else {
+            e.currentTarget.classList.add('fave');
+        }
     }
 
 });

@@ -193,7 +193,29 @@ body {
             }
 
             &.heart {
-                background-image: url('../assets/heart.svg');
+                &:before {
+                    background-image: url('../assets/heart.svg');
+                }
+
+                &.fave {
+                    &:before {
+                        animation: fave 0.3s ease;
+                        background-image: url('../assets/fave.svg');
+
+                        @keyframes fave {
+                            50% {
+                                width: 40px;
+                                height: 40px;
+                            }
+
+                            100% {
+                                width: 24px;
+                                height: 24px;
+                            }
+                        }
+                    }
+
+                }
             }
         }
 
@@ -228,6 +250,11 @@ body {
                 transform: translateX(100px);
                 transition: all 0.4s ease;
                 visibility: hidden;
+                cursor: grab;
+
+                &:active {
+                    cursor: grabbing;
+                }
 
                 .swiper-slide {
                     width: 150px;
@@ -243,6 +270,7 @@ body {
                     position: relative;
                     border-radius: 4px;
                     overflow: hidden;
+                    cursor: pointer;
 
                     &:before {
                         position: absolute;
@@ -393,11 +421,15 @@ body {
                 align-items: center;
                 padding: 20px 20px 0 20px;
                 box-sizing: border-box;
+                position: fixed;
+            }
+
+            .swiper-container {
+                height: 100%;
             }
 
             .swiper-slide {
                 width: 280px;
-                margin-top: 40px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
