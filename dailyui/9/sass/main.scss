@@ -471,6 +471,12 @@ body {
                 .player {
                     width: 316px;
 
+                    @include sm {
+                        min-width: 290px;
+                        box-sizing: border-box;
+                        width: 80%;
+                    }
+
                     .btnPlay {
                         width: 60px;
                         height: 60px;
