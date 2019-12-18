@@ -19,38 +19,38 @@ window.addEventListener("load", event => {
         },
         {
             id: 1,
-            img: '../../covers/jain.jpg',
+            img: 'covers/jain.jpg',
             artistName: 'Jain',
             songName: 'Makeba',
-            song: '../../songs/song2.mp3'
+            song: 'songs/song2.mp3'
         },
         {
             id: 2,
-            img: '../../covers/alice.jpg',
+            img: 'covers/alice.jpg',
             artistName: 'Alice Phoebe Lou',
             songName: 'Orbit',
-            song: '../../songs/song3.mp3'
+            song: 'songs/song3.mp3'
         },
         {
             id: 3,
-            img: '../../covers/ohland.jpg',
+            img: 'covers/ohland.jpg',
             artistName: 'Oh Land',
             songName: 'Postpone the Bad',
-            song: '../../songs/song1.mp3'
+            song: 'songs/song1.mp3'
         },
         {
             id: 4,
-            img: '../../covers/angele.jpg',
+            img: 'covers/angele.jpg',
             artistName: 'Angèle',
             songName: 'La Loi de Murphy',
-            song: '../../songs/song2.mp3'
+            song: 'songs/song2.mp3'
         },
         {
             id: 5,
-            img: '../../covers/broods.jpg',
+            img: 'covers/broods.jpg',
             artistName: 'Broods',
             songName: 'Bridges',
-            song: '../../songs/song3.mp3'
+            song: 'songs/song3.mp3'
         },
     ];
 
