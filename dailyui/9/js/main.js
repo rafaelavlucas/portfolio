@@ -6,30 +6,50 @@ window.addEventListener("load", event => {
         iconBottomExpand = document.querySelector('.icon.bottomExpand'),
         topContent = document.querySelector('.topContent'),
         bottomContent = document.querySelector('.bottomContent'),
-        playBtn = document.querySelector('.play');
+        playBtn = document.querySelector('.btnPlay');
 
     // Songs 
     let counter = 0;
     const songs = [{
             id: 0,
-            img: 'https://rafaelalucas91.github.io/assets/images/img-46.jpeg',
-            artistName: 'teste1',
-            songName: 'teste2',
+            img: '../covers/feist.jpg',
+            artistName: 'Feist',
+            songName: 'The Bad in Each Other',
             song: '../songs/song1.mp3'
         },
         {
             id: 1,
-            img: 'https://rafaelalucas91.github.io/assets/images/img-47.jpeg',
-            artistName: 'teste3',
-            songName: 'teste4',
+            img: '../covers/jain.jpg',
+            artistName: 'Jain',
+            songName: 'Makeba',
             song: '../songs/song2.mp3'
         },
-
         {
             id: 2,
-            img: 'https://rafaelalucas91.github.io/assets/images/img-48.jpeg',
-            artistName: 'teste5',
-            songName: 'teste6',
+            img: '../covers/alice.jpg',
+            artistName: 'Alice Phoebe Lou',
+            songName: 'Orbit',
+            song: '../songs/song3.mp3'
+        },
+        {
+            id: 3,
+            img: '../covers/ohland.jpg',
+            artistName: 'Oh Land',
+            songName: 'Postpone the Bad',
+            song: '../songs/song1.mp3'
+        },
+        {
+            id: 4,
+            img: '../covers/angele.jpg',
+            artistName: 'Angèle',
+            songName: 'La Loi de Murphy',
+            song: '../songs/song2.mp3'
+        },
+        {
+            id: 5,
+            img: '../covers/broods.jpg',
+            artistName: 'Broods',
+            songName: 'Bridges',
             song: '../songs/song3.mp3'
         },
     ];
@@ -93,6 +113,8 @@ window.addEventListener("load", event => {
         }
     }
 
+    //Swiper Albums
+
     var swipperWrapper = document.querySelector('.swiper-wrapper.slider-one');
     songs.forEach(function (el) {
         let template = `
@@ -105,7 +127,6 @@ window.addEventListener("load", event => {
         swipperWrapper.insertAdjacentHTML('beforeend', template);
     })
 
-    //Swiper Albums
     var mySwiper = new Swiper(".swiper-container.slider-one", {
         // Optional parameters
         direction: "horizontal",
@@ -113,7 +134,7 @@ window.addEventListener("load", event => {
         centeredSlides: true,
         slidesPerView: 1,
         spaceBetween: 20,
-        speed: 800,
+        speed: 600,
         allowTouchMove: false,
         effect: 'coverflow',
 
@@ -199,10 +220,5 @@ window.addEventListener("load", event => {
 
         musicGroups.insertAdjacentHTML('beforeend', template2);
     }
-
-
-
-
-
 
 });

@@ -42,6 +42,10 @@ body {
     }
 }
 
+body {
+    //background-color: black;
+}
+
 
 
 .logo {
@@ -72,6 +76,8 @@ body {
 }
 
 
+
+
 .wrapper {
     display: grid;
     width: 100%;
@@ -83,6 +89,8 @@ body {
     color: white;
     font-family: $font-01;
     user-select: none;
+
+
 
     @include sm {
         padding: 0;
@@ -98,6 +106,7 @@ body {
         flex-direction: column;
         justify-content: space-between;
         position: relative;
+        box-shadow: 0px 30px 80px rgba(0, 0, 0, 0.3);
 
         @include sm {
             width: 100%;
@@ -108,7 +117,6 @@ body {
         .icon {
             width: 24px;
             height: 24px;
-            //background-color: yellow;
             cursor: pointer;
             transition: all 0.2s ease;
             display: flex;
@@ -116,7 +124,6 @@ body {
             align-items: center;
             background-size: contain;
             background-repeat: no-repeat;
-
 
             &:before {
                 position: absolute;
@@ -126,7 +133,6 @@ body {
                 z-index: 1;
                 background-size: contain;
                 background-repeat: no-repeat;
-
             }
 
             &:active {
@@ -152,14 +158,6 @@ body {
             &.play {
                 &:before {
                     background-image: url('../assets/play.svg');
-                }
-
-                &.pause {
-
-                    &:before {
-                        background-image: url('../assets/pause.svg');
-                    }
-
                 }
             }
 
@@ -344,7 +342,7 @@ body {
                 width: 280px;
                 height: 280px;
                 overflow: hidden;
-                box-shadow: 0px 16px 40px rgba(0, 0, 0, 0.25);
+                box-shadow: 0px 30px 40px rgba(0, 0, 0, 0.3);
                 border-radius: 8px;
                 position: relative;
                 transition: all 0.4s ease;
@@ -368,8 +366,8 @@ body {
             .artistName,
             .songName {
                 text-align: center;
-                font-weight: 600;
-                font-size: 16px;
+                font-weight: 400;
+                font-size: 14px;
                 line-height: 20px;
                 text-align: center;
                 letter-spacing: 0.04em;
@@ -378,6 +376,8 @@ body {
             .artistName {
                 text-transform: uppercase;
                 margin: 20px 0 10px 0;
+                font-size: 16px;
+                font-weight: 600;
             }
 
             .settings {
@@ -428,7 +428,6 @@ body {
                 justify-content: space-between;
                 align-items: center;
                 transition: all 0.2s ease;
-                // height: 120px;
 
                 .btnPlay {
                     background-color: rgba(white, 0.2);
@@ -440,7 +439,16 @@ body {
                     align-items: center;
                     transition: all 0.2s ease;
 
+                    &.pause {
+                        background-color: rgba(white, 0.4);
 
+                        .play {
+                            &:before {
+                                background-image: url('../assets/pause.svg');
+                            }
+                        }
+
+                    }
                 }
             }
 
@@ -514,32 +522,33 @@ body {
                 object-fit: cover;
 
                 &.animeBg {
-                    animation: animeBg 0.6s ease-in both;
+                    animation: animeBg 0.4s ease both;
 
                     @keyframes animeBg {
                         0% {
                             width: 120%;
                             height: 110%;
                             filter: blur(20px);
+                            transform: rotate(0deg);
                         }
 
                         50% {
-                            width: 160%;
-                            height: 150%;
-                            filter: blur(60px);
+                            width: 200%;
+                            height: 200%;
+                            filter: blur(100px);
+                            transform: rotate(20deg);
                         }
 
                         100% {
                             width: 120%;
                             height: 110%;
                             filter: blur(20px);
+                            transform: rotate(0deg);
                         }
                     }
                 }
 
             }
-
-
         }
     }
 }

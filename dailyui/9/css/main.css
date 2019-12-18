@@ -120,6 +120,8 @@ body:focus {
       -ms-flex-pack: justify;
           justify-content: space-between;
   position: relative;
+  -webkit-box-shadow: 0px 30px 80px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 30px 80px rgba(0, 0, 0, 0.3);
 }
 
 @media screen and (max-width: 640px) {
@@ -175,10 +177,6 @@ body:focus {
 
 .wrapper .content .icon.play:before {
   background-image: url("../assets/play.svg");
-}
-
-.wrapper .content .icon.play.pause:before {
-  background-image: url("../assets/pause.svg");
 }
 
 .wrapper .content .icon.next:before {
@@ -389,8 +387,8 @@ body:focus {
   width: 280px;
   height: 280px;
   overflow: hidden;
-  -webkit-box-shadow: 0px 16px 40px rgba(0, 0, 0, 0.25);
-          box-shadow: 0px 16px 40px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0px 30px 40px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 30px 40px rgba(0, 0, 0, 0.3);
   border-radius: 8px;
   position: relative;
   -webkit-transition: all 0.4s ease;
@@ -416,8 +414,8 @@ body:focus {
 .wrapper .content .middleContent .artistName,
 .wrapper .content .middleContent .songName {
   text-align: center;
-  font-weight: 600;
-  font-size: 16px;
+  font-weight: 400;
+  font-size: 14px;
   line-height: 20px;
   text-align: center;
   letter-spacing: 0.04em;
@@ -426,6 +424,8 @@ body:focus {
 .wrapper .content .middleContent .artistName {
   text-transform: uppercase;
   margin: 20px 0 10px 0;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .wrapper .content .middleContent .settings {
@@ -527,6 +527,14 @@ body:focus {
   transition: all 0.2s ease;
 }
 
+.wrapper .content .bottomContent .player .btnPlay.pause {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.wrapper .content .bottomContent .player .btnPlay.pause .play:before {
+  background-image: url("../assets/pause.svg");
+}
+
 .wrapper .content .bottomContent.expand {
   min-height: 200px;
   max-height: 200px;
@@ -608,8 +616,8 @@ body:focus {
 }
 
 .wrapper .content .albumBg .imageBg.animeBg {
-  -webkit-animation: animeBg 0.6s ease-in both;
-          animation: animeBg 0.6s ease-in both;
+  -webkit-animation: animeBg 0.4s ease both;
+          animation: animeBg 0.4s ease both;
 }
 
 @-webkit-keyframes animeBg {
@@ -618,18 +626,24 @@ body:focus {
     height: 110%;
     -webkit-filter: blur(20px);
             filter: blur(20px);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   50% {
-    width: 160%;
-    height: 150%;
-    -webkit-filter: blur(60px);
-            filter: blur(60px);
+    width: 200%;
+    height: 200%;
+    -webkit-filter: blur(100px);
+            filter: blur(100px);
+    -webkit-transform: rotate(20deg);
+            transform: rotate(20deg);
   }
   100% {
     width: 120%;
     height: 110%;
     -webkit-filter: blur(20px);
             filter: blur(20px);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
 }
 
@@ -639,18 +653,24 @@ body:focus {
     height: 110%;
     -webkit-filter: blur(20px);
             filter: blur(20px);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   50% {
-    width: 160%;
-    height: 150%;
-    -webkit-filter: blur(60px);
-            filter: blur(60px);
+    width: 200%;
+    height: 200%;
+    -webkit-filter: blur(100px);
+            filter: blur(100px);
+    -webkit-transform: rotate(20deg);
+            transform: rotate(20deg);
   }
   100% {
     width: 120%;
     height: 110%;
     -webkit-filter: blur(20px);
             filter: blur(20px);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
 }
 
