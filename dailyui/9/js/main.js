@@ -67,6 +67,7 @@ window.addEventListener("load", event => {
             playBtn.classList.add('pause');
             document.querySelector('.swiper-slide-active audio').play();
         }
+        progressBar();
     }
 
     function expandTop() {
@@ -93,6 +94,7 @@ window.addEventListener("load", event => {
             bottomContent.classList.add('expand');
         }
         albumSize();
+        progressBar();
     }
 
     // change Album size
@@ -171,6 +173,7 @@ window.addEventListener("load", event => {
             document.querySelector('.swiper-slide-active audio').play();
         }
         changeBg();
+        progressBar();
 
     }
 
@@ -242,5 +245,24 @@ window.addEventListener("load", event => {
             e.currentTarget.classList.add('fave');
         }
     }
+
+    //Song Progress Bar
+
+    function progressBar() {
+        var songDuration = document.querySelector('.swiper-slide-active audio').duration,
+            songMinutes = Math.floor(songDuration / 60),
+            songSeconds = Math.floor(songDuration - songMinutes * 60),
+            endTime = document.querySelector('.endTime'),
+            songPlaying = document.querySelector('.swiper-slide-active audio').currentTime,
+            currentTime = document.querySelector('.currentTime');
+
+
+        endTime.innerHTML = songMinutes + ':' + songSeconds;
+        currentTime.innerHTML = Math.floor(songPlaying);
+        return;
+
+    };
+
+    progressBar();
 
 });

@@ -107,6 +107,7 @@ body:focus {
 .wrapper .content {
   width: 375px;
   height: 760px;
+  margin-bottom: 40px;
   border-radius: 8px;
   overflow: hidden;
   display: -webkit-box;
@@ -538,8 +539,8 @@ body:focus {
           flex-direction: column;
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
+  -webkit-transition: all 0.4s 0.2s ease;
+  transition: all 0.4s 0.2s ease;
   padding: 5px 30px 20px 30px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -555,8 +556,11 @@ body:focus {
   width: 100%;
   visibility: hidden;
   height: 0;
-  -webkit-transition: all 0.4s 0s ease;
-  transition: all 0.4s 0s ease;
+  opacity: 0;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  -webkit-transform: translateY(-60px);
+          transform: translateY(-60px);
 }
 
 @media screen and (max-width: 640px) {
@@ -579,7 +583,19 @@ body:focus {
 .wrapper .content .bottomContent .progressBar .barTimer {
   width: 100%;
   height: 5px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 5px;
+  position: relative;
+}
+
+.wrapper .content .bottomContent .progressBar .barTimer .progress {
+  position: absolute;
   background-color: white;
+  height: 100%;
+  width: 50%;
+  border-radius: 4px;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
 
 .wrapper .content .bottomContent .player {
@@ -593,8 +609,8 @@ body:focus {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-transition: all 0.2s ease;
-  transition: all 0.2s ease;
+  -webkit-transition: all 0.2s 0.2s ease;
+  transition: all 0.2s 0.2s ease;
 }
 
 .wrapper .content .bottomContent .player .btnPlay {
@@ -624,6 +640,8 @@ body:focus {
 }
 
 .wrapper .content .bottomContent.expand {
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
   min-height: 200px;
   max-height: 200px;
   padding: 10px 30px 20px 30px;
@@ -636,36 +654,13 @@ body:focus {
 }
 
 .wrapper .content .bottomContent.expand .progressBar {
+  opacity: 1;
   visibility: visible;
-  height: 60px;
+  height: 50px;
   -webkit-transition: all 0.4s 0.2s ease;
   transition: all 0.4s 0.2s ease;
-}
-
-@-webkit-keyframes progressBar {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(-20px);
-            transform: translateY(-20px);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px);
-  }
-}
-
-@keyframes progressBar {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(-20px);
-            transform: translateY(-20px);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px);
-  }
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
 }
 
 .wrapper .content .bottomContent.expand .player .btnPlay {
