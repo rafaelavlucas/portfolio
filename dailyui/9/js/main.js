@@ -174,7 +174,6 @@ window.addEventListener("load", event => {
         }
         changeBg();
         progressBar();
-
     }
 
     function changeBg() {
@@ -187,7 +186,6 @@ window.addEventListener("load", event => {
     }
 
     changeBg();
-
 
     // Music Groups
     const musicGroups = document.querySelector('.swiper-wrapper.slider-two'),
@@ -228,11 +226,9 @@ window.addEventListener("load", event => {
         musicGroups.insertAdjacentHTML('beforeend', template2);
     }
 
-
     //add favourites
 
     const heart = document.querySelectorAll('.heart');
-
 
     heart.forEach(function (el) {
         el.addEventListener("click", addFave)
