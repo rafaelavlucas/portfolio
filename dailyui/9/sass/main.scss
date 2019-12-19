@@ -351,17 +351,21 @@ body {
             align-items: center;
             position: relative;
 
+
             .albumContent {
-                //transition: all 0.4s ease;
+                margin-top: 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
 
                 &.small {
-                    transition: all 0.4s ease;
                     width: 200px;
 
                     .albumCover {
                         width: 200px;
                         height: 200px;
-                        transition: all 0s ease;
+                        transition: all 0.4s ease;
                     }
                 }
             }
@@ -373,7 +377,7 @@ body {
                 box-shadow: 0px 30px 40px rgba(0, 0, 0, 0.3);
                 border-radius: 8px;
                 position: relative;
-                transition: all 0.4s ease;
+                transition: all 0.4s 0.2s ease;
                 z-index: -1;
 
                 &:before {
@@ -454,6 +458,22 @@ body {
             .bottomExpand {
                 transform: rotate(-180deg);
                 opacity: 0.5;
+            }
+
+            .progressBar {
+
+                width: 290px;
+
+                @include sm {
+                    min-width: 290px;
+                    box-sizing: border-box;
+                    width: 80%;
+                }
+
+                .timer {
+                    display: flex;
+                    justify-content: space-between;
+                }
             }
 
             .player {
