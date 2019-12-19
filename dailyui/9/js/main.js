@@ -196,15 +196,15 @@ window.addEventListener("load", event => {
             },
             {
                 title: 'Artists',
-                img: 'https://rafaelalucas91.github.io/assets/images/img-20.jpeg'
+                img: 'covers/img04.jpg'
             },
             {
                 title: 'Playlists',
-                img: 'https://rafaelalucas91.github.io/assets/images/img-18.jpeg'
+                img: 'covers/img03.jpg'
             },
             {
                 title: 'Favourites',
-                img: 'https://rafaelalucas91.github.io/assets/images/img-30.jpeg'
+                img: 'covers/img01.jpg'
             }
         ];
 
