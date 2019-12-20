@@ -12,6 +12,7 @@ button,
 a,
 i,
 input,
+figure,
 body {
   margin: 0;
   padding: 0;
@@ -35,6 +36,7 @@ button:focus,
 a:focus,
 i:focus,
 input:focus,
+figure:focus,
 body:focus {
   outline: 0;
 }
@@ -96,6 +98,7 @@ body:focus {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  letter-spacing: 0.8px;
 }
 
 @media screen and (max-width: 640px) {
@@ -202,7 +205,7 @@ body:focus {
   background-image: url("../assets/menu.svg");
 }
 
-.wrapper .content .icon.plus {
+.wrapper .content .icon.plus:before {
   background-image: url("../assets/plus.svg");
 }
 
@@ -236,6 +239,10 @@ body:focus {
     width: 24px;
     height: 24px;
   }
+}
+
+.wrapper .content .icon.close:before {
+  background-image: url("../assets/close.svg");
 }
 
 .wrapper .content .topContent {
@@ -280,6 +287,12 @@ body:focus {
           box-sizing: border-box;
 }
 
+.wrapper .content .topContent .menuBar .appName {
+  font-weight: 600;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
 .wrapper .content .topContent .musicGroups {
   width: 100%;
   height: 100px;
@@ -312,8 +325,8 @@ body:focus {
 .wrapper .content .topContent .musicGroups .group {
   position: relative;
   border-radius: 4px;
-  overflow: hidden;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .wrapper .content .topContent .musicGroups .group:before {
@@ -321,15 +334,14 @@ body:focus {
   content: '';
   width: 100%;
   height: 30px;
-  background-color: rgba(232, 232, 240, 0.5);
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
   bottom: 0;
-  z-index: 1;
+  z-index: 2;
 }
 
 .wrapper .content .topContent .musicGroups .group figure {
   margin: 0;
+  height: 100%;
+  width: 100%;
 }
 
 .wrapper .content .topContent .musicGroups .group figure img {
@@ -346,8 +358,10 @@ body:focus {
   height: 100%;
   background: -webkit-gradient(linear, left bottom, left top, from(black), to(transparent));
   background: linear-gradient(0deg, black, transparent);
-  bottom: 0;
-  opacity: 0.5;
+  top: 0;
+  left: 0;
+  opacity: 0.8;
+  z-index: 1;
 }
 
 .wrapper .content .topContent .musicGroups .group .titleGroup {
@@ -355,7 +369,7 @@ body:focus {
   bottom: 0;
   width: 100%;
   text-align: center;
-  z-index: 1;
+  z-index: 3;
   height: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -501,6 +515,126 @@ body:focus {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   position: fixed;
+  -webkit-transition: all 0s ease;
+  transition: all 0s ease;
+  -webkit-transform: translateY(-100px);
+          transform: translateY(-100px);
+  opacity: 0;
+}
+
+.wrapper .content .middleContent .playlistsContent {
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  z-index: 3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  -webkit-transform: translateY(-150%);
+          transform: translateY(-150%);
+  -webkit-transition: all 0.8s cubic-bezier(0.8, -0.02, 0.25, 1);
+  transition: all 0.8s cubic-bezier(0.8, -0.02, 0.25, 1);
+}
+
+.wrapper .content .middleContent .playlistsContent .close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.wrapper .content .middleContent .playlistsContent .playlist {
+  width: calc(80% - 20px);
+  height: 100px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  align-items: center;
+  margin-bottom: 10px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 4px;
+  z-index: 3;
+  opacity: 0;
+  -webkit-transform: translateY(-40px);
+          transform: translateY(-40px);
+  -webkit-transition: all 0.4s 0.4s ease;
+  transition: all 0.4s 0.4s ease;
+}
+
+.wrapper .content .middleContent .playlistsContent .playlist:last-child {
+  margin-bottom: 0;
+}
+
+.wrapper .content .middleContent .playlistsContent .playlist .playlistThumb {
+  width: 80px;
+  height: 80%;
+  border-radius: 4px;
+  overflow: hidden;
+  z-index: 1;
+  margin-left: 10px;
+}
+
+.wrapper .content .middleContent .playlistsContent .playlist .playlistThumb img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.wrapper .content .middleContent .playlistsContent .playlist .playlistBg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: black;
+}
+
+.wrapper .content .middleContent .playlistsContent .playlist .playlistBg img {
+  width: 120%;
+  height: 120%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-filter: blur(5px);
+          filter: blur(5px);
+  opacity: 0.5;
+}
+
+.wrapper .content .middleContent .playlistsContent .playlist .playlistTitle {
+  z-index: 1;
+  margin-left: 40px;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .wrapper .content .middleContent .swiper-container {
@@ -518,6 +652,32 @@ body:focus {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.wrapper .content .middleContent .swiper-slide.open {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.wrapper .content .middleContent .swiper-slide-active .settings {
+  -webkit-transition: all 0.4s 0.4s ease;
+  transition: all 0.4s 0.4s ease;
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+}
+
+.wrapper .content .middleContent .swiper-slide-active.open .playlistsContent {
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+}
+
+.wrapper .content .middleContent .swiper-slide-active.open .playlistsContent .playlist {
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
 
 .wrapper .content .bottomContent {
@@ -593,7 +753,7 @@ body:focus {
   position: absolute;
   background-color: white;
   height: 100%;
-  width: 50%;
+  width: 0%;
   border-radius: 4px;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
@@ -724,70 +884,59 @@ body:focus {
 }
 
 .wrapper .content .albumBg .imageBg {
-  width: 110%;
-  height: 110%;
+  width: 100%;
+  height: 100%;
   -webkit-filter: blur(20px);
           filter: blur(20px);
   -o-object-fit: cover;
      object-fit: cover;
+  margin: -20px;
 }
 
 .wrapper .content .albumBg .imageBg.animeBg {
-  -webkit-animation: animeBg 0.4s ease both;
-          animation: animeBg 0.4s ease both;
+  -webkit-animation: animeBg 0.6s ease both;
+          animation: animeBg 0.6s ease both;
 }
 
 @-webkit-keyframes animeBg {
   0% {
-    width: 120%;
-    height: 110%;
+    width: 100%;
+    height: 100%;
     -webkit-filter: blur(20px);
             filter: blur(20px);
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
   }
   50% {
-    width: 200%;
-    height: 200%;
-    -webkit-filter: blur(100px);
-            filter: blur(100px);
-    -webkit-transform: rotate(20deg);
-            transform: rotate(20deg);
+    width: 130%;
+    height: 130%;
+    -webkit-filter: blur(60px);
+            filter: blur(60px);
   }
   100% {
-    width: 120%;
-    height: 110%;
+    width: 100%;
+    height: 100%;
     -webkit-filter: blur(20px);
             filter: blur(20px);
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
   }
 }
 
 @keyframes animeBg {
   0% {
-    width: 120%;
-    height: 110%;
+    width: 100%;
+    height: 100%;
     -webkit-filter: blur(20px);
             filter: blur(20px);
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
   }
   50% {
-    width: 200%;
-    height: 200%;
-    -webkit-filter: blur(100px);
-            filter: blur(100px);
-    -webkit-transform: rotate(20deg);
-            transform: rotate(20deg);
+    width: 130%;
+    height: 130%;
+    -webkit-filter: blur(60px);
+            filter: blur(60px);
   }
   100% {
-    width: 120%;
-    height: 110%;
+    width: 100%;
+    height: 100%;
     -webkit-filter: blur(20px);
             filter: blur(20px);
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
   }
 }
 

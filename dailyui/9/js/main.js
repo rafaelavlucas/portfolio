@@ -1,15 +1,20 @@
 window.addEventListener("load", event => {
+    ////////////////
+    // Variables
+    ////////////////
 
-    //Expand Top & Bottom
-
-    var iconTopExpand = document.querySelector('.icon.topExpand'),
+    const iconTopExpand = document.querySelector('.icon.topExpand'),
         iconBottomExpand = document.querySelector('.icon.bottomExpand'),
         topContent = document.querySelector('.topContent'),
         bottomContent = document.querySelector('.bottomContent'),
-        playBtn = document.querySelector('.btnPlay');
+        playBtn = document.querySelector('.btnPlay'),
+        musicGroups = document.querySelector('.swiper-wrapper.slider-two'),
+        swipperWrapper = document.querySelector('.swiper-wrapper.slider-one'),
+        imageBg = document.querySelector('.imageBg'),
+        next = document.querySelector('.swiper-button-next'),
+        prev = document.querySelector('.swiper-button-prev');
 
     // Songs 
-    let counter = 0;
     const songs = [{
             id: 0,
             img: 'covers/feist.jpg',
@@ -54,9 +59,56 @@ window.addEventListener("load", event => {
         },
     ];
 
+    // Music Groups
+    const groups = [{
+            title: "Songs",
+            img: 'covers/img02.jpg'
+        },
+        {
+            title: 'Artists',
+            img: 'covers/img04.jpg'
+        },
+        {
+            title: 'Playlists',
+            img: 'covers/img03.jpg'
+        },
+        {
+            title: 'Favourites',
+            img: 'covers/img01.jpg'
+        }
+    ];
+
+    // Playlists
+    const playlists = [{
+            title: "Pop Music",
+            img: 'covers/img02.jpg'
+        },
+        {
+            title: 'On the road!',
+            img: 'covers/img04.jpg'
+        },
+        {
+            title: 'Christmas Songs',
+            img: 'covers/img03.jpg'
+        },
+        {
+            title: 'Best covers',
+            img: 'covers/img01.jpg'
+        }
+    ];
+
+    ////////////////
+    // Events
+    ////////////////
+
     iconTopExpand.addEventListener("click", expandTop);
     iconBottomExpand.addEventListener("click", expandBottom);
     playBtn.addEventListener("click", playSong);
+
+
+    ////////////////
+    // Functions
+    //////////////// 
 
     function playSong() {
 
@@ -117,21 +169,44 @@ window.addEventListener("load", event => {
 
     //Swiper Albums
 
-    var swipperWrapper = document.querySelector('.swiper-wrapper.slider-one');
     songs.forEach(function (el) {
+
         let template = `
         <div class="swiper-slide">
         <div class="settings">
-                    <div class="icon plus"></div>
                     <div class="icon heart"></div>
+                    <div class="icon plus"></div>
                 </div>
         <audio src="${el.song}"></audio>
         <div class="albumContent">
         <div class="albumCover"><img src="${el.img}"></div>
     <p class="artistName">${el.artistName}</p>
-    <p class="songName">${el.songName}</p></div></div>`;
+    <p class="songName">${el.songName}</p></div>
+    <div class="playlistsContent">
+    <div class="icon close"></div>
+    </div>
+    </div>`;
+
         swipperWrapper.insertAdjacentHTML('beforeend', template);
-    })
+    });
+
+
+    playlists.forEach(function (el) {
+        let templatePlaylist = `
+        <div class="playlist">
+        <figure class="playlistBg"><img src="${el.img}"></figure>
+        <figure class="playlistThumb"><img src="${el.img}"></figure>
+        <p class="playlistTitle">${el.title}</p></div>`;
+
+        var playlistContent = document.querySelectorAll('.playlistsContent');
+
+        playlistContent.forEach(function (el) {
+            el.insertAdjacentHTML('beforeend', templatePlaylist);
+        })
+
+
+    });
+
 
     var mySwiper = new Swiper(".swiper-container.slider-one", {
         // Optional parameters
@@ -156,11 +231,7 @@ window.addEventListener("load", event => {
         }
     });
 
-    // Album BG
-    const imageBg = document.querySelector('.imageBg'),
-        next = document.querySelector('.swiper-button-next'),
-        prev = document.querySelector('.swiper-button-prev');
-
+    // Change Song & Album BG
     next.addEventListener("click", changeSong);
     prev.addEventListener("click", changeSong);
 
@@ -174,39 +245,24 @@ window.addEventListener("load", event => {
         }
         changeBg();
         progressBar();
+        closePlaylists();
     }
 
     function changeBg() {
-        imageBg.src = document.querySelector('.slider-one .swiper-slide-active img').src;
-        imageBg.classList.add('animeBg');
+
+
+        setTimeout(() => {
+            imageBg.src = document.querySelector('.slider-one .swiper-slide-active img').src;
+            imageBg.classList.add('animeBg');
+        }, 100);
+
 
         setTimeout(() => {
             imageBg.classList.remove('animeBg');
         }, 800);
     }
 
-    changeBg();
-
     // Music Groups
-    const musicGroups = document.querySelector('.swiper-wrapper.slider-two'),
-
-        groups = [{
-                title: "Songs",
-                img: 'covers/img02.jpg'
-            },
-            {
-                title: 'Artists',
-                img: 'covers/img04.jpg'
-            },
-            {
-                title: 'Playlists',
-                img: 'covers/img03.jpg'
-            },
-            {
-                title: 'Favourites',
-                img: 'covers/img01.jpg'
-            }
-        ];
 
     for (let i = 0; i < groups.length; i++) {
         const {
@@ -217,21 +273,29 @@ window.addEventListener("load", event => {
 
         var template2 =
             `<div class="swiper-slide group">
-            <figure>
-                <img src="${img}">
-            </figure>
-            <p class="titleGroup">${title}</p>
-        </div>`;
+                <figure><img src="${img}"></figure>
+                <p class = "titleGroup">${title}</p>
+            </div>`;
 
         musicGroups.insertAdjacentHTML('beforeend', template2);
     }
 
-    //add favourites
+    // Add favourites & Playlist
 
-    const heart = document.querySelectorAll('.heart');
+    const heart = document.querySelectorAll('.heart'),
+        plus = document.querySelectorAll('.plus'),
+        close = document.querySelectorAll('.close');
 
     heart.forEach(function (el) {
         el.addEventListener("click", addFave)
+    })
+
+    plus.forEach(function (el) {
+        el.addEventListener("click", openPlaylists)
+    })
+
+    close.forEach(function (el) {
+        el.addEventListener("click", openPlaylists)
     })
 
     function addFave(e) {
@@ -242,23 +306,51 @@ window.addEventListener("load", event => {
         }
     }
 
-    //Song Progress Bar
+    function openPlaylists(e) {
+        if (e.currentTarget.closest('.swiper-slide-active').classList.contains('open')) {
+            e.currentTarget.closest('.swiper-slide-active').classList.remove('open');
+        } else {
+            e.currentTarget.closest('.swiper-slide-active').classList.add('open');
+        }
+    }
+
+    function closePlaylists() {
+        document.querySelector('.swiper-slide-active').classList.remove('open');
+    }
+
+    // Song Progress Bar
+
+    function formatTime(seconds) {
+        minutes = Math.floor(seconds / 60);
+        minutes = (minutes >= 10) ? minutes : "0" + minutes;
+        seconds = Math.floor(seconds % 60);
+        seconds = (seconds >= 10) ? seconds : "0" + seconds;
+        return minutes + ":" + seconds;
+    }
 
     function progressBar() {
         var songDuration = document.querySelector('.swiper-slide-active audio').duration,
-            songMinutes = Math.floor(songDuration / 60),
-            songSeconds = Math.floor(songDuration - songMinutes * 60),
             endTime = document.querySelector('.endTime'),
-            songPlaying = document.querySelector('.swiper-slide-active audio').currentTime,
+            songAudio = document.querySelector('.swiper-slide-active audio'),
             currentTime = document.querySelector('.currentTime');
 
+        endTime.innerHTML = formatTime(songDuration);
 
-        endTime.innerHTML = songMinutes + ':' + songSeconds;
-        currentTime.innerHTML = Math.floor(songPlaying);
-        return;
+        songAudio.ontimeupdate = function () {
+
+            var progress = document.querySelector('.progress');
+            progress.style.width = ((songAudio.currentTime * 100) / songDuration) + "%"
+            currentTime.innerHTML = formatTime(songAudio.currentTime);
+        }
 
     };
 
+
+    ////////////////
+    // Call Functions
+    //////////////// 
+
+    changeBg();
     progressBar();
 
 });
