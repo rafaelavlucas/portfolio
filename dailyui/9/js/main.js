@@ -62,38 +62,38 @@ window.addEventListener("load", event => {
     // Music Groups
     const groups = [{
             title: "Songs",
-            img: 'covers/img02.jpg'
+            img: 'covers/img06.jpg'
         },
         {
             title: 'Artists',
-            img: 'covers/img04.jpg'
+            img: 'covers/img07.jpg'
         },
         {
             title: 'Playlists',
-            img: 'covers/img03.jpg'
+            img: 'https://images.pexels.com/photos/761963/pexels-photo-761963.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=400'
         },
         {
             title: 'Favourites',
-            img: 'covers/img01.jpg'
+            img: 'covers/img10.jpg'
         }
     ];
 
     // Playlists
     const playlists = [{
             title: "Pop Music",
-            img: 'covers/img02.jpg'
+            img: 'https://images.pexels.com/photos/761963/pexels-photo-761963.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=400'
         },
         {
             title: 'On the road!',
-            img: 'covers/img04.jpg'
+            img: 'https://images.pexels.com/photos/3049327/pexels-photo-3049327.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=400'
         },
         {
             title: 'Christmas Songs',
-            img: 'covers/img03.jpg'
+            img: 'https://images.pexels.com/photos/1661905/pexels-photo-1661905.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=400'
         },
         {
-            title: 'Best covers',
-            img: 'covers/img01.jpg'
+            title: 'Rainy days',
+            img: 'https://images.pexels.com/photos/216657/pexels-photo-216657.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=400'
         }
     ];
 
@@ -190,10 +190,11 @@ window.addEventListener("load", event => {
         swipperWrapper.insertAdjacentHTML('beforeend', template);
     });
 
-
+    // To Create Playlists
     playlists.forEach(function (el) {
         let templatePlaylist = `
         <div class="playlist">
+        <span class="checkbox"></span>
         <figure class="playlistBg"><img src="${el.img}"></figure>
         <figure class="playlistThumb"><img src="${el.img}"></figure>
         <p class="playlistTitle">${el.title}</p></div>`;
@@ -284,7 +285,8 @@ window.addEventListener("load", event => {
 
     const heart = document.querySelectorAll('.heart'),
         plus = document.querySelectorAll('.plus'),
-        close = document.querySelectorAll('.close');
+        close = document.querySelectorAll('.close'),
+        playlist = document.querySelectorAll('.playlist');
 
     heart.forEach(function (el) {
         el.addEventListener("click", addFave)
@@ -296,6 +298,10 @@ window.addEventListener("load", event => {
 
     close.forEach(function (el) {
         el.addEventListener("click", openPlaylists)
+    })
+
+    playlist.forEach(function (el) {
+        el.addEventListener("click", addPlaylist)
     })
 
     function addFave(e) {
@@ -317,6 +323,16 @@ window.addEventListener("load", event => {
     function closePlaylists() {
         document.querySelector('.swiper-slide-active').classList.remove('open');
     }
+
+    function addPlaylist(e) {
+        if (e.currentTarget.classList.contains('selected')) {
+            e.currentTarget.classList.remove('selected');
+        } else {
+            e.currentTarget.classList.add('selected');
+        }
+    }
+
+
 
     // Song Progress Bar
 
