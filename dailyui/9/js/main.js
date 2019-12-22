@@ -17,45 +17,52 @@ window.addEventListener("load", event => {
 
     // Songs 
     const songs = [{
-            id: 0,
             img: 'covers/feist.jpg',
             artistName: 'Feist',
             songName: 'The Bad in Each Other',
             song: 'songs/song1.mp3'
         },
         {
-            id: 1,
             img: 'covers/jain.jpg',
             artistName: 'Jain',
             songName: 'Makeba',
             song: 'songs/song2.mp3'
         },
         {
-            id: 2,
             img: 'covers/alice.jpg',
             artistName: 'Alice Phoebe Lou',
             songName: 'Orbit',
             song: 'songs/song3.mp3'
         },
         {
-            id: 3,
             img: 'covers/ohland.jpg',
             artistName: 'Oh Land',
             songName: 'Postpone the Bad',
             song: 'songs/song1.mp3'
         },
         {
-            id: 4,
             img: 'covers/angele.jpg',
             artistName: 'Angèle',
             songName: 'La Loi de Murphy',
             song: 'songs/song2.mp3'
         },
         {
-            id: 5,
             img: 'covers/broods.jpg',
             artistName: 'Broods',
             songName: 'Bridges',
+            song: 'songs/song3.mp3'
+        },
+
+        {
+            img: 'covers/dagny.jpg',
+            artistName: 'Dagny',
+            songName: 'Ultraviolet',
+            song: 'songs/song3.mp3'
+        },
+        {
+            img: 'covers/sigrid.jpg',
+            artistName: 'Sigrid',
+            songName: 'Dynamite',
             song: 'songs/song3.mp3'
         },
     ];
@@ -251,15 +258,16 @@ window.addEventListener("load", event => {
     }
 
     function changeBg() {
+        albumBg.classList.add('animeBg');
+
         setTimeout(() => {
             imageBg.src = document.querySelector('.slider-one .swiper-slide-active img').src;
-            albumBg.classList.add('animeBg');
-        }, 50);
+        }, 300);
 
 
         setTimeout(() => {
             albumBg.classList.remove('animeBg');
-        }, 1000);
+        }, 700);
     }
 
     // Music Groups
