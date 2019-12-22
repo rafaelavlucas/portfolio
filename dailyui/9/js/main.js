@@ -11,6 +11,7 @@ window.addEventListener("load", event => {
         musicGroups = document.querySelector('.swiper-wrapper.slider-two'),
         swipperWrapper = document.querySelector('.swiper-wrapper.slider-one'),
         imageBg = document.querySelector('.imageBg'),
+        albumBg = document.querySelector('.albumBg'),
         next = document.querySelector('.swiper-button-next'),
         prev = document.querySelector('.swiper-button-prev');
 
@@ -250,17 +251,15 @@ window.addEventListener("load", event => {
     }
 
     function changeBg() {
-
-
         setTimeout(() => {
             imageBg.src = document.querySelector('.slider-one .swiper-slide-active img').src;
-            imageBg.classList.add('animeBg');
-        }, 100);
+            albumBg.classList.add('animeBg');
+        }, 50);
 
 
         setTimeout(() => {
-            imageBg.classList.remove('animeBg');
-        }, 800);
+            albumBg.classList.remove('animeBg');
+        }, 1000);
     }
 
     // Music Groups
