@@ -12,58 +12,68 @@ window.addEventListener("load", event => {
         swipperWrapper = document.querySelector('.swiper-wrapper.slider-one'),
         imageBg = document.querySelector('.imageBg'),
         albumBg = document.querySelector('.albumBg'),
+        wrapper = document.querySelector('.wrapper'),
+        bodyBg = document.querySelector('.bodyBg'),
         next = document.querySelector('.swiper-button-next'),
         prev = document.querySelector('.swiper-button-prev');
 
     // Songs 
     const songs = [{
-            img: 'covers/feist.jpg',
-            artistName: 'Feist',
-            songName: 'The Bad in Each Other',
-            song: 'songs/song1.mp3'
-        },
-        {
             img: 'covers/jain.jpg',
             artistName: 'Jain',
             songName: 'Makeba',
-            song: 'songs/song2.mp3'
-        },
-        {
-            img: 'covers/alice.jpg',
-            artistName: 'Alice Phoebe Lou',
-            songName: 'Orbit',
-            song: 'songs/song3.mp3'
+            song: 'songs/song2.mp3',
+            color: '#f5c63d'
         },
         {
             img: 'covers/ohland.jpg',
             artistName: 'Oh Land',
             songName: 'Postpone the Bad',
-            song: 'songs/song1.mp3'
+            song: 'songs/song1.mp3',
+            color: '#afc5c3'
         },
         {
             img: 'covers/angele.jpg',
             artistName: 'Angèle',
             songName: 'La Loi de Murphy',
-            song: 'songs/song2.mp3'
+            song: 'songs/song2.mp3',
+            color: '#74c2dd'
         },
         {
             img: 'covers/broods.jpg',
             artistName: 'Broods',
             songName: 'Bridges',
-            song: 'songs/song3.mp3'
+            song: 'songs/song3.mp3',
+            color: '#a3b8b0'
+        },
+        {
+            img: 'covers/alice.jpg',
+            artistName: 'Alice Phoebe Lou',
+            songName: 'Orbit',
+            song: 'songs/song3.mp3',
+            color: '#c3605d'
+        },
+        {
+            img: 'covers/feist.jpg',
+            artistName: 'Feist',
+            songName: 'The Bad in Each Other',
+            song: 'songs/song1.mp3',
+            color: '#a4b1b2'
         },
 
         {
             img: 'covers/dagny.jpg',
             artistName: 'Dagny',
             songName: 'Ultraviolet',
-            song: 'songs/song3.mp3'
+            song: 'songs/song3.mp3',
+            color: '#8098ce'
         },
         {
             img: 'covers/sigrid.jpg',
             artistName: 'Sigrid',
             songName: 'Dynamite',
-            song: 'songs/song3.mp3'
+            song: 'songs/song3.mp3',
+            color: '#1a91bd'
         },
     ];
 
@@ -187,7 +197,7 @@ window.addEventListener("load", event => {
                 </div>
         <audio src="${el.song}"></audio>
         <div class="albumContent">
-        <div class="albumCover"><img src="${el.img}"></div>
+        <div class="albumCover" style="background-color:${el.color}"><img src="${el.img}"></div>
     <p class="artistName">${el.artistName}</p>
     <p class="songName">${el.songName}</p></div>
     <div class="playlistsContent">
@@ -196,7 +206,11 @@ window.addEventListener("load", event => {
     </div>`;
 
         swipperWrapper.insertAdjacentHTML('beforeend', template);
+
     });
+
+
+
 
     // To Create Playlists
     playlists.forEach(function (el) {
@@ -216,6 +230,7 @@ window.addEventListener("load", event => {
 
     });
 
+    // Slider Songs (Middle)
 
     var mySwiper = new Swiper(".swiper-container.slider-one", {
         // Optional parameters
@@ -245,7 +260,6 @@ window.addEventListener("load", event => {
     prev.addEventListener("click", changeSong);
 
     function changeSong() {
-
         if (playBtn.classList.contains('pause')) {
             document.querySelectorAll('audio').forEach(function (el) {
                 el.pause()
@@ -255,6 +269,7 @@ window.addEventListener("load", event => {
         changeBg();
         progressBar();
         closePlaylists();
+        changeBgColor();
     }
 
     function changeBg() {
@@ -269,6 +284,18 @@ window.addEventListener("load", event => {
             albumBg.classList.remove('animeBg');
         }, 700);
     }
+
+
+    function changeBgColor() {
+        var getColor = document.querySelector('.slider-one .swiper-slide-active .albumCover'),
+            activeColor = getColor.style.backgroundColor;
+
+        setTimeout(() => {
+            bodyBg.style.backgroundColor = activeColor;
+        }, 200);
+        console.log(getColor);
+    };
+
 
     // Music Groups
 
@@ -340,7 +367,6 @@ window.addEventListener("load", event => {
     }
 
 
-
     // Song Progress Bar
 
     function formatTime(seconds) {
@@ -375,5 +401,6 @@ window.addEventListener("load", event => {
 
     changeBg();
     progressBar();
+    changeBgColor();
 
 });
