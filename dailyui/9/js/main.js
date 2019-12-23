@@ -293,7 +293,6 @@ window.addEventListener("load", event => {
         setTimeout(() => {
             bodyBg.style.backgroundColor = activeColor;
         }, 200);
-        console.log(getColor);
     };
 
 
@@ -402,5 +401,11 @@ window.addEventListener("load", event => {
     changeBg();
     progressBar();
     changeBgColor();
+
+
+    wrapper.style.height = window.innerHeight + "px";
+    bodyBg.style.height = window.innerHeight + "px";
+
+    console.log(window.innerHeight)
 
 });
