@@ -83,7 +83,7 @@ body {
 
 
     @include xs {
-        height: 100%;
+        height: 100% !important;
         min-height: 600px;
     }
 
@@ -888,8 +888,8 @@ body {
 
     .bodyBg {
         width: 100%;
-        ///height: 100%;
-        position: absolute;
+        height: 100%;
+        position: fixed;
         z-index: -2;
         transition: all 0.4s ease;
     }

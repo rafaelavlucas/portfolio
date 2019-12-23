@@ -404,7 +404,8 @@ window.addEventListener("load", event => {
 
 
     wrapper.style.height = window.innerHeight + "px";
-    bodyBg.style.height = window.innerHeight + "px";
+
+
 
     console.log(window.innerHeight)
 
