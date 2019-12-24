@@ -51,7 +51,7 @@ window.addEventListener("load", event => {
             artistName: 'Alice Phoebe Lou',
             songName: 'Orbit',
             song: 'songs/song3.mp3',
-            color: '#c3605d'
+            color: '#38736d'
         },
         {
             img: 'covers/feist.jpg',
