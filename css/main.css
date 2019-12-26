@@ -957,7 +957,6 @@ header .header-images span:hover:after {
 }
 
 header .header-content {
-  width: 100%;
   position: absolute;
   -webkit-transition: all .8s ease;
   transition: all .8s ease;
@@ -975,6 +974,7 @@ header .header-content {
       -ms-flex-direction: column;
           flex-direction: column;
   z-index: 1;
+  cursor: default;
   -webkit-animation: headerText 0.6s 1.2s ease backwards;
           animation: headerText 0.6s 1.2s ease backwards;
 }
@@ -1071,9 +1071,11 @@ header .header-content .desc:before {
 }
 
 header:hover .header-content {
+  visibility: hidden;
   opacity: 0;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
+  height: 0;
 }
 
 @media (max-width: 799px) {

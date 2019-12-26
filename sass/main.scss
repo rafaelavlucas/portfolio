@@ -857,7 +857,6 @@ header {
     }
 
     .header-content {
-        width: 100%;
         position: absolute;
         transition: all .8s ease;
         display: flex;
@@ -865,6 +864,7 @@ header {
         align-items: center;
         flex-direction: column;
         z-index: 1;
+        cursor: default;
         animation: headerText 0.6s 1.2s ease backwards;
 
         @keyframes headerText {
@@ -930,8 +930,10 @@ header {
 
     &:hover {
         .header-content {
+            visibility: hidden;
             opacity: 0;
             transition: all 0.4s ease;
+            height: 0;
 
             @include sm {
                 opacity: 1;
