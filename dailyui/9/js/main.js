@@ -22,42 +22,42 @@ window.addEventListener("load", event => {
             img: 'covers/jain.jpg',
             artistName: 'Jain',
             songName: 'Makeba',
-            song: 'songs/song2.mp3',
+            song: 'songs/song1.mp3',
             color: '#f5c63d'
         },
         {
             img: 'covers/ohland.jpg',
             artistName: 'Oh Land',
             songName: 'Postpone the Bad',
-            song: 'songs/song1.mp3',
+            song: 'songs/song2.mp3',
             color: '#afc5c3'
         },
         {
             img: 'covers/angele.jpg',
             artistName: 'Angèle',
             songName: 'La Loi de Murphy',
-            song: 'songs/song2.mp3',
+            song: 'songs/song3.mp3',
             color: '#74c2dd'
         },
         {
             img: 'covers/broods.jpg',
             artistName: 'Broods',
             songName: 'Bridges',
-            song: 'songs/song3.mp3',
+            song: 'songs/song1.mp3',
             color: '#a3b8b0'
         },
         {
             img: 'covers/alice.jpg',
             artistName: 'Alice Phoebe Lou',
             songName: 'Orbit',
-            song: 'songs/song3.mp3',
+            song: 'songs/song2.mp3',
             color: '#38736d'
         },
         {
             img: 'covers/feist.jpg',
             artistName: 'Feist',
             songName: 'The Bad in Each Other',
-            song: 'songs/song1.mp3',
+            song: 'songs/song3.mp3',
             color: '#a4b1b2'
         },
 
@@ -65,14 +65,14 @@ window.addEventListener("load", event => {
             img: 'covers/dagny.jpg',
             artistName: 'Dagny',
             songName: 'Ultraviolet',
-            song: 'songs/song3.mp3',
+            song: 'songs/song1.mp3',
             color: '#8098ce'
         },
         {
             img: 'covers/sigrid.jpg',
             artistName: 'Sigrid',
             songName: 'Dynamite',
-            song: 'songs/song3.mp3',
+            song: 'songs/song2.mp3',
             color: '#1a91bd'
         },
     ];
