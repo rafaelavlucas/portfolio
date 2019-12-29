@@ -137,8 +137,8 @@
 }
 
 .wrapper .content .card:hover {
-  -webkit-transform: translateY(-8px);
-          transform: translateY(-8px);
+  -webkit-transform: translateY(8px);
+          transform: translateY(8px);
   -webkit-box-shadow: 0px 15px 40px -20px rgba(38, 73, 119, 0.8);
           box-shadow: 0px 15px 40px -20px rgba(38, 73, 119, 0.8);
 }
