@@ -74,6 +74,7 @@
   letter-spacing: 0.8px;
   padding: 60px 5%;
   max-width: 1440px;
+  margin: 0 auto;
 }
 
 @media screen and (max-width: 1023px) {
