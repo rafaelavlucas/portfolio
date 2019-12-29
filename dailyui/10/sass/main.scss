@@ -273,7 +273,7 @@ body {
                 z-index: 2;
                 cursor: pointer;
                 border-radius: 100%;
-                transition: all 0.4s ease;
+                transition: all 0.4s ease, transform 0.3s 0.5s ease;
 
                 &:before {
                     position: absolute;
@@ -282,8 +282,8 @@ body {
                     height: 24px;
                     background-image: url(../assets/share.svg);
                     background-size: cover;
-                    transition: all 0.15s linear, transform 0.3s 0.5s ease, background-image 0.3s 0.5s ease;
-                    z-index: 2;
+                    transition: all 0.15s linear, background-image 0.3s 0.5s ease;
+                    z-index: 3;
                 }
 
                 &:hover {
@@ -436,12 +436,14 @@ body {
                 }
 
                 &__icon {
+                    transform: rotate(180deg);
+                    transition: all 0.4s ease;
 
                     &:before {
                         background: url(../assets/close.svg);
                         background-size: cover;
                         transition: all 0.3s ease;
-                        transform: rotate(180deg);
+
                     }
 
                     &:hover {

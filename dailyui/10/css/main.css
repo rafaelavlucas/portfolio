@@ -322,8 +322,10 @@
   z-index: 2;
   cursor: pointer;
   border-radius: 100%;
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
+  -webkit-transition: all 0.4s ease, -webkit-transform 0.3s 0.5s ease;
+  transition: all 0.4s ease, -webkit-transform 0.3s 0.5s ease;
+  transition: all 0.4s ease, transform 0.3s 0.5s ease;
+  transition: all 0.4s ease, transform 0.3s 0.5s ease, -webkit-transform 0.3s 0.5s ease;
 }
 
 .wrapper .content .card__icon:before {
@@ -333,11 +335,9 @@
   height: 24px;
   background-image: url(../assets/share.svg);
   background-size: cover;
-  -webkit-transition: all 0.15s linear, background-image 0.3s 0.5s ease, -webkit-transform 0.3s 0.5s ease;
-  transition: all 0.15s linear, background-image 0.3s 0.5s ease, -webkit-transform 0.3s 0.5s ease;
-  transition: all 0.15s linear, transform 0.3s 0.5s ease, background-image 0.3s 0.5s ease;
-  transition: all 0.15s linear, transform 0.3s 0.5s ease, background-image 0.3s 0.5s ease, -webkit-transform 0.3s 0.5s ease;
-  z-index: 2;
+  -webkit-transition: all 0.15s linear, background-image 0.3s 0.5s ease;
+  transition: all 0.15s linear, background-image 0.3s 0.5s ease;
+  z-index: 3;
 }
 
 .wrapper .content .card__icon:hover:before {
@@ -522,13 +522,18 @@
   }
 }
 
+.wrapper .content .show .card__icon {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
 .wrapper .content .show .card__icon:before {
   background: url(../assets/close.svg);
   background-size: cover;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
 }
 
 .wrapper .content .show .card__icon:hover:before {
