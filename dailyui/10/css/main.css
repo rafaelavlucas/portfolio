@@ -1,0 +1,420 @@
+@import url("https://fonts.googleapis.com/css?family=Barlow+Condensed:300,400,500,600,700,800,900|Barlow:300,400,500,600,700,800,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: 0;
+  -webkit-tap-highlight-color: transparent;
+  text-decoration: none;
+  color: inherit;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*:focus {
+  outline: 0;
+}
+
+.logo {
+  position: fixed;
+  z-index: 5;
+  bottom: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 100%;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+
+.logo img {
+  width: 55%;
+  height: 55%;
+  -webkit-transform: translateY(-1px);
+          transform: translateY(-1px);
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 640px) {
+  .logo {
+    display: none;
+  }
+}
+
+.wrapper {
+  display: -ms-grid;
+  display: grid;
+  width: 100%;
+  height: 100vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: white;
+  font-family: "Barlow", sans-serif;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  letter-spacing: 0.8px;
+}
+
+.wrapper .content {
+  margin: 60px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.wrapper .content .card {
+  width: 400px;
+  height: 500px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  cursor: pointer;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.wrapper .content .card__imageBg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: -1;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.wrapper .content .card__imageBg img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.wrapper .content .card__text {
+  color: white;
+  width: 100%;
+  height: 185px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all 0.4s 0.4s ease;
+  transition: all 0.4s 0.4s ease;
+  background: rgba(35, 58, 89, 0.6);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border-radius: 0px 0px 8px 8px;
+  padding: 30px 40px 70px 40px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.wrapper .content .card__label {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.08em;
+  background: -webkit-gradient(linear, left top, right top, from(#72EEFF), to(#A7C2FF));
+  background: linear-gradient(90deg, #72EEFF 0%, #A7C2FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.wrapper .content .card__title {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  margin-top: 20px;
+}
+
+.wrapper .content .card__share {
+  width: 48px;
+  height: 48px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  -webkit-transform: translateY(20px);
+          transform: translateY(20px);
+  -webkit-transition: all 0.4s 0.5s ease, height 0.4s 0.3s ease, width 0.4s 0.4s ease, border-radius 0.4s 0.4s ease;
+  transition: all 0.4s 0.5s ease, height 0.4s 0.3s ease, width 0.4s 0.4s ease, border-radius 0.4s 0.4s ease;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.wrapper .content .card__share:before {
+  position: absolute;
+  content: '';
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, right top, from(#14B5D9), to(#5B86E5));
+  background: linear-gradient(90deg, #14B5D9 0%, #5B86E5 100%);
+  -webkit-transition: all 0.4s 0.4s ease;
+  transition: all 0.4s 0.4s ease;
+}
+
+.wrapper .content .card__share:hover:after {
+  opacity: 1;
+}
+
+.wrapper .content .card__icon {
+  width: 48px;
+  height: 48px;
+  bottom: 0px;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 2;
+  cursor: pointer;
+  border-radius: 100%;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.wrapper .content .card__icon:before {
+  position: absolute;
+  content: '';
+  width: 24px;
+  height: 24px;
+  background-image: url(../assets/share.svg);
+  background-size: cover;
+  -webkit-transition: all 0.15s linear, background-image 0.3s 0.5s ease, -webkit-transform 0.3s 0.5s ease;
+  transition: all 0.15s linear, background-image 0.3s 0.5s ease, -webkit-transform 0.3s 0.5s ease;
+  transition: all 0.15s linear, transform 0.3s 0.5s ease, background-image 0.3s 0.5s ease;
+  transition: all 0.15s linear, transform 0.3s 0.5s ease, background-image 0.3s 0.5s ease, -webkit-transform 0.3s 0.5s ease;
+  z-index: 2;
+}
+
+.wrapper .content .card__icon:hover:before {
+  width: 28px;
+  height: 28px;
+}
+
+.wrapper .content .card__shareBox {
+  opacity: 0;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  bottom: 60px;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transform: translateY(-40px);
+          transform: translateY(-40px);
+}
+
+.wrapper .content .card__titleShare {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.08em;
+}
+
+.wrapper .content .card__shareIcons {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.wrapper .content .card__socialIcon {
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  width: 48px;
+  height: 48px;
+  opacity: 0;
+  background-color: transparent;
+  -webkit-transform: translateY(40px);
+          transform: translateY(40px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 15px;
+  cursor: pointer;
+  border-radius: 100%;
+}
+
+.wrapper .content .card__socialIcon:before {
+  position: absolute;
+  content: '';
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  border: solid 1px white;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.wrapper .content .card__socialIcon img {
+  width: 24px;
+  height: 24px;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.wrapper .content .card__socialIcon:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.wrapper .content .card__socialIcon:hover:before {
+  width: 48px;
+  height: 48px;
+}
+
+.wrapper .content .card__socialIcon:hover img {
+  width: 32px;
+  height: 32px;
+}
+
+.wrapper .content .show .card__text {
+  height: calc(100% - 185px);
+  -webkit-transform: translateY(-185px);
+          transform: translateY(-185px);
+  -webkit-transition: all 0.4s 0.3s ease;
+  transition: all 0.4s 0.3s ease;
+  border-radius: 8px 8px 0px 0px;
+  padding: 40px;
+}
+
+.wrapper .content .show .card__share {
+  width: 100%;
+  height: 185px;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+  border-radius: 0px 0px 8px 8px;
+  -webkit-transition: all 0.4s ease, width 0.4s 0.1s ease, height 0.4s 0.3s ease, border-radius 0.4s 0.1s ease;
+  transition: all 0.4s ease, width 0.4s 0.1s ease, height 0.4s 0.3s ease, border-radius 0.4s 0.1s ease;
+}
+
+.wrapper .content .show .card__share:before {
+  opacity: 0.9;
+}
+
+.wrapper .content .show .card__icon:before {
+  background: url(../assets/close.svg);
+  background-size: cover;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.wrapper .content .show .card__icon:hover:before {
+  width: 30px;
+  height: 30px;
+}
+
+.wrapper .content .show .card__shareBox {
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+  opacity: 1;
+  -webkit-transition: all 0.4s 0.4s ease;
+  transition: all 0.4s 0.4s ease;
+}
+
+.wrapper .content .show .card__socialIcon {
+  -webkit-transition: all 0.4s ease, opacity 0.4s 0.6s ease, -webkit-transform 0.4s 0.6s ease;
+  transition: all 0.4s ease, opacity 0.4s 0.6s ease, -webkit-transform 0.4s 0.6s ease;
+  transition: all 0.4s ease, transform 0.4s 0.6s ease, opacity 0.4s 0.6s ease;
+  transition: all 0.4s ease, transform 0.4s 0.6s ease, opacity 0.4s 0.6s ease, -webkit-transform 0.4s 0.6s ease;
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+}
+
+.wrapper .content .show .card__socialIcon:nth-child(2) {
+  -webkit-transition: all 0.4s ease, opacity 0.4s 0.7s ease, -webkit-transform 0.4s 0.7s ease;
+  transition: all 0.4s ease, opacity 0.4s 0.7s ease, -webkit-transform 0.4s 0.7s ease;
+  transition: all 0.4s ease, transform 0.4s 0.7s ease, opacity 0.4s 0.7s ease;
+  transition: all 0.4s ease, transform 0.4s 0.7s ease, opacity 0.4s 0.7s ease, -webkit-transform 0.4s 0.7s ease;
+}
+
+.wrapper .content .show .card__socialIcon:nth-child(3) {
+  -webkit-transition: all 0.4s ease, opacity 0.4s 0.8s ease, -webkit-transform 0.4s 0.8s ease;
+  transition: all 0.4s ease, opacity 0.4s 0.8s ease, -webkit-transform 0.4s 0.8s ease;
+  transition: all 0.4s ease, transform 0.4s 0.8s ease, opacity 0.4s 0.8s ease;
+  transition: all 0.4s ease, transform 0.4s 0.8s ease, opacity 0.4s 0.8s ease, -webkit-transform 0.4s 0.8s ease;
+}
+
+.wrapper .content .show .card__socialIcon:nth-child(4) {
+  -webkit-transition: all 0.4s ease, opacity 0.4s 0.9s ease, -webkit-transform 0.4s 0.9s ease;
+  transition: all 0.4s ease, opacity 0.4s 0.9s ease, -webkit-transform 0.4s 0.9s ease;
+  transition: all 0.4s ease, transform 0.4s 0.9s ease, opacity 0.4s 0.9s ease;
+  transition: all 0.4s ease, transform 0.4s 0.9s ease, opacity 0.4s 0.9s ease, -webkit-transform 0.4s 0.9s ease;
+}
+/*# sourceMappingURL=main.css.map */
