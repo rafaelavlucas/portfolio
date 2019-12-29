@@ -532,8 +532,8 @@
 .wrapper .content .show .card__icon:before {
   background: url(../assets/close.svg);
   background-size: cover;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.1s linear, background-image 0.3s ease;
+  transition: all 0.1s linear, background-image 0.3s ease;
 }
 
 .wrapper .content .show .card__icon:hover:before {

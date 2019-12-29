@@ -442,7 +442,7 @@ body {
                     &:before {
                         background: url(../assets/close.svg);
                         background-size: cover;
-                        transition: all 0.3s ease;
+                        transition: all 0.1s linear, background-image 0.3s ease;
 
                     }
 
