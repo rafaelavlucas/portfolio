@@ -13,14 +13,20 @@ $g-02: linear-gradient(90deg, #72EEFF 0%, #A7C2FF 100%);
 
 $cubic: cubic-bezier(0.51, -0.12, 0.25, 1.15);
 
+@mixin md {
+    @media screen and (max-width: 1023px) {
+        @content;
+    }
+}
+
 @mixin sm {
-    @media screen and (max-width: 640px) {
+    @media screen and (max-width: 799px) {
         @content;
     }
 }
 
 @mixin xs {
-    @media screen and (max-height: 600px) {
+    @media screen and (max-width: 512px) {
         @content;
     }
 }
@@ -76,6 +82,7 @@ body {
 
 .wrapper {
     display: grid;
+    grid-template-columns: 1fr;
     width: 100%;
     height: 100vh;
     align-items: center;
@@ -84,14 +91,28 @@ body {
     font-family: $font-01;
     user-select: none;
     letter-spacing: 0.8px;
+    padding: 60px 5%;
+    max-width: 1440px;
+
+    @include md {
+        padding: 60px 20px;
+    }
 
     .content {
-        //background-color: red;
-        margin: 60px 0;
         display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin: 0 auto;
+
+        @include sm {
+            max-width: 500px;
+            flex-direction: column;
+        }
 
         .card {
-            width: 400px;
+            max-width: 400px;
+            width: 100%;
             height: 500px;
             position: relative;
             display: flex;
@@ -101,8 +122,34 @@ body {
             color: white;
             cursor: pointer;
             transition: all 0.4s ease;
+            margin-right: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 20px 60px -20px rgba(38, 73, 119, 0.8);
 
-            &:hover {}
+            &:last-child {
+                margin-right: 0;
+            }
+
+            @include md {
+                height: 400px;
+            }
+
+            @include sm {
+                width: 100%;
+                max-width: 500px;
+                height: 400px;
+                margin-right: 0;
+                margin-bottom: 30px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+            @include xs {
+                height: 300px;
+            }
+
 
             &__imageBg {
                 position: absolute;
@@ -123,22 +170,28 @@ body {
             &__text {
                 color: white;
                 width: 100%;
-                height: 185px;
+                min-height: 185px;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
                 transition: all 0.4s 0.4s ease;
                 background: rgba($m-01, 0.6);
-                backdrop-filter: blur(10px);
+                backdrop-filter: blur(5px);
                 border-radius: 0px 0px 8px 8px;
-                padding: 30px 40px 70px 40px;
+                padding: 30px 20px 70px 20px;
                 text-align: center;
                 text-transform: uppercase;
                 letter-spacing: 0.06em;
+
+                @include xs {
+                    padding: 20px 20px 50px 20px;
+                    min-height: 160px;
+                }
             }
 
             &__label {
+                max-width: 300px;
                 font-weight: 700;
                 font-size: 14px;
                 line-height: 18px;
@@ -149,10 +202,17 @@ body {
             }
 
             &__title {
+                max-width: 300px;
                 font-weight: 400;
-                font-size: 20px;
-                line-height: 24px;
+                font-size: 18px;
+                line-height: 22px;
                 margin-top: 20px;
+
+
+                @include xs {
+                    font-size: 16px;
+                    line-height: 20px;
+                }
             }
 
             &__share {
@@ -197,7 +257,6 @@ body {
                 align-items: center;
                 z-index: 2;
                 cursor: pointer;
-
                 border-radius: 100%;
                 transition: all 0.4s ease;
 
@@ -230,6 +289,8 @@ body {
                 flex-direction: column;
                 align-items: center;
                 transform: translateY(-40px);
+                width: 100%;
+                padding: 0 20px;
             }
 
             &__titleShare {
@@ -238,11 +299,22 @@ body {
                 font-size: 14px;
                 line-height: 18px;
                 letter-spacing: 0.08em;
+
+                &--done {
+                    font-weight: 400;
+                    display: none;
+                    position: absolute;
+                    bottom: 15px;
+                    transition: all 0.4s ease;
+                }
             }
 
             &__shareIcons {
                 margin-top: 20px;
                 display: flex;
+                width: 100%;
+                max-width: 300px;
+                justify-content: space-between;
             }
 
             &__socialIcon {
@@ -255,7 +327,6 @@ body {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                margin: 0 15px;
                 cursor: pointer;
                 border-radius: 100%;
 
@@ -290,17 +361,26 @@ body {
                     }
                 }
 
+                &.active {
+                    background-color: rgba(white, 0.2);
+                }
+
             }
         }
 
         .show {
             .card {
                 &__text {
-                    height: calc(100% - 185px);
+                    min-height: calc(100% - 185px);
                     transform: translateY(-185px);
                     transition: all 0.4s 0.3s ease;
                     border-radius: 8px 8px 0px 0px;
-                    padding: 40px;
+                    padding: 20px;
+
+                    @include sm {
+                        transform: translateY(-160px);
+                        min-height: calc(100% - 160px);
+                    }
                 }
 
                 &__share {
@@ -312,6 +392,10 @@ body {
 
                     &:before {
                         opacity: 0.9;
+                    }
+
+                    @include sm {
+                        height: 160px;
                     }
                 }
 
@@ -361,8 +445,61 @@ body {
                 }
 
             }
+        }
 
+        .complete {
+            .card {
+                &__shareIcons {
+                    animation: shareDone 1.5s 0.5s ease backwards;
+
+                    @keyframes shareDone {
+                        20% {
+                            opacity: 0;
+                            transform: translateY(-40px);
+                        }
+
+                        80% {
+                            opacity: 0;
+                            transform: translateY(-40px);
+                        }
+
+                        100% {}
+                    }
+                }
+
+                &__titleShare {
+
+                    &--done {
+                        display: flex;
+                        animation: textDone 1.5s 0.5s ease both;
+
+                        @keyframes textDone {
+                            0% {
+                                opacity: 0;
+                                transform: translateY(20px);
+                            }
+
+                            25% {
+                                opacity: 1;
+                                transform: translateY(0px);
+                            }
+
+
+                            75% {
+                                opacity: 1;
+                                transform: translateY(0px);
+                            }
+
+                            100% {
+                                opacity: 0;
+                                transform: translateY(20px);
+                            }
+                        }
+
+                    }
+
+                }
+            }
         }
     }
-
 }
