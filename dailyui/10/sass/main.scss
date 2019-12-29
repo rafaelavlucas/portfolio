@@ -95,6 +95,7 @@ body {
     max-width: 1440px;
     margin: 0 auto;
 
+
     @include md {
         padding: 60px 20px;
     }
@@ -105,6 +106,7 @@ body {
         align-items: center;
         width: 100%;
         margin: 0 auto;
+        margin-bottom: 60px;
 
         @include sm {
             max-width: 500px;
@@ -266,7 +268,7 @@ body {
                     content: '';
                     width: 24px;
                     height: 24px;
-                    background-image: url(../assets/share.svg);
+                    background-image: url(/assets/share.svg);
                     background-size: cover;
                     transition: all 0.15s linear, transform 0.3s 0.5s ease, background-image 0.3s 0.5s ease;
                     z-index: 2;
@@ -276,6 +278,11 @@ body {
                     &:before {
                         width: 28px;
                         height: 28px;
+
+                        @include xs {
+                            width: 24px;
+                            height: 24px;
+                        }
                     }
                 }
             }
@@ -351,15 +358,31 @@ body {
                 &:hover {
                     background-color: rgba(white, 0.2);
 
+                    @include xs {
+                        background-color: transparent;
+                    }
+
                     &:before {
                         width: 48px;
                         height: 48px;
+
+                        @include xs {
+                            width: 40px;
+                            height: 40px;
+                        }
                     }
 
                     img {
                         width: 32px;
                         height: 32px;
+
+                        @include xs {
+                            width: 24px;
+                            height: 24px;
+                        }
                     }
+
+
                 }
 
                 &.active {
@@ -403,7 +426,7 @@ body {
                 &__icon {
 
                     &:before {
-                        background: url(../assets/close.svg);
+                        background: url(/assets/close.svg);
                         background-size: cover;
                         transition: all 0.3s ease;
                         transform: rotate(180deg);
@@ -413,6 +436,11 @@ body {
                         &:before {
                             width: 30px;
                             height: 30px;
+
+                            @include xs {
+                                width: 24px;
+                                height: 24px;
+                            }
                         }
                     }
                 }
@@ -439,9 +467,6 @@ body {
                     &:nth-child(4) {
                         transition: all 0.4s ease, transform 0.4s 0.9s ease, opacity 0.4s 0.9s ease;
                     }
-
-
-
 
                 }
 

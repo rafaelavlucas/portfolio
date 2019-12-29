@@ -95,6 +95,7 @@
           align-items: center;
   width: 100%;
   margin: 0 auto;
+  margin-bottom: 60px;
 }
 
 @media screen and (max-width: 799px) {
@@ -312,7 +313,7 @@
   content: '';
   width: 24px;
   height: 24px;
-  background-image: url(../assets/share.svg);
+  background-image: url(/assets/share.svg);
   background-size: cover;
   -webkit-transition: all 0.15s linear, background-image 0.3s 0.5s ease, -webkit-transform 0.3s 0.5s ease;
   transition: all 0.15s linear, background-image 0.3s 0.5s ease, -webkit-transform 0.3s 0.5s ease;
@@ -324,6 +325,13 @@
 .wrapper .content .card__icon:hover:before {
   width: 28px;
   height: 28px;
+}
+
+@media screen and (max-width: 512px) {
+  .wrapper .content .card__icon:hover:before {
+    width: 24px;
+    height: 24px;
+  }
 }
 
 .wrapper .content .card__shareBox {
@@ -424,14 +432,34 @@
   background-color: rgba(255, 255, 255, 0.2);
 }
 
+@media screen and (max-width: 512px) {
+  .wrapper .content .card__socialIcon:hover {
+    background-color: transparent;
+  }
+}
+
 .wrapper .content .card__socialIcon:hover:before {
   width: 48px;
   height: 48px;
 }
 
+@media screen and (max-width: 512px) {
+  .wrapper .content .card__socialIcon:hover:before {
+    width: 40px;
+    height: 40px;
+  }
+}
+
 .wrapper .content .card__socialIcon:hover img {
   width: 32px;
   height: 32px;
+}
+
+@media screen and (max-width: 512px) {
+  .wrapper .content .card__socialIcon:hover img {
+    width: 24px;
+    height: 24px;
+  }
 }
 
 .wrapper .content .card__socialIcon.active {
@@ -477,7 +505,7 @@
 }
 
 .wrapper .content .show .card__icon:before {
-  background: url(../assets/close.svg);
+  background: url(/assets/close.svg);
   background-size: cover;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
@@ -488,6 +516,13 @@
 .wrapper .content .show .card__icon:hover:before {
   width: 30px;
   height: 30px;
+}
+
+@media screen and (max-width: 512px) {
+  .wrapper .content .show .card__icon:hover:before {
+    width: 24px;
+    height: 24px;
+  }
 }
 
 .wrapper .content .show .card__shareBox {
