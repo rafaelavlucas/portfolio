@@ -268,7 +268,7 @@ body {
                     content: '';
                     width: 24px;
                     height: 24px;
-                    background-image: url(/assets/share.svg);
+                    background-image: url(../assets/share.svg);
                     background-size: cover;
                     transition: all 0.15s linear, transform 0.3s 0.5s ease, background-image 0.3s 0.5s ease;
                     z-index: 2;
@@ -426,7 +426,7 @@ body {
                 &__icon {
 
                     &:before {
-                        background: url(/assets/close.svg);
+                        background: url(../assets/close.svg);
                         background-size: cover;
                         transition: all 0.3s ease;
                         transform: rotate(180deg);
