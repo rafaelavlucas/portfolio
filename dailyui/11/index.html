@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Daily UI 011 - Flash Message | by rafaelalucas.com</title>
+
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-137426789-2');
+    </script>
+
+</head>
+
+<body>
+
+    <a class="logo" href="https://rafaelalucas.com/dailyui">
+        <img src="logo_white.svg" alt="">
+    </a>
+    <div class="wrapper">
+        <div class="content">
+
+            <div class="card cardUpload">
+                <article>
+                    <h2 class="titleCard">choose your file to upload</h2>
+                    <div class="inputContent">
+                        <input type="file" id="inputFile" class="inputFile">
+                        <label tabindex="0" for="inputFile" class="uploadIcon"></label>
+                        <p class="fileReturn"></p>
+
+                    </div>
+
+                    <button class="cta btnUpload" disabled>upload</button>
+
+                </article>
+
+            </div>
+            <div class="card cardSuccess"> success
+                <button class="cta btnAnother">Upload Another</button>
+
+            </div>
+            <div class="card cardError"> error
+                <button class="cta btnTry">Try again</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
