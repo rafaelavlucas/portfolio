@@ -37,7 +37,6 @@
                         <input type="file" id="inputFile" class="inputFile">
                         <label tabindex="0" for="inputFile" class="uploadIcon"></label>
                         <p class="fileReturn"></p>
-
                     </div>
 
                     <button class="cta btnUpload" disabled>upload</button>
@@ -46,11 +45,19 @@
 
             </div>
             <div class="card cardSuccess"> success
-                <button class="cta btnAnother">Upload Another</button>
+                <button class="cta btnAnother">
+                    <span>Upload Another</span>
+                </button>
 
             </div>
-            <div class="card cardError"> error
-                <button class="cta btnTry">Try again</button>
+            <div class="card cardError">
+                <article>
+                    <p class="description">We got an error trying to upload your file!</p>
+                    <button class="cta btnTry">
+                        <span>Try again</span>
+                    </button>
+                </article>
+
             </div>
         </div>
 

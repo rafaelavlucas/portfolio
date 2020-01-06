@@ -57,7 +57,7 @@ window.addEventListener("load", event => {
             btnUpload.disabled = true;
             fileReturn.innerHTML = "";
             fileReturn.classList.remove('show');
-        }, 600);
+        }, 500);
     }
 
     function flipCards2() {
@@ -69,7 +69,6 @@ window.addEventListener("load", event => {
             cardError.classList.add('flipOut');
             cardError.style.visibility = "hidden";
             document.querySelector('body').style.backgroundColor = "white";
-
         }, 400);
     }
 
@@ -78,7 +77,6 @@ window.addEventListener("load", event => {
         card.classList.remove('flipIn');
         cardError.classList.remove('flipOut');
         cardError.classList.remove('flipIn');
-
 
         setTimeout(() => {
             cardSuccess.style.zIndex = "-1";

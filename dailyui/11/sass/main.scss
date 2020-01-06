@@ -17,6 +17,9 @@ $g-03: linear-gradient(120deg, #4DAF9E 8%, #75EDD7 86%);
 $ctaShadow1: 0px 10px 30px -5px rgba(255, 151, 111, 0.5);
 $ctaShadow1hover: 0px 4px 15px rgba(255, 151, 111, 0.5);
 
+$ctaShadow2: 0px 10px 30px -5px rgba(0, 0, 0, 0.1);
+$ctaShadow2hover: 0px 4px 15px rgba(0, 0, 0, 0.1);
+
 $cubic: cubic-bezier(0.51, -0.12, 0.25, 1.15);
 
 @mixin md {
@@ -140,6 +143,34 @@ body {
             }
 
         }
+
+        &.btnAnother,
+        &.btnTry {
+            box-shadow: none;
+            background: white;
+
+            &:hover {
+                box-shadow: none;
+            }
+        }
+
+        &.btnTry {
+            span {
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-image: $g-02;
+            }
+        }
+
+        &.btnAnother {
+            span {
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-image: $g-03;
+            }
+        }
+
+
     }
 
     .content {
@@ -177,7 +208,16 @@ body {
                     text-transform: uppercase;
                     font-size: 30px;
                 }
+
+                .description {
+                    font-size: 24px;
+                    line-height: 30px;
+                    color: white;
+                    font-weight: 200;
+                }
             }
+
+
         }
 
         .cardUpload {
@@ -261,13 +301,13 @@ body {
         }
 
         .cardSuccess {
-            background: $g-02;
+            background: $g-03;
             visibility: hidden;
             z-index: 2;
         }
 
         .cardError {
-            background: $g-03;
+            background: $g-02;
         }
 
 
