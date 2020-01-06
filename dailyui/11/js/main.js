@@ -9,7 +9,6 @@ window.addEventListener("load", event => {
         card = document.querySelector('.cardUpload'),
         cardError = document.querySelector('.cardError'),
         cardSuccess = document.querySelector('.cardSuccess'),
-
         fileInput = document.querySelector(".inputFile"),
         uploadIcon = document.querySelector(".uploadIcon"),
         fileReturn = document.querySelector(".fileReturn");
@@ -25,20 +24,21 @@ window.addEventListener("load", event => {
 
 
     // To Add the file name when Upload
-    uploadIcon.addEventListener("keydown", function (event) {
-        if (event.keyCode == 13 || event.keyCode == 32) {
-            fileInput.focus();
-        }
-    });
 
     uploadIcon.addEventListener("click", function (event) {
         fileInput.focus();
         return false;
     });
+
+    fileReturn.addEventListener("click", function (event) {
+        fileInput.focus();
+    });
+
     fileInput.addEventListener("change", function (event) {
         fileReturn.innerHTML = this.value.replace(/C:\\fakepath\\/i, '');
         btnUpload.disabled = false;
         uploadIcon.style.visibility = "hidden";
+        fileReturn.classList.add('show');
     });
 
 
@@ -50,6 +50,14 @@ window.addEventListener("load", event => {
     function flipCards() {
         card.classList.add('flipOut');
         cardError.classList.add('flipIn');
+        document.querySelector('body').style.backgroundColor = "white";
+
+        setTimeout(() => {
+            uploadIcon.style.visibility = "visible";
+            btnUpload.disabled = true;
+            fileReturn.innerHTML = "";
+            fileReturn.classList.remove('show');
+        }, 600);
     }
 
     function flipCards2() {
@@ -60,6 +68,7 @@ window.addEventListener("load", event => {
             cardSuccess.classList.add('flipIn');
             cardError.classList.add('flipOut');
             cardError.style.visibility = "hidden";
+            document.querySelector('body').style.backgroundColor = "white";
 
         }, 400);
     }
@@ -70,6 +79,7 @@ window.addEventListener("load", event => {
         cardError.classList.remove('flipOut');
         cardError.classList.remove('flipIn');
 
+
         setTimeout(() => {
             cardSuccess.style.zIndex = "-1";
         }, 300);
@@ -78,6 +88,7 @@ window.addEventListener("load", event => {
             cardSuccess.classList.remove('flipIn');
             card.classList.remove('flipOut');
             cardSuccess.style.visibility = "hidden";
+            document.querySelector('body').style.backgroundColor = "#FF9E81";
         }, 400);
 
         setTimeout(() => {

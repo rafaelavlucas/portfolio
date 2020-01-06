@@ -5,14 +5,14 @@ sans-serif;
 $font-02: "Barlow Condensed",
 sans-serif;
 
-$m-01: #233A59;
+$m-01: #FF9E81;
 $text: #7A7A7A;
 
 
 $g-01: linear-gradient(160deg, #FF8970 8%, #FFB571 86%);
+$g-02: linear-gradient(120deg, #EE5764 8%, #FFAB91 86%);
+$g-03: linear-gradient(120deg, #4DAF9E 8%, #75EDD7 86%);
 
-
-$g-02: linear-gradient(90deg, #72EEFF 0%, #A7C2FF 100%);
 
 $ctaShadow1: 0px 10px 30px -5px rgba(255, 151, 111, 0.5);
 $ctaShadow1hover: 0px 4px 15px rgba(255, 151, 111, 0.5);
@@ -55,9 +55,10 @@ $cubic: cubic-bezier(0.51, -0.12, 0.25, 1.15);
 }
 
 body {
-    background-color: #FF9E81;
+    background-color: $m-01;
     font-family: $font-01;
     font-weight: normal;
+    transition: all 0.4s ease;
 }
 
 
@@ -120,7 +121,7 @@ body {
         color: white;
         font-weight: 600;
         font-family: $font-01;
-        transition: all 0.2s ease;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
         cursor: pointer;
         margin-top: 30px;
 
@@ -217,15 +218,32 @@ body {
                 .fileReturn {
                     color: $text;
                     position: absolute;
+                    padding-left: 30px;
+                    text-align: left;
+                    word-break: break-all;
+                    cursor: pointer;
 
                     &:before {
                         content: '';
                         position: absolute;
                         width: 24px;
                         height: 24px;
-                        background-color: red;
-                        transform: translateX(-20px);
+                        background-image: url("../assets/attach.svg");
+                        background-size: contain;
+                        background-position: center;
+                        //transform: translateX(30px);
+                        display: none;
+                        left: 0px;
                     }
+
+                    &.show {
+                        &:before {
+                            display: flex;
+                        }
+
+                    }
+
+
                 }
             }
 
@@ -243,13 +261,13 @@ body {
         }
 
         .cardSuccess {
-            background-color: green;
+            background: $g-02;
             visibility: hidden;
             z-index: 2;
         }
 
         .cardError {
-            background-color: red;
+            background: $g-03;
         }
 
 
