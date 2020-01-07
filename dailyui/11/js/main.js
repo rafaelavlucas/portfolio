@@ -27,7 +27,7 @@ window.addEventListener("load", event => {
 
     uploadIcon.addEventListener("click", function (event) {
         fileInput.focus();
-        return false;
+        // return false;
     });
 
     fileReturn.addEventListener("click", function (event) {
@@ -35,7 +35,7 @@ window.addEventListener("load", event => {
     });
 
     fileInput.addEventListener("change", function (event) {
-        fileReturn.innerHTML = this.value.replace(/C:\\fakepath\\/i, '');
+        fileReturn.innerText = this.value.replace(/C:\\fakepath\\/i, '');
         btnUpload.disabled = false;
         uploadIcon.style.visibility = "hidden";
         fileReturn.classList.add('show');
@@ -47,7 +47,10 @@ window.addEventListener("load", event => {
     //////////////// 
 
 
-    function flipCards() {
+    function flipCards(event) {
+
+        event.preventDefault()
+
         card.classList.add('flipOut');
         cardError.classList.add('flipIn');
         document.querySelector('body').style.backgroundColor = "white";
@@ -55,7 +58,7 @@ window.addEventListener("load", event => {
         setTimeout(() => {
             uploadIcon.style.visibility = "visible";
             btnUpload.disabled = true;
-            fileReturn.innerHTML = "";
+            fileReturn.innerText = "";
             fileReturn.classList.remove('show');
         }, 500);
     }
@@ -92,6 +95,7 @@ window.addEventListener("load", event => {
         setTimeout(() => {
             cardSuccess.style.zIndex = "2";
             cardError.style.visibility = "visible";
+            location.reload();
         }, 800);
     }
 

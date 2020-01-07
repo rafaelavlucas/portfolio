@@ -20,6 +20,10 @@
         gtag('config', 'UA-137426789-2');
     </script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
 </head>
 
 <body>
@@ -32,11 +36,13 @@
 
             <div class="card cardUpload">
                 <article>
+
                     <h2 class="titleCard">choose your file to upload</h2>
+
                     <div class="inputContent">
                         <input type="file" id="inputFile" class="inputFile">
                         <label tabindex="0" for="inputFile" class="uploadIcon"></label>
-                        <p class="fileReturn"></p>
+                        <label tabindex="0" for="inputFile" class="fileReturn"></label>
                     </div>
 
                     <button class="cta btnUpload" disabled>upload</button>
@@ -44,13 +50,34 @@
                 </article>
 
             </div>
-            <div class="card cardSuccess"> success
-                <button class="cta btnAnother">
-                    <span>Upload Another</span>
-                </button>
+            <div class="card cardSuccess">
+                <div class="scene" id="scene2" data-hover-only="false">
+                    <figure data-depth="0.9">
+                        <img src="assets/shape_success.svg" alt="">
+                    </figure>
+                    <figure data-depth="0.4">
+                        <img src="assets/icon_success.svg" alt="">
+                    </figure>
+                </div>
+
+                <article>
+                    <p class="description">Your file was uploaded successfully!</p>
+                    <button class="cta btnAnother">
+                        <span>Upload Another</span>
+                    </button>
+                </article>
 
             </div>
             <div class="card cardError">
+                <div class="scene" id="scene" data-hover-only="false">
+                    <figure data-depth="0.9">
+                        <img src="assets/shape_error.svg" alt="">
+                    </figure>
+                    <figure data-depth="0.4">
+                        <img src="assets/icon_error.svg" alt="">
+                    </figure>
+                </div>
+
                 <article>
                     <p class="description">We got an error trying to upload your file!</p>
                     <button class="cta btnTry">
@@ -62,6 +89,17 @@
         </div>
 
     </div>
+
+
+
+    <script>
+        // Parallax Code
+        var scene = document.getElementById('scene');
+        var parallax = new Parallax(scene);
+
+        var scene2 = document.getElementById('scene2');
+        var parallax = new Parallax(scene2);
+    </script>
 
     <script src="js/main.js"></script>
 
