@@ -249,7 +249,7 @@ body {
 
 @media screen and (max-width: 512px) {
   .wrapper .content .card article {
-    padding: 0 20px;
+    padding: 0 30px;
   }
 }
 
