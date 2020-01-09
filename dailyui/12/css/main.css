@@ -15,6 +15,12 @@
   outline: 0;
 }
 
+* input::-webkit-outer-spin-button,
+* input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 body {
   font-family: "Barlow", sans-serif;
   font-weight: normal;
@@ -60,37 +66,17 @@ body {
 }
 
 .wrapper {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
   width: 100%;
-  height: 100vh;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  color: white;
   font-family: "Barlow", sans-serif;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
   letter-spacing: 0.8px;
-  padding: 0px 5%;
-  max-width: 1440px;
   margin: 0 auto;
 }
 
-@media screen and (max-width: 1023px) {
-  .wrapper {
-    padding: 0px 20px;
-  }
-}
-
-.wrapper .cta {
+.wrapper .btn {
   background: linear-gradient(160deg, #FF8970 8%, #FFB571 86%);
   -webkit-box-shadow: 0px 10px 30px -5px rgba(255, 151, 111, 0.5);
           box-shadow: 0px 10px 30px -5px rgba(255, 151, 111, 0.5);
@@ -111,46 +97,121 @@ body {
   margin-top: 30px;
 }
 
-.wrapper .cta:hover {
+.wrapper .btn:hover {
   -webkit-transform: translateY(3px);
           transform: translateY(3px);
   -webkit-box-shadow: 0px 4px 15px rgba(255, 151, 111, 0.5);
           box-shadow: 0px 4px 15px rgba(255, 151, 111, 0.5);
 }
 
-.wrapper .cta:disabled {
+.wrapper .btn:disabled {
   opacity: 0.3;
   cursor: default;
 }
 
-.wrapper .cta:disabled:hover {
+.wrapper .btn:disabled:hover {
   -webkit-transform: translateY(0px);
           transform: translateY(0px);
   -webkit-box-shadow: 0px 10px 30px -5px rgba(255, 151, 111, 0.5);
           box-shadow: 0px 10px 30px -5px rgba(255, 151, 111, 0.5);
 }
 
-.wrapper .cta.btnAnother, .wrapper .cta.btnTry {
+.wrapper .btn.btnAnother, .wrapper .btn.btnTry {
   -webkit-box-shadow: none;
           box-shadow: none;
   background: white;
 }
 
-.wrapper .cta.btnAnother:hover, .wrapper .cta.btnTry:hover {
+.wrapper .btn.btnAnother:hover, .wrapper .btn.btnTry:hover {
   -webkit-box-shadow: none;
           box-shadow: none;
 }
 
-.wrapper .cta.btnTry span {
+.wrapper .btn.btnTry span {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-image: linear-gradient(120deg, #EE5764 8%, #FFAB91 86%);
 }
 
-.wrapper .cta.btnAnother span {
+.wrapper .btn.btnAnother span {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-image: linear-gradient(120deg, #4DAF9E 8%, #75EDD7 86%);
+}
+
+.wrapper nav {
+  background-color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.wrapper nav .mainLogo {
+  width: 40%;
+  background-color: red;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 60px;
+}
+
+.wrapper nav .menu {
+  width: 60%;
+  background-color: purple;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 60px;
+  height: 140px;
+}
+
+.wrapper nav .shoppingCart {
+  width: 48px;
+  height: 48px;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  border-radius: 100%;
+}
+
+.wrapper nav .shoppingCart .itemNumber {
+  width: 16px;
+  height: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: red;
+  border-radius: 100%;
+  font-size: 12px;
+  color: white;
+  font-weight: bold;
+  display: none;
+  position: absolute;
+  top: -2px;
+  right: -2px;
 }
 
 .wrapper .content {
@@ -164,23 +225,116 @@ body {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
+  margin: 0 auto;
+  height: 800px;
 }
 
 .wrapper .content .left,
 .wrapper .content .right {
-  height: 100vh;
-  width: 50%;
+  height: 100%;
+}
+
+.wrapper .content .left {
+  width: 40%;
+  background-color: black;
+}
+
+.wrapper .content .left .sliderNavigation {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  margin-top: 80px;
+  height: 40px;
+  background-color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wrapper .content .left .sliderNavigation .swiper-pagination {
+  position: initial;
+  background-color: red;
+  margin: 0 40px;
+}
+
+.wrapper .content .left .sliderNavigation .swiper-pagination .swiper-pagination-bullet {
+  background-color: blue;
+  margin: 0 10px;
+}
+
+.wrapper .content .left .sliderNavigation .swiper-button-next,
+.wrapper .content .left .sliderNavigation .swiper-button-prev {
+  margin: 0;
+  top: initial;
+  left: initial;
+  right: initial;
+  position: initial;
 }
 
 .wrapper .content .right {
+  width: 60%;
   background-color: gray;
 }
 
+.wrapper .content .right .rightContent {
+  max-width: 600px;
+  padding: 0px 60px 0px 15%;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+}
+
+.wrapper .content .right .rightContent .quantity {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.wrapper .content .right .rightContent .quantity .quantityCounter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: red;
+}
+
+.wrapper .content .right .rightContent .quantity .quantityCounter .inputQuantity {
+  width: 40px;
+  height: 24px;
+  text-align: center;
+}
+
+.wrapper .content .right .rightContent .quantity .quantityCounter .btnQuantity {
+  width: 24px;
+  height: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid black;
+}
+
 .swiper-container {
-  max-width: 500px;
   width: 100% !important;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .swiper-container .swiper-wrapper {
@@ -188,25 +342,9 @@ body {
   height: 600px;
 }
 
-.swiper-container .sliderNavigation {
-  width: 100%;
-  height: 40px;
-  background-color: black;
-  position: relative;
-}
-
-.swiper-container .sliderNavigation .swiper-pagination {
-  position: absolute;
-  background-color: red;
-}
-
-.swiper-container .sliderNavigation .swiper-pagination .swiper-pagination-bullet {
-  background-color: blue;
-}
-
-.swiper-container .sliderNavigation .swiper-button-next,
-.swiper-container .sliderNavigation .swiper-button-prev {
-  margin: 0;
+.galleryMain {
+  -webkit-transform: translateX(70px);
+          transform: translateX(70px);
 }
 
 .galleryMain .swiper-slide {
@@ -219,16 +357,37 @@ body {
      object-fit: cover;
 }
 
+.galleryThumbs .swiper-wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[6];
+      grid-template-columns: repeat(6, 1fr);
+  -ms-grid-rows: 80px;
+      grid-template-rows: 80px;
+  grid-column-gap: 20px;
+}
+
+@media screen and (max-width: 1023px) {
+  .galleryThumbs .swiper-wrapper {
+    -ms-grid-rows: (80px)[2];
+        grid-template-rows: repeat(2, 80px);
+    -ms-grid-columns: (80px)[3];
+        grid-template-columns: repeat(3, 80px);
+    grid-row-gap: 20px;
+  }
+}
+
 .galleryThumbs .swiper-slide {
-  width: 80px;
-  height: 80px;
+  width: 100%;
+  height: 0px;
+  padding-bottom: 100%;
   opacity: 0.4;
   background-color: white;
+  cursor: pointer;
 }
 
 .galleryThumbs .swiper-slide img {
   width: 100%;
-  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }

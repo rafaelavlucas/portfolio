@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Daily UI 011 - Flash Message | by rafaelalucas.com</title>
+    <title>Daily UI 012 - E-Commerce | by rafaelalucas.com</title>
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.css">
     <link rel="stylesheet" type="text/css"
@@ -35,25 +35,56 @@
         <img src="logo_white.svg" alt="">
     </a>
     <div class="wrapper">
+        <nav>
+            <div class="mainLogo">Logo</div>
+            <div class="menu">
+                <div class="menuLinks">
+                    <a href="" class="menuLink">About</a>
+                    <a href="" class="menuLink">About</a>
+                    <a href="" class="menuLink">About</a>
+                </div>
+
+                <div class="shoppingCart">
+                    <img src="" alt="">
+                    <span class="itemNumber"></span>
+                </div>
+            </div>
+
+        </nav>
         <div class="content">
 
             <section class="left">
                 <div class="swiper-container galleryMain">
                     <div class="swiper-wrapper">
                     </div>
-                    <!-- Add Arrows -->
-                    <div class="sliderNavigation">
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-pagination"></div>
-                        <div class="swiper-button-prev"></div>
-                    </div>
+
+                </div>
+                <!-- Add Arrows -->
+                <div class="sliderNavigation">
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next"></div>
                 </div>
             </section>
 
             <section class="right">
-                <div class="swiper-container galleryThumbs">
-                    <div class="swiper-wrapper">
+                <div class="rightContent">
+
+
+                    <div class="quantity">
+                        <h3 class="subtitle">Quantity</h3>
+                        <div class="quantityCounter">
+                            <input class="inputQuantity" type="number" value="1" />
+                            <span class="btnQuantity minus">-</span>
+                            <span class="btnQuantity plus">+</span>
+                        </div>
                     </div>
+                    <div class="swiper-container galleryThumbs">
+                        <div class="swiper-wrapper">
+                        </div>
+                    </div>
+
+                    <button class="btn">add to cart</button>
                 </div>
             </section>
             <!-- Swiper -->
