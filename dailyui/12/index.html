@@ -45,12 +45,12 @@
                 </div>
 
                 <div class="shoppingCart">
-                    <img src="" alt="">
+                    <img src="assets/shopping-cart.svg" alt="">
                     <span class="itemNumber"></span>
                 </div>
             </div>
-
         </nav>
+
         <div class="content">
 
             <section class="left">
@@ -69,14 +69,41 @@
 
             <section class="right">
                 <div class="rightContent">
+                    <div class="model">
+                        <p class="modelTitle">Nike Air Max 200 </p>
+                        <p class="modelDesc">AQ2568-005</p>
+                    </div>
 
 
-                    <div class="quantity">
-                        <h3 class="subtitle">Quantity</h3>
-                        <div class="quantityCounter">
-                            <input class="inputQuantity" type="number" value="1" />
-                            <span class="btnQuantity minus">-</span>
-                            <span class="btnQuantity plus">+</span>
+                    <div class="price">
+                        <p class="priceFinal"></p>
+                        <p class="priceOriginal"></p>
+                    </div>
+
+                    <div class="specs">
+                        <div class="size">
+                            <h3 class="subtitle">Size</h3>
+                            <div class="dropdown">
+                                <p class="sizeNumber">40</p>
+                                <span class="icon arrow"></span>
+                                <ul class="dropContent">
+                                    <li class="dropItem">40</li>
+                                    <li class="dropItem">40</li>
+                                    <li class="dropItem">40</li>
+                                    <li class="dropItem">40</li>
+                                    <li class="dropItem">40</li>
+                                    <li class="dropItem">40</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="quantity">
+                            <h3 class="subtitle">Quantity</h3>
+                            <div class="quantityCounter">
+                                <input class="inputQuantity" onKeyDown="return false" type="number" value="1" />
+                                <span class="btnQuantity minus">-</span>
+                                <span class="btnQuantity plus">+</span>
+                            </div>
                         </div>
                     </div>
                     <div class="swiper-container galleryThumbs">
@@ -88,8 +115,6 @@
                 </div>
             </section>
             <!-- Swiper -->
-
-
 
         </div>
 
