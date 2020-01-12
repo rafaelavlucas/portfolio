@@ -324,18 +324,131 @@ body {
                     display: flex;
                     margin-bottom: 60px;
 
-                    .size,
-                    .quantity {
+                    .form {
                         background-color: $neu-06;
+                        border-radius: 4px;
+                        min-height: 36px;
+                        padding: 4px;
+                        color: $neu-02;
+                        font-size: 14px;
+                        margin-top: 15px;
+                        transition: all 0.4s ease;
+
                     }
 
-                    .size {
-                        .dropdown {
+                    .icon {
+                        width: 28px;
+                        height: 28px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: black;
+                        border-radius: 2px;
+                        cursor: pointer;
+                    }
 
-                            .sizeNumber {}
+
+                    .size {
+
+                        .dropdown {
+                            position: relative;
+                            z-index: 2;
 
                             .dropContent {
-                                display: none;
+                                display: flex;
+
+
+                                .sizeNumber {
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    width: 28px;
+                                    height: 28px;
+                                }
+
+                                .arrowDrop {
+                                    width: 28px;
+                                    height: 28px;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    background-color: black;
+                                    border-radius: 2px;
+                                    margin-left: 8px;
+
+                                    img {
+                                        width: 16px;
+                                        height: 16px;
+                                    }
+                                }
+                            }
+
+                            .dropItems {
+                                width: 100%;
+                                visibility: hidden;
+                                flex-direction: column;
+                                position: absolute;
+                                padding: 4px;
+                                color: $neu-02;
+
+                                &:before {
+                                    content: '';
+                                    position: absolute;
+                                    width: 100%;
+                                    height: 0;
+                                    top: 0;
+                                    left: 0;
+                                    background-color: $neu-06;
+                                    transition: all 0.4s ease;
+                                    border-radius: 0px 0px 4px 4px;
+
+                                }
+
+                                .dropItem {
+                                    z-index: 1;
+                                    display: flex;
+                                    align-items: center;
+                                    width: 100%;
+                                    padding: 10px 6px;
+                                    font-size: 14px;
+                                    opacity: 0;
+                                    border-radius: 4px;
+                                    cursor: pointer;
+                                    transform: translateY(-40px);
+                                    transition: all 0.4s ease, transform 0.4s 0.3s ease, opacity 0.3s ease;
+                                    background-color: transparent;
+
+                                    &:hover {
+                                        color: $m-01;
+                                        transition: all 0.4s ease;
+                                        background-color: white;
+
+                                    }
+                                }
+                            }
+
+                            &.open {
+                                .dropContent {
+                                    border-radius: 4px 4px 0px 0px;
+                                }
+
+                                .dropItems {
+
+                                    visibility: visible;
+                                    display: flex;
+
+                                    &:before {
+                                        transition: all 0.4s ease;
+                                        height: 100%;
+                                    }
+
+                                    .dropItem {
+                                        transition: all 0.4s ease, transform 0.4s 0.1s ease, opacity 0.3s 0.2s ease;
+                                        opacity: 1;
+                                        transform: translateY(0px);
+
+                                    }
+                                }
                             }
 
                         }
@@ -361,14 +474,7 @@ body {
                                 &:hover {}
                             }
 
-                            .btnQuantity {
-                                width: 24px;
-                                height: 24px;
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
-
-                            }
+                            .btnQuantity {}
                         }
 
                     }

@@ -334,13 +334,162 @@ body {
   margin-bottom: 60px;
 }
 
-.wrapper .content .right .rightContent .specs .size,
-.wrapper .content .right .rightContent .specs .quantity {
+.wrapper .content .right .rightContent .specs .form {
   background-color: #F5F5F5;
+  border-radius: 4px;
+  min-height: 36px;
+  padding: 4px;
+  color: #5A5A5A;
+  font-size: 14px;
+  margin-top: 15px;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.wrapper .content .right .rightContent .specs .icon {
+  width: 28px;
+  height: 28px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: black;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.wrapper .content .right .rightContent .specs .size .dropdown {
+  position: relative;
+  z-index: 2;
 }
 
 .wrapper .content .right .rightContent .specs .size .dropdown .dropContent {
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.wrapper .content .right .rightContent .specs .size .dropdown .dropContent .sizeNumber {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 28px;
+  height: 28px;
+}
+
+.wrapper .content .right .rightContent .specs .size .dropdown .dropContent .arrowDrop {
+  width: 28px;
+  height: 28px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: black;
+  border-radius: 2px;
+  margin-left: 8px;
+}
+
+.wrapper .content .right .rightContent .specs .size .dropdown .dropContent .arrowDrop img {
+  width: 16px;
+  height: 16px;
+}
+
+.wrapper .content .right .rightContent .specs .size .dropdown .dropItems {
+  width: 100%;
+  visibility: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  padding: 4px;
+  color: #5A5A5A;
+}
+
+.wrapper .content .right .rightContent .specs .size .dropdown .dropItems:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 0;
+  top: 0;
+  left: 0;
+  background-color: #F5F5F5;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  border-radius: 0px 0px 4px 4px;
+}
+
+.wrapper .content .right .rightContent .specs .size .dropdown .dropItems .dropItem {
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  padding: 10px 6px;
+  font-size: 14px;
+  opacity: 0;
+  border-radius: 4px;
+  cursor: pointer;
+  -webkit-transform: translateY(-40px);
+          transform: translateY(-40px);
+  -webkit-transition: all 0.4s ease, opacity 0.3s ease, -webkit-transform 0.4s 0.3s ease;
+  transition: all 0.4s ease, opacity 0.3s ease, -webkit-transform 0.4s 0.3s ease;
+  transition: all 0.4s ease, transform 0.4s 0.3s ease, opacity 0.3s ease;
+  transition: all 0.4s ease, transform 0.4s 0.3s ease, opacity 0.3s ease, -webkit-transform 0.4s 0.3s ease;
+  background-color: transparent;
+}
+
+.wrapper .content .right .rightContent .specs .size .dropdown .dropItems .dropItem:hover {
+  color: #FD6561;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  background-color: white;
+}
+
+.wrapper .content .right .rightContent .specs .size .dropdown.open .dropContent {
+  border-radius: 4px 4px 0px 0px;
+}
+
+.wrapper .content .right .rightContent .specs .size .dropdown.open .dropItems {
+  visibility: visible;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.wrapper .content .right .rightContent .specs .size .dropdown.open .dropItems:before {
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  height: 100%;
+}
+
+.wrapper .content .right .rightContent .specs .size .dropdown.open .dropItems .dropItem {
+  -webkit-transition: all 0.4s ease, opacity 0.3s 0.2s ease, -webkit-transform 0.4s 0.1s ease;
+  transition: all 0.4s ease, opacity 0.3s 0.2s ease, -webkit-transform 0.4s 0.1s ease;
+  transition: all 0.4s ease, transform 0.4s 0.1s ease, opacity 0.3s 0.2s ease;
+  transition: all 0.4s ease, transform 0.4s 0.1s ease, opacity 0.3s 0.2s ease, -webkit-transform 0.4s 0.1s ease;
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
 }
 
 .wrapper .content .right .rightContent .specs .quantity {
@@ -371,20 +520,6 @@ body {
   height: 24px;
   text-align: center;
   background-color: transparent;
-}
-
-.wrapper .content .right .rightContent .specs .quantity .quantityCounter .btnQuantity {
-  width: 24px;
-  height: 24px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .swiper-container {

@@ -33,7 +33,9 @@ window.addEventListener("load", event => {
             itemNumber = document.querySelector('.itemNumber'),
             inputQuantity = document.querySelector('.inputQuantity'),
             plus = document.querySelector('.plus'),
-            minus = document.querySelector('.minus');
+            minus = document.querySelector('.minus'),
+            arrowDrop = document.querySelector('.arrowDrop'),
+            dropdown = document.querySelector('.dropdown');
 
         let = priceFinal = document.querySelector('.priceFinal'),
             priceOriginal = document.querySelector('.priceOriginal'),
@@ -47,6 +49,7 @@ window.addEventListener("load", event => {
         btn.addEventListener('click', addItem);
         plus.addEventListener("click", plusQuantity);
         minus.addEventListener("click", minusQuantity);
+        arrowDrop.addEventListener("click", openDrop);
 
         ////////////////
         // Functions
@@ -90,6 +93,17 @@ window.addEventListener("load", event => {
         function addItem() {
             itemNumber.style.display = "flex";
             itemNumber.innerHTML = inputQuantity.value;
+        }
+
+
+        // Open Drop
+
+        function openDrop() {
+            if (dropdown.classList.contains('open')) {
+                dropdown.classList.remove('open');
+            } else {
+                dropdown.classList.add('open');
+            }
         }
 
         // Populate the images for Swiper
