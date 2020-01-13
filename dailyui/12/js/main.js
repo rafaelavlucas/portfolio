@@ -151,7 +151,7 @@ window.addEventListener("load", event => {
         product.images.forEach(function (el) {
 
             let template = `
-                <div class="swiper-slide">
+                <div class="swiper-slide" data-depth="1">
                     <img src="${el.img}">
                 </div>`;
 
