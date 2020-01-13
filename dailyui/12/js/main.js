@@ -85,13 +85,13 @@ window.addEventListener("load", event => {
         // Calculate the the Prices with discounts
 
         function getPrice() {
-            priceFinal.classList.add('anime');
+
             priceFinal.innerText = discount * inputQuantity.value + "€";
             priceOriginal.innerText = product.value * inputQuantity.value + "€";
 
             setTimeout(() => {
                 priceFinal.classList.remove('anime');
-            }, 600);
+            }, 400);
         }
 
         // Update the prices with the quantity counter
@@ -99,6 +99,7 @@ window.addEventListener("load", event => {
         function plusQuantity() {
             if (inputQuantity.value < maxQuantity) {
                 inputQuantity.value == inputQuantity.value++;
+                priceFinal.classList.add('anime');
             }
             getPrice();
         }
@@ -106,6 +107,7 @@ window.addEventListener("load", event => {
         function minusQuantity() {
             if (inputQuantity.value > 1) {
                 inputQuantity.value == inputQuantity.value--;
+                priceFinal.classList.add('anime');
             }
             getPrice();
         }
@@ -115,7 +117,11 @@ window.addEventListener("load", event => {
         function addItem() {
             itemNumber.style.display = "flex";
             itemNumber.innerHTML = inputQuantity.value;
-            itemNumber.classList.add('addItem');
+
+            if (itemNumber.innerHTML = inputQuantity.value) {
+                itemNumber.classList.add('addItem');
+            }
+
 
             setTimeout(() => {
                 itemNumber.classList.remove('addItem');

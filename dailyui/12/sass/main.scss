@@ -451,13 +451,11 @@ body {
         .right {
             background-color: white;
             padding: 0px 60px 40px 15%;
-            box-sizing: content-box;
 
             @include sm {
                 height: auto;
                 padding: 0px 5vw;
                 padding-bottom: 120px;
-                box-sizing: border-box;
             }
 
             .subtitle {
