@@ -107,7 +107,6 @@ body {
 
 .wrapper {
     width: 100%;
-    //color: white;
     font-family: $font-01;
     user-select: none;
     letter-spacing: 0.8px;
@@ -160,34 +159,103 @@ body {
     }
 
     nav {
-        background-color: rgba($neu-03, 0.3);
+        background-color: rgba($neu-03, 0.1);
         display: flex;
         position: absolute;
         width: 100%;
         height: 140px;
         z-index: 2;
+        transition: all 0.4s ease;
+
+        &.fixed {
+            background-color: rgba($neu-03, 0.1);
+            box-shadow: 00;
+
+            @include sm {
+                background-color: rgba(white, 0.9);
+                box-shadow: 0px 0px 20px rgba(black, 0.2);
+            }
+        }
 
         @include sm {
             height: 60px;
             position: fixed;
+            justify-content: space-between;
+
         }
 
         .mainLogo {
             width: 40%;
-            //background-color: red;
             display: flex;
             align-items: center;
             padding: 0 60px;
+            font-size: 28px;
+            color: $m-01;
+            font-weight: 800;
+
+            @include sm {
+                width: auto;
+                padding: 0 5vw;
+                font-size: 20px;
+            }
 
         }
 
         .menu {
             width: 60%;
-            //background-color: purple;
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 0 60px;
+
+            @include sm {
+                width: auto;
+                padding: 0 5vw;
+            }
+
+            .menuLinks {
+                width: calc(100% - 48px);
+
+                @include sm {
+                    display: none;
+                }
+
+                .menuLink {
+                    font-weight: 800;
+                    font-size: 20px;
+                    line-height: 24px;
+                    color: $neu-04;
+                    position: relative;
+                    margin-right: 10%;
+                    transition: all 0.3s ease;
+
+                    &:last-of-type {
+                        margin-right: 0;
+                    }
+
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        background-color: $neu-05;
+                        width: 6px;
+                        height: 6px;
+                        border-radius: 6px;
+                        bottom: -10px;
+                        transition: all 0.3s ease;
+
+                    }
+
+                    &:hover {
+                        color: $m-01;
+
+                        &:before {
+                            background-color: $m-01;
+                            width: 100%;
+                            left: calc(100% - 100%);
+                        }
+                    }
+                }
+            }
 
         }
 
@@ -200,6 +268,10 @@ body {
             align-items: center;
             position: relative;
             border-radius: 100%;
+
+            @include sm {
+                background-color: transparent;
+            }
 
             .itemNumber {
                 width: 16px;
@@ -220,7 +292,7 @@ body {
 
                 &.addItem {
                     display: flex;
-                    animation: addItem 0.6s ease;
+                    animation: addItem 0.4s ease;
 
                     @keyframes addItem {
 
@@ -244,6 +316,20 @@ body {
                 }
             }
         }
+
+        .iconMenu {
+            width: 48px;
+            height: 48px;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            margin-left: 10px;
+            cursor: pointer;
+
+            @include sm {
+                display: flex;
+            }
+        }
     }
 
     .content {
@@ -258,18 +344,24 @@ body {
         transition: all 0.4s ease;
 
         @include md {
-            min-height: 100%;
+            height: auto;
+            min-height: auto;
         }
 
         @include sm {
+            align-items: flex-start;
             grid-template-columns: 1fr;
-            grid-template-rows: repeat(2, 1fr);
+            grid-template-rows: repeat(2, auto);
         }
 
         .left,
         .right {
             width: 100%;
             height: 100%;
+
+            @include sm {
+                height: auto;
+            }
         }
 
         .left {
@@ -300,7 +392,7 @@ body {
 
                 .swiper-pagination {
                     position: initial;
-                    margin: 0 40px;
+                    margin: 0 20px;
                     z-index: 2;
 
                     .swiper-pagination-bullet {
@@ -358,10 +450,14 @@ body {
 
         .right {
             background-color: white;
+            padding: 0px 60px 40px 15%;
+            box-sizing: content-box;
 
             @include sm {
-                padding-bottom: 120px;
                 height: auto;
+                padding: 0px 5vw;
+                padding-bottom: 120px;
+                box-sizing: border-box;
             }
 
             .subtitle {
@@ -373,14 +469,11 @@ body {
             .rightContent {
                 max-width: 600px;
                 margin-top: 220px;
-                padding: 0px 60px 40px 15%;
-                box-sizing: content-box;
 
                 @include sm {
                     max-width: 400px;
                     margin: auto;
                     margin-top: 60px;
-                    padding: 0px 5%;
                 }
 
                 .model {
@@ -391,6 +484,10 @@ body {
                         font-weight: 800;
                         font-size: 36px;
                         margin-bottom: 10px;
+
+                        @include sm {
+                            font-size: 28px;
+                        }
 
                     }
 
@@ -404,17 +501,42 @@ body {
                     display: flex;
                     align-items: center;
                     margin-bottom: 40px;
+                    transition: all 0.4s ease;
 
                     .priceFinal {
                         font-weight: bold;
                         font-size: 28px;
                         color: $neu-02;
                         margin-right: 10px;
+                        transition: all 0.4s ease;
+
+                        &.anime {
+                            animation: price 0.4s ease;
+
+                            @keyframes price {
+                                0% {
+                                    transform: scale(1);
+                                }
+
+                                50% {
+                                    transform: scale(1.2);
+                                }
+
+                                100% {
+                                    transform: scale(1);
+                                }
+                            }
+                        }
+
+                        @include sm {
+                            font-size: 24px;
+                        }
                     }
 
                     .priceOriginal {
                         text-decoration: line-through;
                         color: $neu-05;
+                        transition: all 0.4s ease;
                     }
                 }
 
@@ -653,19 +775,27 @@ body {
 // Swiper
 
 .swiper-container {
-    max-width: 600px;
+    max-width: 500px;
 
     @include sm {
         max-width: 400px;
     }
 
+    @include xs {
+        max-width: 280px;
+    }
+
     .swiper-wrapper {
         width: 100%;
-        max-width: 600px;
+        max-width: 500px;
         //height: 600px;
 
         @include sm {
-            max-width: 400px;
+            max-width: 100%;
+        }
+
+        @include xs {
+            max-width: 280px;
         }
     }
 }
@@ -684,12 +814,21 @@ body {
         img {
             width: 100%;
             object-fit: cover;
+
+            @include xs {
+                object-fit: initial;
+            }
+        }
+
+        @include xs {
+            max-width: 280px;
         }
     }
 }
 
 .galleryThumbs {
     height: auto;
+    margin: 0;
     margin-bottom: 60px;
 
     @include md {
@@ -703,7 +842,7 @@ body {
     .swiper-wrapper {
         display: grid;
         grid-template-columns: repeat(6, 1fr);
-        grid-template-rows: 80px;
+        grid-template-rows: auto;
         grid-column-gap: 20px;
         overflow: visible;
 

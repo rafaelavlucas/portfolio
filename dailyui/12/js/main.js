@@ -35,7 +35,8 @@ window.addEventListener("load", event => {
             plus = document.querySelector('.plus'),
             minus = document.querySelector('.minus'),
             arrowDrop = document.querySelector('.arrowDrop'),
-            dropdown = document.querySelector('.dropdown');
+            dropdown = document.querySelector('.dropdown'),
+            nav = document.querySelector('nav');;
 
         let = priceFinal = document.querySelector('.priceFinal'),
             priceOriginal = document.querySelector('.priceOriginal'),
@@ -61,6 +62,16 @@ window.addEventListener("load", event => {
         // Functions
         //////////////// 
 
+        // Fixed Nav 
+
+        window.onscroll = function () {
+            if (window.pageYOffset >= 60) {
+                nav.classList.add("fixed");
+            } else {
+                nav.classList.remove("fixed");
+            }
+        };
+
         // Calculate the Discount
 
         function getDisccount() {
@@ -74,8 +85,13 @@ window.addEventListener("load", event => {
         // Calculate the the Prices with discounts
 
         function getPrice() {
+            priceFinal.classList.add('anime');
             priceFinal.innerText = discount * inputQuantity.value + "€";
             priceOriginal.innerText = product.value * inputQuantity.value + "€";
+
+            setTimeout(() => {
+                priceFinal.classList.remove('anime');
+            }, 600);
         }
 
         // Update the prices with the quantity counter
@@ -94,7 +110,7 @@ window.addEventListener("load", event => {
             getPrice();
         }
 
-        // Add items to sopping cart
+        // Add items to shopping cart
 
         function addItem() {
             itemNumber.style.display = "flex";
@@ -153,7 +169,7 @@ window.addEventListener("load", event => {
 
         var galleryMain = new Swiper('.galleryMain', {
             spaceBetween: 20,
-            slidesPerView: 'auto',
+
             loop: true,
             loopedSlides: 5, //looped slides should be the same
             navigation: {
