@@ -39,7 +39,9 @@ window.addEventListener("load", event => {
 
         let = priceFinal = document.querySelector('.priceFinal'),
             priceOriginal = document.querySelector('.priceOriginal'),
-            discount = null;
+            discount = null,
+            sizeNumber = document.querySelector('.sizeNumber'),
+            dropItem = document.querySelectorAll('.dropItem');
 
 
         ////////////////
@@ -51,6 +53,10 @@ window.addEventListener("load", event => {
         minus.addEventListener("click", minusQuantity);
         arrowDrop.addEventListener("click", openDrop);
 
+
+        dropItem.forEach(function (el) {
+            el.addEventListener("click", getSize);
+        })
         ////////////////
         // Functions
         //////////////// 
@@ -93,6 +99,11 @@ window.addEventListener("load", event => {
         function addItem() {
             itemNumber.style.display = "flex";
             itemNumber.innerHTML = inputQuantity.value;
+            itemNumber.classList.add('addItem');
+
+            setTimeout(() => {
+                itemNumber.classList.remove('addItem');
+            }, 700);
         }
 
 
@@ -104,6 +115,13 @@ window.addEventListener("load", event => {
             } else {
                 dropdown.classList.add('open');
             }
+        }
+
+        //get Drop Size Number Value 
+
+        function getSize(e) {
+            sizeNumber.innerText = e.currentTarget.innerText;
+            openDrop();
         }
 
         // Populate the images for Swiper
