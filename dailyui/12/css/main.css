@@ -315,6 +315,13 @@ body {
           transform: translate(0, 0);
 }
 
+@media screen and (max-width: 799px) {
+  .wrapper nav .shoppingCart .itemNumber {
+    top: 0px;
+    right: 0px;
+  }
+}
+
 .wrapper nav .shoppingCart .itemNumber.addItem {
   display: -webkit-box;
   display: -ms-flexbox;

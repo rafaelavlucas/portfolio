@@ -176,16 +176,16 @@ window.addEventListener("load", event => {
         });
 
         var galleryMain = new Swiper('.galleryMain', {
-            spaceBetween: 20,
+            spaceBetween: 50,
             speed: 500,
             loop: true,
             loopedSlides: 5, //looped slides should be the same
             effect: "coverflow",
             coverflowEffect: {
-                rotate: 80,
+                rotate: 50,
                 slideShadows: false,
-                depth: 350,
-                stretch: 100,
+                depth: 200,
+                stretch: 50,
 
             },
             navigation: {

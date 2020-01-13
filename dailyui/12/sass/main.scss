@@ -290,6 +290,13 @@ body {
                 padding-left: 1px;
                 transform: translate(0, 0);
 
+                @include sm {
+                    top: 0px;
+                    right: 0px;
+
+
+                }
+
                 &.addItem {
                     display: flex;
                     animation: addItem 0.4s ease;
