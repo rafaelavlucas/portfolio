@@ -151,8 +151,10 @@ window.addEventListener("load", event => {
         product.images.forEach(function (el) {
 
             let template = `
-                <div class="swiper-slide" data-depth="1">
+                <div class="swiper-slide">
+
                     <img src="${el.img}">
+
                 </div>`;
 
             document.querySelectorAll('.swiper-wrapper').forEach(function (el) {
@@ -175,9 +177,17 @@ window.addEventListener("load", event => {
 
         var galleryMain = new Swiper('.galleryMain', {
             spaceBetween: 20,
-
+            speed: 500,
             loop: true,
             loopedSlides: 5, //looped slides should be the same
+            effect: "coverflow",
+            coverflowEffect: {
+                rotate: 80,
+                slideShadows: false,
+                depth: 350,
+                stretch: 100,
+
+            },
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',

@@ -990,6 +990,11 @@ body {
   }
 }
 
+.galleryMain .swiper-slide {
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
 .galleryMain .swiper-slide img {
   width: 100%;
   -o-object-fit: cover;
@@ -1007,6 +1012,18 @@ body {
   .galleryMain .swiper-slide {
     max-width: 280px;
   }
+}
+
+.galleryMain .swiper-slide.swiper-slide-active {
+  opacity: 1;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.galleryMain .swiper-slide.swiper-slide-next, .galleryMain .swiper-slide.swiper-slide-prev {
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  opacity: 0.5;
 }
 
 .galleryThumbs {

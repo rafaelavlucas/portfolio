@@ -808,6 +808,7 @@ body {
     }
 
     .swiper-slide {
+        transition: all 0.4s ease;
 
         img {
             width: 100%;
@@ -820,6 +821,17 @@ body {
 
         @include xs {
             max-width: 280px;
+        }
+
+        &.swiper-slide-active {
+            opacity: 1;
+            transition: all 0.4s ease;
+        }
+
+        &.swiper-slide-next,
+        &.swiper-slide-prev {
+            transition: all 0.4s ease;
+            opacity: 0.5;
         }
     }
 }
