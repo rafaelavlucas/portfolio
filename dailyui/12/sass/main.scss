@@ -438,7 +438,7 @@ body {
                 }
 
                 .swiper-button-next {
-                    background-image: url(/assets/arrow-next.svg);
+                    background-image: url(../assets/arrow-next.svg);
 
                     &:hover {
                         transform: translateX(5px);
@@ -446,7 +446,7 @@ body {
                 }
 
                 .swiper-button-prev {
-                    background-image: url(/assets/arrow-prev.svg);
+                    background-image: url(../assets/arrow-prev.svg);
 
                     &:hover {
                         transform: translateX(-5px);
@@ -768,6 +768,10 @@ body {
                                     margin-right: 4px;
                                 }
                             }
+                        }
+
+                        .error {
+                            display: none;
                         }
                     }
                 }

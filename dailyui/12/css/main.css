@@ -525,7 +525,7 @@ body {
 }
 
 .wrapper .content .left .sliderNavigation .swiper-button-next {
-  background-image: url(/assets/arrow-next.svg);
+  background-image: url(../assets/arrow-next.svg);
 }
 
 .wrapper .content .left .sliderNavigation .swiper-button-next:hover {
@@ -534,7 +534,7 @@ body {
 }
 
 .wrapper .content .left .sliderNavigation .swiper-button-prev {
-  background-image: url(/assets/arrow-prev.svg);
+  background-image: url(../assets/arrow-prev.svg);
 }
 
 .wrapper .content .left .sliderNavigation .swiper-button-prev:hover {
@@ -948,6 +948,10 @@ body {
 
 .wrapper .content .right .rightContent .specs .quantity .quantityCounter .btnQuantity:first-of-type {
   margin-right: 4px;
+}
+
+.wrapper .content .right .rightContent .specs .quantity .error {
+  display: none;
 }
 
 .swiper-container {

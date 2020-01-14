@@ -29,20 +29,23 @@ window.addEventListener("load", event => {
         }
 
         const btn = document.querySelector('.btn'),
-            maxQuantity = 5,
+
             itemNumber = document.querySelector('.itemNumber'),
             inputQuantity = document.querySelector('.inputQuantity'),
             plus = document.querySelector('.plus'),
             minus = document.querySelector('.minus'),
             arrowDrop = document.querySelector('.arrowDrop'),
             dropdown = document.querySelector('.dropdown'),
-            nav = document.querySelector('nav');;
+            nav = document.querySelector('nav'),
+            error = document.querySelector('.error');
 
         let = priceFinal = document.querySelector('.priceFinal'),
             priceOriginal = document.querySelector('.priceOriginal'),
             discount = null,
             sizeNumber = document.querySelector('.sizeNumber'),
-            dropItem = document.querySelectorAll('.dropItem');
+            dropItem = document.querySelectorAll('.dropItem'),
+            maxQuantity = 5,
+            newMaxQuantity = maxQuantity;
 
 
         ////////////////
@@ -115,17 +118,24 @@ window.addEventListener("load", event => {
         // Add items to shopping cart
 
         function addItem() {
-            itemNumber.style.display = "flex";
-            itemNumber.innerHTML = inputQuantity.value;
+            let shoppingNumber = parseInt(itemNumber.innerText);
+            let cenas = parseInt(itemNumber.innerText) + parseInt(inputQuantity.value);
 
-            if (itemNumber.innerHTML = inputQuantity.value) {
+            if (shoppingNumber < newMaxQuantity) {
+                itemNumber.style.display = "flex";
+                itemNumber.innerText = cenas;
                 itemNumber.classList.add('addItem');
-            }
 
+                newMaxQuantity = parseInt(maxQuantity) - parseInt(itemNumber.innerText);
+
+            } else {
+                error.style.display = "flex";
+            }
 
             setTimeout(() => {
                 itemNumber.classList.remove('addItem');
             }, 700);
+
         }
 
 
@@ -152,14 +162,16 @@ window.addEventListener("load", event => {
 
             let template = `
                 <div class="swiper-slide">
-
-                    <img src="${el.img}">
-
+                <div class="scene"> 
+                    <img src="${el.img}" data-depth="1">
+                    </div>
                 </div>`;
 
             document.querySelectorAll('.swiper-wrapper').forEach(function (el) {
                 el.insertAdjacentHTML('beforeend', template);
             })
+
+
         });
 
 
