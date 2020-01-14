@@ -118,12 +118,12 @@ window.addEventListener("load", event => {
         // Add items to shopping cart
 
         function addItem() {
-            let shoppingNumber = itemNumber.innerText;
-            let cenas = parseInt(shoppingNumber) + parseInt(inputQuantity.value);
 
-            if (cenas < newMaxQuantity) {
+            let cenas = parseInt(itemNumber.innerText) + parseInt(inputQuantity.value);
+
+            if (cenas <= newMaxQuantity) {
                 itemNumber.style.display = "flex";
-                shoppingNumber = cenas;
+                itemNumber.innerText = cenas;
                 itemNumber.classList.add("addItem");
 
                 //newMaxQuantity = parseInt(maxQuantity) - parseInt(itemNumber.innerText);
@@ -160,8 +160,9 @@ window.addEventListener("load", event => {
 
             let template = `
                 <div class="swiper-slide">
-                <div class="scene"> 
-                    <img src="${el.img}" data-depth="0.5">
+                    <div class="scene" data-hover-only="false"> 
+                        <img src="${el.img}" data-depth="0.5">
+                        <img src="${el.img}" data-depth="0.5" class="shadow">
                     </div>
                 </div>`;
 
@@ -194,7 +195,7 @@ window.addEventListener("load", event => {
         });
 
         var galleryMain = new Swiper('.galleryMain', {
-            spaceBetween: 50,
+            spaceBetween: 300,
             speed: 500,
             loop: true,
             loopedSlides: 5, //looped slides should be the same
