@@ -118,24 +118,22 @@ window.addEventListener("load", event => {
         // Add items to shopping cart
 
         function addItem() {
-            let shoppingNumber = parseInt(itemNumber.innerText);
-            let cenas = parseInt(itemNumber.innerText) + parseInt(inputQuantity.value);
+            let shoppingNumber = itemNumber.innerText;
+            let cenas = parseInt(shoppingNumber) + parseInt(inputQuantity.value);
 
-            if (shoppingNumber < newMaxQuantity) {
+            if (cenas < newMaxQuantity) {
                 itemNumber.style.display = "flex";
-                itemNumber.innerText = cenas;
-                itemNumber.classList.add('addItem');
+                shoppingNumber = cenas;
+                itemNumber.classList.add("addItem");
 
-                newMaxQuantity = parseInt(maxQuantity) - parseInt(itemNumber.innerText);
-
+                //newMaxQuantity = parseInt(maxQuantity) - parseInt(itemNumber.innerText);
             } else {
                 error.style.display = "flex";
             }
 
             setTimeout(() => {
-                itemNumber.classList.remove('addItem');
+                itemNumber.classList.remove("addItem");
             }, 700);
-
         }
 
 
@@ -163,17 +161,25 @@ window.addEventListener("load", event => {
             let template = `
                 <div class="swiper-slide">
                 <div class="scene"> 
-                    <img src="${el.img}" data-depth="1">
+                    <img src="${el.img}" data-depth="0.5">
                     </div>
                 </div>`;
 
-            document.querySelectorAll('.swiper-wrapper').forEach(function (el) {
-                el.insertAdjacentHTML('beforeend', template);
-            })
+            let template2 = `
+                <div class="swiper-slide">
+                    <img src="${el.img}">
+                </div>`;
+
+            document.querySelector('.galleryMain .swiper-wrapper').insertAdjacentHTML('beforeend', template);
+            document.querySelector('.galleryThumbs .swiper-wrapper').insertAdjacentHTML('beforeend', template2);
 
 
         });
 
+        var scene = document.querySelectorAll('.scene');
+        scene.forEach(pic => {
+            var parallax = new Parallax(pic);
+        })
 
         // Make the slider function
 
