@@ -29,6 +29,7 @@ window.addEventListener("load", event => {
         }
 
         const btn = document.querySelector('.btn'),
+            btnContainer = document.querySelector('.btnContainer'),
             wrapper = document.querySelector('.wrapper'),
             itemNumber = document.querySelector('.itemNumber'),
             inputQuantity = document.querySelector('.inputQuantity'),
@@ -83,9 +84,9 @@ window.addEventListener("load", event => {
         function resize() {
             //Button
             if (window.innerHeight > wrapper.offsetHeight) {
-                btn.classList.remove('fixedBtn');
+                btnContainer.classList.remove('fixedBtn');
             } else {
-                btn.classList.add('fixedBtn');
+                btnContainer.classList.add('fixedBtn');
             }
             parallax();
         }
@@ -245,6 +246,7 @@ window.addEventListener("load", event => {
         // Call functions 
         getDisccount();
         parallax();
+        resize();
     }
 
 
