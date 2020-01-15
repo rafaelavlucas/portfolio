@@ -763,6 +763,19 @@ body {
           transform: scale(1.4);
 }
 
+@media screen and (max-width: 799px) {
+  .wrapper .content .right .rightContent .specs .icon:hover img {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@media screen and (max-width: 799px) {
+  .wrapper .content .right .rightContent .specs .icon:hover {
+    background-color: white;
+  }
+}
+
 .wrapper .content .right .rightContent .specs .size .dropdown {
   position: relative;
   z-index: 2;

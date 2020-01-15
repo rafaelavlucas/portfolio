@@ -623,6 +623,14 @@ body {
 
                             img {
                                 transform: scale(1.4);
+
+                                @include sm {
+                                    transform: scale(1);
+                                }
+                            }
+
+                            @include sm {
+                                background-color: white;
                             }
                         }
                     }
