@@ -1178,6 +1178,16 @@ body {
   }
 }
 
+.galleryMain .swiper-slide.swiper-slide-next, .galleryMain .swiper-slide.swiper-slide-prev {
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 799px) {
+  .galleryMain .swiper-slide.swiper-slide-next, .galleryMain .swiper-slide.swiper-slide-prev {
+    opacity: 1;
+  }
+}
+
 .galleryThumbs {
   height: auto;
   margin: 0;
