@@ -156,7 +156,7 @@ body {
     content: '';
     position: fixed;
     width: 100vw;
-    height: 150px;
+    height: 110px;
     background: -webkit-gradient(linear, left bottom, left top, color-stop(60%, white), color-stop(90%, transparent));
     background: linear-gradient(0deg, white 60%, transparent 90%);
     z-index: -2;
