@@ -29,7 +29,7 @@ window.addEventListener("load", event => {
         }
 
         const btn = document.querySelector('.btn'),
-
+            wrapper = document.querySelector('.wrapper'),
             itemNumber = document.querySelector('.itemNumber'),
             inputQuantity = document.querySelector('.inputQuantity'),
             plus = document.querySelector('.plus'),
@@ -57,10 +57,13 @@ window.addEventListener("load", event => {
         minus.addEventListener("click", minusQuantity);
         arrowDrop.addEventListener("click", openDrop);
 
-
         dropItem.forEach(function (el) {
             el.addEventListener("click", getSize);
         })
+
+        window.addEventListener("resize", resize);
+
+
         ////////////////
         // Functions
         //////////////// 
@@ -75,6 +78,31 @@ window.addEventListener("load", event => {
             }
         };
 
+        // Change button position on mobile
+
+        function resize() {
+            //Button
+            if (window.innerHeight > wrapper.offsetHeight) {
+                btn.classList.remove('fixedBtn');
+            } else {
+                btn.classList.add('fixedBtn');
+            }
+            parallax();
+        }
+
+        // Parallax
+
+        function parallax() {
+            if (window.innerWidth > 800) {
+                var scene = document.querySelectorAll('.scene');
+                scene.forEach(pic => {
+                    var parallax = new Parallax(pic);
+                })
+            }
+        }
+
+
+
         // Calculate the Discount
 
         function getDisccount() {
@@ -82,8 +110,6 @@ window.addEventListener("load", event => {
             discount = product.value - (product.value * (30 / 100));
             priceFinal.innerText = discount + "€";
         }
-        getDisccount();
-
 
         // Calculate the the Prices with discounts
 
@@ -125,8 +151,7 @@ window.addEventListener("load", event => {
                 itemNumber.style.display = "flex";
                 itemNumber.innerText = cenas;
                 itemNumber.classList.add("addItem");
-
-                //newMaxQuantity = parseInt(maxQuantity) - parseInt(itemNumber.innerText);
+                error.style.display = "none";
             } else {
                 error.style.display = "flex";
             }
@@ -135,7 +160,6 @@ window.addEventListener("load", event => {
                 itemNumber.classList.remove("addItem");
             }, 700);
         }
-
 
         // Open Drop
 
@@ -154,6 +178,7 @@ window.addEventListener("load", event => {
             openDrop();
         }
 
+
         // Populate the images for Swiper
 
         product.images.forEach(function (el) {
@@ -162,7 +187,7 @@ window.addEventListener("load", event => {
                 <div class="swiper-slide">
                     <div class="scene" data-hover-only="false"> 
                         <img src="${el.img}" data-depth="0.5">
-                        <img src="${el.img}" data-depth="0.5" class="shadow">
+                        <img src="${el.img}" data-depth="1" class="shadow">
                     </div>
                 </div>`;
 
@@ -177,10 +202,6 @@ window.addEventListener("load", event => {
 
         });
 
-        var scene = document.querySelectorAll('.scene');
-        scene.forEach(pic => {
-            var parallax = new Parallax(pic);
-        })
 
         // Make the slider function
 
@@ -213,12 +234,20 @@ window.addEventListener("load", event => {
             },
             pagination: {
                 el: '.swiper-pagination',
+                clickable: true,
+
             },
             thumbs: {
                 swiper: galleryThumbs,
             },
         });
+
+        // Call functions 
+        getDisccount();
+        parallax();
     }
+
+
 
     productHeading();
 

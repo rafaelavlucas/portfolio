@@ -142,20 +142,19 @@ body {
         }
 
         @include sm {
-            position: fixed;
-            bottom: 20px;
             z-index: 3;
             max-width: 400px;
-            width: calc(100% - 10%);
-            left: 50%;
-            transform: translateX(-50%);
+            width: 100%;
+            margin-top: 20px;
 
-            &:hover {
-                transform: translate(-50%, 0);
-
+            &.fixedBtn {
+                position: fixed;
+                width: calc(100% - 10%);
+                bottom: 20px;
             }
-
         }
+
+
     }
 
     nav {
@@ -268,6 +267,7 @@ body {
             align-items: center;
             position: relative;
             border-radius: 100%;
+            cursor: pointer;
 
             @include sm {
                 background-color: transparent;
@@ -377,7 +377,7 @@ body {
             position: relative;
 
             @include sm {
-                padding: 60px 40px;
+                padding: 60px 0px;
 
             }
 
@@ -418,7 +418,6 @@ body {
                         background-color: $m-01;
                         border: 1px solid $m-01;
                     }
-
                 }
 
                 .swiper-button-next,
@@ -581,11 +580,10 @@ body {
                         }
 
                         &:hover {
-                            background-color: rgba(white, 0.5);
+                            background-color: $neu-06;
 
                             img {
-                                width: 20px;
-                                height: 20px;
+                                transform: scale(1.4);
                             }
                         }
                     }
@@ -739,8 +737,8 @@ body {
                     .quantity {
                         margin-left: 60px;
                         display: flex;
-
                         flex-direction: column;
+                        position: relative;
 
                         .quantityCounter {
                             display: flex;
@@ -768,118 +766,162 @@ body {
                         }
 
                         .error {
+                            position: absolute;
                             display: none;
+                            bottom: -20px;
+                            width: max-content;
+                            color: #dd2828;
+
+                            animation: error 0.3s ease;
+
+                            @keyframes error {
+
+                                0% {
+                                    opacity: 0;
+                                    transform: translateX(20px);
+                                }
+                            }
                         }
                     }
                 }
             }
         }
     }
-}
 
 
-// Swiper
+    // Swiper
 
-// //.swiper-container {
-//     width: 100vw;
-//     //max-width: 500px;
+    // //.swiper-container {
+    //     width: 100vw;
+    //     //max-width: 500px;
 
-//     @include sm {
-//         //max-width: 400px;
-//     }
+    //     @include sm {
+    //         //max-width: 400px;
+    //     }
 
-//     @include xs {
-//         //max-width: 280px;
-//     }
+    //     @include xs {
+    //         //max-width: 280px;
+    //     }
 
-//     .swiper-wrapper {
-//         width: 100vw;
-//         //max-width: 500px;
-//         //height: 600px;
+    //     .swiper-wrapper {
+    //         width: 100vw;
+    //         //max-width: 500px;
+    //         //height: 600px;
 
-//         @include sm {
-//             height: 200px;
-//             //max-width: 100%;
-//         }
+    //         @include sm {
+    //             height: 200px;
+    //             //max-width: 100%;
+    //         }
 
-//         @include xs {
-//             height: 200px;
-//             // max-width: 280px;
-//         }
-//     }
-// }
+    //         @include xs {
+    //             height: 200px;
+    //             // max-width: 280px;
+    //         }
+    //     }
+    // }
 
-.galleryMain {
-    width: calc(100% + 20%);
-    margin-right: 0;
+    .galleryMain {
+        width: calc(100% + 20%);
+        margin-right: 0;
+        position: relative;
 
+        &:before {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 100%;
+            background-color: red;
+            background: linear-gradient(90deg, transparent 50%, white 80%);
+            right: 0;
+            z-index: 2;
 
-    @include sm {
-        margin-right: auto;
-        transform: translateX(0px);
-        width: 100vw;
-    }
+            @include sm {
+                display: none;
+            }
+        }
 
-
-    .swiper-slide {
-        width: 100%;
-
-        transition: all 0.4s ease;
 
         @include sm {
-            height: 300px;
+            margin-right: auto;
+            transform: translateX(0px);
             width: 100vw;
         }
 
-        @include xs {
-            height: 200px;
-        }
 
-        .scene {
-            //display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            position: relative;
-            //padding-left: 10%;
+        .swiper-slide {
+            width: 100%;
+
+            transition: all 0.4s ease;
 
             @include sm {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                object-fit: cover;
                 height: 300px;
+                width: 100vw;
             }
 
             @include xs {
                 height: 200px;
             }
 
-        }
+            .scene {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                position: relative;
+                //padding-left: 10%;
 
-        img {
-            //transform: translateX(70px);
-            max-width: 600px;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            position: absolute;
-            margin-left: 20%;
+                @include md {}
 
+                @include sm {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    object-fit: cover;
+                    height: 300px;
+                }
 
-            @include sm {
-                width: initial;
+                @include xs {
+                    height: 200px;
+                }
+
+            }
+
+            img {
+                //transform: translateX(0px);
+                max-width: 600px;
+                width: 100%;
                 height: 100%;
-                //object-fit: initial;
-            }
-        }
+                object-fit: cover;
+                position: relative;
+                padding-right: 60px;
 
-        .shadow {
-            filter: saturate(0%) blur(10px) contrast(0) grayscale(1) brightness(0);
-            z-index: -1;
+                @include md {
+                    width: 90%;
+                    height: 90%;
+                    padding-right: 30px;
+                }
 
-            @include sm {
-                display: none !important;
+                @include sm {
+                    width: initial;
+                    height: 100%;
+                    //object-fit: initial;
+                }
             }
+
+            .shadow {
+                position: absolute;
+                filter: saturate(0%) blur(10px) contrast(0) grayscale(1) brightness(0);
+                z-index: -1;
+                top: 20px !important;
+                left: initial !important;
+                right: 20px;
+                opacity: 0.3;
+
+                @include sm {
+                    display: none !important;
+                }
+            }
+
+
 
         }
 
