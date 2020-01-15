@@ -787,7 +787,7 @@ body {
 
 @media screen and (max-width: 799px) {
   .wrapper .content .right .rightContent .specs .size .dropdown .dropOpen {
-    position: initial;
+    bottom: 16px;
   }
 }
 
@@ -803,6 +803,14 @@ body {
   transition: all 0.4s ease;
   border-radius: 0px 0px 4px 4px;
   z-index: -1;
+}
+
+@media screen and (max-width: 799px) {
+  .wrapper .content .right .rightContent .specs .size .dropdown .dropOpen:before, .wrapper .content .right .rightContent .specs .size .dropdown .dropOpen:after {
+    top: initial;
+    bottom: 0;
+    border-radius: 4px 4px 0px 0px;
+  }
 }
 
 .wrapper .content .right .rightContent .specs .size .dropdown .dropOpen:after {
@@ -861,6 +869,12 @@ body {
   border-radius: 4px 4px 0px 0px;
 }
 
+@media screen and (max-width: 799px) {
+  .wrapper .content .right .rightContent .specs .size .dropdown.open .dropContent {
+    border-radius: 0px 0px 4px 4px;
+  }
+}
+
 .wrapper .content .right .rightContent .specs .size .dropdown.open .dropContent .arrowDrop img {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
@@ -887,13 +901,30 @@ body {
 
 @media screen and (max-width: 799px) {
   .wrapper .content .right .rightContent .specs .size .dropdown.open .dropOpen:after {
-    height: 100%;
-    top: 0px;
+    bottom: -16px;
+    -webkit-box-shadow: 0px -10px 15px 0px rgba(0, 0, 0, 0.3);
+            box-shadow: 0px -10px 15px 0px rgba(0, 0, 0, 0.3);
   }
 }
 
 .wrapper .content .right .rightContent .specs .size .dropdown.open .dropOpen .dropItems {
   height: 148px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media screen and (max-width: 799px) {
+  .wrapper .content .right .rightContent .specs .size .dropdown.open .dropOpen .dropItems {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
 }
 
 .wrapper .content .right .rightContent .specs .size .dropdown.open .dropOpen .dropItems .dropItem {
