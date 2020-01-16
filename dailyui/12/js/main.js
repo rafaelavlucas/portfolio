@@ -42,7 +42,8 @@ window.addEventListener("load", event => {
             nav = document.querySelector('nav'),
             error = document.querySelector('.error'),
             shoppingIcon = document.querySelector('.shoppingIcon'),
-            shoppingMenu = document.querySelector('.shoppingMenu');
+            shoppingMenu = document.querySelector('.shoppingMenu'),
+            emptyCart = document.querySelector('.emptyCart');
 
         let = priceFinal = document.querySelector('.priceFinal'),
             priceOriginal = document.querySelector('.priceOriginal'),
@@ -62,6 +63,8 @@ window.addEventListener("load", event => {
         minus.addEventListener("click", minusQuantity);
         arrowDrop.addEventListener("click", openDrop);
         shoppingIcon.addEventListener("click", openShoppingCart);
+
+        emptyCart.addEventListener("click", cleanCart);
 
         dropItem.forEach(function (el) {
             el.addEventListener("click", getSize);
@@ -176,8 +179,6 @@ window.addEventListener("load", event => {
             }
         }
 
-
-
         //get Drop Size Number Value 
 
         function getSize(e) {
@@ -195,6 +196,17 @@ window.addEventListener("load", event => {
                     shoppingMenu.classList.add('openShopping');
                 }
             }
+        }
+
+        //Clean Shopping Cart
+
+        function cleanCart() {
+            shoppingMenu.classList.remove('openShopping');
+            itemNumber.style.display = "none";
+            itemNumber.classList.remove('addItem');
+            itemNumber.innerText = "0";
+
+
         }
 
         // Populate the images for Swiper

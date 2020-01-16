@@ -311,11 +311,13 @@ body {
                 position: relative;
                 border-radius: 100%;
                 cursor: pointer;
+
+                @include sm {
+                    background-color: transparent;
+                }
             }
 
-            @include sm {
-                background-color: transparent;
-            }
+
 
             .itemNumber {
                 width: 16px;
@@ -323,7 +325,6 @@ body {
                 display: none;
                 justify-content: center;
                 align-items: center;
-
                 background-color: $m-01;
                 border-radius: 100%;
                 font-size: 10px;
@@ -344,7 +345,6 @@ body {
 
                 &.addItem {
                     display: flex;
-
                     animation: addItem 0.4s ease;
 
                     @keyframes addItem {
@@ -371,24 +371,49 @@ body {
 
             .shoppingMenu {
                 width: 300px;
-                //height: 300px;
                 background-color: white;
-                box-shadow: 0px 30px 50px -20px rgba(black, 0.3);
+                box-shadow: 0px 30px 50px -20px rgba($neu-02, 0.3);
                 position: absolute;
                 top: 120px;
-                right: 60px;
+                right: 40px;
                 border-radius: 10px;
                 padding: 20px;
-                display: none;
+                display: flex;
                 justify-content: center;
                 align-items: center;
                 flex-direction: column;
+                visibility: hidden;
+                opacity: 0;
+                transition: all 0.4s ease;
+                transform: translateY(50px);
+
+                @include sm {
+                    top: 80px;
+                    right: 3%;
+                }
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    background-color: white;
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 3px;
+                    top: -8px;
+                    right: 30px;
+                    transform: rotate(45deg);
+
+                    @include sm {
+                        right: 73px;
+                    }
+
+                }
 
                 .shoppingTitle {
                     font-size: 20px;
                     font-weight: 600;
                     color: $m-01;
-                    margin-bottom: 20px;
+                    margin: 10px 0 30px 0;
 
                 }
 
@@ -428,11 +453,10 @@ body {
 
                 .btn {
                     width: 100%;
-
                 }
 
                 .link {
-                    margin: 40px 0 20px 0;
+                    margin: 50px 0 20px 0;
                     text-transform: uppercase;
                     font-weight: 500;
                     color: $neu-04;
@@ -446,7 +470,9 @@ body {
                 }
 
                 &.openShopping {
-                    display: flex;
+                    visibility: visible;
+                    opacity: 1;
+                    transform: translateY(0);
                 }
 
             }
@@ -1057,7 +1083,7 @@ body {
 
         .shadow {
             position: absolute;
-            filter: saturate(0%) blur(25px) contrast(0) grayscale(1) brightness(0);
+            filter: saturate(0%) blur(20px) contrast(0) grayscale(1) brightness(0);
             z-index: -1;
             top: 40px !important;
             left: initial !important;
