@@ -6,6 +6,7 @@ window.addEventListener("load", event => {
         ////////////////
 
         const product = {
+
             value: 125,
             images: [{
                     img: 'assets/img01.png'
@@ -28,17 +29,20 @@ window.addEventListener("load", event => {
             ]
         }
 
-        const btn = document.querySelector('.btn'),
+        const btnAdd = document.querySelector('.btn.add'),
             btnContainer = document.querySelector('.btnContainer'),
             wrapper = document.querySelector('.wrapper'),
             itemNumber = document.querySelector('.itemNumber'),
+            shoppingQuantity = document.querySelector('.shoppingQuantity'),
             inputQuantity = document.querySelector('.inputQuantity'),
             plus = document.querySelector('.plus'),
             minus = document.querySelector('.minus'),
             arrowDrop = document.querySelector('.arrowDrop'),
             dropdown = document.querySelector('.dropdown'),
             nav = document.querySelector('nav'),
-            error = document.querySelector('.error');
+            error = document.querySelector('.error'),
+            shoppingIcon = document.querySelector('.shoppingIcon'),
+            shoppingMenu = document.querySelector('.shoppingMenu');
 
         let = priceFinal = document.querySelector('.priceFinal'),
             priceOriginal = document.querySelector('.priceOriginal'),
@@ -53,10 +57,11 @@ window.addEventListener("load", event => {
         // Events
         ////////////////
 
-        btn.addEventListener('click', addItem);
+        btnAdd.addEventListener('click', addItem);
         plus.addEventListener("click", plusQuantity);
         minus.addEventListener("click", minusQuantity);
         arrowDrop.addEventListener("click", openDrop);
+        shoppingIcon.addEventListener("click", openShoppingCart);
 
         dropItem.forEach(function (el) {
             el.addEventListener("click", getSize);
@@ -101,8 +106,6 @@ window.addEventListener("load", event => {
                 })
             }
         }
-
-
 
         // Calculate the Discount
 
@@ -151,6 +154,7 @@ window.addEventListener("load", event => {
             if (cenas <= newMaxQuantity) {
                 itemNumber.style.display = "flex";
                 itemNumber.innerText = cenas;
+                shoppingQuantity.innerText = "x" + cenas;
                 itemNumber.classList.add("addItem");
                 error.style.display = "none";
             } else {
@@ -172,6 +176,8 @@ window.addEventListener("load", event => {
             }
         }
 
+
+
         //get Drop Size Number Value 
 
         function getSize(e) {
@@ -179,6 +185,17 @@ window.addEventListener("load", event => {
             openDrop();
         }
 
+        // Open Shopphing cart
+
+        function openShoppingCart() {
+            if (itemNumber.innerText != "0") {
+                if (shoppingMenu.classList.contains('openShopping')) {
+                    shoppingMenu.classList.remove('openShopping');
+                } else {
+                    shoppingMenu.classList.add('openShopping');
+                }
+            }
+        }
 
         // Populate the images for Swiper
 

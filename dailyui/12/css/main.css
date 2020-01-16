@@ -90,61 +90,6 @@ body {
   z-index: 3;
 }
 
-.wrapper .btnContainer .btn {
-  background: #FD6561;
-  -webkit-box-shadow: 0px 10px 20px -5px rgba(253, 101, 97, 0.4);
-          box-shadow: 0px 10px 20px -5px rgba(253, 101, 97, 0.4);
-  padding: 18px 50px;
-  font-size: 18px;
-  line-height: 22px;
-  text-align: center;
-  text-transform: uppercase;
-  border-radius: 6px;
-  color: white;
-  font-weight: 600;
-  font-family: "Barlow", sans-serif;
-  -webkit-transition: -webkit-transform 0.2s ease, -webkit-box-shadow 0.2s ease;
-  transition: -webkit-transform 0.2s ease, -webkit-box-shadow 0.2s ease;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, -webkit-transform 0.2s ease, -webkit-box-shadow 0.2s ease;
-  cursor: pointer;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.wrapper .btnContainer .btn img {
-  margin-right: 10px;
-  -webkit-transform: translateX(-6px);
-          transform: translateX(-6px);
-}
-
-.wrapper .btnContainer .btn:hover {
-  -webkit-transform: translateY(3px);
-          transform: translateY(3px);
-  -webkit-box-shadow: 0px 2px 10px -5px rgba(253, 101, 97, 0.4);
-          box-shadow: 0px 2px 10px -5px rgba(253, 101, 97, 0.4);
-}
-
-@media screen and (max-width: 799px) {
-  .wrapper .btnContainer .btn:hover {
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px);
-  }
-}
-
-@media screen and (max-width: 799px) {
-  .wrapper .btnContainer .btn {
-    width: 100%;
-  }
-}
-
 @media screen and (max-width: 799px) {
   .wrapper .btnContainer.fixedBtn {
     position: fixed;
@@ -176,6 +121,62 @@ body {
   .wrapper .btnContainer.fixedBtn .btn {
     max-width: 400px;
     margin: 0 auto;
+  }
+}
+
+.wrapper .btn {
+  background: #FD6561;
+  -webkit-box-shadow: 0px 10px 20px -5px rgba(253, 101, 97, 0.4);
+          box-shadow: 0px 10px 20px -5px rgba(253, 101, 97, 0.4);
+  padding: 18px 50px;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: 6px;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  font-family: "Barlow", sans-serif;
+  -webkit-transition: -webkit-transform 0.2s ease, -webkit-box-shadow 0.2s ease;
+  transition: -webkit-transform 0.2s ease, -webkit-box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, -webkit-transform 0.2s ease, -webkit-box-shadow 0.2s ease;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wrapper .btn img {
+  margin-right: 10px;
+  -webkit-transform: translateX(-6px);
+          transform: translateX(-6px);
+}
+
+.wrapper .btn:hover {
+  -webkit-transform: translateY(3px);
+          transform: translateY(3px);
+  -webkit-box-shadow: 0px 2px 10px -5px rgba(253, 101, 97, 0.4);
+          box-shadow: 0px 2px 10px -5px rgba(253, 101, 97, 0.4);
+}
+
+@media screen and (max-width: 799px) {
+  .wrapper .btn:hover {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+@media screen and (max-width: 799px) {
+  .wrapper .btn {
+    width: 100%;
   }
 }
 
@@ -307,6 +308,10 @@ body {
 }
 
 .wrapper nav .shoppingCart {
+  z-index: 6;
+}
+
+.wrapper nav .shoppingCart .shoppingIcon {
   width: 48px;
   height: 48px;
   background-color: white;
@@ -404,6 +409,108 @@ body {
     width: 16px;
     height: 16px;
   }
+}
+
+.wrapper nav .shoppingCart .shoppingMenu {
+  width: 300px;
+  background-color: white;
+  -webkit-box-shadow: 0px 30px 50px -20px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 30px 50px -20px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 120px;
+  right: 60px;
+  border-radius: 10px;
+  padding: 20px;
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.wrapper nav .shoppingCart .shoppingMenu .shoppingTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: #FD6561;
+  margin-bottom: 20px;
+}
+
+.wrapper nav .shoppingCart .shoppingMenu .productResume {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wrapper nav .shoppingCart .shoppingMenu .productResume .shoppingThumb {
+  width: 80px;
+  height: 80px;
+  margin-right: 20px;
+  border: 2px solid #F5F5F5;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.wrapper nav .shoppingCart .shoppingMenu .productResume .shoppingProduct {
+  color: #979797;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.wrapper nav .shoppingCart .shoppingMenu .productResume .shoppingQuantity {
+  color: #FD6561;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.wrapper nav .shoppingCart .shoppingMenu .shoppingBtn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.wrapper nav .shoppingCart .shoppingMenu .btn {
+  width: 100%;
+}
+
+.wrapper nav .shoppingCart .shoppingMenu .link {
+  margin: 40px 0 20px 0;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #979797;
+  font-size: 14px;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.wrapper nav .shoppingCart .shoppingMenu .link:hover {
+  color: #5A5A5A;
+}
+
+.wrapper nav .shoppingCart .shoppingMenu.openShopping {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .wrapper nav .iconMenu {
@@ -1062,8 +1169,8 @@ body {
 }
 
 .galleryMain {
-  width: calc(100% + 20%);
-  margin-right: 0;
+  width: 100%;
+  margin-right: auto;
   position: relative;
 }
 
@@ -1077,11 +1184,25 @@ body {
   background: linear-gradient(90deg, transparent 50%, white 80%);
   right: 0;
   z-index: 2;
+  display: none;
+}
+
+@media screen and (max-width: 1919px) {
+  .galleryMain:before {
+    display: block;
+  }
 }
 
 @media screen and (max-width: 799px) {
   .galleryMain:before {
     display: none;
+  }
+}
+
+@media screen and (max-width: 1919px) {
+  .galleryMain {
+    margin-right: 0;
+    width: calc(100% + 20%);
   }
 }
 
@@ -1117,13 +1238,21 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   position: relative;
+}
+
+@media screen and (max-width: 1919px) {
+  .galleryMain .swiper-slide .scene {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
 }
 
 @media screen and (max-width: 799px) {
@@ -1156,7 +1285,12 @@ body {
   -o-object-fit: cover;
      object-fit: cover;
   position: relative;
-  padding-right: 60px;
+}
+
+@media screen and (max-width: 1919px) {
+  .galleryMain .swiper-slide img {
+    padding-right: 60px;
+  }
 }
 
 @media screen and (max-width: 1023px) {
@@ -1176,13 +1310,18 @@ body {
 
 .galleryMain .swiper-slide .shadow {
   position: absolute;
-  -webkit-filter: saturate(0%) blur(10px) contrast(0) grayscale(1) brightness(0);
-          filter: saturate(0%) blur(10px) contrast(0) grayscale(1) brightness(0);
+  -webkit-filter: saturate(0%) blur(25px) contrast(0) grayscale(1) brightness(0);
+          filter: saturate(0%) blur(25px) contrast(0) grayscale(1) brightness(0);
   z-index: -1;
-  top: 20px !important;
+  top: 40px !important;
   left: initial !important;
-  right: 20px;
   opacity: 0.3;
+}
+
+@media screen and (max-width: 1919px) {
+  .galleryMain .swiper-slide .shadow {
+    right: 20px;
+  }
 }
 
 @media screen and (max-width: 799px) {

@@ -25,6 +25,12 @@ $g-03: linear-gradient(120deg, #4DAF9E 8%, #75EDD7 86%);
 
 $cubic: cubic-bezier(0.51, -0.12, 0.25, 1.15);
 
+@mixin lg {
+    @media screen and (max-width: 1919px) {
+        @content;
+    }
+}
+
 @mixin md {
     @media screen and (max-width: 1023px) {
         @content;
@@ -118,42 +124,7 @@ body {
         position: relative;
         z-index: 3;
 
-        .btn {
-            background: $m-01;
-            box-shadow: 0px 10px 20px -5px rgba($m-01, 0.4);
-            padding: 18px 50px;
-            font-size: 18px;
-            line-height: 22px;
-            text-align: center;
-            text-transform: uppercase;
-            border-radius: 6px;
-            color: white;
-            font-weight: 600;
-            font-family: $font-01;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
 
-            img {
-                margin-right: 10px;
-                transform: translateX(-6px);
-            }
-
-            &:hover {
-                transform: translateY(3px);
-                box-shadow: 0px 2px 10px -5px rgba($m-01, 0.4);
-
-                @include sm {
-                    transform: translateY(0px);
-                }
-            }
-
-            @include sm {
-                width: 100%;
-            }
-        }
 
 
         &.fixedBtn {
@@ -184,6 +155,44 @@ body {
                     margin: 0 auto;
                 }
             }
+        }
+    }
+
+    .btn {
+        background: $m-01;
+        box-shadow: 0px 10px 20px -5px rgba($m-01, 0.4);
+        padding: 18px 50px;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: center;
+        text-transform: uppercase;
+        border-radius: 6px;
+        color: white;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        font-family: $font-01;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            margin-right: 10px;
+            transform: translateX(-6px);
+        }
+
+        &:hover {
+            transform: translateY(3px);
+            box-shadow: 0px 2px 10px -5px rgba($m-01, 0.4);
+
+            @include sm {
+                transform: translateY(0px);
+            }
+        }
+
+        @include sm {
+            width: 100%;
         }
     }
 
@@ -290,15 +299,19 @@ body {
         }
 
         .shoppingCart {
-            width: 48px;
-            height: 48px;
-            background-color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            border-radius: 100%;
-            cursor: pointer;
+            z-index: 6;
+
+            .shoppingIcon {
+                width: 48px;
+                height: 48px;
+                background-color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                border-radius: 100%;
+                cursor: pointer;
+            }
 
             @include sm {
                 background-color: transparent;
@@ -310,6 +323,7 @@ body {
                 display: none;
                 justify-content: center;
                 align-items: center;
+
                 background-color: $m-01;
                 border-radius: 100%;
                 font-size: 10px;
@@ -330,6 +344,7 @@ body {
 
                 &.addItem {
                     display: flex;
+
                     animation: addItem 0.4s ease;
 
                     @keyframes addItem {
@@ -352,6 +367,88 @@ body {
                         }
                     }
                 }
+            }
+
+            .shoppingMenu {
+                width: 300px;
+                //height: 300px;
+                background-color: white;
+                box-shadow: 0px 30px 50px -20px rgba(black, 0.3);
+                position: absolute;
+                top: 120px;
+                right: 60px;
+                border-radius: 10px;
+                padding: 20px;
+                display: none;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+
+                .shoppingTitle {
+                    font-size: 20px;
+                    font-weight: 600;
+                    color: $m-01;
+                    margin-bottom: 20px;
+
+                }
+
+                .productResume {
+                    display: flex;
+                    align-items: center;
+
+                    .shoppingThumb {
+                        width: 80px;
+                        height: 80px;
+                        margin-right: 20px;
+                        border: 2px solid $neu-06;
+                        padding: 5px;
+                        border-radius: 4px;
+                    }
+
+                    .shoppingProduct {
+                        color: $neu-04;
+                        font-size: 16px;
+                        font-weight: 500;
+                        margin-bottom: 5px;
+                    }
+
+                    .shoppingQuantity {
+                        color: $m-01;
+                        font-weight: 600;
+                        font-size: 18px;
+                    }
+                }
+
+                .shoppingBtn {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                }
+
+                .btn {
+                    width: 100%;
+
+                }
+
+                .link {
+                    margin: 40px 0 20px 0;
+                    text-transform: uppercase;
+                    font-weight: 500;
+                    color: $neu-04;
+                    font-size: 14px;
+                    transition: all 0.2s ease;
+                    cursor: pointer;
+
+                    &:hover {
+                        color: $neu-02;
+                    }
+                }
+
+                &.openShopping {
+                    display: flex;
+                }
+
             }
         }
 
@@ -857,8 +954,8 @@ body {
 // Swiper
 
 .galleryMain {
-    width: calc(100% + 20%);
-    margin-right: 0;
+    width: 100%;
+    margin-right: auto;
     position: relative;
 
     &:before {
@@ -870,12 +967,21 @@ body {
         background: linear-gradient(90deg, transparent 50%, white 80%);
         right: 0;
         z-index: 2;
+        display: none;
+
+        @include lg {
+            display: block;
+        }
 
         @include sm {
             display: none;
         }
     }
 
+    @include lg {
+        margin-right: 0;
+        width: calc(100% + 20%);
+    }
 
     @include sm {
         margin-right: auto;
@@ -900,12 +1006,15 @@ body {
 
         .scene {
             display: flex;
-            justify-content: flex-end;
+            justify-content: center;
             align-items: center;
             position: relative;
             //padding-left: 10%;
 
-            @include md {}
+            @include lg {
+                justify-content: flex-end;
+            }
+
 
             @include sm {
                 display: flex;
@@ -928,7 +1037,10 @@ body {
             height: 100%;
             object-fit: cover;
             position: relative;
-            padding-right: 60px;
+
+            @include lg {
+                padding-right: 60px;
+            }
 
             @include md {
                 width: 90%;
@@ -945,12 +1057,15 @@ body {
 
         .shadow {
             position: absolute;
-            filter: saturate(0%) blur(10px) contrast(0) grayscale(1) brightness(0);
+            filter: saturate(0%) blur(25px) contrast(0) grayscale(1) brightness(0);
             z-index: -1;
-            top: 20px !important;
+            top: 40px !important;
             left: initial !important;
-            right: 20px;
             opacity: 0.3;
+
+            @include lg {
+                right: 20px;
+            }
 
             @include sm {
                 display: none !important;
