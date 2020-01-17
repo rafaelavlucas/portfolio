@@ -27,7 +27,7 @@ window.onload = function (e) {
         nm = 1,
         im = 1,
         folder = "img",
-        total = 89;
+        total = 88;
 
 
     const items = [{
@@ -95,6 +95,12 @@ window.onload = function (e) {
             name: `${nm++}`,
             image: `${folder}/dailyui-${im++}.jpg`,
             desc: "Flash Message"
+        },
+        {
+            url: `${nu++}`,
+            name: `${nm++}`,
+            image: `${folder}/dailyui-${im++}.jpg`,
+            desc: "E-Commerce Shop (Single Item)"
         },
 
     ];
