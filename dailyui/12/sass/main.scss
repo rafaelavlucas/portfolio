@@ -83,7 +83,6 @@ body {
     }
 }
 
-
 .logo {
     position: fixed;
     z-index: 5;
@@ -404,7 +403,7 @@ body {
                     transform: rotate(45deg);
 
                     @include sm {
-                        right: 73px;
+                        right: 76px;
                     }
 
                 }
@@ -462,10 +461,24 @@ body {
                     color: $neu-04;
                     font-size: 14px;
                     transition: all 0.2s ease;
+                    display: flex;
+                    align-items: center;
                     cursor: pointer;
+
+                    img {
+                        width: 20px;
+                        height: 20px;
+                        margin-right: 10px;
+                        opacity: 0.3;
+                        transition: all 0.2s ease;
+                    }
 
                     &:hover {
                         color: $neu-02;
+
+                        img {
+                            opacity: 0.5;
+                        }
                     }
                 }
 

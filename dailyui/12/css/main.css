@@ -464,7 +464,7 @@ body {
 
 @media screen and (max-width: 799px) {
   .wrapper nav .shoppingCart .shoppingMenu:before {
-    right: 73px;
+    right: 76px;
   }
 }
 
@@ -534,11 +534,30 @@ body {
   font-size: 14px;
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   cursor: pointer;
+}
+
+.wrapper nav .shoppingCart .shoppingMenu .link img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  opacity: 0.3;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .wrapper nav .shoppingCart .shoppingMenu .link:hover {
   color: #5A5A5A;
+}
+
+.wrapper nav .shoppingCart .shoppingMenu .link:hover img {
+  opacity: 0.5;
 }
 
 .wrapper nav .shoppingCart .shoppingMenu.openShopping {
