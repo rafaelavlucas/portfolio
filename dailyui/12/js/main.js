@@ -53,7 +53,6 @@ window.addEventListener("load", event => {
             maxQuantity = 5,
             newMaxQuantity = maxQuantity;
 
-
         ////////////////
         // Events
         ////////////////
@@ -205,8 +204,6 @@ window.addEventListener("load", event => {
             itemNumber.style.display = "none";
             itemNumber.classList.remove('addItem');
             itemNumber.innerText = "0";
-
-
         }
 
         // Populate the images for Swiper
@@ -228,8 +225,6 @@ window.addEventListener("load", event => {
 
             document.querySelector('.galleryMain .swiper-wrapper').insertAdjacentHTML('beforeend', template);
             document.querySelector('.galleryThumbs .swiper-wrapper').insertAdjacentHTML('beforeend', template2);
-
-
         });
 
 
@@ -278,8 +273,5 @@ window.addEventListener("load", event => {
         resize();
     }
 
-
-
     productHeading();
-
 });
