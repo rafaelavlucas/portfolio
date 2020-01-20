@@ -34,73 +34,85 @@ window.onload = function (e) {
             url: `${nu++}`,
             name: `${nm++}`,
             image: `${folder}/dailyui-${im++}.jpg`,
-            desc: "Sign Up"
+            desc: "Sign Up",
+            color: "#786acd"
         },
         {
             url: `${nu++}`,
             name: `${nm++}`,
             image: `${folder}/dailyui-${im++}.jpg`,
-            desc: "Credit Card Checkout"
+            desc: "Credit Card Checkout",
+            color: "#98111f"
         },
         {
             url: `${nu++}`,
             name: `${nm++}`,
             image: `${folder}/dailyui-${im++}.jpg`,
-            desc: "Landing Page"
+            desc: "Landing Page",
+            color: "#8fb9c8"
         },
         {
             url: `${nu++}`,
             name: `${nm++}`,
             image: `${folder}/dailyui-${im++}.jpg`,
-            desc: "Calculator [in progress...]"
+            desc: "Calculator [in progress...]",
+            color: "#1a9991"
         },
         {
             url: `${nu++}`,
             name: `${nm++}`,
             image: `${folder}/dailyui-${im++}.jpg`,
-            desc: "App Icon"
+            desc: "App Icon",
+            color: "#4d4d4d"
         },
         {
             url: `${nu++}`,
             name: `${nm++}`,
             image: `${folder}/dailyui-${im++}.jpg`,
-            desc: "Profile"
+            desc: "Profile",
+            color: "#ff896e"
         },
         {
             url: `${nu++}`,
             name: `${nm++}`,
             image: `${folder}/dailyui-${im++}.jpg`,
-            desc: "Settings"
+            desc: "Settings",
+            color: "#6442ca"
         },
         {
             url: `${nu++}`,
             name: `${nm++}`,
             image: `${folder}/dailyui-${im++}.jpg`,
-            desc: "404 Page"
+            desc: "404 Page",
+            color: "#4e3767"
         },
         {
             url: `${nu++}`,
             name: `${nm++}`,
             image: `${folder}/dailyui-${im++}.jpg`,
-            desc: "Music Player"
+            desc: "Music Player",
+            color: "#ffbf0d"
         },
         {
             url: `${nu++}`,
             name: `${nm++}`,
             image: `${folder}/dailyui-${im++}.jpg`,
-            desc: "Social Share"
+            desc: "Social Share",
+            color: "#359ed2"
         },
         {
             url: `${nu++}`,
             name: `${nm++}`,
             image: `${folder}/dailyui-${im++}.jpg`,
-            desc: "Flash Message"
+            desc: "Flash Message",
+            color: "#f39e87"
         },
         {
             url: `${nu++}`,
             name: `${nm++}`,
             image: `${folder}/dailyui-${im++}.jpg`,
-            desc: "E-Commerce Shop (Single Item)"
+            desc: "E-Commerce Shop (Single Item)",
+            color: "#F3615C"
         },
 
     ];
@@ -120,13 +132,14 @@ window.onload = function (e) {
             var name = items[i].name,
                 img = items[i].image,
                 desc = items[i].desc,
-                url = items[i].url;
+                url = items[i].url,
+                color = items[i].color;
 
             var template = `
             <a href="${url}" target="_blank"  rel="noopener">
                 <div class="item">
                     <div class="description">
-                    <div class="itemBg"></div>
+                    <div class="itemBg" style="background-color:${color}c2"></div>
                     <article>
                         <h3 class="name">${name}</h3>
                         <p class="desc">${desc}</p>
