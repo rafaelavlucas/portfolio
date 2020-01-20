@@ -37,7 +37,7 @@ var works = [{
         title: "Quinta da Valeira Website",
         year: "2019",
         category: "UI Design, Front-End Development",
-        thumb: "images/works/valeirawebsite/valeirawebsite_01.jpg",
+        thumb: "images/works/valeirawebsite/valeirawebsite_00.jpg",
         url: "works/valeirawebsite.html",
         fullClass: false,
         featured: true,

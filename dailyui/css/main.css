@@ -344,14 +344,13 @@ header article p {
 }
 
 #dailyui-items {
-  max-width: 1440px;
   padding: 0 5%;
   margin: 0 auto;
   display: -ms-grid;
   display: grid;
   grid-gap: 40px;
-  -ms-grid-columns: (minmax(350px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  -ms-grid-columns: (minmax(400px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   font-family: "Barlow", sans-serif;
 }
 
