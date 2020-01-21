@@ -3,7 +3,8 @@ window.onload = function (e) {
 
     // Sticky menu 
 
-    var menuNav = document.querySelector('nav .navigation');
+    var menuNav = document.querySelector('.mainNav'),
+        itemContainer = document.querySelector(".dailyItems");
 
     window.onscroll = function () {
 
@@ -34,73 +35,85 @@ window.onload = function (e) {
             url: `${nu++}`,
             name: `${nm++}`,
             image: `${folder}/dailyui-${im++}.jpg`,
-            desc: "Sign Up"
+            desc: "Sign Up",
+            color: "#8988cc"
         },
         {
             url: `${nu++}`,
             name: `${nm++}`,
             image: `${folder}/dailyui-${im++}.jpg`,
-            desc: "Credit Card Checkout"
+            desc: "Credit Card Checkout",
+            color: "#98111f"
         },
         {
             url: `${nu++}`,
             name: `${nm++}`,
             image: `${folder}/dailyui-${im++}.jpg`,
-            desc: "Landing Page"
+            desc: "Landing Page",
+            color: "#6aa0b6"
         },
         {
             url: `${nu++}`,
             name: `${nm++}`,
             image: `${folder}/dailyui-${im++}.jpg`,
-            desc: "Calculator [in progress...]"
+            desc: "Calculator [in progress...]",
+            color: "#1a9991"
         },
         {
             url: `${nu++}`,
             name: `${nm++}`,
             image: `${folder}/dailyui-${im++}.jpg`,
-            desc: "App Icon"
+            desc: "App Icon",
+            color: "#b0b0b3"
         },
         {
             url: `${nu++}`,
             name: `${nm++}`,
             image: `${folder}/dailyui-${im++}.jpg`,
-            desc: "Profile"
+            desc: "Profile",
+            color: "#e28473"
         },
         {
             url: `${nu++}`,
             name: `${nm++}`,
             image: `${folder}/dailyui-${im++}.jpg`,
-            desc: "Settings"
+            desc: "Settings",
+            color: "#8160de"
         },
         {
             url: `${nu++}`,
             name: `${nm++}`,
             image: `${folder}/dailyui-${im++}.jpg`,
-            desc: "404 Page"
+            desc: "404 Page",
+            color: "#61378a"
         },
         {
             url: `${nu++}`,
             name: `${nm++}`,
             image: `${folder}/dailyui-${im++}.jpg`,
-            desc: "Music Player"
+            desc: "Music Player",
+            color: "#e2a902"
         },
         {
             url: `${nu++}`,
             name: `${nm++}`,
             image: `${folder}/dailyui-${im++}.jpg`,
-            desc: "Social Share"
+            desc: "Social Share",
+            color: "#359ed2"
         },
         {
             url: `${nu++}`,
             name: `${nm++}`,
             image: `${folder}/dailyui-${im++}.jpg`,
-            desc: "Flash Message"
+            desc: "Flash Message",
+            color: "#62ccb9"
         },
         {
             url: `${nu++}`,
             name: `${nm++}`,
             image: `${folder}/dailyui-${im++}.jpg`,
-            desc: "E-Commerce Shop (Single Item)"
+            desc: "E-Commerce Shop (Single Item)",
+            color: "#F3615C"
         },
 
     ];
@@ -108,10 +121,9 @@ window.onload = function (e) {
     const itemEmpty = [{
         name: `${nm}`,
         image: `${folder}/placeholder.jpg`,
-        desc: "Coming soon"
+        desc: "Coming soon",
+        color: "#000000"
     }];
-
-    const itemContainer = document.getElementById("dailyui-items");
 
 
     function addItems() {
@@ -120,19 +132,23 @@ window.onload = function (e) {
             var name = items[i].name,
                 img = items[i].image,
                 desc = items[i].desc,
-                url = items[i].url;
+                url = items[i].url,
+                color = items[i].color;
 
             var template = `
-            <a href="${url}" target="_blank"  rel="noopener">
-                <div class="item">
-                    <article>
-                        <h3 class="name">${name}</h3>
-                        <p class="desc">${desc}</p>
+            <a href="${url}" target="_blank"  rel="noopener" class="dailyItem">
+            
+                    <div class="dailyItem__content">
+                    <div class="dailyItem__itemBg" style="background-color:${color}f0"></div>
+                    <article class="dailyItem__text">
+                        <h3 class="dailyItem__name">#${name}</h3>
+                        <p class="dailyItem__desc">${desc}</p>
                     </article>
-                    <div class="image"> 
+                    </div>
+                    <div class="dailyItem__image"> 
                         <img src="${img}">
                     </div>
-                 </div>
+                
             </a>`;
             itemContainer.insertAdjacentHTML('beforeend', template);
         }
@@ -143,27 +159,28 @@ window.onload = function (e) {
         for (let i = 0; i < total; i++) {
             var name2 = itemEmpty[0].name++,
                 img2 = itemEmpty[0].image,
-                desc2 = itemEmpty[0].desc;
+                desc2 = itemEmpty[0].desc,
+                color2 = itemEmpty[0].color;
 
             var template = `
-            <div class="empty">
-                <div class="item">
-                    <article>
-                        <h3 class="name">${name2}</h3>
-                        <p class="desc">${desc2}</p>
+            <div class="dailyItem">
+                    <div class="dailyItem__content">
+                    <div class="dailyItem__itemBg" style="background-color:${color2}70"></div>
+                    <article class="dailyItem__text">
+                        <h3 class="dailyItem__name">#${name2}</h3>
+                        <p class="dailyItem__desc">${desc2}</p>
                     </article>
-                    <div class="image"> 
+                    </div>
+                    <div class="dailyItem__image"> 
                         <img src="${img2}">
                     </div>
-                    </div>
-                 </div>`;
+            </div>`;
             itemContainer.insertAdjacentHTML('beforeend', template);
         }
     }
 
-    addItems()
+    addItems();
 
     addEmpty(total);
 
-    console.log(total)
 }
