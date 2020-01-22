@@ -5,7 +5,7 @@ var works = [{
         year: "On going",
         category: "UI Design, Front-End Development",
         url: "/dailyui",
-        thumb: "images/works/dailyui/dailyui_04.jpg",
+        thumb: "images/works/dailyui/dailyui_07.jpg",
         fullClass: true,
         featured: true,
     },
