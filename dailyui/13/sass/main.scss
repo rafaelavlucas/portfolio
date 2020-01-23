@@ -1,0 +1,237 @@
+@import url("https://fonts.googleapis.com/css?family=Barlow+Condensed:200,300,400,500,600,700,800,900|Barlow:200,300,400,500,600,700,800,900&display=swap");
+
+$font-01: "Barlow",
+sans-serif;
+$font-02: "Barlow Condensed",
+sans-serif;
+
+$m-01: #23D2D2;
+
+$neu-01: #363636;
+$neu-02: #5A5A5A;
+$neu-03: #909090;
+$neu-04: #979797;
+$neu-05: #BDBDBD;
+$neu-06: #F5F5F5;
+
+
+$cubic: cubic-bezier(0.51, -0.12, 0.25, 1.15);
+
+@mixin lg {
+    @media screen and (max-width: 1919px) {
+        @content;
+    }
+}
+
+@mixin md {
+    @media screen and (max-width: 1023px) {
+        @content;
+    }
+}
+
+@mixin sm {
+    @media screen and (max-width: 799px) {
+        @content;
+    }
+}
+
+@mixin xs {
+    @media screen and (max-width: 512px) {
+        @content;
+    }
+}
+
+@mixin transition {
+    transition: all 0.4s ease;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: 0;
+    -webkit-tap-highlight-color: transparent;
+    text-decoration: none;
+    color: inherit;
+    box-sizing: border-box;
+
+    &:focus {
+        outline: 0;
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+}
+
+body {
+    background-color: $neu-06;
+    font-family: $font-01;
+    font-weight: normal;
+    transition: all 0.4s ease;
+}
+
+.logo {
+    position: fixed;
+    z-index: 5;
+    bottom: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 100%;
+    backdrop-filter: blur(5px);
+
+    img {
+        width: 55%;
+        height: 55%;
+        transform: translateY(-1px);
+        opacity: 0.8;
+    }
+
+    @include sm {
+        display: none;
+    }
+}
+
+.wrapper {
+    width: 100%;
+    height: 100vh;
+    font-family: $font-01;
+    user-select: none;
+    letter-spacing: 0.8px;
+    margin: 0 auto;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    @include transition();
+}
+
+.messageBox {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    @include transition();
+
+    &__button {
+        width: 60px;
+        height: 60px;
+        background-color: white;
+        border-radius: 50%;
+        box-shadow: 0px 2px 15px rgba(201, 201, 201, 0.58);
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        right: 0;
+        bottom: 0;
+        cursor: pointer;
+        @include transition();
+
+    }
+
+    &__wrapper {
+        border: 2px solid $m-01;
+        width: 30px;
+        height: 22px;
+        border-radius: 4px;
+        z-index: 2;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        pointer-events: none;
+        @include transition();
+
+        &:before {
+            content: '';
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            border-bottom: 2px solid $m-01;
+            border-right: 2px solid $m-01;
+            transform: rotate(45deg);
+            background-color: white;
+            bottom: -5px;
+            right: 7px;
+
+        }
+    }
+
+    &__dots {
+        //width: 48px;
+        height: 48px;
+        display: block;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+        @include transition();
+
+        span {
+            width: 2px;
+            height: 2px;
+            background-color: $m-01;
+            display: block;
+            border-radius: 50%;
+            position: relative;
+
+            &:before,
+            &:after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                border-radius: inherit;
+                background-color: inherit;
+            }
+
+            &:before {
+                transform: translateX(-6px);
+            }
+
+            &:after {
+                transform: translateX(6px);
+            }
+        }
+
+    }
+
+
+}
+
+.openBox {
+    width: 300px;
+    height: 400px;
+    @include transition();
+
+    .messageBox {
+
+        &__button {
+            right: 0;
+            bottom: -80px;
+            @include transition();
+        }
+
+        &__wrapper {
+            width: 100%;
+            height: 100%;
+        }
+
+        &__dots {
+            transform: rotate(90deg);
+        }
+    }
+
+}
