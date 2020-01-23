@@ -127,6 +127,8 @@ body {
   cursor: pointer;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
+  -webkit-transition: all 0.4s 0.2s ease;
+  transition: all 0.4s 0.2s ease;
 }
 
 .messageBox__wrapper {
@@ -135,6 +137,7 @@ body {
   height: 22px;
   border-radius: 4px;
   z-index: 2;
+  bottom: 19px;
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -148,6 +151,8 @@ body {
   pointer-events: none;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
+  -webkit-transition: all 0.4s 0.2s ease, height 0.4s 0s ease;
+  transition: all 0.4s 0.2s ease, height 0.4s 0s ease;
 }
 
 .messageBox__wrapper:before {
@@ -162,10 +167,14 @@ body {
   background-color: white;
   bottom: -5px;
   right: 7px;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
 
 .messageBox__dots {
+  width: 48px;
   height: 48px;
+  top: 6px;
   display: block;
   position: absolute;
   display: -webkit-box;
@@ -178,8 +187,11 @@ body {
       -ms-flex-align: center;
           align-items: center;
   z-index: 1;
+  pointer-events: none;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
+  -webkit-transition: all 0.4s 0.2s ease;
+  transition: all 0.4s 0.2s ease;
 }
 
 .messageBox__dots span {
@@ -211,26 +223,51 @@ body {
 }
 
 .openBox {
-  width: 300px;
-  height: 400px;
+  width: 340px;
+  height: 526px;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
 
 .openBox .messageBox__button {
-  right: 0;
-  bottom: -80px;
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
+  right: 40px;
 }
 
 .openBox .messageBox__wrapper {
   width: 100%;
-  height: 100%;
+  height: 430px;
+  bottom: 100px;
+  -webkit-transition: all 0.5s ease, height 0.5s 0.1s ease;
+  transition: all 0.5s ease, height 0.5s 0.1s ease;
+}
+
+.openBox .messageBox__wrapper:before {
+  width: 30px;
+  height: 30px;
+  bottom: -17px;
+  right: 52px;
+  background-color: #F5F5F5;
 }
 
 .openBox .messageBox__dots {
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
+  top: 0;
+  right: 0;
+}
+
+.openBox .messageBox__dots span {
+  width: 4px;
+  height: 4px;
+}
+
+.openBox .messageBox__dots span:before {
+  -webkit-transform: translateX(-8px);
+          transform: translateX(-8px);
+}
+
+.openBox .messageBox__dots span:after {
+  -webkit-transform: translateX(8px);
+          transform: translateX(8px);
 }
 /*# sourceMappingURL=main.css.map */
