@@ -1,9 +1,7 @@
-@import url("https://fonts.googleapis.com/css?family=Barlow+Condensed:200,300,400,500,600,700,800,900|Barlow:200,300,400,500,600,700,800,900&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:100,300,400,500,700&display=swap');
 
-$font-01: "Barlow",
-sans-serif;
-$font-02: "Barlow Condensed",
-sans-serif;
+$font-01: 'Roboto Mono',
+monospace;
 
 $m-01: #23D2D2;
 
@@ -13,6 +11,7 @@ $neu-03: #909090;
 $neu-04: #979797;
 $neu-05: #BDBDBD;
 $neu-06: #F5F5F5;
+$neu-07: #F8f8f8;
 
 
 $cubic: cubic-bezier(0.51, -0.12, 0.25, 1.15);
@@ -44,6 +43,16 @@ $cubic: cubic-bezier(0.51, -0.12, 0.25, 1.15);
 @mixin transition {
     transition: all 0.4s ease;
 }
+
+@mixin transitionIn {
+    @for $i from 1 through 100 {
+        &:nth-child(#{$i}) {
+            transition: all 0.4s #{0.4 + $i * 0.2}s;
+        }
+    }
+}
+
+
 
 
 * {
@@ -105,8 +114,6 @@ body {
     width: 100%;
     height: 100vh;
     font-family: $font-01;
-    user-select: none;
-    letter-spacing: 0.8px;
     margin: 0 auto;
     display: grid;
     align-items: center;
@@ -164,14 +171,12 @@ body {
         border-radius: 4px;
         z-index: 2;
         bottom: 19px;
-        //right: 15px;
         position: absolute;
         display: flex;
         justify-content: center;
         align-items: center;
         pointer-events: none;
         @include transition();
-        //transition: all 0.6s ease;
 
         &:before {
             content: '';
@@ -231,7 +236,181 @@ body {
 
     }
 
+    &__content {
+        visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        padding: 16px;
+        position: relative;
 
+
+    }
+
+    &__profile {
+        width: 100%;
+        height: 72px;
+        border-radius: 8px;
+        margin-top: 28px;
+        padding: 0 16px;
+        display: flex;
+    }
+
+    &__profilePic {
+        width: 68px;
+        height: 68px;
+        position: relative;
+        z-index: 2;
+        transform: scale(0);
+
+        &:before {
+            content: '';
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background-color: $m-01;
+            top: -4px;
+            left: 4px;
+            z-index: 1;
+            border-radius: 6px;
+
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 2;
+            position: absolute;
+            border-radius: 4px;
+
+        }
+    }
+
+    &__profileName {
+        margin: 10px 0px 0px 20px;
+        font-size: 16px;
+        line-height: 20px;
+        color: $m-01;
+        transform: translateX(30px);
+    }
+
+    &__chat {
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        border-radius: 4px;
+        transform: translateY(-16px);
+        padding: 16px;
+        overflow-x: hidden;
+        overflow-Y: scroll;
+        pointer-events: initial;
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    &__message {
+        display: flex;
+        margin-top: 24px;
+        opacity: 0;
+        transform: translateY(10px);
+
+        @include transition();
+
+        &:nth-child(1) {
+            margin-top: auto
+        }
+
+        &.you {
+            flex-direction: row-reverse;
+
+            .messageBox__text {
+                background-color: $m-01;
+                color: white;
+            }
+        }
+    }
+
+    &__text {
+        background-color: $neu-07;
+        padding: 8px 10px;
+        border-radius: 4px;
+        font-size: 14px;
+        line-height: 16px;
+        color: $m-01;
+
+    }
+
+    &__date {
+        padding: 0 10px;
+        display: flex;
+        align-items: center;
+        color: $neu-05;
+        font-size: 10px;
+        line-height: 12px;
+    }
+
+    &__input {
+        display: flex;
+        opacity: 0;
+        transform: translatex(-10px);
+
+        input {
+            pointer-events: initial;
+            height: 48px;
+            border-radius: 4px;
+            background-color: white;
+            padding: 12px 16px;
+            color: $neu-03;
+            font-family: $font-01;
+            font-size: 14px;
+            resize: none;
+            line-height: 24px;
+            white-space: pre-line;
+            width: calc(100% - 64px);
+
+            &::selection {
+                background-color: $m-01;
+                color: white;
+            }
+        }
+    }
+
+    &__btnSend {
+        background: $m-01;
+        width: 48px;
+        height: 48px;
+        border-radius: 4px;
+        margin-left: 14px;
+        pointer-events: initial;
+        cursor: pointer;
+        overflow: hidden;
+        position: relative;
+
+        span {
+            display: block;
+            background-image: url("../assets/send.svg");
+            width: calc(48px + 24px);
+            height: 48px;
+            position: absolute;
+            left: -65%;
+            top: 0;
+            z-index: 1;
+            background-repeat: space;
+            background-size: 32px;
+            background-position: center;
+            @include transition();
+        }
+
+        &:hover {
+            span {
+                left: 15%;
+            }
+        }
+    }
 }
 
 .openBox {
@@ -273,6 +452,7 @@ body {
             height: 430px;
             bottom: 100px;
             right: 0;
+            border-radius: 10px;
             transition: all 0.6s ease;
 
             &:before {
@@ -302,5 +482,33 @@ body {
                 }
             }
         }
+
+        &__content {
+            visibility: visible;
+        }
+
+        &__profilePic {
+            transform: scale(1);
+            transition: all 0.4s 0.4s ease;
+        }
+
+        &__profileName {
+            transform: translateX(0px);
+            transition: all 0.4s 0.4s ease;
+        }
+
+        &__message {
+            @include transitionIn();
+            opacity: 1;
+            transform: translateY(0px);
+        }
+
+        &__input {
+            opacity: 1;
+            transition: all 0.4s 0.4s ease;
+            transform: translatex(0px);
+        }
+
+
     }
 }

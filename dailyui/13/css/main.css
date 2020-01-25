@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Barlow+Condensed:200,300,400,500,600,700,800,900|Barlow:200,300,400,500,600,700,800,900&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono:100,300,400,500,700&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -23,7 +23,7 @@
 
 body {
   background-color: #F5F5F5;
-  font-family: "Barlow", sans-serif;
+  font-family: "Roboto Mono", monospace;
   font-weight: normal;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
@@ -69,12 +69,7 @@ body {
 .wrapper {
   width: 100%;
   height: 100vh;
-  font-family: "Barlow", sans-serif;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  letter-spacing: 0.8px;
+  font-family: "Roboto Mono", monospace;
   margin: 0 auto;
   display: -ms-grid;
   display: grid;
@@ -234,6 +229,209 @@ body {
           transform: translateX(6px);
 }
 
+.messageBox__content {
+  visibility: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  padding: 16px;
+  position: relative;
+}
+
+.messageBox__profile {
+  width: 100%;
+  height: 72px;
+  border-radius: 8px;
+  margin-top: 28px;
+  padding: 0 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.messageBox__profilePic {
+  width: 68px;
+  height: 68px;
+  position: relative;
+  z-index: 2;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+.messageBox__profilePic:before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: #23D2D2;
+  top: -4px;
+  left: 4px;
+  z-index: 1;
+  border-radius: 6px;
+}
+
+.messageBox__profilePic img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: 2;
+  position: absolute;
+  border-radius: 4px;
+}
+
+.messageBox__profileName {
+  margin: 10px 0px 0px 20px;
+  font-size: 16px;
+  line-height: 20px;
+  color: #23D2D2;
+  -webkit-transform: translateX(30px);
+          transform: translateX(30px);
+}
+
+.messageBox__chat {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-radius: 4px;
+  -webkit-transform: translateY(-16px);
+          transform: translateY(-16px);
+  padding: 16px;
+  overflow-x: hidden;
+  overflow-Y: scroll;
+  pointer-events: initial;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.messageBox__message {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 24px;
+  opacity: 0;
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.messageBox__message:nth-child(1) {
+  margin-top: auto;
+}
+
+.messageBox__message.you {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+.messageBox__message.you .messageBox__text {
+  background-color: #23D2D2;
+  color: white;
+}
+
+.messageBox__text {
+  background-color: #F8f8f8;
+  padding: 8px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 16px;
+  color: #23D2D2;
+}
+
+.messageBox__date {
+  padding: 0 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #BDBDBD;
+  font-size: 10px;
+  line-height: 12px;
+}
+
+.messageBox__input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  opacity: 0;
+  -webkit-transform: translatex(-10px);
+          transform: translatex(-10px);
+}
+
+.messageBox__input input {
+  pointer-events: initial;
+  height: 48px;
+  border-radius: 4px;
+  background-color: white;
+  padding: 12px 16px;
+  color: #909090;
+  font-family: "Roboto Mono", monospace;
+  font-size: 14px;
+  resize: none;
+  line-height: 24px;
+  white-space: pre-line;
+  width: calc(100% - 64px);
+}
+
+.messageBox__input input::-moz-selection {
+  background-color: #23D2D2;
+  color: white;
+}
+
+.messageBox__input input::selection {
+  background-color: #23D2D2;
+  color: white;
+}
+
+.messageBox__btnSend {
+  background: #23D2D2;
+  width: 48px;
+  height: 48px;
+  border-radius: 4px;
+  margin-left: 14px;
+  pointer-events: initial;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+
+.messageBox__btnSend span {
+  display: block;
+  background-image: url("../assets/send.svg");
+  width: calc(48px + 24px);
+  height: 48px;
+  position: absolute;
+  left: -65%;
+  top: 0;
+  z-index: 1;
+  background-repeat: space;
+  background-size: 32px;
+  background-position: center;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.messageBox__btnSend:hover span {
+  left: 15%;
+}
+
 .openBox {
   width: 340px;
   height: 526px;
@@ -276,6 +474,7 @@ body {
   height: 430px;
   bottom: 100px;
   right: 0;
+  border-radius: 10px;
   -webkit-transition: all 0.6s ease;
   transition: all 0.6s ease;
 }
@@ -308,5 +507,537 @@ body {
 .openBox .messageBox__dots span:after {
   -webkit-transform: translateX(8px);
           transform: translateX(8px);
+}
+
+.openBox .messageBox__content {
+  visibility: visible;
+}
+
+.openBox .messageBox__profilePic {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: all 0.4s 0.4s ease;
+  transition: all 0.4s 0.4s ease;
+}
+
+.openBox .messageBox__profileName {
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
+  -webkit-transition: all 0.4s 0.4s ease;
+  transition: all 0.4s 0.4s ease;
+}
+
+.openBox .messageBox__message {
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+}
+
+.openBox .messageBox__message:nth-child(1) {
+  -webkit-transition: all 0.4s 0.6s;
+  transition: all 0.4s 0.6s;
+}
+
+.openBox .messageBox__message:nth-child(2) {
+  -webkit-transition: all 0.4s 0.8s;
+  transition: all 0.4s 0.8s;
+}
+
+.openBox .messageBox__message:nth-child(3) {
+  -webkit-transition: all 0.4s 1s;
+  transition: all 0.4s 1s;
+}
+
+.openBox .messageBox__message:nth-child(4) {
+  -webkit-transition: all 0.4s 1.2s;
+  transition: all 0.4s 1.2s;
+}
+
+.openBox .messageBox__message:nth-child(5) {
+  -webkit-transition: all 0.4s 1.4s;
+  transition: all 0.4s 1.4s;
+}
+
+.openBox .messageBox__message:nth-child(6) {
+  -webkit-transition: all 0.4s 1.6s;
+  transition: all 0.4s 1.6s;
+}
+
+.openBox .messageBox__message:nth-child(7) {
+  -webkit-transition: all 0.4s 1.8s;
+  transition: all 0.4s 1.8s;
+}
+
+.openBox .messageBox__message:nth-child(8) {
+  -webkit-transition: all 0.4s 2s;
+  transition: all 0.4s 2s;
+}
+
+.openBox .messageBox__message:nth-child(9) {
+  -webkit-transition: all 0.4s 2.2s;
+  transition: all 0.4s 2.2s;
+}
+
+.openBox .messageBox__message:nth-child(10) {
+  -webkit-transition: all 0.4s 2.4s;
+  transition: all 0.4s 2.4s;
+}
+
+.openBox .messageBox__message:nth-child(11) {
+  -webkit-transition: all 0.4s 2.6s;
+  transition: all 0.4s 2.6s;
+}
+
+.openBox .messageBox__message:nth-child(12) {
+  -webkit-transition: all 0.4s 2.8s;
+  transition: all 0.4s 2.8s;
+}
+
+.openBox .messageBox__message:nth-child(13) {
+  -webkit-transition: all 0.4s 3s;
+  transition: all 0.4s 3s;
+}
+
+.openBox .messageBox__message:nth-child(14) {
+  -webkit-transition: all 0.4s 3.2s;
+  transition: all 0.4s 3.2s;
+}
+
+.openBox .messageBox__message:nth-child(15) {
+  -webkit-transition: all 0.4s 3.4s;
+  transition: all 0.4s 3.4s;
+}
+
+.openBox .messageBox__message:nth-child(16) {
+  -webkit-transition: all 0.4s 3.6s;
+  transition: all 0.4s 3.6s;
+}
+
+.openBox .messageBox__message:nth-child(17) {
+  -webkit-transition: all 0.4s 3.8s;
+  transition: all 0.4s 3.8s;
+}
+
+.openBox .messageBox__message:nth-child(18) {
+  -webkit-transition: all 0.4s 4s;
+  transition: all 0.4s 4s;
+}
+
+.openBox .messageBox__message:nth-child(19) {
+  -webkit-transition: all 0.4s 4.2s;
+  transition: all 0.4s 4.2s;
+}
+
+.openBox .messageBox__message:nth-child(20) {
+  -webkit-transition: all 0.4s 4.4s;
+  transition: all 0.4s 4.4s;
+}
+
+.openBox .messageBox__message:nth-child(21) {
+  -webkit-transition: all 0.4s 4.6s;
+  transition: all 0.4s 4.6s;
+}
+
+.openBox .messageBox__message:nth-child(22) {
+  -webkit-transition: all 0.4s 4.8s;
+  transition: all 0.4s 4.8s;
+}
+
+.openBox .messageBox__message:nth-child(23) {
+  -webkit-transition: all 0.4s 5s;
+  transition: all 0.4s 5s;
+}
+
+.openBox .messageBox__message:nth-child(24) {
+  -webkit-transition: all 0.4s 5.2s;
+  transition: all 0.4s 5.2s;
+}
+
+.openBox .messageBox__message:nth-child(25) {
+  -webkit-transition: all 0.4s 5.4s;
+  transition: all 0.4s 5.4s;
+}
+
+.openBox .messageBox__message:nth-child(26) {
+  -webkit-transition: all 0.4s 5.6s;
+  transition: all 0.4s 5.6s;
+}
+
+.openBox .messageBox__message:nth-child(27) {
+  -webkit-transition: all 0.4s 5.8s;
+  transition: all 0.4s 5.8s;
+}
+
+.openBox .messageBox__message:nth-child(28) {
+  -webkit-transition: all 0.4s 6s;
+  transition: all 0.4s 6s;
+}
+
+.openBox .messageBox__message:nth-child(29) {
+  -webkit-transition: all 0.4s 6.2s;
+  transition: all 0.4s 6.2s;
+}
+
+.openBox .messageBox__message:nth-child(30) {
+  -webkit-transition: all 0.4s 6.4s;
+  transition: all 0.4s 6.4s;
+}
+
+.openBox .messageBox__message:nth-child(31) {
+  -webkit-transition: all 0.4s 6.6s;
+  transition: all 0.4s 6.6s;
+}
+
+.openBox .messageBox__message:nth-child(32) {
+  -webkit-transition: all 0.4s 6.8s;
+  transition: all 0.4s 6.8s;
+}
+
+.openBox .messageBox__message:nth-child(33) {
+  -webkit-transition: all 0.4s 7s;
+  transition: all 0.4s 7s;
+}
+
+.openBox .messageBox__message:nth-child(34) {
+  -webkit-transition: all 0.4s 7.2s;
+  transition: all 0.4s 7.2s;
+}
+
+.openBox .messageBox__message:nth-child(35) {
+  -webkit-transition: all 0.4s 7.4s;
+  transition: all 0.4s 7.4s;
+}
+
+.openBox .messageBox__message:nth-child(36) {
+  -webkit-transition: all 0.4s 7.6s;
+  transition: all 0.4s 7.6s;
+}
+
+.openBox .messageBox__message:nth-child(37) {
+  -webkit-transition: all 0.4s 7.8s;
+  transition: all 0.4s 7.8s;
+}
+
+.openBox .messageBox__message:nth-child(38) {
+  -webkit-transition: all 0.4s 8s;
+  transition: all 0.4s 8s;
+}
+
+.openBox .messageBox__message:nth-child(39) {
+  -webkit-transition: all 0.4s 8.2s;
+  transition: all 0.4s 8.2s;
+}
+
+.openBox .messageBox__message:nth-child(40) {
+  -webkit-transition: all 0.4s 8.4s;
+  transition: all 0.4s 8.4s;
+}
+
+.openBox .messageBox__message:nth-child(41) {
+  -webkit-transition: all 0.4s 8.6s;
+  transition: all 0.4s 8.6s;
+}
+
+.openBox .messageBox__message:nth-child(42) {
+  -webkit-transition: all 0.4s 8.8s;
+  transition: all 0.4s 8.8s;
+}
+
+.openBox .messageBox__message:nth-child(43) {
+  -webkit-transition: all 0.4s 9s;
+  transition: all 0.4s 9s;
+}
+
+.openBox .messageBox__message:nth-child(44) {
+  -webkit-transition: all 0.4s 9.2s;
+  transition: all 0.4s 9.2s;
+}
+
+.openBox .messageBox__message:nth-child(45) {
+  -webkit-transition: all 0.4s 9.4s;
+  transition: all 0.4s 9.4s;
+}
+
+.openBox .messageBox__message:nth-child(46) {
+  -webkit-transition: all 0.4s 9.6s;
+  transition: all 0.4s 9.6s;
+}
+
+.openBox .messageBox__message:nth-child(47) {
+  -webkit-transition: all 0.4s 9.8s;
+  transition: all 0.4s 9.8s;
+}
+
+.openBox .messageBox__message:nth-child(48) {
+  -webkit-transition: all 0.4s 10s;
+  transition: all 0.4s 10s;
+}
+
+.openBox .messageBox__message:nth-child(49) {
+  -webkit-transition: all 0.4s 10.2s;
+  transition: all 0.4s 10.2s;
+}
+
+.openBox .messageBox__message:nth-child(50) {
+  -webkit-transition: all 0.4s 10.4s;
+  transition: all 0.4s 10.4s;
+}
+
+.openBox .messageBox__message:nth-child(51) {
+  -webkit-transition: all 0.4s 10.6s;
+  transition: all 0.4s 10.6s;
+}
+
+.openBox .messageBox__message:nth-child(52) {
+  -webkit-transition: all 0.4s 10.8s;
+  transition: all 0.4s 10.8s;
+}
+
+.openBox .messageBox__message:nth-child(53) {
+  -webkit-transition: all 0.4s 11s;
+  transition: all 0.4s 11s;
+}
+
+.openBox .messageBox__message:nth-child(54) {
+  -webkit-transition: all 0.4s 11.2s;
+  transition: all 0.4s 11.2s;
+}
+
+.openBox .messageBox__message:nth-child(55) {
+  -webkit-transition: all 0.4s 11.4s;
+  transition: all 0.4s 11.4s;
+}
+
+.openBox .messageBox__message:nth-child(56) {
+  -webkit-transition: all 0.4s 11.6s;
+  transition: all 0.4s 11.6s;
+}
+
+.openBox .messageBox__message:nth-child(57) {
+  -webkit-transition: all 0.4s 11.8s;
+  transition: all 0.4s 11.8s;
+}
+
+.openBox .messageBox__message:nth-child(58) {
+  -webkit-transition: all 0.4s 12s;
+  transition: all 0.4s 12s;
+}
+
+.openBox .messageBox__message:nth-child(59) {
+  -webkit-transition: all 0.4s 12.2s;
+  transition: all 0.4s 12.2s;
+}
+
+.openBox .messageBox__message:nth-child(60) {
+  -webkit-transition: all 0.4s 12.4s;
+  transition: all 0.4s 12.4s;
+}
+
+.openBox .messageBox__message:nth-child(61) {
+  -webkit-transition: all 0.4s 12.6s;
+  transition: all 0.4s 12.6s;
+}
+
+.openBox .messageBox__message:nth-child(62) {
+  -webkit-transition: all 0.4s 12.8s;
+  transition: all 0.4s 12.8s;
+}
+
+.openBox .messageBox__message:nth-child(63) {
+  -webkit-transition: all 0.4s 13s;
+  transition: all 0.4s 13s;
+}
+
+.openBox .messageBox__message:nth-child(64) {
+  -webkit-transition: all 0.4s 13.2s;
+  transition: all 0.4s 13.2s;
+}
+
+.openBox .messageBox__message:nth-child(65) {
+  -webkit-transition: all 0.4s 13.4s;
+  transition: all 0.4s 13.4s;
+}
+
+.openBox .messageBox__message:nth-child(66) {
+  -webkit-transition: all 0.4s 13.6s;
+  transition: all 0.4s 13.6s;
+}
+
+.openBox .messageBox__message:nth-child(67) {
+  -webkit-transition: all 0.4s 13.8s;
+  transition: all 0.4s 13.8s;
+}
+
+.openBox .messageBox__message:nth-child(68) {
+  -webkit-transition: all 0.4s 14s;
+  transition: all 0.4s 14s;
+}
+
+.openBox .messageBox__message:nth-child(69) {
+  -webkit-transition: all 0.4s 14.2s;
+  transition: all 0.4s 14.2s;
+}
+
+.openBox .messageBox__message:nth-child(70) {
+  -webkit-transition: all 0.4s 14.4s;
+  transition: all 0.4s 14.4s;
+}
+
+.openBox .messageBox__message:nth-child(71) {
+  -webkit-transition: all 0.4s 14.6s;
+  transition: all 0.4s 14.6s;
+}
+
+.openBox .messageBox__message:nth-child(72) {
+  -webkit-transition: all 0.4s 14.8s;
+  transition: all 0.4s 14.8s;
+}
+
+.openBox .messageBox__message:nth-child(73) {
+  -webkit-transition: all 0.4s 15s;
+  transition: all 0.4s 15s;
+}
+
+.openBox .messageBox__message:nth-child(74) {
+  -webkit-transition: all 0.4s 15.2s;
+  transition: all 0.4s 15.2s;
+}
+
+.openBox .messageBox__message:nth-child(75) {
+  -webkit-transition: all 0.4s 15.4s;
+  transition: all 0.4s 15.4s;
+}
+
+.openBox .messageBox__message:nth-child(76) {
+  -webkit-transition: all 0.4s 15.6s;
+  transition: all 0.4s 15.6s;
+}
+
+.openBox .messageBox__message:nth-child(77) {
+  -webkit-transition: all 0.4s 15.8s;
+  transition: all 0.4s 15.8s;
+}
+
+.openBox .messageBox__message:nth-child(78) {
+  -webkit-transition: all 0.4s 16s;
+  transition: all 0.4s 16s;
+}
+
+.openBox .messageBox__message:nth-child(79) {
+  -webkit-transition: all 0.4s 16.2s;
+  transition: all 0.4s 16.2s;
+}
+
+.openBox .messageBox__message:nth-child(80) {
+  -webkit-transition: all 0.4s 16.4s;
+  transition: all 0.4s 16.4s;
+}
+
+.openBox .messageBox__message:nth-child(81) {
+  -webkit-transition: all 0.4s 16.6s;
+  transition: all 0.4s 16.6s;
+}
+
+.openBox .messageBox__message:nth-child(82) {
+  -webkit-transition: all 0.4s 16.8s;
+  transition: all 0.4s 16.8s;
+}
+
+.openBox .messageBox__message:nth-child(83) {
+  -webkit-transition: all 0.4s 17s;
+  transition: all 0.4s 17s;
+}
+
+.openBox .messageBox__message:nth-child(84) {
+  -webkit-transition: all 0.4s 17.2s;
+  transition: all 0.4s 17.2s;
+}
+
+.openBox .messageBox__message:nth-child(85) {
+  -webkit-transition: all 0.4s 17.4s;
+  transition: all 0.4s 17.4s;
+}
+
+.openBox .messageBox__message:nth-child(86) {
+  -webkit-transition: all 0.4s 17.6s;
+  transition: all 0.4s 17.6s;
+}
+
+.openBox .messageBox__message:nth-child(87) {
+  -webkit-transition: all 0.4s 17.8s;
+  transition: all 0.4s 17.8s;
+}
+
+.openBox .messageBox__message:nth-child(88) {
+  -webkit-transition: all 0.4s 18s;
+  transition: all 0.4s 18s;
+}
+
+.openBox .messageBox__message:nth-child(89) {
+  -webkit-transition: all 0.4s 18.2s;
+  transition: all 0.4s 18.2s;
+}
+
+.openBox .messageBox__message:nth-child(90) {
+  -webkit-transition: all 0.4s 18.4s;
+  transition: all 0.4s 18.4s;
+}
+
+.openBox .messageBox__message:nth-child(91) {
+  -webkit-transition: all 0.4s 18.6s;
+  transition: all 0.4s 18.6s;
+}
+
+.openBox .messageBox__message:nth-child(92) {
+  -webkit-transition: all 0.4s 18.8s;
+  transition: all 0.4s 18.8s;
+}
+
+.openBox .messageBox__message:nth-child(93) {
+  -webkit-transition: all 0.4s 19s;
+  transition: all 0.4s 19s;
+}
+
+.openBox .messageBox__message:nth-child(94) {
+  -webkit-transition: all 0.4s 19.2s;
+  transition: all 0.4s 19.2s;
+}
+
+.openBox .messageBox__message:nth-child(95) {
+  -webkit-transition: all 0.4s 19.4s;
+  transition: all 0.4s 19.4s;
+}
+
+.openBox .messageBox__message:nth-child(96) {
+  -webkit-transition: all 0.4s 19.6s;
+  transition: all 0.4s 19.6s;
+}
+
+.openBox .messageBox__message:nth-child(97) {
+  -webkit-transition: all 0.4s 19.8s;
+  transition: all 0.4s 19.8s;
+}
+
+.openBox .messageBox__message:nth-child(98) {
+  -webkit-transition: all 0.4s 20s;
+  transition: all 0.4s 20s;
+}
+
+.openBox .messageBox__message:nth-child(99) {
+  -webkit-transition: all 0.4s 20.2s;
+  transition: all 0.4s 20.2s;
+}
+
+.openBox .messageBox__message:nth-child(100) {
+  -webkit-transition: all 0.4s 20.4s;
+  transition: all 0.4s 20.4s;
+}
+
+.openBox .messageBox__input {
+  opacity: 1;
+  -webkit-transition: all 0.4s 0.4s ease;
+  transition: all 0.4s 0.4s ease;
+  -webkit-transform: translatex(0px);
+          transform: translatex(0px);
 }
 /*# sourceMappingURL=main.css.map */
