@@ -28,7 +28,7 @@ window.onload = function (e) {
         nm = 1,
         im = 1,
         folder = "img",
-        total = 88;
+        total = 87;
 
 
     const items = [{
@@ -114,6 +114,13 @@ window.onload = function (e) {
             image: `${folder}/dailyui-${im++}.jpg`,
             desc: "E-Commerce Shop (Single Item)",
             color: "#F3615C"
+        },
+        {
+            url: `${nu++}`,
+            name: `${nm++}`,
+            image: `${folder}/dailyui-${im++}.jpg`,
+            desc: "Direct Messaging",
+            color: "#60c4c7"
         },
 
     ];
