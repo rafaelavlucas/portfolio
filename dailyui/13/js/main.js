@@ -7,12 +7,6 @@ window.addEventListener("load", event => {
         btn = document.querySelector('.messageBox__btnSend');
 
     const messages = [{
-            text: "ok!",
-            hour: "15:02",
-            person: "me"
-
-        },
-        {
             text: "do you want to go to the movies tonight?!",
             hour: "16:30",
             person: "you"
@@ -21,6 +15,11 @@ window.addEventListener("load", event => {
             text: "yes, sure! what time?",
             hour: "16:35",
             person: "me"
+        },
+        {
+            text: "I will pick you up at 8",
+            hour: "16:40",
+            person: "you"
         }
     ];
 

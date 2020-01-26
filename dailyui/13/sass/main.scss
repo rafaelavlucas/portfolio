@@ -14,7 +14,7 @@ $neu-06: #F5F5F5;
 $neu-07: #F8f8f8;
 
 
-$cubic: cubic-bezier(0.51, -0.12, 0.25, 1.15);
+$cubic: cubic-bezier(0.67, 0.1, 0.26, 1.33);
 
 @mixin lg {
     @media screen and (max-width: 1919px) {
@@ -47,12 +47,10 @@ $cubic: cubic-bezier(0.51, -0.12, 0.25, 1.15);
 @mixin transitionIn {
     @for $i from 1 through 100 {
         &:nth-child(#{$i}) {
-            transition: all 0.4s #{0.4 + $i * 0.2}s;
+            transition: all 0.4s #{0.4 + $i * 0.2}s cubic-bezier(0.41, 0.24, 0, 1.29);
         }
     }
 }
-
-
 
 
 * {
@@ -285,7 +283,6 @@ body {
             z-index: 2;
             position: absolute;
             border-radius: 4px;
-
         }
     }
 
@@ -309,22 +306,20 @@ body {
         pointer-events: initial;
         display: flex;
         flex-direction: column;
-
     }
 
     &__message {
         display: flex;
         margin-top: 24px;
         opacity: 0;
-        transform: translateY(10px);
-
-        @include transition();
+        transform: translateX(-10px);
 
         &:nth-child(1) {
             margin-top: auto
         }
 
         &.you {
+            transform: translateX(10px);
             flex-direction: row-reverse;
 
             .messageBox__text {
@@ -389,6 +384,7 @@ body {
         cursor: pointer;
         overflow: hidden;
         position: relative;
+        transition: all 0.2s $cubic;
 
         span {
             display: block;
@@ -402,7 +398,11 @@ body {
             background-repeat: space;
             background-size: 32px;
             background-position: center;
-            @include transition();
+            transition: all 0.4s $cubic;
+        }
+
+        &:active {
+            transform: scale(0.9);
         }
 
         &:hover {
@@ -419,7 +419,6 @@ body {
     transition: all 0.6s ease;
 
     .messageBox {
-
         &__button {
             right: 40px;
 
@@ -453,7 +452,9 @@ body {
             bottom: 100px;
             right: 0;
             border-radius: 10px;
+            pointer-events: initial;
             transition: all 0.6s ease;
+
 
             &:before {
                 width: 30px;
@@ -467,7 +468,11 @@ body {
         &__dots {
             transform: rotate(90deg);
             top: 0;
-            right: 0;
+            right: 0px;
+            z-index: 3;
+            cursor: pointer;
+            pointer-events: initial;
+            transition: all 0.4s $cubic;
 
             span {
                 width: 4px;
@@ -480,6 +485,12 @@ body {
                 &:after {
                     transform: translateX(8px);
                 }
+            }
+
+            &:hover {
+                transform: rotate(0deg);
+                right: 8px;
+
             }
         }
 
@@ -500,7 +511,7 @@ body {
         &__message {
             @include transitionIn();
             opacity: 1;
-            transform: translateY(0px);
+            transform: translateX(0px);
         }
 
         &__input {
@@ -508,7 +519,5 @@ body {
             transition: all 0.4s 0.4s ease;
             transform: translatex(0px);
         }
-
-
     }
 }

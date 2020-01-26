@@ -322,10 +322,8 @@ body {
   display: flex;
   margin-top: 24px;
   opacity: 0;
-  -webkit-transform: translateY(10px);
-          transform: translateY(10px);
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
+  -webkit-transform: translateX(-10px);
+          transform: translateX(-10px);
 }
 
 .messageBox__message:nth-child(1) {
@@ -333,6 +331,8 @@ body {
 }
 
 .messageBox__message.you {
+  -webkit-transform: translateX(10px);
+          transform: translateX(10px);
   -webkit-box-orient: horizontal;
   -webkit-box-direction: reverse;
       -ms-flex-direction: row-reverse;
@@ -410,6 +410,8 @@ body {
   cursor: pointer;
   overflow: hidden;
   position: relative;
+  -webkit-transition: all 0.2s cubic-bezier(0.67, 0.1, 0.26, 1.33);
+  transition: all 0.2s cubic-bezier(0.67, 0.1, 0.26, 1.33);
 }
 
 .messageBox__btnSend span {
@@ -424,8 +426,13 @@ body {
   background-repeat: space;
   background-size: 32px;
   background-position: center;
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
+  -webkit-transition: all 0.4s cubic-bezier(0.67, 0.1, 0.26, 1.33);
+  transition: all 0.4s cubic-bezier(0.67, 0.1, 0.26, 1.33);
+}
+
+.messageBox__btnSend:active {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
 }
 
 .messageBox__btnSend:hover span {
@@ -475,6 +482,7 @@ body {
   bottom: 100px;
   right: 0;
   border-radius: 10px;
+  pointer-events: initial;
   -webkit-transition: all 0.6s ease;
   transition: all 0.6s ease;
 }
@@ -491,7 +499,12 @@ body {
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
   top: 0;
-  right: 0;
+  right: 0px;
+  z-index: 3;
+  cursor: pointer;
+  pointer-events: initial;
+  -webkit-transition: all 0.4s cubic-bezier(0.67, 0.1, 0.26, 1.33);
+  transition: all 0.4s cubic-bezier(0.67, 0.1, 0.26, 1.33);
 }
 
 .openBox .messageBox__dots span {
@@ -507,6 +520,12 @@ body {
 .openBox .messageBox__dots span:after {
   -webkit-transform: translateX(8px);
           transform: translateX(8px);
+}
+
+.openBox .messageBox__dots:hover {
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  right: 8px;
 }
 
 .openBox .messageBox__content {
@@ -529,508 +548,508 @@ body {
 
 .openBox .messageBox__message {
   opacity: 1;
-  -webkit-transform: translateY(0px);
-          transform: translateY(0px);
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
 }
 
 .openBox .messageBox__message:nth-child(1) {
-  -webkit-transition: all 0.4s 0.6s;
-  transition: all 0.4s 0.6s;
+  -webkit-transition: all 0.4s 0.6s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 0.6s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(2) {
-  -webkit-transition: all 0.4s 0.8s;
-  transition: all 0.4s 0.8s;
+  -webkit-transition: all 0.4s 0.8s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 0.8s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(3) {
-  -webkit-transition: all 0.4s 1s;
-  transition: all 0.4s 1s;
+  -webkit-transition: all 0.4s 1s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 1s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(4) {
-  -webkit-transition: all 0.4s 1.2s;
-  transition: all 0.4s 1.2s;
+  -webkit-transition: all 0.4s 1.2s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 1.2s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(5) {
-  -webkit-transition: all 0.4s 1.4s;
-  transition: all 0.4s 1.4s;
+  -webkit-transition: all 0.4s 1.4s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 1.4s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(6) {
-  -webkit-transition: all 0.4s 1.6s;
-  transition: all 0.4s 1.6s;
+  -webkit-transition: all 0.4s 1.6s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 1.6s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(7) {
-  -webkit-transition: all 0.4s 1.8s;
-  transition: all 0.4s 1.8s;
+  -webkit-transition: all 0.4s 1.8s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 1.8s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(8) {
-  -webkit-transition: all 0.4s 2s;
-  transition: all 0.4s 2s;
+  -webkit-transition: all 0.4s 2s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 2s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(9) {
-  -webkit-transition: all 0.4s 2.2s;
-  transition: all 0.4s 2.2s;
+  -webkit-transition: all 0.4s 2.2s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 2.2s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(10) {
-  -webkit-transition: all 0.4s 2.4s;
-  transition: all 0.4s 2.4s;
+  -webkit-transition: all 0.4s 2.4s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 2.4s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(11) {
-  -webkit-transition: all 0.4s 2.6s;
-  transition: all 0.4s 2.6s;
+  -webkit-transition: all 0.4s 2.6s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 2.6s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(12) {
-  -webkit-transition: all 0.4s 2.8s;
-  transition: all 0.4s 2.8s;
+  -webkit-transition: all 0.4s 2.8s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 2.8s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(13) {
-  -webkit-transition: all 0.4s 3s;
-  transition: all 0.4s 3s;
+  -webkit-transition: all 0.4s 3s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 3s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(14) {
-  -webkit-transition: all 0.4s 3.2s;
-  transition: all 0.4s 3.2s;
+  -webkit-transition: all 0.4s 3.2s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 3.2s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(15) {
-  -webkit-transition: all 0.4s 3.4s;
-  transition: all 0.4s 3.4s;
+  -webkit-transition: all 0.4s 3.4s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 3.4s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(16) {
-  -webkit-transition: all 0.4s 3.6s;
-  transition: all 0.4s 3.6s;
+  -webkit-transition: all 0.4s 3.6s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 3.6s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(17) {
-  -webkit-transition: all 0.4s 3.8s;
-  transition: all 0.4s 3.8s;
+  -webkit-transition: all 0.4s 3.8s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 3.8s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(18) {
-  -webkit-transition: all 0.4s 4s;
-  transition: all 0.4s 4s;
+  -webkit-transition: all 0.4s 4s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 4s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(19) {
-  -webkit-transition: all 0.4s 4.2s;
-  transition: all 0.4s 4.2s;
+  -webkit-transition: all 0.4s 4.2s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 4.2s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(20) {
-  -webkit-transition: all 0.4s 4.4s;
-  transition: all 0.4s 4.4s;
+  -webkit-transition: all 0.4s 4.4s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 4.4s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(21) {
-  -webkit-transition: all 0.4s 4.6s;
-  transition: all 0.4s 4.6s;
+  -webkit-transition: all 0.4s 4.6s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 4.6s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(22) {
-  -webkit-transition: all 0.4s 4.8s;
-  transition: all 0.4s 4.8s;
+  -webkit-transition: all 0.4s 4.8s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 4.8s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(23) {
-  -webkit-transition: all 0.4s 5s;
-  transition: all 0.4s 5s;
+  -webkit-transition: all 0.4s 5s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 5s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(24) {
-  -webkit-transition: all 0.4s 5.2s;
-  transition: all 0.4s 5.2s;
+  -webkit-transition: all 0.4s 5.2s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 5.2s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(25) {
-  -webkit-transition: all 0.4s 5.4s;
-  transition: all 0.4s 5.4s;
+  -webkit-transition: all 0.4s 5.4s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 5.4s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(26) {
-  -webkit-transition: all 0.4s 5.6s;
-  transition: all 0.4s 5.6s;
+  -webkit-transition: all 0.4s 5.6s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 5.6s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(27) {
-  -webkit-transition: all 0.4s 5.8s;
-  transition: all 0.4s 5.8s;
+  -webkit-transition: all 0.4s 5.8s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 5.8s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(28) {
-  -webkit-transition: all 0.4s 6s;
-  transition: all 0.4s 6s;
+  -webkit-transition: all 0.4s 6s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 6s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(29) {
-  -webkit-transition: all 0.4s 6.2s;
-  transition: all 0.4s 6.2s;
+  -webkit-transition: all 0.4s 6.2s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 6.2s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(30) {
-  -webkit-transition: all 0.4s 6.4s;
-  transition: all 0.4s 6.4s;
+  -webkit-transition: all 0.4s 6.4s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 6.4s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(31) {
-  -webkit-transition: all 0.4s 6.6s;
-  transition: all 0.4s 6.6s;
+  -webkit-transition: all 0.4s 6.6s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 6.6s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(32) {
-  -webkit-transition: all 0.4s 6.8s;
-  transition: all 0.4s 6.8s;
+  -webkit-transition: all 0.4s 6.8s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 6.8s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(33) {
-  -webkit-transition: all 0.4s 7s;
-  transition: all 0.4s 7s;
+  -webkit-transition: all 0.4s 7s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 7s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(34) {
-  -webkit-transition: all 0.4s 7.2s;
-  transition: all 0.4s 7.2s;
+  -webkit-transition: all 0.4s 7.2s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 7.2s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(35) {
-  -webkit-transition: all 0.4s 7.4s;
-  transition: all 0.4s 7.4s;
+  -webkit-transition: all 0.4s 7.4s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 7.4s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(36) {
-  -webkit-transition: all 0.4s 7.6s;
-  transition: all 0.4s 7.6s;
+  -webkit-transition: all 0.4s 7.6s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 7.6s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(37) {
-  -webkit-transition: all 0.4s 7.8s;
-  transition: all 0.4s 7.8s;
+  -webkit-transition: all 0.4s 7.8s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 7.8s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(38) {
-  -webkit-transition: all 0.4s 8s;
-  transition: all 0.4s 8s;
+  -webkit-transition: all 0.4s 8s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 8s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(39) {
-  -webkit-transition: all 0.4s 8.2s;
-  transition: all 0.4s 8.2s;
+  -webkit-transition: all 0.4s 8.2s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 8.2s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(40) {
-  -webkit-transition: all 0.4s 8.4s;
-  transition: all 0.4s 8.4s;
+  -webkit-transition: all 0.4s 8.4s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 8.4s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(41) {
-  -webkit-transition: all 0.4s 8.6s;
-  transition: all 0.4s 8.6s;
+  -webkit-transition: all 0.4s 8.6s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 8.6s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(42) {
-  -webkit-transition: all 0.4s 8.8s;
-  transition: all 0.4s 8.8s;
+  -webkit-transition: all 0.4s 8.8s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 8.8s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(43) {
-  -webkit-transition: all 0.4s 9s;
-  transition: all 0.4s 9s;
+  -webkit-transition: all 0.4s 9s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 9s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(44) {
-  -webkit-transition: all 0.4s 9.2s;
-  transition: all 0.4s 9.2s;
+  -webkit-transition: all 0.4s 9.2s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 9.2s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(45) {
-  -webkit-transition: all 0.4s 9.4s;
-  transition: all 0.4s 9.4s;
+  -webkit-transition: all 0.4s 9.4s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 9.4s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(46) {
-  -webkit-transition: all 0.4s 9.6s;
-  transition: all 0.4s 9.6s;
+  -webkit-transition: all 0.4s 9.6s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 9.6s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(47) {
-  -webkit-transition: all 0.4s 9.8s;
-  transition: all 0.4s 9.8s;
+  -webkit-transition: all 0.4s 9.8s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 9.8s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(48) {
-  -webkit-transition: all 0.4s 10s;
-  transition: all 0.4s 10s;
+  -webkit-transition: all 0.4s 10s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 10s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(49) {
-  -webkit-transition: all 0.4s 10.2s;
-  transition: all 0.4s 10.2s;
+  -webkit-transition: all 0.4s 10.2s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 10.2s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(50) {
-  -webkit-transition: all 0.4s 10.4s;
-  transition: all 0.4s 10.4s;
+  -webkit-transition: all 0.4s 10.4s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 10.4s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(51) {
-  -webkit-transition: all 0.4s 10.6s;
-  transition: all 0.4s 10.6s;
+  -webkit-transition: all 0.4s 10.6s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 10.6s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(52) {
-  -webkit-transition: all 0.4s 10.8s;
-  transition: all 0.4s 10.8s;
+  -webkit-transition: all 0.4s 10.8s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 10.8s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(53) {
-  -webkit-transition: all 0.4s 11s;
-  transition: all 0.4s 11s;
+  -webkit-transition: all 0.4s 11s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 11s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(54) {
-  -webkit-transition: all 0.4s 11.2s;
-  transition: all 0.4s 11.2s;
+  -webkit-transition: all 0.4s 11.2s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 11.2s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(55) {
-  -webkit-transition: all 0.4s 11.4s;
-  transition: all 0.4s 11.4s;
+  -webkit-transition: all 0.4s 11.4s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 11.4s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(56) {
-  -webkit-transition: all 0.4s 11.6s;
-  transition: all 0.4s 11.6s;
+  -webkit-transition: all 0.4s 11.6s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 11.6s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(57) {
-  -webkit-transition: all 0.4s 11.8s;
-  transition: all 0.4s 11.8s;
+  -webkit-transition: all 0.4s 11.8s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 11.8s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(58) {
-  -webkit-transition: all 0.4s 12s;
-  transition: all 0.4s 12s;
+  -webkit-transition: all 0.4s 12s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 12s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(59) {
-  -webkit-transition: all 0.4s 12.2s;
-  transition: all 0.4s 12.2s;
+  -webkit-transition: all 0.4s 12.2s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 12.2s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(60) {
-  -webkit-transition: all 0.4s 12.4s;
-  transition: all 0.4s 12.4s;
+  -webkit-transition: all 0.4s 12.4s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 12.4s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(61) {
-  -webkit-transition: all 0.4s 12.6s;
-  transition: all 0.4s 12.6s;
+  -webkit-transition: all 0.4s 12.6s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 12.6s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(62) {
-  -webkit-transition: all 0.4s 12.8s;
-  transition: all 0.4s 12.8s;
+  -webkit-transition: all 0.4s 12.8s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 12.8s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(63) {
-  -webkit-transition: all 0.4s 13s;
-  transition: all 0.4s 13s;
+  -webkit-transition: all 0.4s 13s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 13s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(64) {
-  -webkit-transition: all 0.4s 13.2s;
-  transition: all 0.4s 13.2s;
+  -webkit-transition: all 0.4s 13.2s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 13.2s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(65) {
-  -webkit-transition: all 0.4s 13.4s;
-  transition: all 0.4s 13.4s;
+  -webkit-transition: all 0.4s 13.4s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 13.4s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(66) {
-  -webkit-transition: all 0.4s 13.6s;
-  transition: all 0.4s 13.6s;
+  -webkit-transition: all 0.4s 13.6s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 13.6s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(67) {
-  -webkit-transition: all 0.4s 13.8s;
-  transition: all 0.4s 13.8s;
+  -webkit-transition: all 0.4s 13.8s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 13.8s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(68) {
-  -webkit-transition: all 0.4s 14s;
-  transition: all 0.4s 14s;
+  -webkit-transition: all 0.4s 14s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 14s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(69) {
-  -webkit-transition: all 0.4s 14.2s;
-  transition: all 0.4s 14.2s;
+  -webkit-transition: all 0.4s 14.2s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 14.2s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(70) {
-  -webkit-transition: all 0.4s 14.4s;
-  transition: all 0.4s 14.4s;
+  -webkit-transition: all 0.4s 14.4s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 14.4s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(71) {
-  -webkit-transition: all 0.4s 14.6s;
-  transition: all 0.4s 14.6s;
+  -webkit-transition: all 0.4s 14.6s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 14.6s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(72) {
-  -webkit-transition: all 0.4s 14.8s;
-  transition: all 0.4s 14.8s;
+  -webkit-transition: all 0.4s 14.8s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 14.8s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(73) {
-  -webkit-transition: all 0.4s 15s;
-  transition: all 0.4s 15s;
+  -webkit-transition: all 0.4s 15s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 15s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(74) {
-  -webkit-transition: all 0.4s 15.2s;
-  transition: all 0.4s 15.2s;
+  -webkit-transition: all 0.4s 15.2s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 15.2s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(75) {
-  -webkit-transition: all 0.4s 15.4s;
-  transition: all 0.4s 15.4s;
+  -webkit-transition: all 0.4s 15.4s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 15.4s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(76) {
-  -webkit-transition: all 0.4s 15.6s;
-  transition: all 0.4s 15.6s;
+  -webkit-transition: all 0.4s 15.6s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 15.6s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(77) {
-  -webkit-transition: all 0.4s 15.8s;
-  transition: all 0.4s 15.8s;
+  -webkit-transition: all 0.4s 15.8s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 15.8s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(78) {
-  -webkit-transition: all 0.4s 16s;
-  transition: all 0.4s 16s;
+  -webkit-transition: all 0.4s 16s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 16s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(79) {
-  -webkit-transition: all 0.4s 16.2s;
-  transition: all 0.4s 16.2s;
+  -webkit-transition: all 0.4s 16.2s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 16.2s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(80) {
-  -webkit-transition: all 0.4s 16.4s;
-  transition: all 0.4s 16.4s;
+  -webkit-transition: all 0.4s 16.4s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 16.4s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(81) {
-  -webkit-transition: all 0.4s 16.6s;
-  transition: all 0.4s 16.6s;
+  -webkit-transition: all 0.4s 16.6s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 16.6s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(82) {
-  -webkit-transition: all 0.4s 16.8s;
-  transition: all 0.4s 16.8s;
+  -webkit-transition: all 0.4s 16.8s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 16.8s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(83) {
-  -webkit-transition: all 0.4s 17s;
-  transition: all 0.4s 17s;
+  -webkit-transition: all 0.4s 17s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 17s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(84) {
-  -webkit-transition: all 0.4s 17.2s;
-  transition: all 0.4s 17.2s;
+  -webkit-transition: all 0.4s 17.2s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 17.2s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(85) {
-  -webkit-transition: all 0.4s 17.4s;
-  transition: all 0.4s 17.4s;
+  -webkit-transition: all 0.4s 17.4s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 17.4s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(86) {
-  -webkit-transition: all 0.4s 17.6s;
-  transition: all 0.4s 17.6s;
+  -webkit-transition: all 0.4s 17.6s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 17.6s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(87) {
-  -webkit-transition: all 0.4s 17.8s;
-  transition: all 0.4s 17.8s;
+  -webkit-transition: all 0.4s 17.8s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 17.8s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(88) {
-  -webkit-transition: all 0.4s 18s;
-  transition: all 0.4s 18s;
+  -webkit-transition: all 0.4s 18s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 18s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(89) {
-  -webkit-transition: all 0.4s 18.2s;
-  transition: all 0.4s 18.2s;
+  -webkit-transition: all 0.4s 18.2s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 18.2s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(90) {
-  -webkit-transition: all 0.4s 18.4s;
-  transition: all 0.4s 18.4s;
+  -webkit-transition: all 0.4s 18.4s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 18.4s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(91) {
-  -webkit-transition: all 0.4s 18.6s;
-  transition: all 0.4s 18.6s;
+  -webkit-transition: all 0.4s 18.6s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 18.6s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(92) {
-  -webkit-transition: all 0.4s 18.8s;
-  transition: all 0.4s 18.8s;
+  -webkit-transition: all 0.4s 18.8s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 18.8s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(93) {
-  -webkit-transition: all 0.4s 19s;
-  transition: all 0.4s 19s;
+  -webkit-transition: all 0.4s 19s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 19s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(94) {
-  -webkit-transition: all 0.4s 19.2s;
-  transition: all 0.4s 19.2s;
+  -webkit-transition: all 0.4s 19.2s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 19.2s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(95) {
-  -webkit-transition: all 0.4s 19.4s;
-  transition: all 0.4s 19.4s;
+  -webkit-transition: all 0.4s 19.4s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 19.4s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(96) {
-  -webkit-transition: all 0.4s 19.6s;
-  transition: all 0.4s 19.6s;
+  -webkit-transition: all 0.4s 19.6s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 19.6s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(97) {
-  -webkit-transition: all 0.4s 19.8s;
-  transition: all 0.4s 19.8s;
+  -webkit-transition: all 0.4s 19.8s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 19.8s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(98) {
-  -webkit-transition: all 0.4s 20s;
-  transition: all 0.4s 20s;
+  -webkit-transition: all 0.4s 20s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 20s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(99) {
-  -webkit-transition: all 0.4s 20.2s;
-  transition: all 0.4s 20.2s;
+  -webkit-transition: all 0.4s 20.2s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 20.2s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__message:nth-child(100) {
-  -webkit-transition: all 0.4s 20.4s;
-  transition: all 0.4s 20.4s;
+  -webkit-transition: all 0.4s 20.4s cubic-bezier(0.41, 0.24, 0, 1.29);
+  transition: all 0.4s 20.4s cubic-bezier(0.41, 0.24, 0, 1.29);
 }
 
 .openBox .messageBox__input {
