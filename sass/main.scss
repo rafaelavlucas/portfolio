@@ -33,7 +33,6 @@
     }
 }
 
-
 @mixin animationBeforeState {
     opacity: 0;
     transform: translateY(100px);
@@ -1183,6 +1182,7 @@ header {
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
+
 
         @include sm {
             grid-template-columns: 100%;
@@ -2352,7 +2352,6 @@ header {
                 display: inline-flex;
             }
         }
-
 
         .description-list {
             margin: 0;
