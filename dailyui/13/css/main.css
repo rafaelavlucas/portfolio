@@ -249,16 +249,17 @@ body {
   width: 100%;
   height: 72px;
   border-radius: 8px;
-  margin-top: 28px;
-  padding: 0 16px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .messageBox__profilePic {
-  width: 68px;
-  height: 68px;
+  width: 60px;
+  height: 60px;
   position: relative;
   z-index: 2;
   -webkit-transform: scale(0);
@@ -271,7 +272,7 @@ body {
   height: 100%;
   position: absolute;
   background-color: #23D2D2;
-  top: -4px;
+  top: 4px;
   left: 4px;
   z-index: 1;
   border-radius: 6px;
@@ -288,7 +289,7 @@ body {
 }
 
 .messageBox__profileName {
-  margin: 10px 0px 0px 20px;
+  margin-left: 20px;
   font-size: 16px;
   line-height: 20px;
   color: #23D2D2;
@@ -301,8 +302,7 @@ body {
   height: 100%;
   background-color: white;
   border-radius: 4px;
-  -webkit-transform: translateY(-16px);
-          transform: translateY(-16px);
+  margin: 16px 0;
   padding: 16px;
   overflow-x: hidden;
   overflow-Y: scroll;
@@ -324,6 +324,10 @@ body {
   opacity: 0;
   -webkit-transform: translateX(-10px);
           transform: translateX(-10px);
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
 }
 
 .messageBox__message:nth-child(1) {
@@ -334,9 +338,9 @@ body {
   -webkit-transform: translateX(10px);
           transform: translateX(10px);
   -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 .messageBox__message.you .messageBox__text {
@@ -362,6 +366,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   color: #BDBDBD;
+  opacity: 0.6;
   font-size: 10px;
   line-height: 12px;
 }
