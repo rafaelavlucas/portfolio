@@ -1,0 +1,524 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:100,300,400,500,700&display=swap');
+
+$font-01: 'Roboto Mono',
+monospace;
+
+$m-01: #23D2D2;
+
+$neu-01: #363636;
+$neu-02: #5A5A5A;
+$neu-03: #909090;
+$neu-04: #979797;
+$neu-05: #BDBDBD;
+$neu-06: #F5F5F5;
+$neu-07: #F8f8f8;
+
+
+$cubic: cubic-bezier(0.67, 0.1, 0.26, 1.33);
+
+@mixin lg {
+    @media screen and (max-width: 1919px) {
+        @content;
+    }
+}
+
+@mixin md {
+    @media screen and (max-width: 1023px) {
+        @content;
+    }
+}
+
+@mixin sm {
+    @media screen and (max-width: 799px) {
+        @content;
+    }
+}
+
+@mixin xs {
+    @media screen and (max-width: 512px) {
+        @content;
+    }
+}
+
+@mixin transition {
+    transition: all 0.4s ease;
+}
+
+@mixin transitionIn {
+    @for $i from 1 through 100 {
+        &:nth-child(#{$i}) {
+            transition: all 0.4s #{0.4 + $i * 0.2}s cubic-bezier(0.41, 0.24, 0, 1.29);
+        }
+    }
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: 0;
+    -webkit-tap-highlight-color: transparent;
+    text-decoration: none;
+    color: inherit;
+    box-sizing: border-box;
+
+    &:focus {
+        outline: 0;
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+}
+
+body {
+    background-color: $neu-06;
+    font-family: $font-01;
+    font-weight: normal;
+    transition: all 0.4s ease;
+}
+
+.logo {
+    position: fixed;
+    z-index: 5;
+    bottom: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 100%;
+    backdrop-filter: blur(5px);
+
+    img {
+        width: 55%;
+        height: 55%;
+        transform: translateY(-1px);
+        opacity: 0.8;
+    }
+
+    @include sm {
+        display: none;
+    }
+}
+
+.wrapper {
+    width: 100%;
+    height: 100vh;
+    font-family: $font-01;
+    margin: 0 auto;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.messageBox {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    @include transition();
+
+    &__button {
+        width: 60px;
+        height: 60px;
+        background-color: white;
+        border-radius: 50%;
+        box-shadow: 0px 2px 15px rgba(201, 201, 201, 0.58);
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        right: 0;
+        bottom: 0;
+        cursor: pointer;
+        transition: all 0.4s 0.2s ease;
+
+        &:before,
+        &:after {
+            position: absolute;
+            content: '';
+            width: 0px;
+            height: 2px;
+            background-color: $neu-05;
+            transition: all 0.2s ease;
+        }
+
+        &:before {
+            transform: rotate(0deg);
+        }
+
+        &:after {
+
+            transform: rotate(0deg);
+        }
+    }
+
+    &__wrapper {
+        border: 2px solid $m-01;
+        width: 30px;
+        height: 22px;
+        border-radius: 4px;
+        z-index: 2;
+        bottom: 19px;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        pointer-events: none;
+        @include transition();
+
+        &:before {
+            content: '';
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            border-bottom: 2px solid $m-01;
+            border-right: 2px solid $m-01;
+            transform: rotate(45deg);
+            background-color: white;
+            bottom: -5px;
+            right: 7px;
+            @include transition();
+
+        }
+    }
+
+    &__dots {
+        width: 48px;
+        height: 48px;
+        top: 6px;
+        display: block;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+        pointer-events: none;
+        transition: all 0.4s 0.2s ease;
+
+        span {
+            width: 2px;
+            height: 2px;
+            background-color: $m-01;
+            display: block;
+            border-radius: 50%;
+            position: relative;
+
+            &:before,
+            &:after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                border-radius: inherit;
+                background-color: inherit;
+            }
+
+            &:before {
+                transform: translateX(-6px);
+            }
+
+            &:after {
+                transform: translateX(6px);
+            }
+        }
+
+    }
+
+    &__content {
+        visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        padding: 16px;
+        position: relative;
+
+
+    }
+
+    &__profile {
+        width: 100%;
+        height: 72px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+    }
+
+    &__profilePic {
+        width: 60px;
+        height: 60px;
+        position: relative;
+        z-index: 2;
+        transform: scale(0);
+
+        &:before {
+            content: '';
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background-color: $m-01;
+            top: 4px;
+            left: 4px;
+            z-index: 1;
+            border-radius: 6px;
+
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 2;
+            position: absolute;
+            border-radius: 4px;
+        }
+    }
+
+    &__profileName {
+        margin-left: 20px;
+        font-size: 16px;
+        line-height: 20px;
+        color: $m-01;
+        transform: translateX(30px);
+    }
+
+    &__chat {
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        border-radius: 4px;
+        margin: 16px 0;
+        padding: 16px;
+        overflow-x: hidden;
+        overflow-Y: scroll;
+        pointer-events: initial;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__message {
+        display: flex;
+        margin-top: 24px;
+        opacity: 0;
+        transform: translateX(-10px);
+        flex-direction: row-reverse;
+
+        &:nth-child(1) {
+            margin-top: auto
+        }
+
+        &.you {
+            transform: translateX(10px);
+            flex-direction: row;
+
+            .messageBox__text {
+                background-color: $m-01;
+                color: white;
+            }
+        }
+    }
+
+    &__text {
+        background-color: $neu-07;
+        padding: 8px 10px;
+        border-radius: 4px;
+        font-size: 14px;
+        line-height: 16px;
+        color: $m-01;
+
+    }
+
+    &__date {
+        padding: 0 10px;
+        display: flex;
+        align-items: center;
+        color: $neu-05;
+        opacity: 0.6;
+        font-size: 10px;
+        line-height: 12px;
+    }
+
+    &__input {
+        display: flex;
+        opacity: 0;
+        transform: translatex(-10px);
+
+        input {
+            pointer-events: initial;
+            height: 48px;
+            border-radius: 4px;
+            background-color: white;
+            padding: 12px 16px;
+            color: $neu-03;
+            font-family: $font-01;
+            font-size: 14px;
+            resize: none;
+            line-height: 24px;
+            white-space: pre-line;
+            width: calc(100% - 64px);
+
+            &::selection {
+                background-color: $m-01;
+                color: white;
+            }
+        }
+    }
+
+    &__btnSend {
+        background: $m-01;
+        width: 48px;
+        height: 48px;
+        border-radius: 4px;
+        margin-left: 14px;
+        pointer-events: initial;
+        cursor: pointer;
+        overflow: hidden;
+        position: relative;
+        transition: all 0.2s $cubic;
+
+        span {
+            display: block;
+            background-image: url("../assets/send.svg");
+            width: calc(48px + 24px);
+            height: 48px;
+            position: absolute;
+            left: -65%;
+            top: 0;
+            z-index: 1;
+            background-repeat: space;
+            background-size: 32px;
+            background-position: center;
+            transition: all 0.4s $cubic;
+        }
+
+        &:active {
+            transform: scale(0.9);
+        }
+
+        &:hover {
+            span {
+                left: 15%;
+            }
+        }
+    }
+}
+
+.openBox {
+    width: 340px;
+    height: 526px;
+    transition: all 0.6s ease;
+
+    .messageBox {
+        &__button {
+            right: 40px;
+
+            &:before,
+            &:after {
+                width: 28px;
+            }
+
+            &:before {
+                transition: all 0.2s ease, transform 0.2s 0.3s ease, width 0.2s 0.3s ease;
+                transform: rotate(45deg);
+            }
+
+            &:after {
+                transition: all 0.2s ease, transform 0.2s 0.4s ease, width 0.2s 0.4s ease;
+                transform: rotate(-45deg);
+            }
+
+            &:hover {
+
+                &:before,
+                &:after {
+                    background-color: $m-01;
+                }
+            }
+        }
+
+        &__wrapper {
+            width: 100%;
+            height: 430px;
+            bottom: 100px;
+            right: 0;
+            border-radius: 10px;
+            pointer-events: initial;
+            transition: all 0.6s ease;
+
+
+            &:before {
+                width: 30px;
+                height: 30px;
+                bottom: -17px;
+                right: 52px;
+                background-color: $neu-06;
+            }
+        }
+
+        &__dots {
+            transform: rotate(90deg);
+            top: 0;
+            right: 0px;
+            z-index: 3;
+            cursor: pointer;
+            pointer-events: initial;
+            transition: all 0.4s $cubic;
+
+            span {
+                width: 4px;
+                height: 4px;
+
+                &:before {
+                    transform: translateX(-8px);
+                }
+
+                &:after {
+                    transform: translateX(8px);
+                }
+            }
+
+            &:hover {
+                transform: rotate(0deg);
+                right: 8px;
+
+            }
+        }
+
+        &__content {
+            visibility: visible;
+        }
+
+        &__profilePic {
+            transform: scale(1);
+            transition: all 0.4s 0.4s ease;
+        }
+
+        &__profileName {
+            transform: translateX(0px);
+            transition: all 0.4s 0.4s ease;
+        }
+
+        &__message {
+            @include transitionIn();
+            opacity: 1;
+            transform: translateX(0px);
+        }
+
+        &__input {
+            opacity: 1;
+            transition: all 0.4s 0.4s ease;
+            transform: translatex(0px);
+        }
+    }
+}
