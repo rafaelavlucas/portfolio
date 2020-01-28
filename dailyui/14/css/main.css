@@ -154,8 +154,8 @@ body {
 
 @media screen and (max-width: 512px) {
   .timer {
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px);
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
   }
 }
 
