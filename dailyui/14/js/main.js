@@ -24,6 +24,8 @@ window.addEventListener("load", event => {
 
         }, second)
 
-    document.querySelector('.wrapper').style.height = window.innerHeight + "px";
+    if (window.innerWidth < 799) {
+        document.querySelector('.wrapper').style.height = window.innerHeight + "px";
+    }
 
 });
