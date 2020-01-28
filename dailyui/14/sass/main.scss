@@ -203,6 +203,10 @@ body {
         &:hover {
             transition: all 0.3s ease;
             transform: translateY(-20px);
+
+            @include sm {
+                transform: translateY(0px);
+            }
         }
 
         @for $i from 1 through 4 {

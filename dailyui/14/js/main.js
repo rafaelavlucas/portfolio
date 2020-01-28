@@ -24,6 +24,6 @@ window.addEventListener("load", event => {
 
         }, second)
 
-
+    document.querySelector('body').style.height = window.innerHeight + "px";
 
 });

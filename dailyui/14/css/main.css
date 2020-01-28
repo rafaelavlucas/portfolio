@@ -200,6 +200,13 @@ body:after {
           transform: translateY(-20px);
 }
 
+@media screen and (max-width: 799px) {
+  .timer__item:hover {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
 .timer__item:nth-child(1) {
   -webkit-animation-delay: 0.2s;
           animation-delay: 0.2s;
