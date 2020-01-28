@@ -87,29 +87,6 @@ body {
     background-image: url(https://images.pexels.com/photos/1002778/pexels-photo-1002778.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260);
     background-size: cover;
     background-repeat: no-repeat;
-
-    @include xs {
-        height: 100%;
-    }
-
-    &:before,
-    &:after {
-        width: 100%;
-        height: 100%;
-        content: '';
-        position: absolute;
-        background-color: #6A6A6A;
-        opacity: 0.5;
-        top: 0;
-        left: 0;
-
-
-    }
-
-    &:after {
-        background-color: $m-01;
-        opacity: 0.75;
-    }
 }
 
 .logo {
@@ -141,7 +118,6 @@ body {
 
 .wrapper {
     width: 100%;
-    height: 100vh;
     min-height: 700px;
     font-family: $font-01;
     margin: 0 auto;
@@ -149,6 +125,24 @@ body {
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
+    position: relative;
+
+    &:before,
+    &:after {
+        width: 100%;
+        height: 100%;
+        content: '';
+        position: absolute;
+        background-color: #6A6A6A;
+        opacity: 0.5;
+        top: 0;
+        left: 0;
+    }
+
+    &:after {
+        background-color: $m-01;
+        opacity: 0.75;
+    }
 
     @include xs {
         min-height: 500px;
