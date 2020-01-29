@@ -28,7 +28,7 @@ window.onload = function (e) {
         nm = 1,
         im = 1,
         folder = "img",
-        total = 87;
+        total = 86;
 
 
     const items = [{
@@ -122,6 +122,14 @@ window.onload = function (e) {
             desc: "Direct Messaging",
             color: "#60c4c7"
         },
+        {
+            url: `${nu++}`,
+            name: `${nm++}`,
+            image: `${folder}/dailyui-${im++}.jpg`,
+            desc: "Countdown Timer",
+            color: "#fe9014"
+        },
+
 
     ];
 
