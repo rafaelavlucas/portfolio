@@ -216,8 +216,8 @@ body {
           transform: rotate(45deg) translate(-50%, -50%);
   -webkit-transform-origin: left;
           transform-origin: left;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+  -webkit-transition: all 0.3s 0.2s ease;
+  transition: all 0.3s 0.2s ease;
 }
 
 .toggle__dot:after {
@@ -237,6 +237,8 @@ body {
           transform: rotate(-45deg);
   left: 23px;
   top: 65%;
+  -webkit-transition: all 0.5s 0.4s ease;
+  transition: all 0.5s 0.4s ease;
 }
 
 .on .toggle__dot:after {

@@ -195,7 +195,6 @@ body {
     &:hover {
         box-shadow: var(--shadowHover);
         transform: translateY(-5px) scale(0.8);
-        ;
     }
 
     &:before {
@@ -236,17 +235,14 @@ body {
             left: 49%;
             transform: rotate(45deg) translate(-50%, -50%);
             transform-origin: left;
-            transition: all 0.5s ease;
+            transition: all 0.3s 0.2s ease;
         }
 
         &:after {
             left: 51%;
             transform: rotate(-45deg) translate(-50%, -50%);
         }
-
     }
-
-
 }
 
 .on {
@@ -260,6 +256,7 @@ body {
                 transform: rotate(-45deg);
                 left: 23px;
                 top: 65%;
+                transition: all 0.5s 0.4s ease;
             }
 
             &:after {
@@ -268,8 +265,6 @@ body {
                 top: 28px;
                 transform: rotate(45deg);
             }
-
         }
     }
-
 }

@@ -16,7 +16,7 @@ window.addEventListener("load", event => {
             setTimeout(() => {
                 toggle.dataset.theme = "on";
                 toggle.classList.add("on");
-            }, 200);
+            }, 100);
         }
 
     };

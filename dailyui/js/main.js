@@ -28,7 +28,7 @@ window.onload = function (e) {
         nm = 1,
         im = 1,
         folder = "img",
-        total = 86;
+        total = 85;
 
 
     const items = [{
@@ -129,8 +129,13 @@ window.onload = function (e) {
             desc: "Countdown Timer",
             color: "#fe9014"
         },
-
-
+        {
+            url: `${nu++}`,
+            name: `${nm++}`,
+            image: `${folder}/dailyui-${im++}.jpg`,
+            desc: "On/Off Switch",
+            color: "#1db0b9"
+        },
     ];
 
     const itemEmpty = [{
