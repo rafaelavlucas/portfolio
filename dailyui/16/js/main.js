@@ -2,17 +2,17 @@ window.addEventListener("load", event => {
 
     const videos = [{
             name: "Showreel",
-            img: "https://rafaelalucas91.github.io/assets/images/img-4.jpeg",
+            img: "assets/img_reel.jpg",
             video: "https://player.vimeo.com/video/389042215"
 
         },
         {
             name: "10 — Animated Layers",
-            img: "https://rafaelalucas91.github.io/assets/images/img-5.jpeg",
+            img: "assets/img_10.jpg",
             video: "https://player.vimeo.com/video/276869996"
         }, {
-            name: "Chalk Illustration Timelapse",
-            img: "https://rafaelalucas91.github.io/assets/images/img-6.jpeg",
+            name: "Chalk Illustration",
+            img: "assets/img_chalk.jpg",
             video: "https://player.vimeo.com/video/277650563"
         }
     ];
