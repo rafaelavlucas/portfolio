@@ -36,8 +36,6 @@ window.addEventListener("load", event => {
         iconCloseVideo = document.querySelector('.modal__icon'),
         videoFrame = document.querySelector('.modal__video iframe');
 
-
-
     videoItem.forEach(function (el) {
         el.addEventListener("click", openVideo);
     })
@@ -52,7 +50,7 @@ window.addEventListener("load", event => {
 
         setTimeout(() => {
             modalVideo.classList.add('open');
-        }, 400);
+        }, 300);
 
     }
 
@@ -62,4 +60,7 @@ window.addEventListener("load", event => {
         videoFrame.src = "";
 
     }
+
+    document.querySelector('.modal').style.height = window.innerHeight + "px";
+    document.querySelector('.wrapper').style.height = window.innerHeight + "px";
 });
