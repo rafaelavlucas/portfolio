@@ -34,7 +34,8 @@ window.addEventListener("load", event => {
     const videoItem = document.querySelectorAll('.videos__item'),
         modalVideo = document.querySelector('.modal'),
         iconCloseVideo = document.querySelector('.modal__icon'),
-        videoFrame = document.querySelector('.modal__video iframe');
+        videoFrame = document.querySelector('.modal__video iframe'),
+        body = document.querySelector('body');;
 
     videoItem.forEach(function (el) {
         el.addEventListener("click", openVideo);
@@ -50,7 +51,11 @@ window.addEventListener("load", event => {
 
         setTimeout(() => {
             modalVideo.classList.add('open');
+
         }, 300);
+
+        body.style.overflow = "hidden";
+
 
     }
 
@@ -61,6 +66,9 @@ window.addEventListener("load", event => {
 
     }
 
-    document.querySelector('.modal').style.height = window.innerHeight + "px";
-    document.querySelector('.wrapper').style.height = window.innerHeight + "px";
+    if (window.innerWidth > 799) {
+        document.querySelector('.wrapper').style.height = window.innerHeight + "px";
+        document.querySelector('.modal').style.height = window.innerHeight + "px";
+    }
+
 });
