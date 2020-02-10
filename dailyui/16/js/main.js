@@ -68,7 +68,8 @@ window.addEventListener("load", event => {
 
     if (window.innerWidth > 799) {
         document.querySelector('.wrapper').style.height = window.innerHeight + "px";
-        document.querySelector('.modal').style.height = window.innerHeight + "px";
+
     }
+    document.querySelector('.modal').style.height = window.innerHeight + "px";
 
 });
