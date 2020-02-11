@@ -317,6 +317,8 @@ body {
 
 .wrapper {
     z-index: 4;
+    background-color: white;
+    user-select: none;
 }
 
 .dailyItems {
