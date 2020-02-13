@@ -84,27 +84,67 @@ body {
   padding: 0 5%;
 }
 
-@media screen and (max-width: 799px) {
+@media screen and (max-width: 460px) {
   .wrapper {
-    height: initial;
+    height: auto;
+    min-height: 100vh;
+    padding: 0 16px;
   }
 }
 
 .container {
   background-color: transparent;
-  margin: 0 auto;
+  margin: 40px auto;
   text-align: center;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 300px;
 }
 
 .container .cta {
   background-color: #435072;
-  color: white;
-  padding: 10px 20px;
+  color: #E4E7F1;
+  padding: 0px 24px;
   border-radius: 40px;
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 14px;
+  height: 40px;
+  text-align: center;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 10px 20px rgba(67, 80, 114, 0.4);
+          box-shadow: 0px 10px 20px rgba(67, 80, 114, 0.4);
+  -webkit-transform: translateY(8px);
+          transform: translateY(8px);
+}
+
+.container .cta:hover {
+  -webkit-box-shadow: 0px 5px 10px rgba(67, 80, 114, 0.4);
+          box-shadow: 0px 5px 10px rgba(67, 80, 114, 0.4);
+}
+
+.container .thanks {
+  margin-bottom: 32px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+  color: #435072;
+  position: absolute;
+  -webkit-transform: translateY(-60px);
+          transform: translateY(-60px);
 }
 
 .receipt {
@@ -296,8 +336,108 @@ body {
 }
 
 .anime {
+  position: relative;
+  max-width: 480px;
+  width: 100%;
+  height: 870px;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 460px) {
+  .anime {
+    padding: 0 20px;
+    height: 1000px;
+  }
+}
+
+.anime:before, .anime:after {
+  position: absolute;
+  content: '';
+  width: 150px;
+  height: 20px;
+  -webkit-animation: bg 5s 0.2s ease forwards;
+          animation: bg 5s 0.2s ease forwards;
+  border-radius: 40px 40px 0px 0px;
+  z-index: 1;
+  -webkit-box-shadow: inset 0px 19px 0px #435072;
+          box-shadow: inset 0px 19px 0px #435072;
   background-color: #435072;
-  width: 500px;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+@media screen and (max-width: 460px) {
+  .anime:before, .anime:after {
+    margin-top: -65px;
+  }
+}
+
+.anime:after {
+  margin-top: 20px;
+  z-index: -1;
+  border-radius: 0px 0px 40px 40px;
+  -webkit-box-shadow: inset 0px -18px 0px #435072;
+          box-shadow: inset 0px -18px 0px #435072;
+}
+
+@media screen and (max-width: 460px) {
+  .anime:after {
+    margin-top: -45px;
+  }
+}
+
+@-webkit-keyframes bg {
+  0% {
+    background-color: #435072;
+    width: 140px;
+  }
+  10% {
+    background-color: #435072;
+    width: 100%;
+  }
+  20% {
+    background-color: black;
+    width: 100%;
+    -webkit-transform: translateY(-425px);
+            transform: translateY(-425px);
+  }
+  90% {
+    background-color: black;
+    width: 100%;
+  }
+  100% {
+    -webkit-transform: translateY(-425px);
+            transform: translateY(-425px);
+    background-color: #435072;
+    width: 0px;
+  }
+}
+
+@keyframes bg {
+  0% {
+    background-color: #435072;
+    width: 140px;
+  }
+  10% {
+    background-color: #435072;
+    width: 100%;
+  }
+  20% {
+    background-color: black;
+    width: 100%;
+    -webkit-transform: translateY(-425px);
+            transform: translateY(-425px);
+  }
+  90% {
+    background-color: black;
+    width: 100%;
+  }
+  100% {
+    -webkit-transform: translateY(-425px);
+            transform: translateY(-425px);
+    background-color: #435072;
+    width: 0px;
+  }
 }
 
 .anime .thanks {
@@ -305,6 +445,74 @@ body {
 }
 
 .anime .receipt {
+  -webkit-animation: receipt 3s 1.6s ease both;
+          animation: receipt 3s 1.6s ease both;
   display: block;
+}
+
+@-webkit-keyframes receipt {
+  0% {
+    -webkit-transform: translateY(-110%);
+            transform: translateY(-110%);
+  }
+  20% {
+    -webkit-transform: translateY(-90%);
+            transform: translateY(-90%);
+  }
+  30% {
+    -webkit-transform: translateY(-80%);
+            transform: translateY(-80%);
+  }
+  40% {
+    -webkit-transform: translateY(-70%);
+            transform: translateY(-70%);
+  }
+  60% {
+    -webkit-transform: translateY(-60%);
+            transform: translateY(-60%);
+  }
+  70% {
+    -webkit-transform: translateY(-40%);
+            transform: translateY(-40%);
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+
+@keyframes receipt {
+  0% {
+    -webkit-transform: translateY(-110%);
+            transform: translateY(-110%);
+  }
+  20% {
+    -webkit-transform: translateY(-90%);
+            transform: translateY(-90%);
+  }
+  30% {
+    -webkit-transform: translateY(-80%);
+            transform: translateY(-80%);
+  }
+  40% {
+    -webkit-transform: translateY(-70%);
+            transform: translateY(-70%);
+  }
+  60% {
+    -webkit-transform: translateY(-60%);
+            transform: translateY(-60%);
+  }
+  70% {
+    -webkit-transform: translateY(-40%);
+            transform: translateY(-40%);
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+
+.anime .cta {
+  display: none;
 }
 /*# sourceMappingURL=main.css.map */

@@ -122,26 +122,57 @@ body {
 
 
 
-    @include sm {
-        height: initial;
+    @include xs {
+        height: auto;
+        min-height: 100vh;
+        padding: 0 16px;
     }
+
+
 
 }
 
 .container {
     background-color: transparent;
-    //width: 100%;
-    //height: 200px;
-    margin: 0 auto;
+    margin: 40px auto;
     text-align: center;
     transition: all 0.4s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+
 
     .cta {
         background-color: $m-01;
-        color: white;
-        padding: 10px 20px;
+        color: $m-02;
+        padding: 0px 24px;
         border-radius: 40px;
-        transition: all 0.4s ease;
+        transition: all 0.3s ease;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 14px;
+        height: 40px;
+        text-align: center;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        cursor: pointer;
+        box-shadow: 0px 10px 20px rgba($m-01, 0.4);
+        transform: translateY(8px);
+
+        &:hover {
+            box-shadow: 0px 5px 10px rgba($m-01, 0.4);
+        }
+    }
+
+    .thanks {
+        margin-bottom: 32px;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 28px;
+        color: $m-01;
+        position: absolute;
+        transform: translateY(-60px);
     }
 }
 
@@ -305,6 +336,7 @@ body {
         transition: all 0.4s ease;
         cursor: pointer;
 
+
         &:hover {
             box-shadow: inset 0px -40px 0px $m-01;
             color: white;
@@ -313,15 +345,125 @@ body {
 }
 
 .anime {
-    background-color: $m-01;
-    width: 500px;
+    position: relative;
+    max-width: 480px;
+    width: 100%;
+    height: 870px;
+    overflow: hidden;
+
+    @include xs {
+        padding: 0 20px;
+        height: 1000px;
+    }
+
+
+
+    &:before,
+    &:after {
+        position: absolute;
+        content: '';
+        width: 150px;
+        height: 20px;
+        animation: bg 5s 0.2s ease forwards;
+        border-radius: 40px 40px 0px 0px;
+        z-index: 1;
+        box-shadow: inset 0px 19px 0px $m-01;
+        background-color: $m-01;
+        transition: all 0.4s ease;
+        ;
+
+        @include xs {
+            margin-top: -65px;
+        }
+
+    }
+
+    &:after {
+        margin-top: 20px;
+        z-index: -1;
+        border-radius: 0px 0px 40px 40px;
+        box-shadow: inset 0px -18px 0px $m-01;
+
+        @include xs {
+            margin-top: -45px;
+        }
+    }
+
+    @keyframes bg {
+        0% {
+            background-color: $m-01;
+            width: 140px;
+
+        }
+
+        10% {
+            background-color: $m-01;
+            width: 100%;
+
+        }
+
+        20% {
+            background-color: black;
+            width: 100%;
+            transform: translateY(-425px);
+        }
+
+        90% {
+            background-color: black;
+            width: 100%;
+        }
+
+        100% {
+            transform: translateY(-425px);
+            background-color: $m-01;
+            width: 0px;
+        }
+    }
+
+
 
     .thanks {
         display: none;
     }
 
     .receipt {
+        animation: receipt 3s 1.6s ease both;
         display: block;
+
+        @keyframes receipt {
+            0% {
+                transform: translateY(-110%);
+            }
+
+            20% {
+                transform: translateY(-90%);
+            }
+
+            30% {
+                transform: translateY(-80%);
+            }
+
+            40% {
+                transform: translateY(-70%);
+            }
+
+            60% {
+                transform: translateY(-60%);
+            }
+
+            70% {
+                transform: translateY(-40%);
+            }
+
+
+            100% {
+                transform: translateY(0%);
+            }
+        }
+    }
+
+    .cta {
+        display: none;
     }
 
 
