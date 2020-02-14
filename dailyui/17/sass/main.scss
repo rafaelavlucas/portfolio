@@ -180,7 +180,7 @@ body {
     padding: 40px;
     color: $m-01;
     background-color: $m-03;
-    margin: 50px auto 0;
+    margin: 0px auto 0;
     text-align: initial;
     transition: all 0.4s ease;
     display: none;
@@ -190,6 +190,7 @@ body {
 
     @include xs {
         padding: 16px;
+        margin: 28px auto 0;
     }
 
     &__message {
@@ -310,6 +311,7 @@ body {
             @include xs {
                 margin-right: 0px;
                 margin-bottom: 16px;
+                width: 100%;
 
                 &:last-of-type {
                     margin-bottom: 0px;
@@ -363,7 +365,7 @@ body {
         content: '';
         width: 150px;
         height: 20px;
-        animation: bg 5s 0.2s ease forwards;
+        animation: bg 1.2s 0.2s ease forwards;
         border-radius: 40px 40px 0px 0px;
         z-index: 1;
         box-shadow: inset 0px 19px 0px $m-01;
@@ -395,27 +397,16 @@ body {
 
         }
 
-        10% {
+        50% {
             background-color: $m-01;
             width: 100%;
 
-        }
-
-        20% {
-            background-color: #1d2231;
-            width: 100%;
-            top: 0px;
-        }
-
-        90% {
-            background-color: #1d2231;
-            width: 100%;
         }
 
         100% {
-            top: 0;
-            background-color: $m-01;
-            width: 0px;
+            background-color: #1d2231;
+            width: 100%;
+            top: 0px;
         }
     }
 

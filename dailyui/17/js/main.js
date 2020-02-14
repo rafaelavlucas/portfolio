@@ -11,7 +11,7 @@ window.addEventListener("load", event => {
         container.classList.add('anime');
         cta.innerHTML = "";
 
-        container.style.height = receipt.clientHeight + 60 + "px";
+        container.style.height = receipt.clientHeight + 45 + "px";
     }
 
 });
