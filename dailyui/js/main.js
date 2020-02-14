@@ -28,7 +28,7 @@ window.onload = function (e) {
         nm = 1,
         im = 1,
         folder = "img",
-        total = 84;
+        total = 83;
 
 
     const items = [{
@@ -142,6 +142,13 @@ window.onload = function (e) {
             image: `${folder}/dailyui-${im++}.jpg`,
             desc: "Pop-Up / Overlay",
             color: "#5d48c9"
+        },
+        {
+            url: `${nu++}`,
+            name: `${nm++}`,
+            image: `${folder}/dailyui-${im++}.jpg`,
+            desc: "Email Receipt",
+            color: "#435072"
         },
     ];
 
