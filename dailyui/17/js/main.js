@@ -1,7 +1,8 @@
 window.addEventListener("load", event => {
 
     const cta = document.querySelector('.cta'),
-        container = document.querySelector('.container');
+        container = document.querySelector('.container'),
+        receipt = document.querySelector('.receipt');
 
 
     cta.addEventListener("click", printReceipt);
@@ -9,6 +10,8 @@ window.addEventListener("load", event => {
     function printReceipt() {
         container.classList.add('anime');
         cta.innerHTML = "";
+
+        container.style.height = receipt.clientHeight + 60 + "px";
     }
 
 });
