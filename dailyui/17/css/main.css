@@ -158,6 +158,8 @@ body {
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
   display: none;
+  border-top: dashed 2px #E4E7F1;
+  border-bottom: dashed 2px #E4E7F1;
 }
 
 @media screen and (max-width: 460px) {
@@ -396,13 +398,13 @@ body {
     width: 100%;
   }
   20% {
-    background-color: black;
+    background-color: #1d2231;
     width: 100%;
     -webkit-transform: translateY(-425px);
             transform: translateY(-425px);
   }
   90% {
-    background-color: black;
+    background-color: #1d2231;
     width: 100%;
   }
   100% {
@@ -423,13 +425,13 @@ body {
     width: 100%;
   }
   20% {
-    background-color: black;
+    background-color: #1d2231;
     width: 100%;
     -webkit-transform: translateY(-425px);
             transform: translateY(-425px);
   }
   90% {
-    background-color: black;
+    background-color: #1d2231;
     width: 100%;
   }
   100% {

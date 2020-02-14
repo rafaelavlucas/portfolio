@@ -186,6 +186,9 @@ body {
     text-align: initial;
     transition: all 0.4s ease;
     display: none;
+    border-top: dashed 2px $m-02;
+    border-bottom: dashed 2px $m-02;
+
 
     @include xs {
         padding: 16px;
@@ -356,8 +359,6 @@ body {
         height: 1000px;
     }
 
-
-
     &:before,
     &:after {
         position: absolute;
@@ -375,7 +376,6 @@ body {
         @include xs {
             margin-top: -65px;
         }
-
     }
 
     &:after {
@@ -403,13 +403,13 @@ body {
         }
 
         20% {
-            background-color: black;
+            background-color: #1d2231;
             width: 100%;
             transform: translateY(-425px);
         }
 
         90% {
-            background-color: black;
+            background-color: #1d2231;
             width: 100%;
         }
 
@@ -419,8 +419,6 @@ body {
             width: 0px;
         }
     }
-
-
 
     .thanks {
         display: none;
