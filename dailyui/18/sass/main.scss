@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css?family=Barlow+Condensed:100,200,300,400,500,600,700,800,900|Barlow+Semi+Condensed:100,200,300,400,500,600,700,800,900|Barlow:100,200,300,400,500,600,700,800,900&display=swap');
+$font-01: "Barlow",
+sans-serif;
+$font-02: 'Barlow Semi Condensed',
+sans-serif;
+$font-03: "Barlow Condensed",
+sans-serif;
+
+$m-01: #435072;
+$m-02: #E4E7F1;
+$m-03: #F5F6FA;
+
+$neu-01: #363636;
+$neu-02: #5A5A5A;
+$neu-03: #909090;
+$neu-04: #979797;
+$neu-05: #BDBDBD;
+$neu-06: #F5F5F5;
+$neu-07: #F8f8f8;
+
+$cubic: cubic-bezier(0.44, 0.43, 0, 1.85);
+
+$cubic2: cubic-bezier(0.31, 0.42, 0, 1.39);
+
+
+@mixin lg {
+    @media screen and (max-width: 1919px) {
+        @content;
+    }
+}
+
+@mixin md {
+    @media screen and (max-width: 1023px) {
+        @content;
+    }
+}
+
+@mixin sm {
+    @media screen and (max-width: 799px) {
+        @content;
+    }
+}
+
+@mixin xs {
+    @media screen and (max-width: 460px) {
+        @content;
+    }
+}
+
+@mixin transition {
+    transition: all 0.4s ease;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: 0;
+    -webkit-tap-highlight-color: transparent;
+    text-decoration: none;
+    color: inherit;
+    box-sizing: border-box;
+
+    &:focus {
+        outline: 0;
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+}
+
+body {
+    background-color: $neu-06;
+    font-family: $font-01;
+    font-weight: normal;
+    background-color: white;
+
+}
+
+.logo {
+    position: fixed;
+    z-index: 5;
+    bottom: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 100%;
+    backdrop-filter: blur(5px);
+
+    img {
+        width: 55%;
+        height: 55%;
+        transform: translateY(-1px);
+        opacity: 0.8;
+    }
+
+    @include sm {
+        display: none;
+    }
+}
+
+.wrapper {
+    width: 100%;
+    height: 100vh;
+    min-height: 400px;
+    font-family: $font-01;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 0 5%;
+
+    @include xs {
+        height: auto;
+        min-height: 100vh;
+        padding: 0 16px;
+    }
+}
+
+.container {
+    background-color: transparent;
+    margin: 40px auto;
+    text-align: center;
+    transition: all 0.4s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 360px;
+    height: 760px;
+    //background-color: black;
+
+    @include xs {
+        margin: 20px auto;
+    }
+
+}
+
+.fitness {
+    width: 328px;
+
+    &__top {}
+
+    &__content {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 8px;
+
+    }
+
+    &__square {
+        width: 100%;
+        background-color: red;
+    }
+}
+
+.swiper-container {
+    width: 600px;
+    height: 300px;
+}
