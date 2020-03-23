@@ -139,9 +139,21 @@ body {
   width: 100%;
   height: calc(45% - 10px);
   margin: 8px 0;
+  padding: 24px;
   -webkit-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
           box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
   border-radius: 4px;
+}
+
+.fitness__date {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #CDCDD1;
+  margin-top: 16px;
 }
 
 .fitness__content {
@@ -300,7 +312,36 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: calc(100% - 48px);
+  left: 24px;
+  height: 24px;
+}
+
+.swiper-container .swiperArrows .swiper-button-prev,
+.swiper-container .swiperArrows .swiper-button-next {
+  width: 24px;
+  height: 24px;
+  top: initial;
+  margin-top: 0;
+}
+
+.swiper-container .swiperArrows .swiper-button-prev:after,
+.swiper-container .swiperArrows .swiper-button-next:after {
+  display: none;
+}
+
+.swiper-container .swiperArrows .swiper-button-prev {
+  background-image: url("../assets/back.svg") !important;
+}
+
+.swiper-container .swiperArrows .swiper-button-next {
+  background-image: url("../assets/next.svg") !important;
 }
 
 .swiper-container .swiper-pagination {
