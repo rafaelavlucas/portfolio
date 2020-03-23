@@ -110,10 +110,8 @@ window.addEventListener("load", event => {
 
     if (window.innerWidth <= 460) {
         document.querySelector('.container').style.height = window.innerHeight + "px";
+        document.querySelector('.wrapper').style.height = window.innerHeight + "px";
     }
-
-
-
 
 
 });
