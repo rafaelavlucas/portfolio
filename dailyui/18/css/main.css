@@ -103,6 +103,7 @@ body {
   height: 760px;
   min-height: 500px;
   background: #4B4B55;
+  position: relative;
 }
 
 @media screen and (max-width: 460px) {
@@ -111,6 +112,40 @@ body {
     height: 100%;
     margin: 0;
   }
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.icon.active img {
+  width: 100%;
+  height: 100%;
+}
+
+.icon.active:before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 100%;
+  position: absolute;
+  background: -webkit-gradient(linear, left top, left bottom, from(#FBED96), to(#ABECD6));
+  background: linear-gradient(180deg, #FBED96 0%, #ABECD6 100%);
+  bottom: -10px;
 }
 
 .header {
@@ -123,6 +158,9 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .fitness {
@@ -194,7 +232,7 @@ body {
   border-radius: 4px;
 }
 
-.fitness__square .icon {
+.fitness__square .iconBig {
   width: 50%;
   height: 50%;
   max-width: 48px;
@@ -207,19 +245,19 @@ body {
   background-position: center;
 }
 
-.fitness__square.steps .icon {
+.fitness__square.steps .iconBig {
   background-image: url("../assets/iconSteps.svg");
 }
 
-.fitness__square.time .icon {
+.fitness__square.time .iconBig {
   background-image: url("../assets/iconTime.svg");
 }
 
-.fitness__square.distance .icon {
+.fitness__square.distance .iconBig {
   background-image: url("../assets/iconDistance.svg");
 }
 
-.fitness__square.calories .icon {
+.fitness__square.calories .iconBig {
   background-image: url("../assets/iconCalories.svg");
 }
 
@@ -244,6 +282,13 @@ body {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: #7C7F9B;
+}
+
+.fitness__desc.day {
+  position: absolute;
+  left: 50%;
+  margin-top: 32px;
+  z-index: 2;
 }
 
 .fitness__small {
@@ -275,6 +320,7 @@ body {
   background: linear-gradient(90deg, #FBED96 0%, #ABECD6 100%);
   height: 100%;
   width: 100%;
+  max-width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -283,25 +329,6 @@ body {
   border-radius: 4px;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  -webkit-animation: bar 0.4s ease;
-          animation: bar 0.4s ease;
-}
-
-.fitness__barValue.active {
-  -webkit-animation: bar 0.4s ease;
-          animation: bar 0.4s ease;
-}
-
-@-webkit-keyframes bar {
-  0% {
-    width: 0;
-  }
-}
-
-@keyframes bar {
-  0% {
-    width: 0;
-  }
 }
 
 .swiper-container {
@@ -356,8 +383,10 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 32px;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
@@ -366,16 +395,532 @@ body {
 .swiper-container .swiper-pagination .swiper-pagination-bullet {
   width: 16px;
   height: 100%;
+  max-height: 100%;
   border-radius: 4px 4px 2px 2px;
   background-color: rgba(47, 47, 65, 0.5);
   opacity: 1;
   position: relative;
+  -webkit-animation: barVertical 0.4s ease backwards;
+          animation: barVertical 0.4s ease backwards;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(1) {
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(2) {
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(3) {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(4) {
+  -webkit-animation-delay: 1.2s;
+          animation-delay: 1.2s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(5) {
+  -webkit-animation-delay: 1.4s;
+          animation-delay: 1.4s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(6) {
+  -webkit-animation-delay: 1.6s;
+          animation-delay: 1.6s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(7) {
+  -webkit-animation-delay: 1.8s;
+          animation-delay: 1.8s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(8) {
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(9) {
+  -webkit-animation-delay: 2.2s;
+          animation-delay: 2.2s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(10) {
+  -webkit-animation-delay: 2.4s;
+          animation-delay: 2.4s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(11) {
+  -webkit-animation-delay: 2.6s;
+          animation-delay: 2.6s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(12) {
+  -webkit-animation-delay: 2.8s;
+          animation-delay: 2.8s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(13) {
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(14) {
+  -webkit-animation-delay: 3.2s;
+          animation-delay: 3.2s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(15) {
+  -webkit-animation-delay: 3.4s;
+          animation-delay: 3.4s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(16) {
+  -webkit-animation-delay: 3.6s;
+          animation-delay: 3.6s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(17) {
+  -webkit-animation-delay: 3.8s;
+          animation-delay: 3.8s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(18) {
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(19) {
+  -webkit-animation-delay: 4.2s;
+          animation-delay: 4.2s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(20) {
+  -webkit-animation-delay: 4.4s;
+          animation-delay: 4.4s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(21) {
+  -webkit-animation-delay: 4.6s;
+          animation-delay: 4.6s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(22) {
+  -webkit-animation-delay: 4.8s;
+          animation-delay: 4.8s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(23) {
+  -webkit-animation-delay: 5s;
+          animation-delay: 5s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(24) {
+  -webkit-animation-delay: 5.2s;
+          animation-delay: 5.2s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(25) {
+  -webkit-animation-delay: 5.4s;
+          animation-delay: 5.4s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(26) {
+  -webkit-animation-delay: 5.6s;
+          animation-delay: 5.6s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(27) {
+  -webkit-animation-delay: 5.8s;
+          animation-delay: 5.8s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(28) {
+  -webkit-animation-delay: 6s;
+          animation-delay: 6s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(29) {
+  -webkit-animation-delay: 6.2s;
+          animation-delay: 6.2s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(30) {
+  -webkit-animation-delay: 6.4s;
+          animation-delay: 6.4s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(31) {
+  -webkit-animation-delay: 6.6s;
+          animation-delay: 6.6s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(32) {
+  -webkit-animation-delay: 6.8s;
+          animation-delay: 6.8s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(33) {
+  -webkit-animation-delay: 7s;
+          animation-delay: 7s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(34) {
+  -webkit-animation-delay: 7.2s;
+          animation-delay: 7.2s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(35) {
+  -webkit-animation-delay: 7.4s;
+          animation-delay: 7.4s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(36) {
+  -webkit-animation-delay: 7.6s;
+          animation-delay: 7.6s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(37) {
+  -webkit-animation-delay: 7.8s;
+          animation-delay: 7.8s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(38) {
+  -webkit-animation-delay: 8s;
+          animation-delay: 8s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(39) {
+  -webkit-animation-delay: 8.2s;
+          animation-delay: 8.2s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(40) {
+  -webkit-animation-delay: 8.4s;
+          animation-delay: 8.4s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(41) {
+  -webkit-animation-delay: 8.6s;
+          animation-delay: 8.6s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(42) {
+  -webkit-animation-delay: 8.8s;
+          animation-delay: 8.8s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(43) {
+  -webkit-animation-delay: 9s;
+          animation-delay: 9s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(44) {
+  -webkit-animation-delay: 9.2s;
+          animation-delay: 9.2s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(45) {
+  -webkit-animation-delay: 9.4s;
+          animation-delay: 9.4s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(46) {
+  -webkit-animation-delay: 9.6s;
+          animation-delay: 9.6s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(47) {
+  -webkit-animation-delay: 9.8s;
+          animation-delay: 9.8s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(48) {
+  -webkit-animation-delay: 10s;
+          animation-delay: 10s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(49) {
+  -webkit-animation-delay: 10.2s;
+          animation-delay: 10.2s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(50) {
+  -webkit-animation-delay: 10.4s;
+          animation-delay: 10.4s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(51) {
+  -webkit-animation-delay: 10.6s;
+          animation-delay: 10.6s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(52) {
+  -webkit-animation-delay: 10.8s;
+          animation-delay: 10.8s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(53) {
+  -webkit-animation-delay: 11s;
+          animation-delay: 11s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(54) {
+  -webkit-animation-delay: 11.2s;
+          animation-delay: 11.2s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(55) {
+  -webkit-animation-delay: 11.4s;
+          animation-delay: 11.4s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(56) {
+  -webkit-animation-delay: 11.6s;
+          animation-delay: 11.6s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(57) {
+  -webkit-animation-delay: 11.8s;
+          animation-delay: 11.8s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(58) {
+  -webkit-animation-delay: 12s;
+          animation-delay: 12s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(59) {
+  -webkit-animation-delay: 12.2s;
+          animation-delay: 12.2s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(60) {
+  -webkit-animation-delay: 12.4s;
+          animation-delay: 12.4s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(61) {
+  -webkit-animation-delay: 12.6s;
+          animation-delay: 12.6s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(62) {
+  -webkit-animation-delay: 12.8s;
+          animation-delay: 12.8s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(63) {
+  -webkit-animation-delay: 13s;
+          animation-delay: 13s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(64) {
+  -webkit-animation-delay: 13.2s;
+          animation-delay: 13.2s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(65) {
+  -webkit-animation-delay: 13.4s;
+          animation-delay: 13.4s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(66) {
+  -webkit-animation-delay: 13.6s;
+          animation-delay: 13.6s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(67) {
+  -webkit-animation-delay: 13.8s;
+          animation-delay: 13.8s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(68) {
+  -webkit-animation-delay: 14s;
+          animation-delay: 14s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(69) {
+  -webkit-animation-delay: 14.2s;
+          animation-delay: 14.2s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(70) {
+  -webkit-animation-delay: 14.4s;
+          animation-delay: 14.4s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(71) {
+  -webkit-animation-delay: 14.6s;
+          animation-delay: 14.6s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(72) {
+  -webkit-animation-delay: 14.8s;
+          animation-delay: 14.8s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(73) {
+  -webkit-animation-delay: 15s;
+          animation-delay: 15s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(74) {
+  -webkit-animation-delay: 15.2s;
+          animation-delay: 15.2s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(75) {
+  -webkit-animation-delay: 15.4s;
+          animation-delay: 15.4s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(76) {
+  -webkit-animation-delay: 15.6s;
+          animation-delay: 15.6s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(77) {
+  -webkit-animation-delay: 15.8s;
+          animation-delay: 15.8s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(78) {
+  -webkit-animation-delay: 16s;
+          animation-delay: 16s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(79) {
+  -webkit-animation-delay: 16.2s;
+          animation-delay: 16.2s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(80) {
+  -webkit-animation-delay: 16.4s;
+          animation-delay: 16.4s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(81) {
+  -webkit-animation-delay: 16.6s;
+          animation-delay: 16.6s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(82) {
+  -webkit-animation-delay: 16.8s;
+          animation-delay: 16.8s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(83) {
+  -webkit-animation-delay: 17s;
+          animation-delay: 17s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(84) {
+  -webkit-animation-delay: 17.2s;
+          animation-delay: 17.2s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(85) {
+  -webkit-animation-delay: 17.4s;
+          animation-delay: 17.4s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(86) {
+  -webkit-animation-delay: 17.6s;
+          animation-delay: 17.6s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(87) {
+  -webkit-animation-delay: 17.8s;
+          animation-delay: 17.8s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(88) {
+  -webkit-animation-delay: 18s;
+          animation-delay: 18s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(89) {
+  -webkit-animation-delay: 18.2s;
+          animation-delay: 18.2s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(90) {
+  -webkit-animation-delay: 18.4s;
+          animation-delay: 18.4s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(91) {
+  -webkit-animation-delay: 18.6s;
+          animation-delay: 18.6s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(92) {
+  -webkit-animation-delay: 18.8s;
+          animation-delay: 18.8s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(93) {
+  -webkit-animation-delay: 19s;
+          animation-delay: 19s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(94) {
+  -webkit-animation-delay: 19.2s;
+          animation-delay: 19.2s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(95) {
+  -webkit-animation-delay: 19.4s;
+          animation-delay: 19.4s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(96) {
+  -webkit-animation-delay: 19.6s;
+          animation-delay: 19.6s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(97) {
+  -webkit-animation-delay: 19.8s;
+          animation-delay: 19.8s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(98) {
+  -webkit-animation-delay: 20s;
+          animation-delay: 20s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(99) {
+  -webkit-animation-delay: 20.2s;
+          animation-delay: 20.2s;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(100) {
+  -webkit-animation-delay: 20.4s;
+          animation-delay: 20.4s;
+}
+
+@-webkit-keyframes barVertical {
+  0% {
+    height: 0;
+  }
+}
+
+@keyframes barVertical {
+  0% {
+    height: 0;
+  }
 }
 
 .swiper-container .swiper-pagination .swiper-pagination-bullet:before {
   content: '';
   width: 100%;
   height: 0%;
+  max-height: 100%;
   border-radius: 4px 4px 2px 2px;
   position: absolute;
   background: -webkit-gradient(linear, left top, left bottom, from(#FBED96), to(#ABECD6));
@@ -386,26 +931,23 @@ body {
   left: 0;
 }
 
-.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(2) {
-  height: 40px;
-}
-
 .swiper-container .swiper-pagination .swiper-pagination-bullet-active:before {
   height: 100%;
+  max-height: 100%;
 }
 
 .swiper-container .swiper-slide-active .fitness__barValue {
-  -webkit-animation: bar2 0.4s 0.4s ease backwards;
-          animation: bar2 0.4s 0.4s ease backwards;
+  -webkit-animation: bar 0.4s 0.4s ease backwards;
+          animation: bar 0.4s 0.4s ease backwards;
 }
 
-@-webkit-keyframes bar2 {
+@-webkit-keyframes bar {
   0% {
     width: 0;
   }
 }
 
-@keyframes bar2 {
+@keyframes bar {
   0% {
     width: 0;
   }
@@ -415,6 +957,15 @@ body {
   height: 64px;
   width: 100%;
   background-color: rgba(47, 47, 65, 0.5);
-  opacity: 0.5;
+  padding: 0 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 /*# sourceMappingURL=main.css.map */
