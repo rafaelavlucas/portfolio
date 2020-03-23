@@ -22,7 +22,6 @@
 }
 
 body {
-  background-color: #F5F5F5;
   font-family: "Barlow", sans-serif;
   font-weight: normal;
   background-color: white;
@@ -98,30 +97,56 @@ body {
   text-align: center;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 360px;
+  width: 375px;
   height: 760px;
+  min-height: 500px;
+  background: #4B4B55;
 }
 
 @media screen and (max-width: 460px) {
   .container {
-    margin: 20px auto;
+    width: 100vw;
+    height: 100%;
   }
 }
 
+.header {
+  width: 100%;
+  height: 72px;
+  padding: 0 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .fitness {
-  width: 328px;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+@media screen and (max-width: 460px) {
+  .fitness {
+    width: 100%;
+  }
+}
+
+.fitness__top {
+  width: 100%;
+  height: calc(45% - 10px);
+  margin: 8px 0;
+  -webkit-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
 }
 
 .fitness__content {
+  width: 100%;
+  height: calc(55% - 32px);
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: 1fr 1fr;
@@ -129,15 +154,223 @@ body {
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
   grid-gap: 8px;
+  margin-bottom: 32px;
 }
 
 .fitness__square {
   width: 100%;
-  background-color: red;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  padding: 8px 16px 16px 16px;
+  -webkit-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+}
+
+.fitness__square .icon {
+  width: 50%;
+  height: 50%;
+  max-width: 48px;
+  max-height: 48px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.fitness__square.steps .icon {
+  background-image: url("../assets/iconSteps.svg");
+}
+
+.fitness__square.time .icon {
+  background-image: url("../assets/iconTime.svg");
+}
+
+.fitness__square.distance .icon {
+  background-image: url("../assets/iconDistance.svg");
+}
+
+.fitness__square.calories .icon {
+  background-image: url("../assets/iconCalories.svg");
+}
+
+.fitness__name {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #CDCDD1;
+  margin: 8px 0px;
+}
+
+.fitness__desc {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 12px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #7C7F9B;
+}
+
+.fitness__small {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 8px;
+  line-height: 10px;
+  text-align: right;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #CDCDD1;
+  opacity: 0.3;
+}
+
+.fitness__bar {
+  height: 6px;
+  width: calc(100% - 16px);
+  background-color: rgba(47, 47, 65, 0.5);
+  position: absolute;
+  border-radius: 4px;
+  bottom: 8px;
+}
+
+.fitness__barValue {
+  background: -webkit-gradient(linear, left top, right top, from(#FBED96), to(#ABECD6));
+  background: linear-gradient(90deg, #FBED96 0%, #ABECD6 100%);
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  left: 0;
+  border-radius: 4px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  -webkit-animation: bar 0.4s ease;
+          animation: bar 0.4s ease;
+}
+
+.fitness__barValue.active {
+  -webkit-animation: bar 0.4s ease;
+          animation: bar 0.4s ease;
+}
+
+@-webkit-keyframes bar {
+  0% {
+    width: 0;
+  }
+}
+
+@keyframes bar {
+  0% {
+    width: 0;
+  }
 }
 
 .swiper-container {
-  width: 600px;
-  height: 300px;
+  height: calc(100% - 64px - 72px);
+  position: relative;
+}
+
+.swiper-container .swiperArrows {
+  position: absolute;
+  top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.swiper-container .swiper-pagination {
+  position: absolute;
+  top: 90px;
+  height: calc(45% - 8px - 5% - 90px);
+  width: calc(100% - 48px) !important;
+  margin: 0 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet {
+  width: 16px;
+  height: 100%;
+  border-radius: 4px 4px 2px 2px;
+  background-color: rgba(47, 47, 65, 0.5);
+  opacity: 1;
+  position: relative;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:before {
+  content: '';
+  width: 100%;
+  height: 0%;
+  border-radius: 4px 4px 2px 2px;
+  position: absolute;
+  background: -webkit-gradient(linear, left top, left bottom, from(#FBED96), to(#ABECD6));
+  background: linear-gradient(180deg, #FBED96 0%, #ABECD6 100%);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  bottom: 0;
+  left: 0;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet:nth-child(2) {
+  height: 40px;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet-active:before {
+  height: 100%;
+}
+
+.swiper-container .swiper-slide-active .fitness__barValue {
+  -webkit-animation: bar2 0.4s 0.4s ease backwards;
+          animation: bar2 0.4s 0.4s ease backwards;
+}
+
+@-webkit-keyframes bar2 {
+  0% {
+    width: 0;
+  }
+}
+
+@keyframes bar2 {
+  0% {
+    width: 0;
+  }
+}
+
+.footer {
+  height: 64px;
+  width: 100%;
+  background-color: rgba(47, 47, 65, 0.5);
+  opacity: 0.5;
 }
 /*# sourceMappingURL=main.css.map */

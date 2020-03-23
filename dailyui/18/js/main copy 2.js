@@ -7,25 +7,42 @@ window.addEventListener("load", event => {
         time: "1.14",
         distance: "2.14",
         calories: "57",
+        height: "200px",
     }, {
         day: "teste2",
         steps: "300",
         time: "3",
         distance: "jvn",
         calories: "200",
+        height: "300px",
     }, {
         day: "teste3",
         steps: "300",
         time: "fhrjkevn",
         distance: "jvn",
         calories: "200",
+        height: "400px",
     }];
+
+    const text = [{
+        time: "hours",
+        distance: "km",
+        calories: "kcal",
+    }]
+
+
+
+    const iWebsite = icons[0].iWebsite,
+        iEmail = icons[0].iEmail,
+        iLinkedin = icons[0].iLinkedin,
+        iDribbble = icons[0].iDribbble;
 
 
     const stepsValue = 8000,
         timeValue = 4,
         distanceValue = 10,
         caloriesValue = 400;
+
 
     const icons = ["assets/iconSteps.svg", "assets/iconTime.svg", "assets/iconDistance.svg", "assets/iconCalories.svg"];
 
@@ -39,7 +56,6 @@ window.addEventListener("load", event => {
                     <p class="fitness__desc">today</p>
                     <p class="fitness__date">${el.day}</p>
                 </div>
-
             <div class="fitness__content">
                 <div class="fitness__square steps">
                  <span class="icon"></span>
@@ -87,13 +103,6 @@ window.addEventListener("load", event => {
     var mySwiper = new Swiper('.swiper-container', {
         // Optional parameters
         loop: false,
-        effect: 'coverflow',
-        speed: 400,
-
-        coverflowEffect: {
-            rotate: 30,
-            slideShadows: false,
-        },
 
         // If we need pagination
         pagination: {
@@ -107,8 +116,6 @@ window.addEventListener("load", event => {
             prevEl: '.swiper-button-prev',
         },
     })
-
-    const next = document.querySelector('.')
 
 
 
