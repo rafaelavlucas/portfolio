@@ -119,8 +119,8 @@ body {
 
     @include xs {
         height: auto;
-        min-height: 100vh;
         padding: 0 16px;
+        align-items: initial;
     }
 }
 
