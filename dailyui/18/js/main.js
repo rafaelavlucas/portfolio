@@ -13,7 +13,7 @@ window.addEventListener("load", event => {
         return dateObj;
     };
 
-    for (var i = 1; i < 6; i++) {
+    for (var i = 1; i < 8; i++) {
         var d = new Date();
         let next5Dayss = addDays(d, i);
         dayOfWeek.push(next5Dayss.getDay());
