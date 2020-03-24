@@ -2,54 +2,64 @@ window.addEventListener("load", event => {
 
     var d = new Date();
     var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-
+    var day = d.getDate();
+    var dayOfWeek = [];
     var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
+    var month = months[d.getMonth()] + " ";
 
-    var day = d.getDate();
-    var dayNumber = days[d.getDay()];
-    var today = days[d.getDay()] + ", " + months[d.getMonth()] + " ";
+    function addDays(dateObj, numDays) {
+        dateObj.setDate(dateObj.getDate() - numDays);
+        return dateObj;
+    };
+
+    for (var i = 1; i < 6; i++) {
+        var d = new Date();
+        let next5Dayss = addDays(d, i);
+        dayOfWeek.push(next5Dayss.getDay());
+        d = "";
+    }
 
     const data = [{
-            day: today + day,
+            day: days[dayOfWeek[0]] + ', ' + month + day,
             steps: "4414",
             time: "0.54",
             distance: "2.74",
             calories: "68",
 
         }, {
-            day: today + (day - 1),
+            day: days[dayOfWeek[1]] + ', ' + month + (day - 1),
             steps: "5682",
             time: "1.14",
             distance: "3.38",
             calories: "86",
         }, {
-            day: today + (day - 2),
+            day: days[dayOfWeek[2]] + ', ' + month + (day - 2),
             steps: "24404",
             time: "2.40",
             distance: "9.05",
             calories: "222",
         }, {
-            day: today + (day - 3),
+            day: days[dayOfWeek[3]] + ', ' + month + (day - 3),
             steps: "7770",
             time: "1.44",
             distance: "4.67",
             calories: "117",
         }, {
-            day: today + (day - 4),
+            day: days[dayOfWeek[4]] + ', ' + month + (day - 4),
             steps: "10599",
             time: "2.12",
             distance: "6.27",
             calories: "156",
         },
         {
-            day: today + (day - 5),
+            day: days[dayOfWeek[5]] + ', ' + month + (day - 5),
             steps: "11161",
             time: "1.52",
             distance: "7.26",
             calories: "181",
         }, {
-            day: today + (day - 6),
+            day: days[dayOfWeek[6]] + ', ' + month + (day - 6),
             steps: "3740",
             time: "0.46",
             distance: "2.23",
