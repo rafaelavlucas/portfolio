@@ -7,9 +7,8 @@ window.addEventListener("load", event => {
 
 
     var day = d.getDate();
+    var dayNumber = days[d.getDay()];
     var today = days[d.getDay()] + ", " + months[d.getMonth()] + " ";
-    var cenas = 1;
-    var getPrevDay = days[d.getDay()] + ", " + months[d.getMonth()] + " ";
 
     const data = [{
             day: today + day,

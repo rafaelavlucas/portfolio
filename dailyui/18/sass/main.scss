@@ -82,8 +82,7 @@ $cubic2: cubic-bezier(0.31, 0.42, 0, 1.39);
 body {
     font-family: $font-01;
     font-weight: normal;
-    background-color: white;
-
+    background: $g-01;
 }
 
 .logo {
@@ -115,8 +114,8 @@ body {
 
 .wrapper {
     width: 100%;
+    min-width: 320px;
     height: 100vh;
-    min-height: 400px;
     font-family: $font-01;
     display: grid;
     grid-template-columns: 1fr;
@@ -124,6 +123,7 @@ body {
     justify-content: center;
     position: relative;
     padding: 0 5%;
+
 
     @include xs {
         height: auto;
@@ -138,8 +138,12 @@ body {
     text-align: center;
     transition: all 0.4s ease;
     width: 375px;
+    min-width: 320px;
+    min-height: 600px;
     height: 760px;
-    min-height: 500px;
+    border-radius: 8px;
+    overflow: hidden;
+
     //background-color: black;
     background: $neu-02;
     position: relative;
@@ -205,7 +209,7 @@ body {
     &__top {
         width: 100%;
         height: calc(45% - 10px);
-        margin: 8px 0;
+        margin: 0px 0px 8px 0;
         padding: 24px;
         box-shadow: $shadow;
         border-radius: 4px;
@@ -225,12 +229,12 @@ body {
 
     &__content {
         width: 100%;
-        height: calc(55% - 32px);
+        height: calc(55% - 24px);
         display: grid;
         grid-template-rows: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
         grid-gap: 8px;
-        margin-bottom: 32px;
+        margin-bottom: 24px;
     }
 
     &__square {
@@ -253,6 +257,11 @@ body {
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
+
+            @include xs {
+                width: 40%;
+                height: 40%;
+            }
         }
 
 
@@ -290,7 +299,7 @@ body {
         letter-spacing: 0.04em;
         text-transform: uppercase;
         color: $neu-04;
-        margin: 8px 0px;
+        margin: 2% 0px;
     }
 
     &__desc {
@@ -306,7 +315,8 @@ body {
         &.day {
             position: absolute;
             left: 50%;
-            margin-top: 32px;
+            transform: translateX(-50%);
+            margin-top: 24px;
             z-index: 2;
         }
     }

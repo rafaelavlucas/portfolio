@@ -24,7 +24,8 @@
 body {
   font-family: "Barlow", sans-serif;
   font-weight: normal;
-  background-color: white;
+  background: -webkit-gradient(linear, left top, left bottom, from(#FBED96), to(#ABECD6));
+  background: linear-gradient(180deg, #FBED96 0%, #ABECD6 100%);
 }
 
 .logo {
@@ -66,8 +67,8 @@ body {
 
 .wrapper {
   width: 100%;
+  min-width: 320px;
   height: 100vh;
-  min-height: 400px;
   font-family: "Barlow", sans-serif;
   display: -ms-grid;
   display: grid;
@@ -100,8 +101,11 @@ body {
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
   width: 375px;
+  min-width: 320px;
+  min-height: 600px;
   height: 760px;
-  min-height: 500px;
+  border-radius: 8px;
+  overflow: hidden;
   background: #4B4B55;
   position: relative;
 }
@@ -179,7 +183,7 @@ body {
 .fitness__top {
   width: 100%;
   height: calc(45% - 10px);
-  margin: 8px 0;
+  margin: 0px 0px 8px 0;
   padding: 24px;
   -webkit-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
           box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
@@ -199,7 +203,7 @@ body {
 
 .fitness__content {
   width: 100%;
-  height: calc(55% - 32px);
+  height: calc(55% - 24px);
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: 1fr 1fr;
@@ -207,7 +211,7 @@ body {
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
   grid-gap: 8px;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
 }
 
 .fitness__square {
@@ -245,6 +249,13 @@ body {
   background-position: center;
 }
 
+@media screen and (max-width: 460px) {
+  .fitness__square .iconBig {
+    width: 40%;
+    height: 40%;
+  }
+}
+
 .fitness__square.steps .iconBig {
   background-image: url("../assets/iconSteps.svg");
 }
@@ -270,7 +281,7 @@ body {
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: #CDCDD1;
-  margin: 8px 0px;
+  margin: 2% 0px;
 }
 
 .fitness__desc {
@@ -287,7 +298,9 @@ body {
 .fitness__desc.day {
   position: absolute;
   left: 50%;
-  margin-top: 32px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  margin-top: 24px;
   z-index: 2;
 }
 
