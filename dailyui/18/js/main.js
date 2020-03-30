@@ -72,8 +72,6 @@ window.addEventListener("load", event => {
         distanceValue = 5,
         caloriesValue = 200;
 
-    const icons = ["assets/iconSteps.svg", "assets/iconTime.svg", "assets/iconDistance.svg", "assets/iconCalories.svg"];
-
     const swiperWrapper = document.querySelector(".swiper-wrapper");
 
     data.forEach(function (el) {

@@ -144,4 +144,32 @@ window.onload = function (e) {
     animeContainers(workImg, "animeWork");
     animeContainers(timelineItem, "animeTimeline");
 
-}
+    //open Modal
+
+    const btnVideo = document.querySelector('.btnVideo'),
+        modalVideo = document.querySelector('.modal'),
+        iconCloseVideo = document.querySelector('.modal__icon'),
+        body = document.querySelector('body');
+
+    btnVideo.addEventListener("click", openVideo);
+
+    iconCloseVideo.addEventListener("click", closeVideo);
+
+
+    function openVideo() {
+        setTimeout(() => {
+            modalVideo.classList.add('open');
+
+        }, 300);
+
+        body.style.overflow = "hidden";
+    }
+
+    function closeVideo() {
+        modalVideo.classList.remove('open');
+        body.style.overflow = "visible";
+    };
+    document.querySelector('.modal').style.height = window.innerHeight + "px";
+
+
+};
