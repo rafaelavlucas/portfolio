@@ -82,7 +82,16 @@ $cubic2: cubic-bezier(0.31, 0.42, 0, 1.39);
 body {
     font-family: $font-01;
     font-weight: normal;
-    background: $g-01;
+
+    &:before {
+        content: '';
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        background: $g-01;
+        left: 0;
+        top: 0;
+    }
 }
 
 .logo {

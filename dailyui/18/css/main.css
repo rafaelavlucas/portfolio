@@ -24,8 +24,17 @@
 body {
   font-family: "Barlow", sans-serif;
   font-weight: normal;
+}
+
+body:before {
+  content: '';
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
   background: -webkit-gradient(linear, left top, left bottom, from(#FBED96), to(#ABECD6));
   background: linear-gradient(180deg, #FBED96 0%, #ABECD6 100%);
+  left: 0;
+  top: 0;
 }
 
 .logo {
