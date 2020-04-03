@@ -135,7 +135,7 @@ window.addEventListener("load", event => {
     document.querySelector('.itemSong').insertAdjacentHTML("afterend", template2)
 
     if (window.innerWidth <= 460) {
-        document.querySelector('.container').style.height = window.innerHeight + "px";
+        //document.querySelector('.container').style.height = window.innerHeight + "px";
         document.querySelector('.wrapper').style.height = window.innerHeight + "px";
     }
 

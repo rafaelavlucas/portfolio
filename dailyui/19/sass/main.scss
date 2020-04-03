@@ -87,7 +87,19 @@ $g-01: linear-gradient(122.47deg, #E87867 -1.23%, #F4DCC1 92.07%);
 body {
     font-family: $font-01;
     font-weight: normal;
-    background: $g-01;
+
+    background-repeat: no-repeat;
+    //position: fixed;
+
+    &:before {
+        content: '';
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        background: $g-01;
+        left: 0;
+        top: 0;
+    }
 }
 
 .logo {
@@ -132,8 +144,10 @@ body {
 
     @include xs {
         height: auto;
+        min-height: 700px;
         padding: 0px;
         align-items: initial;
+
     }
 }
 
@@ -450,9 +464,6 @@ body {
                 top: 0;
                 border-radius: 10px;
                 overflow: hidden;
-                display: flex;
-                justify-content: center;
-                align-items: flex-start;
 
                 img {
                     transition: all 1s ease;
@@ -462,6 +473,10 @@ body {
                 &:before {
                     opacity: 1;
                     background: linear-gradient(180deg, rgba(0, 0, 0, 0) 55.95%, rgba(0, 0, 0, 0.74) 100%);
+
+                    @include xs {
+                        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 45.95%, rgba(0, 0, 0, 10.74) 90%)
+                    }
                 }
 
                 &:after {
@@ -625,19 +640,6 @@ body {
                     top: 32px;
                 }
 
-            }
-        }
-
-        &.featured {
-
-            .itemSong {
-
-                &__image {
-                    img {
-                        width: 110%;
-                        height: 110%;
-                    }
-                }
             }
         }
     }

@@ -24,7 +24,17 @@
 body {
   font-family: "Barlow", sans-serif;
   font-weight: normal;
+  background-repeat: no-repeat;
+}
+
+body:before {
+  content: '';
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
   background: linear-gradient(122.47deg, #E87867 -1.23%, #F4DCC1 92.07%);
+  left: 0;
+  top: 0;
 }
 
 .logo {
@@ -86,6 +96,7 @@ body {
 @media screen and (max-width: 460px) {
   .wrapper {
     height: auto;
+    min-height: 700px;
     padding: 0px;
     -webkit-box-align: initial;
         -ms-flex-align: initial;
@@ -1014,15 +1025,6 @@ body {
   top: 0;
   border-radius: 10px;
   overflow: hidden;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
 }
 
 .itemSong.featured .itemSong__image img {
@@ -1036,6 +1038,13 @@ body {
   opacity: 1;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(55.95%, rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.74)));
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 55.95%, rgba(0, 0, 0, 0.74) 100%);
+}
+
+@media screen and (max-width: 460px) {
+  .itemSong.featured .itemSong__image:before {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(45.95%, rgba(0, 0, 0, 0)), color-stop(90%, black));
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 45.95%, black 90%);
+  }
 }
 
 .itemSong.featured .itemSong__image:after {
@@ -1221,11 +1230,6 @@ body {
 .itemSong:hover.list .itemSong__plays {
   color: white;
   top: 32px;
-}
-
-.itemSong:hover.featured .itemSong__image img {
-  width: 110%;
-  height: 110%;
 }
 
 .itemSong.down .itemSong__icon.score {
