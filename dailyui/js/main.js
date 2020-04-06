@@ -265,7 +265,6 @@ window.onload = function (e) {
                 anime(element, animation);
             }
         }
-        delay = 1;
     };
 
 
@@ -274,7 +273,7 @@ window.onload = function (e) {
         item.forEach(item => {
             isItemVisible(item, animation);
         })
-
+        delay = 1;
     };
 
 
