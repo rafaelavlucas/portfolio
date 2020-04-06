@@ -231,4 +231,56 @@ window.onload = function (e) {
 
     addEmpty(total);
 
+
+    ///////// Animate Modules //////////
+    var
+        dailyItem = document.querySelectorAll('.dailyItem');
+
+
+    const anime = (element, animation) => {
+        if (element.offsetParent != null) {
+            element.classList.add(animation)
+        }
+    }
+
+    const isInViewport = (element) => {
+        var bounding = element.getBoundingClientRect();
+        return (
+            bounding.bottom >= 0 &&
+            bounding.right >= 0 &&
+            bounding.top <= document.documentElement.clientHeight &&
+            bounding.left <= document.documentElement.clientWidth
+        )
+    };
+    const isModuleVisbibleAnimation = (element, animation) => {
+        if (isInViewport(element)) {
+            if (window.innerWidth >= 800) {
+                anime(element, animation);
+            }
+        }
+    };
+    // for viewport
+    const animeContainers = (container, animation) => {
+
+        container.forEach(item => {
+            isModuleVisbibleAnimation(item, animation);
+            if (item.children) {
+                [...item.children].forEach(element => {
+                    isModuleVisbibleAnimation(element, animation);
+                })
+            }
+        })
+    }
+
+    // for scroll
+    window.addEventListener('scroll', () => {
+        if (window.innerWidth >= 800) {
+            animeContainers(dailyItem, "anime");
+
+        }
+    });
+    // to load the animations
+
+    animeContainers(dailyItem, "anime");
+
 }

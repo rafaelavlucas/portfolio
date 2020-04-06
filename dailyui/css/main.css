@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Barlow:100,200,300,400,500,600,700,800,900&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Roboto+Mono:100,300,400,500,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400,500,600,700,900");
 * {
   margin: 0;
   padding: 0;
@@ -86,7 +86,7 @@ body {
           align-items: center;
   position: relative;
   padding-right: 12px;
-  font-family: "Roboto Mono", monospace;
+  font-family: "Source Code Pro", monospace;
 }
 
 .mainNav__back:before {
@@ -135,7 +135,7 @@ body {
 }
 
 .mainNav__linkBack {
-  color: #8a91a5;
+  color: #8539BE;
   -webkit-transform: translateY(-2px);
           transform: translateY(-2px);
 }
@@ -252,7 +252,7 @@ body {
   content: '';
   width: 100%;
   height: 100%;
-  background: linear-gradient(45deg, #DCE1E4, #E6EAEC);
+  background: white;
   z-index: -1;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
@@ -277,14 +277,14 @@ body {
 
 .mainHeading__title {
   text-transform: uppercase;
-  color: #8a91a5;
+  color: #8539BE;
   letter-spacing: 1px;
 }
 
 .mainHeading__description {
   margin-top: 20px;
-  color: #b5bcc8;
-  font-family: "Roboto Mono", monospace;
+  color: #9c9c9c;
+  font-family: "Source Code Pro", monospace;
 }
 
 .wrapper {
@@ -333,6 +333,527 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.dailyItem.anime {
+  -webkit-animation: itemsFade 0.4s ease backwards;
+          animation: itemsFade 0.4s ease backwards;
+}
+
+.dailyItem.anime:nth-child(1) {
+  -webkit-animation-delay: 0.15s;
+          animation-delay: 0.15s;
+}
+
+.dailyItem.anime:nth-child(2) {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+
+.dailyItem.anime:nth-child(3) {
+  -webkit-animation-delay: 0.45s;
+          animation-delay: 0.45s;
+}
+
+.dailyItem.anime:nth-child(4) {
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+}
+
+.dailyItem.anime:nth-child(5) {
+  -webkit-animation-delay: 0.75s;
+          animation-delay: 0.75s;
+}
+
+.dailyItem.anime:nth-child(6) {
+  -webkit-animation-delay: 0.9s;
+          animation-delay: 0.9s;
+}
+
+.dailyItem.anime:nth-child(7) {
+  -webkit-animation-delay: 1.05s;
+          animation-delay: 1.05s;
+}
+
+.dailyItem.anime:nth-child(8) {
+  -webkit-animation-delay: 1.2s;
+          animation-delay: 1.2s;
+}
+
+.dailyItem.anime:nth-child(9) {
+  -webkit-animation-delay: 1.35s;
+          animation-delay: 1.35s;
+}
+
+.dailyItem.anime:nth-child(10) {
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+}
+
+.dailyItem.anime:nth-child(11) {
+  -webkit-animation-delay: 1.65s;
+          animation-delay: 1.65s;
+}
+
+.dailyItem.anime:nth-child(12) {
+  -webkit-animation-delay: 1.8s;
+          animation-delay: 1.8s;
+}
+
+.dailyItem.anime:nth-child(13) {
+  -webkit-animation-delay: 1.95s;
+          animation-delay: 1.95s;
+}
+
+.dailyItem.anime:nth-child(14) {
+  -webkit-animation-delay: 2.1s;
+          animation-delay: 2.1s;
+}
+
+.dailyItem.anime:nth-child(15) {
+  -webkit-animation-delay: 2.25s;
+          animation-delay: 2.25s;
+}
+
+.dailyItem.anime:nth-child(16) {
+  -webkit-animation-delay: 2.4s;
+          animation-delay: 2.4s;
+}
+
+.dailyItem.anime:nth-child(17) {
+  -webkit-animation-delay: 2.55s;
+          animation-delay: 2.55s;
+}
+
+.dailyItem.anime:nth-child(18) {
+  -webkit-animation-delay: 2.7s;
+          animation-delay: 2.7s;
+}
+
+.dailyItem.anime:nth-child(19) {
+  -webkit-animation-delay: 2.85s;
+          animation-delay: 2.85s;
+}
+
+.dailyItem.anime:nth-child(20) {
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+
+.dailyItem.anime:nth-child(21) {
+  -webkit-animation-delay: 3.15s;
+          animation-delay: 3.15s;
+}
+
+.dailyItem.anime:nth-child(22) {
+  -webkit-animation-delay: 3.3s;
+          animation-delay: 3.3s;
+}
+
+.dailyItem.anime:nth-child(23) {
+  -webkit-animation-delay: 3.45s;
+          animation-delay: 3.45s;
+}
+
+.dailyItem.anime:nth-child(24) {
+  -webkit-animation-delay: 3.6s;
+          animation-delay: 3.6s;
+}
+
+.dailyItem.anime:nth-child(25) {
+  -webkit-animation-delay: 3.75s;
+          animation-delay: 3.75s;
+}
+
+.dailyItem.anime:nth-child(26) {
+  -webkit-animation-delay: 3.9s;
+          animation-delay: 3.9s;
+}
+
+.dailyItem.anime:nth-child(27) {
+  -webkit-animation-delay: 4.05s;
+          animation-delay: 4.05s;
+}
+
+.dailyItem.anime:nth-child(28) {
+  -webkit-animation-delay: 4.2s;
+          animation-delay: 4.2s;
+}
+
+.dailyItem.anime:nth-child(29) {
+  -webkit-animation-delay: 4.35s;
+          animation-delay: 4.35s;
+}
+
+.dailyItem.anime:nth-child(30) {
+  -webkit-animation-delay: 4.5s;
+          animation-delay: 4.5s;
+}
+
+.dailyItem.anime:nth-child(31) {
+  -webkit-animation-delay: 4.65s;
+          animation-delay: 4.65s;
+}
+
+.dailyItem.anime:nth-child(32) {
+  -webkit-animation-delay: 4.8s;
+          animation-delay: 4.8s;
+}
+
+.dailyItem.anime:nth-child(33) {
+  -webkit-animation-delay: 4.95s;
+          animation-delay: 4.95s;
+}
+
+.dailyItem.anime:nth-child(34) {
+  -webkit-animation-delay: 5.1s;
+          animation-delay: 5.1s;
+}
+
+.dailyItem.anime:nth-child(35) {
+  -webkit-animation-delay: 5.25s;
+          animation-delay: 5.25s;
+}
+
+.dailyItem.anime:nth-child(36) {
+  -webkit-animation-delay: 5.4s;
+          animation-delay: 5.4s;
+}
+
+.dailyItem.anime:nth-child(37) {
+  -webkit-animation-delay: 5.55s;
+          animation-delay: 5.55s;
+}
+
+.dailyItem.anime:nth-child(38) {
+  -webkit-animation-delay: 5.7s;
+          animation-delay: 5.7s;
+}
+
+.dailyItem.anime:nth-child(39) {
+  -webkit-animation-delay: 5.85s;
+          animation-delay: 5.85s;
+}
+
+.dailyItem.anime:nth-child(40) {
+  -webkit-animation-delay: 6s;
+          animation-delay: 6s;
+}
+
+.dailyItem.anime:nth-child(41) {
+  -webkit-animation-delay: 6.15s;
+          animation-delay: 6.15s;
+}
+
+.dailyItem.anime:nth-child(42) {
+  -webkit-animation-delay: 6.3s;
+          animation-delay: 6.3s;
+}
+
+.dailyItem.anime:nth-child(43) {
+  -webkit-animation-delay: 6.45s;
+          animation-delay: 6.45s;
+}
+
+.dailyItem.anime:nth-child(44) {
+  -webkit-animation-delay: 6.6s;
+          animation-delay: 6.6s;
+}
+
+.dailyItem.anime:nth-child(45) {
+  -webkit-animation-delay: 6.75s;
+          animation-delay: 6.75s;
+}
+
+.dailyItem.anime:nth-child(46) {
+  -webkit-animation-delay: 6.9s;
+          animation-delay: 6.9s;
+}
+
+.dailyItem.anime:nth-child(47) {
+  -webkit-animation-delay: 7.05s;
+          animation-delay: 7.05s;
+}
+
+.dailyItem.anime:nth-child(48) {
+  -webkit-animation-delay: 7.2s;
+          animation-delay: 7.2s;
+}
+
+.dailyItem.anime:nth-child(49) {
+  -webkit-animation-delay: 7.35s;
+          animation-delay: 7.35s;
+}
+
+.dailyItem.anime:nth-child(50) {
+  -webkit-animation-delay: 7.5s;
+          animation-delay: 7.5s;
+}
+
+.dailyItem.anime:nth-child(51) {
+  -webkit-animation-delay: 7.65s;
+          animation-delay: 7.65s;
+}
+
+.dailyItem.anime:nth-child(52) {
+  -webkit-animation-delay: 7.8s;
+          animation-delay: 7.8s;
+}
+
+.dailyItem.anime:nth-child(53) {
+  -webkit-animation-delay: 7.95s;
+          animation-delay: 7.95s;
+}
+
+.dailyItem.anime:nth-child(54) {
+  -webkit-animation-delay: 8.1s;
+          animation-delay: 8.1s;
+}
+
+.dailyItem.anime:nth-child(55) {
+  -webkit-animation-delay: 8.25s;
+          animation-delay: 8.25s;
+}
+
+.dailyItem.anime:nth-child(56) {
+  -webkit-animation-delay: 8.4s;
+          animation-delay: 8.4s;
+}
+
+.dailyItem.anime:nth-child(57) {
+  -webkit-animation-delay: 8.55s;
+          animation-delay: 8.55s;
+}
+
+.dailyItem.anime:nth-child(58) {
+  -webkit-animation-delay: 8.7s;
+          animation-delay: 8.7s;
+}
+
+.dailyItem.anime:nth-child(59) {
+  -webkit-animation-delay: 8.85s;
+          animation-delay: 8.85s;
+}
+
+.dailyItem.anime:nth-child(60) {
+  -webkit-animation-delay: 9s;
+          animation-delay: 9s;
+}
+
+.dailyItem.anime:nth-child(61) {
+  -webkit-animation-delay: 9.15s;
+          animation-delay: 9.15s;
+}
+
+.dailyItem.anime:nth-child(62) {
+  -webkit-animation-delay: 9.3s;
+          animation-delay: 9.3s;
+}
+
+.dailyItem.anime:nth-child(63) {
+  -webkit-animation-delay: 9.45s;
+          animation-delay: 9.45s;
+}
+
+.dailyItem.anime:nth-child(64) {
+  -webkit-animation-delay: 9.6s;
+          animation-delay: 9.6s;
+}
+
+.dailyItem.anime:nth-child(65) {
+  -webkit-animation-delay: 9.75s;
+          animation-delay: 9.75s;
+}
+
+.dailyItem.anime:nth-child(66) {
+  -webkit-animation-delay: 9.9s;
+          animation-delay: 9.9s;
+}
+
+.dailyItem.anime:nth-child(67) {
+  -webkit-animation-delay: 10.05s;
+          animation-delay: 10.05s;
+}
+
+.dailyItem.anime:nth-child(68) {
+  -webkit-animation-delay: 10.2s;
+          animation-delay: 10.2s;
+}
+
+.dailyItem.anime:nth-child(69) {
+  -webkit-animation-delay: 10.35s;
+          animation-delay: 10.35s;
+}
+
+.dailyItem.anime:nth-child(70) {
+  -webkit-animation-delay: 10.5s;
+          animation-delay: 10.5s;
+}
+
+.dailyItem.anime:nth-child(71) {
+  -webkit-animation-delay: 10.65s;
+          animation-delay: 10.65s;
+}
+
+.dailyItem.anime:nth-child(72) {
+  -webkit-animation-delay: 10.8s;
+          animation-delay: 10.8s;
+}
+
+.dailyItem.anime:nth-child(73) {
+  -webkit-animation-delay: 10.95s;
+          animation-delay: 10.95s;
+}
+
+.dailyItem.anime:nth-child(74) {
+  -webkit-animation-delay: 11.1s;
+          animation-delay: 11.1s;
+}
+
+.dailyItem.anime:nth-child(75) {
+  -webkit-animation-delay: 11.25s;
+          animation-delay: 11.25s;
+}
+
+.dailyItem.anime:nth-child(76) {
+  -webkit-animation-delay: 11.4s;
+          animation-delay: 11.4s;
+}
+
+.dailyItem.anime:nth-child(77) {
+  -webkit-animation-delay: 11.55s;
+          animation-delay: 11.55s;
+}
+
+.dailyItem.anime:nth-child(78) {
+  -webkit-animation-delay: 11.7s;
+          animation-delay: 11.7s;
+}
+
+.dailyItem.anime:nth-child(79) {
+  -webkit-animation-delay: 11.85s;
+          animation-delay: 11.85s;
+}
+
+.dailyItem.anime:nth-child(80) {
+  -webkit-animation-delay: 12s;
+          animation-delay: 12s;
+}
+
+.dailyItem.anime:nth-child(81) {
+  -webkit-animation-delay: 12.15s;
+          animation-delay: 12.15s;
+}
+
+.dailyItem.anime:nth-child(82) {
+  -webkit-animation-delay: 12.3s;
+          animation-delay: 12.3s;
+}
+
+.dailyItem.anime:nth-child(83) {
+  -webkit-animation-delay: 12.45s;
+          animation-delay: 12.45s;
+}
+
+.dailyItem.anime:nth-child(84) {
+  -webkit-animation-delay: 12.6s;
+          animation-delay: 12.6s;
+}
+
+.dailyItem.anime:nth-child(85) {
+  -webkit-animation-delay: 12.75s;
+          animation-delay: 12.75s;
+}
+
+.dailyItem.anime:nth-child(86) {
+  -webkit-animation-delay: 12.9s;
+          animation-delay: 12.9s;
+}
+
+.dailyItem.anime:nth-child(87) {
+  -webkit-animation-delay: 13.05s;
+          animation-delay: 13.05s;
+}
+
+.dailyItem.anime:nth-child(88) {
+  -webkit-animation-delay: 13.2s;
+          animation-delay: 13.2s;
+}
+
+.dailyItem.anime:nth-child(89) {
+  -webkit-animation-delay: 13.35s;
+          animation-delay: 13.35s;
+}
+
+.dailyItem.anime:nth-child(90) {
+  -webkit-animation-delay: 13.5s;
+          animation-delay: 13.5s;
+}
+
+.dailyItem.anime:nth-child(91) {
+  -webkit-animation-delay: 13.65s;
+          animation-delay: 13.65s;
+}
+
+.dailyItem.anime:nth-child(92) {
+  -webkit-animation-delay: 13.8s;
+          animation-delay: 13.8s;
+}
+
+.dailyItem.anime:nth-child(93) {
+  -webkit-animation-delay: 13.95s;
+          animation-delay: 13.95s;
+}
+
+.dailyItem.anime:nth-child(94) {
+  -webkit-animation-delay: 14.1s;
+          animation-delay: 14.1s;
+}
+
+.dailyItem.anime:nth-child(95) {
+  -webkit-animation-delay: 14.25s;
+          animation-delay: 14.25s;
+}
+
+.dailyItem.anime:nth-child(96) {
+  -webkit-animation-delay: 14.4s;
+          animation-delay: 14.4s;
+}
+
+.dailyItem.anime:nth-child(97) {
+  -webkit-animation-delay: 14.55s;
+          animation-delay: 14.55s;
+}
+
+.dailyItem.anime:nth-child(98) {
+  -webkit-animation-delay: 14.7s;
+          animation-delay: 14.7s;
+}
+
+.dailyItem.anime:nth-child(99) {
+  -webkit-animation-delay: 14.85s;
+          animation-delay: 14.85s;
+}
+
+.dailyItem.anime:nth-child(100) {
+  -webkit-animation-delay: 15s;
+          animation-delay: 15s;
+}
+
+@-webkit-keyframes itemsFade {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(100px) scaleY(1.5);
+            transform: translateY(100px) scaleY(1.5);
+  }
+}
+
+@keyframes itemsFade {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(100px) scaleY(1.5);
+            transform: translateY(100px) scaleY(1.5);
+  }
 }
 
 .dailyItem__image {
@@ -483,8 +1004,8 @@ body {
   letter-spacing: -5px;
   color: white;
   text-align: right;
-  font-weight: 300;
-  font-family: "Roboto Mono", monospace;
+  font-weight: 400;
+  font-family: "Source Code Pro", monospace;
 }
 
 @media screen and (max-width: 799px) {
