@@ -194,7 +194,7 @@ window.onload = function (e) {
                     </article>
                     </div>
                     <div class="dailyItem__image"> 
-                        <img src="${img}">
+                        <img src="${img}" alt="Daily UI ${name} - ${desc}">
                     </div>
                 
             </a>`;
@@ -220,7 +220,7 @@ window.onload = function (e) {
                     </article>
                     </div>
                     <div class="dailyItem__image"> 
-                        <img src="${img2}">
+                        <img src="${img2}" alt="${desc2}">
                     </div>
             </div>`;
             itemContainer.insertAdjacentHTML('beforeend', template);
