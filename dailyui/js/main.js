@@ -258,33 +258,35 @@ window.onload = function (e) {
             bounding.left <= document.documentElement.clientWidth
         )
     };
-    const isModuleVisbibleAnimation = (element, animation) => {
+
+    const isItemVisible = (element, animation) => {
         if (isInViewport(element)) {
             if (window.innerWidth >= 800) {
                 anime(element, animation);
             }
         }
+        delay = 1;
     };
 
 
     // for viewport
-    const animeContainers = (container, animation) => {
-        container.forEach(item => {
-            isModuleVisbibleAnimation(item, animation);
+    const animeItem = (item, animation) => {
+        item.forEach(item => {
+            isItemVisible(item, animation);
         })
-        delay = 1;
+
     };
 
 
     // for scroll
     window.addEventListener('scroll', () => {
         if (window.innerWidth >= 800) {
-            animeContainers(dailyItem, "anime");
+            animeItem(dailyItem, "anime");
         }
 
     });
     // to load the animations
 
-    animeContainers(dailyItem, "anime");
+    animeItem(dailyItem, "anime");
 
 }
