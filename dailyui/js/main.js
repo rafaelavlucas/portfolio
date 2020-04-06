@@ -233,15 +233,20 @@ window.onload = function (e) {
 
 
     ///////// Animate Modules //////////
-    var
-        dailyItem = document.querySelectorAll('.dailyItem');
+    const dailyItem = document.querySelectorAll('.dailyItem');
 
 
     const anime = (element, animation) => {
         if (element.offsetParent != null) {
-            element.classList.add(animation)
+
+            if (!element.classList.contains(animation)) {
+                element.classList.add(animation);
+
+                element.style.animationDelay = `${delay}` * 0.15 + "s";
+                delay++;
+            }
         }
-    }
+    };
 
     const isInViewport = (element) => {
         var bounding = element.getBoundingClientRect();
@@ -264,19 +269,15 @@ window.onload = function (e) {
 
         container.forEach(item => {
             isModuleVisbibleAnimation(item, animation);
-            if (item.children) {
-                [...item.children].forEach(element => {
-                    isModuleVisbibleAnimation(element, animation);
-                })
-            }
+
         })
     }
+    var delay = 1;
 
     // for scroll
     window.addEventListener('scroll', () => {
         if (window.innerWidth >= 800) {
             animeContainers(dailyItem, "anime");
-
         }
     });
     // to load the animations

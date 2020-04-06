@@ -347,7 +347,7 @@ body {
     &.anime {
         animation: itemsFade 0.4s ease backwards;
 
-        @include delay;
+        // @include delay;
 
         @keyframes itemsFade {
             0% {
