@@ -345,14 +345,19 @@ body {
     justify-content: center;
 
     &.anime {
-        animation: itemsFade 0.4s ease backwards;
+        animation: itemsFade 0.6s ease backwards;
 
         // @include delay;
 
         @keyframes itemsFade {
             0% {
                 opacity: 0;
-                transform: translateY(100px) scaleY(1.5);
+                transform: translateY(160px) scaleY(1.5);
+            }
+
+            20% {
+                opacity: 0;
+
             }
 
         }
