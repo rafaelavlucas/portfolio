@@ -234,6 +234,7 @@ window.onload = function (e) {
 
     ///////// Animate Modules //////////
     const dailyItem = document.querySelectorAll('.dailyItem');
+    let delay = 1;
 
 
     const anime = (element, animation) => {
@@ -242,7 +243,7 @@ window.onload = function (e) {
             if (!element.classList.contains(animation)) {
                 element.classList.add(animation);
 
-                element.style.animationDelay = `${delay}` * 0.15 + "s";
+                element.style.animationDelay = `${delay}` * 0.2 + "s";
                 delay++;
             }
         }
@@ -264,21 +265,23 @@ window.onload = function (e) {
             }
         }
     };
+
+
     // for viewport
     const animeContainers = (container, animation) => {
-
         container.forEach(item => {
             isModuleVisbibleAnimation(item, animation);
-
         })
-    }
-    var delay = 1;
+        delay = 1;
+    };
+
 
     // for scroll
     window.addEventListener('scroll', () => {
         if (window.innerWidth >= 800) {
             animeContainers(dailyItem, "anime");
         }
+
     });
     // to load the animations
 
