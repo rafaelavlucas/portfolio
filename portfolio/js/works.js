@@ -4,7 +4,7 @@ var works = [{
         title: "Daily UI Challenge",
         year: "On going",
         category: "UI Design, Front-End Development",
-        url: "/dailyui",
+        url: "https://rafaelalucas.com/dailyui",
         thumb: "images/works/dailyui/dailyui_07.jpg",
         fullClass: true,
         featured: true,
