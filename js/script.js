@@ -29,17 +29,17 @@ window.onload = function (e) {
     const social = [{
             name: "Linkedin",
             icon: "assets/linkedin.svg",
-            url: "",
+            url: "https://www.linkedin.com/in/rafaelalucas",
         },
         {
             name: "Codepen",
             icon: "assets/codepen.svg",
-            url: "",
+            url: "https://codepen.io/rafaelavlucas",
         },
         {
             name: "Dribbble",
             icon: "assets/dribbble.svg",
-            url: "",
+            url: "https://dribbble.com/rafaelalucas",
         },
     ];
 
@@ -107,7 +107,7 @@ window.onload = function (e) {
 
     social.forEach(function (el) {
         const template = ` 
-        <a class="social__item" href="${el.url}">
+        <a class="social__item" href="${el.url}" target="_blank">
         <img class="social__icon icon" src="${el.icon}" alt="${el.name}">
         </a>
         `;
