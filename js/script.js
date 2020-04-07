@@ -1,155 +1,142 @@
 window.onload = function (e) {
 
+    const sections = [{
+            title: "Portfolio",
+            image: ["assets/portfolio1.jpg", "assets/portfolio2.jpg", "assets/portfolio3.jpg", "assets/portfolio4.jpg", "assets/portfolio5.jpg", "assets/portfolio6.jpg"],
+            description: "Seleccion of works, featuring UI Design, branding, packaging and others. Get to know me!",
+            url: "/portfolio",
+            button: "enter",
+            class: ""
+        },
+        {
+            title: "Daily UI",
+            image: ["assets/dailyui1.jpg", "assets/dailyui2.jpg", "assets/dailyui3.jpg", "assets/dailyui4.jpg", "assets/dailyui5.jpg", "assets/dailyui6.jpg"],
+            description: "Daily UI Challenge progress, all designed and coded by myself.",
+            url: "/dailyui",
+            button: "enter",
+            class: ""
+        },
+        {
+            title: "Showreel",
+            image: ["assets/showreel1.jpg", "assets/showreel2.jpg", "assets/showreel3.jpg", "assets/showreel4.jpg", "assets/showreel5.jpg", "assets/showreel6.jpg"],
+            description: "Quick way to check most of my UI designs and interactions, all coded by me.",
+            url: "#",
+            button: "watch",
+            class: "video"
+        },
+    ];
 
-    /* Sticky Go Back */
+    const social = [{
+            name: "Linkedin",
+            icon: "assets/linkedin.svg",
+            url: "",
+        },
+        {
+            name: "Codepen",
+            icon: "assets/codepen.svg",
+            url: "",
+        },
+        {
+            name: "Dribbble",
+            icon: "assets/dribbble.svg",
+            url: "",
+        },
+    ];
 
-    var goBack = document.querySelector('.go-back'),
-        workDetail = document.querySelector('.work-detail');
-
-    window.addEventListener('scroll', fixedGoBack);
-
-    function fixedGoBack() {
-        var body = document.querySelector('body');
-
-        window.addEventListener('scroll', fixedGoBack)
-        if (window.pageYOffset >= 190) {
-
-            goBack ? goBack.classList.add('fixed') : "";
-
-        } else {
-            goBack ? goBack.classList.add('not-fixed') : "";
-
-            setTimeout(() => {
-                goBack ? goBack.classList.remove('fixed') : "";
-                goBack ? goBack.classList.remove('not-fixed') : "";
-            }, 200);
-        }
-
-
-        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-            goBack ? goBack.classList.remove('fixed') : "";
-            window.removeEventListener('scroll', fixedGoBack)
-        } else {
-            window.addEventListener('scroll', fixedGoBack)
-        }
-    }
-
-    if (workDetail) {
-        fixedGoBack();
-    }
-
-
-    /* Open Menu bar */
-
-    var iconMenu = document.querySelector('.iconmenu'),
-        iconOpen = document.querySelector('.iconopen'),
-        navBar = document.querySelector('.nav');
-
-    iconMenu.addEventListener('click', openNav);
-
-    function openNav() {
-
-        if (iconOpen.classList.contains('close')) {
-            iconOpen.classList.remove('close');
-        } else {
-            iconOpen.classList.add('close');
-        }
-
-        if (navBar.classList.contains('navshow')) {
-            navBar.classList.remove('navshow');
-        } else {
-            navBar.classList.add('navshow');
-        }
+    const documents = [{
+            name: "download CV",
+            icon: "assets/download.svg",
+            url: "assets/RafaelaLucas-CV.pdf",
+        },
+        {
+            name: "send email",
+            icon: "assets/email.svg",
+            url: "mailto: rafaelavlucas@gmail.com",
+        },
+    ];
+    const intro = document.querySelector('.intro'),
+        socialItems = document.querySelector('.social');
 
 
-    };
-    /* end Open Menu bar */
+    // Add the Intro Sections
+    sections.forEach(function (el) {
+        const randomImage = Math.floor(Math.random() * el.image.length);
+        const template = `
+        <a class="introItem ${el.class}" href="${el.url}">
+            <figure class="introItem__image">
+                    <img src="${el.image[randomImage]}" alt="">
+            </figure>
+            <div class="introItem__content">
+                <h2 class="introItem__title">${el.title}</h2>
+                <p class="introItem__text">${el.description}</p>
+                <div class="introItem__button"><p>${el.button}</p><span></span></div>
+            </div>
+        </a>
+        `;
 
+        intro.insertAdjacentHTML("beforeend", template);
 
-    /* Dynamic footer Year */
-
-    document.getElementById("year").innerHTML = new Date().getFullYear();
-    /* end Dynamic footer Year */
-
-
-    /* Back to top */
-    var toTop = document.getElementById("scrollme");
-
-    toTop.addEventListener("click", function () {
-        scrollToTop(600);
-    });
-
-    function scrollToTop(scrollDuration) {
-        var scrollStep = -window.scrollY / (scrollDuration / 15),
-            scrollInterval = setInterval(function () {
-                if (window.scrollY != 0) {
-                    window.scrollBy(0, scrollStep);
-                } else clearInterval(scrollInterval);
-            }, 15);
-    }
-    /* end Back to top */
-
-
-    ///////// Animate Modules //////////
-    var module = document.querySelectorAll('.section'),
-        workImg = document.querySelectorAll('.work'),
-        timelineItem = document.querySelectorAll('.timeline-item');
-
-
-    const anime = (element, animation) => {
-        if (element.offsetParent != null) {
-            element.classList.add(animation)
-        }
-    }
-
-    const isInViewport = (element) => {
-        var bounding = element.getBoundingClientRect();
-        return (
-            bounding.bottom >= 0 &&
-            bounding.right >= 0 &&
-            bounding.top <= document.documentElement.clientHeight &&
-            bounding.left <= document.documentElement.clientWidth
-        )
-    };
-    const isModuleVisbibleAnimation = (element, animation) => {
-        if (isInViewport(element)) {
-            if (window.innerWidth >= 800) {
-                anime(element, animation);
-            }
-        }
-    };
-    // for viewport
-    const animeContainers = (container, animation) => {
-
-        container.forEach(item => {
-            isModuleVisbibleAnimation(item, animation);
-            if (item.children) {
-                [...item.children].forEach(element => {
-                    isModuleVisbibleAnimation(element, animation);
-                })
-            }
-        })
-    }
-
-    // for scroll
-    window.addEventListener('scroll', () => {
-        if (window.innerWidth >= 800) {
-            animeContainers(module, "anime");
-            animeContainers(workImg, "animeWork");
-            animeContainers(timelineItem, "animeTimeline");
-        }
     })
-    // to load the animations
-    animeContainers(module, "anime");
-    animeContainers(workImg, "animeWork");
-    animeContainers(timelineItem, "animeTimeline");
+
+    //Animate Intro Section on Hover
+    const introItem = document.querySelectorAll('.introItem');
+    introItem.forEach(function (el) {
+        el.addEventListener("mouseover", animeIn);
+        el.addEventListener("mouseleave", animeOut);
+    })
+
+    function animeIn(e) {
+        introItem.forEach(function (el) {
+            el.style.opacity = "0.5";
+            el.style.transform = "scale(0.95)";
+        });
+        e.currentTarget.style.opacity = "1";
+        e.currentTarget.style.transform = "scale(1)";
+    };
+
+    function animeOut() {
+        introItem.forEach(function (el) {
+            el.style.opacity = "1";
+            el.style.transform = "scale(1)";
+        });
+
+    };
+
+
+    // Add Social Media on footer
+
+    social.forEach(function (el) {
+        const template = ` 
+        <a class="social__item" href="${el.url}">
+        <img class="social__icon icon" src="${el.icon}" alt="${el.name}">
+        </a>
+        `;
+
+        socialItems.insertAdjacentHTML("beforeend", template);
+    })
+
+    documents.forEach(function (el) {
+        const template = ` 
+        <a class="documents__item" href="${el.url}" target="_blank">
+        <p class="documents__name">${el.name}</p>
+        <img class="documents__icon icon" src="${el.icon}" alt="${el.name}">
+        </a>
+        `;
+
+        document.querySelector('.documents').insertAdjacentHTML("beforeend", template);
+    })
+
+    // Make the wrapper 100vh on mobile
+    if (window.innerWidth <= 899) {
+        document.querySelector('#wrapper').style.height = window.innerHeight + "px";
+    }
+
 
     //open Modal
 
-    const btnVideo = document.querySelector('.btnVideo'),
+    const btnVideo = document.querySelector('.video'),
         modalVideo = document.querySelector('.modal'),
-        iconCloseVideo = document.querySelector('.modal__icon'),
-        body = document.querySelector('body');
+        iconCloseVideo = document.querySelector('.modal__icon');
 
     btnVideo.addEventListener("click", openVideo);
 
@@ -170,6 +157,5 @@ window.onload = function (e) {
         body.style.overflow = "visible";
     };
     document.querySelector('.modal').style.height = window.innerHeight + "px";
-
 
 };

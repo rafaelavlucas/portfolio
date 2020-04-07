@@ -14,7 +14,7 @@
 
 // 800
 @mixin sm {
-    @media (max-width: 799px) {
+    @media (max-width: 899px) {
         @content;
     }
 }
@@ -33,28 +33,21 @@
     }
 }
 
-@mixin animationBeforeState {
-    opacity: 0;
-    transform: translateY(100px);
-    transition: all 1.2s cubic-bezier(0.54, 0.17, 0.12, 1);
-
-    @include sm {
-        opacity: 1;
-        transform: translate(0);
+@mixin delay {
+    @for $i from 1 through 100 {
+        &:nth-child(#{$i}) {
+            animation-delay: #{0.4 + $i * 0.2}s;
+        }
     }
-
 }
 
-@mixin animationAfterState {
-    opacity: 1;
-    transform: translateY(0px);
-}
 
 /*** Colours Variables ***/
 /*main*/
 //$m-01: #698fb7;
 
 $m-01: #8539BE;
+$m-02: #be67fe;
 
 
 /*neutrals*/
@@ -62,10 +55,10 @@ $neu-01: #f9f9f9;
 $neu-01a: #f6f6f6;
 $neu-02: #f0f0f0;
 $neu-03: #ccc;
-$neu-04: #848484;
-$neu-05: #525252;
-$neu-06: #4a4a4a;
-$neu-07: #383838;
+$neu-04: #555555;
+$neu-05: #1e1e1e;
+$neu-06: #141414;
+$neu-07: #0d0d0d;
 
 $font-01: 'Barlow',
 sans-serif;
@@ -77,6 +70,27 @@ monospace;
 
 /* // General Elements \\  */
 
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: 0;
+    -webkit-tap-highlight-color: transparent;
+    text-decoration: none;
+    color: inherit;
+    box-sizing: border-box;
+
+    &:focus {
+        outline: 0;
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+}
+
 body {
     font-family: sans-serif;
     font-family: $font-01;
@@ -86,18 +100,16 @@ body {
     font-size: 15px;
     transition: all .3s ease-in-out;
     -webkit-tap-highlight-color: transparent;
-
-    &.no-scroll {
-        overflow: hidden;
-    }
+    background-color: $neu-06;
+    overflow: hidden;
 }
 
 #wrapper {
     width: 100%;
+    height: 100vh;
     margin: 0;
     padding: 0;
-    position: relative;
-    transition: all .3s ease-in-out;
+
 }
 
 /* // Selected Elements \\  */
@@ -111,828 +123,378 @@ body {
     color: #ffffff;
 }
 
-
-/*  // Components \\  */
-button {
-    color: $neu-05;
-    display: inline-block;
-    padding: 15px 15px 15px 18px;
-    text-align: center;
-    letter-spacing: 5px;
-    background-color: $neu-01a;
-    transition: all .6s ease;
-    font-size: 14px;
-    cursor: pointer;
-    position: relative;
-    z-index: 1;
-    font-family: $font-02;
-    font-weight: 500;
-    border: 0;
-    margin: 0 auto;
-    margin-top: 40px;
+.intro {
     display: flex;
-    justify-content: center;
-
-    &:after {
-        content: '';
-        width: 0%;
-        height: 2px;
-        background-color: $m-01;
-        border-radius: 20px;
-        position: absolute;
-        bottom: 0;
-        transition: all 0.7s ease;
-    }
-
-    &:before {
-        content: '';
-        position: absolute;
-        background-color: #fff;
-        width: 0%;
-        height: 100%;
-        z-index: -1;
-        top: 0;
-        transition: all 0.5s ease;
-    }
-
-    &:hover {
-        color: $m-01;
-
-        @include sm {
-            color: $neu-04;
-        }
-
-        &:after {
-            width: 30%;
-
-            @include sm {
-                display: none;
-            }
-        }
-
-        &:before {
-            width: 102%;
-
-            @include sm {
-                display: none;
-            }
-        }
-    }
-
-    &:focus {
-        outline: 0;
-    }
-
-    &.btnHeader {
-        //position: absolute;
-        width: auto;
-    }
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-    cursor: pointer;
-}
-
-p {
-    color: $neu-05;
-    font-size: 18px;
-    padding: 0;
-    margin: 0;
-    line-height: 1.8;
-    letter-spacing: 0.7;
-    transition: all 0.3s ease;
+    height: calc(100% - 80px);
 
     @include sm {
-        font-size: 14px;
+        flex-direction: column;
+        height: calc(100% - 140px);
     }
 }
 
-.links {
-    color: $m-01;
-    position: relative;
-    font-family: $font-02;
-    font-weight: 400;
-    display: inline-flex;
-    justify-content: center;
-    font-size: 15px;
-
-    &:after {
-        content: '';
-        width: 0%;
-        height: 2px;
-        border-radius: 20px;
-        background-color: $m-01;
-        position: absolute;
-        right: 0;
-        bottom: 0px;
-        transition: all 0.5s ease;
-
-        @include sm {
-            width: 0;
-            text-decoration: underline;
-        }
-    }
-
-    &:hover {
-        &:after {
-            width: 100%;
-            left: 0;
-
-            @include sm {
-                display: none;
-            }
-        }
-    }
-}
-
-/*  // Texts \\  */
-
-.main-title {
-    font-size: 35px;
-    color: $neu-04;
-    font-family: $font-01;
-    font-weight: 100;
-    letter-spacing: 10px;
-    text-align: center;
-    margin: 0;
-    margin-bottom: 60px;
-    text-transform: uppercase;
-    transition: all .5s ease;
-    position: relative;
+.introItem {
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    padding: 0 0 20px 0;
-
-    @include sm {
-        font-size: 25px;
-        margin-bottom: 40px;
-    }
-
-    &:after {
-        background-color: $m-01;
-        width: 80px;
-        content: '';
-        height: 2px;
-        border-radius: 20px;
-        position: absolute;
-        transition: all .5s ease;
-        bottom: 0px;
-
-        @include sm {
-            width: 50px;
-        }
-    }
-}
-
-.main-text,
-.cta-text {
-    max-width: 800px;
-    text-align: center;
-    margin: 0 auto;
-    letter-spacing: 0.2px;
-
-    @include sm {
-        padding: 0 10px;
-        box-sizing: border-box;
-    }
-
-    &.left {
-        text-align: left;
-    }
-}
-
-.cta-text {
-    margin-top: 40px;
-}
-
-#scrollme {
-    margin: 0 auto;
-    height: 50px;
-    cursor: pointer;
-    width: 120px;
-
-    .backtop {
-        position: relative;
-        color: $m-01;
-
-        p {
-            font-size: 12px;
-            font-family: $font-02;
-            font-weight: 400;
-            letter-spacing: 2px;
-            transition: all 0.6s ease;
-            color: $m-01;
-            text-align: center;
-            margin: 0 auto;
-            cursor: pointer;
-            position: relative;
-            opacity: 0;
-            transform: translateY(10px);
-        }
-
-        .arrow-top {
-
-            &:before,
-            &:after {
-                content: '';
-                position: absolute;
-                width: 20px;
-                height: 2px;
-                position: absolute;
-                top: 20px;
-                left: calc(50% - 10px);
-                border-radius: 20px;
-                transition: all 0.4s ease-in-out;
-                background-color: $m-01;
-                opacity: 1;
-
-                @include sm {
-                    width: 15px;
-                }
-            }
-
-
-            &:before {
-                transform: rotate(45deg);
-                margin-left: 6px;
-
-                @include sm {
-                    margin-left: 5px;
-                }
-            }
-
-            &:after {
-                transform: rotate(-45deg);
-                margin-left: -7px;
-
-                @include sm {
-                    margin-left: -5px;
-                }
-            }
-        }
-    }
-
-    &:hover {
-        .backtop {
-            p {
-                opacity: 1;
-                transform: translateY(0px);
-                font-size: 12px;
-
-                @include sm {
-                    display: none;
-                }
-            }
-
-            .arrow-top {
-
-                &:before,
-                &:after {
-                    top: 22px;
-                    width: 20px;
-
-                    @include sm {
-                        top: 20px;
-                    }
-                }
-
-                &:before {
-                    left: calc(50% - 5px);
-                    transform: rotate(180deg);
-
-                    @include sm {
-                        left: calc(50% - 10px);
-                        transform: rotate(45deg);
-                        width: 15px;
-                        margin-left: 5px;
-                    }
-                }
-
-                &:after {
-                    right: calc(50% - 5px);
-                    transform: rotate(-180deg);
-
-                    @include sm {
-                        right: calc(50% - 10px);
-                        transform: rotate(-45deg);
-                        width: 15px;
-                        margin-left: -5px;
-
-                    }
-                }
-            }
-        }
-    }
-}
-
-/* ------- CONTAINERS ------- */
-
-.content {
-    display: flex;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
-    margin: 0 auto;
-    transition: all 2s cubic-bezier(0.61, 0.01, 0.09, 1.01);
+    background-color: $neu-06;
+    transition: all 0.4s cubic-bezier(0, 0.54, 0.22, 1.46), margin 0.2s ease;
+    position: relative;
+    margin-right: 4px;
+    animation: fade 1s cubic-bezier(0.43, 0.37, 0.08, 1.1) backwards;
+    @include delay;
 
-    &.full {
-
-        &.blue {
-            background-color: $m-01;
+    @keyframes fade {
+        0% {
+            opacity: 0;
+            transform: translateY(-30%);
         }
 
-        &.gray {
-            background-color: $neu-02
-        }
-
-        &.dark {
-            background-color: $neu-07;
-
-            .main-title {
-                color: white;
-            }
-
-            .main-text {
-                color: $neu-03;
-            }
-
-            .links {
-                color: white;
-            }
-        }
     }
-}
-
-.section {
-    width: 100%;
-    max-width: 1280px;
-    box-sizing: border-box;
-    padding: 80px 5%;
-    transition: all 2s cubic-bezier(0.61, 0.01, 0.09, 1.01);
-    margin: auto;
 
     @include sm {
-        padding: 40px 5%;
+        margin-right: 0px;
+        margin-bottom: 4px;
     }
 
-    @include animationBeforeState;
+    &__image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.4s ease;
 
-    &:nth-of-type(2) {
-        transition-delay: 0.4s;
-    }
-}
-
-/* --------- MODULES -------- */
-
-nav {
-
-    .iconmenu {
-        width: 40px;
-        height: 40px;
-        margin: 25px;
-        position: fixed;
-        z-index: 4;
-        cursor: pointer;
-        right: 0;
-
-        @include sm {
-            margin: 10px;
-        }
-
-        .iconopen {
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        &:after,
+        &:before {
+            content: '';
             width: 100%;
             height: 100%;
-            background-color: $neu-01;
-            border-radius: 100%;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            background-color: #131318;
+            opacity: 1;
+            transition: all 0.4s ease;
+            z-index: 1;
+            opacity: 0.90;
+        }
 
-            span {
-                position: absolute;
-                width: 20px;
-                height: 2px;
-                border-radius: 20px;
-                transition: all 0.3s ease;
-                background-color: $m-01;
-                display: flex;
-                align-items: center;
-                justify-content: center;
+        &:after {
+            background-color: $m-01;
+            height: 100%;
+            opacity: 0;
+            transition: all 0.8s ease;
 
-                &:before,
-                &:after {
-                    position: absolute;
-                    content: '';
-                    width: 20px;
-                    height: 100%;
-                    background-color: inherit;
-                }
-
-                &:before {
-                    transition: all 0.3s ease;
-                    transform: translateY(-6px);
-                }
-
-                &:after {
-                    transition: all 0.4s ease;
-                    transform: translateY(6px);
-                }
-            }
-
-            &.close {
-                transition: all 0.3s ease;
-                background-color: transparent;
-
-                span {
-                    background-color: $neu-03;
-                    width: 0px;
-
-                    &:before {
-                        width: 20px;
-                        transform: rotate(45deg);
-                    }
-
-                    &:after {
-                        width: 20px;
-                        transform: rotate(-45deg);
-                    }
-                }
+            @include sm {
+                display: none;
             }
         }
 
-        &:hover {
-            .iconopen {
-                span {
-                    &:before {
-                        width: 16px;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%);
+            transition: all 0.4s ease;
+        }
+    }
 
-                        @include sm {
-                            width: 20px;
-                        }
-                    }
-
-                    &:after {
-                        width: 16px;
-
-                        @include sm {
-                            width: 20px;
-                        }
-                    }
-                }
-
-                &.close {
-                    span {
-                        background-color: $neu-04;
-
-                        @include sm {
-                            background-color: $neu-03;
-                        }
-
-                        &:before {
-                            width: 20px;
-                        }
-
-                        &:after {
-                            width: 20px;
-                        }
-                    }
-                }
+    &:nth-of-type(2) {
+        .introItem__image {
+            &:before {
+                //   background-color: $m-03;
             }
         }
     }
 
-    .nav {
-        background-color: white;
-        margin: 0;
-        width: 100%;
-        height: 90px;
-        position: fixed;
-        top: -95px;
-        transition: all .5s ease-in;
-        box-shadow: 0px -10px 20px black;
-        z-index: 3;
+    &:nth-of-type(3) {
+        .introItem__image {
+            &:before {
+                // background-color: $m-04;
+            }
+        }
+    }
+
+    &__content {
         display: flex;
-        align-items: center;
+        flex-direction: column;
         justify-content: center;
+        align-items: center;
+        z-index: 2;
+        transition: all 0.2s ease;
+        color: $m-02;
+
+    }
+
+    &__title {
+        letter-spacing: 2.5px;
+        margin-bottom: 48px;
+        text-transform: uppercase;
+        font-size: 28px;
+        font-weight: 500;
 
         @include sm {
-            top: -65px;
-            height: 60px;
+            font-size: 18px;
+            margin-bottom: 16px;
         }
+    }
 
-        &.navshow {
-            transition: all .5s ease-out;
-            top: 0;
+    &__text {
+        color: white;
+        opacity: 0;
+        height: 0;
+        transition: all 0.2s ease;
+        max-width: 400px;
+        padding: 0 40px;
+        margin-bottom: 48px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        transform: translateY(60px) scaleY(2);
+        font-size: 16px;
+        font-family: $font-02;
+        line-height: 26px;
+        letter-spacing: 1px;
+
+        @include sm {
+            display: none;
         }
+    }
 
-        /*  // Menu List \\  */
-        .menu {
+    &__button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        span {
+            display: block;
+            width: 48px;
+            height: 48px;
+            position: relative;
             display: flex;
-            align-items: center;
             justify-content: center;
-            flex-wrap: wrap;
-            width: 100%;
+            align-items: center;
+            transition: all 0.4s 0.3s ease;
+            margin: 0;
 
-            .menu-item {
-                color: $neu-04;
-                list-style: none;
-                width: 30%;
-                min-width: 60px;
-                max-width: 250px;
-                letter-spacing: 4px;
-                height: 50px;
-                transition: all 0.4s ease;
-                position: relative;
-                font-family: $font-02;
-                font-weight: 400;
-                font-size: 14px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
+            @include sm {
+                transform: scale(0.6);
+            }
 
-                @include sm {
-                    width: 25%;
-                    min-width: 80px;
-                    font-size: 13px;
-                    letter-spacing: 2px;
-                    height: 30px;
+            &:after,
+            &:before {
+                content: '';
+                width: 100%;
+                height: 4px;
+                position: absolute;
+                background-color: $m-02;
+                opacity: 1;
+                transition: all 0.3s 0.3s ease;
+                z-index: 1;
+            }
+
+            &:after {
+                width: 50%;
+                height: 50%;
+                background-color: transparent;
+                border-top: solid 4px $m-02;
+                border-right: solid 4px $m-02;
+                transform: rotate(45deg);
+                right: 0;
+                transition: all 0.3s 0.4s ease, border 0.2s 0.4s ease;
+            }
+        }
+
+        p {
+            font-family: $font-02;
+            font-weight: 500;
+            opacity: 0;
+            font-size: 20px;
+            transition: all 0.2s 0.3s ease;
+            letter-spacing: 4px;
+            transform: translateY(40px);
+
+            @include sm {
+                display: none;
+            }
+        }
+    }
+
+    &:hover {
+        width: calc(100% + 300px);
+        background-color: $m-01;
+        margin-right: 0px;
+
+
+        .introItem {
+            &__image {
+
+                &:before {
+                    opacity: 0.8;
+
+                    @include sm {
+                        opacity: 0.95;
+                    }
                 }
 
                 &:after {
-                    content: '';
-                    width: 0%;
-                    height: 2px;
-                    border-radius: 20px;
-                    background-color: $m-01;
-                    position: absolute;
-                    bottom: 0;
-                    transition: all 0.4s ease;
+                    opacity: 0.8;
+                }
+            }
+
+            &__content {
+                color: white;
+
+                @include sm {
+                    color: $m-02;
+                }
+            }
+
+            &__text {
+                opacity: 1;
+                height: 100px;
+                transform: translateY(0px);
+                transition: all 0.4s 0.3s ease;
+
+            }
+
+            &__button {
+                p {
+                    opacity: 1;
+                    transform: translateY(0px);
                 }
 
-                &:hover {
-                    color: $m-01;
+                span {
+                    &:before {
+                        width: 200%;
+                        background-color: white;
 
-                    @include sm {
-                        letter-spacing: 2px;
-                        color: $neu-04;
+                        @include sm {
+                            width: 100%;
+                            background-color: $m-02;
+
+                        }
                     }
 
                     &:after {
-                        width: 35px;
+                        height: 0;
+                        transform: rotate(0);
+                        opacity: 0;
+                        border-color: white;
+                        transition: all 0.4s ease;
 
                         @include sm {
-                            width: 0px;
+                            opacity: 1;
+                            height: 50%;
+                            border-color: $m-02;
+                            transform: rotate(45deg);
                         }
-                    }
-                }
-
-                &.current {
-
-                    color: $m-01;
-
-                    &:after {
-                        width: 30px;
-
-                        @include sm {
-                            width: 20px;
-                        }
-
                     }
                 }
             }
+        }
+
+        @include sm {
+            width: 100%;
+
         }
     }
 }
 
 footer {
-    background-color: #313131;
-    height: 100px;
+    height: 80px;
+    background-color: $neu-06;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+
+    @include sm {
+        flex-direction: column-reverse;
+        height: 140px;
+        justify-content: space-around;
+        padding: 10px 24px;
+
+    }
+}
+
+.social {
     display: flex;
     justify-content: center;
     align-items: center;
 
-    @include sm {
-        height: 100px;
-    }
-
-    @include xs {
-        flex-direction: column;
-    }
-
-    p {
-        font-size: 12px;
-        letter-spacing: 1.1;
+    &__title {
+        color: white;
+        margin-right: 40px;
         font-family: $font-02;
-        font-weight: 400;
-        text-align: center;
-        color: $neu-02;
+        font-weight: 500;
+        opacity: 0.3;
+    }
 
-        &:first-child {
-            color: white;
-            margin-right: 10px;
-            opacity: 0.5;
+    &__item {
+        display: flex;
+        margin-right: 24px;
+        transition: all 0.2s ease;
+        opacity: 0.3;
 
-            @include xs {
-                margin: 0;
-            }
+        &:hover {
+            transform: translateY(-4px);
+            opacity: 1;
         }
     }
 }
 
-header {
-    position: relative;
-    height: 650px;
+.documents {
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
 
-    @include lg {
-        height: 600px;
-    }
-
-    @include md {
-        height: 500px;
-    }
-
-    @include sm {
-        height: 360px;
-        background-size: 250px, cover;
-        background-position: center 50px;
-    }
-
-    &:before {
-        background-color: $m-01;
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        left: 0;
-        top: 0;
-        z-index: 0;
-    }
-
-    .header-images {
-        width: 100%;
-        margin: 0 auto;
-        height: 100%;
-        transition: all 0.6s ease-in-out;
-        background-color: $neu-03;
-        display: flex;
-        justify-content: space-around;
-
-        @include sm {
-            background-size: 250px, cover;
-            background-position: center 50px;
-        }
-
-        span {
-            position: relative;
-            top: 0;
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            width: 100%;
-            height: 0%;
-            opacity: 0.5;
-            transition: all 0.6s ease;
-            z-index: 1;
-            -webkit-filter: grayscale(100%);
-            top: 0;
-            /* Safari 6.0 - 9.0 */
-            filter: grayscale(100%);
-            animation: header 1s ease-in-out;
-            animation-fill-mode: forwards;
-
-            &:nth-child(2) {
-                animation-delay: 0.2s;
-            }
-
-            &:nth-child(3) {
-                animation-delay: 0.4s;
-            }
-
-            &:nth-child(4) {
-                animation-delay: 0.6s;
-            }
-
-            @keyframes header {
-                100% {
-                    height: 100%;
-                }
-            }
-
-            &:after {
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                content: '';
-                left: 0;
-                top: 0;
-                background-color: rgba(52, 52, 52, 0.85);
-                transition: all 0.4s ease-in;
-            }
-
-            &:hover {
-                width: 200%;
-                opacity: 1;
-                -webkit-filter: grayscale(0%);
-                filter: grayscale(0%);
-                //z-index: 2;
-
-                @include sm {
-                    width: 25%;
-                    -webkit-filter: grayscale(100%);
-                    filter: grayscale(100%);
-                    opacity: 0.5;
-                }
-
-                &:after {
-
-                    background-color: rgba(52, 52, 52, 0.5);
-
-                    @include sm {
-                        background-color: rgba(52, 52, 52, 0.85);
-                    }
-                }
-            }
-        }
-    }
-
-    .header-content {
-        position: absolute;
-        transition: all .8s ease;
+    &__item {
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-direction: column;
-        z-index: 1;
-        cursor: default;
-        animation: headerText 0.6s 1.2s ease backwards;
+        transition: all 0.2s ease;
+        opacity: 0.3;
 
-        @keyframes headerText {
-            0% {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        &:first-child {
+            margin-right: 40px;
         }
 
-        h1 {
-            font-size: 50px;
-            color: white;
-            font-weight: 100;
-            letter-spacing: 2px;
-            -webkit-transition: all .6s ease-in-out;
-            transition: all .6s ease-in-out;
-
-
-            @include sm {
-                font-size: 35px;
-            }
+        &:hover {
+            opacity: 1;
+            transform: translateY(-4px);
         }
 
-        .desc {
-            color: white;
-            font-family: $font-02;
-            font-weight: 400;
-            letter-spacing: 8px;
-            font-size: 14px;
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
 
-            &:before {
-                content: '';
-                width: 160px;
-                height: 6px;
-                position: absolute;
-                background-color: $m-01;
-                z-index: -1;
-                transform: translateX(-4px);
-                animation: linePortfolio 0.6s 1.4s ease backwards;
+    }
 
-                @keyframes linePortfolio {
-                    0% {
-                        width: 0;
-                    }
+    &__icon {
+        margin-left: 16px
+    }
 
-                    100% {
-                        width: 160px;
-                    }
-                }
-            }
-        }
+    &__name {
+        font-family: $font-02;
+        font-weight: 500;
+    }
+
+
+
+}
+
+.icon {
+    width: 32px;
+    height: 32px;
+
+    @include sm {
+        width: 24px;
+        height: 24px;
     }
 }
 
@@ -948,8 +510,6 @@ header {
     left: 0;
     visibility: hidden;
     overflow-x: hidden;
-
-
 
     &:before {
         content: '';
@@ -967,7 +527,7 @@ header {
     }
 
     &__container {
-        width: 80%;
+        width: 70%;
         max-width: 1280px;
         margin: 40px auto;
         display: flex;
@@ -1061,1537 +621,4 @@ header {
             }
         }
     }
-}
-
-.filters-container {
-
-    .filters {
-        display: flex;
-        justify-content: space-between;
-        padding: 80px 5% 0 5%;
-        box-sizing: border-box;
-        width: 100%;
-        max-width: 1280px;
-        margin: auto;
-
-        .filter {
-            letter-spacing: 1px;
-            padding: 8px 10px;
-            border-radius: 2px;
-            color: $m-01;
-            display: flex;
-            align-items: center;
-            margin-top: 0;
-
-            &.active-btn {
-                background-color: $m-01;
-                color: white;
-
-                &:hover {
-                    color: white;
-                }
-            }
-
-            &:before {
-                content: '';
-                position: absolute;
-                background-color: $m-01;
-                width: 0%;
-                height: 100%;
-                z-index: -1;
-                top: 0;
-                transition: all 0.5s ease;
-                border-radius: 2px;
-            }
-
-            span {
-                background-color: white;
-                position: absolute;
-                border-radius: 3px;
-                top: 45px;
-                width: 25px;
-                height: 25px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.5);
-                color: $m-01;
-                transition: all 0.3s ease;
-                opacity: 0;
-                transform: translateY(10px);
-
-                @include sm {
-                    opacity: 1;
-                    border: 1px solid $neu-02;
-                    right: -40px;
-                    transform: translateX(0);
-                    top: initial;
-                    box-shadow: none;
-                }
-
-                &:before {
-                    content: '';
-                    position: absolute;
-                    width: 8px;
-                    height: 8px;
-                    background-color: inherit;
-                    top: -3px;
-                    transform: rotate(45deg);
-
-                    @include sm {
-                        left: -4px;
-                        top: initial;
-                        border-left: 1px solid $neu-02;
-                        border-bottom: 1px solid $neu-02;
-
-                    }
-                }
-            }
-
-            &:hover {
-                color: white;
-
-                @include sm {
-                    color: $m-01;
-                }
-
-                &:before {
-                    width: 100%;
-
-                    @include sm {
-                        display: none;
-                    }
-                }
-
-                span {
-                    opacity: 1;
-                    transition: all 0.3s 0.2s ease;
-                    transform: translateY(0px);
-                    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
-
-                    @include sm {
-                        box-shadow: none;
-                    }
-                }
-            }
-        }
-
-        @include sm {
-            display: none;
-            padding-top: 40px;
-        }
-    }
-
-    @include sm {
-        transform: translateX(120%);
-    }
-
-    &.mobile {
-        @include sm {
-            width: 100%;
-            height: 100vh;
-            background-color: white;
-            position: fixed;
-            z-index: 6;
-            top: 0px;
-            left: 0px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: all 0.5s ease-in-out;
-            transform: translateX(120%);
-
-            .close-filters {
-                position: absolute;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                top: 30px;
-                right: 30px;
-                width: 40px;
-                height: 40px;
-                cursor: pointer;
-
-                span {
-                    position: absolute;
-                    width: 0px;
-                    height: 2px;
-                    border-radius: 20px;
-                    transition: all 0.3s ease;
-                    background-color: $neu-03;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-
-                    &:before,
-                    &:after {
-                        position: absolute;
-                        content: '';
-                        width: 20px;
-                        height: 100%;
-                        background-color: inherit;
-                    }
-
-                    &:before {
-
-                        transform: rotate(45deg);
-                    }
-
-                    &:after {
-                        width: 20px;
-                        transform: rotate(-45deg);
-                    }
-                }
-            }
-
-            .filters {
-                flex-direction: column;
-                display: flex;
-                width: 100%;
-                height: 500px;
-                background-color: white;
-                top: 0;
-                transition: all 0.8s 0.5s ease;
-                transform: translateX(100px);
-                opacity: 0;
-
-                &.anime-tags {
-                    opacity: 1;
-                    transform: translateX(0px);
-                }
-            }
-        }
-    }
-
-    &.anime-filters {
-        @include sm {
-            transform: translateX(0%);
-        }
-    }
-}
-
-.works-container {
-
-    .btn-filter {
-        display: none;
-
-        @include sm {
-            display: flex;
-            margin-bottom: 30px;
-            justify-content: space-between;
-            align-items: center;
-
-        }
-
-        .label {
-            display: none;
-
-            @include sm {
-                display: none;
-                width: 100%;
-                text-align: center;
-                font-family: $font-02;
-                font-weight: 400;
-                color: $m-01;
-                margin-left: 20px;
-                font-size: 12px;
-                letter-spacing: 1px;
-            }
-        }
-    }
-
-    .image-container {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-
-
-        @include sm {
-            grid-template-columns: 100%;
-        }
-
-        .work {
-            @include animationBeforeState;
-            display: block;
-            width: calc(50% - 20px);
-            margin: 10px;
-
-            &.animeWork {
-                @include animationAfterState;
-
-                &:nth-of-type(odd) {
-                    transition-delay: 0.4s;
-                }
-            }
-
-
-            @include sm {
-                width: 100%;
-                margin: 10px 0px;
-            }
-
-            &.hide {
-                animation: hide 1s ease;
-                animation-fill-mode: forwards;
-                margin: 0px 10px;
-                z-index: -1;
-                opacity: 1;
-
-                .image {
-                    height: 0;
-                    padding-bottom: 0%;
-                }
-            }
-
-            &.full {
-                width: 100%;
-
-                .image {
-                    padding-bottom: 50%;
-                }
-
-                &.hide {
-                    // animation: hide 1s ease forwards !important;
-                    margin: 0px 10px;
-                    z-index: -1;
-
-                    .image {
-                        height: 0;
-                        padding-bottom: 0%;
-                    }
-                }
-            }
-
-            @keyframes hide {
-
-                50% {
-                    height: 0;
-                    position: absolute;
-                    opacity: 0;
-                    display: none;
-                }
-
-                60% {
-                    position: absolute;
-                    height: 0;
-                    display: none;
-                }
-
-                100% {
-                    opacity: 0;
-                    position: absolute;
-                    height: 0;
-                    display: none;
-                }
-            }
-        }
-    }
-
-    .image {
-        cursor: pointer;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-        padding-bottom: 100%;
-        position: relative;
-
-        .img {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: absolute;
-            background-size: cover;
-            background-position: center center;
-            transition: all 1s ease;
-            width: 100%;
-            height: 100%;
-            top: 0;
-        }
-
-        @include sm {
-            width: 100%;
-            padding-bottom: 50%;
-        }
-
-        /* filtro cinza */
-        &:before {
-            content: '';
-            opacity: 0.1;
-            background-color: #000;
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            transition: all .4s ease;
-            z-index: 1;
-            top: 0;
-
-        }
-
-        /* filtro azul */
-        &:after {
-            position: absolute;
-            content: '';
-            opacity: 0;
-            background-color: $m-01;
-            transition: all .4s ease;
-            width: 90%;
-            height: 90%;
-            z-index: 1;
-            top: 5%;
-            border-radius: 20px;
-        }
-
-        .overlay-title {
-            box-sizing: border-box;
-            font-size: 16px;
-            line-height: 20px;
-            position: absolute;
-            font-weight: 500;
-            opacity: 0;
-            z-index: 2;
-            transition: all .2s ease;
-            color: white;
-            top: calc(50% - 80px);
-            transform: translateY(50%);
-            text-align: center;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            padding: 0 20px;
-            height: 40px;
-            display: flex;
-            align-items: flex-end;
-
-            @include sm {
-                display: none;
-            }
-        }
-
-        .overlay-text {
-            box-sizing: border-box;
-            font-size: 12px;
-            line-height: 18px;
-            position: absolute;
-            opacity: 0;
-            z-index: 2;
-            font-family: $font-02;
-            font-weight: 400;
-            transition: all .2s ease;
-            color: white;
-            bottom: calc(50% - 80px);
-            transform: translateY(50%);
-            text-align: center;
-            padding: 0 20px;
-            height: 40px;
-            display: flex;
-            align-items: flex-start;
-
-            @include sm {
-                display: none;
-            }
-
-            span {
-                opacity: 0.4;
-            }
-        }
-
-        &:hover {
-
-            .img {
-                width: 110%;
-                height: 110%;
-
-                @include sm {
-                    width: 100%;
-                    height: 100%;
-                }
-            }
-
-            /* filtro cinza */
-            &:before {
-                opacity: 0.5;
-
-                @include sm {
-                    opacity: 0.1;
-                }
-            }
-
-            /* filtro azul */
-            &:after {
-                opacity: 0.9;
-                width: 100%;
-                height: 100%;
-                top: 0;
-                border-radius: 0px;
-
-                @include sm {
-                    display: none;
-                }
-            }
-
-            .overlay-title {
-                opacity: 1;
-                transition: all .3s 0.2s ease;
-                top: calc(50% - 50px);
-            }
-
-            .overlay-text {
-                opacity: 0.7;
-                transition: all .3s 0.4s ease;
-                bottom: calc(50% - 50px);
-            }
-        }
-
-        &.big {
-            padding-bottom: 50%;
-        }
-    }
-}
-
-.info-icons {
-
-    .row-icons {
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        justify-items: center;
-
-        @include md {
-            grid-template-columns: repeat(3, 1fr);
-        }
-
-        @include sm {
-            grid-template-columns: repeat(2, 1fr);
-        }
-
-        .icon-section {
-            @include animationBeforeState;
-            width: 120px;
-            text-align: center;
-            position: relative;
-            z-index: 1;
-
-            @include sm {
-                transform: translateY(0px);
-                opacity: 1;
-            }
-
-            &:before {
-                background-color: white;
-                position: absolute;
-                content: '';
-                border-radius: 1px;
-                z-index: 1;
-
-                @include sm {
-                    background-color: $m-01;
-                }
-            }
-
-            &:after {
-                background-color: $m-01;
-                position: absolute;
-                content: '';
-                transition: all 0.4s ease-in-out;
-                border-radius: 1px;
-                z-index: 2;
-            }
-
-            p {
-                font-size: 12px;
-                line-height: 20px;
-                margin: 15 0 0 0;
-                letter-spacing: 0px;
-                font-family: $font-02;
-                font-weight: 400;
-
-                @include sm {
-                    font-size: 11px;
-                    line-height: 18px;
-                    margin: 10 0 0 0;
-                    color: $neu-04;
-                }
-            }
-
-            &:hover {
-                p {
-                    color: $m-01;
-
-                    @include sm {
-                        font-size: 11px;
-                        line-height: 18px;
-                        margin: 10 0 0 0;
-                        color: $neu-04;
-                    }
-                }
-            }
-
-            &:nth-child(1) {
-                &:before {
-                    width: 13px;
-                    height: 12px;
-                    top: 70px;
-                    left: 37px;
-                }
-
-                &:after {
-                    width: 0px;
-                    height: 12px;
-                    top: 70px;
-                    left: 37px;
-                }
-
-                &:hover {
-                    &:after {
-                        width: 13px;
-                    }
-                }
-            }
-
-            &:nth-child(2) {
-                &:before {
-                    width: 52px;
-                    height: 9px;
-                    top: 87px;
-                    left: 25px;
-                }
-
-                &:after {
-                    width: 0px;
-                    height: 9px;
-                    top: 87px;
-                    left: 25px;
-                }
-
-                &:hover {
-                    &:after {
-                        width: 52px;
-                    }
-                }
-            }
-
-            &:nth-child(3) {
-                &:before {
-                    width: 17px;
-                    height: 27px;
-                    top: 58px;
-                    left: 66px;
-                }
-
-                &:after {
-                    width: 17px;
-                    height: 0px;
-                    top: 58px;
-                    left: 66px;
-                }
-
-                &:hover {
-                    &:after {
-                        height: 27px;
-                    }
-                }
-            }
-
-            &:nth-child(4) {
-                &:before {
-                    width: 17px;
-                    height: 17px;
-                    top: 71px;
-                    left: 49px;
-                    z-index: -2;
-                }
-
-                &:after {
-                    width: 17px;
-                    height: 0px;
-                    top: 71px;
-                    left: 49px;
-                    z-index: -1;
-                }
-
-                &:hover {
-                    &:after {
-                        height: 17px;
-                    }
-                }
-            }
-
-            &:nth-child(5) {
-                &:before {
-                    width: 21px;
-                    height: 19px;
-                    top: 88px;
-                    left: 22px;
-                }
-
-                &:after {
-                    width: 0px;
-                    height: 19px;
-                    top: 88px;
-                    left: 22px;
-                }
-
-                &:hover {
-                    &:after {
-                        width: 21px;
-                    }
-                }
-            }
-
-            &:nth-child(6) {
-                &:before {
-                    width: 12px;
-                    height: 12px;
-                    top: 81px;
-                    left: 62px;
-                    border-radius: 50px;
-                }
-
-                &:after {
-                    width: 0px;
-                    height: 0px;
-                    top: 87px;
-                    left: 68px;
-                    border-radius: 50px;
-                }
-
-                &:hover {
-                    &:after {
-                        width: 12px;
-                        height: 12px;
-                        top: 81px;
-                        left: 62px;
-                    }
-                }
-            }
-        }
-
-        &.anime {
-            .icon-section {
-                @include animationAfterState;
-
-                &:nth-child(1) {
-                    transition-delay: 0.4s;
-                }
-
-                &:nth-child(2) {
-                    transition-delay: 0.6s;
-                }
-
-                &:nth-child(3) {
-                    transition-delay: 0.8s;
-                }
-
-                &:nth-child(4) {
-                    transition-delay: 1s;
-                }
-
-                &:nth-child(5) {
-                    transition-delay: 1.2s;
-                }
-
-                &:nth-child(6) {
-                    transition-delay: 1.4s;
-                }
-            }
-        }
-    }
-}
-
-.contacts {
-    p {
-        margin-bottom: 40px;
-        text-align: center;
-
-        @include sm {
-            margin-bottom: 30px;
-        }
-    }
-
-    .social-items {
-        display: flex;
-        justify-content: space-around;
-        transition: all 0.8s 0.4s ease;
-
-
-        /* social item*/
-        .social {
-            @include animationBeforeState();
-            background-color: $neu-06;
-            padding: 100px 0;
-            z-index: 2;
-            width: 100%;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            @include sm {
-                padding: 50px 0px;
-                transform: translateY(0px);
-                opacity: 1;
-            }
-
-            @include xs {
-                padding: 30px 0px;
-            }
-
-            /*  // Social Texts \\  */
-            .social-title {
-                color: $neu-03;
-                letter-spacing: 10px;
-                font-size: 14px;
-                position: absolute;
-                letter-spacing: 4px;
-                transition: all 0.6s ease;
-                transform: translateY(-30px);
-                opacity: 0;
-                font-family: $font-02;
-                font-weight: 400;
-
-                @include sm {
-                    transform: translateY(30px);
-                    opacity: 1;
-                    letter-spacing: 2;
-                    font-size: 11px;
-                    color: $neu-04;
-                }
-
-                @include xs {
-                    display: none;
-                }
-            }
-
-            /*  // Icon Social \\  */
-            img {
-                position: absolute;
-                width: 40px;
-                height: 40px;
-                opacity: 1;
-                transition: all 0.6s ease;
-
-                @include sm {
-                    top: 20%;
-                    width: 30px;
-                    height: 30px;
-                }
-
-                @include xs {
-                    width: 20px;
-                    height: 20px;
-                    top: initial;
-                }
-            }
-
-            &:nth-child(even) {
-                background-color: $neu-05;
-            }
-
-            &:before {
-                content: '';
-                position: absolute;
-                background-color: #313131;
-                width: 0%;
-                height: 100%;
-                z-index: -1;
-                top: 0;
-                transition: all 0.7s ease;
-                color: $neu-03;
-            }
-
-            &:after {
-                content: '';
-                height: 2px;
-                border-radius: 20px;
-                background-color: $m-01;
-                position: absolute;
-                animation: lineout 0.6s ease;
-                animation-direction: reverse;
-                animation-fill-mode: forwards;
-
-                @keyframes lineout {
-                    0% {
-                        width: 40px;
-                        bottom: 60px;
-                    }
-
-                    50% {
-                        width: 40px;
-                        bottom: 0px;
-                    }
-
-                    100% {
-                        width: 100%;
-                        bottom: 0;
-                    }
-                }
-
-                @include sm {
-                    display: none;
-                }
-            }
-
-            &:hover {
-                color: $m-01;
-                letter-spacing: 6px;
-
-                &:before {
-                    width: 100%;
-
-                    @include sm {
-                        display: none;
-                    }
-                }
-
-                &:after {
-                    animation: line 0.8s ease;
-                    animation-fill-mode: forwards;
-
-                    @keyframes line {
-                        0% {
-                            width: 40px;
-                            bottom: 60px;
-                        }
-
-                        30% {
-                            width: 40px;
-                            bottom: 0px;
-                        }
-
-                        100% {
-                            width: 100%;
-                            bottom: 0;
-                        }
-                    }
-
-                    @include sm {
-                        display: none;
-                    }
-                }
-
-                .social-title {
-                    opacity: 1;
-                    transform: none;
-                    letter-spacing: 6px;
-                    transition: all 0.6s 0.3s ease;
-
-                    @include sm {
-                        transform: translateY(30px);
-                        opacity: 1;
-                        letter-spacing: 2;
-                        font-size: 11px;
-                        color: $neu-04;
-                    }
-                }
-
-                img {
-                    width: 100px;
-                    height: 100px;
-                    opacity: 0.03;
-
-                    @include sm {
-                        width: 30px;
-                        height: 30px;
-                        opacity: 1;
-                    }
-
-                    @include xs {
-                        width: 20px;
-                        height: 20px;
-                        top: initial;
-                    }
-                }
-            }
-        }
-
-        &.anime {
-            .social {
-                @include animationAfterState();
-
-                &:nth-child(1) {
-                    transition-delay: 0.4s;
-                }
-
-                &:nth-child(2) {
-                    transition-delay: 0.6s;
-                }
-
-                &:nth-child(3) {
-                    transition-delay: 0.8s;
-                }
-
-                &:nth-child(4) {
-                    transition-delay: 1s;
-                }
-            }
-
-        }
-    }
-}
-
-.page-header {
-    height: 200px;
-    background-color: $neu-02;
-    text-align: center;
-
-    @include sm {
-        height: 150px;
-    }
-
-    .page-title {
-        font-size: 80px;
-        font-family: $font-01;
-        font-weight: 100;
-        text-transform: uppercase;
-        margin-top: 120px;
-        position: absolute;
-        text-align: center;
-        width: 100%;
-        color: white;
-
-        @include sm {
-            font-size: 50px;
-            margin-top: 100px;
-        }
-    }
-}
-
-.about-me {
-    .bio-content {
-        max-width: 1024px;
-        display: flex;
-        margin: 0 auto;
-
-
-        @include sm {
-            max-width: 600px;
-            flex-direction: column;
-        }
-
-        .bio {
-            @include animationBeforeState;
-            transition-delay: 0.4s;
-            font-size: 15px;
-            position: relative;
-            z-index: 2;
-            text-align: left;
-            margin-left: 60px;
-
-
-            @include sm {
-                margin-left: 0px;
-                font-size: 13px;
-                padding: 0;
-            }
-
-            h2 {
-                font-size: 35px;
-                color: $neu-04;
-                font-family: $font-01;
-                font-weight: 100;
-                letter-spacing: 10px;
-                z-index: 2;
-                text-transform: uppercase;
-                -webkit-transition: all .5s ease;
-                transition: all .5s ease;
-                max-width: 500px;
-                text-align: left;
-                margin: 20px 0px 50px -100px;
-
-                @include sm {
-                    margin: 0px 0px 40px 0px;
-                    font-size: 25px;
-                    line-height: 35px;
-                }
-
-                &:after {
-                    background-color: $m-01;
-                    width: 80px;
-                    content: '';
-                    height: 2px;
-                    border-radius: 20px;
-                    display: block;
-                    margin-top: 20px;
-                    transition: all .5s ease;
-                    left: 0;
-
-                    @include sm {
-                        width: 50px;
-                    }
-                }
-            }
-        }
-
-        .image-about {
-            @include animationBeforeState;
-            transition-delay: 0.2s;
-            width: 70%;
-            height: 500px;
-            z-index: 2;
-            opacity: 0.2;
-            background-image: url("../images/bio2.png");
-            background-size: cover;
-            -webkit-filter: grayscale(100%);
-            filter: grayscale(100%);
-
-            @include sm {
-                width: 100%;
-                height: 250px;
-                margin-bottom: 40px;
-                opacity: 0.2;
-            }
-        }
-
-        &.anime {
-            .bio {
-                @include animationAfterState;
-            }
-
-            .image-about {
-                @include animationAfterState;
-                opacity: 0.2;
-            }
-        }
-    }
-
-    .second-text {
-        @include animationBeforeState();
-        text-align: left;
-        max-width: 700px;
-        margin: 0 auto;
-        padding-top: 80px;
-        transition-delay: .6s;
-
-        @include sm {
-            max-width: 600px;
-            padding-top: 20px;
-        }
-
-        &.anime {
-            @include animationAfterState();
-        }
-    }
-}
-
-.dual-block {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-flow: wrap;
-    width: 100%;
-
-    @include sm {
-        flex-direction: column;
-    }
-
-    .block {
-        width: calc(50% - 20px);
-        display: flex;
-        flex-direction: column;
-        background-color: $m-01;
-        padding: 40px 5%;
-        box-sizing: border-box;
-        transition: all 0.6s ease;
-
-        @include sm {
-            width: 100%;
-            margin: 10px 0;
-
-            &:first-child {
-                margin-top: 0;
-            }
-        }
-
-        h3 {
-            font-weight: 300;
-            letter-spacing: 6px;
-            text-transform: uppercase;
-            font-size: 25px;
-            color: white;
-            text-align: center;
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            height: 50px;
-            margin-top: 0;
-
-            &:after {
-                background-color: white;
-                width: 40px;
-                content: '';
-                height: 2px;
-                border-radius: 20px;
-                position: absolute;
-                transition: all .5s ease;
-                bottom: 0px;
-            }
-        }
-
-        ul {
-            font-size: 14px;
-            text-align: center;
-            color: #fff;
-            transition: all 0.5s ease;
-            font-family: $font-02;
-            font-weight: 300;
-            letter-spacing: 0;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-
-            li {
-                margin: 10px 0;
-                transition: all 0.5s ease;
-            }
-        }
-
-        &:hover {
-            transform: translateY(-10px);
-            background-color: darken($m-01, 10%);
-            box-shadow: 0px 30px 45px -20px $neu-04;
-
-            @include sm {
-                transform: translateY(0px);
-                background-color: $m-01;
-                box-shadow: none;
-            }
-        }
-
-    }
-}
-
-.timeline-content {
-    box-sizing: border-box;
-
-
-    .timeline-section {
-        display: flex;
-        justify-content: space-between;
-        flex-flow: wrap;
-        max-width: 800px;
-        margin: auto;
-        margin-bottom: 90px;
-
-        &:last-child {
-            margin-bottom: 0;
-        }
-
-        @include sm {
-            flex-direction: column;
-            justify-content: center;
-            padding: 0;
-            margin-bottom: 70px;
-        }
-
-        .timeline-item {
-            @include animationBeforeState;
-            width: calc(50% - 20px);
-            margin-top: 50px;
-            text-align: left;
-            padding: 10px 0 0 10px;
-            position: relative;
-            box-sizing: border-box;
-            box-shadow: 0;
-
-
-            &:nth-child(1),
-            &:nth-child(2) {
-                margin-top: 0px;
-            }
-
-            @include sm {
-                max-width: 480px;
-                width: 100%;
-                margin: auto;
-                margin-bottom: 50px;
-            }
-
-            &:after {
-                background-color: $neu-01a;
-                position: absolute;
-                height: calc(100% - 32px);
-                width: 90%;
-                content: '';
-                right: 0;
-                bottom: 0;
-                z-index: -1;
-                transition: all 0.4s ease;
-            }
-
-            label {
-                color: $m-01;
-                font-size: 14px;
-                font-family: $font-02;
-                font-weight: 400;
-                display: block;
-                z-index: 2;
-                padding: 0 0 20px 0;
-
-                @include sm {
-                    padding: 0 0 10px 0;
-                    font-size: 14px;
-                }
-            }
-
-            article {
-                font-size: 14px;
-                padding: 0 15px 15px 0;
-
-                p {
-                    font-size: 16px;
-
-                    span {
-                        font-weight: 300;
-                    }
-                }
-
-                .title {
-                    letter-spacing: 1px;
-                    font-weight: 600;
-                }
-
-                .description {
-                    font-weight: 300;
-                }
-
-                .extra {
-                    color: $neu-05;
-                    opacity: 0.5;
-                }
-
-
-            }
-
-            &:hover {
-                &:after {
-                    height: 100%;
-                    width: 100%;
-                    box-shadow: 0px 25px 45px -30px $neu-03;
-
-                    @include sm {
-                        height: calc(100% - 32px);
-                        width: 90%;
-                        box-shadow: none;
-                    }
-                }
-            }
-
-            &.animeTimeline {
-                @include animationAfterState;
-
-                &:nth-of-type(even) {
-                    transition-delay: 0.4s;
-                }
-            }
-        }
-    }
-}
-
-.works-page {
-    max-width: 800px;
-
-    .section-works {
-        padding: 140px 5% 0 5%;
-
-        @include sm {
-            padding: 80px 20px 0 20px;
-        }
-
-        .second-title {
-            font-size: 20px;
-            color: $neu-04;
-            font-family: $font-01;
-            font-weight: 100;
-            letter-spacing: 5px;
-            text-align: left;
-            margin: 0;
-            margin-bottom: 20px;
-            z-index: 2;
-            text-transform: uppercase;
-            transition: all .5s ease;
-
-            @include sm {
-                font-size: 15px;
-                line-height: 25px;
-            }
-
-            &:after {
-                background-color: $m-01;
-                width: 80px;
-                content: '';
-                height: 2px;
-                border-radius: 20px;
-                display: block;
-                margin-top: 20px;
-                transition: all .5s ease;
-
-                @include sm {
-                    width: 50px;
-                }
-            }
-        }
-
-        .legenda {
-            color: $neu-04;
-            font-size: 14px;
-            margin-bottom: 50px;
-            font-family: $font-02;
-            font-weight: 400;
-
-            @include sm {
-                margin-bottom: 30px;
-            }
-
-            b {
-                color: $neu-03;
-                font-weight: 400;
-            }
-
-            span {
-                color: $m-01;
-            }
-        }
-
-        .description {
-            margin-left: 60px;
-            font-size: 16px;
-            max-width: 600px;
-
-
-            @include sm {
-                margin-left: 30px;
-            }
-
-            p {
-                margin-bottom: 20px;
-            }
-
-            button {
-                margin: 0;
-            }
-
-            a {
-                display: inline-flex;
-            }
-        }
-
-        .description-list {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-            color: $neu-04;
-            margin-left: 60px;
-            margin-top: 10px;
-
-            li {
-                line-height: 28px;
-                position: relative;
-                left: 25px;
-                font-family: $font-02;
-
-                &:before {
-                    position: absolute;
-                    content: '';
-                    width: 15px;
-                    height: 2px;
-                    background-color: $m-01;
-                    left: -25px;
-                    top: 18px;
-                }
-            }
-        }
-    }
-
-    .works-images {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-
-        .image-main {
-            @include animationBeforeState;
-            width: 100%;
-            margin: 40px 0;
-
-            &:first-child {
-                margin-top: 0;
-            }
-
-            @include sm {
-                width: 100%;
-                margin: 10px 0;
-            }
-
-            &.anime {
-                @include animationAfterState;
-            }
-        }
-
-        .video-responsive {
-            position: relative;
-            padding-bottom: 63%;
-            padding-top: 30px;
-            height: 0;
-            overflow: hidden;
-            width: 100%;
-            margin: 40px 0;
-
-            @include sm {
-                padding-bottom: 60%;
-                margin: 10px 0;
-            }
-
-            iframe {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-            }
-        }
-    }
-}
-
-.go-back {
-    height: 60px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-sizing: border-box;
-    transition: all 0.6s ease;
-    bottom: -70px;
-    width: 100%;
-    left: 0;
-    background-color: $neu-02;
-    padding: 0 5%;
-
-    @include sm {
-        height: 50px;
-    }
-
-    &.fixed {
-        position: fixed;
-        bottom: 0;
-        box-shadow: 0px 10px 20px black;
-        transition: all 0.6s ease;
-    }
-
-    &.not-fixed {
-        bottom: -70px;
-        position: fixed;
-    }
-
-    #scrollme {
-        margin: 0;
-        height: 35px;
-        transform: translateX(30px);
-
-        @include sm {
-            transform: translateX(0px);
-            width: 30px;
-        }
-    }
-}
-
-.anime {
-    @include animationAfterState;
 }
