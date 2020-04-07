@@ -62,7 +62,7 @@ window.onload = function (e) {
     sections.forEach(function (el) {
         const randomImage = Math.floor(Math.random() * el.image.length);
         const template = `
-        <a class="introItem ${el.class}" href="${el.url}">
+        <a class="introItem ${el.class}" href="${el.url}" target="_blank">
             <figure class="introItem__image">
                     <img src="${el.image[randomImage]}" alt="">
             </figure>
