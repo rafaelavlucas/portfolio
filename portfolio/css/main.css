@@ -1037,6 +1037,7 @@ header .header-content h1 {
   letter-spacing: 2px;
   -webkit-transition: all .6s ease-in-out;
   transition: all .6s ease-in-out;
+  margin-bottom: 32px;
 }
 
 @media (max-width: 799px) {
