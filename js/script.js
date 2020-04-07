@@ -62,7 +62,7 @@ window.onload = function (e) {
     sections.forEach(function (el) {
         const randomImage = Math.floor(Math.random() * el.image.length);
         const template = `
-        <a class="introItem ${el.class}" href="${el.url}" target="_blank">
+        <a class="introItem ${el.class}" href="${el.url}" target="_blank" rel="noopener">
             <figure class="introItem__image">
                     <img src="${el.image[randomImage]}" alt="">
             </figure>
@@ -107,7 +107,7 @@ window.onload = function (e) {
 
     social.forEach(function (el) {
         const template = ` 
-        <a class="social__item" href="${el.url}" target="_blank">
+        <a class="social__item" href="${el.url}" target="_blank" rel="noopener">
         <img class="social__icon icon" src="${el.icon}" alt="${el.name}">
         </a>
         `;
@@ -117,7 +117,7 @@ window.onload = function (e) {
 
     documents.forEach(function (el) {
         const template = ` 
-        <a class="documents__item" href="${el.url}" target="_blank">
+        <a class="documents__item" href="${el.url}" target="_blank" rel="noopener">
         <p class="documents__name">${el.name}</p>
         <img class="documents__icon icon" src="${el.icon}" alt="${el.name}">
         </a>
