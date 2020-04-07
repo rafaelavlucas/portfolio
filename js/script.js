@@ -6,7 +6,8 @@ window.onload = function (e) {
             description: "Seleccion of works, featuring UI Design, branding, packaging and others. Get to know me!",
             url: "/portfolio",
             button: "enter",
-            class: ""
+            class: "",
+            target: "_blank"
         },
         {
             title: "Daily UI",
@@ -14,7 +15,8 @@ window.onload = function (e) {
             description: "Daily UI Challenge progress, all designed and coded by myself.",
             url: "/dailyui",
             button: "enter",
-            class: ""
+            class: "",
+            target: "_blank"
         },
         {
             title: "Showreel",
@@ -22,7 +24,8 @@ window.onload = function (e) {
             description: "Quick way to check most of my UI designs and interactions, all coded by me.",
             url: "#",
             button: "watch",
-            class: "video"
+            class: "video",
+            target: "_self"
         },
     ];
 
@@ -62,7 +65,7 @@ window.onload = function (e) {
     sections.forEach(function (el) {
         const randomImage = Math.floor(Math.random() * el.image.length);
         const template = `
-        <a class="introItem ${el.class}" href="${el.url}" target="_blank" rel="noopener">
+        <a class="introItem ${el.class}" href="${el.url}" target="${el.target}" >
             <figure class="introItem__image">
                     <img src="${el.image[randomImage]}" alt="">
             </figure>
