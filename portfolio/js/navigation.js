@@ -27,10 +27,10 @@ var templateFooter = `
 <p>design and code by:</p>
 <p>Rafaela Lucas / <span id="year"></span></p>`;
 
+
+
+footer.insertAdjacentHTML('beforeend', templateFooter);
 /* Dynamic footer Year */
 
 document.getElementById("year").innerHTML = new Date().getFullYear();
 /* end Dynamic footer Year */
-
-
-footer.insertAdjacentHTML('beforeend', templateFooter);
