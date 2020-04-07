@@ -66,12 +66,6 @@ window.onload = function (e) {
     /* end Open Menu bar */
 
 
-    /* Dynamic footer Year */
-
-    document.getElementById("year").innerHTML = new Date().getFullYear();
-    /* end Dynamic footer Year */
-
-
     /* Back to top */
     var toTop = document.getElementById("scrollme");
 
