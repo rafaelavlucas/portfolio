@@ -1069,11 +1069,11 @@ header .main-heading .slide-container .slide-arrows .button-next:hover {
 }
 
 header .main-heading .slide-container .slide-arrows .button-prev {
-  background-image: url(https://rafaelalucas91.github.io/assets/icons/white/icon-13.svg);
+  background-image: url(https://rafaelavlucas.github.io/assets/icons/white/icon-13.svg);
 }
 
 header .main-heading .slide-container .slide-arrows .button-next {
-  background-image: url(https://rafaelalucas91.github.io/assets/icons/white/icon-15.svg);
+  background-image: url(https://rafaelavlucas.github.io/assets/icons/white/icon-15.svg);
   margin-top: 20px;
 }
 
@@ -1506,7 +1506,7 @@ header .main-heading .slide-container .slide-bullets .bullet.selected {
   width: 32px;
   height: 32px;
   display: block;
-  background-image: url(https://rafaelalucas91.github.io/assets/icons/white/icon-179.svg);
+  background-image: url(https://rafaelavlucas.github.io/assets/icons/white/icon-179.svg);
 }
 
 @media screen and (max-width: 799px) {
@@ -1635,7 +1635,7 @@ header .main-heading .slide-container .slide-bullets .bullet.selected {
   width: 32px;
   height: 32px;
   position: fixed;
-  background-image: url(https://rafaelalucas91.github.io/assets/icons/gray1/icon-61.svg);
+  background-image: url(https://rafaelavlucas.github.io/assets/icons/gray1/icon-61.svg);
   right: 40px;
   top: 40px;
   cursor: pointer;
@@ -2010,7 +2010,7 @@ header .main-heading .slide-container .slide-bullets .bullet.selected {
 .album .content .tracks .tracklist li .icons i {
   width: 20px;
   height: 20px;
-  background-image: url(https://rafaelalucas91.github.io/assets/icons/white/icon-13.svg);
+  background-image: url(https://rafaelavlucas.github.io/assets/icons/white/icon-13.svg);
   display: block;
   margin-left: 20px;
   opacity: 0;
@@ -2034,22 +2034,22 @@ header .main-heading .slide-container .slide-bullets .bullet.selected {
 }
 
 .album .content .tracks .tracklist li .icons .like {
-  background-image: url(https://rafaelalucas91.github.io/assets/icons/white/icon-123.svg);
+  background-image: url(https://rafaelavlucas.github.io/assets/icons/white/icon-123.svg);
 }
 
 @media screen and (max-width: 799px) {
   .album .content .tracks .tracklist li .icons .like {
-    background-image: url(https://rafaelalucas91.github.io/assets/icons/gray1/icon-123.svg);
+    background-image: url(https://rafaelavlucas.github.io/assets/icons/gray1/icon-123.svg);
   }
 }
 
 .album .content .tracks .tracklist li .icons .play {
-  background-image: url(https://rafaelalucas91.github.io/assets/icons/white/icon-179.svg);
+  background-image: url(https://rafaelavlucas.github.io/assets/icons/white/icon-179.svg);
 }
 
 @media screen and (max-width: 799px) {
   .album .content .tracks .tracklist li .icons .play {
-    background-image: url(https://rafaelalucas91.github.io/assets/icons/gray1/icon-179.svg);
+    background-image: url(https://rafaelavlucas.github.io/assets/icons/gray1/icon-179.svg);
   }
 }
 
@@ -2443,7 +2443,7 @@ header .main-heading .slide-container .slide-bullets .bullet.selected {
   top: 0;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
-  background-image: url(https://rafaelalucas91.github.io/assets/icons/white/icon-12.svg);
+  background-image: url(https://rafaelavlucas.github.io/assets/icons/white/icon-12.svg);
   -webkit-transform: translate(-10px, 5px);
           transform: translate(-10px, 5px);
   cursor: pointer;
