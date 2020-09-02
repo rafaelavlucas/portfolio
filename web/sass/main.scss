@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css?family=Barlow:100,200,300,400,500,600,700,800,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400,500,600,700,900');
+$font: 'Barlow',
+sans-serif;
+
+$font2: 'Source Code Pro',
+monospace;
+
+
+$m-01: #b5bcc8;
+$m-05:#8539BE;
+//$m-05: #8a91a5;
+
+
+$neu-01: #f5f5f5;
+$neu-02: #200e0e;
+$neu-03: #d2d2d2;
+$neu-04: #b7b7b7;
+$neu-05: #9c9c9c;
+$neu-06: #404145;
+$neu-07: #1c1c1e;
+
+$cubic:cubic-bezier(0.25, 0.1, 0.24, 1.34);
+
+@mixin xxl {
+    @media screen and (max-width: 1920px) {
+        @content;
+    }
+}
+
+@mixin xl {
+    @media screen and (max-width: 1440px) {
+        @content;
+    }
+}
+
+@mixin lg {
+    @media screen and (max-width: 1240px) {
+        @content;
+    }
+}
+
+@mixin md {
+    @media screen and (max-width: 1023px) {
+        @content;
+    }
+}
+
+@mixin sm {
+    @media screen and (max-width: 799px) {
+        @content;
+    }
+}
+
+@mixin xs {
+    @media screen and (max-width: 639px) {
+        @content;
+    }
+}
+
+@mixin xxs {
+    @media screen and (max-width: 380px) {
+        @content;
+    }
+}
+
+@mixin delay {
+    @for $i from 1 through 100 {
+        &:nth-child(#{$i}) {
+            animation-delay: #{$i * 0.15}s;
+        }
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: 0;
+    -webkit-tap-highlight-color: transparent;
+    text-decoration: none;
+    color: inherit;
+    box-sizing: border-box;
+
+    &:focus {
+        outline: 0;
+    }
+}
+
+body {
+    font-family: $font;
+    background: white;
+}
