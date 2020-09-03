@@ -164,12 +164,12 @@ body {
   font-weight: 400;
   margin-left: 4px;
   opacity: 0;
+  -webkit-animation: title 1s cubic-bezier(0.76, 0.57, 0.17, 1.05) both;
+          animation: title 1s cubic-bezier(0.76, 0.57, 0.17, 1.05) both;
 }
 
 .mainHeading__title span {
   margin-right: 0.13em;
-  -webkit-animation: letters 0s ease both;
-          animation: letters 0s ease both;
 }
 
 .mainHeading__title span:nth-child(1) {
@@ -1200,6 +1200,7 @@ body {
   font-weight: 500px;
   position: relative;
   line-height: 2em;
+  overflow: hidden;
 }
 
 .mainHeading__description--strike {

@@ -200,11 +200,12 @@ body {
         font-weight: 400;
         margin-left: 4px;
         opacity: 0;
+        animation: title 1s $cubic both;
 
         span {
             @include delay;
             margin-right: 0.13em;
-            animation: letters 0s ease both;
+            // animation: letters 0s ease both;
         }
     }
 
@@ -240,6 +241,7 @@ body {
         font-weight: 500px;
         position: relative;
         line-height: 2em;
+        overflow: hidden;
 
         &--strike {
             position: relative;

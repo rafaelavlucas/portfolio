@@ -15,7 +15,7 @@ window.onload = function (e) {
                 titleWord.style.opacity = "1";
                 titleWord.insertAdjacentHTML("beforeend", template);
             });
-        }, 600);
+        }, 300);
     }
 
 
