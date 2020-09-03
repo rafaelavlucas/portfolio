@@ -154,7 +154,7 @@ body {
 
 .mainHeading__text {
   padding-top: 120px;
-  margin-bottom: 120px;
+  padding-bottom: 120px;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
