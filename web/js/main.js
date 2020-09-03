@@ -56,13 +56,101 @@ window.onload = function (e) {
 
               splitDescription();
             splitDescription2();
+            splitTitle();
         */
 
-    splitTitle();
+
+    // Heading gets inner Height
+    if (window.innerWidth < 799) {
+        document.querySelector(".mainHeading").style.height = window.innerHeight + "px";
+    }
+
+    // Tilt Word Super
+    const wordSuper = document.querySelector(".mainHeading__description--super");
+
+    wordSuper.addEventListener("mouseover", tiltSuper)
+    wordSuper.addEventListener("mouseout", tiltSuper)
+
+    function tiltSuper() {
+        if (wordSuper.classList.contains("tilt")) {
+            setTimeout(() => {
+                wordSuper.classList.remove("tilt")
+            }, 1000);
+        } else {
+            wordSuper.classList.add("tilt")
+        }
+    };
+
+    // Works
+
+    const works = [{
+            title: "title",
+            subtitle: "subtitle",
+            label: "website",
+            img: "",
+            alt: "alt",
+            tools: "tools",
+            description: "rgertgt",
+            url: "",
+        },
+        {
+            title: "title",
+            subtitle: "subtitle",
+            label: "website",
+            img: "",
+            alt: "alt",
+            tools: "tools",
+            description: "rgertgt",
+            url: "",
+        },
+        {
+            title: "title",
+            subtitle: "subtitle",
+            label: "website",
+            img: "",
+            alt: "alt",
+            tools: "tools",
+            description: "rgertgt",
+            url: "",
+        }
+    ];
+
+
+    works.forEach(function (el) {
+        let template = `
+    <div class="works__item">
+        <h4 class="works__title">${el.title} <span>${el.title}</span></h4>
+        <h5 class="works__subtitle">${el.subtitle}</h5>
+        <small class="works__label">${el.label}</small>
+        <div class="works__info">
+            <figure class="works__img"><img src="${el.img}" alt="${el.alt}"></figure>
+            <div class="works__tools">${el.tools}</div>
+            <p class="works__description">${el.description}</p>
+            <div class="works__link">
+                <a href="${el.url}">view work</a>
+            </div>
+        </div>
+    </div>`;
+        document.querySelector(".works__list").insertAdjacentHTML("beforeend", template)
 
 
 
 
+    })
+
+    const workItem = document.querySelectorAll(".works__item");
+
+    workItem.forEach(function (el) {
+        el.addEventListener("click", openWork);
+    });
 
 
+
+    function openWork(e) {
+        workItem.forEach(function (el) {
+            el.classList.remove("openWork");
+        });
+
+        e.currentTarget.classList.add("openWork");
+    }
 }
