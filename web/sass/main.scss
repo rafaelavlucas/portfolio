@@ -312,6 +312,24 @@ body {
             &.tilt {
                 transition: all 0.4s cubic-bezier(0.76, 0.57, 0, 1.4);
                 transform: rotate(60deg) translate(0.5em, 1.4em) skew(-10deg, 5deg);
+                animation: tilt 2s 0.4s ease infinite;
+
+                @keyframes tilt {
+                    0% {
+                        transform: rotate(60deg) translate(0.5em, 1.4em) skew(-10deg, 5deg);
+                    }
+
+                    50% {
+                        transform: rotate(30deg) translate(0.5em, 1.4em) skew(-10deg, 5deg);
+                    }
+
+
+
+                    100% {
+                        transform: rotate(60deg) translate(0.5em, 1.4em) skew(-10deg, 5deg);
+                    }
+
+                }
             }
         }
 

@@ -74,8 +74,8 @@ window.onload = function (e) {
     function tiltSuper() {
         if (wordSuper.classList.contains("tilt")) {
             setTimeout(() => {
-                wordSuper.classList.remove("tilt")
-            }, 5000);
+                //wordSuper.classList.remove("tilt")
+            }, 9000);
         } else {
             wordSuper.classList.add("tilt")
         }
