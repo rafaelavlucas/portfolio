@@ -112,7 +112,7 @@ window.onload = function (e) {
             img: "assets/teste.jpg",
             alt: "alt",
             tools: "tools",
-            description: "rgertgt",
+            description: "Far far away, behind the world mountains, far from the countries Vokalia and Consonantia, theres live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by theFar far away, behind the world mountains, far from the countries Vokalia and Consonantia, theres live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by the",
             url: "",
         }
     ];
@@ -152,11 +152,17 @@ window.onload = function (e) {
     });
 
     function openWork(e) {
+        const cenas = e.currentTarget.querySelector('.works__info').scrollHeight;
         workItem.forEach(function (el) {
             el.classList.remove("openWork");
+            el.querySelector('.works__info').style.height = "0";
         });
 
+        e.currentTarget.querySelector('.works__info').style.height += cenas + "px";
         e.currentTarget.classList.add("openWork");
+
+
+        console.log(e.currentTarget.closest('.works__item'))
     }
 
 
