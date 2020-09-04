@@ -91,7 +91,10 @@ window.onload = function (e) {
             label: "website",
             img: "assets/teste.jpg",
             alt: "alt",
-            tools: "tools",
+            tools: [
+                "cenas1",
+                "teste1"
+            ],
             description: "rgertgt",
             url: "",
         },
@@ -101,7 +104,10 @@ window.onload = function (e) {
             label: "website",
             img: "assets/teste.jpg",
             alt: "alt",
-            tools: "tools",
+            tools: [
+                "cenas2",
+                "teste2"
+            ],
             description: "rgertgt",
             url: "",
         },
@@ -111,7 +117,10 @@ window.onload = function (e) {
             label: "website",
             img: "assets/teste.jpg",
             alt: "alt",
-            tools: "tools",
+            tools: [
+                "cenas3",
+                "teste3"
+            ],
             description: "Far far away, behind the world mountains, far from the countries Vokalia and Consonantia, theres live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by theFar far away, behind the world mountains, far from the countries Vokalia and Consonantia, theres live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by the",
             url: "",
         }
@@ -119,6 +128,7 @@ window.onload = function (e) {
 
 
     works.forEach(function (el) {
+
         let template = `
     <div class="works__item">
         <h4 class="works__title">${el.title} <span>${el.title}</span></h4>
@@ -129,7 +139,7 @@ window.onload = function (e) {
           
             <div class="works__detail">
                 <h6 class="works__subtitle2">tools and languages</h6>
-                <div class="works__toolsItems">${el.tools}</div>
+                <div class="works__toolsItems"></div>
             </div>
             <div class="works__detail">
                 <h6 class="works__subtitle2">about project</h6>
@@ -140,11 +150,24 @@ window.onload = function (e) {
             </div>
         </div>
     </div>`;
+
         document.querySelector(".works__list").insertAdjacentHTML("beforeend", template)
+
+        el.tools.forEach(function (cenas) {
+            let template2 = `<span>${cenas}</span>`;
+
+            document.querySelector(".works__toolsItems").insertAdjacentHTML("beforeend", template2)
+        })
+
+        console.log(el.tools)
+
 
     })
 
+
+
     const workItem = document.querySelectorAll(".works__item");
+    document.querySelector("body").addEventListener("click", closeWork)
 
     workItem.forEach(function (el) {
         el.addEventListener("click", openWork);
@@ -152,8 +175,6 @@ window.onload = function (e) {
     });
 
     function openWork(e) {
-
-
         const currentInfo = e.currentTarget.querySelector('.works__info');
 
         workItem.forEach(function (el) {
@@ -161,11 +182,9 @@ window.onload = function (e) {
             el.querySelector('.works__info').style.height = "0";
         });
 
-        currentInfo.style.height = currentInfo.offsetHeight + currentInfo.scrollHeight + 'px'
+        currentInfo.style.height = currentInfo.scrollHeight + 'px'
         e.currentTarget.classList.add("openWork");
     }
-
-    document.querySelector("body").addEventListener("click", closeWork)
 
     function closeWork(e) {
         if (e.target.closest(".works__item")) {
@@ -176,8 +195,5 @@ window.onload = function (e) {
             el.querySelector('.works__info').style.height = "0";
         });
     }
-
-
-
 
 }
