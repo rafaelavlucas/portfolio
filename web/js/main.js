@@ -152,18 +152,32 @@ window.onload = function (e) {
     });
 
     function openWork(e) {
-        const cenas = e.currentTarget.querySelector('.works__info').scrollHeight;
+
+
+        const currentInfo = e.currentTarget.querySelector('.works__info');
+
         workItem.forEach(function (el) {
             el.classList.remove("openWork");
             el.querySelector('.works__info').style.height = "0";
         });
 
-        e.currentTarget.querySelector('.works__info').style.height += cenas + "px";
+        currentInfo.style.height = currentInfo.offsetHeight + currentInfo.scrollHeight + 'px'
         e.currentTarget.classList.add("openWork");
-
-
-        console.log(e.currentTarget.closest('.works__item'))
     }
+
+    document.querySelector("body").addEventListener("click", closeWork)
+
+    function closeWork(e) {
+        if (e.currentTarget.classList.contains('works__item')) {
+            return
+        }
+        workItem.forEach(function (el) {
+            el.classList.remove("openWork");
+            el.querySelector('.works__info').style.height = "0";
+        });
+    }
+
+
 
 
 }
