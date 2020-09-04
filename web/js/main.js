@@ -168,7 +168,7 @@ window.onload = function (e) {
     document.querySelector("body").addEventListener("click", closeWork)
 
     function closeWork(e) {
-        if (e.currentTarget.classList.contains('works__item')) {
+        if (e.target.closest(".works__item")) {
             return
         }
         workItem.forEach(function (el) {
