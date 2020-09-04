@@ -57,15 +57,8 @@ window.onload = function (e) {
               splitDescription();
             splitDescription2();
             splitTitle();
-        */
 
-
-    // Heading gets inner Height
-    if (window.innerWidth < 799) {
-        document.querySelector(".mainHeading").style.height = window.innerHeight + "px";
-    }
-
-    // Tilt Word Super
+            // Tilt Word Super
     const wordSuper = document.querySelector(".mainHeading__description--super");
 
     wordSuper.addEventListener("mouseover", tiltSuper)
@@ -80,6 +73,15 @@ window.onload = function (e) {
             wordSuper.classList.add("tilt")
         }
     };
+        */
+
+
+    // Heading gets inner Height
+    if (window.innerWidth < 799) {
+        document.querySelector(".mainHeading").style.height = window.innerHeight + "px";
+    }
+
+
 
     // Works
 
@@ -87,7 +89,7 @@ window.onload = function (e) {
             title: "title",
             subtitle: "subtitle",
             label: "website",
-            img: "",
+            img: "assets/teste.jpg",
             alt: "alt",
             tools: "tools",
             description: "rgertgt",
@@ -97,7 +99,7 @@ window.onload = function (e) {
             title: "title",
             subtitle: "subtitle",
             label: "website",
-            img: "",
+            img: "assets/teste.jpg",
             alt: "alt",
             tools: "tools",
             description: "rgertgt",
@@ -107,7 +109,7 @@ window.onload = function (e) {
             title: "title",
             subtitle: "subtitle",
             label: "website",
-            img: "",
+            img: "assets/teste.jpg",
             alt: "alt",
             tools: "tools",
             description: "rgertgt",
@@ -122,10 +124,17 @@ window.onload = function (e) {
         <h4 class="works__title">${el.title} <span>${el.title}</span></h4>
         <h5 class="works__subtitle">${el.subtitle}</h5>
         <small class="works__label">${el.label}</small>
+        <figure class="works__img"><img src="${el.img}" alt="${el.alt}"></figure>
         <div class="works__info">
-            <figure class="works__img"><img src="${el.img}" alt="${el.alt}"></figure>
-            <div class="works__tools">${el.tools}</div>
-            <p class="works__description">${el.description}</p>
+          
+            <div class="works__detail">
+                <h6 class="works__subtitle2">tools and languages</h6>
+                <div class="works__toolsItems">${el.tools}</div>
+            </div>
+            <div class="works__detail">
+                <h6 class="works__subtitle2">about project</h6>
+                <p class="works__description">${el.description}</p>
+            </div>
             <div class="works__link">
                 <a href="${el.url}">view work</a>
             </div>
@@ -133,18 +142,14 @@ window.onload = function (e) {
     </div>`;
         document.querySelector(".works__list").insertAdjacentHTML("beforeend", template)
 
-
-
-
     })
 
     const workItem = document.querySelectorAll(".works__item");
 
     workItem.forEach(function (el) {
         el.addEventListener("click", openWork);
+
     });
-
-
 
     function openWork(e) {
         workItem.forEach(function (el) {
@@ -153,4 +158,6 @@ window.onload = function (e) {
 
         e.currentTarget.classList.add("openWork");
     }
+
+
 }
