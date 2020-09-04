@@ -86,6 +86,7 @@ window.onload = function (e) {
     // Works
 
     const works = [{
+            id: 0,
             title: "title",
             subtitle: "subtitle",
             label: "website",
@@ -99,6 +100,7 @@ window.onload = function (e) {
             url: "",
         },
         {
+            id: 1,
             title: "title",
             subtitle: "subtitle",
             label: "website",
@@ -112,6 +114,7 @@ window.onload = function (e) {
             url: "",
         },
         {
+            id: 3,
             title: "title",
             subtitle: "subtitle",
             label: "website",
@@ -154,12 +157,13 @@ window.onload = function (e) {
         document.querySelector(".works__list").insertAdjacentHTML("beforeend", template)
 
         el.tools.forEach(function (cenas) {
-            let template2 = `<span>${cenas}</span>`;
+            let template2 = `<span class="works__tools">${cenas}</span>`;
 
-            document.querySelector(".works__toolsItems").insertAdjacentHTML("beforeend", template2)
+            document.querySelectorAll(".works__toolsItems")[el.id].insertAdjacentHTML("beforeend", template2);
+
         })
 
-        console.log(el.tools)
+
 
 
     })
