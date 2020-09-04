@@ -114,7 +114,7 @@ window.onload = function (e) {
             url: "",
         },
         {
-            id: 3,
+            id: 2,
             title: "title",
             subtitle: "subtitle",
             label: "website",
@@ -139,10 +139,9 @@ window.onload = function (e) {
         <small class="works__label">${el.label}</small>
         <figure class="works__img"><img src="${el.img}" alt="${el.alt}"></figure>
         <div class="works__info">
-          
             <div class="works__detail">
                 <h6 class="works__subtitle2">tools and languages</h6>
-                <div class="works__toolsItems"></div>
+                <div class="works__tools"></div>
             </div>
             <div class="works__detail">
                 <h6 class="works__subtitle2">about project</h6>
@@ -157,9 +156,9 @@ window.onload = function (e) {
         document.querySelector(".works__list").insertAdjacentHTML("beforeend", template)
 
         el.tools.forEach(function (cenas) {
-            let template2 = `<span class="works__tools">${cenas}</span>`;
+            let template2 = `<span>${cenas}</span>`;
 
-            document.querySelectorAll(".works__toolsItems")[el.id].insertAdjacentHTML("beforeend", template2);
+            document.querySelectorAll(".works__tools")[el.id].insertAdjacentHTML("beforeend", template2);
 
         })
 
