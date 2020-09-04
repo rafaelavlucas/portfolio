@@ -309,10 +309,14 @@ body {
                 }
             }
 
+            &:hover {
+                transform: rotate(-20deg) translate(0.5em, -2.2em) skew(-10deg, 5deg);
+            }
+
             &.tilt {
-                transition: all 0.4s cubic-bezier(0.76, 0.57, 0, 1.4);
-                transform: rotate(60deg) translate(0.5em, 1.4em) skew(-10deg, 5deg);
-                animation: tilt 2s 0.4s ease infinite;
+                //transition: all 0.4s cubic-bezier(1, 0.62, 1, 1.76);
+                //transform: rotate(60deg) translate(0.5em, 1.4em) skew(-10deg, 5deg);
+                // animation: tilt 2s 0.4s ease infinite;
 
                 @keyframes tilt {
                     0% {
@@ -466,14 +470,13 @@ body {
     @include margins();
 
     &__item {
-
         background-color: $neu-09;
         padding: 80px;
         display: flex;
         flex-direction: column;
         position: relative;
         margin: 40px 0;
-        transition: all 0.4s ease;
+        transition: all 1s ease;
     }
 
     &__info {

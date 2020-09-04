@@ -1304,13 +1304,9 @@ body {
   }
 }
 
-.mainHeading__description--super.tilt {
-  -webkit-transition: all 0.4s cubic-bezier(0.76, 0.57, 0, 1.4);
-  transition: all 0.4s cubic-bezier(0.76, 0.57, 0, 1.4);
-  -webkit-transform: rotate(60deg) translate(0.5em, 1.4em) skew(-10deg, 5deg);
-          transform: rotate(60deg) translate(0.5em, 1.4em) skew(-10deg, 5deg);
-  -webkit-animation: tilt 2s 0.4s ease infinite;
-          animation: tilt 2s 0.4s ease infinite;
+.mainHeading__description--super:hover {
+  -webkit-transform: rotate(-20deg) translate(0.5em, -2.2em) skew(-10deg, 5deg);
+          transform: rotate(-20deg) translate(0.5em, -2.2em) skew(-10deg, 5deg);
 }
 
 @-webkit-keyframes tilt {
@@ -1534,8 +1530,8 @@ body {
           flex-direction: column;
   position: relative;
   margin: 40px 0;
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
 }
 
 .works__info {
