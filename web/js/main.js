@@ -76,7 +76,6 @@ window.onload = function (e) {
         */
 
 
-
     // Heading gets inner Height
     if (window.innerWidth < 799) {
         document.querySelector(".mainHeading").style.height = window.innerHeight + "px";
@@ -140,6 +139,32 @@ window.onload = function (e) {
                 ],
                 description: "Far far away, behind the world mountains, far from the countries Vokalia and Consonantia, theres live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by theFar far away, behind the world mountains, far from the countries Vokalia and Consonantia, theres live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by the",
                 url: "",
+            }, {
+                id: 4,
+                title: "codepen challenges",
+                subtitle: "front-end development",
+                label: "personal project",
+                img: "assets/teste.jpg",
+                alt: "alt",
+                tools: [
+                    "cenas3",
+                    "teste3"
+                ],
+                description: "Far far away, behind the world mountains, far from the countries Vokalia and Consonantia, theres live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by theFar far away, behind the world mountains, far from the countries Vokalia and Consonantia, theres live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by the",
+                url: "",
+            }, {
+                id: 5,
+                title: "2048 game remake",
+                subtitle: "css development",
+                label: "website",
+                img: "assets/teste.jpg",
+                alt: "alt",
+                tools: [
+                    "cenas3",
+                    "teste3"
+                ],
+                description: "Far far away, behind the world mountains, far from the countries Vokalia and Consonantia, theres live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by theFar far away, behind the world mountains, far from the countries Vokalia and Consonantia, theres live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by the",
+                url: "",
             }
         ];
 
@@ -175,10 +200,8 @@ window.onload = function (e) {
                 document.querySelectorAll(".works__tools")[el.id].insertAdjacentHTML("beforeend", template2);
 
             })
-
         })
     }
-
 
     // Open and Close Works
 
@@ -214,11 +237,18 @@ window.onload = function (e) {
         }
     }
 
-    // To Anime Tex on Scroll
-    const text = document.querySelector(".mainHeading__text");
+    // To Anime Text on Scroll
 
-    function scrollTitles() {
+    function scrollEffectHeading() {
+        let scrolled = window.pageYOffset,
+            rate = scrolled * 0.15,
+            rate2 = scrolled * 0.2;
 
+        document.querySelector(".mainHeading__video").style.transform = 'translateX(' + rate2 + 'px)';
+        document.querySelector(".mainHeading__text").style.transform = 'translateX(-' + rate + 'px)';
+    }
+
+    function scrollEffectTitles() {
 
         observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
@@ -236,32 +266,40 @@ window.onload = function (e) {
                     let scrolled = entry.intersectionRect.y;
                     rate = scrolled * 0.05,
                         entry.target.style.transform = 'translateX(-' + rate + 'px)';
+                }
+            });
 
+        });
+        observer3 = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.intersectionRatio > 0) {
+                    let scrolled = entry.intersectionRect.y;
+                    rate = scrolled * 0.3,
+                        entry.target.style.transform = 'translateX(-' + rate + 'px)';
+                }
+            });
+
+        });
+        observer4 = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.intersectionRatio > 0) {
+                    let scrolled = entry.intersectionRect.y;
+                    rate = scrolled * 0.3,
+                        entry.target.style.transform = 'translateX(' + rate + 'px)';
                 }
             });
 
         });
         document.querySelectorAll(".mainTitle.right span").forEach(el => observer.observe(el));
         document.querySelectorAll(".mainTitle.left span").forEach(el => observer2.observe(el));
+        document.querySelectorAll(".mainTitle.right .line").forEach(el => observer3.observe(el));
+        document.querySelectorAll(".mainTitle.left .line").forEach(el => observer4.observe(el));
 
 
     }
 
-    function scrollEffect() {
 
-        let scrolled = window.pageYOffset,
-            rate = scrolled * 0.15,
-            rate2 = scrolled * 0.2;
-
-
-        document.querySelector(".mainHeading__video").style.transform = 'translateX(' + rate2 + 'px)';
-        text.style.transform = 'translateX(-' + rate + 'px)';
-
-        console.log(rate)
-    }
-
-
-    // Anime Modules
+    // Anime Modules on Viewport
     observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.intersectionRatio > 0) {
@@ -273,13 +311,15 @@ window.onload = function (e) {
     });
 
     function animeModules() {
-        document.querySelectorAll('.works').forEach(el => observer.observe(el));
-        document.querySelectorAll('.works__item').forEach(el => observer.observe(el))
+
+        document.querySelectorAll('.works__item').forEach(el => observer.observe(el));
+        document.querySelectorAll('section').forEach(el => observer.observe(el));
+        document.querySelectorAll('.mainTitle').forEach(el => observer.observe(el));
     }
 
     window.onscroll = function () {
-        scrollEffect();
-        scrollTitles();
+        scrollEffectHeading();
+        scrollEffectTitles();
     };
 
     worksContent();
