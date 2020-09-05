@@ -32,6 +32,7 @@
 }
 
 body {
+  width: 100vw;
   font-family: "DM Mono", monospace;
   background: #484848;
   color: white;
@@ -163,7 +164,7 @@ section {
 }
 
 .mainHeading {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   min-height: 700px;
   padding-left: 5vw;
@@ -174,6 +175,7 @@ section {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  overflow: hidden;
   z-index: 0;
 }
 
@@ -1376,7 +1378,7 @@ section {
       -ms-flex-align: center;
           align-items: center;
   right: 0;
-  position: fixed;
+  position: absolute;
   top: 0;
   background-image: url("../assets/teste.jpg");
   background-size: cover;
@@ -1403,6 +1405,7 @@ section {
   -webkit-filter: grayscale(100%);
           filter: grayscale(100%);
   top: 0;
+  overflow: hidden;
 }
 
 .mainHeading__videoPlayer:before, .mainHeading__videoPlayer:after {

@@ -102,6 +102,7 @@ $cubic: cubic-bezier(0.76, 0.57, 0.17, 1.05);
 }
 
 body {
+    width: 100vw;
     font-family: $font;
     background: $neu-08;
     color: white;
@@ -199,12 +200,14 @@ section {
 }
 
 .mainHeading {
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     min-height: 700px;
     @include margins;
     display: flex;
     align-items: center;
+    overflow: hidden;
+
     //position: sticky;
     z-index: 0;
     //top: 0;
@@ -363,7 +366,7 @@ section {
         justify-content: center;
         align-items: center;
         right: 0;
-        position: fixed;
+        position: absolute;
         top: 0;
         background-image: url("../assets/teste.jpg");
         background-size: cover;
@@ -381,6 +384,7 @@ section {
         align-items: center;
         filter: grayscale(100%);
         top: 0;
+        overflow: hidden;
 
 
         &:before,
