@@ -256,7 +256,6 @@ window.onload = function (e) {
                     let scrolled = entry.intersectionRect.y;
                     rate = scrolled * 0.05,
                         entry.target.style.transform = 'translateX(' + rate + 'px)';
-                    console.log(entry)
                 }
             });
         });
@@ -274,7 +273,7 @@ window.onload = function (e) {
             entries.forEach(entry => {
                 if (entry.intersectionRatio > 0) {
                     let scrolled = entry.intersectionRect.y;
-                    rate = scrolled * 0.3,
+                    rate = scrolled * 0.2,
                         entry.target.style.transform = 'translateX(-' + rate + 'px)';
                 }
             });
@@ -284,7 +283,7 @@ window.onload = function (e) {
             entries.forEach(entry => {
                 if (entry.intersectionRatio > 0) {
                     let scrolled = entry.intersectionRect.y;
-                    rate = scrolled * 0.3,
+                    rate = scrolled * 0.2,
                         entry.target.style.transform = 'translateX(' + rate + 'px)';
                 }
             });
