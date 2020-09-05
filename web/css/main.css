@@ -1774,7 +1774,7 @@ section {
 }
 
 .mainTitle {
-  overflow-x: hidden;
+  overflow: hidden;
   -webkit-transform: translateX(-5vw);
           transform: translateX(-5vw);
   width: 100vw;
