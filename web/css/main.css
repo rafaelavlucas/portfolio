@@ -38,6 +38,7 @@ body {
   font-size: 100%;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  scroll-behavior: smooth;
 }
 
 @media screen and (max-width: 1023px) {
@@ -1349,7 +1350,7 @@ body {
 
 .mainHeading__video {
   background-color: black;
-  width: 100%;
+  width: 70%;
   height: 100%;
   position: absolute;
   z-index: -1;
@@ -1363,7 +1364,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  right: -30%;
+  right: 0;
   position: fixed;
   top: 0;
 }
@@ -1484,11 +1485,21 @@ body {
 }
 
 .works {
+  -webkit-transform: translateY(40px);
+          transform: translateY(40px);
+  opacity: 0;
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
   padding-left: 5vw;
   padding-right: 5vw;
 }
 
 .works__item {
+  -webkit-transform: translateY(40px);
+          transform: translateY(40px);
+  opacity: 0;
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
   background-color: #313131;
   padding: 80px;
   display: -webkit-box;
@@ -1500,21 +1511,11 @@ body {
           flex-direction: column;
   position: relative;
   margin: 40px 0;
-  -webkit-transition: all 0.6s ease;
   transition: all 0.6s ease;
   cursor: pointer;
   overflow: hidden;
   -webkit-box-shadow: 0px;
           box-shadow: 0px;
-  opacity: 0;
-  -webkit-transform: translateY(40px);
-          transform: translateY(40px);
-}
-
-.works__item.anime {
-  -webkit-transform: translateY(0px);
-          transform: translateY(0px);
-  opacity: 1;
 }
 
 .works__item:first-child {
@@ -1780,5 +1781,11 @@ body {
   z-index: -1;
   top: -0.19em;
   line-height: normal;
+}
+
+.anime {
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+  opacity: 1;
 }
 /*# sourceMappingURL=main.css.map */

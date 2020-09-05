@@ -86,11 +86,12 @@ window.onload = function (e) {
     function scrollEffect() {
 
         let scrolled = window.pageYOffset,
-            rate = scrolled * 0.5,
-            rate2 = scrolled * 0.4;
+            rate = scrolled * 0.15,
+            rate2 = scrolled * 0.2;
 
-        document.querySelector(".mainHeading__video").style.transform = 'translateX(-' + rate2 + 'px)';
-        text.style.transform = 'translateX(' + rate + 'px)';
+
+        document.querySelector(".mainHeading__video").style.transform = 'translateX(' + rate2 + 'px)';
+        text.style.transform = 'translateX(-' + rate + 'px)';
 
         console.log(rate)
     }
@@ -238,7 +239,7 @@ window.onload = function (e) {
     });
 
     function animeModules() {
-        document.querySelector('.works').forEach(el => observer.observe(el))
+        document.querySelectorAll('.works').forEach(el => observer.observe(el));
         document.querySelectorAll('.works__item').forEach(el => observer.observe(el))
     }
 
