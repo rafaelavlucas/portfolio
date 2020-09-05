@@ -76,10 +76,6 @@ window.onload = function (e) {
         */
 
 
-    // Heading gets inner Height
-    if (window.innerWidth < 799) {
-        document.querySelector(".mainHeading").style.height = window.innerHeight + "px";
-    }
 
 
     // Populate Works Content
@@ -237,7 +233,7 @@ window.onload = function (e) {
         }
     }
 
-    // To Anime Text on Scroll
+    // To Anime Things on Scroll
 
     function scrollEffectHeading() {
         let scrolled = window.pageYOffset,
@@ -250,15 +246,17 @@ window.onload = function (e) {
 
     function scrollEffectTitles() {
 
+        // Title Right
         observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.intersectionRatio > 0) {
-                    let scrolled = entry.intersectionRect.y;
-                    rate = scrolled * 0.05,
-                        entry.target.style.transform = 'translateX(' + rate + 'px)';
+                    let scrolled = entry.intersectionRect.y,
+                        rate = scrolled * 0.05;
+                    entry.target.style.transform = 'translateX(' + rate + 'px)';
                 }
             });
         });
+        // Title Left
         observer2 = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.intersectionRatio > 0) {
@@ -267,27 +265,26 @@ window.onload = function (e) {
                         entry.target.style.transform = 'translateX(-' + rate + 'px)';
                 }
             });
-
         });
+        // Line Right
         observer3 = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.intersectionRatio > 0) {
-                    let scrolled = entry.intersectionRect.y;
-                    rate = scrolled * 0.2,
-                        entry.target.style.transform = 'translateX(-' + rate + 'px)';
+                    let scrolled = entry.intersectionRect.y,
+                        rate = scrolled * 0.2;
+                    entry.target.style.transform = 'translateX(-' + rate + 'px)';
                 }
             });
-
         });
+        // Line Left
         observer4 = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.intersectionRatio > 0) {
-                    let scrolled = entry.intersectionRect.y;
-                    rate = scrolled * 0.2,
-                        entry.target.style.transform = 'translateX(' + rate + 'px)';
+                    let scrolled = entry.intersectionRect.y,
+                        rate = scrolled * 0.2;
+                    entry.target.style.transform = 'translateX(' + rate + 'px)';
                 }
             });
-
         });
         document.querySelectorAll(".mainTitle.right span").forEach(el => observer.observe(el));
         document.querySelectorAll(".mainTitle.left span").forEach(el => observer2.observe(el));
@@ -295,32 +292,80 @@ window.onload = function (e) {
         document.querySelectorAll(".mainTitle.left .line").forEach(el => observer4.observe(el));
     }
 
+    function scrollEffectImg() {
+
+        observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.intersectionRatio > 0) {
+                    let scrolled = entry.intersectionRect.y,
+                        rate = scrolled * 0.05;
+                    entry.target.style.transform = 'translateY(-' + rate + 'px)';
+                }
+            });
+        });
+
+        observer2 = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.intersectionRatio > 0) {
+                    let scrolled = entry.intersectionRect.y,
+                        rate = scrolled * 0.1;
+                    entry.target.style.transform = 'translateY(' + rate + 'px)';
+                }
+            });
+        });
+
+        document.querySelectorAll(".about__img").forEach(el => observer.observe(el));
+        document.querySelectorAll(".about__textContent").forEach(el => observer2.observe(el));
+
+    }
+
+
 
     // Anime Modules on Viewport
-    observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.intersectionRatio > 0) {
-                setTimeout(() => {
-                    entry.target.classList.add('anime');
-                }, 200);
-            }
-        });
-    });
+
 
     function animeModules() {
+        observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.intersectionRatio > 0) {
+                    setTimeout(() => {
+                        entry.target.classList.add('anime');
+                    }, 200);
+                }
+            });
+        });
 
         document.querySelectorAll('.works__item').forEach(el => observer.observe(el));
         document.querySelectorAll('section').forEach(el => observer.observe(el));
         document.querySelectorAll('.mainTitle').forEach(el => observer.observe(el));
+        document.querySelectorAll('.about__img img').forEach(el => observer.observe(el));
     }
 
     window.onscroll = function () {
         scrollEffectHeading();
         scrollEffectTitles();
+        scrollEffectImg();
+
     };
 
     worksContent();
     worksExpand();
     animeModules();
+
+    // Get Height of About Text
+
+    window.addEventListener("resize", function () {
+        getTextHeight();
+    })
+
+    function getTextHeight() {
+        document.querySelector(".about__textContent").style.height = document.querySelector(".about__text").scrollHeight + "px";
+        return
+    }
+
+    // Heading gets inner Height
+    if (window.innerWidth < 799) {
+        document.querySelector(".mainHeading").style.height = window.innerHeight + "px";
+    }
 
 }

@@ -28,9 +28,9 @@
 <body>
     <nav class="mainNav">
         <ul class="mainNav__items">
-            <li class="mainNav__links"><a href="#">works</a></li>
-            <li class="mainNav__links"><a href="#">about</a></li>
-            <li class="mainNav__links"><a href="#">find me</a></li>
+            <li class="mainNav__links"><a href="#works">works</a></li>
+            <li class="mainNav__links"><a href="#about">about</a></li>
+            <li class="mainNav__links"><a href="#find">find me</a></li>
         </ul>
     </nav>
 
@@ -69,7 +69,7 @@
     </header>
 
     <div id="wrapper">
-        <section class="works">
+        <section class="works" id="works">
             <h3 class="mainTitle right">works <span>works</span>
                 <hr class="line">
             </h3>
@@ -79,20 +79,32 @@
             </div>
         </section>
 
-        <section class="about">
+        <section class="about" id="about">
 
             <h3 class="mainTitle left">about <span>about</span>
                 <hr class="line">
             </h3>
-            <div style="height: 400px;">
-
+            <div class="about__content">
+                <div class="about__textContent">
+                    <p class="about__text">
+                        Far far away, behind the world mountains, far from the countries Vokalia and Consonantia, theres
+                        live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics,
+                        a
+                        large language ocean. A small river named Duden flows by their place and supplies it with the
+                        necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly
+                        into
+                        your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost
+                        unorthographic living month!
+                    </p>
+                </div>
+                <figure class="about__img">
+                    <img src="assets/teste.jpg" alt="">
+                </figure>
             </div>
         </section>
 
-        <div style="height: 400px;">
 
-        </div>
-        <section class="find">
+        <section class="find" id="find">
 
             <h3 class="mainTitle right">find me <span>find me</span>
                 <hr class="line">
