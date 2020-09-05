@@ -285,7 +285,7 @@ window.onload = function (e) {
                 if (entry.intersectionRatio > 0) {
                     let scrolled = entry.intersectionRect.y;
                     rate = scrolled * 0.3,
-                        entry.target.style.transform = 'translateX(-' + rate + 'px)';
+                        entry.target.style.transform = 'translateX(' + rate + 'px)';
                 }
             });
 
@@ -294,8 +294,6 @@ window.onload = function (e) {
         document.querySelectorAll(".mainTitle.left span").forEach(el => observer2.observe(el));
         document.querySelectorAll(".mainTitle.right .line").forEach(el => observer3.observe(el));
         document.querySelectorAll(".mainTitle.left .line").forEach(el => observer4.observe(el));
-
-
     }
 
 

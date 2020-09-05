@@ -722,6 +722,7 @@ section {
 }
 
 .mainTitle {
+    overflow-x: hidden;
     transform: translateX(-5vw);
     width: 100vw;
     font-family: $font2;
