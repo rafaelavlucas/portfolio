@@ -244,7 +244,7 @@ window.onload = function (e) {
             rate = scrolled * 0.15,
             rate2 = scrolled * 0.2;
 
-        document.querySelector(".mainHeading__video").style.transform = 'translateX(' + rate2 + 'px)';
+        //document.querySelector(".mainHeading__video").style.transform = 'translateX(' + rate2 + 'px)';
         document.querySelector(".mainHeading__text").style.transform = 'translateX(-' + rate + 'px)';
     }
 
@@ -285,7 +285,7 @@ window.onload = function (e) {
                 if (entry.intersectionRatio > 0) {
                     let scrolled = entry.intersectionRect.y;
                     rate = scrolled * 0.3,
-                        entry.target.style.transform = 'translateX(' + rate + 'px)';
+                        entry.target.style.transform = 'translateX(-' + rate + 'px)';
                 }
             });
 
