@@ -71,6 +71,12 @@ body {
   position: relative;
 }
 
+section {
+  padding-left: 5vw;
+  padding-right: 5vw;
+  margin-bottom: 80px;
+}
+
 .mainNav {
   width: 100%;
   position: absolute;
@@ -1367,6 +1373,9 @@ body {
   right: 0;
   position: fixed;
   top: 0;
+  background-image: url("/assets/teste.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .mainHeading__videoPlayer {
@@ -1490,8 +1499,6 @@ body {
   opacity: 0;
   -webkit-transition: all 0.6s ease;
   transition: all 0.6s ease;
-  padding-left: 5vw;
-  padding-right: 5vw;
 }
 
 .works__item {
@@ -1578,21 +1585,24 @@ body {
 
 .works__title {
   width: 50%;
-  font-size: 48px;
+  font-size: 2.5em;
+  z-index: 2;
+  font-weight: 400;
 }
 
 .works__title span {
+  width: 200vw;
   position: absolute;
   top: 0;
   left: 0;
   font-family: "Major Mono Display", monospace;
   text-transform: uppercase;
   font-size: 2em;
-  color: #484848;
+  color: rgba(72, 72, 72, 0.2);
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
-  -webkit-transform: translate(-15px, -20px);
-          transform: translate(-15px, -20px);
+  -webkit-transform: translate(-0.2em, -0.2em);
+          transform: translate(-0.2em, -0.2em);
 }
 
 .works__subtitle {
@@ -1715,6 +1725,7 @@ body {
 .works .openWork .works__img {
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
+  height: calc(100% - 6.5em);
 }
 
 .works .openWork .works__info {
@@ -1737,7 +1748,7 @@ body {
 .works .openWork .works__link {
   -webkit-transform: translateY(0px);
           transform: translateY(0px);
-  height: 112px;
+  height: 3.5em;
 }
 
 .works .openWork .works__img {
@@ -1755,23 +1766,26 @@ body {
 }
 
 .mainTitle {
+  -webkit-transform: translateX(5vw);
+          transform: translateX(5vw);
   width: 100%;
   font-family: "Major Mono Display", monospace;
-  line-height: 0.9em;
+  line-height: 0.6em;
   font-size: 7em;
   position: relative;
   text-transform: uppercase;
   color: white;
-  height: 1.3em;
+  height: 1.2em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  font-weight: 400;
 }
 
 .mainTitle span {
@@ -1779,8 +1793,20 @@ body {
   font-size: 1.8em;
   position: absolute;
   z-index: -1;
-  top: -0.19em;
+  top: -0.21em;
   line-height: normal;
+}
+
+.mainTitle.left {
+  -webkit-transform: translateX(-5vw);
+          transform: translateX(-5vw);
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.mainTitle.left span {
+  left: 0;
 }
 
 .anime {

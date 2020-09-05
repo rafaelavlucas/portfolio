@@ -132,6 +132,11 @@ body {
     position: relative;
 }
 
+section {
+    @include margins();
+    margin-bottom: 80px;
+}
+
 .mainNav {
     width: 100%;
     position: absolute;
@@ -358,6 +363,9 @@ body {
         right: 0;
         position: fixed;
         top: 0;
+        background-image: url("/assets/teste.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
 
     }
 
@@ -457,7 +465,7 @@ body {
 .works {
     $this: &;
     @include beforeAnime();
-    @include margins();
+
 
     &__item {
         @include beforeAnime();
@@ -526,18 +534,21 @@ body {
 
     &__title {
         width: 50%;
-        font-size: 48px;
+        font-size: 2.5em;
+        z-index: 2;
+        font-weight: 400;
 
         span {
+            width: 200vw;
             position: absolute;
             top: 0;
             left: 0;
             font-family: $font2;
             text-transform: uppercase;
             font-size: 2em;
-            color: $neu-08;
+            color: rgba($neu-08, 0.2);
             transition: all 0.4s ease;
-            transform: translate(-15px, -20px);
+            transform: translate(-0.2em, -0.2em);
         }
     }
 
@@ -664,6 +675,7 @@ body {
 
             &__img {
                 transition: all 0.4s ease;
+                height: calc(100% - 6.5em);
             }
 
             &__info {
@@ -684,7 +696,7 @@ body {
 
             &__link {
                 transform: translateY(0px);
-                height: 112px;
+                height: 3.5em;
             }
 
             &__img {
@@ -704,28 +716,40 @@ body {
 }
 
 .mainTitle {
+    transform: translateX(5vw);
     width: 100%;
     font-family: $font2;
-    line-height: 0.9em;
+    line-height: 0.6em;
     font-size: 7em;
     position: relative;
     text-transform: uppercase;
     color: white;
-    height: 1.3em;
+    height: 1.2em;
     display: flex;
     justify-content: flex-end;
-    align-items: flex-end;
+    align-items: flex-start;
+    font-weight: 400;
 
     span {
         color: $neu-09;
         font-size: 1.8em;
         position: absolute;
         z-index: -1;
-        top: -0.19em;
+        top: -0.21em;
         line-height: normal;
     }
-}
 
+
+
+    &.left {
+        transform: translateX(-5vw);
+        justify-content: flex-start;
+
+        span {
+            left: 0;
+        }
+    }
+}
 
 .anime {
     transform: translateY(0px);

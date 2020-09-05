@@ -75,28 +75,6 @@ window.onload = function (e) {
     };
         */
 
-    // To Anime Tex on Scroll
-    const text = document.querySelector(".mainHeading__text");
-
-
-    window.onscroll = function () {
-        scrollEffect()
-    };
-
-    function scrollEffect() {
-
-        let scrolled = window.pageYOffset,
-            rate = scrolled * 0.15,
-            rate2 = scrolled * 0.2;
-
-
-        document.querySelector(".mainHeading__video").style.transform = 'translateX(' + rate2 + 'px)';
-        text.style.transform = 'translateX(-' + rate + 'px)';
-
-        console.log(rate)
-    }
-
-
 
 
     // Heading gets inner Height
@@ -110,9 +88,9 @@ window.onload = function (e) {
     function worksContent() {
         const works = [{
                 id: 0,
-                title: "title",
-                subtitle: "subtitle",
-                label: "website",
+                title: "daily ui challenge",
+                subtitle: "ui design and front-end development",
+                label: "personal project",
                 img: "assets/teste.jpg",
                 alt: "alt",
                 tools: [
@@ -124,8 +102,8 @@ window.onload = function (e) {
             },
             {
                 id: 1,
-                title: "title",
-                subtitle: "subtitle",
+                title: "quinta da valeira",
+                subtitle: "ui design and front-end development",
                 label: "website",
                 img: "assets/teste.jpg",
                 alt: "alt",
@@ -138,8 +116,21 @@ window.onload = function (e) {
             },
             {
                 id: 2,
-                title: "title",
-                subtitle: "subtitle",
+                title: "movie app",
+                subtitle: "ui design and front-end development",
+                label: "personal project",
+                img: "assets/teste.jpg",
+                alt: "alt",
+                tools: [
+                    "cenas3",
+                    "teste3"
+                ],
+                description: "Far far away, behind the world mountains, far from the countries Vokalia and Consonantia, theres live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by theFar far away, behind the world mountains, far from the countries Vokalia and Consonantia, theres live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by the",
+                url: "",
+            }, {
+                id: 3,
+                title: "catche",
+                subtitle: "ui design and front-end development",
                 label: "website",
                 img: "assets/teste.jpg",
                 alt: "alt",
@@ -223,17 +214,57 @@ window.onload = function (e) {
         }
     }
 
+    // To Anime Tex on Scroll
+    const text = document.querySelector(".mainHeading__text");
+
+    function scrollTitles() {
+        let scrolled = window.pageYOffset,
+            rate = scrolled * 0.05,
+
+            observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.intersectionRatio > 0) {
+                        entry.target.style.transform = 'translateX(-' + rate + 'px)';
+                        console.log(entry)
+                    }
+                });
+            });
+        observer2 = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.intersectionRatio > 0) {
+                    entry.target.style.transform = 'translateX(' + rate + 'px)';
+
+                }
+            });
+
+        });
+        document.querySelectorAll(".mainTitle.right span").forEach(el => observer.observe(el));
+        document.querySelectorAll(".mainTitle.left span").forEach(el => observer2.observe(el));
+
+
+    }
+
+    function scrollEffect() {
+
+        let scrolled = window.pageYOffset,
+            rate = scrolled * 0.15,
+            rate2 = scrolled * 0.2;
+
+
+        document.querySelector(".mainHeading__video").style.transform = 'translateX(' + rate2 + 'px)';
+        text.style.transform = 'translateX(-' + rate + 'px)';
+
+        console.log(rate)
+    }
 
 
     // Anime Modules
-    let delay = 1;
     observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.intersectionRatio > 0) {
                 setTimeout(() => {
                     entry.target.classList.add('anime');
                 }, 200);
-
             }
         });
     });
@@ -242,6 +273,11 @@ window.onload = function (e) {
         document.querySelectorAll('.works').forEach(el => observer.observe(el));
         document.querySelectorAll('.works__item').forEach(el => observer.observe(el))
     }
+
+    window.onscroll = function () {
+        scrollEffect();
+        scrollTitles();
+    };
 
     worksContent();
     worksExpand();
