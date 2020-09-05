@@ -218,21 +218,24 @@ window.onload = function (e) {
     const text = document.querySelector(".mainHeading__text");
 
     function scrollTitles() {
-        let scrolled = window.pageYOffset,
-            rate = scrolled * 0.05,
 
-            observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.intersectionRatio > 0) {
-                        entry.target.style.transform = 'translateX(-' + rate + 'px)';
-                        console.log(entry)
-                    }
-                });
+
+        observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.intersectionRatio > 0) {
+                    let scrolled = entry.intersectionRect.y;
+                    rate = scrolled * 0.05,
+                        entry.target.style.transform = 'translateX(' + rate + 'px)';
+                    console.log(entry)
+                }
             });
+        });
         observer2 = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.intersectionRatio > 0) {
-                    entry.target.style.transform = 'translateX(' + rate + 'px)';
+                    let scrolled = entry.intersectionRect.y;
+                    rate = scrolled * 0.05,
+                        entry.target.style.transform = 'translateX(-' + rate + 'px)';
 
                 }
             });
