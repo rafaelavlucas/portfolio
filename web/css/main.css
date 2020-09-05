@@ -1509,6 +1509,11 @@ section {
   transition: all 0.6s ease;
 }
 
+.works__list {
+  -webkit-transform: translateY(-0.3em);
+          transform: translateY(-0.3em);
+}
+
 .works__item {
   -webkit-transform: translateY(40px);
           transform: translateY(40px);
@@ -1775,8 +1780,8 @@ section {
 
 .mainTitle {
   overflow: hidden;
-  -webkit-transform: translateX(-5vw);
-          transform: translateX(-5vw);
+  -webkit-transform: translateX(-5vw), translateY(-0.05em);
+          transform: translateX(-5vw), translateY(-0.05em);
   width: 100vw;
   font-family: "Major Mono Display", monospace;
   line-height: 0.6em;
@@ -1795,18 +1800,7 @@ section {
       -ms-flex-align: start;
           align-items: flex-start;
   font-weight: 400;
-}
-
-.mainTitle:before {
-  position: absolute;
-  width: 0%;
-  height: 4px;
-  left: -5vw;
-  top: 30%;
-  background-color: #EE7D4C;
-  -webkit-transition: all 0.6s 0.4s ease;
-  transition: all 0.6s 0.4s ease;
-  z-index: 2;
+  padding: 0.05em 0;
 }
 
 .mainTitle span {
@@ -1816,7 +1810,7 @@ section {
   font-size: 1.8em;
   position: absolute;
   z-index: -1;
-  top: -0.21em;
+  top: -0.17em;
   line-height: normal;
   right: 0;
   text-align: right;
@@ -1851,8 +1845,8 @@ section {
 }
 
 .mainTitle.anime {
-  -webkit-transform: translateX(-5vw);
-          transform: translateX(-5vw);
+  -webkit-transform: translateX(-5vw) translateY(-0.05em);
+          transform: translateX(-5vw) translateY(-0.05em);
 }
 
 .mainTitle.anime .line {
@@ -1860,8 +1854,8 @@ section {
 }
 
 .anime {
-  -webkit-transform: translateY(0px);
-          transform: translateY(0px);
+  -webkit-transform: translateY(-0.05em);
+          transform: translateY(-0.05em);
   opacity: 1;
 }
 
