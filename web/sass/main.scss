@@ -1,29 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
 
+// Fonts
 $font: 'DM Mono',
 monospace;
-
 $font2: 'Major Mono Display',
 monospace;
 
+// Colors
+
 $m-01: #EE7D4C;
-
-
 $neu-08: #484848;
 $neu-09: #313131;
 
-$cubic: cubic-bezier(0.76, 0.57, 0.17, 1.05);
 
-@mixin delay {
-    @for $i from 1 through 100 {
-        &:nth-child(#{$i}) {
-            animation-delay: #{0.4 + $i * 0.2}s;
-        }
-    }
-}
-
-
+// Breakpoints
 @mixin xxl {
     @media screen and (max-width: 1920px) {
         @content;
@@ -32,12 +23,6 @@ $cubic: cubic-bezier(0.76, 0.57, 0.17, 1.05);
 
 @mixin xl {
     @media screen and (max-width: 1440px) {
-        @content;
-    }
-}
-
-@mixin lg {
-    @media screen and (max-width: 1240px) {
         @content;
     }
 }
@@ -66,6 +51,8 @@ $cubic: cubic-bezier(0.76, 0.57, 0.17, 1.05);
     }
 }
 
+
+// Mixins for Styles
 @mixin delay {
     @for $i from 1 through 100 {
         &:nth-child(#{$i}) {
@@ -78,6 +65,29 @@ $cubic: cubic-bezier(0.76, 0.57, 0.17, 1.05);
     padding-left: 5vw;
     padding-right: 5vw;
 }
+
+// Animations
+
+@keyframes enterLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+}
+
+@mixin beforeAnime {
+    transform: translateY(40px);
+    opacity: 0;
+    transition: all 0.6s ease;
+}
+
+&.anime {
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+
+$cubic: cubic-bezier(0.76, 0.57, 0.17, 1.05);
 
 * {
     margin: 0;
@@ -106,7 +116,7 @@ body {
     }
 
     @include sm {
-        font-size: 65%;
+        font-size: 70%;
     }
 
     @include xs {
@@ -118,10 +128,16 @@ body {
     }
 }
 
+#wrapper {
+    z-index: 3;
+    background: $neu-08;
+    position: relative;
+}
+
 .mainNav {
     width: 100%;
-    position: fixed;
-    z-index: 2;
+    position: absolute;
+    z-index: 3;
     left: 0;
     top: 0;
 
@@ -184,7 +200,9 @@ body {
     @include margins;
     display: flex;
     align-items: center;
-    position: relative;
+    //position: sticky;
+    z-index: 0;
+    //top: 0;
 
     @include sm {
         min-height: 500px;
@@ -196,14 +214,19 @@ body {
         padding-bottom: 120px;
         user-select: none;
         overflow: hidden;
+        position: sticky;
+        right: 0;
+        //transition: all 0.6s ease;
     }
 
     &__title {
         font-size: 3em;
         font-weight: 400;
         margin-left: 4px;
-        animation: title 1s $cubic both;
+        animation: enterLeft 1s $cubic backwards;
         letter-spacing: 0.62em;
+
+
 
         span {
             @include delay;
@@ -212,23 +235,22 @@ body {
         }
     }
 
-
     &__subtitle {
         font-family: $font2;
         text-transform: uppercase;
         font-size: 7em;
-        margin-left: -0.1em;
+        margin-left: -0.05em;
         line-height: 0.7em;
         color: $m-01;
         display: block;
-        padding: 10px;
+        padding: 0.2em 0px;
 
     }
 
     &__subtitleWord {
         @include delay;
         display: block;
-        animation: title 1s $cubic both;
+        animation: enterLeft 1s $cubic both;
 
         &:first-child {
             letter-spacing: 0.11em;
@@ -244,7 +266,7 @@ body {
 
 
         @include xs {
-            font-size: 14px;
+            font-size: 16px;
         }
 
         &--strike {
@@ -284,30 +306,40 @@ body {
             border-left: 0.1em solid $m-01;
             border-bottom: 0.1em solid $m-01;
             padding: 0px 0px 5px 2%;
-            right: 4.5em;
+            left: 16.5em;
             bottom: 0;
             line-height: 1.5em;
             transition: all 0.4s ease;
+            animation: super 0.4s 2.4s $cubic backwards;
+
+            @keyframes super {
+                0% {
+                    opacity: 0;
+                    transform: rotate(-80deg) translate(0em, -2.2em) skew(0deg, 0deg);
+                }
+
+                100% {
+                    opacity: 1;
+                    transform: rotate(-30deg) translate(0.5em, -2.2em) skew(-10deg, 5deg);
+                }
+            }
 
             @include xs {
                 transform: rotate(-30deg) translate(-10px, -40px) skew(-10deg, 5deg);
                 animation: none;
+                left: 17em;
 
             }
-
-
 
             &:hover {
                 transform: rotate(-20deg) translate(0.5em, -2.2em) skew(-10deg, 5deg);
             }
-
-
         }
 
         &--line1,
         &--line2 {
             display: flex;
-            animation: title 1s 0.8s $cubic both;
+            animation: enterLeft 1s 0.8s $cubic both;
         }
 
         &--line2 {
@@ -317,7 +349,7 @@ body {
 
     &__video {
         background-color: black;
-        width: 70%;
+        width: 100%;
         height: 100%;
         position: absolute;
         z-index: -1;
@@ -325,7 +357,10 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-        right: 0;
+        right: -30%;
+        position: fixed;
+        top: 0;
+
     }
 
     &__videoPlayer {
@@ -337,6 +372,8 @@ body {
         justify-content: center;
         align-items: center;
         filter: grayscale(100%);
+        top: 0;
+
 
         &:before,
         &:after {
@@ -417,26 +454,15 @@ body {
         }
     }
 
-
-    @keyframes title {
-        0% {
-            opacity: 0;
-            transform: translateX(-100%);
-        }
-    }
-
-    @keyframes letters {
-        0% {
-            opacity: 0;
-        }
-    }
 }
 
 .works {
     $this: &;
+    @include beforeAnime();
     @include margins();
 
     &__item {
+        @include beforeAnime();
         background-color: $neu-09;
         padding: 80px;
         display: flex;
@@ -696,7 +722,7 @@ body {
 
     span {
         color: $neu-09;
-        font-size: 2em;
+        font-size: 1.8em;
         position: absolute;
         z-index: -1;
         top: -0.19em;

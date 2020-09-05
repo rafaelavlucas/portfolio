@@ -75,6 +75,28 @@ window.onload = function (e) {
     };
         */
 
+    // To Anime Tex on Scroll
+    const text = document.querySelector(".mainHeading__text");
+
+
+    window.onscroll = function () {
+        scrollEffect()
+    };
+
+    function scrollEffect() {
+
+        let scrolled = window.pageYOffset,
+            rate = scrolled * 0.5,
+            rate2 = scrolled * 0.4;
+
+        document.querySelector(".mainHeading__video").style.transform = 'translateX(-' + rate2 + 'px)';
+        text.style.transform = 'translateX(' + rate + 'px)';
+
+        console.log(rate)
+    }
+
+
+
 
     // Heading gets inner Height
     if (window.innerWidth < 799) {
@@ -82,57 +104,57 @@ window.onload = function (e) {
     }
 
 
+    // Populate Works Content
 
-    // Works
+    function worksContent() {
+        const works = [{
+                id: 0,
+                title: "title",
+                subtitle: "subtitle",
+                label: "website",
+                img: "assets/teste.jpg",
+                alt: "alt",
+                tools: [
+                    "cenas1",
+                    "teste1"
+                ],
+                description: "rgertgt",
+                url: "",
+            },
+            {
+                id: 1,
+                title: "title",
+                subtitle: "subtitle",
+                label: "website",
+                img: "assets/teste.jpg",
+                alt: "alt",
+                tools: [
+                    "cenas2",
+                    "teste2"
+                ],
+                description: "rgertgt",
+                url: "",
+            },
+            {
+                id: 2,
+                title: "title",
+                subtitle: "subtitle",
+                label: "website",
+                img: "assets/teste.jpg",
+                alt: "alt",
+                tools: [
+                    "cenas3",
+                    "teste3"
+                ],
+                description: "Far far away, behind the world mountains, far from the countries Vokalia and Consonantia, theres live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by theFar far away, behind the world mountains, far from the countries Vokalia and Consonantia, theres live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by the",
+                url: "",
+            }
+        ];
 
-    const works = [{
-            id: 0,
-            title: "title",
-            subtitle: "subtitle",
-            label: "website",
-            img: "assets/teste.jpg",
-            alt: "alt",
-            tools: [
-                "cenas1",
-                "teste1"
-            ],
-            description: "rgertgt",
-            url: "",
-        },
-        {
-            id: 1,
-            title: "title",
-            subtitle: "subtitle",
-            label: "website",
-            img: "assets/teste.jpg",
-            alt: "alt",
-            tools: [
-                "cenas2",
-                "teste2"
-            ],
-            description: "rgertgt",
-            url: "",
-        },
-        {
-            id: 2,
-            title: "title",
-            subtitle: "subtitle",
-            label: "website",
-            img: "assets/teste.jpg",
-            alt: "alt",
-            tools: [
-                "cenas3",
-                "teste3"
-            ],
-            description: "Far far away, behind the world mountains, far from the countries Vokalia and Consonantia, theres live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by theFar far away, behind the world mountains, far from the countries Vokalia and Consonantia, theres live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by the",
-            url: "",
-        }
-    ];
 
+        works.forEach(function (el) {
 
-    works.forEach(function (el) {
-
-        let template = `
+            let template = `
     <div class="works__item">
         <h4 class="works__title">${el.title} <span>${el.title}</span></h4>
         <h5 class="works__subtitle">${el.subtitle}</h5>
@@ -153,50 +175,75 @@ window.onload = function (e) {
         </div>
     </div>`;
 
-        document.querySelector(".works__list").insertAdjacentHTML("beforeend", template)
+            document.querySelector(".works__list").insertAdjacentHTML("beforeend", template)
 
-        el.tools.forEach(function (cenas) {
-            let template2 = `<span>${cenas}</span>`;
+            el.tools.forEach(function (cenas) {
+                let template2 = `<span>${cenas}</span>`;
 
-            document.querySelectorAll(".works__tools")[el.id].insertAdjacentHTML("beforeend", template2);
+                document.querySelectorAll(".works__tools")[el.id].insertAdjacentHTML("beforeend", template2);
+
+            })
 
         })
+    }
+
+
+    // Open and Close Works
+
+    function worksExpand() {
+        const workItem = document.querySelectorAll(".works__item");
+        document.querySelector("body").addEventListener("click", closeWork)
+
+        workItem.forEach(function (el) {
+            el.addEventListener("click", openWork);
+
+        });
+
+        function openWork(e) {
+            const currentInfo = e.currentTarget.querySelector('.works__info');
+
+            workItem.forEach(function (el) {
+                el.classList.remove("openWork");
+                el.querySelector('.works__info').style.height = "0";
+            });
+
+            currentInfo.style.height = currentInfo.scrollHeight + 'px'
+            e.currentTarget.classList.add("openWork");
+        }
+
+        function closeWork(e) {
+            if (e.target.closest(".works__item")) {
+                return
+            }
+            workItem.forEach(function (el) {
+                el.classList.remove("openWork");
+                el.querySelector('.works__info').style.height = "0";
+            });
+        }
+    }
 
 
 
+    // Anime Modules
+    let delay = 1;
+    observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.intersectionRatio > 0) {
+                setTimeout(() => {
+                    entry.target.classList.add('anime');
+                }, 200);
 
-    })
-
-
-
-    const workItem = document.querySelectorAll(".works__item");
-    document.querySelector("body").addEventListener("click", closeWork)
-
-    workItem.forEach(function (el) {
-        el.addEventListener("click", openWork);
-
+            }
+        });
     });
 
-    function openWork(e) {
-        const currentInfo = e.currentTarget.querySelector('.works__info');
-
-        workItem.forEach(function (el) {
-            el.classList.remove("openWork");
-            el.querySelector('.works__info').style.height = "0";
-        });
-
-        currentInfo.style.height = currentInfo.scrollHeight + 'px'
-        e.currentTarget.classList.add("openWork");
+    function animeModules() {
+        document.querySelector('.works').forEach(el => observer.observe(el))
+        document.querySelectorAll('.works__item').forEach(el => observer.observe(el))
     }
 
-    function closeWork(e) {
-        if (e.target.closest(".works__item")) {
-            return
-        }
-        workItem.forEach(function (el) {
-            el.classList.remove("openWork");
-            el.querySelector('.works__info').style.height = "0";
-        });
-    }
+    worksContent();
+    worksExpand();
+    animeModules();
 
 }
