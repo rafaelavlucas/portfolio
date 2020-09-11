@@ -13,6 +13,7 @@ $m-01: #EE7D4C;
 $neu-08: #484848;
 $neu-09: #313131;
 
+$maxWidthContent: 1920px;
 
 // Breakpoints
 @mixin xxl {
@@ -86,7 +87,34 @@ $neu-09: #313131;
     }
 }
 
+@mixin links {
+    position: relative;
+    transition: all 0.3s $cubic;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 
+    &:before {
+        content: '';
+        position: absolute;
+        width: 0px;
+        height: 4px;
+        transform: translateY(2px);
+        background-color: $m-01;
+        transition: inherit;
+        z-index: 1;
+    }
+
+    &:hover {
+        transform: translateX(5px);
+        color: rgba(white, 0.3);
+
+        &:before {
+            width: calc(100% + 8px);
+        }
+    }
+}
 
 
 $cubic: cubic-bezier(0.76, 0.57, 0.17, 1.05);
@@ -117,7 +145,6 @@ body {
     color: white;
     font-size: 100%;
     transition: all 0.3s ease;
-
     overflow-x: hidden;
 
     @include md {
@@ -146,6 +173,7 @@ body {
 section {
     @include anime();
     @include margins();
+    max-width: $maxWidthContent;
     margin-bottom: 112px;
 
     @include sm {
@@ -174,36 +202,13 @@ section {
     }
 
     &__links {
+        @include links;
         font-size: 32px;
         margin-left: 40px;
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: all 0.3s $cubic;
-        cursor: pointer;
+
 
         &:first-child {
             margin-left: 0;
-        }
-
-        &:before {
-            content: '';
-            position: absolute;
-            width: 0px;
-            height: 8%;
-            transform: translateY(2px);
-            background-color: $m-01;
-            transition: inherit;
-        }
-
-        &:hover {
-            transform: translateX(5px);
-            color: rgba(white, 0.3);
-
-            &:before {
-                width: calc(100% + 8px);
-            }
         }
 
         @include sm {
@@ -382,7 +387,7 @@ section {
         right: 0;
         position: fixed;
         top: 0;
-        background-image: url("../assets/teste.jpg");
+        background-image: url("../assets/img_header.jpg");
         background-size: cover;
         background-repeat: no-repeat;
 
@@ -487,8 +492,7 @@ section {
     @include anime();
 
     &__list {
-        transform: translateY(-0.30em);
-        max-width: 1920px;
+        transform: translateY(-0.4em);
         margin: 0 auto;
     }
 
@@ -505,7 +509,7 @@ section {
         overflow: hidden;
         box-shadow: 0px;
 
-        @include sm {
+        @include md {
             padding: 48px 32px;
         }
 
@@ -547,7 +551,7 @@ section {
             filter: grayscale(100%);
         }
 
-        @include sm {
+        @include md {
             opacity: 1;
             width: 40%;
             align-self: flex-end;
@@ -573,7 +577,7 @@ section {
         width: calc(60% - 40px);
         z-index: 2;
 
-        @include sm {
+        @include md {
             width: 100%;
         }
     }
@@ -595,7 +599,7 @@ section {
             transform: translate(-0.1em, -0.2em);
         }
 
-        @include sm {
+        @include md {
             font-size: 24px;
         }
     }
@@ -605,7 +609,7 @@ section {
         font-size: 20px;
         margin-top: 16px;
 
-        @include sm {
+        @include md {
             font-size: 16px;
         }
     }
@@ -634,7 +638,7 @@ section {
         height: 0;
         transition: all 0.4s ease;
 
-        @include sm {
+        @include md {
             width: 100%;
         }
     }
@@ -667,11 +671,11 @@ section {
     }
 
     &__tools {
-        display: flex;
+
 
         span {
-            display: flex;
-            margin-right: 24px;
+            display: inline-flex;
+            margin: 0px 16px 16px 0;
             font-size: 14px;
             padding: 8px;
             border-radius: 4px;
@@ -698,6 +702,41 @@ section {
         transition: all 0.4s ease;
         z-index: 3;
         transform: translateY(80px);
+
+        a {
+            display: flex;
+            align-items: center;
+            position: relative;
+            transition: all 0.4s $cubic;
+
+            &:before {
+                content: '';
+                position: absolute;
+                width: 24px;
+                height: 24px;
+                background-image: inherit;
+                background-size: cover;
+                background-repeat: no-repeat;
+                right: 0;
+                opacity: 0;
+                background-size: cover;
+                background-image: url("../assets/arrow.svg");
+                background-repeat: no-repeat;
+                transform: translateX(50px);
+                transition: inherit;
+            }
+
+            &:hover {
+                letter-spacing: 2px;
+
+                &:before {
+                    opacity: 1;
+                    transform: translateX(60px);
+                }
+            }
+        }
+
+
     }
 
     #{$this} {
@@ -724,13 +763,17 @@ section {
     }
 
     .openWork {
+        cursor: default;
+
         &:hover {
             transform: none;
             box-shadow: none;
 
             #{$this} {
                 &__img {
-                    width: 100%;
+                    @include md {
+                        width: 100%;
+                    }
                 }
             }
         }
@@ -745,11 +788,19 @@ section {
 
             &__img {
                 transition: all 0.4s ease;
-                height: calc(100% - 6.5em);
+                height: 0;
+                //background-color: red;
                 width: 40%;
                 opacity: 1;
+                top: 112px;
+                height: 100%;
+                //padding-bottom: 40%;
+                box-sizing: initial;
 
                 img {
+                    width: 100%;
+                    object-fit: initial;
+                    height: auto;
                     filter: grayscale(0);
                 }
 
@@ -757,14 +808,11 @@ section {
                     display: none;
                 }
 
-                @include sm {
+                @include md {
                     width: 100%;
                     height: auto;
                     position: initial;
-
                     margin-top: 32px;
-
-
 
                     &:hover {
                         width: 100%;
@@ -794,7 +842,7 @@ section {
                 transform: translateY(0px);
                 height: 3.5em;
 
-                @include sm {
+                @include md {
                     height: 64px;
                     padding: 0 32px;
                 }
@@ -808,25 +856,24 @@ section {
 
 .about {
     &__content {
+
         display: flex;
         transform: translateY(-0.70em);
         position: relative;
 
-        @include sm {
+        @include md {
             flex-direction: column-reverse;
         }
     }
 
     &__textContent {
-
         margin-top: 40px;
         width: 55%;
         background-color: $neu-09;
         font-size: 20px;
         line-height: 34px;
 
-
-        @include sm {
+        @include md {
             width: 100%;
             margin-top: -80px;
             font-size: 16px;
@@ -834,8 +881,6 @@ section {
 
         }
     }
-
-
 
     &__img {
 
@@ -849,7 +894,7 @@ section {
         }
 
 
-        @include sm {
+        @include md {
             position: initial;
             width: 100%;
             margin-left: -5vw;
@@ -866,6 +911,7 @@ section {
 }
 
 .mainTitle {
+    max-width: $maxWidthContent;
     overflow: hidden;
     transform: translateX(-5vw), translateY(-0.05em);
     width: 100vw;
@@ -931,9 +977,104 @@ section {
 }
 
 
+.find {
+    margin-bottom: 0;
+
+    &__content {
+        width: 95vw;
+        transform: translateY(-0.4em);
+        background-color: $neu-09;
+        padding-bottom: 40px;
+        display: flex;
+        justify-content: space-between;
+        padding-right: 5vw;
+
+        @include sm {
+            flex-direction: column;
+        }
+    }
+
+    &__text {
+        width: 60%;
+        max-width: 800px;
+
+        @include sm {
+            width: 100%;
+            margin-bottom: 24px;
+
+        }
+    }
+
+    &__title {
+        font-size: 2em;
+        color: $m-01;
+        margin-bottom: 32px;
+
+        @include sm {
+            font-size: 24px;
+        }
+    }
+
+    &__links {
+        display: flex;
+    }
+
+    &__link {
+        @include links;
+        font-size: 24px;
+
+
+        &:first-child {
+            margin-right: 40px;
+        }
+    }
+
+    &__social {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    &__socialIcons {
+        display: flex;
+    }
+
+    &__icon {
+        @include links;
+        width: 48px;
+        height: 48px;
+        margin-left: 40px;
+
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            transition: all 0.3s $cubic;
+        }
+
+        @include sm {
+            width: 32px;
+            height: 32px;
+            padding: 8px;
+            margin-left: 32px;
+            box-sizing: initial;
+        }
+
+
+        &:hover {
+
+            img {
+                opacity: 0.3;
+            }
+        }
+    }
+
+}
+
 
 footer {
     @include margins;
+    margin-top: -80px;
     background-color: $m-01;
     display: flex;
     justify-content: center;

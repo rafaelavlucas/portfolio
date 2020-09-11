@@ -86,13 +86,12 @@ window.onload = function (e) {
                 title: "daily ui challenge",
                 subtitle: "ui design and front-end development",
                 label: "personal project",
-                img: "assets/teste.jpg",
+                img: "assets/img_dailyui.jpg",
                 alt: "alt",
                 tools: [
-                    "cenas1",
-                    "teste1"
+                    "Figma", "HTML 5", "SASS", "Vanilla JS", "Chrome DevTools", "Github"
                 ],
-                description: "rgertgt",
+                description: "Daily UI is a series of daily design challenges and I decided to do this on my spare time, to improve my skills as a designer, and on top of that, as a coder. I usually start designing on Figma, and then I develop everything by myself. I think it's a good exercise, to know what I can improve in my design process, that will facilitate and favor my coding process.",
                 url: "",
             },
             {
@@ -100,13 +99,12 @@ window.onload = function (e) {
                 title: "quinta da valeira",
                 subtitle: "ui design and front-end development",
                 label: "website",
-                img: "assets/teste.jpg",
+                img: "assets/img_valeira.jpg",
                 alt: "alt",
                 tools: [
-                    "cenas2",
-                    "teste2"
+                    "Figma", "HTML 5", "SASS", "Vanilla JS", "Chrome DevTools", "Github", "SEO"
                 ],
-                description: "rgertgt",
+                description: "Quinta da Valeira is a Premium Port Wine Brand based in the Douro Valley. I was responsible for the concept, reponsive User Interface Design, front-end development and SEO of this brand's website. It has a simple and clean design but with a couple of animations and interactions that help the user to have a better and more interesting experience.",
                 url: "",
             },
             {
@@ -114,37 +112,34 @@ window.onload = function (e) {
                 title: "movie app",
                 subtitle: "ui design and front-end development",
                 label: "personal project",
-                img: "assets/teste.jpg",
+                img: "assets/img_movie.jpg",
                 alt: "alt",
                 tools: [
-                    "cenas3",
-                    "teste3"
+                    "HTML 5", "SASS", "Vanilla JS", "Chrome DevTools", "Github"
                 ],
-                description: "Far far away, behind the world mountains, far from the countries Vokalia and Consonantia, theres live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by theFar far away, behind the world mountains, far from the countries Vokalia and Consonantia, theres live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by the",
+                description: "Movie. is a search engine mainly for movies. It started as an exercise in one of the Javascript classes at the company I work for, and I decided to bring it back to life again to improve it with some of the skills I've been acquiring since I finish those classes!",
                 url: "",
             }, {
                 id: 3,
                 title: "catche",
                 subtitle: "ui design and front-end development",
                 label: "website",
-                img: "assets/teste.jpg",
+                img: "assets/img_catche.jpg",
                 alt: "alt",
                 tools: [
-                    "cenas3",
-                    "teste3"
+                    "Figma", "HTML 5", "SASS", "Vanilla JS", "Chrome DevTools", "Github"
                 ],
-                description: "Far far away, behind the world mountains, far from the countries Vokalia and Consonantia, theres live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by theFar far away, behind the world mountains, far from the countries Vokalia and Consonantia, theres live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by the",
+                description: "Website proposal for a concept brand named Catche. The brand's identity design was first created and then the website was designed directly with code. It was a personal project to help me pratice.",
                 url: "",
             }, {
                 id: 4,
                 title: "codepen challenges",
                 subtitle: "front-end development",
                 label: "personal project",
-                img: "assets/teste.jpg",
+                img: "assets/img_codepen.jpg",
                 alt: "alt",
                 tools: [
-                    "cenas3",
-                    "teste3"
+                    "HTML 5", "SASS", "Vanilla JS"
                 ],
                 description: "Far far away, behind the world mountains, far from the countries Vokalia and Consonantia, theres live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by theFar far away, behind the world mountains, far from the countries Vokalia and Consonantia, theres live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by the",
                 url: "",
@@ -153,13 +148,13 @@ window.onload = function (e) {
                 title: "2048 game remake",
                 subtitle: "css development",
                 label: "website",
-                img: "assets/teste.jpg",
+                img: "assets/img_2048.jpg",
                 alt: "alt",
                 tools: [
-                    "cenas3",
-                    "teste3"
+                    "SASS",
+                    "HTML 5"
                 ],
-                description: "Far far away, behind the world mountains, far from the countries Vokalia and Consonantia, theres live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by theFar far away, behind the world mountains, far from the countries Vokalia and Consonantia, theres live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by the",
+                description: "2048 game It's a puzzle game where the objective is to slide numbered tiles on a grid to combine them to create a tile with the number 2048. This project was made with my friend João Bairrada that build all the code and logic behind the game. I was resposible for the design and CSS Development including all the animations and micro-interactions.",
                 url: "",
             }
         ];
@@ -319,10 +314,7 @@ window.onload = function (e) {
 
     }
 
-
-
     // Anime Modules on Viewport
-
 
     function animeModules() {
         observer = new IntersectionObserver(entries => {
@@ -341,31 +333,23 @@ window.onload = function (e) {
         document.querySelectorAll('.about__img img').forEach(el => observer.observe(el));
     }
 
-    window.onscroll = function () {
-        scrollEffectHeading();
-        scrollEffectTitles();
-        scrollEffectImg();
 
-    };
+    // Heading gets inner Height 
+    if (window.innerWidth < 799) {
+        document.querySelector(".mainHeading").style.height = window.innerHeight + "px";
+    }
 
+    //Call all functions
     worksContent();
     worksExpand();
     animeModules();
 
-    // Get Height of About Text
 
-    window.addEventListener("resize", function () {
-        getTextHeight();
-    })
+    window.onscroll = function () {
+        scrollEffectHeading();
+        scrollEffectTitles();
+        scrollEffectImg();
+    };
 
-    function getTextHeight() {
-        document.querySelector(".about__textContent").style.height = document.querySelector(".about__text").scrollHeight + "px";
-        return
-    }
-
-    // Heading gets inner Height
-    if (window.innerWidth < 799) {
-        document.querySelector(".mainHeading").style.height = window.innerHeight + "px";
-    }
 
 }
