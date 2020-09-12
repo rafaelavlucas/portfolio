@@ -92,7 +92,7 @@ window.onload = function (e) {
                     "Figma", "HTML 5", "SASS", "Vanilla JS", "Chrome DevTools", "Github"
                 ],
                 description: "Daily UI is a series of daily design challenges and I decided to do this on my spare time, to improve my skills as a designer, and on top of that, as a coder. I usually start designing on Figma, and then I develop everything by myself. I think it's a good exercise, to know what I can improve in my design process, that will facilitate and favor my coding process.",
-                url: "",
+                url: "https://www.rafaelalucas.com/dailyui/",
             },
             {
                 id: 1,
@@ -105,7 +105,7 @@ window.onload = function (e) {
                     "Figma", "HTML 5", "SASS", "Vanilla JS", "Chrome DevTools", "Github", "SEO"
                 ],
                 description: "Quinta da Valeira is a Premium Port Wine Brand based in the Douro Valley. I was responsible for the concept, reponsive User Interface Design, front-end development and SEO of this brand's website. It has a simple and clean design but with a couple of animations and interactions that help the user to have a better and more interesting experience.",
-                url: "",
+                url: "https://www.quintadavaleira.com/",
             },
             {
                 id: 2,
@@ -117,8 +117,8 @@ window.onload = function (e) {
                 tools: [
                     "HTML 5", "SASS", "Vanilla JS", "Chrome DevTools", "Github"
                 ],
-                description: "Movie. is a search engine mainly for movies. It started as an exercise in one of the Javascript classes at the company I work for, and I decided to bring it back to life again to improve it with some of the skills I've been acquiring since I finish those classes!",
-                url: "",
+                description: "Movie. is a search engine mainly for movies. It started as an exercise in one of the Javascript classes at the company I work for, and I decided to bring it back to life again to improve it with some of the skills I've been acquiring since I finish those classes! I used the IMDB api to make this project.",
+                url: "https://rafaelavlucas.github.io/movieapp/",
             }, {
                 id: 3,
                 title: "catche",
@@ -129,8 +129,8 @@ window.onload = function (e) {
                 tools: [
                     "Figma", "HTML 5", "SASS", "Vanilla JS", "Chrome DevTools", "Github"
                 ],
-                description: "Website proposal for a concept brand named Catche. The brand's identity design was first created and then the website was designed directly with code. It was a personal project to help me pratice.",
-                url: "",
+                description: "This personal project started as a concept for a small business online watch store with the name Catche. The brand's identity design was first created and then the website was designed directly with code. This was a project to help me practice, and because I love the challenge of designing things directly in the browser.",
+                url: "https://brixcreative.github.io/catche/",
             }, {
                 id: 4,
                 title: "codepen challenges",
@@ -141,8 +141,8 @@ window.onload = function (e) {
                 tools: [
                     "HTML 5", "SASS", "Vanilla JS"
                 ],
-                description: "Far far away, behind the world mountains, far from the countries Vokalia and Consonantia, theres live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by theFar far away, behind the world mountains, far from the countries Vokalia and Consonantia, theres live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by the",
-                url: "",
+                description: "Every month Codepen has a theme with different challenges every week. Every time I have a little bit of spare time, I try to participate because It's a good way to practice. When it involves things I have the opportunity to use CSS Animations I'm always in! Check out my collection of various exercises and some CSS animated Ilustrations I made!",
+                url: "https://codepen.io/collection/AZyLWY",
             }, {
                 id: 5,
                 title: "2048 game remake",
@@ -155,7 +155,7 @@ window.onload = function (e) {
                     "HTML 5"
                 ],
                 description: "2048 game It's a puzzle game where the objective is to slide numbered tiles on a grid to combine them to create a tile with the number 2048. This project was made with my friend João Bairrada that build all the code and logic behind the game. I was resposible for the design and CSS Development including all the animations and micro-interactions.",
-                url: "",
+                url: "https://play2048game.firebaseapp.com/",
             }
         ];
 
@@ -178,7 +178,7 @@ window.onload = function (e) {
                 <p class="works__description">${el.description}</p>
             </div>
             <div class="works__link">
-                <a href="${el.url}">view work</a>
+                <a href="${el.url}" target="_blank" rel=”noopener”>view work</a>
             </div>
         </div>
     </div>`;

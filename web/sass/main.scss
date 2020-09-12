@@ -138,6 +138,12 @@ html {
     scroll-behavior: smooth;
 }
 
+::selection {
+    background-color: transparent;
+    color: transparent;
+    opacity: 1;
+}
+
 body {
     width: 100vw;
     font-family: $font;
@@ -508,6 +514,7 @@ section {
         cursor: pointer;
         overflow: hidden;
         box-shadow: 0px;
+        transform-origin: top;
 
         @include md {
             padding: 48px 32px;
