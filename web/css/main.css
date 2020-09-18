@@ -1390,7 +1390,7 @@ section.anime {
           animation-delay: 1.1s;
 }
 
-.mainHeading__video {
+.mainHeading__img {
   background-color: black;
   width: 70%;
   height: 100%;
@@ -1409,35 +1409,16 @@ section.anime {
   right: 0;
   position: fixed;
   top: 0;
-  background-image: url("../assets/img_header.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 
-.mainHeading__videoPlayer {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+.mainHeading__img img {
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 100%;
   height: 100%;
-  position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-filter: grayscale(100%);
-          filter: grayscale(100%);
-  top: 0;
-  overflow: hidden;
 }
 
-.mainHeading__videoPlayer:before, .mainHeading__videoPlayer:after {
+.mainHeading__img:before, .mainHeading__img:after {
   content: '';
   position: absolute;
   width: 100%;
@@ -1449,7 +1430,7 @@ section.anime {
   right: 0;
 }
 
-.mainHeading__videoPlayer:after {
+.mainHeading__img:after {
   background-color: #313131;
   opacity: 0.8;
 }
@@ -1753,7 +1734,7 @@ section.anime {
 
 @media screen and (max-width: 799px) {
   .works__detail {
-    margin: 32px 0;
+    margin: 24px 0;
   }
 }
 
@@ -1767,6 +1748,14 @@ section.anime {
   font-size: 16px;
 }
 
+.works__description a {
+  text-decoration: underline;
+}
+
+.works__description a:hover {
+  color: #EE7D4C;
+}
+
 .works__tools span {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -1777,6 +1766,13 @@ section.anime {
   border-radius: 4px;
   background-color: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+@media screen and (max-width: 799px) {
+  .works__tools span {
+    font-size: 12px;
+    padding: 6px;
+  }
 }
 
 .works__link {
@@ -1802,6 +1798,12 @@ section.anime {
   z-index: 3;
   -webkit-transform: translateY(80px);
           transform: translateY(80px);
+}
+
+@media screen and (max-width: 799px) {
+  .works__link {
+    font-size: 24px;
+  }
 }
 
 .works__link a {
@@ -2130,7 +2132,7 @@ section.anime {
 @media screen and (max-width: 799px) {
   .find__text {
     width: 100%;
-    margin-bottom: 24px;
+    margin-bottom: 16px;
   }
 }
 
@@ -2142,7 +2144,8 @@ section.anime {
 
 @media screen and (max-width: 799px) {
   .find__title {
-    font-size: 24px;
+    font-size: 18px;
+    margin-bottom: 16px;
   }
 }
 
@@ -2194,6 +2197,12 @@ section.anime {
 
 .find__link:first-child {
   margin-right: 40px;
+}
+
+@media screen and (max-width: 799px) {
+  .find__link {
+    font-size: 16px;
+  }
 }
 
 .find__social {
@@ -2271,7 +2280,7 @@ section.anime {
     width: 32px;
     height: 32px;
     padding: 8px;
-    margin-left: 32px;
+    margin-left: 16px;
     -webkit-box-sizing: initial;
             box-sizing: initial;
   }
@@ -2298,5 +2307,6 @@ footer {
   font-size: 16px;
   padding-top: 124px;
   padding-bottom: 48px;
+  text-align: center;
 }
 /*# sourceMappingURL=main.css.map */

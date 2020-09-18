@@ -1,83 +1,5 @@
 window.onload = function (e) {
 
-    /*
-        function splitTitle() {
-            const titleWord = document.querySelector(".mainHeading__title"),
-                titleSplit = titleWord.innerText.split("");
-
-
-            // Title Split Characters
-            setTimeout(() => {
-                titleWord.innerHTML = "";
-                titleSplit.forEach(function (el) {
-                    let template = `
-                  <span>${el}</span>`;
-                    titleWord.style.opacity = "1";
-                    titleWord.insertAdjacentHTML("beforeend", template);
-                });
-            }, 300);
-        }
-
-
-        
-            function splitDescription() {
-                const descriptionWord = document.querySelector(".mainHeading__description--one"),
-                    descriptionSplit = descriptionWord.innerText.split("");
-
-                //Split Characters
-
-                setTimeout(() => {
-                    descriptionWord.innerHTML = "";
-                    descriptionSplit.forEach(function (el) {
-                        let template = `
-                      <span>${el}</span>`;
-                        descriptionWord.style.opacity = "1";
-                        descriptionWord.insertAdjacentHTML("beforeend", template);
-                    });
-                }, 1000);
-
-            }
-
-            function splitDescription2() {
-                const descriptionWord2 = document.querySelector(".mainHeading__description--two"),
-                    descriptionSplit2 = descriptionWord2.innerText.split("");
-
-                //Split Characters
-                setTimeout(() => {
-                    descriptionWord2.innerHTML = "";
-                    descriptionSplit2.forEach(function (el) {
-                        let template = `
-                      <span>${el}</span>`;
-                        descriptionWord2.style.opacity = "1";
-                        descriptionWord2.insertAdjacentHTML("beforeend", template);
-                    });
-                }, 1300);
-            }
-
-              splitDescription();
-            splitDescription2();
-            splitTitle();
-
-            // Tilt Word Super
-    const wordSuper = document.querySelector(".mainHeading__description--super");
-
-    wordSuper.addEventListener("mouseover", tiltSuper)
-    wordSuper.addEventListener("mouseout", tiltSuper)
-
-    function tiltSuper() {
-        if (wordSuper.classList.contains("tilt")) {
-            setTimeout(() => {
-                //wordSuper.classList.remove("tilt")
-            }, 9000);
-        } else {
-            wordSuper.classList.add("tilt")
-        }
-    };
-        */
-
-
-
-
     // Populate Works Content
 
     function worksContent() {
@@ -87,7 +9,7 @@ window.onload = function (e) {
                 subtitle: "ui design and front-end development",
                 label: "personal project",
                 img: "assets/img_dailyui.jpg",
-                alt: "alt",
+                alt: "Daily UI Challenge thumbnail, a project by Rafaela Lucas",
                 tools: [
                     "Figma", "HTML 5", "SASS", "Vanilla JS", "Chrome DevTools", "Github"
                 ],
@@ -100,7 +22,7 @@ window.onload = function (e) {
                 subtitle: "ui design and front-end development",
                 label: "website",
                 img: "assets/img_valeira.jpg",
-                alt: "alt",
+                alt: "Quinta da Valeira website thumbnail, a project by Rafaela Lucas",
                 tools: [
                     "Figma", "HTML 5", "SASS", "Vanilla JS", "Chrome DevTools", "Github", "SEO"
                 ],
@@ -113,7 +35,7 @@ window.onload = function (e) {
                 subtitle: "ui design and front-end development",
                 label: "personal project",
                 img: "assets/img_movie.jpg",
-                alt: "alt",
+                alt: "Movie. App thumbnail, a project by Rafaela Lucas",
                 tools: [
                     "HTML 5", "SASS", "Vanilla JS", "Chrome DevTools", "Github"
                 ],
@@ -125,7 +47,7 @@ window.onload = function (e) {
                 subtitle: "ui design and front-end development",
                 label: "website",
                 img: "assets/img_catche.jpg",
-                alt: "alt",
+                alt: "Catche website thumbnail, a project by Rafaela Lucas",
                 tools: [
                     "Figma", "HTML 5", "SASS", "Vanilla JS", "Chrome DevTools", "Github"
                 ],
@@ -137,7 +59,7 @@ window.onload = function (e) {
                 subtitle: "front-end development",
                 label: "personal project",
                 img: "assets/img_codepen.jpg",
-                alt: "alt",
+                alt: "Codepen Challenges thumbnail, a project by Rafaela Lucas",
                 tools: [
                     "HTML 5", "SASS", "Vanilla JS"
                 ],
@@ -147,14 +69,15 @@ window.onload = function (e) {
                 id: 5,
                 title: "2048 game remake",
                 subtitle: "css development",
-                label: "website",
+                label: "personal project",
                 img: "assets/img_2048.jpg",
-                alt: "alt",
+                alt: "2048 Game Remake thumbnail, a project by Rafaela Lucas",
                 tools: [
                     "SASS",
                     "HTML 5"
                 ],
-                description: "2048 game It's a puzzle game where the objective is to slide numbered tiles on a grid to combine them to create a tile with the number 2048. This project was made with my friend João Bairrada that build all the code and logic behind the game. I was resposible for the design and CSS Development including all the animations and micro-interactions.",
+                description: `2048 game It's a puzzle game where the objective is to slide numbered tiles on a grid to combine them to create a tile with the number 2048. This project was made with my friend <a href="
+                https://www.joaobairrada.com" target="_blank" rel=”noopener”>João Bairrada</a> that build all the code and logic behind the game. I was resposible for the design and CSS Development including all the animations and micro-interactions.`,
                 url: "https://play2048game.firebaseapp.com/",
             }
         ];
@@ -333,7 +256,6 @@ window.onload = function (e) {
         document.querySelectorAll('.about__img img').forEach(el => observer.observe(el));
     }
 
-
     // Heading gets inner Height 
     if (window.innerWidth < 799) {
         document.querySelector(".mainHeading").style.height = window.innerHeight + "px";
@@ -344,12 +266,9 @@ window.onload = function (e) {
     worksExpand();
     animeModules();
 
-
     window.onscroll = function () {
         scrollEffectHeading();
         scrollEffectTitles();
         scrollEffectImg();
     };
-
-
 }

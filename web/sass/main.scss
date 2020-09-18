@@ -170,6 +170,7 @@ body {
     }
 }
 
+
 #wrapper {
     z-index: 3;
     background: $neu-08;
@@ -185,8 +186,9 @@ section {
     @include sm {
         margin-bottom: 80px;
     }
-
 }
+
+
 
 .mainNav {
     width: 100%;
@@ -380,7 +382,7 @@ section {
         }
     }
 
-    &__video {
+    &__img {
         background-color: black;
         width: 70%;
         height: 100%;
@@ -393,24 +395,13 @@ section {
         right: 0;
         position: fixed;
         top: 0;
-        background-image: url("../assets/img_header.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
 
-    }
 
-    &__videoPlayer {
-        user-select: none;
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        filter: grayscale(100%);
-        top: 0;
-        overflow: hidden;
-
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
 
         &:before,
         &:after {
@@ -430,6 +421,7 @@ section {
             opacity: 0.8;
         }
     }
+
 
     &__scroll {
         width: 2.5em;
@@ -661,7 +653,7 @@ section {
         }
 
         @include sm {
-            margin: 32px 0;
+            margin: 24px 0;
         }
     }
 
@@ -674,12 +666,17 @@ section {
 
     &__description {
         font-size: 16px;
-        // height: 200px;
+
+        a {
+            text-decoration: underline;
+
+            &:hover {
+                color: $m-01;
+            }
+        }
     }
 
     &__tools {
-
-
         span {
             display: inline-flex;
             margin: 0px 16px 16px 0;
@@ -689,6 +686,10 @@ section {
             background-color: rgba(white, 0.1);
             border: 1px solid rgba(white, 0.3);
 
+            @include sm {
+                font-size: 12px;
+                padding: 6px;
+            }
         }
     }
 
@@ -709,6 +710,10 @@ section {
         transition: all 0.4s ease;
         z-index: 3;
         transform: translateY(80px);
+
+        @include sm {
+            font-size: 24px;
+        }
 
         a {
             display: flex;
@@ -742,8 +747,6 @@ section {
                 }
             }
         }
-
-
     }
 
     #{$this} {
@@ -1007,8 +1010,7 @@ section {
 
         @include sm {
             width: 100%;
-            margin-bottom: 24px;
-
+            margin-bottom: 16px;
         }
     }
 
@@ -1018,7 +1020,8 @@ section {
         margin-bottom: 32px;
 
         @include sm {
-            font-size: 24px;
+            font-size: 18px;
+            margin-bottom: 16px;
         }
     }
 
@@ -1033,6 +1036,10 @@ section {
 
         &:first-child {
             margin-right: 40px;
+        }
+
+        @include sm {
+            font-size: 16px;
         }
     }
 
@@ -1063,7 +1070,7 @@ section {
             width: 32px;
             height: 32px;
             padding: 8px;
-            margin-left: 32px;
+            margin-left: 16px;
             box-sizing: initial;
         }
 
@@ -1089,4 +1096,5 @@ footer {
     font-size: 16px;
     padding-top: 124px;
     padding-bottom: 48px;
+    text-align: center;
 }
