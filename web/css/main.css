@@ -1450,6 +1450,7 @@ section.anime {
           animation: 0.8s ease-in-out both infinite alternate;
   -webkit-animation-name: scrollDown;
           animation-name: scrollDown;
+  z-index: 3;
 }
 
 .mainHeading__scroll:before, .mainHeading__scroll:after {

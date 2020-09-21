@@ -417,6 +417,7 @@ section {
         transform: translateX(-50%);
         animation: 0.8s ease-in-out both infinite alternate;
         animation-name: scrollDown;
+        z-index: 3;
 
         &:before,
         &:after {
