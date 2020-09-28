@@ -13,7 +13,7 @@ window.onload = function (e) {
                 tools: [
                     "Figma", "HTML 5", "SASS", "Vanilla JS", "Chrome DevTools", "Github"
                 ],
-                description: "Daily UI is a series of daily design challenges and I decided to do this on my spare time, to improve my skills as a designer, and on top of that, as a coder. I usually start designing on Figma, and then I develop everything by myself. I think it's a good exercise, to know what I can improve in my design process, that will facilitate and favor my coding process.",
+                description: "Daily UI is a series of daily design challenges and I decided to do this on my spare time, to improve my skills as a designer, and on top of that, as a coder. I usually start designing on Figma, and then I develop everything by myself. I think it's a good exercise, to know what I can improve in my design process, that will make my coding process easier.",
                 url: "https://www.rafaelalucas.com/dailyui/",
             },
             {
@@ -39,7 +39,8 @@ window.onload = function (e) {
                 tools: [
                     "HTML 5", "SASS", "Vanilla JS", "Chrome DevTools", "Github"
                 ],
-                description: "Movie. is a search engine mainly for movies. It started as an exercise in one of the Javascript classes at the company I work for, and I decided to bring it back to life again to improve it with some of the skills I've been acquiring since I finish those classes! I used the IMDB api to make this project.",
+                description: `Movie. is a search engine mainly for movies. It started as an exercise in one of the Javascript classes at the company I work for, and I decided to bring it back to life again to improve it with some of the skills I've been acquiring since I finish those classes! I used the <a href="
+                http://www.omdbapi.com/" target="_blank" rel=”noopener”>OMDb API</a> to make this project.`,
                 url: "https://rafaelavlucas.github.io/movieapp/",
             }, {
                 id: 3,
@@ -51,7 +52,7 @@ window.onload = function (e) {
                 tools: [
                     "Figma", "HTML 5", "SASS", "Vanilla JS", "Chrome DevTools", "Github"
                 ],
-                description: "This personal project started as a concept for a small business online watch store with the name Catche. The brand's identity design was first created and then the website was designed directly with code. This was a project to help me practice, and because I love the challenge of designing things directly in the browser.",
+                description: "This personal project started as a concept for a small online watch store with the name Catche. The brand's identity design was first created and then the website was designed directly with code. This was a project to help me practice, and because I love the challenge of designing things directly in the browser.",
                 url: "https://brixcreative.github.io/catche/",
             }, {
                 id: 4,
@@ -63,7 +64,7 @@ window.onload = function (e) {
                 tools: [
                     "HTML 5", "SASS", "Vanilla JS"
                 ],
-                description: "Every month Codepen has a theme with different challenges every week. Every time I have a little bit of spare time, I try to participate because It's a good way to practice. When it involves things I have the opportunity to use CSS Animations I'm always in! Check out my collection of various exercises and some CSS animated Ilustrations I made!",
+                description: "Every month Codepen has a theme with different challenges every week. When I have a little bit of spare time, I try to participate because it's a good way to practice. When it involves things that I have the opportunity to use CSS Animations, I'm always in! Check out my collection of various exercises and some CSS animated illustrations I made!",
                 url: "https://codepen.io/collection/AZyLWY",
             }, {
                 id: 5,
@@ -76,7 +77,7 @@ window.onload = function (e) {
                     "SASS",
                     "HTML 5"
                 ],
-                description: `2048 game It's a puzzle game where the objective is to slide numbered tiles on a grid to combine them to create a tile with the number 2048. This project was made with my friend <a href="
+                description: `2048 game it's a puzzle game where the objective is to slide numbered tiles on a grid to combine them to create a tile with the number 2048. This project was made with my friend <a href="
                 https://www.joaobairrada.com" target="_blank" rel=”noopener”>João Bairrada</a> that build all the code and logic behind the game. I was resposible for the design and CSS Development including all the animations and micro-interactions.`,
                 url: "https://play2048game.firebaseapp.com/",
             }
