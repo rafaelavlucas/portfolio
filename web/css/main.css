@@ -1518,12 +1518,20 @@ section.anime {
   opacity: 0;
   -webkit-transition: all 0.6s ease;
   transition: all 0.6s ease;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .works.anime {
   -webkit-transform: translateY(-0.05em);
           transform: translateY(-0.05em);
   opacity: 1;
+}
+
+@media screen and (max-width: 1023px) {
+  .works {
+    margin-bottom: 80px;
+  }
 }
 
 .works__list {
@@ -1548,7 +1556,7 @@ section.anime {
       -ms-flex-direction: column;
           flex-direction: column;
   position: relative;
-  margin: 40px 0;
+  margin-bottom: 40px;
   transition: all 0.6s ease;
   cursor: pointer;
   overflow: hidden;
@@ -1570,7 +1578,7 @@ section.anime {
   }
 }
 
-.works__item:first-child {
+.works__item:last-child {
   margin-top: 0;
 }
 
@@ -1709,6 +1717,7 @@ section.anime {
   width: 50%;
   opacity: 0;
   height: 0;
+  min-height: 0px;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
@@ -1921,6 +1930,21 @@ section.anime {
 
 .works .openWork .works__info {
   opacity: 1;
+  margin-bottom: 40px;
+  min-height: 420px;
+}
+
+@media screen and (max-width: 1023px) {
+  .works .openWork .works__info {
+    min-height: 0px;
+    margin-bottom: 24px;
+  }
+}
+
+@media screen and (max-width: 799px) {
+  .works .openWork .works__info {
+    margin-bottom: 0;
+  }
 }
 
 .works .openWork .works__detail {
@@ -1946,6 +1970,16 @@ section.anime {
   .works .openWork .works__link {
     height: 64px;
     padding: 0 32px;
+  }
+}
+
+.about {
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1023px) {
+  .about {
+    margin-bottom: 80px;
   }
 }
 
@@ -2022,7 +2056,6 @@ section.anime {
 
 .mainTitle {
   max-width: 1920px;
-  overflow: hidden;
   -webkit-transform: translateX(-5vw), translateY(-0.05em);
           transform: translateX(-5vw), translateY(-0.05em);
   width: 100vw;
@@ -2044,6 +2077,12 @@ section.anime {
           align-items: flex-start;
   font-weight: 400;
   padding: 0.05em 0;
+}
+
+@media screen and (max-width: 1023px) {
+  .mainTitle {
+    overflow: hidden;
+  }
 }
 
 .mainTitle span {
@@ -2098,11 +2137,12 @@ section.anime {
 }
 
 .find {
+  margin: 0 auto;
   margin-bottom: 0;
 }
 
 .find__content {
-  width: 95vw;
+  width: 95%;
   -webkit-transform: translateY(-0.4em);
           transform: translateY(-0.4em);
   background-color: #313131;

@@ -463,6 +463,12 @@ section {
 .works {
     $this: &;
     @include anime();
+    width: 100%;
+    margin: 0 auto;
+
+    @include md {
+        margin-bottom: 80px;
+    }
 
     &__list {
         transform: translateY(-0.4em);
@@ -476,7 +482,7 @@ section {
         display: flex;
         flex-direction: column;
         position: relative;
-        margin: 40px 0;
+        margin-bottom: 40px;
         transition: all 0.6s ease;
         cursor: pointer;
         overflow: hidden;
@@ -487,7 +493,7 @@ section {
             padding: 48px 32px;
         }
 
-        &:first-child {
+        &:last-child {
             margin-top: 0;
         }
 
@@ -608,7 +614,10 @@ section {
         width: 50%;
         opacity: 0;
         height: 0;
+        min-height: 0px;
         transition: all 0.4s ease;
+        //margin-bottom: 40px;
+
 
         @include md {
             width: 100%;
@@ -802,6 +811,17 @@ section {
 
             &__info {
                 opacity: 1;
+                margin-bottom: 40px;
+                min-height: 420px;
+
+                @include md {
+                    min-height: 0px;
+                    margin-bottom: 24px;
+                }
+
+                @include sm {
+                    margin-bottom: 0;
+                }
             }
 
             &__detail {
@@ -828,8 +848,13 @@ section {
 }
 
 .about {
-    &__content {
+    margin: 0 auto;
 
+    @include md {
+        margin-bottom: 80px;
+    }
+
+    &__content {
         display: flex;
         transform: translateY(-0.70em);
         position: relative;
@@ -882,7 +907,7 @@ section {
 
 .mainTitle {
     max-width: $maxWidthContent;
-    overflow: hidden;
+
     transform: translateX(-5vw), translateY(-0.05em);
     width: 100vw;
     font-family: $font2;
@@ -897,6 +922,10 @@ section {
     align-items: flex-start;
     font-weight: 400;
     padding: 0.05em 0;
+
+    @include md {
+        overflow: hidden;
+    }
 
     span {
         width: 150vw;
@@ -948,10 +977,11 @@ section {
 
 
 .find {
+    margin: 0 auto;
     margin-bottom: 0;
 
     &__content {
-        width: 95vw;
+        width: 95%;
         transform: translateY(-0.4em);
         background-color: $neu-09;
         padding-bottom: 40px;

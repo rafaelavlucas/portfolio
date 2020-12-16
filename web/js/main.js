@@ -39,8 +39,7 @@ window.onload = function (e) {
                 tools: [
                     "HTML 5", "SASS", "Vanilla JS", "Chrome DevTools", "Github"
                 ],
-                description: `Movie. is a search engine mainly for movies. It started as an exercise in one of the Javascript classes at the company I work for, and I decided to bring it back to life again to improve it with some of the skills I've been acquiring since I finish those classes! I used the <a href="
-                http://www.omdbapi.com/" target="_blank" rel=”noopener”>OMDb API</a> to make this project.`,
+                description: `Movie. is a search engine mainly for movies. It started as an exercise in one of the Javascript classes at the company I work for, and I decided to bring it back to life again to improve it with some of the skills I've been acquiring since I finish those classes! I used the <a href="http://www.omdbapi.com/" target="_blank" rel=”noopener”>OMDb API</a> to make this project.`,
                 url: "https://rafaelavlucas.github.io/movieapp/",
             }, {
                 id: 3,
