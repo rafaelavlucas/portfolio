@@ -20,12 +20,12 @@ window.addEventListener("load", event => {
     } else {
         // Mobile
         menuItemFirst.forEach(function (el) {
-            el.querySelector("a").style.pointerEvents = "none";
+            //el.querySelector("a").style.pointerEvents = "none";
             el.addEventListener("click", openSecondLevel);
         });
 
         menuItemSecond.forEach(function (el) {
-            el.querySelector("a").style.pointerEvents = "none";
+            //el.querySelector("a").style.pointerEvents = "none";
             el.addEventListener("click", openThirdLevel);
         });
 
@@ -44,6 +44,7 @@ window.addEventListener("load", event => {
     // Open and Close Second Level on Desktop
 
     function openSecondLevel(e) {
+        event.preventDefault()
 
         const targetLink = e.currentTarget,
             target = targetLink.dataset.target,
@@ -52,6 +53,8 @@ window.addEventListener("load", event => {
         menuItemFirst.forEach(function (el) {
             el.classList.remove("active");
         });
+
+
 
         secondLevel.forEach(function (el) {
             el.classList.remove("show");
@@ -72,10 +75,12 @@ window.addEventListener("load", event => {
     }
 
     function closeSecondLevel(e) {
-
+        event.preventDefault()
         if (e.target.closest(".mainNav__menuItem")) {
             return
         } else if (e.target.closest(".mainNav__innerContent")) {
+            return
+        } else if (e.target.closest(".mainNav__menuBar")) {
             return
         }
         secondLevel.forEach(function (el) {
@@ -101,6 +106,14 @@ window.addEventListener("load", event => {
         const targetLink = e.currentTarget,
             target = targetLink.dataset.target,
             matchItems = document.querySelector("#" + target);
+
+
+        menuItemSecond.forEach(function (el) {
+            if (el.dataset.target) {
+                el.querySelector("a").style.pointerEvents = "none"
+            }
+        });
+
 
         // secondLevel.forEach(function (el) {
         //     if (window.innerWidth > 760) {
@@ -150,8 +163,5 @@ window.addEventListener("load", event => {
         }
 
     }
-
-
-
 
 });
