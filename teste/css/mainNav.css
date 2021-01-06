@@ -1,0 +1,571 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  outline: none;
+  outline-color: transparent;
+}
+
+img {
+  width: 100%;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  outline: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+em {
+  font-style: italic;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+main {
+  display: block;
+  position: relative;
+  -webkit-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+  -webkit-transform-origin: center center;
+  transform-origin: center center;
+  z-index: 3;
+}
+
+input,
+input:before,
+input:after {
+  -webkit-user-select: initial;
+  -moz-user-select: initial;
+  -ms-user-select: initial;
+  user-select: initial;
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+button {
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  -webkit-appearance: none;
+          appearance: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"] ::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+          appearance: none;
+  margin: 0;
+}
+
+input::-ms-clear,
+input::-ms-reveal {
+  display: none;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.mainNav {
+  font-family: roboto;
+  z-index: 2;
+  width: 100%;
+  background-color: white;
+}
+
+.mainNav a {
+  color: inherit;
+}
+
+.mainNav__wrapper {
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (min-width: 0) and (max-width: 760px) {
+  .mainNav__wrapper {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 0) and (max-width: 760px) {
+  .mainNav__menuBar > .mainNav__wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 100%;
+    background-color: white;
+  }
+}
+
+.mainNav__topBar {
+  background-color: gray;
+  height: 80px;
+}
+
+@media (min-width: 0) and (max-width: 760px) {
+  .mainNav__topBar {
+    height: 40px;
+  }
+}
+
+.mainNav__menuBar {
+  -webkit-transition: height 0.3s ease;
+  transition: height 0.3s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100px;
+  border-bottom: 1px solid black;
+}
+
+@media (min-width: 0) and (max-width: 760px) {
+  .mainNav__menuBar {
+    position: relative;
+    height: 64px;
+  }
+}
+
+.mainNav__barContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+@media (min-width: 0) and (max-width: 760px) {
+  .mainNav__barContent {
+    width: 100%;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
+
+.mainNav__iconMenu {
+  display: none;
+}
+
+@media (min-width: 0) and (max-width: 760px) {
+  .mainNav__iconMenu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: absolute;
+    right: 0;
+    padding: 20px;
+    cursor: pointer;
+    z-index: 2;
+  }
+}
+
+.mainNav__logo img {
+  width: 88px;
+}
+
+@media (min-width: 0) and (max-width: 760px) {
+  .mainNav__logo {
+    position: absolute;
+  }
+  .mainNav__logo img {
+    width: 64px;
+  }
+}
+
+.mainNav__mainLinks {
+  overflow-x: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (min-width: 0) and (max-width: 760px) {
+  .mainNav__mainLinks {
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    position: absolute;
+    z-index: -1;
+    -webkit-transform: translateX(200%);
+            transform: translateX(200%);
+    width: 100vw;
+    height: 100vh;
+    top: 40px;
+    left: 0;
+    transition: all 0.4s ease;
+    background-color: white;
+  }
+}
+
+.mainNav__menuItem {
+  cursor: pointer;
+  padding: 20px 24px;
+  border: 1px solid gray;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (min-width: 0) and (max-width: 760px) {
+  .mainNav__menuItem a {
+    pointer-events: none;
+  }
+}
+
+.mainNav__menuItem--mobile {
+  display: none;
+}
+
+@media (min-width: 0) and (max-width: 760px) {
+  .mainNav__menuItem--mobile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.mainNav__menuItem--first.active, .mainNav__menuItem--first:hover {
+  color: green;
+}
+
+.mainNav__menuItem--second.active, .mainNav__menuItem--second:hover {
+  color: yellow;
+}
+
+.mainNav__menuItem--third.active, .mainNav__menuItem--third:hover {
+  color: pink;
+}
+
+.mainNav__innerContent {
+  overflow: hidden;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  width: 100%;
+  position: absolute;
+  top: 100%;
+  background-color: white;
+}
+
+@media (min-width: 0) and (max-width: 760px) {
+  .mainNav__innerContent {
+    height: 100vh;
+    -webkit-transform: translateX(200%);
+            transform: translateX(200%);
+  }
+}
+
+.mainNav__innerContent.show {
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
+}
+
+.mainNav__secondLevel, .mainNav__thirdLevel {
+  overflow-x: hidden;
+  background-color: white;
+}
+
+.mainNav__secondLevel.show, .mainNav__thirdLevel.show {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: translate(0px);
+          transform: translate(0px);
+}
+
+@media (min-width: 0) and (max-width: 760px) {
+  .mainNav__secondLevel.show, .mainNav__thirdLevel.show {
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+.mainNav__secondLevel {
+  -webkit-transition: height 0.3s ease-in-out, opacity 0.4s 0.2s ease, -webkit-transform 0.2s 0.2s ease;
+  transition: height 0.3s ease-in-out, opacity 0.4s 0.2s ease, -webkit-transform 0.2s 0.2s ease;
+  transition: height 0.3s ease-in-out, opacity 0.4s 0.2s ease, transform 0.2s 0.2s ease;
+  transition: height 0.3s ease-in-out, opacity 0.4s 0.2s ease, transform 0.2s 0.2s ease, -webkit-transform 0.2s 0.2s ease;
+  opacity: 0;
+  visibility: hidden;
+  height: 0px;
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+}
+
+@media (min-width: 0) and (max-width: 760px) {
+  .mainNav__secondLevel {
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+.mainNav__thirdLevel {
+  z-index: 2;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+@media (min-width: 0) and (max-width: 760px) {
+  .mainNav__thirdLevel {
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+}
+
+.mainNav.fixedBar {
+  top: 0px;
+  position: fixed;
+}
+
+.mainNav.fixedBar .mainNav__topBar {
+  display: none;
+}
+
+.mainNav.fixedBar .mainNav__menuBar {
+  height: 72px;
+}
+
+@media (min-width: 0) and (max-width: 760px) {
+  .mainNav.fixedBar .mainNav__menuBar {
+    height: 64px;
+  }
+}
+
+.mainNav.fixedBar .mainNav__sideButtons {
+  display: none;
+}
+
+@media (min-width: 0) and (max-width: 760px) {
+  .mainNav.fixedBar .mainNav__sideButtons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.mainNav__iconBack {
+  cursor: pointer;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+  position: absolute;
+  left: 0;
+}
+
+.mainNav__iconBack:before {
+  content: '<';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mainNav.openMobile .mainNav__mainLinks {
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+/*# sourceMappingURL=mainNav.css.map */

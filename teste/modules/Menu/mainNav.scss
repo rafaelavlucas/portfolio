@@ -1,0 +1,316 @@
+// core
+@import '../../core/reset.scss';
+@import '../../core/foundations.scss';
+
+body {
+    overflow-x: hidden;
+}
+
+
+.mainNav {
+
+    font-family: roboto;
+
+    a {
+        color: inherit;
+    }
+
+    $this: &;
+    z-index: 2;
+    width: 100%;
+    background-color: white;
+
+    &__wrapper {
+
+        max-width: 960px;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+
+        @include mobile {
+            max-width: 100%;
+
+        }
+    }
+
+    &__menuBar>.mainNav__wrapper {
+        @include mobile {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            background-color: white;
+        }
+    }
+
+    // Top Bar
+    &__topBar {
+        background-color: gray;
+        height: 80px;
+
+        @include mobile {
+            height: 40px;
+        }
+    }
+
+    // Menu Bar
+    &__menuBar {
+        transition: height 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100px;
+        border-bottom: 1px solid black;
+
+        @include mobile {
+            position: relative;
+            height: 64px;
+        }
+    }
+
+    &__barContent {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+
+        @include mobile {
+
+            width: 100%;
+            align-items: flex-start;
+        }
+
+    }
+
+    &__iconMenu {
+        display: none;
+
+        @include mobile {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            right: 0;
+            padding: 20px;
+            cursor: pointer;
+            z-index: 2;
+        }
+    }
+
+    &__logo {
+
+        img {
+            width: 88px;
+        }
+
+        @include mobile {
+            position: absolute;
+
+            img {
+                width: 64px;
+            }
+        }
+    }
+
+    &__mainLinks {
+        overflow-x: hidden;
+        display: flex;
+
+        @include mobile {
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            z-index: -1;
+            transform: translateX(200%);
+            width: 100vw;
+            height: 100vh;
+            top: 40px;
+            left: 0;
+            transition: all 0.4s ease;
+            background-color: white;
+        }
+    }
+
+    &__menuItem {
+        cursor: pointer;
+        padding: 20px 24px;
+        border: 1px solid gray;
+        display: flex;
+        align-items: center;
+
+        a {
+            @include mobile {
+                pointer-events: none;
+
+            }
+        }
+
+        &--mobile {
+            display: none;
+
+            @include mobile {
+                display: flex;
+                justify-content: center;
+            }
+        }
+
+        &--first {
+
+            &.active,
+            &:hover {
+                color: green;
+            }
+        }
+
+        &--second {
+
+            &.active,
+            &:hover {
+                color: yellow;
+            }
+        }
+
+        &--third {
+
+            &.active,
+            &:hover {
+                color: pink;
+            }
+        }
+    }
+
+
+    // Open Menu Inner content
+    &__innerContent {
+        overflow: hidden;
+        transition: all 0.4s ease;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        background-color: white;
+
+        @include mobile {
+            height: 100vh;
+            transform: translateX(200%);
+        }
+
+        &.show {
+            transform: translateX(0px);
+        }
+    }
+
+    &__secondLevel,
+    &__thirdLevel {
+        overflow-x: hidden;
+        background-color: white;
+
+        &.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translate(0px);
+
+            @include mobile {
+                transform: none;
+            }
+        }
+    }
+
+    &__secondLevel {
+        transition: height 0.3s ease-in-out, opacity 0.4s 0.2s ease, transform 0.2s 0.2s ease;
+        opacity: 0;
+        visibility: hidden;
+        height: 0px;
+        transform: translateY(-10px);
+
+        @include mobile {
+            transition: all 0.4s ease;
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            transform: none;
+        }
+    }
+
+    &__thirdLevel {
+        z-index: 2;
+        transition: all 0.4s ease;
+
+        @include mobile {
+            top: 0;
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            transform: translateX(100%);
+        }
+    }
+
+    // Fixed menu after scroll 
+    &.fixedBar {
+        top: 0px;
+        position: fixed;
+
+        #{$this} {
+            &__topBar {
+                display: none;
+            }
+
+            &__menuBar {
+                height: 72px;
+
+                @include mobile {
+                    height: 64px;
+                }
+            }
+
+            &__sideButtons {
+
+                display: none;
+
+                @include mobile {
+                    display: flex;
+                }
+            }
+        }
+    }
+
+    // Open Menu Mobile
+    &__iconBack {
+        cursor: pointer;
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        border: 1px solid black;
+        position: absolute;
+        left: 0;
+
+        &:before {
+            content: '<';
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+    }
+
+    &.openMobile {
+
+        #{$this} {
+            &__mainLinks {
+                transition: all 0.4s ease;
+                transform: translateX(0%);
+                //animation: openMenu 0.4s ease;
+            }
+
+
+
+
+        }
+    }
+
+}
