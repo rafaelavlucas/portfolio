@@ -13,10 +13,10 @@ window.addEventListener("load", event => {
     if (window.innerWidth > 760) {
         // Desktop
         menuItemFirst.forEach(function (el) {
-            el.addEventListener("mouseover", openSecondLevel);
+            el.addEventListener("click", openSecondLevel);
         });
 
-        document.querySelector("body").addEventListener("mouseover", closeSecondLevel)
+        document.querySelector("body").addEventListener("click", closeSecondLevel)
     } else {
         // Mobile
         menuItemFirst.forEach(function (el) {
@@ -54,24 +54,23 @@ window.addEventListener("load", event => {
             el.classList.remove("active");
         });
 
-
-
         secondLevel.forEach(function (el) {
             el.classList.remove("show");
             if (window.innerWidth > 760) {
-                el.style.height = "0px";
-                innerContent.classList.remove("show")
+                //el.style.height = "0px";
             }
         });
 
         matchItems.classList.add("show");
-        innerContent.classList.add("show")
+        //innerContent.classList.add("show")
 
         if (window.innerWidth > 760) {
-            matchItems.style.height = matchItems.scrollHeight + "px";
+            innerContent.style.height = matchItems.scrollHeight + "px";
         }
 
         targetLink.classList.add("active");
+
+
     }
 
     function closeSecondLevel(e) {
@@ -85,29 +84,29 @@ window.addEventListener("load", event => {
         }
         secondLevel.forEach(function (el) {
             el.classList.remove("show");
-            el.style.height = "0px";
+            //el.style.height = "0px";
         });
+
+        innerContent.style.height = "0px";
+
     }
 
-    // Open Menu Mobile
+    // Open Menu Mobile 
     function openMenuMobile() {
 
+
         if (mainNav.classList.contains("openMobile")) {
-            mainNav.classList.remove("openMobile")
+            mainNav.classList.remove("openMobile");
+            document.querySelector("body").style.overflow = "visible";
             goBackLevel1();
             goBackLevel2();
 
         } else {
-            mainNav.classList.add("openMobile")
+            mainNav.classList.add("openMobile");
+            document.querySelector("body").style.overflow = "hidden";
         }
-    }
 
-    function openThirdLevel(e) {
-        const targetLink = e.currentTarget,
-            target = targetLink.dataset.target,
-            matchItems = document.querySelector("#" + target);
-
-
+        // Remove Pointer events if Link has sub level
         menuItemSecond.forEach(function (el) {
             if (el.dataset.target) {
                 el.querySelector("a").style.pointerEvents = "none"
@@ -115,12 +114,19 @@ window.addEventListener("load", event => {
         });
 
 
-        // secondLevel.forEach(function (el) {
-        //     if (window.innerWidth > 760) {
-        //         el.style.height = "0px";
-        //         innerContent.classList.remove("show")
-        //     }
-        // });
+    }
+
+    function openThirdLevel(e) {
+        const targetLink = e.currentTarget,
+            target = targetLink.dataset.target,
+            matchItems = document.querySelector("#" + target);
+
+        // To avoid bugs when open third level
+        if (e.currentTarget.parentElement.style.position = "static") {
+            e.currentTarget.parentElement.style.position = "initial";
+        } else {
+            e.currentTarget.parentElement.style.position = "static";
+        }
 
         matchItems.classList.add("show");
         innerContent.classList.add("show")
@@ -146,8 +152,12 @@ window.addEventListener("load", event => {
         thirdLevel.forEach(function (el) {
             el.classList.remove("show");
         });
+        document.querySelector(".mainNav__thirdLevel").parentElement.classList.remove("cenas")
     }
 
+
+
+    console.log(document.querySelector(".mainNav__thirdLevel").parentElement)
 
     // Sticky Nav Bar
     window.onscroll = function () {
