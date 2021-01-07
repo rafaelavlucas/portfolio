@@ -12,14 +12,9 @@ body {
 
 
 .mainNav {
-    font-family: roboto;
-    position: relative;
-
-    a {
-        color: inherit;
-    }
-
     $this: &;
+    font-family: 'AzoSansWeb';
+    position: relative;
     z-index: 2;
     width: 100%;
     background-color: white;
@@ -30,6 +25,10 @@ body {
         margin: 0 auto;
         display: flex;
 
+        @include tablet {
+            max-width: 100%;
+        }
+
         @include mobile {
             max-width: 100%;
 
@@ -37,25 +36,41 @@ body {
     }
 
     &__menuBar>.mainNav__wrapper {
+        padding: 0 24px;
+        box-sizing: content-box;
+        display: flex;
+        align-items: center;
+        height: 100%;
+
+
         @include mobile {
-            display: flex;
             justify-content: space-between;
-            align-items: center;
-            height: 100%;
+
             background-color: white;
-            //padding: 0 24px;
-            // box-sizing: border-box;
+            padding: 0;
             position: relative;
         }
     }
 
     // Top Bar
     &__topBar {
-        height: 80px;
+        background-color: #e6e6e6;
+        height: 48px;
+        display: flex;
 
         @include mobile {
             display: none;
         }
+    }
+
+    &__topBar>.mainNav__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__linkAlt {
+        color: gray;
     }
 
     // Menu Bar
@@ -68,6 +83,10 @@ body {
         z-index: 3;
         box-shadow: $menuBarShadow;
 
+        @include tablet {
+            height: 120px;
+        }
+
         @include mobile {
             height: 64px;
             box-shadow: none;
@@ -75,20 +94,26 @@ body {
     }
 
     &__barContent {
+        width: 100%;
+        height: 100%;
+
         @include mobile {
             position: absolute;
-            width: 100%;
             min-height: 100vh;
             overflow-x: hidden;
-            //white-space: nowrap;
             top: 0px;
             z-index: -1;
             visibility: hidden;
         }
     }
 
-
     &__logo {
+        display: block;
+        margin-right: 40px;
+
+        @include tablet {
+            margin-right: 24px;
+        }
 
         img {
             width: 88px;
@@ -100,7 +125,14 @@ body {
     }
 
     &__navMobile {
+        @include tablet {
+            position: absolute;
+            top: 8px;
+        }
+
         @include mobile {
+            position: initial;
+            top: initial;
             padding: 0 24px;
             width: 100%;
             height: 100%;
@@ -148,8 +180,10 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
+        margin-top: 16px;
 
         @include mobile {
+            margin-top: 0px;
             width: 100%;
             z-index: 2;
             flex-direction: column;
@@ -197,8 +231,9 @@ body {
     &__firstLevel {
         display: flex;
         flex-direction: column;
-        justify-content: flex-end;
+        justify-content: space-between;
         align-items: flex-end;
+        height: 100%;
 
         @include mobile {
             transition: all 0.4s ease;
@@ -218,9 +253,11 @@ body {
 
     &__mainLinks {
         display: flex;
+        justify-content: space-between;
+        width: 100%;
 
         @include mobile {
-            width: 100%;
+
             flex-direction: column;
             padding: 24px 0;
 
@@ -231,17 +268,23 @@ body {
         cursor: pointer;
         display: flex;
         align-items: center;
-        width: 100%;
 
         a,
         p {
             position: relative;
-            padding: 20px 24px;
+            padding: 16px 0;
             width: 100%;
+
+
+            @include mobile {
+                text-align: left;
+                padding: 20px 24px;
+            }
         }
 
         &--first {
             font-weight: bold;
+            text-align: center;
 
             @include mobile {}
 
@@ -259,6 +302,7 @@ body {
             font-weight: bold;
             color: gray;
             font-size: 18px;
+
 
             @include mobile {
                 font-size: 16px;
@@ -310,20 +354,22 @@ body {
 
     // Open Menu Inner content
     &__innerContent {
-        overflow-x: hidden;
+        overflow: hidden;
         transition: all 0.4s cubic-bezier(0, 0.66, 0.47, 0.88);
         position: absolute;
         width: 100%;
         top: 100%;
         background-color: white;
         height: 0;
-
-        //transform: translateX(100%);
+        box-shadow: $menuBarShadow;
 
         @include mobile {
+            overflow-x: hidden;
             visibility: hidden;
             height: 100vh;
             background-color: transparent;
+            box-shadow: none;
+
         }
     }
 
@@ -386,7 +432,7 @@ body {
 
     &__linksColumn {
         width: 100%;
-        padding: 40px 0;
+        padding: 40px 24px;
         position: static;
         border-right: 1px solid #e6e6e6;
 
@@ -400,34 +446,7 @@ body {
         }
     }
 
-    // Fixed menu after scroll 
-    &.fixedBar {
-        top: 0px;
-        position: fixed;
 
-        #{$this} {
-            &__topBar {
-                display: none;
-            }
-
-            &__menuBar {
-                height: 72px;
-
-                @include mobile {
-                    height: 64px;
-                }
-            }
-
-            &__sideButtons {
-
-                display: none;
-
-                @include mobile {
-                    display: flex;
-                }
-            }
-        }
-    }
 
     // Open Menu Mobile
 
@@ -465,6 +484,7 @@ body {
 
     }
 
+
     &.openMobile {
         // min-height: 100vh;
 
@@ -488,6 +508,39 @@ body {
                 @include mobile {
                     background-color: gray;
                 }
+            }
+        }
+    }
+
+    // Fixed menu after scroll 
+    &.fixedBar {
+        top: 0px;
+        position: fixed;
+
+        #{$this} {
+            &__topBar {
+                display: none;
+            }
+
+            &__menuBar {
+                height: 72px;
+
+                @include mobile {
+                    height: 64px;
+                }
+            }
+
+            &__sideButtons {
+
+                display: none;
+
+                @include mobile {
+                    display: flex;
+                }
+            }
+
+            &__firstLevel {
+                justify-content: center;
             }
         }
     }

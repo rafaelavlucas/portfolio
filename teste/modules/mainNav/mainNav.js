@@ -5,7 +5,6 @@ window.addEventListener("load", event => {
         innerContent = document.querySelector(".mainNav__innerContent"),
         secondLevel = document.querySelectorAll(".mainNav__secondLevel"),
         thirdLevel = document.querySelectorAll(".mainNav__thirdLevel"),
-        iconMenu = document.querySelector(".mainNav__iconMenu"),
         iconBackLevel1 = document.querySelectorAll(".mainNav__iconBack--level1"),
         iconBackLevel2 = document.querySelectorAll(".mainNav__iconBack--level2");
 
@@ -38,7 +37,7 @@ window.addEventListener("load", event => {
 
     }
 
-    iconMenu.addEventListener("click", openMenuMobile);
+    document.querySelector(".mainNav__iconMenu").addEventListener("click", openMenuMobile);
 
 
     // Open and Close Second Level on Desktop
@@ -70,7 +69,6 @@ window.addEventListener("load", event => {
 
         targetLink.classList.add("active");
 
-
     }
 
     function closeSecondLevel(e) {
@@ -93,7 +91,6 @@ window.addEventListener("load", event => {
 
     // Open Menu Mobile 
     function openMenuMobile() {
-
 
         if (mainNav.classList.contains("openMobile")) {
             mainNav.classList.remove("openMobile");
@@ -154,10 +151,6 @@ window.addEventListener("load", event => {
         });
         document.querySelector(".mainNav__thirdLevel").parentElement.classList.remove("cenas")
     }
-
-
-
-    console.log(document.querySelector(".mainNav__thirdLevel").parentElement)
 
     // Sticky Nav Bar
     window.onscroll = function () {
